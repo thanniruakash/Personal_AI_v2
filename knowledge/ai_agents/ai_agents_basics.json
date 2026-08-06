@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "AI Agents Basics",
+  "topics": [
+    {
+      "topic": "What is an AI Agent?",
+      "definition": "An AI agent is a software system that perceives information, reasons about it and performs actions to achieve a goal.",
+      "syntax": "Perceive \u2192 Think \u2192 Act",
+      "example": "Personal offline AI assistant",
+      "output": "Task completed",
+      "tips": [
+        "Clearly define the agent's goal."
+      ]
+    },
+    {
+      "topic": "Agent Components",
+      "definition": "An AI agent typically includes perception, memory, reasoning, planning and action modules.",
+      "syntax": "Input \u2192 Memory \u2192 Reasoning \u2192 Action",
+      "example": "Voice assistant",
+      "output": "Agent architecture understood",
+      "tips": [
+        "Keep components modular."
+      ]
+    },
+    {
+      "topic": "Environment",
+      "definition": "The environment is everything the AI agent interacts with.",
+      "syntax": "Agent \u2194 Environment",
+      "example": "Computer desktop",
+      "output": "Environment identified",
+      "tips": [
+        "Understand available inputs and outputs."
+      ]
+    },
+    {
+      "topic": "Perception",
+      "definition": "Perception gathers information from text, images, audio or sensors.",
+      "syntax": "Input \u2192 Perception",
+      "example": "Reading a document",
+      "output": "Information collected",
+      "tips": [
+        "Validate incoming data."
+      ]
+    },
+    {
+      "topic": "Reasoning",
+      "definition": "Reasoning analyzes information to decide the best action.",
+      "syntax": "Analyze \u2192 Decide",
+      "example": "Answering a programming question",
+      "output": "Decision made",
+      "tips": [
+        "Use structured knowledge whenever possible."
+      ]
+    },
+    {
+      "topic": "Actions",
+      "definition": "Actions are the tasks an AI agent performs after reasoning.",
+      "syntax": "Decision \u2192 Action",
+      "example": "Generate code",
+      "output": "Task executed",
+      "tips": [
+        "Confirm actions that have significant effects."
+      ]
+    },
+    {
+      "topic": "Types of AI Agents",
+      "definition": "Common types include reactive, goal-based, utility-based and learning agents.",
+      "syntax": "Reactive | Goal | Utility | Learning",
+      "example": "Navigation assistant",
+      "output": "Agent type selected",
+      "tips": [
+        "Choose the simplest suitable agent."
+      ]
+    },
+    {
+      "topic": "AI Agent Best Practices",
+      "definition": "Build agents with clear goals, reliable memory, safe actions and continuous evaluation.",
+      "syntax": "Plan \u2192 Reason \u2192 Act \u2192 Improve",
+      "example": "Offline personal AI",
+      "output": "Reliable AI agent",
+      "tips": [
+        "Log important actions.",
+        "Test thoroughly.",
+        "Handle errors gracefully."
+      ]
+    }
+  ]
+}

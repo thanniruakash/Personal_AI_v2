@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Prompting",
+  "topics": [
+    {
+      "topic": "What is Prompting?",
+      "definition": "Prompting is the process of giving clear instructions to an AI model to achieve a desired output.",
+      "syntax": "Instruction \u2192 AI \u2192 Response",
+      "example": "Explain binary search in simple words.",
+      "output": "Relevant response generated",
+      "tips": [
+        "Be specific and clear."
+      ]
+    },
+    {
+      "topic": "Prompt Structure",
+      "definition": "A good prompt includes context, task, constraints and expected output.",
+      "syntax": "Context + Task + Constraints",
+      "example": "Summarize this text in 5 bullet points.",
+      "output": "Structured response",
+      "tips": [
+        "State the desired format."
+      ]
+    },
+    {
+      "topic": "Zero-Shot Prompting",
+      "definition": "The model performs a task without seeing any examples.",
+      "syntax": "Instruction Only",
+      "example": "Translate English to French.",
+      "output": "Translated text",
+      "tips": [
+        "Useful for common tasks."
+      ]
+    },
+    {
+      "topic": "Few-Shot Prompting",
+      "definition": "The model is given a few examples before the actual task.",
+      "syntax": "Examples \u2192 Task",
+      "example": "Show two examples before classifying text.",
+      "output": "Improved response",
+      "tips": [
+        "Examples should match the target task."
+      ]
+    },
+    {
+      "topic": "Chain-of-Thought Prompting",
+      "definition": "Encourages step-by-step reasoning for complex problems.",
+      "syntax": "Problem \u2192 Reason \u2192 Answer",
+      "example": "Solve a math problem step by step.",
+      "output": "Reasoned solution",
+      "tips": [
+        "Useful for multi-step tasks."
+      ]
+    },
+    {
+      "topic": "Prompt Templates",
+      "definition": "Reusable prompt formats for recurring tasks.",
+      "syntax": "Template \u2192 Variables",
+      "example": "Summarize: {text}",
+      "output": "Reusable prompt",
+      "tips": [
+        "Standardize common workflows."
+      ]
+    },
+    {
+      "topic": "Prompt Optimization",
+      "definition": "Refining prompts to improve response quality and consistency.",
+      "syntax": "Test \u2192 Improve",
+      "example": "Rewrite prompt for better accuracy.",
+      "output": "Optimized prompt",
+      "tips": [
+        "Iterate based on results."
+      ]
+    },
+    {
+      "topic": "Prompt Engineering Best Practices",
+      "definition": "Use clear instructions, provide context and specify output requirements.",
+      "syntax": "Plan \u2192 Prompt \u2192 Evaluate",
+      "example": "Production AI assistant",
+      "output": "Reliable responses",
+      "tips": [
+        "Avoid ambiguity.",
+        "Use examples when needed.",
+        "Review outputs regularly."
+      ]
+    }
+  ]
+}

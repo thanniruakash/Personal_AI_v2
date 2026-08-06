@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Memory",
+  "topics": [
+    {
+      "topic": "What is Memory?",
+      "definition": "Memory enables an AI agent to retain and use information from previous interactions or stored knowledge.",
+      "syntax": "Store \u2192 Retrieve",
+      "example": "Remember a user's preferences",
+      "output": "Information recalled",
+      "tips": [
+        "Store only relevant information."
+      ]
+    },
+    {
+      "topic": "Short-Term Memory",
+      "definition": "Short-term memory holds information needed during the current task or conversation.",
+      "syntax": "Current Context",
+      "example": "Remembering the last question",
+      "output": "Context maintained",
+      "tips": [
+        "Keep it focused on the current task."
+      ]
+    },
+    {
+      "topic": "Long-Term Memory",
+      "definition": "Long-term memory stores important information for future use.",
+      "syntax": "Persistent Storage",
+      "example": "Remember project details",
+      "output": "Knowledge retained",
+      "tips": [
+        "Update stored information when necessary."
+      ]
+    },
+    {
+      "topic": "Episodic Memory",
+      "definition": "Episodic memory stores experiences or past interactions.",
+      "syntax": "Event \u2192 Memory",
+      "example": "Previous troubleshooting session",
+      "output": "Past event remembered",
+      "tips": [
+        "Record meaningful events only."
+      ]
+    },
+    {
+      "topic": "Semantic Memory",
+      "definition": "Semantic memory stores factual knowledge and concepts.",
+      "syntax": "Concept \u2192 Knowledge",
+      "example": "Definition of Kubernetes",
+      "output": "Fact retrieved",
+      "tips": [
+        "Organize knowledge clearly."
+      ]
+    },
+    {
+      "topic": "Memory Retrieval",
+      "definition": "Retrieval finds the most relevant stored information for a task.",
+      "syntax": "Query \u2192 Retrieve",
+      "example": "Search JSON knowledge base",
+      "output": "Relevant memory found",
+      "tips": [
+        "Use indexing for faster retrieval."
+      ]
+    },
+    {
+      "topic": "Memory Storage",
+      "definition": "Memory storage saves information in databases, files or vector stores.",
+      "syntax": "Information \u2192 Storage",
+      "example": "Save notes as JSON",
+      "output": "Memory stored",
+      "tips": [
+        "Back up important data regularly."
+      ]
+    },
+    {
+      "topic": "Memory Best Practices",
+      "definition": "Store useful information, retrieve efficiently and remove outdated data.",
+      "syntax": "Store \u2192 Retrieve \u2192 Update",
+      "example": "Offline AI knowledge base",
+      "output": "Reliable memory system",
+      "tips": [
+        "Avoid duplicate entries.",
+        "Keep memory organized.",
+        "Review stored information periodically."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Multi-Agent Systems",
+  "topics": [
+    {
+      "topic": "What are Multi-Agent Systems?",
+      "definition": "A multi-agent system consists of multiple AI agents working together to solve problems.",
+      "syntax": "Agent \u2194 Agent",
+      "example": "Team of coding assistants",
+      "output": "Collaborative solution",
+      "tips": [
+        "Assign clear responsibilities to each agent."
+      ]
+    },
+    {
+      "topic": "Agent Collaboration",
+      "definition": "Agents cooperate by sharing information and coordinating actions.",
+      "syntax": "Share \u2192 Collaborate",
+      "example": "Research agent and coding agent",
+      "output": "Joint task completed",
+      "tips": [
+        "Keep communication structured."
+      ]
+    },
+    {
+      "topic": "Agent Communication",
+      "definition": "Agents exchange messages, tasks and results.",
+      "syntax": "Sender \u2192 Receiver",
+      "example": "Task request message",
+      "output": "Information transferred",
+      "tips": [
+        "Use consistent message formats."
+      ]
+    },
+    {
+      "topic": "Task Distribution",
+      "definition": "Large tasks are divided among multiple agents.",
+      "syntax": "Task \u2192 Subtasks \u2192 Agents",
+      "example": "Build, test and document software",
+      "output": "Work distributed",
+      "tips": [
+        "Balance workload across agents."
+      ]
+    },
+    {
+      "topic": "Coordination",
+      "definition": "Coordination ensures agents work in the correct order without conflicts.",
+      "syntax": "Plan \u2192 Coordinate",
+      "example": "Software deployment pipeline",
+      "output": "Synchronized execution",
+      "tips": [
+        "Track task dependencies."
+      ]
+    },
+    {
+      "topic": "Conflict Resolution",
+      "definition": "Conflict resolution handles disagreements or overlapping actions between agents.",
+      "syntax": "Detect \u2192 Resolve",
+      "example": "Two agents editing the same file",
+      "output": "Conflict resolved",
+      "tips": [
+        "Define clear decision rules."
+      ]
+    },
+    {
+      "topic": "Multi-Agent Architectures",
+      "definition": "Architectures define how agents are organized and interact.",
+      "syntax": "Hierarchical / Peer-to-Peer",
+      "example": "Manager agent with worker agents",
+      "output": "Architecture designed",
+      "tips": [
+        "Choose an architecture that fits the workflow."
+      ]
+    },
+    {
+      "topic": "Multi-Agent Best Practices",
+      "definition": "Design specialized agents, coordinate effectively and monitor collaboration.",
+      "syntax": "Plan \u2192 Communicate \u2192 Execute",
+      "example": "Enterprise AI workflow",
+      "output": "Reliable multi-agent system",
+      "tips": [
+        "Keep agents modular.",
+        "Log interactions.",
+        "Evaluate performance regularly."
+      ]
+    }
+  ]
+}

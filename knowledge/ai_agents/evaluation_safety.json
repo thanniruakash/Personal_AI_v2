@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Evaluation and Safety",
+  "topics": [
+    {
+      "topic": "AI Evaluation",
+      "definition": "AI evaluation measures how accurately and reliably an AI agent performs tasks.",
+      "syntax": "Input \u2192 Evaluate \u2192 Score",
+      "example": "Evaluate question answering",
+      "output": "Performance measured",
+      "tips": [
+        "Use representative test cases."
+      ]
+    },
+    {
+      "topic": "Performance Metrics",
+      "definition": "Metrics quantify AI quality, speed and reliability.",
+      "syntax": "Accuracy / Precision / Recall",
+      "example": "Measure classification accuracy",
+      "output": "Metrics reported",
+      "tips": [
+        "Track multiple metrics together."
+      ]
+    },
+    {
+      "topic": "Testing AI Agents",
+      "definition": "Testing verifies that an AI agent behaves correctly under different scenarios.",
+      "syntax": "Test \u2192 Verify",
+      "example": "Prompt testing",
+      "output": "Issues identified",
+      "tips": [
+        "Include edge cases in tests."
+      ]
+    },
+    {
+      "topic": "AI Safety",
+      "definition": "AI safety reduces harmful or unintended behavior.",
+      "syntax": "Detect \u2192 Prevent",
+      "example": "Prevent unsafe outputs",
+      "output": "Safer AI",
+      "tips": [
+        "Define safety rules clearly."
+      ]
+    },
+    {
+      "topic": "Security",
+      "definition": "Security protects AI systems, data and users from unauthorized access.",
+      "syntax": "Authenticate \u2192 Authorize",
+      "example": "Secure API access",
+      "output": "Protected system",
+      "tips": [
+        "Encrypt sensitive data."
+      ]
+    },
+    {
+      "topic": "Risk Management",
+      "definition": "Risk management identifies and reduces operational risks.",
+      "syntax": "Identify \u2192 Mitigate",
+      "example": "Failure recovery plan",
+      "output": "Risks reduced",
+      "tips": [
+        "Review risks regularly."
+      ]
+    },
+    {
+      "topic": "Monitoring and Auditing",
+      "definition": "Monitoring and auditing track AI behavior over time.",
+      "syntax": "Monitor \u2192 Audit",
+      "example": "Log AI decisions",
+      "output": "Activity recorded",
+      "tips": [
+        "Review logs for anomalies."
+      ]
+    },
+    {
+      "topic": "Evaluation & Safety Best Practices",
+      "definition": "Continuously evaluate, monitor and improve AI systems while protecting users and data.",
+      "syntax": "Test \u2192 Monitor \u2192 Improve",
+      "example": "Production AI assistant",
+      "output": "Reliable and safe AI",
+      "tips": [
+        "Monitor continuously.",
+        "Update safety rules.",
+        "Document evaluations."
+      ]
+    }
+  ]
+}

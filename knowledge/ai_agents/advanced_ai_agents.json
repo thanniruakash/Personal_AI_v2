@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Advanced AI Agents",
+  "topics": [
+    {
+      "topic": "Autonomous Agents",
+      "definition": "Autonomous agents perform tasks independently based on goals and available information.",
+      "syntax": "Goal \u2192 Plan \u2192 Act",
+      "example": "Personal offline AI assistant",
+      "output": "Task completed",
+      "tips": [
+        "Set clear operating boundaries."
+      ]
+    },
+    {
+      "topic": "Goal-Oriented Agents",
+      "definition": "These agents focus on achieving defined objectives by selecting appropriate actions.",
+      "syntax": "Goal \u2192 Decision",
+      "example": "Complete a coding project",
+      "output": "Goal achieved",
+      "tips": [
+        "Prioritize important goals first."
+      ]
+    },
+    {
+      "topic": "Agent Workflows",
+      "definition": "Agent workflows organize tasks into structured execution steps.",
+      "syntax": "Input \u2192 Plan \u2192 Execute \u2192 Review",
+      "example": "Analyze file and generate report",
+      "output": "Workflow completed",
+      "tips": [
+        "Keep workflows modular."
+      ]
+    },
+    {
+      "topic": "Agent Frameworks",
+      "definition": "Frameworks provide tools for building and managing AI agents.",
+      "syntax": "Framework \u2192 Agent",
+      "example": "LangGraph or AutoGen",
+      "output": "Agent created",
+      "tips": [
+        "Choose a framework that matches project needs."
+      ]
+    },
+    {
+      "topic": "Human-in-the-Loop",
+      "definition": "Humans review or approve important AI actions before execution.",
+      "syntax": "AI \u2192 Human \u2192 Action",
+      "example": "Approve generated code",
+      "output": "Verified result",
+      "tips": [
+        "Use for high-impact decisions."
+      ]
+    },
+    {
+      "topic": "Agent Optimization",
+      "definition": "Optimization improves agent speed, accuracy and resource usage.",
+      "syntax": "Measure \u2192 Improve",
+      "example": "Reduce response time",
+      "output": "Better performance",
+      "tips": [
+        "Profile and refine bottlenecks."
+      ]
+    },
+    {
+      "topic": "Future of AI Agents",
+      "definition": "Future agents will become more collaborative, multimodal and capable of handling complex tasks.",
+      "syntax": "Learn \u2192 Adapt",
+      "example": "Advanced personal assistants",
+      "output": "Future capabilities understood",
+      "tips": [
+        "Design systems to be extensible."
+      ]
+    },
+    {
+      "topic": "Advanced AI Agents Best Practices",
+      "definition": "Build modular, secure, efficient and continuously evaluated AI agents.",
+      "syntax": "Design \u2192 Test \u2192 Deploy \u2192 Improve",
+      "example": "Enterprise AI platform",
+      "output": "Reliable AI agent",
+      "tips": [
+        "Monitor behavior.",
+        "Document workflows.",
+        "Improve iteratively."
+      ]
+    }
+  ]
+}

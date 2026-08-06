@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Planning and Reasoning",
+  "topics": [
+    {
+      "topic": "Goal Planning",
+      "definition": "Goal planning identifies the objective and creates a strategy to achieve it.",
+      "syntax": "Goal \u2192 Plan",
+      "example": "Build an offline AI assistant",
+      "output": "Plan created",
+      "tips": [
+        "Define clear and measurable goals."
+      ]
+    },
+    {
+      "topic": "Task Decomposition",
+      "definition": "Break a complex task into smaller, manageable subtasks.",
+      "syntax": "Task \u2192 Subtasks",
+      "example": "Design \u2192 Code \u2192 Test \u2192 Deploy",
+      "output": "Tasks organized",
+      "tips": [
+        "Solve one subtask at a time."
+      ]
+    },
+    {
+      "topic": "Reasoning",
+      "definition": "Reasoning analyzes available information to choose the best solution.",
+      "syntax": "Input \u2192 Analyze \u2192 Decision",
+      "example": "Debugging a program",
+      "output": "Decision reached",
+      "tips": [
+        "Base decisions on reliable information."
+      ]
+    },
+    {
+      "topic": "Decision Trees",
+      "definition": "Decision trees represent choices and their possible outcomes.",
+      "syntax": "Decision \u2192 Branches",
+      "example": "Choose the best algorithm",
+      "output": "Decision path",
+      "tips": [
+        "Evaluate each branch logically."
+      ]
+    },
+    {
+      "topic": "ReAct Pattern",
+      "definition": "The ReAct pattern combines reasoning with actions to solve tasks step by step.",
+      "syntax": "Reason \u2192 Act \u2192 Observe",
+      "example": "Search, analyze and answer",
+      "output": "Task completed",
+      "tips": [
+        "Review observations before the next action."
+      ]
+    },
+    {
+      "topic": "Task Execution",
+      "definition": "Execution performs planned actions in the correct order.",
+      "syntax": "Plan \u2192 Execute",
+      "example": "Run automation workflow",
+      "output": "Task finished",
+      "tips": [
+        "Track progress during execution."
+      ]
+    },
+    {
+      "topic": "Self-Reflection",
+      "definition": "Self-reflection evaluates results to identify improvements.",
+      "syntax": "Execute \u2192 Review",
+      "example": "Check generated code",
+      "output": "Improved result",
+      "tips": [
+        "Learn from mistakes and refine the process."
+      ]
+    },
+    {
+      "topic": "Planning & Reasoning Best Practices",
+      "definition": "Plan carefully, reason logically, execute safely and continuously improve.",
+      "syntax": "Plan \u2192 Reason \u2192 Execute \u2192 Review",
+      "example": "Offline AI workflow",
+      "output": "Reliable AI behavior",
+      "tips": [
+        "Break large tasks into steps.",
+        "Validate results.",
+        "Improve plans over time."
+      ]
+    }
+  ]
+}

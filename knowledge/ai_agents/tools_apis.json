@@ -1,0 +1,88 @@
+{
+  "subject": "AI Agents",
+  "section": "Tools and APIs",
+  "topics": [
+    {
+      "topic": "Tool Calling",
+      "definition": "Tool calling allows an AI agent to use external tools to complete tasks.",
+      "syntax": "User \u2192 Agent \u2192 Tool \u2192 Result",
+      "example": "Use a calculator for arithmetic",
+      "output": "Tool result returned",
+      "tips": [
+        "Choose the right tool for each task."
+      ]
+    },
+    {
+      "topic": "API Integration",
+      "definition": "APIs let AI agents communicate with external services.",
+      "syntax": "Request \u2192 API \u2192 Response",
+      "example": "Weather API",
+      "output": "API data received",
+      "tips": [
+        "Handle API errors gracefully."
+      ]
+    },
+    {
+      "topic": "File Handling",
+      "definition": "Agents can read, write and organize files to accomplish tasks.",
+      "syntax": "Open \u2192 Read \u2192 Save",
+      "example": "Read a JSON file",
+      "output": "File processed",
+      "tips": [
+        "Validate file paths and formats."
+      ]
+    },
+    {
+      "topic": "Web Search",
+      "definition": "Web search retrieves up-to-date information from online sources.",
+      "syntax": "Query \u2192 Search \u2192 Results",
+      "example": "Latest AI news",
+      "output": "Search results",
+      "tips": [
+        "Use only when current information is needed."
+      ]
+    },
+    {
+      "topic": "Calculators and Utilities",
+      "definition": "Utility tools perform calculations, conversions and other helper functions.",
+      "syntax": "Input \u2192 Utility",
+      "example": "Unit conversion",
+      "output": "Calculated result",
+      "tips": [
+        "Prefer tools over manual calculations when accuracy matters."
+      ]
+    },
+    {
+      "topic": "Tool Selection",
+      "definition": "The agent chooses the most appropriate tool based on the user's request.",
+      "syntax": "Task \u2192 Tool",
+      "example": "Image editor for image tasks",
+      "output": "Correct tool selected",
+      "tips": [
+        "Avoid unnecessary tool usage."
+      ]
+    },
+    {
+      "topic": "Workflow Automation",
+      "definition": "Automation combines multiple tools into a single workflow.",
+      "syntax": "Step1 \u2192 Step2 \u2192 Step3",
+      "example": "Read file \u2192 Analyze \u2192 Save report",
+      "output": "Workflow completed",
+      "tips": [
+        "Break complex workflows into clear steps."
+      ]
+    },
+    {
+      "topic": "Tools & APIs Best Practices",
+      "definition": "Use reliable tools, validate outputs and handle failures safely.",
+      "syntax": "Select \u2192 Execute \u2192 Verify",
+      "example": "Offline AI assistant",
+      "output": "Reliable tool usage",
+      "tips": [
+        "Validate results.",
+        "Log errors.",
+        "Keep APIs secure."
+      ]
+    }
+  ]
+}
