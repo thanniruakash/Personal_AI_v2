@@ -1,0 +1,118 @@
+{
+  "subject": "Linux",
+  "section": "File System",
+  "topics": [
+    {
+      "topic": "Linux Directory Structure",
+      "definition": "Linux organizes files in a hierarchical tree starting from the root directory.",
+      "syntax": "/",
+      "example": "/home/user",
+      "output": "Structured file system",
+      "tips": [
+        "Learn the standard directory layout."
+      ]
+    },
+    {
+      "topic": "Root Directory (/)",
+      "definition": "The root directory is the top-level directory containing all other directories.",
+      "syntax": "/",
+      "example": "/etc",
+      "output": "Root accessed",
+      "tips": [
+        "All paths originate here."
+      ]
+    },
+    {
+      "topic": "Home Directory",
+      "definition": "The home directory stores personal files and user settings.",
+      "syntax": "/home/username",
+      "example": "/home/akash",
+      "output": "User files stored",
+      "tips": [
+        "Keep personal work here."
+      ]
+    },
+    {
+      "topic": "/bin",
+      "definition": "Contains essential user command binaries.",
+      "syntax": "/bin",
+      "example": "ls, cp",
+      "output": "Commands available",
+      "tips": [
+        "Critical for basic system operation."
+      ]
+    },
+    {
+      "topic": "/etc",
+      "definition": "Stores system-wide configuration files.",
+      "syntax": "/etc",
+      "example": "/etc/passwd",
+      "output": "Configuration accessed",
+      "tips": [
+        "Edit carefully."
+      ]
+    },
+    {
+      "topic": "/var",
+      "definition": "Stores variable data such as logs, cache and mail.",
+      "syntax": "/var",
+      "example": "/var/log",
+      "output": "Variable data stored",
+      "tips": [
+        "Check logs for troubleshooting."
+      ]
+    },
+    {
+      "topic": "/tmp",
+      "definition": "Stores temporary files created by applications.",
+      "syntax": "/tmp",
+      "example": "Temporary installer files",
+      "output": "Temporary data stored",
+      "tips": [
+        "Contents may be cleared automatically."
+      ]
+    },
+    {
+      "topic": "/proc",
+      "definition": "A virtual filesystem containing process and kernel information.",
+      "syntax": "/proc",
+      "example": "/proc/cpuinfo",
+      "output": "System information displayed",
+      "tips": [
+        "Useful for diagnostics."
+      ]
+    },
+    {
+      "topic": "/dev",
+      "definition": "Contains device files representing hardware and virtual devices.",
+      "syntax": "/dev",
+      "example": "/dev/sda",
+      "output": "Device accessed",
+      "tips": [
+        "Do not modify device files carelessly."
+      ]
+    },
+    {
+      "topic": "Mounting File Systems",
+      "definition": "Mounting attaches a filesystem to the Linux directory tree.",
+      "syntax": "mount / umount",
+      "example": "mount /dev/sdb1 /mnt",
+      "output": "Filesystem mounted",
+      "tips": [
+        "Unmount before removing storage devices."
+      ]
+    },
+    {
+      "topic": "File System Best Practices",
+      "definition": "Organize files properly, back up important data and monitor disk usage.",
+      "syntax": "Organize \u2192 Backup \u2192 Monitor",
+      "example": "Regular backups",
+      "output": "Healthy filesystem",
+      "tips": [
+        "Use df and du regularly.",
+        "Keep backups.",
+        "Avoid filling the root partition."
+      ]
+    }
+  ]
+}

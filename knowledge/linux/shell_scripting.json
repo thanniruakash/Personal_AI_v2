@@ -1,0 +1,108 @@
+{
+  "subject": "Linux",
+  "section": "Shell Scripting",
+  "topics": [
+    {
+      "topic": "Introduction to Bash",
+      "definition": "Bash is the default command-line shell used on many Linux systems for executing commands and scripts.",
+      "syntax": "#!/bin/bash",
+      "example": "echo 'Hello, Linux!'",
+      "output": "Hello, Linux!",
+      "tips": [
+        "Start scripts with the correct shebang."
+      ]
+    },
+    {
+      "topic": "Variables",
+      "definition": "Variables store values for later use in a script.",
+      "syntax": "name='Akash'",
+      "example": "echo $name",
+      "output": "Akash",
+      "tips": [
+        "Avoid spaces around '='."
+      ]
+    },
+    {
+      "topic": "User Input",
+      "definition": "The read command accepts input from the user.",
+      "syntax": "read name",
+      "example": "read username",
+      "output": "Input stored",
+      "tips": [
+        "Prompt users with echo before read."
+      ]
+    },
+    {
+      "topic": "Conditions",
+      "definition": "if, elif and else execute code based on conditions.",
+      "syntax": "if [ condition ]; then",
+      "example": "Check file existence",
+      "output": "Condition evaluated",
+      "tips": [
+        "Use correct test operators."
+      ]
+    },
+    {
+      "topic": "Loops",
+      "definition": "Loops repeat commands until a condition changes.",
+      "syntax": "for / while",
+      "example": "for i in 1 2 3",
+      "output": "Repeated execution",
+      "tips": [
+        "Avoid infinite loops."
+      ]
+    },
+    {
+      "topic": "Functions",
+      "definition": "Functions group reusable commands.",
+      "syntax": "function_name() { }",
+      "example": "greet()",
+      "output": "Function executed",
+      "tips": [
+        "Use functions to reduce duplicate code."
+      ]
+    },
+    {
+      "topic": "Arrays",
+      "definition": "Arrays store multiple values in one variable.",
+      "syntax": "arr=(a b c)",
+      "example": "echo ${arr[0]}",
+      "output": "a",
+      "tips": [
+        "Indexing starts at 0."
+      ]
+    },
+    {
+      "topic": "Script Arguments",
+      "definition": "Scripts can receive arguments from the command line.",
+      "syntax": "$1 $2 $# $@",
+      "example": "./script.sh hello",
+      "output": "Argument processed",
+      "tips": [
+        "Validate user input."
+      ]
+    },
+    {
+      "topic": "Error Handling",
+      "definition": "Check command results and handle errors gracefully.",
+      "syntax": "if [ $? -eq 0 ]",
+      "example": "Verify file copy",
+      "output": "Success or failure reported",
+      "tips": [
+        "Exit with meaningful status codes."
+      ]
+    },
+    {
+      "topic": "Shell Scripting Best Practices",
+      "definition": "Write readable, modular and well-tested scripts.",
+      "syntax": "Write \u2192 Test \u2192 Execute",
+      "example": "Backup script",
+      "output": "Reliable script",
+      "tips": [
+        "Comment important logic.",
+        "Quote variables.",
+        "Test scripts before production."
+      ]
+    }
+  ]
+}

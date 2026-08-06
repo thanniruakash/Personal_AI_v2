@@ -1,0 +1,87 @@
+{
+  "subject": "Operating Systems",
+  "section": "Process Management",
+  "topics": [
+    {
+      "topic": "Process",
+      "definition": "A process is a program in execution with its own memory and resources.",
+      "syntax": "Program \u2192 Process",
+      "example": "Running a web browser",
+      "output": "Process created",
+      "tips": [
+        "Each process has a unique Process ID (PID)."
+      ]
+    },
+    {
+      "topic": "Thread",
+      "definition": "A thread is the smallest unit of CPU execution within a process.",
+      "syntax": "Process \u2192 Threads",
+      "example": "Multiple browser tabs",
+      "output": "Thread executed",
+      "tips": [
+        "Threads share process memory."
+      ]
+    },
+    {
+      "topic": "Process States",
+      "definition": "A process moves through different execution states.",
+      "syntax": "New \u2192 Ready \u2192 Running \u2192 Waiting \u2192 Terminated",
+      "example": "Running application",
+      "output": "State changed",
+      "tips": [
+        "Understand the process life cycle."
+      ]
+    },
+    {
+      "topic": "Process Control Block (PCB)",
+      "definition": "PCB stores information about a process such as PID, state and CPU registers.",
+      "syntax": "PID, State, Registers",
+      "example": "PCB for Process 101",
+      "output": "Process information stored",
+      "tips": [
+        "The OS uses the PCB to manage processes."
+      ]
+    },
+    {
+      "topic": "Context Switching",
+      "definition": "Context switching saves one process state and loads another.",
+      "syntax": "Save \u2192 Switch \u2192 Restore",
+      "example": "CPU switches between two apps",
+      "output": "Context switched",
+      "tips": [
+        "Frequent switching adds overhead."
+      ]
+    },
+    {
+      "topic": "Parent and Child Processes",
+      "definition": "A parent process can create one or more child processes.",
+      "syntax": "fork()",
+      "example": "Linux process creation",
+      "output": "Child process created",
+      "tips": [
+        "Child processes inherit resources."
+      ]
+    },
+    {
+      "topic": "Multithreading",
+      "definition": "Multithreading allows multiple threads to execute within a process.",
+      "syntax": "Thread1 || Thread2",
+      "example": "Video playback while downloading",
+      "output": "Concurrent execution",
+      "tips": [
+        "Improves responsiveness."
+      ]
+    },
+    {
+      "topic": "Process Management Best Practices",
+      "definition": "Efficient scheduling, synchronization and resource allocation improve system performance.",
+      "syntax": "Schedule \u2192 Monitor",
+      "example": "Terminate unused processes",
+      "output": "Optimized system",
+      "tips": [
+        "Avoid unnecessary background processes.",
+        "Monitor CPU and memory usage."
+      ]
+    }
+  ]
+}

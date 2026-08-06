@@ -1,0 +1,108 @@
+{
+  "subject": "Linux",
+  "section": "Linux Basics",
+  "topics": [
+    {
+      "topic": "What is Linux?",
+      "definition": "Linux is an open-source, Unix-like operating system kernel used in servers, desktops, mobile devices and embedded systems.",
+      "syntax": "Hardware \u2192 Kernel \u2192 Shell \u2192 User",
+      "example": "Ubuntu running on a laptop",
+      "output": "Linux system started",
+      "tips": [
+        "Linux is free and highly customizable."
+      ]
+    },
+    {
+      "topic": "History of Linux",
+      "definition": "Linux was created by Linus Torvalds in 1991 and is developed by a global open-source community.",
+      "syntax": "1991 \u2192 Present",
+      "example": "Linux kernel releases",
+      "output": "History understood",
+      "tips": [
+        "Many distributions are built on the Linux kernel."
+      ]
+    },
+    {
+      "topic": "Linux Architecture",
+      "definition": "Linux architecture consists of hardware, kernel, shell and user applications.",
+      "syntax": "Hardware \u2192 Kernel \u2192 Shell \u2192 Applications",
+      "example": "Bash interacting with the kernel",
+      "output": "Commands executed",
+      "tips": [
+        "The kernel manages system resources."
+      ]
+    },
+    {
+      "topic": "Linux Distributions",
+      "definition": "A Linux distribution combines the Linux kernel with software and package managers.",
+      "syntax": "Kernel + Packages",
+      "example": "Ubuntu, Debian, Fedora",
+      "output": "Distribution selected",
+      "tips": [
+        "Choose a distribution based on your needs."
+      ]
+    },
+    {
+      "topic": "Kernel",
+      "definition": "The kernel is the core of Linux and manages memory, processes, devices and files.",
+      "syntax": "Kernel",
+      "example": "Managing CPU resources",
+      "output": "Resources managed",
+      "tips": [
+        "Do not modify the kernel unless necessary."
+      ]
+    },
+    {
+      "topic": "Shell",
+      "definition": "The shell is the command-line interface used to interact with Linux.",
+      "syntax": "command",
+      "example": "ls",
+      "output": "Directory listing",
+      "tips": [
+        "Bash is the most common Linux shell."
+      ]
+    },
+    {
+      "topic": "File System Hierarchy",
+      "definition": "Linux organizes files in a hierarchical directory structure starting from the root directory (/).",
+      "syntax": "/",
+      "example": "/home/user",
+      "output": "Files organized",
+      "tips": [
+        "Learn the standard Linux directories."
+      ]
+    },
+    {
+      "topic": "Advantages of Linux",
+      "definition": "Linux is secure, stable, fast and highly customizable.",
+      "syntax": "Pros",
+      "example": "Web servers",
+      "output": "Benefits identified",
+      "tips": [
+        "Widely used in cloud computing."
+      ]
+    },
+    {
+      "topic": "Disadvantages of Linux",
+      "definition": "Some commercial software and hardware have limited Linux support.",
+      "syntax": "Cons",
+      "example": "Certain proprietary applications",
+      "output": "Limitations identified",
+      "tips": [
+        "Check software compatibility first."
+      ]
+    },
+    {
+      "topic": "Linux Best Practices",
+      "definition": "Keep the system updated, use strong passwords and follow the principle of least privilege.",
+      "syntax": "Update \u2192 Secure \u2192 Monitor",
+      "example": "Regular package updates",
+      "output": "Secure Linux system",
+      "tips": [
+        "Back up important data.",
+        "Update packages regularly.",
+        "Use sudo carefully."
+      ]
+    }
+  ]
+}

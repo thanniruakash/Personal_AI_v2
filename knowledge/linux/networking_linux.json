@@ -1,0 +1,118 @@
+{
+  "subject": "Linux",
+  "section": "Linux Networking",
+  "topics": [
+    {
+      "topic": "IP Address",
+      "definition": "An IP address uniquely identifies a device on a network.",
+      "syntax": "IPv4 / IPv6",
+      "example": "192.168.1.10",
+      "output": "Device identified",
+      "tips": [
+        "Use private IPs inside local networks."
+      ]
+    },
+    {
+      "topic": "ifconfig",
+      "definition": "Displays or configures network interfaces (legacy tool).",
+      "syntax": "ifconfig",
+      "example": "ifconfig eth0",
+      "output": "Interface details",
+      "tips": [
+        "Many systems now prefer the ip command."
+      ]
+    },
+    {
+      "topic": "ip",
+      "definition": "Modern command to configure and display networking information.",
+      "syntax": "ip addr",
+      "example": "ip route",
+      "output": "Network information",
+      "tips": [
+        "Preferred replacement for ifconfig."
+      ]
+    },
+    {
+      "topic": "ping",
+      "definition": "Tests connectivity between devices.",
+      "syntax": "ping host",
+      "example": "ping google.com",
+      "output": "Reply received",
+      "tips": [
+        "Use Ctrl+C to stop continuous ping."
+      ]
+    },
+    {
+      "topic": "netstat",
+      "definition": "Displays network connections, routing tables and ports.",
+      "syntax": "netstat -tuln",
+      "example": "netstat -an",
+      "output": "Connection details",
+      "tips": [
+        "Often replaced by ss."
+      ]
+    },
+    {
+      "topic": "ss",
+      "definition": "Shows socket and network connection information.",
+      "syntax": "ss -tuln",
+      "example": "ss -a",
+      "output": "Sockets listed",
+      "tips": [
+        "Faster than netstat."
+      ]
+    },
+    {
+      "topic": "traceroute",
+      "definition": "Shows the path packets take to a destination.",
+      "syntax": "traceroute host",
+      "example": "traceroute google.com",
+      "output": "Route displayed",
+      "tips": [
+        "Useful for diagnosing network delays."
+      ]
+    },
+    {
+      "topic": "curl",
+      "definition": "Transfers data to and from servers.",
+      "syntax": "curl URL",
+      "example": "curl https://example.com",
+      "output": "Server response",
+      "tips": [
+        "Useful for testing APIs."
+      ]
+    },
+    {
+      "topic": "wget",
+      "definition": "Downloads files from the internet.",
+      "syntax": "wget URL",
+      "example": "wget https://example.com/file.zip",
+      "output": "File downloaded",
+      "tips": [
+        "Supports resuming downloads."
+      ]
+    },
+    {
+      "topic": "SSH",
+      "definition": "Secure Shell provides encrypted remote login and file transfer.",
+      "syntax": "ssh user@host",
+      "example": "ssh user@192.168.1.5",
+      "output": "Remote session started",
+      "tips": [
+        "Use key-based authentication when possible."
+      ]
+    },
+    {
+      "topic": "Linux Networking Best Practices",
+      "definition": "Secure services, monitor connections and keep network tools updated.",
+      "syntax": "Monitor \u2192 Secure",
+      "example": "Audit open ports",
+      "output": "Reliable network",
+      "tips": [
+        "Disable unused services.",
+        "Use SSH instead of Telnet.",
+        "Monitor firewall rules regularly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "subject": "Linux",
+  "section": "Advanced Linux",
+  "topics": [
+    {
+      "topic": "systemd",
+      "definition": "systemd is the system and service manager used by many Linux distributions.",
+      "syntax": "systemctl",
+      "example": "systemctl status ssh",
+      "output": "Service status displayed",
+      "tips": [
+        "Use systemctl to manage services."
+      ]
+    },
+    {
+      "topic": "Linux Services",
+      "definition": "Services are background programs that start automatically or on demand.",
+      "syntax": "systemctl start|stop service",
+      "example": "systemctl restart nginx",
+      "output": "Service managed",
+      "tips": [
+        "Enable only required services."
+      ]
+    },
+    {
+      "topic": "Package Managers",
+      "definition": "Package managers install, update and remove software.",
+      "syntax": "apt / yum / dnf",
+      "example": "apt install git",
+      "output": "Package installed",
+      "tips": [
+        "Update package lists regularly."
+      ]
+    },
+    {
+      "topic": "apt",
+      "definition": "apt manages packages on Debian-based systems.",
+      "syntax": "apt update && apt upgrade",
+      "example": "apt install curl",
+      "output": "Packages updated",
+      "tips": [
+        "Run update before installing packages."
+      ]
+    },
+    {
+      "topic": "yum",
+      "definition": "yum manages packages on older RHEL-based systems.",
+      "syntax": "yum install package",
+      "example": "yum install httpd",
+      "output": "Package installed",
+      "tips": [
+        "Use on supported distributions."
+      ]
+    },
+    {
+      "topic": "dnf",
+      "definition": "dnf is the modern package manager for Fedora and newer RHEL systems.",
+      "syntax": "dnf install package",
+      "example": "dnf install git",
+      "output": "Package installed",
+      "tips": [
+        "dnf replaces yum on many systems."
+      ]
+    },
+    {
+      "topic": "System Logs",
+      "definition": "System logs record events, errors and service activity.",
+      "syntax": "journalctl",
+      "example": "journalctl -xe",
+      "output": "Logs displayed",
+      "tips": [
+        "Check logs during troubleshooting."
+      ]
+    },
+    {
+      "topic": "Cron",
+      "definition": "Cron schedules commands to run automatically.",
+      "syntax": "crontab -e",
+      "example": "0 2 * * * backup.sh",
+      "output": "Task scheduled",
+      "tips": [
+        "Verify cron jobs after editing."
+      ]
+    },
+    {
+      "topic": "Docker on Linux",
+      "definition": "Docker runs applications in lightweight containers.",
+      "syntax": "docker run image",
+      "example": "docker run hello-world",
+      "output": "Container started",
+      "tips": [
+        "Keep Docker updated."
+      ]
+    },
+    {
+      "topic": "Performance Monitoring",
+      "definition": "Monitor CPU, memory, disk and network usage.",
+      "syntax": "top, htop, vmstat",
+      "example": "htop",
+      "output": "System performance displayed",
+      "tips": [
+        "Monitor regularly to detect issues early."
+      ]
+    },
+    {
+      "topic": "Advanced Linux Best Practices",
+      "definition": "Secure the system, automate routine tasks and monitor performance continuously.",
+      "syntax": "Secure \u2192 Automate \u2192 Monitor",
+      "example": "Automatic updates and backups",
+      "output": "Reliable Linux server",
+      "tips": [
+        "Keep software updated.",
+        "Back up important data.",
+        "Audit logs regularly."
+      ]
+    }
+  ]
+}

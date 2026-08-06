@@ -1,0 +1,278 @@
+{
+  "subject": "Linux",
+  "section": "Linux Commands",
+  "topics": [
+    {
+      "topic": "pwd",
+      "definition": "Displays the current working directory.",
+      "syntax": "pwd",
+      "example": "pwd",
+      "output": "/home/user",
+      "tips": [
+        "Use it to know your current location."
+      ]
+    },
+    {
+      "topic": "ls",
+      "definition": "Lists files and directories.",
+      "syntax": "ls -la",
+      "example": "ls",
+      "output": "Documents Downloads",
+      "tips": [
+        "Use -l and -a for details."
+      ]
+    },
+    {
+      "topic": "cd",
+      "definition": "Changes the current directory.",
+      "syntax": "cd /path",
+      "example": "cd Documents",
+      "output": "Directory changed",
+      "tips": [
+        "Use cd .. to go back."
+      ]
+    },
+    {
+      "topic": "mkdir",
+      "definition": "Creates a new directory.",
+      "syntax": "mkdir name",
+      "example": "mkdir project",
+      "output": "Directory created",
+      "tips": [
+        "Use descriptive names."
+      ]
+    },
+    {
+      "topic": "rmdir",
+      "definition": "Removes an empty directory.",
+      "syntax": "rmdir name",
+      "example": "rmdir temp",
+      "output": "Directory removed",
+      "tips": [
+        "Works only for empty directories."
+      ]
+    },
+    {
+      "topic": "touch",
+      "definition": "Creates an empty file or updates timestamp.",
+      "syntax": "touch file.txt",
+      "example": "touch notes.txt",
+      "output": "File created",
+      "tips": [
+        "Useful for quick files."
+      ]
+    },
+    {
+      "topic": "cp",
+      "definition": "Copies files or directories.",
+      "syntax": "cp src dst",
+      "example": "cp a.txt b.txt",
+      "output": "File copied",
+      "tips": [
+        "Use -r for directories."
+      ]
+    },
+    {
+      "topic": "mv",
+      "definition": "Moves or renames files.",
+      "syntax": "mv src dst",
+      "example": "mv old.txt new.txt",
+      "output": "File moved",
+      "tips": [
+        "Can also rename files."
+      ]
+    },
+    {
+      "topic": "rm",
+      "definition": "Removes files.",
+      "syntax": "rm file",
+      "example": "rm temp.txt",
+      "output": "File deleted",
+      "tips": [
+        "Use -r for directories carefully."
+      ]
+    },
+    {
+      "topic": "cat",
+      "definition": "Displays file contents.",
+      "syntax": "cat file",
+      "example": "cat notes.txt",
+      "output": "File contents shown",
+      "tips": [
+        "Use for small files."
+      ]
+    },
+    {
+      "topic": "nano",
+      "definition": "Terminal text editor.",
+      "syntax": "nano file",
+      "example": "nano script.sh",
+      "output": "Editor opened",
+      "tips": [
+        "Easy for beginners."
+      ]
+    },
+    {
+      "topic": "vim",
+      "definition": "Advanced text editor.",
+      "syntax": "vim file",
+      "example": "vim app.py",
+      "output": "Editor opened",
+      "tips": [
+        "Learn basic commands."
+      ]
+    },
+    {
+      "topic": "grep",
+      "definition": "Searches text patterns.",
+      "syntax": "grep word file",
+      "example": "grep error log.txt",
+      "output": "Matches displayed",
+      "tips": [
+        "Supports regex."
+      ]
+    },
+    {
+      "topic": "find",
+      "definition": "Finds files and directories.",
+      "syntax": "find . -name name",
+      "example": "find . -name '*.py'",
+      "output": "Matching files",
+      "tips": [
+        "Very powerful."
+      ]
+    },
+    {
+      "topic": "chmod",
+      "definition": "Changes file permissions.",
+      "syntax": "chmod 755 file",
+      "example": "chmod +x run.sh",
+      "output": "Permissions changed",
+      "tips": [
+        "Use least privilege."
+      ]
+    },
+    {
+      "topic": "chown",
+      "definition": "Changes file owner.",
+      "syntax": "chown user file",
+      "example": "chown alice file.txt",
+      "output": "Owner changed",
+      "tips": [
+        "Requires privileges."
+      ]
+    },
+    {
+      "topic": "df",
+      "definition": "Shows disk usage.",
+      "syntax": "df -h",
+      "example": "df -h",
+      "output": "Disk space shown",
+      "tips": [
+        "-h is human-readable."
+      ]
+    },
+    {
+      "topic": "du",
+      "definition": "Shows directory/file size.",
+      "syntax": "du -sh dir",
+      "example": "du -sh Downloads",
+      "output": "Size displayed",
+      "tips": [
+        "Useful for cleanup."
+      ]
+    },
+    {
+      "topic": "top",
+      "definition": "Displays running processes.",
+      "syntax": "top",
+      "example": "top",
+      "output": "Live process list",
+      "tips": [
+        "Press q to quit."
+      ]
+    },
+    {
+      "topic": "ps",
+      "definition": "Shows process status.",
+      "syntax": "ps -ef",
+      "example": "ps aux",
+      "output": "Processes listed",
+      "tips": [
+        "Combine with grep."
+      ]
+    },
+    {
+      "topic": "kill",
+      "definition": "Terminates a process.",
+      "syntax": "kill PID",
+      "example": "kill 1234",
+      "output": "Process stopped",
+      "tips": [
+        "Use correct PID."
+      ]
+    },
+    {
+      "topic": "ping",
+      "definition": "Tests network connectivity.",
+      "syntax": "ping host",
+      "example": "ping google.com",
+      "output": "Replies received",
+      "tips": [
+        "Ctrl+C to stop."
+      ]
+    },
+    {
+      "topic": "curl",
+      "definition": "Transfers data from URLs.",
+      "syntax": "curl URL",
+      "example": "curl https://example.com",
+      "output": "Response received",
+      "tips": [
+        "Useful for APIs."
+      ]
+    },
+    {
+      "topic": "wget",
+      "definition": "Downloads files.",
+      "syntax": "wget URL",
+      "example": "wget https://example.com/file.zip",
+      "output": "File downloaded",
+      "tips": [
+        "Supports resume."
+      ]
+    },
+    {
+      "topic": "tar",
+      "definition": "Archives files.",
+      "syntax": "tar -czf file.tar.gz dir",
+      "example": "tar -xzf backup.tar.gz",
+      "output": "Archive created/extracted",
+      "tips": [
+        "Common on Linux."
+      ]
+    },
+    {
+      "topic": "zip/unzip",
+      "definition": "Compresses/extracts ZIP files.",
+      "syntax": "zip/unzip",
+      "example": "zip docs.zip *.txt",
+      "output": "Archive handled",
+      "tips": [
+        "Useful for sharing."
+      ]
+    },
+    {
+      "topic": "Linux Command Best Practices",
+      "definition": "Use commands carefully, verify paths before deleting files and prefer least-privilege access.",
+      "syntax": "Review \u2192 Execute",
+      "example": "Check with ls before rm",
+      "output": "Safer command usage",
+      "tips": [
+        "Read manual pages with man.",
+        "Test commands on non-critical files.",
+        "Use sudo only when necessary."
+      ]
+    }
+  ]
+}

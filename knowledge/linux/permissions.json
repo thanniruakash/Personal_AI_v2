@@ -1,0 +1,117 @@
+{
+  "subject": "Linux",
+  "section": "Permissions",
+  "topics": [
+    {
+      "topic": "File Permissions",
+      "definition": "Linux controls access using owner, group and others permissions.",
+      "syntax": "rwxr-xr--",
+      "example": "ls -l",
+      "output": "Permissions displayed",
+      "tips": [
+        "Review permissions regularly."
+      ]
+    },
+    {
+      "topic": "Read (r)",
+      "definition": "Allows viewing file contents.",
+      "syntax": "r",
+      "example": "cat file.txt",
+      "output": "File read",
+      "tips": [
+        "Grant only when needed."
+      ]
+    },
+    {
+      "topic": "Write (w)",
+      "definition": "Allows modifying a file.",
+      "syntax": "w",
+      "example": "echo hi >> file.txt",
+      "output": "File updated",
+      "tips": [
+        "Limit write access."
+      ]
+    },
+    {
+      "topic": "Execute (x)",
+      "definition": "Allows executing a file.",
+      "syntax": "x",
+      "example": "./script.sh",
+      "output": "Program executed",
+      "tips": [
+        "Use for executable files only."
+      ]
+    },
+    {
+      "topic": "chmod",
+      "definition": "Changes file permissions.",
+      "syntax": "chmod 755 file",
+      "example": "chmod +x run.sh",
+      "output": "Permissions changed",
+      "tips": [
+        "Understand numeric modes."
+      ]
+    },
+    {
+      "topic": "chown",
+      "definition": "Changes file owner.",
+      "syntax": "chown user file",
+      "example": "chown alice app.py",
+      "output": "Owner changed",
+      "tips": [
+        "Requires privileges."
+      ]
+    },
+    {
+      "topic": "chgrp",
+      "definition": "Changes group ownership.",
+      "syntax": "chgrp group file",
+      "example": "chgrp dev app.py",
+      "output": "Group changed",
+      "tips": [
+        "Use groups effectively."
+      ]
+    },
+    {
+      "topic": "Numeric Permissions",
+      "definition": "Uses values like 755 and 644.",
+      "syntax": "755 / 644",
+      "example": "chmod 644 notes.txt",
+      "output": "Numeric permissions applied",
+      "tips": [
+        "Learn common values."
+      ]
+    },
+    {
+      "topic": "Symbolic Permissions",
+      "definition": "Uses u,g,o with +,-,= operators.",
+      "syntax": "chmod u+x file",
+      "example": "chmod g-w file",
+      "output": "Symbolic permissions applied",
+      "tips": [
+        "Useful for small changes."
+      ]
+    },
+    {
+      "topic": "sudo",
+      "definition": "Runs commands with administrator privileges.",
+      "syntax": "sudo command",
+      "example": "sudo apt update",
+      "output": "Command executed",
+      "tips": [
+        "Use only when required."
+      ]
+    },
+    {
+      "topic": "Permission Best Practices",
+      "definition": "Apply least privilege and audit permissions.",
+      "syntax": "Review \u2192 Secure",
+      "example": "Permission audit",
+      "output": "Secure system",
+      "tips": [
+        "Avoid chmod 777.",
+        "Use sudo carefully."
+      ]
+    }
+  ]
+}
