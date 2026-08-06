@@ -1,0 +1,106 @@
+{
+  "subject": "DSA",
+  "section": "Basics",
+  "topics": [
+    {
+      "topic": "What is a Data Structure?",
+      "definition": "A data structure is a way of organizing and storing data so it can be used efficiently.",
+      "syntax": "Examples: Array, Linked List, Stack",
+      "example": "An array stores elements in contiguous memory.",
+      "output": "Efficient data organization",
+      "tips": [
+        "Choose the right data structure for better performance."
+      ]
+    },
+    {
+      "topic": "What is an Algorithm?",
+      "definition": "An algorithm is a step-by-step procedure to solve a problem.",
+      "syntax": "Start \u2192 Process \u2192 End",
+      "example": "Binary Search Algorithm",
+      "output": "Problem solved",
+      "tips": [
+        "Algorithms should be correct and efficient."
+      ]
+    },
+    {
+      "topic": "Types of Data Structures",
+      "definition": "Data structures are mainly Linear and Non-Linear.",
+      "syntax": "Linear / Non-Linear",
+      "example": "Array, Stack, Queue / Tree, Graph",
+      "output": "Type identified",
+      "tips": [
+        "Understand when to use each type."
+      ]
+    },
+    {
+      "topic": "Time Complexity",
+      "definition": "Time complexity measures how the execution time grows with input size.",
+      "syntax": "O(1), O(n), O(log n)",
+      "example": "Linear Search = O(n)",
+      "output": "Execution time estimated",
+      "tips": [
+        "Lower complexity usually means faster algorithms."
+      ]
+    },
+    {
+      "topic": "Space Complexity",
+      "definition": "Space complexity measures the memory used by an algorithm.",
+      "syntax": "O(1), O(n)",
+      "example": "Merge Sort uses extra memory.",
+      "output": "Memory usage estimated",
+      "tips": [
+        "Optimize both time and space when possible."
+      ]
+    },
+    {
+      "topic": "Big-O Notation",
+      "definition": "Big-O represents the upper bound (worst-case) time complexity.",
+      "syntax": "O(n log n)",
+      "example": "Quick Sort average case",
+      "output": "Worst-case growth described",
+      "tips": [
+        "Most common notation in interviews."
+      ]
+    },
+    {
+      "topic": "Big-Omega (\u03a9) Notation",
+      "definition": "Big-Omega represents the best-case performance.",
+      "syntax": "\u03a9(1)",
+      "example": "Linear Search when item is first",
+      "output": "Best-case growth described",
+      "tips": [
+        "Represents minimum running time."
+      ]
+    },
+    {
+      "topic": "Big-Theta (\u0398) Notation",
+      "definition": "Big-Theta represents the tight bound of an algorithm.",
+      "syntax": "\u0398(n)",
+      "example": "Traversing an array",
+      "output": "Average growth described",
+      "tips": [
+        "Used when upper and lower bounds are the same."
+      ]
+    },
+    {
+      "topic": "Linear vs Non-Linear Data Structures",
+      "definition": "Linear structures store elements sequentially, while non-linear structures use hierarchical or network relationships.",
+      "syntax": "Linear / Non-Linear",
+      "example": "Array vs Tree",
+      "output": "Comparison completed",
+      "tips": [
+        "Trees and graphs are non-linear."
+      ]
+    },
+    {
+      "topic": "Advantages of DSA",
+      "definition": "DSA improves efficiency, reduces execution time and helps solve complex problems.",
+      "syntax": "N/A",
+      "example": "Using Binary Search instead of Linear Search",
+      "output": "Optimized solution",
+      "tips": [
+        "Essential for coding interviews and software development."
+      ]
+    }
+  ]
+}

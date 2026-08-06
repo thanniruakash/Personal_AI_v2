@@ -1,0 +1,102 @@
+{
+  "subject": "DSA",
+  "section": "Searching and Sorting",
+  "topics": [
+    {
+      "topic": "Linear Search",
+      "definition": "Linear search checks each element one by one until the target is found.",
+      "syntax": "for(i=0;i<n;i++)",
+      "example": "Search 25 in an array",
+      "output": "Element found/not found",
+      "tips": [
+        "Works on sorted and unsorted arrays.",
+        "Time Complexity: O(n)"
+      ]
+    },
+    {
+      "topic": "Binary Search",
+      "definition": "Binary search repeatedly divides a sorted array into halves.",
+      "syntax": "low, mid, high",
+      "example": "Search 40 in a sorted array",
+      "output": "Element found/not found",
+      "tips": [
+        "Array must be sorted.",
+        "Time Complexity: O(log n)"
+      ]
+    },
+    {
+      "topic": "Bubble Sort",
+      "definition": "Bubble sort repeatedly swaps adjacent elements if they are in the wrong order.",
+      "syntax": "Nested loops",
+      "example": "Sort 5,2,4,1",
+      "output": "1,2,4,5",
+      "tips": [
+        "Simple but slow.",
+        "Time Complexity: O(n\u00b2)"
+      ]
+    },
+    {
+      "topic": "Selection Sort",
+      "definition": "Selection sort repeatedly selects the smallest element and places it in the correct position.",
+      "syntax": "Select minimum",
+      "example": "Sort an array",
+      "output": "Sorted array",
+      "tips": [
+        "Time Complexity: O(n\u00b2)"
+      ]
+    },
+    {
+      "topic": "Insertion Sort",
+      "definition": "Insertion sort inserts each element into its correct position in the sorted part.",
+      "syntax": "Insert element",
+      "example": "Sort playing cards",
+      "output": "Sorted array",
+      "tips": [
+        "Efficient for small datasets.",
+        "Time Complexity: O(n\u00b2)"
+      ]
+    },
+    {
+      "topic": "Merge Sort",
+      "definition": "Merge sort uses divide-and-conquer to split and merge arrays.",
+      "syntax": "Divide \u2192 Merge",
+      "example": "Merge two sorted halves",
+      "output": "Sorted array",
+      "tips": [
+        "Stable sort.",
+        "Time Complexity: O(n log n)"
+      ]
+    },
+    {
+      "topic": "Quick Sort",
+      "definition": "Quick sort selects a pivot and partitions the array.",
+      "syntax": "Pivot + Partition",
+      "example": "Pivot = last element",
+      "output": "Sorted array",
+      "tips": [
+        "Average Time: O(n log n)",
+        "Worst: O(n\u00b2)"
+      ]
+    },
+    {
+      "topic": "Time Complexity Comparison",
+      "definition": "Different searching and sorting algorithms have different efficiencies.",
+      "syntax": "Big-O",
+      "example": "Binary Search O(log n), Merge Sort O(n log n)",
+      "output": "Complexity compared",
+      "tips": [
+        "Choose algorithms based on data size."
+      ]
+    },
+    {
+      "topic": "Common Programs",
+      "definition": "Common programs include searching, sorting, finding maximum/minimum and duplicate removal.",
+      "syntax": "Algorithm implementation",
+      "example": "Implement Binary Search",
+      "output": "Program executed",
+      "tips": [
+        "Practice coding these algorithms regularly."
+      ]
+    }
+  ]
+}

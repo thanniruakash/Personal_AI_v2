@@ -1,0 +1,96 @@
+{
+  "subject": "DSA",
+  "section": "Trees",
+  "topics": [
+    {
+      "topic": "Introduction to Trees",
+      "definition": "A tree is a non-linear data structure consisting of nodes connected by edges in a hierarchical manner.",
+      "syntax": "Root -> Child -> Leaf",
+      "example": "Family tree",
+      "output": "Tree created",
+      "tips": [
+        "Trees have no cycles."
+      ]
+    },
+    {
+      "topic": "Tree Terminology",
+      "definition": "Common terms include Root, Parent, Child, Sibling, Leaf, Height and Depth.",
+      "syntax": "Root, Parent, Child, Leaf",
+      "example": "A is the root, B is the child.",
+      "output": "Tree terms identified",
+      "tips": [
+        "Learn the terminology before tree algorithms."
+      ]
+    },
+    {
+      "topic": "Binary Tree",
+      "definition": "A binary tree is a tree in which each node has at most two children.",
+      "syntax": "Node -> Left, Right",
+      "example": "10 with children 5 and 20",
+      "output": "Binary tree formed",
+      "tips": [
+        "Each node has at most two children."
+      ]
+    },
+    {
+      "topic": "Binary Search Tree (BST)",
+      "definition": "A BST is a binary tree where left child values are smaller and right child values are larger than the parent.",
+      "syntax": "Left < Root < Right",
+      "example": "50, 30, 70",
+      "output": "BST created",
+      "tips": [
+        "Searching is efficient in a balanced BST."
+      ]
+    },
+    {
+      "topic": "Tree Traversals",
+      "definition": "Traversal visits all tree nodes in a specific order.",
+      "syntax": "Preorder, Inorder, Postorder",
+      "example": "Preorder: Root Left Right",
+      "output": "Nodes visited",
+      "tips": [
+        "Inorder traversal of a BST gives sorted output."
+      ]
+    },
+    {
+      "topic": "Level Order Traversal",
+      "definition": "Visits nodes level by level using a queue.",
+      "syntax": "Breadth-First Search (BFS)",
+      "example": "Level 1 \u2192 Level 2 \u2192 Level 3",
+      "output": "Levels displayed",
+      "tips": [
+        "Implemented using a queue."
+      ]
+    },
+    {
+      "topic": "Applications of Trees",
+      "definition": "Trees are used in file systems, databases, expression trees and decision making.",
+      "syntax": "N/A",
+      "example": "Folder hierarchy",
+      "output": "Application identified",
+      "tips": [
+        "BSTs and heaps are common in software."
+      ]
+    },
+    {
+      "topic": "Advantages and Disadvantages",
+      "definition": "Trees provide efficient searching and hierarchical storage but are more complex than arrays.",
+      "syntax": "N/A",
+      "example": "BST search",
+      "output": "Comparison completed",
+      "tips": [
+        "Balanced trees offer better performance."
+      ]
+    },
+    {
+      "topic": "Common Tree Programs",
+      "definition": "Typical programs include insertion, deletion, searching and traversals.",
+      "syntax": "Recursive algorithms",
+      "example": "Inorder traversal",
+      "output": "Program executed",
+      "tips": [
+        "Practice recursive tree problems."
+      ]
+    }
+  ]
+}

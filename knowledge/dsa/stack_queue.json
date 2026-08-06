@@ -1,0 +1,106 @@
+{
+  "subject": "DSA",
+  "section": "Stack and Queue",
+  "topics": [
+    {
+      "topic": "Introduction to Stack",
+      "definition": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle.",
+      "syntax": "Stack<Integer> stack;",
+      "example": "Push 10, 20, 30",
+      "output": "30 removed first",
+      "tips": [
+        "LIFO = Last In, First Out."
+      ]
+    },
+    {
+      "topic": "Stack Operations",
+      "definition": "Basic stack operations are push, pop and peek.",
+      "syntax": "push(), pop(), peek()",
+      "example": "push(10), pop()",
+      "output": "10",
+      "tips": [
+        "Check overflow and underflow."
+      ]
+    },
+    {
+      "topic": "Introduction to Queue",
+      "definition": "A queue is a linear data structure that follows the First In, First Out (FIFO) principle.",
+      "syntax": "Queue<Integer> q;",
+      "example": "Enqueue 10,20,30",
+      "output": "10 removed first",
+      "tips": [
+        "FIFO = First In, First Out."
+      ]
+    },
+    {
+      "topic": "Queue Operations",
+      "definition": "Basic queue operations are enqueue, dequeue and front.",
+      "syntax": "enqueue(), dequeue(), front()",
+      "example": "enqueue(5), dequeue()",
+      "output": "5",
+      "tips": [
+        "Insertion at rear, deletion at front."
+      ]
+    },
+    {
+      "topic": "Circular Queue",
+      "definition": "A circular queue connects the last position back to the first.",
+      "syntax": "rear=(rear+1)%size",
+      "example": "Reuse empty spaces",
+      "output": "Efficient queue",
+      "tips": [
+        "Avoids wasted space."
+      ]
+    },
+    {
+      "topic": "Priority Queue",
+      "definition": "Elements are removed according to priority instead of insertion order.",
+      "syntax": "PriorityQueue",
+      "example": "Highest priority served first",
+      "output": "Priority element removed",
+      "tips": [
+        "Used in scheduling algorithms."
+      ]
+    },
+    {
+      "topic": "Applications of Stack",
+      "definition": "Stacks are used in function calls, expression evaluation and undo operations.",
+      "syntax": "N/A",
+      "example": "Browser back button",
+      "output": "Task completed",
+      "tips": [
+        "Useful in recursion."
+      ]
+    },
+    {
+      "topic": "Applications of Queue",
+      "definition": "Queues are used in CPU scheduling, printers and BFS traversal.",
+      "syntax": "N/A",
+      "example": "Printer queue",
+      "output": "Tasks processed",
+      "tips": [
+        "Ideal for waiting-line problems."
+      ]
+    },
+    {
+      "topic": "Stack vs Queue",
+      "definition": "Stack follows LIFO while Queue follows FIFO.",
+      "syntax": "LIFO vs FIFO",
+      "example": "Stack: Plates, Queue: Ticket line",
+      "output": "Comparison",
+      "tips": [
+        "Common interview question."
+      ]
+    },
+    {
+      "topic": "Common Programs",
+      "definition": "Programs include stack implementation, queue implementation, parenthesis matching and infix-to-postfix conversion.",
+      "syntax": "Push/Pop/Enqueue/Dequeue",
+      "example": "Balanced parentheses",
+      "output": "Program executed",
+      "tips": [
+        "Practice implementation questions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "subject": "DSA",
+  "section": "Advanced DSA",
+  "topics": [
+    {
+      "topic": "Recursion",
+      "definition": "Recursion is a technique in which a function calls itself to solve a problem.",
+      "syntax": "function(){ ... function(); }",
+      "example": "Factorial using recursion",
+      "output": "Recursive result",
+      "tips": [
+        "Always define a base case."
+      ]
+    },
+    {
+      "topic": "Dynamic Programming",
+      "definition": "Dynamic Programming solves problems by storing results of overlapping subproblems.",
+      "syntax": "Memoization / Tabulation",
+      "example": "Fibonacci using DP",
+      "output": "Optimized solution",
+      "tips": [
+        "Avoids repeated calculations."
+      ]
+    },
+    {
+      "topic": "Greedy Algorithms",
+      "definition": "Greedy algorithms choose the best option at each step to reach a solution.",
+      "syntax": "Choose locally optimal solution",
+      "example": "Activity Selection",
+      "output": "Greedy solution",
+      "tips": [
+        "Does not always produce the global optimum."
+      ]
+    },
+    {
+      "topic": "Backtracking",
+      "definition": "Backtracking explores all possible solutions by undoing choices when necessary.",
+      "syntax": "Choose \u2192 Explore \u2192 Backtrack",
+      "example": "N-Queens Problem",
+      "output": "Valid solution found",
+      "tips": [
+        "Useful for constraint satisfaction problems."
+      ]
+    },
+    {
+      "topic": "Divide and Conquer",
+      "definition": "Divide and Conquer divides a problem into smaller subproblems, solves them and combines the results.",
+      "syntax": "Divide \u2192 Conquer \u2192 Combine",
+      "example": "Merge Sort",
+      "output": "Problem solved",
+      "tips": [
+        "Common in efficient algorithms."
+      ]
+    },
+    {
+      "topic": "Heap",
+      "definition": "A heap is a complete binary tree used to implement priority queues.",
+      "syntax": "Min Heap / Max Heap",
+      "example": "Priority Queue",
+      "output": "Heap created",
+      "tips": [
+        "Insertion and deletion are O(log n)."
+      ]
+    },
+    {
+      "topic": "Trie",
+      "definition": "A trie is a tree used for efficient storage and searching of strings.",
+      "syntax": "Character nodes",
+      "example": "Dictionary search",
+      "output": "Word found",
+      "tips": [
+        "Used for autocomplete features."
+      ]
+    },
+    {
+      "topic": "Hashing",
+      "definition": "Hashing maps keys to values using a hash function for fast lookup.",
+      "syntax": "hash(key)",
+      "example": "Hash Table",
+      "output": "Fast search",
+      "tips": [
+        "Average lookup time is O(1)."
+      ]
+    },
+    {
+      "topic": "DSA Best Practices",
+      "definition": "Write efficient, readable and well-tested algorithms using suitable data structures.",
+      "syntax": "Choose appropriate algorithm",
+      "example": "Use Binary Search on sorted arrays",
+      "output": "Optimized program",
+      "tips": [
+        "Analyze time and space complexity.",
+        "Practice regularly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "subject": "DSA",
+  "section": "Graphs",
+  "topics": [
+    {
+      "topic": "Introduction to Graphs",
+      "definition": "A graph is a non-linear data structure consisting of vertices connected by edges.",
+      "syntax": "G = (V, E)",
+      "example": "Cities connected by roads",
+      "output": "Graph created",
+      "tips": [
+        "Graphs model real-world networks."
+      ]
+    },
+    {
+      "topic": "Vertices and Edges",
+      "definition": "Vertices (nodes) are points and edges are connections between them.",
+      "syntax": "V={A,B,C}, E={(A,B),(B,C)}",
+      "example": "A-B-C",
+      "output": "Graph components identified",
+      "tips": [
+        "Edges may be directed or undirected."
+      ]
+    },
+    {
+      "topic": "Directed Graph",
+      "definition": "A directed graph has edges with a specific direction.",
+      "syntax": "A \u2192 B",
+      "example": "Instagram follow relationship",
+      "output": "Directed edge",
+      "tips": [
+        "Also called a digraph."
+      ]
+    },
+    {
+      "topic": "Undirected Graph",
+      "definition": "An undirected graph has edges without direction.",
+      "syntax": "A \u2014 B",
+      "example": "Facebook friendship",
+      "output": "Undirected edge",
+      "tips": [
+        "Connections work both ways."
+      ]
+    },
+    {
+      "topic": "Weighted and Unweighted Graphs",
+      "definition": "Weighted graphs assign values to edges, while unweighted graphs do not.",
+      "syntax": "A --5--> B",
+      "example": "Road distance between cities",
+      "output": "Edge weight stored",
+      "tips": [
+        "Weights often represent cost or distance."
+      ]
+    },
+    {
+      "topic": "Graph Representation",
+      "definition": "Graphs can be represented using an adjacency matrix or adjacency list.",
+      "syntax": "Adjacency Matrix / Adjacency List",
+      "example": "Matrix of 0s and 1s",
+      "output": "Graph represented",
+      "tips": [
+        "Adjacency lists save memory for sparse graphs."
+      ]
+    },
+    {
+      "topic": "Breadth-First Search (BFS)",
+      "definition": "BFS visits nodes level by level using a queue.",
+      "syntax": "Queue",
+      "example": "Visit nearest nodes first",
+      "output": "BFS traversal",
+      "tips": [
+        "Finds shortest path in unweighted graphs."
+      ]
+    },
+    {
+      "topic": "Depth-First Search (DFS)",
+      "definition": "DFS explores as deep as possible before backtracking.",
+      "syntax": "Stack / Recursion",
+      "example": "Recursive graph traversal",
+      "output": "DFS traversal",
+      "tips": [
+        "Useful for cycle detection."
+      ]
+    },
+    {
+      "topic": "Applications of Graphs",
+      "definition": "Graphs are used in navigation, social networks, computer networks and scheduling.",
+      "syntax": "N/A",
+      "example": "Google Maps",
+      "output": "Application identified",
+      "tips": [
+        "Graphs are widely used in AI and networking."
+      ]
+    },
+    {
+      "topic": "Common Graph Programs",
+      "definition": "Common programs include BFS, DFS, shortest path and minimum spanning tree.",
+      "syntax": "Traversal algorithms",
+      "example": "Implement BFS",
+      "output": "Program executed",
+      "tips": [
+        "Practice graph traversal problems regularly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "subject": "DSA",
+  "section": "Arrays",
+  "topics": [
+    {
+      "topic": "Introduction to Arrays",
+      "definition": "An array is a collection of elements of the same data type stored in contiguous memory locations.",
+      "syntax": "int arr[5];",
+      "example": "int arr[5]={10,20,30,40,50};",
+      "output": "Array created",
+      "tips": [
+        "Array indexing starts from 0."
+      ]
+    },
+    {
+      "topic": "Array Declaration",
+      "definition": "Declaring an array reserves memory for a fixed number of elements.",
+      "syntax": "data_type array_name[size];",
+      "example": "float marks[10];",
+      "output": "Array declared",
+      "tips": [
+        "Array size is fixed after declaration."
+      ]
+    },
+    {
+      "topic": "Memory Representation",
+      "definition": "Array elements are stored in consecutive memory locations.",
+      "syntax": "Base + (index \u00d7 size)",
+      "example": "arr[2]",
+      "output": "Element address calculated",
+      "tips": [
+        "Contiguous storage enables fast access."
+      ]
+    },
+    {
+      "topic": "Insertion",
+      "definition": "Insertion adds an element at a specified position.",
+      "syntax": "Shift elements then insert",
+      "example": "Insert 25 at index 2",
+      "output": "Element inserted",
+      "tips": [
+        "Worst-case time complexity: O(n)."
+      ]
+    },
+    {
+      "topic": "Deletion",
+      "definition": "Deletion removes an element and shifts remaining elements.",
+      "syntax": "Delete then shift left",
+      "example": "Delete arr[3]",
+      "output": "Element removed",
+      "tips": [
+        "Worst-case time complexity: O(n)."
+      ]
+    },
+    {
+      "topic": "Traversal",
+      "definition": "Traversal visits each array element one by one.",
+      "syntax": "for(i=0;i<n;i++)",
+      "example": "Print all elements",
+      "output": "Array displayed",
+      "tips": [
+        "Traversal complexity is O(n)."
+      ]
+    },
+    {
+      "topic": "Searching",
+      "definition": "Searching finds the position of an element.",
+      "syntax": "Linear Search / Binary Search",
+      "example": "Search key 30",
+      "output": "Element found/not found",
+      "tips": [
+        "Binary search requires a sorted array."
+      ]
+    },
+    {
+      "topic": "Array Operations",
+      "definition": "Common operations include insertion, deletion, searching, updating and traversal.",
+      "syntax": "Operation based",
+      "example": "Update arr[1]=99",
+      "output": "Array updated",
+      "tips": [
+        "Choose operations based on requirements."
+      ]
+    },
+    {
+      "topic": "Advantages & Disadvantages",
+      "definition": "Arrays provide fast random access but have fixed size.",
+      "syntax": "N/A",
+      "example": "Access arr[4] in O(1)",
+      "output": "Comparison",
+      "tips": [
+        "Insertion and deletion are relatively slow."
+      ]
+    },
+    {
+      "topic": "Common Array Programs",
+      "definition": "Frequently used programs include sum, average, largest, smallest, reverse and sorting.",
+      "syntax": "Loops",
+      "example": "Find largest element",
+      "output": "Required result",
+      "tips": [
+        "Practice these for exams and interviews."
+      ]
+    }
+  ]
+}

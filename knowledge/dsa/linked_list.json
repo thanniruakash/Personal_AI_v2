@@ -1,0 +1,106 @@
+{
+  "subject": "DSA",
+  "section": "Linked List",
+  "topics": [
+    {
+      "topic": "Introduction to Linked List",
+      "definition": "A linked list is a linear data structure where elements (nodes) are connected using pointers.",
+      "syntax": "Node -> Node -> Node",
+      "example": "10 -> 20 -> 30",
+      "output": "Linked list created",
+      "tips": [
+        "Nodes are not stored in contiguous memory."
+      ]
+    },
+    {
+      "topic": "Node Structure",
+      "definition": "A node contains data and a pointer to the next node.",
+      "syntax": "struct Node { int data; struct Node *next; };",
+      "example": "Node(data=10, next=NULL)",
+      "output": "Node created",
+      "tips": [
+        "The last node points to NULL in a singly linked list."
+      ]
+    },
+    {
+      "topic": "Insertion",
+      "definition": "Insertion adds a new node at the beginning, end or a specific position.",
+      "syntax": "Insert at Beginning / End / Position",
+      "example": "Insert 25 after node 20",
+      "output": "Node inserted",
+      "tips": [
+        "Update pointers carefully."
+      ]
+    },
+    {
+      "topic": "Deletion",
+      "definition": "Deletion removes a node from the linked list.",
+      "syntax": "Delete Beginning / End / Position",
+      "example": "Delete node with value 30",
+      "output": "Node removed",
+      "tips": [
+        "Free deleted node memory in C."
+      ]
+    },
+    {
+      "topic": "Traversal",
+      "definition": "Traversal visits every node from head to NULL.",
+      "syntax": "while(temp != NULL)",
+      "example": "Print all node values",
+      "output": "10 20 30",
+      "tips": [
+        "Traversal complexity is O(n)."
+      ]
+    },
+    {
+      "topic": "Singly Linked List",
+      "definition": "Each node points to the next node only.",
+      "syntax": "data | next",
+      "example": "10 -> 20 -> 30",
+      "output": "Forward traversal",
+      "tips": [
+        "Simple and memory efficient."
+      ]
+    },
+    {
+      "topic": "Doubly Linked List",
+      "definition": "Each node has pointers to both previous and next nodes.",
+      "syntax": "prev | data | next",
+      "example": "10 <-> 20 <-> 30",
+      "output": "Forward and backward traversal",
+      "tips": [
+        "Uses more memory than singly linked lists."
+      ]
+    },
+    {
+      "topic": "Circular Linked List",
+      "definition": "The last node points back to the first node.",
+      "syntax": "Last -> Head",
+      "example": "10 -> 20 -> 30 -> 10",
+      "output": "Circular list formed",
+      "tips": [
+        "Useful for round-robin scheduling."
+      ]
+    },
+    {
+      "topic": "Advantages and Disadvantages",
+      "definition": "Linked lists allow dynamic memory allocation but have slower random access.",
+      "syntax": "N/A",
+      "example": "Dynamic insertion and deletion",
+      "output": "Comparison completed",
+      "tips": [
+        "Accessing an element requires traversal."
+      ]
+    },
+    {
+      "topic": "Common Linked List Programs",
+      "definition": "Common programs include insertion, deletion, reversal, searching and counting nodes.",
+      "syntax": "Traversal + Pointer Operations",
+      "example": "Reverse a linked list",
+      "output": "Required operation completed",
+      "tips": [
+        "Frequently asked in exams and interviews."
+      ]
+    }
+  ]
+}
