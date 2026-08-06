@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Feature Engineering",
+  "topics": [
+    {
+      "topic": "Introduction to Feature Engineering",
+      "definition": "Feature engineering creates and improves input features to enhance machine learning models.",
+      "syntax": "Raw Data \u2192 Features",
+      "example": "Creating age groups from age",
+      "output": "Improved features",
+      "tips": [
+        "Good features improve model performance."
+      ]
+    },
+    {
+      "topic": "Feature Selection",
+      "definition": "Feature selection chooses the most relevant features for model training.",
+      "syntax": "Select Best Features",
+      "example": "Removing irrelevant columns",
+      "output": "Reduced feature set",
+      "tips": [
+        "Helps reduce overfitting."
+      ]
+    },
+    {
+      "topic": "Feature Extraction",
+      "definition": "Feature extraction transforms raw data into informative features.",
+      "syntax": "Transform \u2192 Features",
+      "example": "PCA on image data",
+      "output": "Extracted features",
+      "tips": [
+        "Useful for high-dimensional data."
+      ]
+    },
+    {
+      "topic": "Feature Scaling",
+      "definition": "Feature scaling standardizes feature values for consistent model performance.",
+      "syntax": "Normalization / Standardization",
+      "example": "Scale salary values",
+      "output": "Scaled features",
+      "tips": [
+        "Important for distance-based algorithms."
+      ]
+    },
+    {
+      "topic": "Dimensionality Reduction",
+      "definition": "Dimensionality reduction decreases the number of features while preserving important information.",
+      "syntax": "PCA / t-SNE",
+      "example": "Reduce 100 features to 10",
+      "output": "Reduced dimensions",
+      "tips": [
+        "Improves efficiency and visualization."
+      ]
+    },
+    {
+      "topic": "Polynomial Features",
+      "definition": "Polynomial features create new features from existing ones.",
+      "syntax": "x \u2192 x\u00b2, x\u00b3",
+      "example": "Polynomial regression",
+      "output": "Expanded feature set",
+      "tips": [
+        "Avoid creating too many unnecessary features."
+      ]
+    },
+    {
+      "topic": "Feature Importance",
+      "definition": "Feature importance measures how much each feature contributes to predictions.",
+      "syntax": "Importance Score",
+      "example": "Random Forest feature importance",
+      "output": "Ranked features",
+      "tips": [
+        "Focus on influential features."
+      ]
+    },
+    {
+      "topic": "Feature Engineering Best Practices",
+      "definition": "Create meaningful features, avoid data leakage and validate feature quality.",
+      "syntax": "Create \u2192 Evaluate \u2192 Improve",
+      "example": "Engineering customer behavior features",
+      "output": "Model-ready features",
+      "tips": [
+        "Document transformations.",
+        "Avoid leakage.",
+        "Evaluate impact regularly."
+      ]
+    }
+  ]
+}

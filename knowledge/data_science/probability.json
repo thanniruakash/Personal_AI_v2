@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Probability",
+  "topics": [
+    {
+      "topic": "Introduction to Probability",
+      "definition": "Probability measures the likelihood of an event occurring.",
+      "syntax": "0 \u2264 P(E) \u2264 1",
+      "example": "Probability of getting heads",
+      "output": "Probability calculated",
+      "tips": [
+        "A probability of 0 is impossible and 1 is certain."
+      ]
+    },
+    {
+      "topic": "Random Variables",
+      "definition": "A random variable represents numerical outcomes of a random experiment.",
+      "syntax": "Discrete / Continuous",
+      "example": "Number of customers",
+      "output": "Variable identified",
+      "tips": [
+        "Choose the correct variable type."
+      ]
+    },
+    {
+      "topic": "Probability Rules",
+      "definition": "Basic rules include addition, multiplication and complement rules.",
+      "syntax": "P(A\u222aB), P(A\u2229B), P(A')",
+      "example": "Rolling a die",
+      "output": "Probability computed",
+      "tips": [
+        "Check whether events are independent."
+      ]
+    },
+    {
+      "topic": "Conditional Probability",
+      "definition": "Conditional probability measures the probability of an event given another event has occurred.",
+      "syntax": "P(A|B)",
+      "example": "Drawing two cards",
+      "output": "Conditional probability found",
+      "tips": [
+        "Use when events are dependent."
+      ]
+    },
+    {
+      "topic": "Bayes' Theorem",
+      "definition": "Bayes' theorem updates probabilities using new evidence.",
+      "syntax": "P(A|B)=P(B|A)P(A)/P(B)",
+      "example": "Medical diagnosis",
+      "output": "Posterior probability",
+      "tips": [
+        "Widely used in machine learning."
+      ]
+    },
+    {
+      "topic": "Discrete and Continuous Probability",
+      "definition": "Discrete probability deals with countable outcomes while continuous probability deals with measurable values.",
+      "syntax": "Discrete / Continuous",
+      "example": "Dice roll vs height",
+      "output": "Distribution identified",
+      "tips": [
+        "Continuous variables use probability density functions."
+      ]
+    },
+    {
+      "topic": "Expected Value",
+      "definition": "Expected value is the long-term average outcome of a random process.",
+      "syntax": "E(X)",
+      "example": "Average lottery payoff",
+      "output": "Expected value calculated",
+      "tips": [
+        "Useful for decision making."
+      ]
+    },
+    {
+      "topic": "Probability Best Practices",
+      "definition": "Define events clearly, validate assumptions and use appropriate probability models.",
+      "syntax": "Model \u2192 Calculate \u2192 Validate",
+      "example": "Risk analysis",
+      "output": "Reliable probability analysis",
+      "tips": [
+        "Check assumptions.",
+        "Interpret results carefully.",
+        "Use sufficient data."
+      ]
+    }
+  ]
+}

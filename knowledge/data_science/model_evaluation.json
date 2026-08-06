@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Model Evaluation",
+  "topics": [
+    {
+      "topic": "Introduction to Model Evaluation",
+      "definition": "Model evaluation measures how well a machine learning model performs on unseen data.",
+      "syntax": "Train \u2192 Evaluate",
+      "example": "Testing a classifier",
+      "output": "Model performance measured",
+      "tips": [
+        "Use separate test data."
+      ]
+    },
+    {
+      "topic": "Accuracy",
+      "definition": "Accuracy is the ratio of correct predictions to total predictions.",
+      "syntax": "(TP+TN)/(TP+TN+FP+FN)",
+      "example": "90 correct out of 100",
+      "output": "Accuracy calculated",
+      "tips": [
+        "Can be misleading for imbalanced datasets."
+      ]
+    },
+    {
+      "topic": "Precision",
+      "definition": "Precision measures the proportion of positive predictions that are correct.",
+      "syntax": "TP/(TP+FP)",
+      "example": "Spam detection",
+      "output": "Precision calculated",
+      "tips": [
+        "Important when false positives are costly."
+      ]
+    },
+    {
+      "topic": "Recall",
+      "definition": "Recall measures the proportion of actual positives correctly identified.",
+      "syntax": "TP/(TP+FN)",
+      "example": "Disease detection",
+      "output": "Recall calculated",
+      "tips": [
+        "Important when false negatives are costly."
+      ]
+    },
+    {
+      "topic": "F1-Score",
+      "definition": "F1-Score is the harmonic mean of precision and recall.",
+      "syntax": "2PR/(P+R)",
+      "example": "Classification evaluation",
+      "output": "F1-Score calculated",
+      "tips": [
+        "Balances precision and recall."
+      ]
+    },
+    {
+      "topic": "ROC Curve and AUC",
+      "definition": "ROC compares true positive and false positive rates, while AUC summarizes performance.",
+      "syntax": "ROC / AUC",
+      "example": "Binary classifier",
+      "output": "ROC analyzed",
+      "tips": [
+        "Higher AUC generally indicates better performance."
+      ]
+    },
+    {
+      "topic": "Cross Validation",
+      "definition": "Cross validation evaluates models using multiple train-test splits.",
+      "syntax": "K-Fold",
+      "example": "5-fold cross validation",
+      "output": "Reliable evaluation",
+      "tips": [
+        "Reduces evaluation bias."
+      ]
+    },
+    {
+      "topic": "Model Evaluation Best Practices",
+      "definition": "Use multiple metrics, validate with unseen data and compare models fairly.",
+      "syntax": "Train \u2192 Validate \u2192 Test",
+      "example": "Comparing classifiers",
+      "output": "Reliable model selection",
+      "tips": [
+        "Avoid overfitting.",
+        "Use appropriate metrics.",
+        "Document evaluation results."
+      ]
+    }
+  ]
+}

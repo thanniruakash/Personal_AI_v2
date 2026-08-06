@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Statistics",
+  "topics": [
+    {
+      "topic": "Introduction to Statistics",
+      "definition": "Statistics is the science of collecting, organizing, analyzing and interpreting data.",
+      "syntax": "Collect \u2192 Analyze \u2192 Interpret",
+      "example": "Analyzing exam scores",
+      "output": "Insights obtained",
+      "tips": [
+        "Use statistics for data-driven decisions."
+      ]
+    },
+    {
+      "topic": "Mean, Median and Mode",
+      "definition": "Mean is the average, median is the middle value and mode is the most frequent value.",
+      "syntax": "Mean / Median / Mode",
+      "example": "Student marks",
+      "output": "Central tendency calculated",
+      "tips": [
+        "Choose the appropriate measure based on the data."
+      ]
+    },
+    {
+      "topic": "Variance and Standard Deviation",
+      "definition": "Variance and standard deviation measure the spread of data.",
+      "syntax": "Variance \u2192 SD",
+      "example": "Score variability",
+      "output": "Dispersion measured",
+      "tips": [
+        "Lower SD indicates less variation."
+      ]
+    },
+    {
+      "topic": "Probability Distributions",
+      "definition": "Probability distributions describe how values are distributed.",
+      "syntax": "Normal / Binomial",
+      "example": "Normal distribution",
+      "output": "Distribution identified",
+      "tips": [
+        "The normal distribution is widely used."
+      ]
+    },
+    {
+      "topic": "Sampling Techniques",
+      "definition": "Sampling selects a subset of a population for analysis.",
+      "syntax": "Random / Stratified / Systematic",
+      "example": "Survey sample",
+      "output": "Sample selected",
+      "tips": [
+        "Choose representative samples."
+      ]
+    },
+    {
+      "topic": "Hypothesis Testing",
+      "definition": "Hypothesis testing determines whether evidence supports a claim.",
+      "syntax": "Null vs Alternative",
+      "example": "A/B testing",
+      "output": "Decision made",
+      "tips": [
+        "Consider the significance level."
+      ]
+    },
+    {
+      "topic": "Correlation and Covariance",
+      "definition": "Correlation measures relationship strength while covariance measures joint variation.",
+      "syntax": "Correlation / Covariance",
+      "example": "Sales vs Advertising",
+      "output": "Relationship analyzed",
+      "tips": [
+        "Correlation ranges from -1 to +1."
+      ]
+    },
+    {
+      "topic": "Statistics Best Practices",
+      "definition": "Validate data, use appropriate methods and interpret results carefully.",
+      "syntax": "Collect \u2192 Analyze \u2192 Validate",
+      "example": "Business analytics",
+      "output": "Reliable conclusions",
+      "tips": [
+        "Check data quality.",
+        "Avoid biased samples.",
+        "Document assumptions."
+      ]
+    }
+  ]
+}

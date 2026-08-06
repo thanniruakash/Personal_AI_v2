@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Data Preprocessing",
+  "topics": [
+    {
+      "topic": "Data Cleaning",
+      "definition": "Data cleaning removes errors, duplicates and inconsistent values from datasets.",
+      "syntax": "Clean \u2192 Validate",
+      "example": "Removing duplicate records",
+      "output": "Clean dataset",
+      "tips": [
+        "Check for missing and incorrect values."
+      ]
+    },
+    {
+      "topic": "Handling Missing Values",
+      "definition": "Missing values can be removed or replaced using suitable techniques.",
+      "syntax": "Delete / Impute",
+      "example": "Replace missing age with mean value",
+      "output": "Missing values handled",
+      "tips": [
+        "Choose an imputation method based on the dataset."
+      ]
+    },
+    {
+      "topic": "Data Normalization",
+      "definition": "Normalization scales data to a common range for better model performance.",
+      "syntax": "Min-Max / Z-Score",
+      "example": "Scale features between 0 and 1",
+      "output": "Normalized data",
+      "tips": [
+        "Normalize features with different units."
+      ]
+    },
+    {
+      "topic": "Data Transformation",
+      "definition": "Transformation converts data into a suitable format for analysis.",
+      "syntax": "Transform \u2192 Analyze",
+      "example": "Log transformation",
+      "output": "Transformed dataset",
+      "tips": [
+        "Apply transformations only when needed."
+      ]
+    },
+    {
+      "topic": "Outlier Detection",
+      "definition": "Outlier detection identifies unusual observations in data.",
+      "syntax": "IQR / Z-Score",
+      "example": "Detect abnormal salaries",
+      "output": "Outliers identified",
+      "tips": [
+        "Investigate outliers before removing them."
+      ]
+    },
+    {
+      "topic": "Encoding Categorical Data",
+      "definition": "Categorical values are converted into numerical form for machine learning.",
+      "syntax": "Label Encoding / One-Hot Encoding",
+      "example": "Gender \u2192 0,1",
+      "output": "Encoded data",
+      "tips": [
+        "Use one-hot encoding for nominal categories."
+      ]
+    },
+    {
+      "topic": "Train-Test Split",
+      "definition": "A dataset is divided into training and testing sets to evaluate models.",
+      "syntax": "Train / Test",
+      "example": "80% training, 20% testing",
+      "output": "Dataset split",
+      "tips": [
+        "Avoid using test data during training."
+      ]
+    },
+    {
+      "topic": "Data Preprocessing Best Practices",
+      "definition": "Prepare data carefully before model training to improve accuracy.",
+      "syntax": "Clean \u2192 Transform \u2192 Validate",
+      "example": "Complete preprocessing pipeline",
+      "output": "Model-ready data",
+      "tips": [
+        "Document preprocessing steps.",
+        "Maintain data quality.",
+        "Prevent data leakage."
+      ]
+    }
+  ]
+}

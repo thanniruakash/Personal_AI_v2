@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Data Visualization",
+  "topics": [
+    {
+      "topic": "Introduction to Data Visualization",
+      "definition": "Data visualization presents data graphically to understand patterns and trends.",
+      "syntax": "Data \u2192 Chart",
+      "example": "Sales dashboard",
+      "output": "Visual insights",
+      "tips": [
+        "Choose the right chart type."
+      ]
+    },
+    {
+      "topic": "Line Charts",
+      "definition": "Line charts show trends over time.",
+      "syntax": "X-Axis vs Y-Axis",
+      "example": "Monthly sales",
+      "output": "Trend displayed",
+      "tips": [
+        "Best for continuous data."
+      ]
+    },
+    {
+      "topic": "Bar Charts",
+      "definition": "Bar charts compare values across categories.",
+      "syntax": "Category \u2192 Value",
+      "example": "Sales by product",
+      "output": "Category comparison",
+      "tips": [
+        "Use consistent scales."
+      ]
+    },
+    {
+      "topic": "Pie Charts",
+      "definition": "Pie charts display proportions of a whole.",
+      "syntax": "Whole \u2192 Parts",
+      "example": "Market share",
+      "output": "Percentage shown",
+      "tips": [
+        "Use with a small number of categories."
+      ]
+    },
+    {
+      "topic": "Histograms",
+      "definition": "Histograms show the distribution of numerical data.",
+      "syntax": "Bins",
+      "example": "Exam score distribution",
+      "output": "Frequency distribution",
+      "tips": [
+        "Choose appropriate bin sizes."
+      ]
+    },
+    {
+      "topic": "Heatmaps",
+      "definition": "Heatmaps use colors to represent data intensity.",
+      "syntax": "Color Scale",
+      "example": "Correlation matrix",
+      "output": "Patterns highlighted",
+      "tips": [
+        "Use clear color gradients."
+      ]
+    },
+    {
+      "topic": "Scatter Plots",
+      "definition": "Scatter plots show relationships between two numerical variables.",
+      "syntax": "X vs Y",
+      "example": "Height vs Weight",
+      "output": "Relationship visualized",
+      "tips": [
+        "Useful for spotting correlations and outliers."
+      ]
+    },
+    {
+      "topic": "Data Visualization Best Practices",
+      "definition": "Create clear, accurate and readable visualizations.",
+      "syntax": "Select \u2192 Design \u2192 Review",
+      "example": "Business dashboard",
+      "output": "Effective visualization",
+      "tips": [
+        "Label axes.",
+        "Avoid clutter.",
+        "Use colors meaningfully."
+      ]
+    }
+  ]
+}

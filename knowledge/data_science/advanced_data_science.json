@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Advanced Data Science",
+  "topics": [
+    {
+      "topic": "Machine Learning Overview",
+      "definition": "Machine learning enables computers to learn patterns from data and make predictions without explicit programming.",
+      "syntax": "Train \u2192 Predict",
+      "example": "Spam email detection",
+      "output": "Prediction generated",
+      "tips": [
+        "Use quality data for better models."
+      ]
+    },
+    {
+      "topic": "Deep Learning Basics",
+      "definition": "Deep learning uses multi-layer neural networks to solve complex problems.",
+      "syntax": "Input \u2192 Hidden Layers \u2192 Output",
+      "example": "Image recognition",
+      "output": "Model trained",
+      "tips": [
+        "Requires large datasets and computing power."
+      ]
+    },
+    {
+      "topic": "Big Data",
+      "definition": "Big Data refers to datasets with high volume, velocity and variety.",
+      "syntax": "3Vs",
+      "example": "Social media data",
+      "output": "Large-scale data processed",
+      "tips": [
+        "Distributed systems are commonly used."
+      ]
+    },
+    {
+      "topic": "Apache Spark",
+      "definition": "Apache Spark is a distributed data processing framework for large-scale analytics.",
+      "syntax": "Spark Session",
+      "example": "Processing millions of records",
+      "output": "Data analyzed",
+      "tips": [
+        "Supports batch and streaming workloads."
+      ]
+    },
+    {
+      "topic": "Time Series Analysis",
+      "definition": "Time series analysis studies data collected over time to identify trends and forecast future values.",
+      "syntax": "Time \u2192 Forecast",
+      "example": "Stock price prediction",
+      "output": "Forecast produced",
+      "tips": [
+        "Consider seasonality and trends."
+      ]
+    },
+    {
+      "topic": "Data Ethics and Privacy",
+      "definition": "Data science should respect privacy, fairness and responsible use of data.",
+      "syntax": "Collect \u2192 Protect \u2192 Use",
+      "example": "Anonymizing personal information",
+      "output": "Ethical analysis",
+      "tips": [
+        "Follow privacy regulations."
+      ]
+    },
+    {
+      "topic": "MLOps",
+      "definition": "MLOps applies DevOps practices to machine learning model deployment and maintenance.",
+      "syntax": "Build \u2192 Deploy \u2192 Monitor",
+      "example": "Automated ML pipeline",
+      "output": "Model managed",
+      "tips": [
+        "Monitor models for performance drift."
+      ]
+    },
+    {
+      "topic": "Advanced Data Science Best Practices",
+      "definition": "Build reliable and reproducible data science solutions using validation, automation and monitoring.",
+      "syntax": "Prepare \u2192 Train \u2192 Monitor",
+      "example": "Version-controlled ML workflow",
+      "output": "Robust data science pipeline",
+      "tips": [
+        "Document experiments.",
+        "Track model performance.",
+        "Retrain models when necessary."
+      ]
+    }
+  ]
+}

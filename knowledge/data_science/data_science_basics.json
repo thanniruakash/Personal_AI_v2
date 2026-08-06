@@ -1,0 +1,88 @@
+{
+  "subject": "Data Science",
+  "section": "Data Science Basics",
+  "topics": [
+    {
+      "topic": "What is Data Science?",
+      "definition": "Data science combines statistics, programming and domain knowledge to extract insights from data.",
+      "syntax": "Collect \u2192 Process \u2192 Analyze \u2192 Visualize",
+      "example": "Predicting sales",
+      "output": "Insights generated",
+      "tips": [
+        "Use data-driven decision making."
+      ]
+    },
+    {
+      "topic": "Data Science Lifecycle",
+      "definition": "The lifecycle includes data collection, cleaning, analysis, modeling, evaluation and deployment.",
+      "syntax": "Collect \u2192 Clean \u2192 Model",
+      "example": "Customer churn prediction",
+      "output": "Model developed",
+      "tips": [
+        "Follow each phase systematically."
+      ]
+    },
+    {
+      "topic": "Types of Data",
+      "definition": "Data can be structured, semi-structured or unstructured.",
+      "syntax": "Structured / Semi-Structured / Unstructured",
+      "example": "SQL table, JSON, Images",
+      "output": "Data classified",
+      "tips": [
+        "Choose tools based on data type."
+      ]
+    },
+    {
+      "topic": "Data Sources",
+      "definition": "Data comes from databases, APIs, sensors, files and web applications.",
+      "syntax": "DB / API / CSV",
+      "example": "Weather API",
+      "output": "Data collected",
+      "tips": [
+        "Verify data quality."
+      ]
+    },
+    {
+      "topic": "Applications of Data Science",
+      "definition": "Data science is used in healthcare, finance, marketing, cybersecurity and AI.",
+      "syntax": "Domain \u2192 Insight",
+      "example": "Fraud detection",
+      "output": "Business value created",
+      "tips": [
+        "Focus on solving real problems."
+      ]
+    },
+    {
+      "topic": "Data Science Tools",
+      "definition": "Common tools include Python, R, Jupyter Notebook, Pandas and NumPy.",
+      "syntax": "Python + Libraries",
+      "example": "Pandas DataFrame",
+      "output": "Data analyzed",
+      "tips": [
+        "Learn one tool deeply before many."
+      ]
+    },
+    {
+      "topic": "Roles in Data Science",
+      "definition": "Common roles include Data Scientist, Data Analyst, Data Engineer and ML Engineer.",
+      "syntax": "Role \u2192 Responsibility",
+      "example": "Data Analyst creates dashboards",
+      "output": "Role identified",
+      "tips": [
+        "Each role has different responsibilities."
+      ]
+    },
+    {
+      "topic": "Data Science Best Practices",
+      "definition": "Ensure data quality, reproducibility and ethical use of data.",
+      "syntax": "Collect \u2192 Validate \u2192 Analyze",
+      "example": "Version-controlled notebooks",
+      "output": "Reliable analysis",
+      "tips": [
+        "Document your work.",
+        "Protect sensitive data.",
+        "Validate results."
+      ]
+    }
+  ]
+}
