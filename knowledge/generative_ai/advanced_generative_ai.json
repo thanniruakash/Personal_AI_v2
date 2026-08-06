@@ -1,0 +1,89 @@
+{
+  "subject": "Generative AI",
+  "section": "Advanced Generative AI",
+  "topics": [
+    {
+      "topic": "Foundation Models",
+      "definition": "Foundation models are large pre-trained models adaptable to many downstream tasks.",
+      "syntax": "Pretrain \u2192 Fine-tune",
+      "example": "Large vision-language model",
+      "output": "Adaptable model",
+      "tips": [
+        "Use task-specific fine-tuning."
+      ]
+    },
+    {
+      "topic": "Large Language Models (LLMs)",
+      "definition": "LLMs generate and understand human language using transformer architectures.",
+      "syntax": "Prompt \u2192 LLM \u2192 Response",
+      "example": "AI assistant",
+      "output": "Generated text",
+      "tips": [
+        "Use clear prompts and validate outputs."
+      ]
+    },
+    {
+      "topic": "AI Agents with Generative AI",
+      "definition": "Generative models power agents that reason, plan and use tools.",
+      "syntax": "Goal \u2192 Agent \u2192 Tools \u2192 Result",
+      "example": "Research assistant",
+      "output": "Completed task",
+      "tips": [
+        "Combine memory with tool use."
+      ]
+    },
+    {
+      "topic": "Model Optimization",
+      "definition": "Optimization improves speed, efficiency and deployment cost.",
+      "syntax": "Model \u2192 Quantize/Prune",
+      "example": "Mobile AI model",
+      "output": "Optimized model",
+      "tips": [
+        "Benchmark before and after optimization."
+      ]
+    },
+    {
+      "topic": "AI Safety and Alignment",
+      "definition": "Safety and alignment aim to make AI systems helpful, reliable and aligned with intended behavior.",
+      "syntax": "Model \u2192 Safety Checks",
+      "example": "Content moderation",
+      "output": "Safer responses",
+      "tips": [
+        "Evaluate for harmful outputs."
+      ]
+    },
+    {
+      "topic": "Real-World Applications",
+      "definition": "Generative AI is used in coding, healthcare, education, design and business automation.",
+      "syntax": "Prompt \u2192 Solution",
+      "example": "Code generation",
+      "output": "Task completion",
+      "tips": [
+        "Always verify critical outputs."
+      ]
+    },
+    {
+      "topic": "Future of Generative AI",
+      "definition": "Future systems will become more multimodal, efficient and collaborative.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "Personal AI assistant",
+      "output": "Advanced capabilities",
+      "tips": [
+        "Keep learning new techniques."
+      ]
+    },
+    {
+      "topic": "Advanced Generative AI Best Practices",
+      "definition": "Build secure, efficient and responsible generative AI systems.",
+      "syntax": "Design \u2192 Evaluate \u2192 Deploy",
+      "example": "Enterprise GenAI",
+      "output": "Reliable AI system",
+      "tips": [
+        "Protect privacy.",
+        "Monitor quality.",
+        "Reduce hallucinations.",
+        "Update models regularly."
+      ]
+    }
+  ]
+}

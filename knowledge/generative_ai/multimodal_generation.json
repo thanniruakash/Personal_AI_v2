@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Multimodal Generation",
+  "topics": [
+    {
+      "topic": "What is Multimodal AI?",
+      "definition": "Multimodal AI processes and generates information across multiple data types such as text, images, audio and video.",
+      "syntax": "Multiple Modalities \u2192 AI Model",
+      "example": "Image captioning",
+      "output": "Multimodal response",
+      "tips": [
+        "Combine complementary modalities."
+      ]
+    },
+    {
+      "topic": "Text + Image Generation",
+      "definition": "Models generate images from text or describe images using text.",
+      "syntax": "Text \u2194 Image",
+      "example": "Text-to-image model",
+      "output": "Generated image or caption",
+      "tips": [
+        "Use detailed prompts."
+      ]
+    },
+    {
+      "topic": "Video Generation",
+      "definition": "AI generates or edits videos from prompts or existing media.",
+      "syntax": "Prompt \u2192 Video",
+      "example": "Short animation",
+      "output": "Generated video",
+      "tips": [
+        "Keep prompts specific."
+      ]
+    },
+    {
+      "topic": "Audio Generation",
+      "definition": "AI creates music, speech or sound effects from prompts.",
+      "syntax": "Prompt \u2192 Audio",
+      "example": "Background music",
+      "output": "Generated audio",
+      "tips": [
+        "Specify style and duration."
+      ]
+    },
+    {
+      "topic": "Vision-Language Models (VLMs)",
+      "definition": "VLMs jointly understand images and language.",
+      "syntax": "Image + Text \u2192 Understanding",
+      "example": "Visual question answering",
+      "output": "Context-aware answer",
+      "tips": [
+        "Provide clear images."
+      ]
+    },
+    {
+      "topic": "Multimodal Applications",
+      "definition": "Used in assistants, healthcare, education, robotics and content creation.",
+      "syntax": "Input \u2192 Multimodal AI",
+      "example": "AI tutor",
+      "output": "Task result",
+      "tips": [
+        "Choose suitable modalities."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Evaluate multimodal models using accuracy, relevance and human assessment.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Caption quality",
+      "output": "Performance score",
+      "tips": [
+        "Combine automatic and manual evaluation."
+      ]
+    },
+    {
+      "topic": "Multimodal AI Best Practices",
+      "definition": "Use balanced datasets, align modalities correctly and validate outputs.",
+      "syntax": "Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Production multimodal system",
+      "output": "Reliable AI",
+      "tips": [
+        "Test across modalities.",
+        "Monitor bias.",
+        "Protect privacy."
+      ]
+    }
+  ]
+}

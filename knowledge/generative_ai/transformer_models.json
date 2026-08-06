@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Transformer Models",
+  "topics": [
+    {
+      "topic": "What are Transformers?",
+      "definition": "Transformers are deep learning architectures that process sequences using self-attention instead of recurrence.",
+      "syntax": "Input Tokens \u2192 Transformer \u2192 Output",
+      "example": "GPT, BERT",
+      "output": "Context-aware representations",
+      "tips": [
+        "Excellent for long-range dependencies."
+      ]
+    },
+    {
+      "topic": "Self-Attention",
+      "definition": "Self-attention lets each token focus on other relevant tokens in the sequence.",
+      "syntax": "Tokens \u2192 Attention Scores",
+      "example": "Understand sentence context",
+      "output": "Attention weights",
+      "tips": [
+        "Core mechanism of transformers."
+      ]
+    },
+    {
+      "topic": "Encoder and Decoder",
+      "definition": "The encoder understands input while the decoder generates output.",
+      "syntax": "Encoder \u2192 Decoder",
+      "example": "Machine translation",
+      "output": "Generated sequence",
+      "tips": [
+        "Some models use only an encoder or decoder."
+      ]
+    },
+    {
+      "topic": "Positional Encoding",
+      "definition": "Positional encoding provides information about token order.",
+      "syntax": "Tokens + Position",
+      "example": "Sentence processing",
+      "output": "Position-aware embeddings",
+      "tips": [
+        "Transformers do not inherently know token order."
+      ]
+    },
+    {
+      "topic": "BERT",
+      "definition": "BERT is an encoder-based transformer designed for language understanding.",
+      "syntax": "Text \u2192 BERT",
+      "example": "Text classification",
+      "output": "Contextual embeddings",
+      "tips": [
+        "Strong for understanding tasks."
+      ]
+    },
+    {
+      "topic": "GPT",
+      "definition": "GPT is a decoder-based transformer specialized in text generation.",
+      "syntax": "Prompt \u2192 GPT",
+      "example": "Chat assistant",
+      "output": "Generated text",
+      "tips": [
+        "Predicts the next token autoregressively."
+      ]
+    },
+    {
+      "topic": "Transformer Applications",
+      "definition": "Transformers are used in NLP, vision, speech and multimodal AI.",
+      "syntax": "Input \u2192 Transformer",
+      "example": "Image captioning",
+      "output": "Task result",
+      "tips": [
+        "Choose a model suited to your task."
+      ]
+    },
+    {
+      "topic": "Transformer Best Practices",
+      "definition": "Use quality data, appropriate model sizes and evaluate outputs carefully.",
+      "syntax": "Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Production AI assistant",
+      "output": "Reliable transformer system",
+      "tips": [
+        "Monitor hallucinations.",
+        "Benchmark regularly.",
+        "Fine-tune when needed."
+      ]
+    }
+  ]
+}

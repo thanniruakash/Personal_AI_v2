@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Generative AI Basics",
+  "topics": [
+    {
+      "topic": "What is Generative AI?",
+      "definition": "Generative AI creates new content such as text, images, audio, video and code by learning patterns from data.",
+      "syntax": "Prompt \u2192 Generative Model \u2192 Content",
+      "example": "AI writing assistant",
+      "output": "Generated content",
+      "tips": [
+        "Use clear prompts for better results."
+      ]
+    },
+    {
+      "topic": "Generative Models",
+      "definition": "Generative models learn data distributions to produce new samples.",
+      "syntax": "Training Data \u2192 Model",
+      "example": "Image generator",
+      "output": "New samples",
+      "tips": [
+        "Train on diverse, high-quality data."
+      ]
+    },
+    {
+      "topic": "Prompts",
+      "definition": "A prompt is the input instruction given to a generative AI model.",
+      "syntax": "User Input \u2192 Prompt",
+      "example": "Write a poem",
+      "output": "Generated response",
+      "tips": [
+        "Be specific and descriptive."
+      ]
+    },
+    {
+      "topic": "Training Process",
+      "definition": "Models learn patterns from large datasets during training.",
+      "syntax": "Dataset \u2192 Training \u2192 Model",
+      "example": "LLM training",
+      "output": "Trained model",
+      "tips": [
+        "Large datasets improve generalization."
+      ]
+    },
+    {
+      "topic": "Fine-Tuning",
+      "definition": "Fine-tuning adapts a pre-trained model to a specific task or domain.",
+      "syntax": "Pretrained Model \u2192 Fine-tune",
+      "example": "Medical chatbot",
+      "output": "Specialized model",
+      "tips": [
+        "Use domain-specific data."
+      ]
+    },
+    {
+      "topic": "Inference",
+      "definition": "Inference is the process of generating output from a trained model.",
+      "syntax": "Prompt \u2192 Model \u2192 Output",
+      "example": "Generate code",
+      "output": "Prediction",
+      "tips": [
+        "Optimize for latency when deploying."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Generative AI is used for content creation, coding, design, education and research.",
+      "syntax": "Prompt \u2192 AI",
+      "example": "Image generation",
+      "output": "Generated result",
+      "tips": [
+        "Review AI outputs before use."
+      ]
+    },
+    {
+      "topic": "Generative AI Best Practices",
+      "definition": "Use responsible prompts, verify outputs and protect sensitive information.",
+      "syntax": "Prompt \u2192 Generate \u2192 Review",
+      "example": "Business assistant",
+      "output": "Reliable content",
+      "tips": [
+        "Fact-check outputs.",
+        "Respect copyright.",
+        "Protect privacy."
+      ]
+    }
+  ]
+}

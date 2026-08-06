@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Image Generation",
+  "topics": [
+    {
+      "topic": "Image Generation",
+      "definition": "Image generation creates new images using AI models from prompts or examples.",
+      "syntax": "Prompt \u2192 Model \u2192 Image",
+      "example": "Generate a landscape",
+      "output": "AI-generated image",
+      "tips": [
+        "Use detailed prompts for better results."
+      ]
+    },
+    {
+      "topic": "Text-to-Image Models",
+      "definition": "These models generate images directly from natural language descriptions.",
+      "syntax": "Text \u2192 Image",
+      "example": "A futuristic city at night",
+      "output": "Generated artwork",
+      "tips": [
+        "Describe style, lighting and objects."
+      ]
+    },
+    {
+      "topic": "Image Editing",
+      "definition": "AI can modify existing images based on user instructions.",
+      "syntax": "Image + Prompt \u2192 Edited Image",
+      "example": "Change background",
+      "output": "Edited image",
+      "tips": [
+        "Preserve important details when editing."
+      ]
+    },
+    {
+      "topic": "Inpainting and Outpainting",
+      "definition": "Inpainting fills missing regions while outpainting extends image boundaries.",
+      "syntax": "Image \u2192 Complete/Extend",
+      "example": "Remove an object",
+      "output": "Restored image",
+      "tips": [
+        "Provide clear masks for best results."
+      ]
+    },
+    {
+      "topic": "Style Transfer",
+      "definition": "Style transfer applies the artistic style of one image to another.",
+      "syntax": "Content + Style \u2192 Output",
+      "example": "Photo in Van Gogh style",
+      "output": "Stylized image",
+      "tips": [
+        "Choose compatible styles."
+      ]
+    },
+    {
+      "topic": "Image Generation Applications",
+      "definition": "Applications include design, advertising, gaming, education and entertainment.",
+      "syntax": "Prompt \u2192 Application",
+      "example": "Marketing poster",
+      "output": "Creative asset",
+      "tips": [
+        "Review outputs before publishing."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Image generation is evaluated using quality, realism, diversity and metrics such as FID.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Compare image models",
+      "output": "Performance score",
+      "tips": [
+        "Combine automated and human evaluation."
+      ]
+    },
+    {
+      "topic": "Image Generation Best Practices",
+      "definition": "Use responsible prompts, respect copyright and validate generated images.",
+      "syntax": "Prompt \u2192 Generate \u2192 Review",
+      "example": "AI design workflow",
+      "output": "Reliable image generation",
+      "tips": [
+        "Check for artifacts.",
+        "Respect ethical guidelines.",
+        "Protect privacy."
+      ]
+    }
+  ]
+}

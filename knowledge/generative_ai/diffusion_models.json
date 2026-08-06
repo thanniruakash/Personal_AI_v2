@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Diffusion Models",
+  "topics": [
+    {
+      "topic": "What are Diffusion Models?",
+      "definition": "Diffusion models generate data by learning to gradually remove noise from random samples.",
+      "syntax": "Noise \u2192 Diffusion Model \u2192 Output",
+      "example": "AI image generation",
+      "output": "Generated image",
+      "tips": [
+        "Widely used in modern image generation."
+      ]
+    },
+    {
+      "topic": "Forward Diffusion",
+      "definition": "Forward diffusion gradually adds noise to training data.",
+      "syntax": "Image \u2192 Noise",
+      "example": "Corrupt an image",
+      "output": "Noisy sample",
+      "tips": [
+        "Noise is added over multiple steps."
+      ]
+    },
+    {
+      "topic": "Reverse Diffusion",
+      "definition": "Reverse diffusion removes noise step by step to reconstruct data.",
+      "syntax": "Noise \u2192 Clean Image",
+      "example": "Generate artwork",
+      "output": "Generated sample",
+      "tips": [
+        "The model learns this reverse process."
+      ]
+    },
+    {
+      "topic": "Latent Diffusion",
+      "definition": "Latent diffusion performs diffusion in a compressed latent space for efficiency.",
+      "syntax": "Latent Space \u2192 Image",
+      "example": "Stable Diffusion",
+      "output": "High-quality image",
+      "tips": [
+        "Faster than pixel-space diffusion."
+      ]
+    },
+    {
+      "topic": "Text-to-Image Generation",
+      "definition": "Text prompts guide diffusion models to generate matching images.",
+      "syntax": "Prompt \u2192 Diffusion Model",
+      "example": "A cat on the moon",
+      "output": "Generated image",
+      "tips": [
+        "Detailed prompts improve results."
+      ]
+    },
+    {
+      "topic": "Diffusion Applications",
+      "definition": "Diffusion models are used for image generation, editing, restoration and design.",
+      "syntax": "Prompt \u2192 Model",
+      "example": "Image inpainting",
+      "output": "Generated content",
+      "tips": [
+        "Review outputs for accuracy."
+      ]
+    },
+    {
+      "topic": "Model Evaluation",
+      "definition": "Diffusion models are evaluated using image quality, diversity and metrics such as FID.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Compare image generators",
+      "output": "Evaluation score",
+      "tips": [
+        "Combine automatic metrics with human evaluation."
+      ]
+    },
+    {
+      "topic": "Diffusion Model Best Practices",
+      "definition": "Use quality datasets, optimize prompts and evaluate outputs regularly.",
+      "syntax": "Train \u2192 Generate \u2192 Evaluate",
+      "example": "Production image generator",
+      "output": "Reliable diffusion model",
+      "tips": [
+        "Monitor quality.",
+        "Respect copyright.",
+        "Use responsible prompts."
+      ]
+    }
+  ]
+}

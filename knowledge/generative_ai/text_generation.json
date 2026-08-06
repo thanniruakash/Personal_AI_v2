@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Text Generation",
+  "topics": [
+    {
+      "topic": "Text Generation",
+      "definition": "Text generation creates natural language from prompts using language models.",
+      "syntax": "Prompt \u2192 Model \u2192 Text",
+      "example": "Write a story",
+      "output": "Generated text",
+      "tips": [
+        "Clear prompts improve quality."
+      ]
+    },
+    {
+      "topic": "Autoregressive Generation",
+      "definition": "Autoregressive models generate one token at a time based on previous tokens.",
+      "syntax": "Context \u2192 Next Token",
+      "example": "GPT",
+      "output": "Sequence of text",
+      "tips": [
+        "Widely used for LLMs."
+      ]
+    },
+    {
+      "topic": "Prompt Engineering",
+      "definition": "Prompt engineering designs effective prompts to guide model outputs.",
+      "syntax": "Prompt \u2192 Response",
+      "example": "Summarize an article",
+      "output": "Task-specific answer",
+      "tips": [
+        "Be specific and include context."
+      ]
+    },
+    {
+      "topic": "Temperature and Sampling",
+      "definition": "Temperature controls randomness during text generation.",
+      "syntax": "Prompt + Temperature",
+      "example": "Creative writing",
+      "output": "Generated response",
+      "tips": [
+        "Lower values are more deterministic."
+      ]
+    },
+    {
+      "topic": "Top-k and Top-p Sampling",
+      "definition": "Sampling strategies limit token selection for balanced diversity and quality.",
+      "syntax": "Distribution \u2192 Sample",
+      "example": "Chatbot generation",
+      "output": "Selected token",
+      "tips": [
+        "Tune for your application."
+      ]
+    },
+    {
+      "topic": "Text Generation Applications",
+      "definition": "Applications include chatbots, writing assistants, coding and summarization.",
+      "syntax": "Prompt \u2192 Application",
+      "example": "Email drafting",
+      "output": "Generated content",
+      "tips": [
+        "Review outputs before use."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Text generation is evaluated using fluency, relevance and task-specific metrics.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Summarization benchmark",
+      "output": "Evaluation score",
+      "tips": [
+        "Combine automatic and human evaluation."
+      ]
+    },
+    {
+      "topic": "Text Generation Best Practices",
+      "definition": "Use quality prompts, verify factual accuracy and monitor generated content.",
+      "syntax": "Prompt \u2192 Generate \u2192 Review",
+      "example": "AI writing assistant",
+      "output": "Reliable text generation",
+      "tips": [
+        "Fact-check responses.",
+        "Reduce hallucinations.",
+        "Protect sensitive data."
+      ]
+    }
+  ]
+}

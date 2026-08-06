@@ -1,0 +1,88 @@
+{
+  "subject": "Generative AI",
+  "section": "Generative Adversarial Networks",
+  "topics": [
+    {
+      "topic": "What are GANs?",
+      "definition": "GANs are generative models with a generator and discriminator trained together.",
+      "syntax": "Generator \u2194 Discriminator",
+      "example": "Generate realistic faces",
+      "output": "Synthetic data",
+      "tips": [
+        "Training can be unstable."
+      ]
+    },
+    {
+      "topic": "Generator",
+      "definition": "The generator creates synthetic samples to fool the discriminator.",
+      "syntax": "Noise \u2192 Generator \u2192 Sample",
+      "example": "AI-generated image",
+      "output": "Fake sample",
+      "tips": [
+        "Improve sample quality gradually."
+      ]
+    },
+    {
+      "topic": "Discriminator",
+      "definition": "The discriminator distinguishes real samples from generated ones.",
+      "syntax": "Sample \u2192 Discriminator",
+      "example": "Real vs fake image",
+      "output": "Classification",
+      "tips": [
+        "A balanced discriminator improves training."
+      ]
+    },
+    {
+      "topic": "Adversarial Training",
+      "definition": "Generator and discriminator compete to improve each other.",
+      "syntax": "Train G \u2194 Train D",
+      "example": "Image synthesis",
+      "output": "Better generator",
+      "tips": [
+        "Alternate updates carefully."
+      ]
+    },
+    {
+      "topic": "Image Synthesis",
+      "definition": "GANs generate realistic images from random noise.",
+      "syntax": "Noise \u2192 Image",
+      "example": "AI artwork",
+      "output": "Generated image",
+      "tips": [
+        "Use high-quality datasets."
+      ]
+    },
+    {
+      "topic": "GAN Applications",
+      "definition": "GANs are used in image generation, super-resolution, style transfer and data augmentation.",
+      "syntax": "Input \u2192 GAN",
+      "example": "Photo enhancement",
+      "output": "Generated content",
+      "tips": [
+        "Validate generated outputs."
+      ]
+    },
+    {
+      "topic": "GAN Evaluation",
+      "definition": "GANs are evaluated using metrics such as FID and visual quality.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Compare GAN models",
+      "output": "Performance score",
+      "tips": [
+        "Use multiple evaluation methods."
+      ]
+    },
+    {
+      "topic": "GAN Best Practices",
+      "definition": "Balance generator and discriminator training, monitor stability and evaluate quality regularly.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production image generator",
+      "output": "Reliable GAN",
+      "tips": [
+        "Prevent mode collapse.",
+        "Use data augmentation.",
+        "Track FID scores."
+      ]
+    }
+  ]
+}
