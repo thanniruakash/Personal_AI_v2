@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "Similarity Search",
+  "topics": [
+    {
+      "topic": "What is Similarity Search?",
+      "definition": "Similarity search finds items that are most similar to a query using vector representations.",
+      "syntax": "Query Vector \u2192 Similar Items",
+      "example": "Semantic document search",
+      "output": "Ranked similar results",
+      "tips": [
+        "Use embeddings that match your domain."
+      ]
+    },
+    {
+      "topic": "Cosine Similarity",
+      "definition": "Cosine similarity measures the angle between two vectors.",
+      "syntax": "Vector A \u2194 Vector B",
+      "example": "Sentence comparison",
+      "output": "Similarity score",
+      "tips": [
+        "Common for normalized embeddings."
+      ]
+    },
+    {
+      "topic": "Euclidean Distance",
+      "definition": "Euclidean distance measures the straight-line distance between vectors.",
+      "syntax": "Vector A \u2192 Vector B",
+      "example": "Cluster analysis",
+      "output": "Distance value",
+      "tips": [
+        "Lower distance means greater similarity."
+      ]
+    },
+    {
+      "topic": "Dot Product Similarity",
+      "definition": "Dot product measures similarity by multiplying vector components.",
+      "syntax": "A \u00b7 B",
+      "example": "Recommendation systems",
+      "output": "Similarity score",
+      "tips": [
+        "Works well with certain embedding models."
+      ]
+    },
+    {
+      "topic": "Nearest Neighbor Search",
+      "definition": "Nearest neighbor search retrieves the closest vectors to a query.",
+      "syntax": "Query \u2192 k-NN",
+      "example": "Image retrieval",
+      "output": "Nearest matches",
+      "tips": [
+        "Use ANN for large datasets."
+      ]
+    },
+    {
+      "topic": "Similarity Search Applications",
+      "definition": "Applications include RAG, recommendations, image search and anomaly detection.",
+      "syntax": "Embedding \u2192 Search",
+      "example": "AI knowledge assistant",
+      "output": "Relevant results",
+      "tips": [
+        "Keep embeddings updated."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Evaluate search using recall, precision, latency and nDCG.",
+      "syntax": "Search \u2192 Metrics",
+      "example": "Retrieval benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Benchmark with real queries."
+      ]
+    },
+    {
+      "topic": "Similarity Search Best Practices",
+      "definition": "Choose suitable metrics, optimize indexes and monitor search quality.",
+      "syntax": "Embed \u2192 Search \u2192 Evaluate",
+      "example": "Production semantic search",
+      "output": "Reliable search",
+      "tips": [
+        "Tune ANN settings.",
+        "Monitor latency.",
+        "Validate relevance."
+      ]
+    }
+  ]
+}

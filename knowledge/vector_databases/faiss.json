@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "FAISS",
+  "topics": [
+    {
+      "topic": "What is FAISS?",
+      "definition": "FAISS (Facebook AI Similarity Search) is a library for efficient similarity search over dense vectors.",
+      "syntax": "Vectors \u2192 FAISS Index",
+      "example": "Semantic search",
+      "output": "Nearest vectors",
+      "tips": [
+        "Ideal for large embedding collections."
+      ]
+    },
+    {
+      "topic": "FAISS Index Types",
+      "definition": "FAISS provides Flat, IVF, PQ and HNSW indexes for different speed and accuracy trade-offs.",
+      "syntax": "Vectors \u2192 Index Type",
+      "example": "IndexFlatL2",
+      "output": "Indexed data",
+      "tips": [
+        "Choose the index based on dataset size."
+      ]
+    },
+    {
+      "topic": "Similarity Search with FAISS",
+      "definition": "FAISS retrieves the closest vectors to a query embedding.",
+      "syntax": "Query Vector \u2192 Search",
+      "example": "Document retrieval",
+      "output": "Top-k matches",
+      "tips": [
+        "Normalize vectors when using cosine similarity."
+      ]
+    },
+    {
+      "topic": "Index Training",
+      "definition": "Some FAISS indexes require training before adding vectors.",
+      "syntax": "Train \u2192 Add Vectors",
+      "example": "IVF index",
+      "output": "Trained index",
+      "tips": [
+        "Use representative training samples."
+      ]
+    },
+    {
+      "topic": "GPU Acceleration",
+      "definition": "FAISS supports GPUs for faster indexing and search.",
+      "syntax": "CPU/GPU \u2192 FAISS",
+      "example": "Million-vector search",
+      "output": "Accelerated search",
+      "tips": [
+        "Use GPU for large workloads."
+      ]
+    },
+    {
+      "topic": "FAISS Applications",
+      "definition": "FAISS is used in RAG, recommendation systems and semantic search.",
+      "syntax": "Embeddings \u2192 FAISS",
+      "example": "AI assistant",
+      "output": "Relevant results",
+      "tips": [
+        "Rebuild indexes after major data updates."
+      ]
+    },
+    {
+      "topic": "Performance Evaluation",
+      "definition": "Evaluate FAISS using recall, latency, throughput and memory usage.",
+      "syntax": "Index \u2192 Metrics",
+      "example": "Benchmark search",
+      "output": "Performance report",
+      "tips": [
+        "Measure with realistic queries."
+      ]
+    },
+    {
+      "topic": "FAISS Best Practices",
+      "definition": "Tune indexes, benchmark performance and monitor retrieval quality.",
+      "syntax": "Build \u2192 Test \u2192 Optimize",
+      "example": "Production vector search",
+      "output": "Reliable FAISS deployment",
+      "tips": [
+        "Benchmark indexes.",
+        "Monitor recall.",
+        "Optimize memory usage."
+      ]
+    }
+  ]
+}

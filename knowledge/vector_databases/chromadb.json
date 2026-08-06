@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "ChromaDB",
+  "topics": [
+    {
+      "topic": "What is ChromaDB?",
+      "definition": "ChromaDB is an open-source vector database designed for storing embeddings and semantic search.",
+      "syntax": "Documents \u2192 Embeddings \u2192 ChromaDB",
+      "example": "RAG knowledge base",
+      "output": "Searchable vectors",
+      "tips": [
+        "Popular for local AI applications."
+      ]
+    },
+    {
+      "topic": "Collections",
+      "definition": "Collections organize related vectors and documents.",
+      "syntax": "Documents \u2192 Collection",
+      "example": "Product manuals",
+      "output": "Organized dataset",
+      "tips": [
+        "Separate data by project or domain."
+      ]
+    },
+    {
+      "topic": "Embedding Storage",
+      "definition": "ChromaDB stores embeddings together with documents and metadata.",
+      "syntax": "Text \u2192 Embedding \u2192 Store",
+      "example": "Knowledge articles",
+      "output": "Stored vectors",
+      "tips": [
+        "Recreate embeddings when documents change."
+      ]
+    },
+    {
+      "topic": "Querying ChromaDB",
+      "definition": "Queries retrieve the most similar vectors to a search embedding.",
+      "syntax": "Query \u2192 Search",
+      "example": "Find relevant documents",
+      "output": "Top matches",
+      "tips": [
+        "Use meaningful embeddings."
+      ]
+    },
+    {
+      "topic": "Metadata Filtering",
+      "definition": "Metadata filters narrow results using tags, dates or categories.",
+      "syntax": "Query + Metadata",
+      "example": "Only finance documents",
+      "output": "Filtered results",
+      "tips": [
+        "Maintain consistent metadata."
+      ]
+    },
+    {
+      "topic": "ChromaDB Applications",
+      "definition": "Used in RAG, chatbots, semantic search and recommendation systems.",
+      "syntax": "Embeddings \u2192 ChromaDB",
+      "example": "AI assistant",
+      "output": "Relevant context",
+      "tips": [
+        "Refresh collections regularly."
+      ]
+    },
+    {
+      "topic": "Performance Evaluation",
+      "definition": "Evaluate ChromaDB using latency, recall and retrieval accuracy.",
+      "syntax": "Queries \u2192 Metrics",
+      "example": "Benchmark search",
+      "output": "Performance report",
+      "tips": [
+        "Test with real user queries."
+      ]
+    },
+    {
+      "topic": "ChromaDB Best Practices",
+      "definition": "Use quality embeddings, organize collections and monitor retrieval quality.",
+      "syntax": "Store \u2192 Search \u2192 Evaluate",
+      "example": "Production RAG",
+      "output": "Reliable vector database",
+      "tips": [
+        "Back up data.",
+        "Optimize metadata.",
+        "Benchmark performance."
+      ]
+    }
+  ]
+}

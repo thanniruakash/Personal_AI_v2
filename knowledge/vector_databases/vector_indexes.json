@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "Vector Indexes",
+  "topics": [
+    {
+      "topic": "What are Vector Indexes?",
+      "definition": "Vector indexes organize embeddings for fast nearest-neighbor search.",
+      "syntax": "Embeddings \u2192 Index",
+      "example": "Semantic search",
+      "output": "Indexed vectors",
+      "tips": [
+        "Select an index based on accuracy and speed."
+      ]
+    },
+    {
+      "topic": "HNSW",
+      "definition": "HNSW is a graph-based ANN index with high recall and fast queries.",
+      "syntax": "Vectors \u2192 HNSW",
+      "example": "Large-scale retrieval",
+      "output": "Nearest neighbors",
+      "tips": [
+        "Tune graph parameters for performance."
+      ]
+    },
+    {
+      "topic": "IVF",
+      "definition": "IVF groups vectors into clusters to speed up searches.",
+      "syntax": "Vectors \u2192 Clusters",
+      "example": "Million-vector search",
+      "output": "Candidate vectors",
+      "tips": [
+        "Increase clusters for larger datasets."
+      ]
+    },
+    {
+      "topic": "Flat Index",
+      "definition": "A flat index compares every vector for exact search.",
+      "syntax": "Query \u2192 All Vectors",
+      "example": "Small datasets",
+      "output": "Exact nearest neighbors",
+      "tips": [
+        "Best accuracy but slower at scale."
+      ]
+    },
+    {
+      "topic": "ANN Search",
+      "definition": "Approximate Nearest Neighbor search trades a little accuracy for much faster retrieval.",
+      "syntax": "Query \u2192 ANN Index",
+      "example": "Real-time search",
+      "output": "Approximate neighbors",
+      "tips": [
+        "Benchmark recall versus latency."
+      ]
+    },
+    {
+      "topic": "Index Performance",
+      "definition": "Performance depends on recall, latency, memory usage and build time.",
+      "syntax": "Index \u2192 Metrics",
+      "example": "HNSW benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Measure using real workloads."
+      ]
+    },
+    {
+      "topic": "Index Applications",
+      "definition": "Vector indexes are used in RAG, recommendations, image search and AI assistants.",
+      "syntax": "Embeddings \u2192 Index \u2192 Search",
+      "example": "Knowledge retrieval",
+      "output": "Relevant results",
+      "tips": [
+        "Rebuild indexes after major data updates."
+      ]
+    },
+    {
+      "topic": "Vector Index Best Practices",
+      "definition": "Optimize index parameters, monitor performance and test retrieval quality.",
+      "syntax": "Build \u2192 Benchmark \u2192 Tune",
+      "example": "Production vector search",
+      "output": "Reliable indexing",
+      "tips": [
+        "Monitor memory.",
+        "Tune recall.",
+        "Benchmark regularly."
+      ]
+    }
+  ]
+}

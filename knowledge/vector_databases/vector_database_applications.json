@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "Vector Database Applications",
+  "topics": [
+    {
+      "topic": "RAG Applications",
+      "definition": "Vector databases power Retrieval-Augmented Generation by retrieving relevant context.",
+      "syntax": "Query \u2192 Vector DB \u2192 LLM",
+      "example": "Enterprise chatbot",
+      "output": "Grounded answer",
+      "tips": [
+        "Keep embeddings updated."
+      ]
+    },
+    {
+      "topic": "Semantic Search",
+      "definition": "Semantic search retrieves results based on meaning rather than keywords.",
+      "syntax": "Query \u2192 Embeddings \u2192 Results",
+      "example": "Knowledge search",
+      "output": "Relevant documents",
+      "tips": [
+        "Use high-quality embedding models."
+      ]
+    },
+    {
+      "topic": "Recommendation Systems",
+      "definition": "Recommend similar products, movies or content using vector similarity.",
+      "syntax": "User/Profile \u2192 Search",
+      "example": "Movie recommendations",
+      "output": "Recommended items",
+      "tips": [
+        "Continuously refresh embeddings."
+      ]
+    },
+    {
+      "topic": "Image Search",
+      "definition": "Search visually similar images using image embeddings.",
+      "syntax": "Image \u2192 Embedding \u2192 Search",
+      "example": "Photo search",
+      "output": "Similar images",
+      "tips": [
+        "Use vision embedding models."
+      ]
+    },
+    {
+      "topic": "Fraud Detection",
+      "definition": "Detect unusual patterns by comparing embedding similarity.",
+      "syntax": "Transaction \u2192 Embedding",
+      "example": "Banking fraud",
+      "output": "Risk score",
+      "tips": [
+        "Combine with rule-based checks."
+      ]
+    },
+    {
+      "topic": "Enterprise AI",
+      "definition": "Organizations use vector databases for knowledge management and AI assistants.",
+      "syntax": "Documents \u2192 Vector DB",
+      "example": "Internal search",
+      "output": "Business insights",
+      "tips": [
+        "Protect sensitive information."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Measure recall, precision, latency and throughput.",
+      "syntax": "System \u2192 Metrics",
+      "example": "Search benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Evaluate with real workloads."
+      ]
+    },
+    {
+      "topic": "Vector Database Applications Best Practices",
+      "definition": "Optimize embeddings, indexes and monitoring for reliable production systems.",
+      "syntax": "Embed \u2192 Index \u2192 Search \u2192 Evaluate",
+      "example": "Production AI platform",
+      "output": "Reliable deployment",
+      "tips": [
+        "Monitor latency.",
+        "Re-index when data changes.",
+        "Benchmark regularly."
+      ]
+    }
+  ]
+}

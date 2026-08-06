@@ -1,0 +1,88 @@
+{
+  "subject": "Vector Databases",
+  "section": "Vector Database Basics",
+  "topics": [
+    {
+      "topic": "What is a Vector Database?",
+      "definition": "A vector database stores and searches embeddings efficiently for semantic retrieval.",
+      "syntax": "Embedding \u2192 Vector DB \u2192 Results",
+      "example": "Document search",
+      "output": "Relevant vectors",
+      "tips": [
+        "Use with embedding models."
+      ]
+    },
+    {
+      "topic": "Embeddings Storage",
+      "definition": "Embeddings are stored with optional metadata for retrieval.",
+      "syntax": "Data \u2192 Embedding \u2192 Store",
+      "example": "Knowledge base",
+      "output": "Indexed vectors",
+      "tips": [
+        "Store useful metadata."
+      ]
+    },
+    {
+      "topic": "Vector Index",
+      "definition": "A vector index speeds up nearest-neighbor search.",
+      "syntax": "Vectors \u2192 Index",
+      "example": "HNSW",
+      "output": "Fast lookup",
+      "tips": [
+        "Choose index by scale and latency."
+      ]
+    },
+    {
+      "topic": "Metadata",
+      "definition": "Metadata adds filters like category or date to vectors.",
+      "syntax": "Vector + Metadata",
+      "example": "Department filter",
+      "output": "Filtered search",
+      "tips": [
+        "Keep metadata consistent."
+      ]
+    },
+    {
+      "topic": "CRUD Operations",
+      "definition": "Create, read, update and delete vectors in the database.",
+      "syntax": "Insert/Query/Update/Delete",
+      "example": "Update document embedding",
+      "output": "Database operation",
+      "tips": [
+        "Re-embed changed content."
+      ]
+    },
+    {
+      "topic": "Scalability",
+      "definition": "Vector databases handle millions of embeddings efficiently.",
+      "syntax": "Scale \u2192 Distributed Search",
+      "example": "Enterprise search",
+      "output": "Scalable retrieval",
+      "tips": [
+        "Monitor memory usage."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Used in RAG, recommendations, search and anomaly detection.",
+      "syntax": "Embeddings \u2192 App",
+      "example": "AI assistant",
+      "output": "Relevant results",
+      "tips": [
+        "Refresh indexes after major updates."
+      ]
+    },
+    {
+      "topic": "Best Practices",
+      "definition": "Use quality embeddings, optimize indexes and evaluate retrieval quality.",
+      "syntax": "Embed \u2192 Index \u2192 Search",
+      "example": "Production vector DB",
+      "output": "Reliable system",
+      "tips": [
+        "Benchmark queries.",
+        "Backup indexes.",
+        "Monitor latency."
+      ]
+    }
+  ]
+}

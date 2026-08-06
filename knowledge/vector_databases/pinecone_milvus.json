@@ -1,0 +1,89 @@
+{
+  "subject": "Vector Databases",
+  "section": "Pinecone and Milvus",
+  "topics": [
+    {
+      "topic": "What is Pinecone?",
+      "definition": "Pinecone is a managed cloud vector database for similarity search.",
+      "syntax": "Embeddings \u2192 Pinecone",
+      "example": "Cloud RAG",
+      "output": "Search results",
+      "tips": [
+        "Scales automatically."
+      ]
+    },
+    {
+      "topic": "What is Milvus?",
+      "definition": "Milvus is an open-source vector database for large-scale AI applications.",
+      "syntax": "Embeddings \u2192 Milvus",
+      "example": "Self-hosted semantic search",
+      "output": "Nearest vectors",
+      "tips": [
+        "Good for on-premises deployments."
+      ]
+    },
+    {
+      "topic": "Pinecone vs Milvus",
+      "definition": "Pinecone is fully managed, while Milvus offers greater self-hosted flexibility.",
+      "syntax": "Managed \u2194 Self-hosted",
+      "example": "Choose deployment",
+      "output": "Platform comparison",
+      "tips": [
+        "Select based on infrastructure needs."
+      ]
+    },
+    {
+      "topic": "Cloud Vector Search",
+      "definition": "Cloud vector search enables scalable semantic retrieval over the internet.",
+      "syntax": "Query \u2192 Cloud Index",
+      "example": "AI assistant",
+      "output": "Relevant documents",
+      "tips": [
+        "Optimize network latency."
+      ]
+    },
+    {
+      "topic": "Scalability",
+      "definition": "Both systems support scaling to millions or billions of vectors.",
+      "syntax": "Scale \u2192 Distributed Search",
+      "example": "Enterprise search",
+      "output": "Scalable retrieval",
+      "tips": [
+        "Monitor resource usage."
+      ]
+    },
+    {
+      "topic": "Enterprise Applications",
+      "definition": "Used in RAG, recommendations, fraud detection and knowledge search.",
+      "syntax": "Embeddings \u2192 Vector DB",
+      "example": "Corporate chatbot",
+      "output": "Business insights",
+      "tips": [
+        "Secure sensitive data."
+      ]
+    },
+    {
+      "topic": "Performance Evaluation",
+      "definition": "Measure recall, latency, throughput and availability.",
+      "syntax": "System \u2192 Metrics",
+      "example": "Production benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Benchmark regularly."
+      ]
+    },
+    {
+      "topic": "Pinecone & Milvus Best Practices",
+      "definition": "Choose the right deployment model, optimize indexes and monitor performance.",
+      "syntax": "Deploy \u2192 Monitor \u2192 Improve",
+      "example": "Enterprise AI",
+      "output": "Reliable vector database",
+      "tips": [
+        "Backup data.",
+        "Tune indexes.",
+        "Monitor costs.",
+        "Evaluate retrieval quality."
+      ]
+    }
+  ]
+}
