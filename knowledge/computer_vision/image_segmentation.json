@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Image Segmentation",
+  "topics": [
+    {
+      "topic": "What is Image Segmentation?",
+      "definition": "Image segmentation divides an image into meaningful regions or objects.",
+      "syntax": "Image \u2192 Segments",
+      "example": "Separate road, cars and pedestrians",
+      "output": "Segmented image",
+      "tips": [
+        "Provides pixel-level understanding."
+      ]
+    },
+    {
+      "topic": "Semantic Segmentation",
+      "definition": "Semantic segmentation assigns a class label to every pixel in an image.",
+      "syntax": "Pixel \u2192 Class",
+      "example": "Classify all road pixels",
+      "output": "Semantic mask",
+      "tips": [
+        "Objects of the same class share one label."
+      ]
+    },
+    {
+      "topic": "Instance Segmentation",
+      "definition": "Instance segmentation identifies each object separately, even within the same class.",
+      "syntax": "Pixel \u2192 Object Instance",
+      "example": "Detect multiple people individually",
+      "output": "Instance masks",
+      "tips": [
+        "Useful when object counts matter."
+      ]
+    },
+    {
+      "topic": "Panoptic Segmentation",
+      "definition": "Panoptic segmentation combines semantic and instance segmentation into one representation.",
+      "syntax": "Semantic + Instance",
+      "example": "Autonomous driving scenes",
+      "output": "Panoptic map",
+      "tips": [
+        "Captures both stuff and thing classes."
+      ]
+    },
+    {
+      "topic": "Medical Image Segmentation",
+      "definition": "Medical segmentation identifies organs, tissues or tumors in medical images.",
+      "syntax": "Scan \u2192 Segmentation",
+      "example": "Brain tumor detection",
+      "output": "Segmented medical image",
+      "tips": [
+        "High-quality annotations are essential."
+      ]
+    },
+    {
+      "topic": "U-Net",
+      "definition": "U-Net is a popular neural network architecture designed for image segmentation.",
+      "syntax": "Encoder \u2192 Decoder",
+      "example": "Biomedical image segmentation",
+      "output": "Segmentation mask",
+      "tips": [
+        "Widely used in healthcare applications."
+      ]
+    },
+    {
+      "topic": "IoU (Intersection over Union)",
+      "definition": "IoU measures the overlap between predicted and actual segmented regions.",
+      "syntax": "Overlap / Union",
+      "example": "Evaluate segmentation accuracy",
+      "output": "IoU score",
+      "tips": [
+        "Higher IoU indicates better segmentation."
+      ]
+    },
+    {
+      "topic": "Image Segmentation Best Practices",
+      "definition": "Use accurate annotations, balanced datasets and evaluate with segmentation metrics.",
+      "syntax": "Train \u2192 Validate \u2192 Improve",
+      "example": "Production segmentation model",
+      "output": "Reliable segmentation",
+      "tips": [
+        "Use data augmentation.",
+        "Monitor IoU and Dice score.",
+        "Validate on real-world images."
+      ]
+    }
+  ]
+}

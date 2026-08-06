@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Object Detection",
+  "topics": [
+    {
+      "topic": "What is Object Detection?",
+      "definition": "Object detection identifies and locates one or more objects within an image or video.",
+      "syntax": "Image \u2192 Detector \u2192 Objects",
+      "example": "Detect cars in a street image",
+      "output": "Objects with locations",
+      "tips": [
+        "Requires both classification and localization."
+      ]
+    },
+    {
+      "topic": "Bounding Boxes",
+      "definition": "Bounding boxes are rectangles that mark the location of detected objects.",
+      "syntax": "(x, y, width, height)",
+      "example": "Box around a person",
+      "output": "Object location",
+      "tips": [
+        "Accurate boxes improve evaluation scores."
+      ]
+    },
+    {
+      "topic": "Class Labels",
+      "definition": "Class labels identify the category of each detected object.",
+      "syntax": "Object \u2192 Label",
+      "example": "Dog, Car, Bicycle",
+      "output": "Predicted class",
+      "tips": [
+        "Use well-defined class names."
+      ]
+    },
+    {
+      "topic": "YOLO",
+      "definition": "YOLO (You Only Look Once) detects objects in a single forward pass, enabling real-time performance.",
+      "syntax": "Image \u2192 YOLO \u2192 Detections",
+      "example": "Real-time traffic monitoring",
+      "output": "Fast object detection",
+      "tips": [
+        "Good choice for speed-critical applications."
+      ]
+    },
+    {
+      "topic": "R-CNN Family",
+      "definition": "R-CNN, Fast R-CNN and Faster R-CNN use region proposals for accurate object detection.",
+      "syntax": "Regions \u2192 Classification",
+      "example": "Medical image detection",
+      "output": "High-accuracy detections",
+      "tips": [
+        "Generally slower than YOLO."
+      ]
+    },
+    {
+      "topic": "SSD (Single Shot Detector)",
+      "definition": "SSD detects objects in one pass using feature maps at multiple scales.",
+      "syntax": "Image \u2192 SSD",
+      "example": "Mobile vision application",
+      "output": "Detected objects",
+      "tips": [
+        "Balances speed and accuracy."
+      ]
+    },
+    {
+      "topic": "mAP (Mean Average Precision)",
+      "definition": "mAP is a common metric used to evaluate object detection accuracy.",
+      "syntax": "Predictions \u2192 mAP",
+      "example": "Compare detector performance",
+      "output": "Detection score",
+      "tips": [
+        "Higher mAP indicates better detection quality."
+      ]
+    },
+    {
+      "topic": "Object Detection Best Practices",
+      "definition": "Use diverse datasets, accurate annotations and appropriate evaluation metrics.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production object detector",
+      "output": "Reliable detection system",
+      "tips": [
+        "Augment training data.",
+        "Monitor false positives.",
+        "Evaluate on real-world images."
+      ]
+    }
+  ]
+}

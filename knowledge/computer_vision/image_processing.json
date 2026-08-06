@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Image Processing",
+  "topics": [
+    {
+      "topic": "Image Preprocessing",
+      "definition": "Image preprocessing prepares images for computer vision tasks by improving quality and consistency.",
+      "syntax": "Raw Image \u2192 Processed Image",
+      "example": "Noise removal before object detection",
+      "output": "Enhanced image",
+      "tips": [
+        "Preprocess images consistently."
+      ]
+    },
+    {
+      "topic": "Image Resizing",
+      "definition": "Resizing changes image dimensions to match model requirements.",
+      "syntax": "Image \u2192 Resize",
+      "example": "224\u00d7224 pixels",
+      "output": "Resized image",
+      "tips": [
+        "Maintain aspect ratio when appropriate."
+      ]
+    },
+    {
+      "topic": "Image Filtering",
+      "definition": "Filtering removes noise or enhances important image features.",
+      "syntax": "Image \u2192 Filter",
+      "example": "Gaussian Blur",
+      "output": "Filtered image",
+      "tips": [
+        "Choose filters based on the application."
+      ]
+    },
+    {
+      "topic": "Brightness and Contrast",
+      "definition": "Brightness and contrast adjustments improve image visibility.",
+      "syntax": "Adjust \u2192 Image",
+      "example": "Increase contrast",
+      "output": "Enhanced visibility",
+      "tips": [
+        "Avoid excessive adjustments."
+      ]
+    },
+    {
+      "topic": "Edge Detection",
+      "definition": "Edge detection identifies object boundaries in an image.",
+      "syntax": "Image \u2192 Edges",
+      "example": "Canny Edge Detector",
+      "output": "Edge map",
+      "tips": [
+        "Reduce noise before detecting edges."
+      ]
+    },
+    {
+      "topic": "Morphological Operations",
+      "definition": "Morphological operations modify image structures using erosion and dilation.",
+      "syntax": "Image \u2192 Morphology",
+      "example": "Remove small noise",
+      "output": "Processed binary image",
+      "tips": [
+        "Use the correct structuring element."
+      ]
+    },
+    {
+      "topic": "Histogram Equalization",
+      "definition": "Histogram equalization improves image contrast by redistributing pixel intensities.",
+      "syntax": "Histogram \u2192 Equalize",
+      "example": "Enhance low-contrast image",
+      "output": "Improved contrast",
+      "tips": [
+        "Useful for grayscale images."
+      ]
+    },
+    {
+      "topic": "Image Processing Best Practices",
+      "definition": "Use suitable preprocessing methods, validate outputs and preserve important image information.",
+      "syntax": "Preprocess \u2192 Validate \u2192 Analyze",
+      "example": "Medical image pipeline",
+      "output": "Reliable preprocessing",
+      "tips": [
+        "Avoid unnecessary processing.",
+        "Keep original images.",
+        "Test preprocessing effects."
+      ]
+    }
+  ]
+}

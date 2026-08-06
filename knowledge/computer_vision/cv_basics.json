@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Computer Vision Basics",
+  "topics": [
+    {
+      "topic": "What is Computer Vision?",
+      "definition": "Computer Vision enables computers to understand and interpret images and videos.",
+      "syntax": "Image \u2192 Vision Model \u2192 Output",
+      "example": "Detect objects in a photo",
+      "output": "Visual prediction",
+      "tips": [
+        "High-quality images improve performance."
+      ]
+    },
+    {
+      "topic": "Digital Images",
+      "definition": "A digital image is made of pixels arranged in rows and columns.",
+      "syntax": "Width \u00d7 Height \u00d7 Channels",
+      "example": "1920\u00d71080 RGB image",
+      "output": "Image data",
+      "tips": [
+        "Resolution affects detail."
+      ]
+    },
+    {
+      "topic": "Pixels",
+      "definition": "Pixels are the smallest units of a digital image.",
+      "syntax": "(R,G,B)",
+      "example": "RGB pixel",
+      "output": "Pixel value",
+      "tips": [
+        "Each pixel stores color information."
+      ]
+    },
+    {
+      "topic": "Color Spaces",
+      "definition": "Color spaces represent colors in different formats such as RGB, HSV and Grayscale.",
+      "syntax": "RGB / HSV / Gray",
+      "example": "Convert RGB to Gray",
+      "output": "Converted image",
+      "tips": [
+        "Choose the color space for the task."
+      ]
+    },
+    {
+      "topic": "Image Representation",
+      "definition": "Images are represented as numerical matrices processed by algorithms.",
+      "syntax": "Image \u2192 Matrix",
+      "example": "NumPy array",
+      "output": "Matrix representation",
+      "tips": [
+        "Normalize pixel values when needed."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Computer vision is used in healthcare, autonomous vehicles, security and manufacturing.",
+      "syntax": "Image \u2192 Analysis",
+      "example": "Medical image diagnosis",
+      "output": "Application result",
+      "tips": [
+        "Match the model to the application."
+      ]
+    },
+    {
+      "topic": "Challenges",
+      "definition": "Lighting, occlusion, blur and viewpoint changes make vision tasks difficult.",
+      "syntax": "Image \u2192 Challenges",
+      "example": "Low-light detection",
+      "output": "Potential errors",
+      "tips": [
+        "Use diverse training data."
+      ]
+    },
+    {
+      "topic": "Computer Vision Best Practices",
+      "definition": "Use quality datasets, preprocess images and evaluate models carefully.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production vision system",
+      "output": "Reliable CV model",
+      "tips": [
+        "Augment data.",
+        "Monitor accuracy.",
+        "Test on real-world images."
+      ]
+    }
+  ]
+}

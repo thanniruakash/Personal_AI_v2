@@ -1,0 +1,89 @@
+{
+  "subject": "Computer Vision",
+  "section": "Advanced Computer Vision",
+  "topics": [
+    {
+      "topic": "3D Computer Vision",
+      "definition": "3D computer vision estimates depth and reconstructs three-dimensional scenes from images or sensors.",
+      "syntax": "Images \u2192 3D Model",
+      "example": "3D scene reconstruction",
+      "output": "3D representation",
+      "tips": [
+        "Use calibrated cameras when possible."
+      ]
+    },
+    {
+      "topic": "Video Understanding",
+      "definition": "Video understanding analyzes sequences of frames to recognize actions and events.",
+      "syntax": "Video \u2192 Frames \u2192 Analysis",
+      "example": "Action recognition",
+      "output": "Detected activity",
+      "tips": [
+        "Preserve temporal information."
+      ]
+    },
+    {
+      "topic": "Vision-Language Models (VLMs)",
+      "definition": "Vision-language models jointly understand images and text.",
+      "syntax": "Image + Text \u2192 Model",
+      "example": "Image captioning",
+      "output": "Multimodal response",
+      "tips": [
+        "Use aligned image-text datasets."
+      ]
+    },
+    {
+      "topic": "Autonomous Driving Vision",
+      "definition": "Computer vision helps autonomous vehicles detect lanes, signs, vehicles and pedestrians.",
+      "syntax": "Camera \u2192 Vision \u2192 Decision",
+      "example": "Lane detection",
+      "output": "Driving perception",
+      "tips": [
+        "Test under diverse weather and lighting."
+      ]
+    },
+    {
+      "topic": "Remote Sensing",
+      "definition": "Remote sensing analyzes satellite and aerial imagery for mapping and monitoring.",
+      "syntax": "Satellite Image \u2192 Analysis",
+      "example": "Crop monitoring",
+      "output": "Geospatial insights",
+      "tips": [
+        "Account for varying resolutions."
+      ]
+    },
+    {
+      "topic": "Medical Computer Vision",
+      "definition": "Medical computer vision assists diagnosis by analyzing medical images.",
+      "syntax": "Medical Image \u2192 Model",
+      "example": "Tumor detection",
+      "output": "Clinical prediction",
+      "tips": [
+        "Validate carefully with expert-reviewed data."
+      ]
+    },
+    {
+      "topic": "Future of Computer Vision",
+      "definition": "Future systems will become more multimodal, efficient and capable of real-time reasoning.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "Smart robotics",
+      "output": "Emerging capabilities",
+      "tips": [
+        "Keep models updated with new techniques."
+      ]
+    },
+    {
+      "topic": "Advanced Computer Vision Best Practices",
+      "definition": "Build accurate, efficient and ethical vision systems with continuous evaluation.",
+      "syntax": "Design \u2192 Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Enterprise vision platform",
+      "output": "Reliable vision solution",
+      "tips": [
+        "Monitor bias.",
+        "Benchmark regularly.",
+        "Protect privacy.",
+        "Optimize deployment."
+      ]
+    }
+  ]
+}

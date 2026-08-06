@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Face Recognition",
+  "topics": [
+    {
+      "topic": "What is Face Recognition?",
+      "definition": "Face recognition identifies or verifies a person's identity using facial features.",
+      "syntax": "Face Image \u2192 Recognition Model",
+      "example": "Phone face unlock",
+      "output": "Identity predicted",
+      "tips": [
+        "Use high-quality face images."
+      ]
+    },
+    {
+      "topic": "Face Detection",
+      "definition": "Face detection locates faces within images or video frames.",
+      "syntax": "Image \u2192 Face Detector",
+      "example": "Detect faces in a group photo",
+      "output": "Face locations",
+      "tips": [
+        "Detection is performed before recognition."
+      ]
+    },
+    {
+      "topic": "Face Alignment",
+      "definition": "Face alignment normalizes facial orientation before feature extraction.",
+      "syntax": "Detect \u2192 Align",
+      "example": "Rotate tilted face",
+      "output": "Aligned face",
+      "tips": [
+        "Improves recognition accuracy."
+      ]
+    },
+    {
+      "topic": "Face Embeddings",
+      "definition": "Face embeddings convert a face into a numerical vector representing unique features.",
+      "syntax": "Face \u2192 Embedding",
+      "example": "128-dimensional vector",
+      "output": "Face representation",
+      "tips": [
+        "Similar faces have similar embeddings."
+      ]
+    },
+    {
+      "topic": "Face Verification",
+      "definition": "Face verification checks whether two face images belong to the same person.",
+      "syntax": "Face A \u2194 Face B",
+      "example": "Login verification",
+      "output": "Match or No Match",
+      "tips": [
+        "Common in biometric authentication."
+      ]
+    },
+    {
+      "topic": "Face Identification",
+      "definition": "Face identification compares a face against a database to determine identity.",
+      "syntax": "Face \u2192 Database",
+      "example": "Employee attendance",
+      "output": "Identified person",
+      "tips": [
+        "Requires an enrolled face database."
+      ]
+    },
+    {
+      "topic": "Privacy and Ethics",
+      "definition": "Face recognition systems should respect privacy, consent and fairness.",
+      "syntax": "Collect \u2192 Protect \u2192 Use",
+      "example": "Access control",
+      "output": "Ethical deployment",
+      "tips": [
+        "Comply with applicable privacy laws and policies."
+      ]
+    },
+    {
+      "topic": "Face Recognition Best Practices",
+      "definition": "Use quality datasets, secure biometric data and evaluate fairness and accuracy.",
+      "syntax": "Capture \u2192 Train \u2192 Verify",
+      "example": "Secure authentication system",
+      "output": "Reliable face recognition",
+      "tips": [
+        "Encrypt biometric data.",
+        "Test under different lighting.",
+        "Monitor false matches."
+      ]
+    }
+  ]
+}

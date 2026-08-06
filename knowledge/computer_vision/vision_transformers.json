@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Vision Transformers",
+  "topics": [
+    {
+      "topic": "Vision Transformers (ViT)",
+      "definition": "Vision Transformers apply transformer architectures to image recognition tasks by processing image patches.",
+      "syntax": "Image \u2192 Patches \u2192 Transformer",
+      "example": "Image classification",
+      "output": "Predicted class",
+      "tips": [
+        "Usually benefit from large training datasets."
+      ]
+    },
+    {
+      "topic": "Image Patches",
+      "definition": "Images are divided into small patches that are treated like tokens.",
+      "syntax": "Image \u2192 Patches",
+      "example": "16\u00d716 patches",
+      "output": "Patch embeddings",
+      "tips": [
+        "Patch size affects accuracy and speed."
+      ]
+    },
+    {
+      "topic": "Self-Attention in Vision",
+      "definition": "Self-attention learns relationships between image patches.",
+      "syntax": "Patch \u2194 Patch",
+      "example": "Scene understanding",
+      "output": "Context-aware features",
+      "tips": [
+        "Captures long-range dependencies."
+      ]
+    },
+    {
+      "topic": "Hybrid CNN + ViT Models",
+      "definition": "Hybrid models combine CNN feature extraction with transformer reasoning.",
+      "syntax": "CNN \u2192 Transformer",
+      "example": "Hybrid image classifier",
+      "output": "Improved predictions",
+      "tips": [
+        "Can balance efficiency and accuracy."
+      ]
+    },
+    {
+      "topic": "Swin Transformer",
+      "definition": "Swin Transformer computes attention within shifted windows for efficient vision processing.",
+      "syntax": "Windows \u2192 Shift \u2192 Attention",
+      "example": "Object detection",
+      "output": "Hierarchical features",
+      "tips": [
+        "Scales well to high-resolution images."
+      ]
+    },
+    {
+      "topic": "Vision Benchmarks",
+      "definition": "Benchmarks evaluate computer vision models on standard datasets.",
+      "syntax": "Model \u2192 Benchmark",
+      "example": "ImageNet",
+      "output": "Performance score",
+      "tips": [
+        "Compare models using the same benchmark."
+      ]
+    },
+    {
+      "topic": "Vision Applications",
+      "definition": "Vision transformers are used in classification, detection, segmentation and medical imaging.",
+      "syntax": "Image \u2192 Vision Task",
+      "example": "Medical scan analysis",
+      "output": "Vision result",
+      "tips": [
+        "Select the architecture based on the task."
+      ]
+    },
+    {
+      "topic": "Vision Transformer Best Practices",
+      "definition": "Use suitable patch sizes, augment data and evaluate on diverse datasets.",
+      "syntax": "Train \u2192 Evaluate \u2192 Optimize",
+      "example": "Production ViT model",
+      "output": "Reliable vision model",
+      "tips": [
+        "Monitor memory usage.",
+        "Use transfer learning when suitable.",
+        "Benchmark regularly."
+      ]
+    }
+  ]
+}

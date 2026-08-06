@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Vision",
+  "section": "Pose Estimation",
+  "topics": [
+    {
+      "topic": "What is Pose Estimation?",
+      "definition": "Pose estimation detects the positions of key body parts from images or videos.",
+      "syntax": "Image \u2192 Pose Model \u2192 Keypoints",
+      "example": "Fitness exercise tracking",
+      "output": "Estimated body pose",
+      "tips": [
+        "Works best with clear, unobstructed views."
+      ]
+    },
+    {
+      "topic": "Keypoints and Skeletons",
+      "definition": "Keypoints represent body joints, while skeletons connect them to describe body posture.",
+      "syntax": "Joints \u2192 Skeleton",
+      "example": "Shoulder, elbow and wrist",
+      "output": "Body structure",
+      "tips": [
+        "Correct keypoint detection improves accuracy."
+      ]
+    },
+    {
+      "topic": "Human Pose Estimation",
+      "definition": "Human pose estimation predicts body joint locations for one or more people.",
+      "syntax": "Person \u2192 Pose",
+      "example": "Sports analysis",
+      "output": "Human pose",
+      "tips": [
+        "Handle occlusion with robust models."
+      ]
+    },
+    {
+      "topic": "Hand Pose Estimation",
+      "definition": "Hand pose estimation identifies finger and hand joint positions.",
+      "syntax": "Hand \u2192 Keypoints",
+      "example": "Sign language recognition",
+      "output": "Hand landmarks",
+      "tips": [
+        "High-resolution input improves finger detection."
+      ]
+    },
+    {
+      "topic": "Facial Landmark Detection",
+      "definition": "Facial landmark detection locates important facial points such as eyes, nose and mouth.",
+      "syntax": "Face \u2192 Landmarks",
+      "example": "Face filters",
+      "output": "Facial keypoints",
+      "tips": [
+        "Useful for face alignment and animation."
+      ]
+    },
+    {
+      "topic": "Real-Time Pose Tracking",
+      "definition": "Real-time pose tracking estimates body movement continuously from live video.",
+      "syntax": "Video \u2192 Pose Stream",
+      "example": "Virtual fitness coach",
+      "output": "Live pose tracking",
+      "tips": [
+        "Optimize models for low latency."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Pose estimation is used in healthcare, sports, gaming, animation and robotics.",
+      "syntax": "Pose \u2192 Application",
+      "example": "Rehabilitation monitoring",
+      "output": "Application result",
+      "tips": [
+        "Select models based on the required accuracy."
+      ]
+    },
+    {
+      "topic": "Pose Estimation Best Practices",
+      "definition": "Use diverse datasets, evaluate keypoint accuracy and optimize for deployment needs.",
+      "syntax": "Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Production pose estimation system",
+      "output": "Reliable pose estimation",
+      "tips": [
+        "Test under different lighting.",
+        "Handle occlusions.",
+        "Monitor inference speed."
+      ]
+    }
+  ]
+}
