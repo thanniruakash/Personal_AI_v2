@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Consensus Algorithms",
+  "topics": [
+    {
+      "topic": "What is Consensus?",
+      "definition": "Consensus is the process by which distributed nodes agree on a single value or system state.",
+      "syntax": "Nodes \u2192 Agreement",
+      "example": "Cluster leader selection",
+      "output": "Common decision reached",
+      "tips": [
+        "Consensus is essential for distributed coordination."
+      ]
+    },
+    {
+      "topic": "Leader Election",
+      "definition": "Leader election selects one node to coordinate operations in a distributed system.",
+      "syntax": "Candidates \u2192 Leader",
+      "example": "Raft leader election",
+      "output": "Leader elected",
+      "tips": [
+        "Automatically elect a new leader after failures."
+      ]
+    },
+    {
+      "topic": "Raft Algorithm",
+      "definition": "Raft is a consensus algorithm designed to be understandable while maintaining replicated logs.",
+      "syntax": "Leader \u2192 Followers",
+      "example": "etcd cluster",
+      "output": "Consistent replicated state",
+      "tips": [
+        "Uses leader election and log replication."
+      ]
+    },
+    {
+      "topic": "Paxos Algorithm",
+      "definition": "Paxos is a consensus algorithm that achieves agreement despite failures.",
+      "syntax": "Proposer \u2192 Acceptor \u2192 Learner",
+      "example": "Distributed database",
+      "output": "Consensus achieved",
+      "tips": [
+        "More complex than Raft but highly reliable."
+      ]
+    },
+    {
+      "topic": "Quorum",
+      "definition": "A quorum is the minimum number of nodes required to approve an operation.",
+      "syntax": "Majority = N/2 + 1",
+      "example": "3 of 5 nodes",
+      "output": "Operation approved",
+      "tips": [
+        "Majority voting improves consistency."
+      ]
+    },
+    {
+      "topic": "Distributed Clock Synchronization",
+      "definition": "Clock synchronization keeps timestamps reasonably aligned across nodes.",
+      "syntax": "Sync \u2192 Time",
+      "example": "NTP",
+      "output": "Synchronized clocks",
+      "tips": [
+        "Reduce clock drift for reliable ordering."
+      ]
+    },
+    {
+      "topic": "Split Brain Problem",
+      "definition": "Split brain occurs when network partitions create multiple active leaders.",
+      "syntax": "Partition \u2192 Multiple Leaders",
+      "example": "Cluster network failure",
+      "output": "Inconsistent cluster",
+      "tips": [
+        "Prevent using quorum and fencing."
+      ]
+    },
+    {
+      "topic": "Consensus Best Practices",
+      "definition": "Use proven algorithms, monitor cluster health and maintain quorum.",
+      "syntax": "Elect \u2192 Replicate \u2192 Monitor",
+      "example": "Highly available cluster",
+      "output": "Reliable distributed coordination",
+      "tips": [
+        "Maintain an odd number of nodes.",
+        "Monitor leader status.",
+        "Test failover regularly."
+      ]
+    }
+  ]
+}

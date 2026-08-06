@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Distributed Systems Basics",
+  "topics": [
+    {
+      "topic": "What is a Distributed System?",
+      "definition": "A distributed system is a collection of independent computers that work together as a single system.",
+      "syntax": "Node \u2194 Node",
+      "example": "Cloud storage platform",
+      "output": "Distributed application",
+      "tips": [
+        "Design assuming failures can happen."
+      ]
+    },
+    {
+      "topic": "Characteristics",
+      "definition": "Distributed systems provide scalability, availability, fault tolerance and resource sharing.",
+      "syntax": "Scale + Availability + Reliability",
+      "example": "Large cloud application",
+      "output": "System characteristics understood",
+      "tips": [
+        "Balance performance and reliability."
+      ]
+    },
+    {
+      "topic": "Advantages",
+      "definition": "They improve scalability, availability and performance by distributing workloads.",
+      "syntax": "Distribute \u2192 Scale",
+      "example": "Multiple web servers",
+      "output": "Benefits identified",
+      "tips": [
+        "Use horizontal scaling where appropriate."
+      ]
+    },
+    {
+      "topic": "Challenges",
+      "definition": "Common challenges include network latency, failures, synchronization and consistency.",
+      "syntax": "Latency + Failure + Consistency",
+      "example": "Temporary network outage",
+      "output": "Challenges recognized",
+      "tips": [
+        "Expect partial failures."
+      ]
+    },
+    {
+      "topic": "Client-Server Model",
+      "definition": "Clients send requests and servers process them.",
+      "syntax": "Client \u2192 Server",
+      "example": "Web browser and web server",
+      "output": "Request processed",
+      "tips": [
+        "Scale servers to meet demand."
+      ]
+    },
+    {
+      "topic": "Peer-to-Peer (P2P)",
+      "definition": "Each node can act as both a client and a server.",
+      "syntax": "Peer \u2194 Peer",
+      "example": "BitTorrent",
+      "output": "Peer network",
+      "tips": [
+        "No central server is required."
+      ]
+    },
+    {
+      "topic": "Distributed Architecture",
+      "definition": "Applications are divided into multiple cooperating components running on different machines.",
+      "syntax": "Services \u2194 Network",
+      "example": "Microservices",
+      "output": "Architecture defined",
+      "tips": [
+        "Keep services loosely coupled."
+      ]
+    },
+    {
+      "topic": "Best Practices",
+      "definition": "Design for scalability, resilience and observability from the beginning.",
+      "syntax": "Design \u2192 Test \u2192 Monitor",
+      "example": "Production distributed platform",
+      "output": "Reliable system",
+      "tips": [
+        "Monitor all nodes.",
+        "Automate recovery.",
+        "Avoid single points of failure."
+      ]
+    }
+  ]
+}

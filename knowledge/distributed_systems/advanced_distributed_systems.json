@@ -1,0 +1,89 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Advanced Distributed Systems",
+  "topics": [
+    {
+      "topic": "Geo-Distributed Systems",
+      "definition": "Geo-distributed systems run across multiple geographic regions to improve availability and reduce latency.",
+      "syntax": "Region A \u2194 Region B",
+      "example": "Global cloud application",
+      "output": "Worldwide deployment",
+      "tips": [
+        "Place services close to users."
+      ]
+    },
+    {
+      "topic": "Data Synchronization",
+      "definition": "Data synchronization keeps information consistent across distributed nodes.",
+      "syntax": "Update \u2192 Sync",
+      "example": "Synchronizing user profiles",
+      "output": "Data synchronized",
+      "tips": [
+        "Handle synchronization conflicts carefully."
+      ]
+    },
+    {
+      "topic": "Distributed Transactions",
+      "definition": "Distributed transactions coordinate changes across multiple services or databases.",
+      "syntax": "Transaction \u2192 Multiple Nodes",
+      "example": "Online payment processing",
+      "output": "Transaction completed",
+      "tips": [
+        "Keep transactions as short as possible."
+      ]
+    },
+    {
+      "topic": "Two-Phase Commit (2PC)",
+      "definition": "2PC ensures all participating nodes either commit or roll back a transaction.",
+      "syntax": "Prepare \u2192 Commit",
+      "example": "Distributed database transaction",
+      "output": "Consistent transaction",
+      "tips": [
+        "Can block if the coordinator fails."
+      ]
+    },
+    {
+      "topic": "Three-Phase Commit (3PC)",
+      "definition": "3PC adds an extra phase to reduce blocking compared to 2PC.",
+      "syntax": "CanCommit \u2192 PreCommit \u2192 Commit",
+      "example": "High-availability transaction",
+      "output": "Reduced blocking",
+      "tips": [
+        "More complex than 2PC."
+      ]
+    },
+    {
+      "topic": "Disaster Recovery",
+      "definition": "Disaster recovery restores systems and data after major failures.",
+      "syntax": "Backup \u2192 Restore",
+      "example": "Recover from data center outage",
+      "output": "System restored",
+      "tips": [
+        "Test recovery procedures regularly."
+      ]
+    },
+    {
+      "topic": "Scalability Patterns",
+      "definition": "Scalability patterns help systems grow while maintaining performance.",
+      "syntax": "Scale Up / Scale Out",
+      "example": "Auto-scaling web services",
+      "output": "Scalable architecture",
+      "tips": [
+        "Prefer horizontal scaling for distributed systems."
+      ]
+    },
+    {
+      "topic": "Advanced Distributed Systems Best Practices",
+      "definition": "Design globally distributed, resilient and scalable systems with strong monitoring and recovery strategies.",
+      "syntax": "Design \u2192 Scale \u2192 Monitor \u2192 Recover",
+      "example": "Enterprise cloud platform",
+      "output": "Reliable distributed platform",
+      "tips": [
+        "Monitor every region.",
+        "Automate backups.",
+        "Test failover frequently.",
+        "Document recovery procedures."
+      ]
+    }
+  ]
+}

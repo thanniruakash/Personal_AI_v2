@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Consistency and Replication",
+  "topics": [
+    {
+      "topic": "Data Consistency",
+      "definition": "Consistency ensures all nodes observe the correct data according to the chosen consistency model.",
+      "syntax": "Write \u2192 Read",
+      "example": "Updating a user profile",
+      "output": "Consistent data",
+      "tips": [
+        "Choose a consistency model based on application needs."
+      ]
+    },
+    {
+      "topic": "Strong Consistency",
+      "definition": "Every read returns the most recent successful write.",
+      "syntax": "Write \u2192 Immediate Read",
+      "example": "Bank account balance",
+      "output": "Latest value returned",
+      "tips": [
+        "Best for critical applications."
+      ]
+    },
+    {
+      "topic": "Eventual Consistency",
+      "definition": "Replicas become consistent over time if no new updates occur.",
+      "syntax": "Write \u2192 Sync \u2192 Read",
+      "example": "Social media likes",
+      "output": "Eventually synchronized",
+      "tips": [
+        "Improves availability and scalability."
+      ]
+    },
+    {
+      "topic": "Replication",
+      "definition": "Replication copies data across multiple nodes for availability and fault tolerance.",
+      "syntax": "Primary \u2192 Replicas",
+      "example": "Database replicas",
+      "output": "Data duplicated",
+      "tips": [
+        "Monitor replication lag."
+      ]
+    },
+    {
+      "topic": "Leader\u2013Follower Replication",
+      "definition": "One leader accepts writes while followers replicate data.",
+      "syntax": "Leader \u2192 Followers",
+      "example": "PostgreSQL replication",
+      "output": "Replicas updated",
+      "tips": [
+        "Use followers for read scaling."
+      ]
+    },
+    {
+      "topic": "Multi-Leader Replication",
+      "definition": "Multiple leaders accept writes and synchronize changes.",
+      "syntax": "Leader \u2194 Leader",
+      "example": "Multi-region databases",
+      "output": "Data synchronized",
+      "tips": [
+        "Handle write conflicts carefully."
+      ]
+    },
+    {
+      "topic": "Leaderless Replication",
+      "definition": "Any node can accept reads and writes without a fixed leader.",
+      "syntax": "Client \u2194 Any Node",
+      "example": "Apache Cassandra",
+      "output": "Distributed writes",
+      "tips": [
+        "Use quorum reads and writes."
+      ]
+    },
+    {
+      "topic": "Consistency & Replication Best Practices",
+      "definition": "Balance consistency, availability and performance using appropriate replication strategies.",
+      "syntax": "Replicate \u2192 Monitor \u2192 Recover",
+      "example": "Global distributed database",
+      "output": "Reliable data management",
+      "tips": [
+        "Back up data.",
+        "Monitor replication health.",
+        "Test failover regularly."
+      ]
+    }
+  ]
+}

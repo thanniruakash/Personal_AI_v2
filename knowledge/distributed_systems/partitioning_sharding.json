@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Partitioning and Sharding",
+  "topics": [
+    {
+      "topic": "Data Partitioning",
+      "definition": "Data partitioning divides a large dataset into smaller, manageable partitions.",
+      "syntax": "Table \u2192 Partitions",
+      "example": "Split customer data by region",
+      "output": "Data partitioned",
+      "tips": [
+        "Choose partitions based on access patterns."
+      ]
+    },
+    {
+      "topic": "Horizontal Sharding",
+      "definition": "Horizontal sharding distributes rows of data across multiple database servers.",
+      "syntax": "Rows \u2192 Multiple Shards",
+      "example": "Users A\u2013M on Shard 1, N\u2013Z on Shard 2",
+      "output": "Data distributed",
+      "tips": [
+        "Use when a single database cannot handle growth."
+      ]
+    },
+    {
+      "topic": "Vertical Partitioning",
+      "definition": "Vertical partitioning separates columns or features into different databases or tables.",
+      "syntax": "Columns \u2192 Separate Tables",
+      "example": "User profile and login data stored separately",
+      "output": "Schema partitioned",
+      "tips": [
+        "Separate frequently accessed data from infrequently used data."
+      ]
+    },
+    {
+      "topic": "Shard Keys",
+      "definition": "A shard key determines how data is distributed across shards.",
+      "syntax": "Hash(Key) \u2192 Shard",
+      "example": "User ID as shard key",
+      "output": "Shard selected",
+      "tips": [
+        "Choose keys that distribute data evenly."
+      ]
+    },
+    {
+      "topic": "Rebalancing",
+      "definition": "Rebalancing redistributes data when shards become unevenly loaded.",
+      "syntax": "Move Data \u2192 Balance",
+      "example": "Add a new shard and migrate records",
+      "output": "Balanced cluster",
+      "tips": [
+        "Automate rebalancing where possible."
+      ]
+    },
+    {
+      "topic": "Consistent Hashing",
+      "definition": "Consistent hashing minimizes data movement when nodes are added or removed.",
+      "syntax": "Hash Ring",
+      "example": "Distributed cache cluster",
+      "output": "Efficient distribution",
+      "tips": [
+        "Commonly used in distributed caches."
+      ]
+    },
+    {
+      "topic": "Data Migration",
+      "definition": "Data migration moves data safely between partitions or shards.",
+      "syntax": "Source \u2192 Target",
+      "example": "Shard migration during scaling",
+      "output": "Data transferred",
+      "tips": [
+        "Validate data after migration."
+      ]
+    },
+    {
+      "topic": "Partitioning & Sharding Best Practices",
+      "definition": "Design partitions carefully, monitor balance and minimize cross-shard operations.",
+      "syntax": "Partition \u2192 Monitor \u2192 Optimize",
+      "example": "Large-scale distributed database",
+      "output": "Scalable storage",
+      "tips": [
+        "Monitor shard utilization.",
+        "Choose effective shard keys.",
+        "Test scaling strategies."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Fault Tolerance",
+  "topics": [
+    {
+      "topic": "Fault Tolerance",
+      "definition": "Fault tolerance enables a distributed system to continue operating even when components fail.",
+      "syntax": "Detect \u2192 Recover",
+      "example": "Service continues after a node failure",
+      "output": "System remains available",
+      "tips": [
+        "Design with failures in mind."
+      ]
+    },
+    {
+      "topic": "Redundancy",
+      "definition": "Redundancy duplicates critical components to improve availability.",
+      "syntax": "Primary + Backup",
+      "example": "Multiple database replicas",
+      "output": "Redundant system",
+      "tips": [
+        "Avoid single points of failure."
+      ]
+    },
+    {
+      "topic": "Failure Detection",
+      "definition": "Failure detection identifies unhealthy nodes or services.",
+      "syntax": "Heartbeat \u2192 Timeout",
+      "example": "Node heartbeat monitoring",
+      "output": "Failure detected",
+      "tips": [
+        "Use health checks and heartbeat messages."
+      ]
+    },
+    {
+      "topic": "Recovery Mechanisms",
+      "definition": "Recovery restores services after failures using backups or replicas.",
+      "syntax": "Fail \u2192 Recover",
+      "example": "Restore from replica",
+      "output": "Service restored",
+      "tips": [
+        "Automate recovery where possible."
+      ]
+    },
+    {
+      "topic": "Retry Strategies",
+      "definition": "Retry strategies attempt failed operations again after a delay.",
+      "syntax": "Retry \u2192 Backoff",
+      "example": "Retry API request",
+      "output": "Operation retried",
+      "tips": [
+        "Use exponential backoff to reduce load."
+      ]
+    },
+    {
+      "topic": "Failover",
+      "definition": "Failover switches workloads to healthy resources when failures occur.",
+      "syntax": "Primary \u2192 Secondary",
+      "example": "Database failover",
+      "output": "Service continues",
+      "tips": [
+        "Test failover procedures regularly."
+      ]
+    },
+    {
+      "topic": "Graceful Degradation",
+      "definition": "Graceful degradation keeps essential features available when parts of the system fail.",
+      "syntax": "Critical Features \u2192 Available",
+      "example": "Disable recommendations while checkout works",
+      "output": "Reduced but usable service",
+      "tips": [
+        "Prioritize core functionality."
+      ]
+    },
+    {
+      "topic": "Fault Tolerance Best Practices",
+      "definition": "Build resilient systems with redundancy, monitoring and automated recovery.",
+      "syntax": "Protect \u2192 Detect \u2192 Recover",
+      "example": "Highly available cloud platform",
+      "output": "Reliable distributed system",
+      "tips": [
+        "Monitor continuously.",
+        "Back up critical data.",
+        "Practice disaster recovery."
+      ]
+    }
+  ]
+}

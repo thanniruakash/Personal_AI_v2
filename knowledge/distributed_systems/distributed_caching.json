@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Distributed Caching",
+  "topics": [
+    {
+      "topic": "Distributed Caching",
+      "definition": "Distributed caching stores frequently accessed data across multiple cache nodes.",
+      "syntax": "Client \u2192 Cache Cluster",
+      "example": "Redis cluster",
+      "output": "Fast data access",
+      "tips": [
+        "Reduce database load with caching."
+      ]
+    },
+    {
+      "topic": "Cache Clusters",
+      "definition": "A cache cluster consists of multiple cache servers working together.",
+      "syntax": "Node1 + Node2 + Node3",
+      "example": "Redis Cluster",
+      "output": "Scalable cache",
+      "tips": [
+        "Add nodes to improve capacity."
+      ]
+    },
+    {
+      "topic": "Cache Partitioning",
+      "definition": "Partitioning distributes cached data across multiple cache nodes.",
+      "syntax": "Key \u2192 Cache Node",
+      "example": "Hash-based partitioning",
+      "output": "Balanced cache",
+      "tips": [
+        "Distribute keys evenly."
+      ]
+    },
+    {
+      "topic": "Cache Replication",
+      "definition": "Replication copies cached data to improve availability.",
+      "syntax": "Primary \u2192 Replica",
+      "example": "Redis replica",
+      "output": "Redundant cache",
+      "tips": [
+        "Monitor replication delays."
+      ]
+    },
+    {
+      "topic": "Cache Coherence",
+      "definition": "Cache coherence keeps cached data consistent across nodes.",
+      "syntax": "Update \u2192 Sync",
+      "example": "Invalidate stale cache",
+      "output": "Consistent cache",
+      "tips": [
+        "Synchronize updates carefully."
+      ]
+    },
+    {
+      "topic": "Cache Invalidation",
+      "definition": "Invalidation removes outdated cache entries.",
+      "syntax": "Update \u2192 Invalidate",
+      "example": "Product price update",
+      "output": "Fresh data served",
+      "tips": [
+        "Invalidation is key to consistency."
+      ]
+    },
+    {
+      "topic": "Cache Monitoring",
+      "definition": "Monitor cache hit rate, memory usage and latency.",
+      "syntax": "Metrics \u2192 Dashboard",
+      "example": "Redis monitoring",
+      "output": "Cache health tracked",
+      "tips": [
+        "Watch hit ratio and eviction rate."
+      ]
+    },
+    {
+      "topic": "Distributed Caching Best Practices",
+      "definition": "Use partitioning, replication and monitoring for reliable caching.",
+      "syntax": "Cache \u2192 Monitor \u2192 Optimize",
+      "example": "High-traffic web platform",
+      "output": "Efficient cache",
+      "tips": [
+        "Set TTL values.",
+        "Avoid caching sensitive data.",
+        "Monitor performance regularly."
+      ]
+    }
+  ]
+}

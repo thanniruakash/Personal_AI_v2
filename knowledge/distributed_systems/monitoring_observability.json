@@ -1,0 +1,88 @@
+{
+  "subject": "Distributed Systems",
+  "section": "Monitoring and Observability",
+  "topics": [
+    {
+      "topic": "Monitoring",
+      "definition": "Monitoring continuously tracks the health and performance of distributed systems.",
+      "syntax": "Collect \u2192 Monitor",
+      "example": "Monitor CPU and memory",
+      "output": "System metrics collected",
+      "tips": [
+        "Monitor critical services continuously."
+      ]
+    },
+    {
+      "topic": "Metrics",
+      "definition": "Metrics are numerical measurements that describe system behavior.",
+      "syntax": "Metric \u2192 Dashboard",
+      "example": "Request latency",
+      "output": "Performance measured",
+      "tips": [
+        "Track latency, throughput and errors."
+      ]
+    },
+    {
+      "topic": "Logging",
+      "definition": "Logging records system and application events for troubleshooting.",
+      "syntax": "Application \u2192 Logs",
+      "example": "Error log",
+      "output": "Logs stored",
+      "tips": [
+        "Centralize logs for easier analysis."
+      ]
+    },
+    {
+      "topic": "Distributed Tracing",
+      "definition": "Tracing follows a request across multiple services.",
+      "syntax": "Request \u2192 Trace",
+      "example": "Trace API call",
+      "output": "End-to-end request path",
+      "tips": [
+        "Use trace IDs across services."
+      ]
+    },
+    {
+      "topic": "Alerting",
+      "definition": "Alerting notifies operators when predefined conditions are met.",
+      "syntax": "Condition \u2192 Alert",
+      "example": "High CPU alert",
+      "output": "Notification sent",
+      "tips": [
+        "Avoid excessive alert noise."
+      ]
+    },
+    {
+      "topic": "Health Checks",
+      "definition": "Health checks verify whether services are operating correctly.",
+      "syntax": "Check \u2192 Status",
+      "example": "HTTP /health",
+      "output": "Service status",
+      "tips": [
+        "Use liveness and readiness checks."
+      ]
+    },
+    {
+      "topic": "Observability",
+      "definition": "Observability combines metrics, logs and traces to understand system behavior.",
+      "syntax": "Metrics + Logs + Traces",
+      "example": "Production dashboard",
+      "output": "System insights",
+      "tips": [
+        "Instrument every critical service."
+      ]
+    },
+    {
+      "topic": "Monitoring & Observability Best Practices",
+      "definition": "Continuously collect metrics, logs and traces to improve reliability.",
+      "syntax": "Observe \u2192 Analyze \u2192 Improve",
+      "example": "Enterprise monitoring platform",
+      "output": "Reliable operations",
+      "tips": [
+        "Monitor all services.",
+        "Review alerts regularly.",
+        "Retain logs securely."
+      ]
+    }
+  ]
+}
