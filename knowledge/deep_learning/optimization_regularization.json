@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "Optimization and Regularization",
+  "topics": [
+    {
+      "topic": "Gradient Descent",
+      "definition": "Gradient descent updates model parameters to minimize the loss function.",
+      "syntax": "Weights \u2192 Gradient \u2192 Update",
+      "example": "Train an image classifier",
+      "output": "Reduced loss",
+      "tips": [
+        "Choose a suitable learning rate."
+      ]
+    },
+    {
+      "topic": "Adam Optimizer",
+      "definition": "Adam combines momentum and adaptive learning rates for efficient training.",
+      "syntax": "Gradients \u2192 Adam \u2192 Update",
+      "example": "CNN training",
+      "output": "Optimized parameters",
+      "tips": [
+        "A common default optimizer."
+      ]
+    },
+    {
+      "topic": "Learning Rate",
+      "definition": "The learning rate controls the size of parameter updates during training.",
+      "syntax": "Learning Rate = \u03b7",
+      "example": "\u03b7 = 0.001",
+      "output": "Training step",
+      "tips": [
+        "Too high may diverge; too low may train slowly."
+      ]
+    },
+    {
+      "topic": "Regularization",
+      "definition": "Regularization techniques reduce overfitting and improve model generalization.",
+      "syntax": "Loss + Penalty",
+      "example": "L2 Regularization",
+      "output": "Generalized model",
+      "tips": [
+        "Use only as needed."
+      ]
+    },
+    {
+      "topic": "Dropout",
+      "definition": "Dropout randomly disables neurons during training to reduce overfitting.",
+      "syntax": "Random Neurons \u2192 Off",
+      "example": "Dropout = 0.5",
+      "output": "Robust network",
+      "tips": [
+        "Disable dropout during inference."
+      ]
+    },
+    {
+      "topic": "Early Stopping",
+      "definition": "Early stopping halts training when validation performance stops improving.",
+      "syntax": "Train \u2192 Monitor \u2192 Stop",
+      "example": "Stop after no improvement",
+      "output": "Best model retained",
+      "tips": [
+        "Monitor validation loss."
+      ]
+    },
+    {
+      "topic": "Batch Normalization",
+      "definition": "Batch normalization normalizes activations to stabilize and speed up training.",
+      "syntax": "Layer \u2192 BatchNorm",
+      "example": "CNN with BatchNorm",
+      "output": "Stable training",
+      "tips": [
+        "Often placed before activation functions."
+      ]
+    },
+    {
+      "topic": "Optimization & Regularization Best Practices",
+      "definition": "Tune optimizers, learning rates and regularization techniques while monitoring validation metrics.",
+      "syntax": "Train \u2192 Validate \u2192 Optimize",
+      "example": "Production deep learning model",
+      "output": "Reliable training",
+      "tips": [
+        "Use checkpoints.",
+        "Monitor overfitting.",
+        "Experiment systematically."
+      ]
+    }
+  ]
+}

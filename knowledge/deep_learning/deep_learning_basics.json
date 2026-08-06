@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "Deep Learning Basics",
+  "topics": [
+    {
+      "topic": "What is Deep Learning?",
+      "definition": "Deep learning is a branch of machine learning that uses neural networks with multiple layers to learn complex patterns from data.",
+      "syntax": "Data \u2192 Neural Network \u2192 Prediction",
+      "example": "Image recognition",
+      "output": "Predicted result",
+      "tips": [
+        "Deep learning performs best with large datasets."
+      ]
+    },
+    {
+      "topic": "Artificial Neural Networks",
+      "definition": "Artificial neural networks are computing models inspired by the human brain.",
+      "syntax": "Input \u2192 Hidden Layers \u2192 Output",
+      "example": "Digit recognition",
+      "output": "Network prediction",
+      "tips": [
+        "More layers can learn more complex patterns."
+      ]
+    },
+    {
+      "topic": "Neuron",
+      "definition": "A neuron receives inputs, applies weights and an activation function, then produces an output.",
+      "syntax": "Inputs \u2192 Weights \u2192 Activation",
+      "example": "Single perceptron",
+      "output": "Neuron output",
+      "tips": [
+        "Weights are learned during training."
+      ]
+    },
+    {
+      "topic": "Layers",
+      "definition": "Neural networks contain input, hidden and output layers.",
+      "syntax": "Input \u2192 Hidden \u2192 Output",
+      "example": "3-layer neural network",
+      "output": "Processed data",
+      "tips": [
+        "Hidden layers extract useful features."
+      ]
+    },
+    {
+      "topic": "Activation Functions",
+      "definition": "Activation functions introduce non-linearity into neural networks.",
+      "syntax": "ReLU / Sigmoid / Tanh",
+      "example": "ReLU in hidden layers",
+      "output": "Activated values",
+      "tips": [
+        "ReLU is commonly used in deep networks."
+      ]
+    },
+    {
+      "topic": "Forward Propagation",
+      "definition": "Forward propagation passes input data through the network to generate predictions.",
+      "syntax": "Input \u2192 Forward Pass",
+      "example": "Image classification",
+      "output": "Prediction",
+      "tips": [
+        "Occurs during both training and inference."
+      ]
+    },
+    {
+      "topic": "Backpropagation",
+      "definition": "Backpropagation updates model weights using prediction errors.",
+      "syntax": "Loss \u2192 Gradients \u2192 Update",
+      "example": "Train a classifier",
+      "output": "Improved model",
+      "tips": [
+        "Uses gradient descent to minimize loss."
+      ]
+    },
+    {
+      "topic": "Deep Learning Best Practices",
+      "definition": "Use quality data, suitable architectures and continuous evaluation.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production deep learning model",
+      "output": "Reliable model",
+      "tips": [
+        "Monitor overfitting.",
+        "Use validation datasets.",
+        "Save checkpoints."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "RNN, LSTM and GRU",
+  "topics": [
+    {
+      "topic": "What is an RNN?",
+      "definition": "A Recurrent Neural Network (RNN) processes sequential data by using information from previous time steps.",
+      "syntax": "Input(t) + Hidden(t-1) \u2192 Output",
+      "example": "Next word prediction",
+      "output": "Sequence prediction",
+      "tips": [
+        "Useful for sequential data."
+      ]
+    },
+    {
+      "topic": "Recurrent Neural Networks",
+      "definition": "RNNs maintain a hidden state that carries information through a sequence.",
+      "syntax": "Sequence \u2192 Hidden State",
+      "example": "Language modeling",
+      "output": "Processed sequence",
+      "tips": [
+        "Simple RNNs struggle with long sequences."
+      ]
+    },
+    {
+      "topic": "Vanishing Gradient Problem",
+      "definition": "Gradients can become extremely small during training, making it difficult to learn long-term dependencies.",
+      "syntax": "Gradient \u2192 Very Small",
+      "example": "Long sentence modeling",
+      "output": "Slow learning",
+      "tips": [
+        "LSTM and GRU help solve this issue."
+      ]
+    },
+    {
+      "topic": "LSTM",
+      "definition": "Long Short-Term Memory (LSTM) networks use gates to remember and forget information over long sequences.",
+      "syntax": "Input Gate + Forget Gate + Output Gate",
+      "example": "Machine translation",
+      "output": "Long-term memory",
+      "tips": [
+        "Good for long sequence tasks."
+      ]
+    },
+    {
+      "topic": "GRU",
+      "definition": "Gated Recurrent Units (GRU) simplify LSTM while retaining strong performance.",
+      "syntax": "Update Gate + Reset Gate",
+      "example": "Speech recognition",
+      "output": "Efficient sequence model",
+      "tips": [
+        "Often trains faster than LSTM."
+      ]
+    },
+    {
+      "topic": "Sequence Modeling",
+      "definition": "Sequence modeling predicts or analyzes ordered data.",
+      "syntax": "Sequence \u2192 Prediction",
+      "example": "Time-series forecasting",
+      "output": "Predicted sequence",
+      "tips": [
+        "Preserve the order of data."
+      ]
+    },
+    {
+      "topic": "NLP Applications",
+      "definition": "RNNs, LSTMs and GRUs are used for translation, text generation, speech recognition and sentiment analysis.",
+      "syntax": "Text \u2192 Model",
+      "example": "Sentiment analysis",
+      "output": "Language prediction",
+      "tips": [
+        "Transformers are now common for many NLP tasks."
+      ]
+    },
+    {
+      "topic": "RNN/LSTM/GRU Best Practices",
+      "definition": "Choose the architecture based on sequence length, monitor training and prevent overfitting.",
+      "syntax": "Train \u2192 Validate \u2192 Improve",
+      "example": "Production NLP model",
+      "output": "Reliable sequence model",
+      "tips": [
+        "Use dropout.",
+        "Monitor validation loss.",
+        "Select the right architecture."
+      ]
+    }
+  ]
+}

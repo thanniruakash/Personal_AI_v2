@@ -1,0 +1,89 @@
+{
+  "subject": "Deep Learning",
+  "section": "Advanced Deep Learning",
+  "topics": [
+    {
+      "topic": "Transfer Learning",
+      "definition": "Transfer learning adapts a pre-trained deep learning model to a new task.",
+      "syntax": "Pretrained Model \u2192 Fine-Tune",
+      "example": "ResNet for medical images",
+      "output": "Adapted model",
+      "tips": [
+        "Freeze early layers when appropriate."
+      ]
+    },
+    {
+      "topic": "Self-Supervised Learning",
+      "definition": "Models learn useful representations from unlabeled data by creating their own training tasks.",
+      "syntax": "Unlabeled Data \u2192 Pretext Task",
+      "example": "Masked language modeling",
+      "output": "Learned representations",
+      "tips": [
+        "Useful when labeled data is limited."
+      ]
+    },
+    {
+      "topic": "Multimodal Deep Learning",
+      "definition": "Multimodal models process multiple data types such as text, images and audio.",
+      "syntax": "Text + Image + Audio \u2192 Model",
+      "example": "Image captioning",
+      "output": "Multimodal prediction",
+      "tips": [
+        "Align modalities carefully."
+      ]
+    },
+    {
+      "topic": "Diffusion Models",
+      "definition": "Diffusion models generate data by gradually removing noise from random inputs.",
+      "syntax": "Noise \u2192 Denoising \u2192 Output",
+      "example": "AI image generation",
+      "output": "Generated image",
+      "tips": [
+        "Require many denoising steps."
+      ]
+    },
+    {
+      "topic": "Foundation Models",
+      "definition": "Foundation models are large pre-trained models adaptable to many downstream tasks.",
+      "syntax": "Pretrain \u2192 Adapt",
+      "example": "Large vision-language model",
+      "output": "General-purpose model",
+      "tips": [
+        "Fine-tune for specific domains."
+      ]
+    },
+    {
+      "topic": "Edge AI & TinyML",
+      "definition": "Edge AI runs deep learning models on resource-constrained devices.",
+      "syntax": "Train \u2192 Compress \u2192 Deploy",
+      "example": "Smartwatch activity detection",
+      "output": "On-device inference",
+      "tips": [
+        "Optimize for memory and power."
+      ]
+    },
+    {
+      "topic": "Future of Deep Learning",
+      "definition": "Future trends include efficient models, multimodal intelligence and autonomous AI systems.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "Next-generation AI assistants",
+      "output": "Emerging capabilities",
+      "tips": [
+        "Continue learning as the field evolves."
+      ]
+    },
+    {
+      "topic": "Advanced Deep Learning Best Practices",
+      "definition": "Build scalable, efficient and explainable deep learning systems with continuous monitoring.",
+      "syntax": "Design \u2192 Train \u2192 Deploy \u2192 Monitor",
+      "example": "Enterprise AI platform",
+      "output": "Reliable deep learning solution",
+      "tips": [
+        "Monitor production models.",
+        "Benchmark performance.",
+        "Document experiments.",
+        "Update models responsibly."
+      ]
+    }
+  ]
+}

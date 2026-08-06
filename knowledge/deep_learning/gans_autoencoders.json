@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "GANs and Autoencoders",
+  "topics": [
+    {
+      "topic": "Generative Adversarial Networks (GANs)",
+      "definition": "GANs consist of two neural networks that compete to generate realistic data.",
+      "syntax": "Generator \u2194 Discriminator",
+      "example": "Generate realistic human faces",
+      "output": "Synthetic data",
+      "tips": [
+        "Train generator and discriminator together."
+      ]
+    },
+    {
+      "topic": "Generator",
+      "definition": "The generator creates fake samples that resemble real data.",
+      "syntax": "Noise \u2192 Generator \u2192 Fake Data",
+      "example": "Generate images",
+      "output": "Generated sample",
+      "tips": [
+        "Improve realism through training."
+      ]
+    },
+    {
+      "topic": "Discriminator",
+      "definition": "The discriminator distinguishes real data from generated data.",
+      "syntax": "Input \u2192 Discriminator \u2192 Real/Fake",
+      "example": "Image authenticity check",
+      "output": "Classification result",
+      "tips": [
+        "Provide balanced training data."
+      ]
+    },
+    {
+      "topic": "Autoencoders",
+      "definition": "Autoencoders learn compressed representations and reconstruct the original input.",
+      "syntax": "Encoder \u2192 Latent Space \u2192 Decoder",
+      "example": "Image compression",
+      "output": "Reconstructed data",
+      "tips": [
+        "Useful for feature learning."
+      ]
+    },
+    {
+      "topic": "Variational Autoencoders (VAE)",
+      "definition": "VAEs generate new samples by learning a probabilistic latent representation.",
+      "syntax": "Input \u2192 Latent Distribution \u2192 Output",
+      "example": "Generate handwritten digits",
+      "output": "New generated data",
+      "tips": [
+        "Useful for generative tasks."
+      ]
+    },
+    {
+      "topic": "Image Generation",
+      "definition": "Deep learning models generate realistic images from learned patterns.",
+      "syntax": "Latent Vector \u2192 Image",
+      "example": "AI art generation",
+      "output": "Generated image",
+      "tips": [
+        "Large datasets improve image quality."
+      ]
+    },
+    {
+      "topic": "Representation Learning",
+      "definition": "Representation learning automatically discovers useful features from raw data.",
+      "syntax": "Raw Data \u2192 Features",
+      "example": "Feature extraction from images",
+      "output": "Learned representation",
+      "tips": [
+        "Reduces manual feature engineering."
+      ]
+    },
+    {
+      "topic": "GAN & Autoencoder Best Practices",
+      "definition": "Use stable training, monitor convergence and evaluate generated outputs carefully.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Image generation system",
+      "output": "Reliable generative model",
+      "tips": [
+        "Monitor training stability.",
+        "Validate generated samples.",
+        "Prevent mode collapse."
+      ]
+    }
+  ]
+}

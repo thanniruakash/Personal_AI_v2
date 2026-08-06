@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "Neural Networks",
+  "topics": [
+    {
+      "topic": "Perceptron",
+      "definition": "A perceptron is the simplest neural network with a single neuron for binary classification.",
+      "syntax": "Inputs \u2192 Weights \u2192 Activation",
+      "example": "AND gate",
+      "output": "Binary prediction",
+      "tips": [
+        "Works only for linearly separable data."
+      ]
+    },
+    {
+      "topic": "Feedforward Neural Networks",
+      "definition": "Data flows from input to output without cycles.",
+      "syntax": "Input \u2192 Hidden \u2192 Output",
+      "example": "Digit classification",
+      "output": "Prediction",
+      "tips": [
+        "Most basic deep learning architecture."
+      ]
+    },
+    {
+      "topic": "Weights and Biases",
+      "definition": "Weights control feature importance while biases shift neuron activation.",
+      "syntax": "Output = Activation(Wx + b)",
+      "example": "Neuron computation",
+      "output": "Activated output",
+      "tips": [
+        "Updated during training."
+      ]
+    },
+    {
+      "topic": "Loss Functions",
+      "definition": "Loss functions measure prediction error.",
+      "syntax": "Prediction \u2192 Loss",
+      "example": "Mean Squared Error",
+      "output": "Loss value",
+      "tips": [
+        "Choose the loss based on the task."
+      ]
+    },
+    {
+      "topic": "Gradient Descent",
+      "definition": "Gradient descent updates weights to reduce loss.",
+      "syntax": "Weights \u2192 Gradient \u2192 Update",
+      "example": "Train a classifier",
+      "output": "Lower loss",
+      "tips": [
+        "Learning rate affects convergence."
+      ]
+    },
+    {
+      "topic": "Optimizers",
+      "definition": "Optimizers improve the efficiency of weight updates.",
+      "syntax": "Loss \u2192 Optimizer \u2192 Update",
+      "example": "Adam optimizer",
+      "output": "Optimized training",
+      "tips": [
+        "Adam is widely used."
+      ]
+    },
+    {
+      "topic": "Epochs and Batches",
+      "definition": "An epoch is one full pass through the dataset, while batches divide data into smaller groups.",
+      "syntax": "Dataset \u2192 Batches \u2192 Epoch",
+      "example": "32 batch size",
+      "output": "Training progress",
+      "tips": [
+        "Batch size impacts speed and memory."
+      ]
+    },
+    {
+      "topic": "Neural Network Best Practices",
+      "definition": "Normalize data, tune hyperparameters and monitor validation performance.",
+      "syntax": "Prepare \u2192 Train \u2192 Validate",
+      "example": "Production neural network",
+      "output": "Reliable model",
+      "tips": [
+        "Prevent overfitting.",
+        "Use early stopping.",
+        "Save checkpoints."
+      ]
+    }
+  ]
+}

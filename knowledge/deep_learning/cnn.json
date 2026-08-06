@@ -1,0 +1,88 @@
+{
+  "subject": "Deep Learning",
+  "section": "Convolutional Neural Networks (CNN)",
+  "topics": [
+    {
+      "topic": "What is a CNN?",
+      "definition": "A CNN is a deep learning model designed to process image and grid-like data using convolution operations.",
+      "syntax": "Image \u2192 CNN \u2192 Prediction",
+      "example": "Image classification",
+      "output": "Predicted class",
+      "tips": [
+        "CNNs automatically learn image features."
+      ]
+    },
+    {
+      "topic": "Convolution Layer",
+      "definition": "Applies filters to extract features such as edges, textures and shapes.",
+      "syntax": "Image + Filter \u2192 Feature Map",
+      "example": "Edge detection",
+      "output": "Feature map",
+      "tips": [
+        "Use multiple filters to capture different patterns."
+      ]
+    },
+    {
+      "topic": "Pooling Layer",
+      "definition": "Pooling reduces feature map size while preserving important information.",
+      "syntax": "Feature Map \u2192 MaxPool",
+      "example": "2\u00d72 Max Pooling",
+      "output": "Reduced feature map",
+      "tips": [
+        "Reduces computation and overfitting."
+      ]
+    },
+    {
+      "topic": "Filters and Kernels",
+      "definition": "Filters (kernels) are small matrices that detect visual patterns.",
+      "syntax": "Kernel \u00d7 Image",
+      "example": "3\u00d73 edge filter",
+      "output": "Detected features",
+      "tips": [
+        "Kernel size affects feature extraction."
+      ]
+    },
+    {
+      "topic": "Fully Connected Layer",
+      "definition": "Combines extracted features to make the final prediction.",
+      "syntax": "Flatten \u2192 Dense",
+      "example": "Image classifier output",
+      "output": "Class probabilities",
+      "tips": [
+        "Usually appears near the end of a CNN."
+      ]
+    },
+    {
+      "topic": "Image Classification",
+      "definition": "CNNs classify images into predefined categories.",
+      "syntax": "Image \u2192 Label",
+      "example": "Cat vs Dog",
+      "output": "Predicted label",
+      "tips": [
+        "Use sufficient labeled images for training."
+      ]
+    },
+    {
+      "topic": "Popular CNN Architectures",
+      "definition": "Common CNN models include LeNet, AlexNet, VGG, ResNet and EfficientNet.",
+      "syntax": "CNN Architecture",
+      "example": "ResNet-50",
+      "output": "Model selected",
+      "tips": [
+        "Choose the architecture based on accuracy and resource limits."
+      ]
+    },
+    {
+      "topic": "CNN Best Practices",
+      "definition": "Normalize images, augment data and monitor validation performance.",
+      "syntax": "Prepare \u2192 Train \u2192 Evaluate",
+      "example": "Production vision model",
+      "output": "Reliable CNN",
+      "tips": [
+        "Use data augmentation.",
+        "Prevent overfitting.",
+        "Save the best model."
+      ]
+    }
+  ]
+}
