@@ -1,0 +1,138 @@
+{
+  "subject": "Git & GitHub",
+  "section": "Git Commands",
+  "topics": [
+    {
+      "topic": "git init",
+      "definition": "Creates a new Git repository.",
+      "syntax": "git init",
+      "example": "git init",
+      "output": "Repository initialized",
+      "tips": [
+        "Run once per project."
+      ]
+    },
+    {
+      "topic": "git status",
+      "definition": "Shows repository status.",
+      "syntax": "git status",
+      "example": "git status",
+      "output": "Status displayed",
+      "tips": [
+        "Check before committing."
+      ]
+    },
+    {
+      "topic": "git add",
+      "definition": "Stages changes for commit.",
+      "syntax": "git add <file>",
+      "example": "git add .",
+      "output": "Changes staged",
+      "tips": [
+        "Stage only required files."
+      ]
+    },
+    {
+      "topic": "git commit",
+      "definition": "Saves staged changes.",
+      "syntax": "git commit -m 'msg'",
+      "example": "git commit -m 'Initial commit'",
+      "output": "Commit created",
+      "tips": [
+        "Write meaningful messages."
+      ]
+    },
+    {
+      "topic": "git log",
+      "definition": "Displays commit history.",
+      "syntax": "git log",
+      "example": "git log --oneline",
+      "output": "History shown",
+      "tips": [
+        "Review past commits."
+      ]
+    },
+    {
+      "topic": "git diff",
+      "definition": "Shows file differences.",
+      "syntax": "git diff",
+      "example": "git diff",
+      "output": "Differences displayed",
+      "tips": [
+        "Review changes before commit."
+      ]
+    },
+    {
+      "topic": "git remote",
+      "definition": "Manages remote repositories.",
+      "syntax": "git remote -v",
+      "example": "git remote add origin URL",
+      "output": "Remote configured",
+      "tips": [
+        "Verify remote URLs."
+      ]
+    },
+    {
+      "topic": "git push",
+      "definition": "Uploads commits to remote.",
+      "syntax": "git push origin main",
+      "example": "git push",
+      "output": "Changes uploaded",
+      "tips": [
+        "Pull first when collaborating."
+      ]
+    },
+    {
+      "topic": "git pull",
+      "definition": "Fetches and merges remote changes.",
+      "syntax": "git pull origin main",
+      "example": "git pull",
+      "output": "Repository updated",
+      "tips": [
+        "Resolve conflicts carefully."
+      ]
+    },
+    {
+      "topic": "git clone",
+      "definition": "Copies a remote repository.",
+      "syntax": "git clone URL",
+      "example": "git clone https://github.com/user/repo.git",
+      "output": "Repository cloned",
+      "tips": [
+        "Use for existing projects."
+      ]
+    },
+    {
+      "topic": "git fetch",
+      "definition": "Downloads remote changes without merging.",
+      "syntax": "git fetch",
+      "example": "git fetch origin",
+      "output": "Updates fetched",
+      "tips": [
+        "Review before merging."
+      ]
+    },
+    {
+      "topic": "git tag",
+      "definition": "Creates named versions.",
+      "syntax": "git tag v1.0",
+      "example": "git tag v1.0",
+      "output": "Tag created",
+      "tips": [
+        "Use semantic versioning."
+      ]
+    },
+    {
+      "topic": "Git Command Best Practices",
+      "definition": "Review changes, commit frequently and synchronize with the remote repository.",
+      "syntax": "Status \u2192 Add \u2192 Commit \u2192 Push",
+      "example": "Daily development workflow",
+      "output": "Well-managed repository",
+      "tips": [
+        "Commit small changes.",
+        "Avoid force push unless necessary.",
+        "Review git status often."
+      ]
+    }
+  ]
+}

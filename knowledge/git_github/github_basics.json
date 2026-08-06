@@ -1,0 +1,88 @@
+{
+  "subject": "Git & GitHub",
+  "section": "GitHub Basics",
+  "topics": [
+    {
+      "topic": "What is GitHub?",
+      "definition": "GitHub is a cloud platform for hosting Git repositories and collaborating on software projects.",
+      "syntax": "Git + GitHub",
+      "example": "Hosting a project on GitHub",
+      "output": "Repository available online",
+      "tips": [
+        "Use Git locally and GitHub for collaboration."
+      ]
+    },
+    {
+      "topic": "Repositories",
+      "definition": "A repository stores project files, commit history and configuration.",
+      "syntax": "Repository",
+      "example": "my-project",
+      "output": "Project organized",
+      "tips": [
+        "Keep one project per repository."
+      ]
+    },
+    {
+      "topic": "README Files",
+      "definition": "A README explains the purpose, setup and usage of a project.",
+      "syntax": "README.md",
+      "example": "Installation instructions",
+      "output": "Project documented",
+      "tips": [
+        "Keep the README updated."
+      ]
+    },
+    {
+      "topic": "Forks",
+      "definition": "A fork creates your own copy of another user's repository.",
+      "syntax": "Fork",
+      "example": "Forking an open-source project",
+      "output": "Repository copied",
+      "tips": [
+        "Use forks to contribute safely."
+      ]
+    },
+    {
+      "topic": "Stars and Watching",
+      "definition": "Stars bookmark repositories while Watching sends notifications about activity.",
+      "syntax": "Star / Watch",
+      "example": "Star a useful library",
+      "output": "Repository followed",
+      "tips": [
+        "Star projects you may use later."
+      ]
+    },
+    {
+      "topic": "Issues",
+      "definition": "Issues track bugs, feature requests and project tasks.",
+      "syntax": "Issue",
+      "example": "Report a login bug",
+      "output": "Issue created",
+      "tips": [
+        "Write clear issue descriptions."
+      ]
+    },
+    {
+      "topic": "Pull Requests",
+      "definition": "A pull request proposes changes for review before merging.",
+      "syntax": "Pull Request",
+      "example": "Submit a feature branch",
+      "output": "Changes reviewed",
+      "tips": [
+        "Describe your changes clearly."
+      ]
+    },
+    {
+      "topic": "GitHub Best Practices",
+      "definition": "Document projects, review pull requests and keep repositories organized.",
+      "syntax": "Commit \u2192 Push \u2192 PR",
+      "example": "Open-source contribution",
+      "output": "Healthy repository",
+      "tips": [
+        "Use meaningful README files.",
+        "Respond to reviews.",
+        "Close resolved issues."
+      ]
+    }
+  ]
+}

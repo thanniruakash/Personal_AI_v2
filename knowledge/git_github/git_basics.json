@@ -1,0 +1,98 @@
+{
+  "subject": "Git & GitHub",
+  "section": "Git Basics",
+  "topics": [
+    {
+      "topic": "What is Git?",
+      "definition": "Git is a distributed version control system used to track changes in source code.",
+      "syntax": "git",
+      "example": "git init",
+      "output": "Repository initialized",
+      "tips": [
+        "Commit changes regularly."
+      ]
+    },
+    {
+      "topic": "History of Git",
+      "definition": "Git was created by Linus Torvalds in 2005 for Linux kernel development.",
+      "syntax": "2005 \u2192 Present",
+      "example": "Open-source development",
+      "output": "History understood",
+      "tips": [
+        "Git is widely used in software development."
+      ]
+    },
+    {
+      "topic": "Version Control",
+      "definition": "Version control tracks changes and allows collaboration on files.",
+      "syntax": "Edit \u2192 Commit",
+      "example": "Tracking code changes",
+      "output": "History maintained",
+      "tips": [
+        "Use meaningful commit messages."
+      ]
+    },
+    {
+      "topic": "Local Repository",
+      "definition": "A local repository stores project history on your computer.",
+      "syntax": "git init",
+      "example": "Initialize a new project",
+      "output": "Local repository created",
+      "tips": [
+        "Commit work frequently."
+      ]
+    },
+    {
+      "topic": "Remote Repository",
+      "definition": "A remote repository is hosted on services like GitHub for collaboration.",
+      "syntax": "git remote add origin URL",
+      "example": "GitHub repository",
+      "output": "Remote connected",
+      "tips": [
+        "Push changes after committing."
+      ]
+    },
+    {
+      "topic": "Working Directory",
+      "definition": "The working directory contains the current project files you edit.",
+      "syntax": "Working Tree",
+      "example": "Editing main.py",
+      "output": "Files modified",
+      "tips": [
+        "Check changes with git status."
+      ]
+    },
+    {
+      "topic": "Staging Area",
+      "definition": "The staging area stores selected changes before committing.",
+      "syntax": "git add file",
+      "example": "git add app.py",
+      "output": "Changes staged",
+      "tips": [
+        "Stage only intended changes."
+      ]
+    },
+    {
+      "topic": "Git Workflow",
+      "definition": "Typical workflow: Edit \u2192 Stage \u2192 Commit \u2192 Push.",
+      "syntax": "Edit \u2192 Add \u2192 Commit \u2192 Push",
+      "example": "git add . && git commit",
+      "output": "Changes saved",
+      "tips": [
+        "Pull before pushing when collaborating."
+      ]
+    },
+    {
+      "topic": "Git Best Practices",
+      "definition": "Use branches, descriptive commits and frequent synchronization.",
+      "syntax": "Branch \u2192 Commit \u2192 Push",
+      "example": "Feature branch workflow",
+      "output": "Organized repository",
+      "tips": [
+        "Commit often.",
+        "Avoid committing secrets.",
+        "Review changes before commit."
+      ]
+    }
+  ]
+}

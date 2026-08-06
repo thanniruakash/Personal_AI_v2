@@ -1,0 +1,88 @@
+{
+  "subject": "Git & GitHub",
+  "section": "Git Security",
+  "topics": [
+    {
+      "topic": "Git Security Basics",
+      "definition": "Protect repositories, credentials and code from unauthorized access.",
+      "syntax": "Secure \u2192 Monitor",
+      "example": "Private repository",
+      "output": "Repository secured",
+      "tips": [
+        "Never commit passwords or API keys."
+      ]
+    },
+    {
+      "topic": "SSH Keys",
+      "definition": "SSH keys provide secure authentication without passwords.",
+      "syntax": "ssh-keygen",
+      "example": "ssh-keygen -t ed25519",
+      "output": "SSH key created",
+      "tips": [
+        "Protect your private key."
+      ]
+    },
+    {
+      "topic": "GitHub Secrets",
+      "definition": "GitHub Secrets securely store sensitive values for workflows.",
+      "syntax": "Repository \u2192 Settings \u2192 Secrets",
+      "example": "Store API_TOKEN",
+      "output": "Secret available to workflows",
+      "tips": [
+        "Rotate secrets regularly."
+      ]
+    },
+    {
+      "topic": "Personal Access Tokens (PAT)",
+      "definition": "PATs authenticate Git operations instead of passwords.",
+      "syntax": "ghp_xxx",
+      "example": "Clone using a PAT",
+      "output": "Authenticated access",
+      "tips": [
+        "Grant only required permissions."
+      ]
+    },
+    {
+      "topic": "Repository Permissions",
+      "definition": "Permissions control who can read, write or administer a repository.",
+      "syntax": "Read / Write / Admin",
+      "example": "Add collaborator",
+      "output": "Access managed",
+      "tips": [
+        "Follow the principle of least privilege."
+      ]
+    },
+    {
+      "topic": "Branch Protection Rules",
+      "definition": "Protection rules prevent unsafe changes to important branches.",
+      "syntax": "Protect main",
+      "example": "Require pull requests",
+      "output": "Branch protected",
+      "tips": [
+        "Require reviews before merging."
+      ]
+    },
+    {
+      "topic": "Secret Scanning",
+      "definition": "Secret scanning detects exposed credentials in repositories.",
+      "syntax": "Scan \u2192 Alert",
+      "example": "Leaked API key detected",
+      "output": "Security alert",
+      "tips": [
+        "Remove exposed secrets immediately."
+      ]
+    },
+    {
+      "topic": "Git Security Best Practices",
+      "definition": "Use secure authentication, review access regularly and protect sensitive information.",
+      "syntax": "Protect \u2192 Audit \u2192 Improve",
+      "example": "Organization security policy",
+      "output": "Secure Git workflow",
+      "tips": [
+        "Enable two-factor authentication.",
+        "Rotate tokens.",
+        "Review collaborator access regularly."
+      ]
+    }
+  ]
+}

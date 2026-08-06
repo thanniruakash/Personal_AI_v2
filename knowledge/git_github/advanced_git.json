@@ -1,0 +1,88 @@
+{
+  "subject": "Git & GitHub",
+  "section": "Advanced Git",
+  "topics": [
+    {
+      "topic": "Git Rebase",
+      "definition": "Rebase moves or reapplies commits onto another branch to create a cleaner history.",
+      "syntax": "git rebase branch",
+      "example": "git rebase main",
+      "output": "Commits replayed",
+      "tips": [
+        "Avoid rebasing shared branches."
+      ]
+    },
+    {
+      "topic": "Git Cherry-pick",
+      "definition": "Cherry-pick applies a specific commit from one branch to another.",
+      "syntax": "git cherry-pick <commit>",
+      "example": "git cherry-pick a1b2c3",
+      "output": "Commit applied",
+      "tips": [
+        "Use for individual fixes."
+      ]
+    },
+    {
+      "topic": "Git Reset",
+      "definition": "Reset moves the current branch pointer and can unstage or discard changes.",
+      "syntax": "git reset --soft|--mixed|--hard",
+      "example": "git reset --soft HEAD~1",
+      "output": "Repository state changed",
+      "tips": [
+        "Be careful with --hard."
+      ]
+    },
+    {
+      "topic": "Git Revert",
+      "definition": "Revert creates a new commit that undoes an earlier commit.",
+      "syntax": "git revert <commit>",
+      "example": "git revert HEAD",
+      "output": "Revert commit created",
+      "tips": [
+        "Preferred for shared repositories."
+      ]
+    },
+    {
+      "topic": "Git Stash",
+      "definition": "Stash temporarily saves uncommitted changes.",
+      "syntax": "git stash",
+      "example": "git stash pop",
+      "output": "Changes stored/restored",
+      "tips": [
+        "Use before switching branches."
+      ]
+    },
+    {
+      "topic": "Git Bisect",
+      "definition": "Bisect finds the commit that introduced a bug using binary search.",
+      "syntax": "git bisect",
+      "example": "git bisect start",
+      "output": "Problematic commit identified",
+      "tips": [
+        "Mark good and bad commits correctly."
+      ]
+    },
+    {
+      "topic": "Advanced Tagging",
+      "definition": "Tags mark important versions such as releases.",
+      "syntax": "git tag -a v1.0",
+      "example": "git push origin v1.0",
+      "output": "Version tagged",
+      "tips": [
+        "Use annotated tags for releases."
+      ]
+    },
+    {
+      "topic": "Advanced Git Best Practices",
+      "definition": "Keep history clean, use safe recovery commands and review changes before rewriting history.",
+      "syntax": "Review \u2192 Backup \u2192 Execute",
+      "example": "Release workflow",
+      "output": "Reliable repository management",
+      "tips": [
+        "Prefer revert on shared branches.",
+        "Create backups before history rewrites.",
+        "Document release tags."
+      ]
+    }
+  ]
+}

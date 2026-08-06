@@ -1,0 +1,88 @@
+{
+  "subject": "Git & GitHub",
+  "section": "GitHub Actions",
+  "topics": [
+    {
+      "topic": "What is GitHub Actions?",
+      "definition": "GitHub Actions is GitHub's automation platform for building, testing and deploying code.",
+      "syntax": "Workflow \u2192 Jobs \u2192 Steps",
+      "example": "Run tests after every push",
+      "output": "Workflow executed",
+      "tips": [
+        "Automate repetitive development tasks."
+      ]
+    },
+    {
+      "topic": "Workflows",
+      "definition": "A workflow is an automated process defined in a YAML file.",
+      "syntax": ".github/workflows/*.yml",
+      "example": "ci.yml",
+      "output": "Workflow created",
+      "tips": [
+        "Keep workflows modular."
+      ]
+    },
+    {
+      "topic": "Workflow YAML Files",
+      "definition": "Workflow files define triggers, jobs and steps.",
+      "syntax": "name:, on:, jobs:",
+      "example": "build.yml",
+      "output": "Configuration loaded",
+      "tips": [
+        "Validate YAML formatting carefully."
+      ]
+    },
+    {
+      "topic": "Events and Triggers",
+      "definition": "Events determine when workflows run.",
+      "syntax": "on: push",
+      "example": "push, pull_request",
+      "output": "Workflow triggered",
+      "tips": [
+        "Use only the events you need."
+      ]
+    },
+    {
+      "topic": "Jobs",
+      "definition": "A job is a set of steps executed on a runner.",
+      "syntax": "jobs:",
+      "example": "build job",
+      "output": "Job executed",
+      "tips": [
+        "Split large workflows into multiple jobs."
+      ]
+    },
+    {
+      "topic": "Steps",
+      "definition": "Steps are individual tasks inside a job.",
+      "syntax": "steps:",
+      "example": "Checkout repository",
+      "output": "Task completed",
+      "tips": [
+        "Reuse actions where possible."
+      ]
+    },
+    {
+      "topic": "CI/CD with GitHub Actions",
+      "definition": "GitHub Actions automates continuous integration and deployment pipelines.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "Deploy after passing tests",
+      "output": "Application deployed",
+      "tips": [
+        "Test before deployment."
+      ]
+    },
+    {
+      "topic": "GitHub Actions Best Practices",
+      "definition": "Use reusable workflows, protect secrets and monitor workflow results.",
+      "syntax": "Trigger \u2192 Run \u2192 Monitor",
+      "example": "Automated release pipeline",
+      "output": "Reliable automation",
+      "tips": [
+        "Store credentials in GitHub Secrets.",
+        "Keep actions updated.",
+        "Review workflow logs."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Git & GitHub",
+  "section": "Branching and Merging",
+  "topics": [
+    {
+      "topic": "What is a Branch?",
+      "definition": "A branch is an independent line of development in a Git repository.",
+      "syntax": "git branch",
+      "example": "feature-login",
+      "output": "Branch created",
+      "tips": [
+        "Use branches for new features or fixes."
+      ]
+    },
+    {
+      "topic": "Creating Branches",
+      "definition": "Create a new branch to work without affecting the main branch.",
+      "syntax": "git branch <name>",
+      "example": "git branch feature-ui",
+      "output": "New branch created",
+      "tips": [
+        "Use descriptive branch names."
+      ]
+    },
+    {
+      "topic": "Switching Branches",
+      "definition": "Move from one branch to another.",
+      "syntax": "git switch <name>",
+      "example": "git switch feature-ui",
+      "output": "Active branch changed",
+      "tips": [
+        "Commit or stash changes before switching."
+      ]
+    },
+    {
+      "topic": "Merging Branches",
+      "definition": "Merge changes from one branch into another.",
+      "syntax": "git merge <branch>",
+      "example": "git merge feature-ui",
+      "output": "Branches merged",
+      "tips": [
+        "Pull the latest changes before merging."
+      ]
+    },
+    {
+      "topic": "Merge Conflicts",
+      "definition": "Conflicts occur when Git cannot automatically combine changes.",
+      "syntax": "Resolve \u2192 git add \u2192 git commit",
+      "example": "Editing the same line in two branches",
+      "output": "Conflict resolved",
+      "tips": [
+        "Review conflicts carefully before committing."
+      ]
+    },
+    {
+      "topic": "Branching Strategies",
+      "definition": "Strategies organize development using branches.",
+      "syntax": "Main / Feature / Release / Hotfix",
+      "example": "Git Flow",
+      "output": "Structured workflow",
+      "tips": [
+        "Choose a strategy that matches your team."
+      ]
+    },
+    {
+      "topic": "Deleting Branches",
+      "definition": "Delete branches that are no longer needed.",
+      "syntax": "git branch -d <name>",
+      "example": "git branch -d feature-ui",
+      "output": "Branch deleted",
+      "tips": [
+        "Delete only after successful merge."
+      ]
+    },
+    {
+      "topic": "Branching and Merging Best Practices",
+      "definition": "Keep branches short-lived, merge frequently and use pull requests for reviews.",
+      "syntax": "Branch \u2192 Commit \u2192 Merge",
+      "example": "Feature branch workflow",
+      "output": "Clean repository history",
+      "tips": [
+        "Merge regularly.",
+        "Review code before merging.",
+        "Delete merged branches."
+      ]
+    }
+  ]
+}
