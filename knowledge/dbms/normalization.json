@@ -1,0 +1,86 @@
+{
+  "subject": "DBMS",
+  "section": "Normalization",
+  "topics": [
+    {
+      "topic": "What is Normalization?",
+      "definition": "Normalization is the process of organizing data to reduce redundancy and improve data integrity.",
+      "syntax": "N/A",
+      "example": "Split one large table into related tables.",
+      "output": "Well-organized database",
+      "tips": [
+        "Reduces duplicate data."
+      ]
+    },
+    {
+      "topic": "First Normal Form (1NF)",
+      "definition": "1NF ensures that every column contains atomic (indivisible) values and each row is unique.",
+      "syntax": "Remove repeating groups",
+      "example": "Store one phone number per row.",
+      "output": "Atomic values",
+      "tips": [
+        "No multi-valued attributes."
+      ]
+    },
+    {
+      "topic": "Second Normal Form (2NF)",
+      "definition": "2NF removes partial dependency by ensuring all non-key attributes depend on the whole primary key.",
+      "syntax": "1NF + Remove partial dependency",
+      "example": "Separate course details from student-course table.",
+      "output": "Partial dependency removed",
+      "tips": [
+        "Applies to composite keys."
+      ]
+    },
+    {
+      "topic": "Third Normal Form (3NF)",
+      "definition": "3NF removes transitive dependency so non-key attributes depend only on the primary key.",
+      "syntax": "2NF + Remove transitive dependency",
+      "example": "Move department details to a separate table.",
+      "output": "Transitive dependency removed",
+      "tips": [
+        "Improves consistency."
+      ]
+    },
+    {
+      "topic": "Boyce-Codd Normal Form (BCNF)",
+      "definition": "BCNF is a stronger version of 3NF where every determinant is a candidate key.",
+      "syntax": "Every determinant must be a candidate key",
+      "example": "Resolve remaining dependency anomalies.",
+      "output": "Higher normalization achieved",
+      "tips": [
+        "Used when 3NF is insufficient."
+      ]
+    },
+    {
+      "topic": "Advantages of Normalization",
+      "definition": "Normalization reduces redundancy, improves integrity and simplifies maintenance.",
+      "syntax": "N/A",
+      "example": "Avoid duplicate customer records.",
+      "output": "Efficient database",
+      "tips": [
+        "Makes updates safer."
+      ]
+    },
+    {
+      "topic": "Denormalization",
+      "definition": "Denormalization combines tables to improve query performance.",
+      "syntax": "N/A",
+      "example": "Join frequently accessed tables into one.",
+      "output": "Faster queries",
+      "tips": [
+        "May increase redundancy."
+      ]
+    },
+    {
+      "topic": "Real-world Example",
+      "definition": "Normalization is used in banking, hospitals and college management systems.",
+      "syntax": "N/A",
+      "example": "Separate Student, Course and Enrollment tables.",
+      "output": "Organized database",
+      "tips": [
+        "Design tables before writing SQL."
+      ]
+    }
+  ]
+}

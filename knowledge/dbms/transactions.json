@@ -1,0 +1,86 @@
+{
+  "subject": "DBMS",
+  "section": "Transactions",
+  "topics": [
+    {
+      "topic": "Transaction",
+      "definition": "A transaction is a sequence of database operations treated as a single logical unit of work.",
+      "syntax": "BEGIN TRANSACTION ... COMMIT;",
+      "example": "Transfer money between two accounts.",
+      "output": "Transaction completed",
+      "tips": [
+        "A transaction either completes fully or not at all."
+      ]
+    },
+    {
+      "topic": "ACID Properties",
+      "definition": "ACID stands for Atomicity, Consistency, Isolation and Durability.",
+      "syntax": "Atomicity, Consistency, Isolation, Durability",
+      "example": "Bank transfer follows ACID.",
+      "output": "Reliable transaction",
+      "tips": [
+        "ACID ensures data correctness."
+      ]
+    },
+    {
+      "topic": "States of a Transaction",
+      "definition": "A transaction passes through Active, Partially Committed, Committed, Failed, Aborted and Terminated states.",
+      "syntax": "Active \u2192 Committed",
+      "example": "Transaction fails after an error.",
+      "output": "State changed",
+      "tips": [
+        "Understand the transaction life cycle."
+      ]
+    },
+    {
+      "topic": "Concurrency Control",
+      "definition": "Concurrency control ensures multiple transactions execute safely without conflicts.",
+      "syntax": "Locking / Timestamp",
+      "example": "Two users update the same record.",
+      "output": "Consistent data",
+      "tips": [
+        "Prevents data inconsistency."
+      ]
+    },
+    {
+      "topic": "Lock-Based Protocols",
+      "definition": "Locks control access to database items during transactions.",
+      "syntax": "Shared Lock (S), Exclusive Lock (X)",
+      "example": "Lock a row before updating it.",
+      "output": "Resource locked",
+      "tips": [
+        "Helps avoid conflicting operations."
+      ]
+    },
+    {
+      "topic": "Deadlock",
+      "definition": "A deadlock occurs when two or more transactions wait indefinitely for each other.",
+      "syntax": "T1 waits for T2; T2 waits for T1",
+      "example": "Circular waiting",
+      "output": "Deadlock detected",
+      "tips": [
+        "Prevent or detect deadlocks."
+      ]
+    },
+    {
+      "topic": "Recovery Techniques",
+      "definition": "Recovery restores the database after failures using logs, checkpoints and backups.",
+      "syntax": "Log-based Recovery",
+      "example": "Recover after a power failure.",
+      "output": "Database restored",
+      "tips": [
+        "Regular backups are essential."
+      ]
+    },
+    {
+      "topic": "Commit and Rollback",
+      "definition": "COMMIT permanently saves changes, while ROLLBACK undoes uncommitted changes.",
+      "syntax": "COMMIT; ROLLBACK;",
+      "example": "ROLLBACK after invalid update.",
+      "output": "Changes saved or reverted",
+      "tips": [
+        "Use COMMIT only after verifying changes."
+      ]
+    }
+  ]
+}
