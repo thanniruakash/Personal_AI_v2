@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "Monitoring and Logging",
+  "topics": [
+    {
+      "topic": "Monitoring",
+      "definition": "Monitoring continuously observes system health, performance and availability.",
+      "syntax": "Collect \u2192 Analyze",
+      "example": "CPU monitoring",
+      "output": "Metrics collected",
+      "tips": [
+        "Monitor critical services continuously."
+      ]
+    },
+    {
+      "topic": "Logging",
+      "definition": "Logging records application and system events for troubleshooting.",
+      "syntax": "Application \u2192 Log File",
+      "example": "Server error logs",
+      "output": "Logs stored",
+      "tips": [
+        "Use structured logging where possible."
+      ]
+    },
+    {
+      "topic": "Prometheus",
+      "definition": "Prometheus collects and stores time-series metrics.",
+      "syntax": "Scrape \u2192 Store",
+      "example": "Node Exporter metrics",
+      "output": "Metrics available",
+      "tips": [
+        "Set meaningful alert thresholds."
+      ]
+    },
+    {
+      "topic": "Grafana",
+      "definition": "Grafana visualizes metrics using dashboards.",
+      "syntax": "Data Source \u2192 Dashboard",
+      "example": "CPU usage dashboard",
+      "output": "Charts displayed",
+      "tips": [
+        "Create dashboards for important KPIs."
+      ]
+    },
+    {
+      "topic": "ELK Stack",
+      "definition": "ELK Stack consists of Elasticsearch, Logstash and Kibana for log management.",
+      "syntax": "Logstash \u2192 Elasticsearch \u2192 Kibana",
+      "example": "Centralized application logs",
+      "output": "Logs searchable",
+      "tips": [
+        "Centralize logs from all services."
+      ]
+    },
+    {
+      "topic": "Alerting",
+      "definition": "Alerting notifies teams when predefined conditions are met.",
+      "syntax": "Condition \u2192 Alert",
+      "example": "High CPU usage alert",
+      "output": "Notification sent",
+      "tips": [
+        "Avoid unnecessary alert noise."
+      ]
+    },
+    {
+      "topic": "Health Checks",
+      "definition": "Health checks verify whether applications and services are functioning correctly.",
+      "syntax": "Check \u2192 Status",
+      "example": "HTTP /health endpoint",
+      "output": "Service status reported",
+      "tips": [
+        "Implement liveness and readiness checks."
+      ]
+    },
+    {
+      "topic": "Monitoring and Logging Best Practices",
+      "definition": "Collect meaningful metrics, retain useful logs and respond to alerts promptly.",
+      "syntax": "Monitor \u2192 Log \u2192 Alert",
+      "example": "Production monitoring system",
+      "output": "Reliable operations",
+      "tips": [
+        "Monitor key metrics.",
+        "Rotate log files.",
+        "Review alerts regularly."
+      ]
+    }
+  ]
+}

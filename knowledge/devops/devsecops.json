@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "DevSecOps",
+  "topics": [
+    {
+      "topic": "What is DevSecOps?",
+      "definition": "DevSecOps integrates security into every stage of the DevOps lifecycle.",
+      "syntax": "Plan \u2192 Code \u2192 Build \u2192 Test \u2192 Secure \u2192 Deploy",
+      "example": "Security scanning in CI/CD",
+      "output": "Secure software delivery",
+      "tips": [
+        "Make security a shared responsibility."
+      ]
+    },
+    {
+      "topic": "Secure SDLC",
+      "definition": "Secure Software Development Life Cycle embeds security from requirements to maintenance.",
+      "syntax": "Requirements \u2192 Design \u2192 Develop \u2192 Test \u2192 Deploy",
+      "example": "Threat modeling during design",
+      "output": "Secure application",
+      "tips": [
+        "Identify risks early."
+      ]
+    },
+    {
+      "topic": "SAST",
+      "definition": "Static Application Security Testing analyzes source code without executing it.",
+      "syntax": "Scan Source Code",
+      "example": "SonarQube scan",
+      "output": "Security issues found",
+      "tips": [
+        "Run on every commit."
+      ]
+    },
+    {
+      "topic": "DAST",
+      "definition": "Dynamic Application Security Testing tests running applications for vulnerabilities.",
+      "syntax": "Scan Running App",
+      "example": "OWASP ZAP",
+      "output": "Runtime vulnerabilities detected",
+      "tips": [
+        "Test staging before production."
+      ]
+    },
+    {
+      "topic": "Dependency Scanning",
+      "definition": "Checks third-party libraries for known vulnerabilities.",
+      "syntax": "Scan Dependencies",
+      "example": "Dependabot",
+      "output": "Vulnerable packages reported",
+      "tips": [
+        "Update dependencies regularly."
+      ]
+    },
+    {
+      "topic": "Secrets Management",
+      "definition": "Stores API keys, passwords and certificates securely.",
+      "syntax": "Vault / Secrets Manager",
+      "example": "GitHub Secrets",
+      "output": "Secrets protected",
+      "tips": [
+        "Never hard-code secrets."
+      ]
+    },
+    {
+      "topic": "Security Automation",
+      "definition": "Automates security checks in development pipelines.",
+      "syntax": "Build \u2192 Scan \u2192 Deploy",
+      "example": "Automated vulnerability scan",
+      "output": "Security verified",
+      "tips": [
+        "Automate repetitive security tasks."
+      ]
+    },
+    {
+      "topic": "DevSecOps Best Practices",
+      "definition": "Automate security, monitor continuously and fix vulnerabilities quickly.",
+      "syntax": "Secure \u2192 Monitor \u2192 Improve",
+      "example": "CI pipeline with SAST and DAST",
+      "output": "Safer software",
+      "tips": [
+        "Use least privilege.",
+        "Review alerts.",
+        "Train developers in secure coding."
+      ]
+    }
+  ]
+}

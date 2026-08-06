@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "DevOps Basics",
+  "topics": [
+    {
+      "topic": "What is DevOps?",
+      "definition": "DevOps is a culture and set of practices that unite software development and IT operations.",
+      "syntax": "Plan \u2192 Build \u2192 Test \u2192 Deploy \u2192 Monitor",
+      "example": "Automated application delivery",
+      "output": "Faster software releases",
+      "tips": [
+        "Promote collaboration between teams."
+      ]
+    },
+    {
+      "topic": "History of DevOps",
+      "definition": "DevOps evolved to reduce the gap between development and operations through automation.",
+      "syntax": "Development + Operations",
+      "example": "Continuous delivery pipelines",
+      "output": "DevOps evolution understood",
+      "tips": [
+        "Automation is a core principle."
+      ]
+    },
+    {
+      "topic": "DevOps Lifecycle",
+      "definition": "The DevOps lifecycle includes planning, coding, building, testing, releasing, deploying, operating and monitoring.",
+      "syntax": "Plan \u2192 Code \u2192 Build \u2192 Test \u2192 Release \u2192 Deploy \u2192 Operate \u2192 Monitor",
+      "example": "CI/CD workflow",
+      "output": "Lifecycle completed",
+      "tips": [
+        "Continuously improve every stage."
+      ]
+    },
+    {
+      "topic": "DevOps Culture",
+      "definition": "DevOps culture emphasizes collaboration, shared responsibility and continuous improvement.",
+      "syntax": "Collaborate \u2192 Automate",
+      "example": "Shared ownership of deployments",
+      "output": "Better teamwork",
+      "tips": [
+        "Encourage open communication."
+      ]
+    },
+    {
+      "topic": "Automation",
+      "definition": "Automation reduces manual work by using scripts and tools.",
+      "syntax": "Task \u2192 Automation",
+      "example": "Automatic software builds",
+      "output": "Task automated",
+      "tips": [
+        "Automate repetitive tasks first."
+      ]
+    },
+    {
+      "topic": "Continuous Feedback",
+      "definition": "Continuous feedback helps teams improve products using monitoring and user input.",
+      "syntax": "Monitor \u2192 Improve",
+      "example": "Application performance metrics",
+      "output": "Feedback collected",
+      "tips": [
+        "Respond quickly to issues."
+      ]
+    },
+    {
+      "topic": "DevOps Tools",
+      "definition": "Common DevOps tools include Git, Jenkins, Docker, Kubernetes, Terraform and Ansible.",
+      "syntax": "Toolchain",
+      "example": "Git + Jenkins",
+      "output": "DevOps pipeline",
+      "tips": [
+        "Choose tools that integrate well."
+      ]
+    },
+    {
+      "topic": "DevOps Best Practices",
+      "definition": "Automate workflows, monitor systems and deliver software frequently.",
+      "syntax": "Automate \u2192 Monitor \u2192 Improve",
+      "example": "Daily deployments",
+      "output": "Reliable software delivery",
+      "tips": [
+        "Use version control.",
+        "Monitor production.",
+        "Document processes."
+      ]
+    }
+  ]
+}

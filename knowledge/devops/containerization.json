@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "Containerization",
+  "topics": [
+    {
+      "topic": "What is Containerization?",
+      "definition": "Containerization packages an application and its dependencies into a portable container.",
+      "syntax": "Application + Dependencies \u2192 Container",
+      "example": "Running a web app in Docker",
+      "output": "Portable application",
+      "tips": [
+        "Containers ensure consistent environments."
+      ]
+    },
+    {
+      "topic": "Containers vs Virtual Machines",
+      "definition": "Containers share the host OS kernel, while virtual machines include a full guest operating system.",
+      "syntax": "Container \u2194 VM",
+      "example": "Docker vs VirtualBox",
+      "output": "Comparison understood",
+      "tips": [
+        "Containers are generally lighter and start faster."
+      ]
+    },
+    {
+      "topic": "Docker Architecture",
+      "definition": "Docker consists of the Docker Client, Docker Engine and Docker Registry.",
+      "syntax": "Client \u2192 Engine \u2192 Registry",
+      "example": "Docker Hub",
+      "output": "Architecture understood",
+      "tips": [
+        "Learn how the client communicates with the daemon."
+      ]
+    },
+    {
+      "topic": "Dockerfile",
+      "definition": "A Dockerfile contains instructions to build a Docker image.",
+      "syntax": "FROM \u2192 RUN \u2192 COPY \u2192 CMD",
+      "example": "Dockerfile for a Python app",
+      "output": "Image build instructions",
+      "tips": [
+        "Keep Dockerfiles simple and optimized."
+      ]
+    },
+    {
+      "topic": "Docker Images",
+      "definition": "A Docker image is a read-only template used to create containers.",
+      "syntax": "docker build",
+      "example": "nginx:latest",
+      "output": "Image created",
+      "tips": [
+        "Use official base images when possible."
+      ]
+    },
+    {
+      "topic": "Docker Containers",
+      "definition": "A container is a running instance of a Docker image.",
+      "syntax": "docker run",
+      "example": "docker run nginx",
+      "output": "Container started",
+      "tips": [
+        "Stop unused containers to save resources."
+      ]
+    },
+    {
+      "topic": "Docker Networking",
+      "definition": "Docker networking enables communication between containers and external systems.",
+      "syntax": "bridge / host / overlay",
+      "example": "Bridge network",
+      "output": "Network configured",
+      "tips": [
+        "Choose the appropriate network driver."
+      ]
+    },
+    {
+      "topic": "Containerization Best Practices",
+      "definition": "Build small images, avoid running as root and keep images updated.",
+      "syntax": "Build \u2192 Scan \u2192 Deploy",
+      "example": "Secure production container",
+      "output": "Reliable container deployment",
+      "tips": [
+        "Minimize image size.",
+        "Scan images for vulnerabilities.",
+        "Use immutable containers."
+      ]
+    }
+  ]
+}

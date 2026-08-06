@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "Advanced DevOps",
+  "topics": [
+    {
+      "topic": "Cloud-Native DevOps",
+      "definition": "Cloud-native DevOps builds and runs applications using cloud technologies and automation.",
+      "syntax": "Develop \u2192 Deploy \u2192 Scale",
+      "example": "Deploying microservices on Kubernetes",
+      "output": "Cloud-native application",
+      "tips": [
+        "Design applications to scale horizontally."
+      ]
+    },
+    {
+      "topic": "Kubernetes Overview",
+      "definition": "Kubernetes automates the deployment, scaling and management of containerized applications.",
+      "syntax": "kubectl",
+      "example": "kubectl get pods",
+      "output": "Cluster resources displayed",
+      "tips": [
+        "Understand Pods, Deployments and Services."
+      ]
+    },
+    {
+      "topic": "Docker Swarm",
+      "definition": "Docker Swarm manages a cluster of Docker hosts as a single system.",
+      "syntax": "docker swarm init",
+      "example": "Deploy a replicated service",
+      "output": "Swarm cluster created",
+      "tips": [
+        "Use Swarm for simpler container orchestration."
+      ]
+    },
+    {
+      "topic": "Helm",
+      "definition": "Helm is a package manager for Kubernetes that simplifies application deployment.",
+      "syntax": "helm install",
+      "example": "helm install myapp chart",
+      "output": "Application deployed",
+      "tips": [
+        "Use charts to standardize deployments."
+      ]
+    },
+    {
+      "topic": "GitOps",
+      "definition": "GitOps manages infrastructure and deployments using Git as the single source of truth.",
+      "syntax": "Commit \u2192 Sync",
+      "example": "Argo CD deployment",
+      "output": "Infrastructure synchronized",
+      "tips": [
+        "Keep infrastructure changes in Git."
+      ]
+    },
+    {
+      "topic": "Scalability and High Availability",
+      "definition": "Scale applications and design systems to remain available during failures.",
+      "syntax": "Scale \u2192 Balance \u2192 Recover",
+      "example": "Load-balanced web servers",
+      "output": "Highly available system",
+      "tips": [
+        "Eliminate single points of failure."
+      ]
+    },
+    {
+      "topic": "Cost Optimization",
+      "definition": "Optimize infrastructure usage to reduce operational costs.",
+      "syntax": "Monitor \u2192 Optimize",
+      "example": "Right-size cloud instances",
+      "output": "Reduced cloud cost",
+      "tips": [
+        "Remove unused resources regularly."
+      ]
+    },
+    {
+      "topic": "Advanced DevOps Best Practices",
+      "definition": "Automate deployments, secure pipelines, monitor systems and continuously improve processes.",
+      "syntax": "Automate \u2192 Secure \u2192 Monitor \u2192 Improve",
+      "example": "Enterprise DevOps pipeline",
+      "output": "Reliable DevOps platform",
+      "tips": [
+        "Review pipelines frequently.",
+        "Automate recovery where possible.",
+        "Track performance metrics."
+      ]
+    }
+  ]
+}

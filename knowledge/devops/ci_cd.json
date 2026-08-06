@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "CI/CD",
+  "topics": [
+    {
+      "topic": "Continuous Integration (CI)",
+      "definition": "CI automatically builds and tests code whenever developers commit changes.",
+      "syntax": "Code \u2192 Build \u2192 Test",
+      "example": "Run tests after every push",
+      "output": "Verified build",
+      "tips": [
+        "Commit small changes frequently."
+      ]
+    },
+    {
+      "topic": "Continuous Delivery (CD)",
+      "definition": "CD automatically prepares validated software for release.",
+      "syntax": "Build \u2192 Test \u2192 Release",
+      "example": "Deploy to staging",
+      "output": "Release-ready application",
+      "tips": [
+        "Keep deployment repeatable."
+      ]
+    },
+    {
+      "topic": "Continuous Deployment",
+      "definition": "Automatically deploys every successful change to production.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "Automatic production deployment",
+      "output": "Application deployed",
+      "tips": [
+        "Use strong automated testing."
+      ]
+    },
+    {
+      "topic": "Build Pipelines",
+      "definition": "Pipelines automate build, test and deployment stages.",
+      "syntax": "Pipeline",
+      "example": "Jenkins pipeline",
+      "output": "Pipeline executed",
+      "tips": [
+        "Keep pipelines fast and reliable."
+      ]
+    },
+    {
+      "topic": "Automated Testing",
+      "definition": "Automated tests verify software quality during the pipeline.",
+      "syntax": "Unit \u2192 Integration \u2192 System",
+      "example": "JUnit tests",
+      "output": "Test results",
+      "tips": [
+        "Run tests on every commit."
+      ]
+    },
+    {
+      "topic": "Pipeline Stages",
+      "definition": "A CI/CD pipeline consists of build, test, release and deployment stages.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "GitHub Actions workflow",
+      "output": "Stages completed",
+      "tips": [
+        "Fail fast when errors occur."
+      ]
+    },
+    {
+      "topic": "CI/CD Tools",
+      "definition": "Popular tools include Jenkins, GitHub Actions, GitLab CI and Azure DevOps.",
+      "syntax": "Toolchain",
+      "example": "GitHub Actions + Docker",
+      "output": "Pipeline automated",
+      "tips": [
+        "Choose tools that integrate with your workflow."
+      ]
+    },
+    {
+      "topic": "CI/CD Best Practices",
+      "definition": "Automate testing, monitor pipelines and deploy consistently.",
+      "syntax": "Commit \u2192 Test \u2192 Deploy",
+      "example": "Daily automated deployment",
+      "output": "Reliable software delivery",
+      "tips": [
+        "Keep pipelines under version control.",
+        "Monitor pipeline failures.",
+        "Use rollback strategies."
+      ]
+    }
+  ]
+}

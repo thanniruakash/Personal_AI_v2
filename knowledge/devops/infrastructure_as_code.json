@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "Infrastructure as Code",
+  "topics": [
+    {
+      "topic": "What is Infrastructure as Code (IaC)?",
+      "definition": "Infrastructure as Code manages infrastructure using configuration files instead of manual setup.",
+      "syntax": "Code \u2192 Provision",
+      "example": "Provisioning cloud servers",
+      "output": "Infrastructure created",
+      "tips": [
+        "Store IaC files in version control."
+      ]
+    },
+    {
+      "topic": "Declarative vs Imperative IaC",
+      "definition": "Declarative defines the desired state, while imperative defines step-by-step actions.",
+      "syntax": "Desired State / Commands",
+      "example": "Terraform vs Shell script",
+      "output": "Approach selected",
+      "tips": [
+        "Prefer declarative when possible."
+      ]
+    },
+    {
+      "topic": "Terraform",
+      "definition": "Terraform provisions infrastructure across multiple cloud providers.",
+      "syntax": "terraform init/plan/apply",
+      "example": "Create an AWS VM",
+      "output": "Resources provisioned",
+      "tips": [
+        "Review the plan before applying."
+      ]
+    },
+    {
+      "topic": "CloudFormation",
+      "definition": "AWS CloudFormation provisions AWS resources using templates.",
+      "syntax": "YAML / JSON Template",
+      "example": "Deploy an EC2 instance",
+      "output": "AWS stack created",
+      "tips": [
+        "Validate templates before deployment."
+      ]
+    },
+    {
+      "topic": "Resource Provisioning",
+      "definition": "Provisioning creates and configures infrastructure resources automatically.",
+      "syntax": "Provision \u2192 Configure",
+      "example": "Database server deployment",
+      "output": "Resources available",
+      "tips": [
+        "Automate repetitive provisioning tasks."
+      ]
+    },
+    {
+      "topic": "State Management",
+      "definition": "State files track the current infrastructure managed by IaC tools.",
+      "syntax": "terraform.tfstate",
+      "example": "Track deployed resources",
+      "output": "State updated",
+      "tips": [
+        "Protect and back up state files."
+      ]
+    },
+    {
+      "topic": "Modules and Reusability",
+      "definition": "Modules package reusable infrastructure components.",
+      "syntax": "module",
+      "example": "Reusable network module",
+      "output": "Reusable configuration",
+      "tips": [
+        "Keep modules small and focused."
+      ]
+    },
+    {
+      "topic": "IaC Best Practices",
+      "definition": "Version configurations, review changes and automate deployments.",
+      "syntax": "Plan \u2192 Review \u2192 Apply",
+      "example": "Infrastructure pipeline",
+      "output": "Reliable infrastructure",
+      "tips": [
+        "Never store secrets in code.",
+        "Use code reviews.",
+        "Test changes in staging first."
+      ]
+    }
+  ]
+}

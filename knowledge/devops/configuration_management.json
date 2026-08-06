@@ -1,0 +1,88 @@
+{
+  "subject": "DevOps",
+  "section": "Configuration Management",
+  "topics": [
+    {
+      "topic": "What is Configuration Management?",
+      "definition": "Configuration management maintains consistent system configurations across environments.",
+      "syntax": "Configure \u2192 Apply",
+      "example": "Managing web server settings",
+      "output": "Consistent systems",
+      "tips": [
+        "Automate repetitive configuration tasks."
+      ]
+    },
+    {
+      "topic": "Ansible",
+      "definition": "Ansible is an agentless configuration management and automation tool.",
+      "syntax": "ansible-playbook playbook.yml",
+      "example": "Install Nginx",
+      "output": "Configuration applied",
+      "tips": [
+        "Use YAML playbooks and roles."
+      ]
+    },
+    {
+      "topic": "Puppet",
+      "definition": "Puppet automates configuration using declarative manifests.",
+      "syntax": "puppet apply",
+      "example": "Manage user accounts",
+      "output": "System configured",
+      "tips": [
+        "Use modules for reusability."
+      ]
+    },
+    {
+      "topic": "Chef",
+      "definition": "Chef manages infrastructure using Ruby-based recipes and cookbooks.",
+      "syntax": "chef-client",
+      "example": "Install Apache",
+      "output": "Configuration completed",
+      "tips": [
+        "Organize recipes into cookbooks."
+      ]
+    },
+    {
+      "topic": "SaltStack",
+      "definition": "SaltStack automates configuration and remote execution.",
+      "syntax": "salt '*' test.ping",
+      "example": "Deploy updates",
+      "output": "Tasks executed",
+      "tips": [
+        "Use secure key management."
+      ]
+    },
+    {
+      "topic": "Inventory Files",
+      "definition": "Inventory files define managed hosts and groups.",
+      "syntax": "inventory.ini",
+      "example": "[webservers]",
+      "output": "Hosts organized",
+      "tips": [
+        "Group similar servers together."
+      ]
+    },
+    {
+      "topic": "Idempotency",
+      "definition": "Idempotent operations produce the same result even when run multiple times.",
+      "syntax": "Desired State",
+      "example": "Repeated playbook execution",
+      "output": "Stable configuration",
+      "tips": [
+        "Design tasks to be idempotent."
+      ]
+    },
+    {
+      "topic": "Configuration Management Best Practices",
+      "definition": "Version control configurations, test changes and automate deployments.",
+      "syntax": "Plan \u2192 Test \u2192 Apply",
+      "example": "Staging before production",
+      "output": "Reliable infrastructure",
+      "tips": [
+        "Keep configurations in Git.",
+        "Review changes.",
+        "Document automation."
+      ]
+    }
+  ]
+}
