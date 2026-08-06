@@ -1,33 +1,19 @@
+import os
 import json
-import torch
-import numpy as np
 
-from nltk_utils import tokenize, stem, bag_of_words
-from model import NeuralNet
+all_intents = []
 
-# Load intents
-with open("intents/intents.json", "r") as f:
-    intents = json.load(f)
+intent_folder = "intents"
 
-all_words = []
-tags = []
-xy = []
+for filename in os.listdir(intent_folder):
+    if filename.endswith(".json"):
+        filepath = os.path.join(intent_folder, filename)
 
-# Process intents
-for intent in intents["intents"]:
-    tag = intent["tag"]
-    tags.append(tag)
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            all_intents.extend(data["intents"])
 
-    for pattern in intent["patterns"]:
-        w = tokenize(pattern)
-        all_words.extend(w)
-        xy.append((w, tag))
+print(f"Loaded {len(all_intents)} intents.")
 
-ignore_words = ["?", ".", "!", ","]
-all_words = sorted(set([stem(w) for w in all_words if w not in ignore_words]))
-tags = sorted(set(tags))
-
-print(f"Total words: {len(all_words)}")
-print(f"Total tags: {len(tags)}")
-
-print("Training data prepared successfully.")
+for intent in all_intents:
+    print(intent["tag"])
