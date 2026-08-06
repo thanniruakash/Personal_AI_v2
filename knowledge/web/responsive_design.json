@@ -1,0 +1,97 @@
+{
+  "subject": "Web Development",
+  "section": "Responsive Design",
+  "topics": [
+    {
+      "topic": "What is Responsive Design?",
+      "definition": "Responsive design makes web pages adapt to different screen sizes and devices.",
+      "syntax": "Responsive Layout",
+      "example": "Website works on mobile and desktop",
+      "output": "Adaptive webpage",
+      "tips": [
+        "Improve user experience on all devices."
+      ]
+    },
+    {
+      "topic": "Viewport",
+      "definition": "The viewport meta tag controls page scaling on mobile devices.",
+      "syntax": "<meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+      "example": "Responsive mobile page",
+      "output": "Proper mobile scaling",
+      "tips": [
+        "Include it in every responsive page."
+      ]
+    },
+    {
+      "topic": "Media Queries",
+      "definition": "Media queries apply CSS based on screen size or device features.",
+      "syntax": "@media (max-width:768px){ }",
+      "example": "Change layout for phones",
+      "output": "Responsive styles",
+      "tips": [
+        "Use breakpoints wisely."
+      ]
+    },
+    {
+      "topic": "Flexible Layouts",
+      "definition": "Flexible layouts use relative units like %, em, rem and vw.",
+      "syntax": "width:100%;",
+      "example": "Responsive container",
+      "output": "Flexible layout",
+      "tips": [
+        "Avoid fixed widths where possible."
+      ]
+    },
+    {
+      "topic": "Responsive Images",
+      "definition": "Images automatically resize to fit different screens.",
+      "syntax": "img{max-width:100%;height:auto;}",
+      "example": "Responsive banner",
+      "output": "Scaled image",
+      "tips": [
+        "Prevent images from overflowing."
+      ]
+    },
+    {
+      "topic": "Flexbox",
+      "definition": "Flexbox creates flexible one-dimensional layouts.",
+      "syntax": "display:flex;",
+      "example": "justify-content:center;",
+      "output": "Flexible alignment",
+      "tips": [
+        "Useful for rows and columns."
+      ]
+    },
+    {
+      "topic": "CSS Grid",
+      "definition": "CSS Grid creates responsive two-dimensional layouts.",
+      "syntax": "display:grid;",
+      "example": "grid-template-columns:repeat(2,1fr);",
+      "output": "Grid layout",
+      "tips": [
+        "Ideal for complex page designs."
+      ]
+    },
+    {
+      "topic": "Mobile-First Design",
+      "definition": "Design for small screens first, then enhance for larger screens.",
+      "syntax": "Base CSS + Media Queries",
+      "example": "Phone layout before desktop",
+      "output": "Mobile-first website",
+      "tips": [
+        "Improves performance and usability."
+      ]
+    },
+    {
+      "topic": "Responsive Design Best Practices",
+      "definition": "Use flexible layouts, optimized images and proper testing across devices.",
+      "syntax": "N/A",
+      "example": "Test on phone, tablet and desktop",
+      "output": "Responsive website",
+      "tips": [
+        "Keep navigation simple.",
+        "Test on multiple screen sizes."
+      ]
+    }
+  ]
+}

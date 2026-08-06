@@ -1,0 +1,107 @@
+{
+  "subject": "Web Development",
+  "section": "DOM",
+  "topics": [
+    {
+      "topic": "What is DOM?",
+      "definition": "The Document Object Model (DOM) represents an HTML document as a tree of objects that JavaScript can access and modify.",
+      "syntax": "document",
+      "example": "document.title",
+      "output": "Page title accessed",
+      "tips": [
+        "DOM connects HTML and JavaScript."
+      ]
+    },
+    {
+      "topic": "DOM Tree",
+      "definition": "The DOM tree organizes HTML elements in a parent-child hierarchy.",
+      "syntax": "html > body > div",
+      "example": "body contains h1 and p",
+      "output": "Tree structure",
+      "tips": [
+        "Each HTML element is a node."
+      ]
+    },
+    {
+      "topic": "Selecting Elements",
+      "definition": "JavaScript can select HTML elements using different methods.",
+      "syntax": "document.getElementById('id');",
+      "example": "document.querySelector('.btn');",
+      "output": "Element selected",
+      "tips": [
+        "querySelector() is very flexible."
+      ]
+    },
+    {
+      "topic": "Changing Content",
+      "definition": "Element content can be modified dynamically.",
+      "syntax": "element.innerHTML='Hello';",
+      "example": "element.textContent='Welcome';",
+      "output": "Content updated",
+      "tips": [
+        "Prefer textContent for plain text."
+      ]
+    },
+    {
+      "topic": "Changing Styles",
+      "definition": "JavaScript can modify CSS styles of elements.",
+      "syntax": "element.style.color='red';",
+      "example": "box.style.backgroundColor='blue';",
+      "output": "Style changed",
+      "tips": [
+        "Use CSS classes where possible."
+      ]
+    },
+    {
+      "topic": "Creating Elements",
+      "definition": "New HTML elements can be created and added to the page.",
+      "syntax": "document.createElement('p');",
+      "example": "document.body.appendChild(p);",
+      "output": "Element added",
+      "tips": [
+        "Append after creating."
+      ]
+    },
+    {
+      "topic": "Removing Elements",
+      "definition": "Existing elements can be removed from the DOM.",
+      "syntax": "element.remove();",
+      "example": "document.getElementById('ad').remove();",
+      "output": "Element removed",
+      "tips": [
+        "Check the element exists first."
+      ]
+    },
+    {
+      "topic": "Event Listeners",
+      "definition": "Event listeners execute code when an event occurs.",
+      "syntax": "element.addEventListener('click', fn);",
+      "example": "button.addEventListener('click', showMsg);",
+      "output": "Event handled",
+      "tips": [
+        "Preferred over inline events."
+      ]
+    },
+    {
+      "topic": "Keyboard and Mouse Events",
+      "definition": "JavaScript responds to keyboard and mouse actions.",
+      "syntax": "click, keydown, mouseover",
+      "example": "input.addEventListener('keydown', fn);",
+      "output": "Interaction detected",
+      "tips": [
+        "Use the correct event type."
+      ]
+    },
+    {
+      "topic": "DOM Best Practices",
+      "definition": "Write efficient DOM code and reduce unnecessary updates.",
+      "syntax": "Cache selected elements",
+      "example": "const btn=document.querySelector('button');",
+      "output": "Better performance",
+      "tips": [
+        "Avoid repeated DOM queries.",
+        "Use event delegation when suitable."
+      ]
+    }
+  ]
+}
