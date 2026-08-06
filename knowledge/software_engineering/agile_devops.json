@@ -1,0 +1,87 @@
+{
+  "subject": "Software Engineering",
+  "section": "Agile and DevOps",
+  "topics": [
+    {
+      "topic": "Agile Methodology",
+      "definition": "Agile is an iterative software development approach focused on collaboration and continuous improvement.",
+      "syntax": "Plan \u2192 Develop \u2192 Review",
+      "example": "Sprint",
+      "output": "Increment delivered",
+      "tips": [
+        "Deliver software frequently."
+      ]
+    },
+    {
+      "topic": "Scrum Framework",
+      "definition": "Scrum organizes work into sprints with defined roles and events.",
+      "syntax": "Sprint",
+      "example": "Daily Scrum",
+      "output": "Sprint completed",
+      "tips": [
+        "Maintain a product backlog."
+      ]
+    },
+    {
+      "topic": "Kanban",
+      "definition": "Kanban visualizes workflow using boards.",
+      "syntax": "To Do \u2192 In Progress \u2192 Done",
+      "example": "Kanban board",
+      "output": "Work tracked",
+      "tips": [
+        "Limit work in progress."
+      ]
+    },
+    {
+      "topic": "DevOps",
+      "definition": "DevOps integrates development and operations to automate delivery.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "CI/CD pipeline",
+      "output": "Faster delivery",
+      "tips": [
+        "Encourage collaboration."
+      ]
+    },
+    {
+      "topic": "Continuous Integration (CI)",
+      "definition": "CI automatically builds and tests code changes.",
+      "syntax": "Commit \u2192 Build \u2192 Test",
+      "example": "Jenkins",
+      "output": "Build verified",
+      "tips": [
+        "Commit frequently."
+      ]
+    },
+    {
+      "topic": "Continuous Delivery/Deployment (CD)",
+      "definition": "CD automates software release.",
+      "syntax": "Build \u2192 Deploy",
+      "example": "Automatic deployment",
+      "output": "Software released",
+      "tips": [
+        "Automate deployments safely."
+      ]
+    },
+    {
+      "topic": "DevOps Tools",
+      "definition": "Common tools include Git, Docker, Jenkins and Kubernetes.",
+      "syntax": "Toolchain",
+      "example": "Git + Docker",
+      "output": "Workflow improved",
+      "tips": [
+        "Integrate tools effectively."
+      ]
+    },
+    {
+      "topic": "Agile and DevOps Best Practices",
+      "definition": "Use automation, monitoring and continuous feedback.",
+      "syntax": "Plan \u2192 Automate \u2192 Monitor",
+      "example": "Sprint retrospective",
+      "output": "Efficient process",
+      "tips": [
+        "Monitor production.",
+        "Automate repetitive tasks."
+      ]
+    }
+  ]
+}

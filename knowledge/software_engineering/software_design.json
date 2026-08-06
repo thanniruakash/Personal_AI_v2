@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Software Design",
+  "topics": [
+    {
+      "topic": "Introduction to Software Design",
+      "definition": "Software design transforms requirements into a blueprint for implementation.",
+      "syntax": "Requirements \u2192 Design",
+      "example": "Designing an e-commerce system",
+      "output": "Software design created",
+      "tips": [
+        "Focus on simplicity and maintainability."
+      ]
+    },
+    {
+      "topic": "Architectural Design",
+      "definition": "Architectural design defines the overall structure and major components of a software system.",
+      "syntax": "Client-Server / Layered / Microservices",
+      "example": "Three-tier architecture",
+      "output": "Architecture selected",
+      "tips": [
+        "Choose an architecture based on project needs."
+      ]
+    },
+    {
+      "topic": "Modular Design",
+      "definition": "Modular design divides software into independent modules.",
+      "syntax": "Module \u2192 Module",
+      "example": "Authentication module",
+      "output": "Modular system",
+      "tips": [
+        "Promotes code reuse and easier maintenance."
+      ]
+    },
+    {
+      "topic": "Design Patterns",
+      "definition": "Design patterns are reusable solutions to common software design problems.",
+      "syntax": "Singleton / Factory / Observer",
+      "example": "Singleton database connection",
+      "output": "Pattern applied",
+      "tips": [
+        "Use patterns only when appropriate."
+      ]
+    },
+    {
+      "topic": "UML Diagrams",
+      "definition": "UML diagrams visually represent software structure and behavior.",
+      "syntax": "Class / Use Case / Sequence",
+      "example": "Class diagram",
+      "output": "System modeled",
+      "tips": [
+        "Use UML for communication and documentation."
+      ]
+    },
+    {
+      "topic": "Database Design",
+      "definition": "Database design organizes data into efficient tables and relationships.",
+      "syntax": "ER Diagram \u2192 Tables",
+      "example": "Student database",
+      "output": "Database designed",
+      "tips": [
+        "Normalize data to reduce redundancy."
+      ]
+    },
+    {
+      "topic": "Object-Oriented Design (OOD)",
+      "definition": "OOD designs software using objects, classes and relationships.",
+      "syntax": "Class \u2192 Object",
+      "example": "Library management system",
+      "output": "Object-oriented model",
+      "tips": [
+        "Apply encapsulation, inheritance and polymorphism."
+      ]
+    },
+    {
+      "topic": "Software Design Best Practices",
+      "definition": "Create modular, scalable and maintainable designs with proper documentation.",
+      "syntax": "Design \u2192 Review \u2192 Improve",
+      "example": "Architecture review",
+      "output": "High-quality design",
+      "tips": [
+        "Follow SOLID principles.",
+        "Review designs before coding.",
+        "Document key decisions."
+      ]
+    }
+  ]
+}

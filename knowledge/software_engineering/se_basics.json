@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Software Engineering Basics",
+  "topics": [
+    {
+      "topic": "What is Software Engineering?",
+      "definition": "Software engineering is the systematic approach to designing, developing, testing and maintaining software.",
+      "syntax": "Plan \u2192 Design \u2192 Develop \u2192 Test \u2192 Maintain",
+      "example": "Building a banking application",
+      "output": "Software developed",
+      "tips": [
+        "Follow structured development practices."
+      ]
+    },
+    {
+      "topic": "Characteristics of Software",
+      "definition": "Software is intangible, maintainable and evolves over time.",
+      "syntax": "Concept",
+      "example": "Mobile application updates",
+      "output": "Software characteristics identified",
+      "tips": [
+        "Software requires continuous maintenance."
+      ]
+    },
+    {
+      "topic": "Software Engineering Principles",
+      "definition": "Principles promote quality, maintainability and reliability.",
+      "syntax": "Modularity / Abstraction / Reusability",
+      "example": "Reusable authentication module",
+      "output": "Well-designed software",
+      "tips": [
+        "Keep designs simple and modular."
+      ]
+    },
+    {
+      "topic": "Software Crisis",
+      "definition": "The software crisis refers to problems such as cost overruns, delays and poor-quality software.",
+      "syntax": "Problem \u2192 Solution",
+      "example": "Project delivered late",
+      "output": "Challenges identified",
+      "tips": [
+        "Use proper engineering methods."
+      ]
+    },
+    {
+      "topic": "Goals of Software Engineering",
+      "definition": "The goals are quality, reliability, efficiency, maintainability and customer satisfaction.",
+      "syntax": "Quality \u2192 Delivery",
+      "example": "Reliable online service",
+      "output": "Project objectives achieved",
+      "tips": [
+        "Meet user requirements."
+      ]
+    },
+    {
+      "topic": "Types of Software",
+      "definition": "Software includes system, application, embedded and web software.",
+      "syntax": "System / Application / Embedded",
+      "example": "Windows OS and Chrome",
+      "output": "Software type identified",
+      "tips": [
+        "Different software serves different purposes."
+      ]
+    },
+    {
+      "topic": "Software Quality Attributes",
+      "definition": "Quality attributes include correctness, reliability, efficiency, usability, maintainability and portability.",
+      "syntax": "Quality Metrics",
+      "example": "Reliable banking app",
+      "output": "Quality evaluated",
+      "tips": [
+        "Balance quality with cost and time."
+      ]
+    },
+    {
+      "topic": "Software Engineering Best Practices",
+      "definition": "Use documentation, version control, testing and code reviews throughout development.",
+      "syntax": "Plan \u2192 Build \u2192 Test \u2192 Review",
+      "example": "Git-based development",
+      "output": "High-quality software",
+      "tips": [
+        "Write clean code.",
+        "Document changes.",
+        "Review code regularly."
+      ]
+    }
+  ]
+}

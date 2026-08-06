@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Advanced Software Engineering",
+  "topics": [
+    {
+      "topic": "Software Architecture Styles",
+      "definition": "Architecture styles define the overall organization of software systems.",
+      "syntax": "Layered / Client-Server / Event-Driven",
+      "example": "Three-tier architecture",
+      "output": "Architecture selected",
+      "tips": [
+        "Choose based on project requirements."
+      ]
+    },
+    {
+      "topic": "Microservices",
+      "definition": "Microservices divide an application into small independent services.",
+      "syntax": "Service \u2192 API \u2192 Service",
+      "example": "E-commerce services",
+      "output": "Distributed application",
+      "tips": [
+        "Each service should have a single responsibility."
+      ]
+    },
+    {
+      "topic": "Monolithic Architecture",
+      "definition": "A monolithic application combines all components into one deployable unit.",
+      "syntax": "Single Application",
+      "example": "Traditional enterprise app",
+      "output": "Monolithic system",
+      "tips": [
+        "Simple to start but harder to scale."
+      ]
+    },
+    {
+      "topic": "SOLID Principles",
+      "definition": "SOLID principles improve maintainability and flexibility of object-oriented software.",
+      "syntax": "S O L I D",
+      "example": "Single Responsibility Principle",
+      "output": "Better code quality",
+      "tips": [
+        "Apply principles where appropriate."
+      ]
+    },
+    {
+      "topic": "Design Principles",
+      "definition": "Design principles encourage reusable, modular and maintainable software.",
+      "syntax": "DRY / KISS / YAGNI",
+      "example": "Avoid duplicate code",
+      "output": "Cleaner design",
+      "tips": [
+        "Keep solutions simple."
+      ]
+    },
+    {
+      "topic": "Software Metrics",
+      "definition": "Software metrics measure quality, complexity and productivity.",
+      "syntax": "LOC / Cyclomatic Complexity",
+      "example": "Code coverage",
+      "output": "Project measured",
+      "tips": [
+        "Track metrics over time."
+      ]
+    },
+    {
+      "topic": "Documentation",
+      "definition": "Documentation explains system design, APIs, code and user guidance.",
+      "syntax": "Design Docs / API Docs",
+      "example": "README.md",
+      "output": "Knowledge shared",
+      "tips": [
+        "Keep documentation updated."
+      ]
+    },
+    {
+      "topic": "Advanced Software Engineering Best Practices",
+      "definition": "Build scalable, maintainable and secure software through reviews, testing and continuous improvement.",
+      "syntax": "Design \u2192 Review \u2192 Improve",
+      "example": "Architecture review",
+      "output": "High-quality software",
+      "tips": [
+        "Review architecture regularly.",
+        "Automate quality checks.",
+        "Refactor when needed."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Software Maintenance",
+  "topics": [
+    {
+      "topic": "Introduction to Software Maintenance",
+      "definition": "Software maintenance modifies software after deployment to fix issues, improve performance and meet new requirements.",
+      "syntax": "Maintain \u2192 Improve",
+      "example": "Fixing production bugs",
+      "output": "Software updated",
+      "tips": [
+        "Maintenance continues throughout the software lifecycle."
+      ]
+    },
+    {
+      "topic": "Corrective Maintenance",
+      "definition": "Corrective maintenance fixes defects found after software release.",
+      "syntax": "Detect \u2192 Fix",
+      "example": "Repairing a login bug",
+      "output": "Bug fixed",
+      "tips": [
+        "Prioritize critical defects first."
+      ]
+    },
+    {
+      "topic": "Adaptive Maintenance",
+      "definition": "Adaptive maintenance updates software to work in changed environments.",
+      "syntax": "Update \u2192 Adapt",
+      "example": "Supporting a new operating system",
+      "output": "Software adapted",
+      "tips": [
+        "Monitor platform changes regularly."
+      ]
+    },
+    {
+      "topic": "Perfective Maintenance",
+      "definition": "Perfective maintenance improves performance, usability or functionality.",
+      "syntax": "Enhance \u2192 Optimize",
+      "example": "Adding a search feature",
+      "output": "Software improved",
+      "tips": [
+        "Consider user feedback."
+      ]
+    },
+    {
+      "topic": "Preventive Maintenance",
+      "definition": "Preventive maintenance reduces future problems by improving code quality.",
+      "syntax": "Refactor \u2192 Prevent",
+      "example": "Refactoring legacy code",
+      "output": "More reliable software",
+      "tips": [
+        "Address technical debt early."
+      ]
+    },
+    {
+      "topic": "Software Evolution",
+      "definition": "Software evolves over time to satisfy changing business and user needs.",
+      "syntax": "Version \u2192 Update",
+      "example": "Annual product releases",
+      "output": "Software evolved",
+      "tips": [
+        "Plan for continuous improvement."
+      ]
+    },
+    {
+      "topic": "Maintenance Cost and Challenges",
+      "definition": "Maintenance costs include bug fixes, updates, testing and compatibility work.",
+      "syntax": "Analyze \u2192 Maintain",
+      "example": "Supporting older versions",
+      "output": "Maintenance planned",
+      "tips": [
+        "Good design reduces maintenance costs."
+      ]
+    },
+    {
+      "topic": "Software Maintenance Best Practices",
+      "definition": "Use documentation, version control, testing and monitoring during maintenance.",
+      "syntax": "Monitor \u2192 Update \u2192 Test",
+      "example": "Regression testing after fixes",
+      "output": "Reliable software maintained",
+      "tips": [
+        "Document all changes.",
+        "Test after every update.",
+        "Back up before major releases."
+      ]
+    }
+  ]
+}

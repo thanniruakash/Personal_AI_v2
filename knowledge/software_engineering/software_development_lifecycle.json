@@ -1,0 +1,98 @@
+{
+  "subject": "Software Engineering",
+  "section": "Software Development Lifecycle",
+  "topics": [
+    {
+      "topic": "SDLC Introduction",
+      "definition": "The Software Development Life Cycle (SDLC) is a structured process for planning, building, testing, deploying and maintaining software.",
+      "syntax": "Plan \u2192 Analyze \u2192 Design \u2192 Develop \u2192 Test \u2192 Deploy \u2192 Maintain",
+      "example": "Developing an e-commerce website",
+      "output": "Software lifecycle managed",
+      "tips": [
+        "Follow each phase systematically."
+      ]
+    },
+    {
+      "topic": "Planning",
+      "definition": "Planning defines project scope, objectives, budget, schedule and resources.",
+      "syntax": "Scope \u2192 Budget \u2192 Schedule",
+      "example": "Project planning meeting",
+      "output": "Project plan created",
+      "tips": [
+        "Identify risks early."
+      ]
+    },
+    {
+      "topic": "Requirement Analysis",
+      "definition": "Requirements are gathered, analyzed and documented before development begins.",
+      "syntax": "Gather \u2192 Analyze \u2192 Document",
+      "example": "Client interviews",
+      "output": "Requirements specification",
+      "tips": [
+        "Ensure requirements are clear and complete."
+      ]
+    },
+    {
+      "topic": "System Design",
+      "definition": "System design defines the software architecture, components, database and interfaces.",
+      "syntax": "HLD \u2192 LLD",
+      "example": "Designing a banking system",
+      "output": "System design completed",
+      "tips": [
+        "Create scalable and modular designs."
+      ]
+    },
+    {
+      "topic": "Implementation (Coding)",
+      "definition": "Developers write source code according to the design specifications.",
+      "syntax": "Code \u2192 Build",
+      "example": "Java application development",
+      "output": "Software implemented",
+      "tips": [
+        "Follow coding standards and version control."
+      ]
+    },
+    {
+      "topic": "Testing",
+      "definition": "Testing verifies that software works correctly and satisfies requirements.",
+      "syntax": "Unit \u2192 Integration \u2192 System \u2192 Acceptance",
+      "example": "Testing login functionality",
+      "output": "Defects identified",
+      "tips": [
+        "Test early and often."
+      ]
+    },
+    {
+      "topic": "Deployment",
+      "definition": "Deployment releases software to users or production environments.",
+      "syntax": "Build \u2192 Release",
+      "example": "Deploying a web application",
+      "output": "Software available",
+      "tips": [
+        "Automate deployments where possible."
+      ]
+    },
+    {
+      "topic": "Maintenance",
+      "definition": "Maintenance fixes defects, improves performance and adds new features after deployment.",
+      "syntax": "Fix \u2192 Update \u2192 Improve",
+      "example": "Bug fix release",
+      "output": "Software maintained",
+      "tips": [
+        "Monitor user feedback continuously."
+      ]
+    },
+    {
+      "topic": "SDLC Best Practices",
+      "definition": "Use documentation, reviews, testing and continuous improvement throughout the lifecycle.",
+      "syntax": "Plan \u2192 Build \u2192 Test \u2192 Improve",
+      "example": "CI/CD workflow",
+      "output": "Reliable software process",
+      "tips": [
+        "Document every phase.",
+        "Review progress regularly.",
+        "Manage changes carefully."
+      ]
+    }
+  ]
+}

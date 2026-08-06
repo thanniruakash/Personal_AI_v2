@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Software Testing",
+  "topics": [
+    {
+      "topic": "Introduction to Software Testing",
+      "definition": "Software testing verifies that software meets requirements and works correctly.",
+      "syntax": "Plan \u2192 Test \u2192 Report",
+      "example": "Testing a login page",
+      "output": "Defects identified",
+      "tips": [
+        "Test throughout development."
+      ]
+    },
+    {
+      "topic": "Unit Testing",
+      "definition": "Unit testing checks individual functions or modules in isolation.",
+      "syntax": "Function \u2192 Test",
+      "example": "Testing a calculator method",
+      "output": "Unit verified",
+      "tips": [
+        "Automate unit tests when possible."
+      ]
+    },
+    {
+      "topic": "Integration Testing",
+      "definition": "Integration testing verifies that combined modules work together correctly.",
+      "syntax": "Module A + Module B",
+      "example": "API with database",
+      "output": "Integration verified",
+      "tips": [
+        "Test module interactions."
+      ]
+    },
+    {
+      "topic": "System Testing",
+      "definition": "System testing validates the complete integrated application.",
+      "syntax": "Complete System",
+      "example": "End-to-end application test",
+      "output": "System validated",
+      "tips": [
+        "Test against requirements."
+      ]
+    },
+    {
+      "topic": "User Acceptance Testing (UAT)",
+      "definition": "UAT confirms that software satisfies user needs before release.",
+      "syntax": "User \u2192 Validate",
+      "example": "Client acceptance test",
+      "output": "Software accepted",
+      "tips": [
+        "Gather user feedback."
+      ]
+    },
+    {
+      "topic": "Bug Life Cycle",
+      "definition": "The bug life cycle tracks a defect from discovery to closure.",
+      "syntax": "New \u2192 Assigned \u2192 Fixed \u2192 Closed",
+      "example": "Reported login bug",
+      "output": "Bug tracked",
+      "tips": [
+        "Record every defect clearly."
+      ]
+    },
+    {
+      "topic": "Test Case Design",
+      "definition": "Test cases define inputs, actions and expected results for testing.",
+      "syntax": "Input \u2192 Expected Output",
+      "example": "Valid login credentials",
+      "output": "Test executed",
+      "tips": [
+        "Cover positive and negative scenarios."
+      ]
+    },
+    {
+      "topic": "Software Testing Best Practices",
+      "definition": "Use automation, clear test cases and continuous testing to improve software quality.",
+      "syntax": "Plan \u2192 Test \u2192 Improve",
+      "example": "CI testing pipeline",
+      "output": "Reliable software",
+      "tips": [
+        "Retest after fixes.",
+        "Maintain test documentation.",
+        "Automate repetitive tests."
+      ]
+    }
+  ]
+}

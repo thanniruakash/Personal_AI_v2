@@ -1,0 +1,88 @@
+{
+  "subject": "Software Engineering",
+  "section": "Requirements Engineering",
+  "topics": [
+    {
+      "topic": "Introduction to Requirements Engineering",
+      "definition": "Requirements engineering is the process of identifying, documenting and managing software requirements.",
+      "syntax": "Gather \u2192 Analyze \u2192 Document",
+      "example": "Collecting client needs",
+      "output": "Requirements defined",
+      "tips": [
+        "Understand stakeholder expectations clearly."
+      ]
+    },
+    {
+      "topic": "Functional Requirements",
+      "definition": "Functional requirements describe what the software should do.",
+      "syntax": "System Functions",
+      "example": "User login",
+      "output": "Function specified",
+      "tips": [
+        "Write clear and testable requirements."
+      ]
+    },
+    {
+      "topic": "Non-Functional Requirements",
+      "definition": "Non-functional requirements define quality attributes such as performance, security and usability.",
+      "syntax": "Performance / Security",
+      "example": "Page loads within 2 seconds",
+      "output": "Quality requirement specified",
+      "tips": [
+        "Measure requirements whenever possible."
+      ]
+    },
+    {
+      "topic": "Software Requirements Specification (SRS)",
+      "definition": "An SRS document describes all software requirements in detail.",
+      "syntax": "IEEE SRS",
+      "example": "Project requirement document",
+      "output": "SRS created",
+      "tips": [
+        "Keep the SRS complete and consistent."
+      ]
+    },
+    {
+      "topic": "Requirements Elicitation",
+      "definition": "Elicitation gathers requirements from stakeholders using interviews, surveys and workshops.",
+      "syntax": "Interview \u2192 Analyze",
+      "example": "Client meeting",
+      "output": "Requirements collected",
+      "tips": [
+        "Involve all key stakeholders."
+      ]
+    },
+    {
+      "topic": "Requirements Validation",
+      "definition": "Validation ensures requirements are correct, complete and feasible.",
+      "syntax": "Review \u2192 Validate",
+      "example": "Requirement review meeting",
+      "output": "Validated requirements",
+      "tips": [
+        "Resolve conflicts before development."
+      ]
+    },
+    {
+      "topic": "Requirements Management",
+      "definition": "Requirements management tracks changes throughout the project lifecycle.",
+      "syntax": "Track \u2192 Update",
+      "example": "Requirement version control",
+      "output": "Requirements managed",
+      "tips": [
+        "Maintain traceability between requirements and implementation."
+      ]
+    },
+    {
+      "topic": "Requirements Engineering Best Practices",
+      "definition": "Document clearly, communicate with stakeholders and manage changes effectively.",
+      "syntax": "Gather \u2192 Validate \u2192 Manage",
+      "example": "Change request process",
+      "output": "Reliable requirements",
+      "tips": [
+        "Review requirements regularly.",
+        "Maintain version history.",
+        "Avoid ambiguous wording."
+      ]
+    }
+  ]
+}
