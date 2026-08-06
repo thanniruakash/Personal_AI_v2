@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Sensors and Actuators",
+  "topics": [
+    {
+      "topic": "Sensor Types",
+      "definition": "Sensors collect information from the robot's environment.",
+      "syntax": "Environment \u2192 Sensor",
+      "example": "Temperature sensor",
+      "output": "Sensor data",
+      "tips": [
+        "Choose sensors based on the task."
+      ]
+    },
+    {
+      "topic": "Camera Sensors",
+      "definition": "Cameras capture visual information for computer vision.",
+      "syntax": "Scene \u2192 Camera",
+      "example": "Object detection",
+      "output": "Image frames",
+      "tips": [
+        "Use good lighting for better results."
+      ]
+    },
+    {
+      "topic": "LiDAR",
+      "definition": "LiDAR measures distance using laser pulses to build 3D maps.",
+      "syntax": "Laser \u2192 Distance",
+      "example": "Self-driving car",
+      "output": "Point cloud",
+      "tips": [
+        "Useful for navigation and mapping."
+      ]
+    },
+    {
+      "topic": "Ultrasonic Sensors",
+      "definition": "Ultrasonic sensors measure distance using sound waves.",
+      "syntax": "Sound \u2192 Echo",
+      "example": "Obstacle avoidance",
+      "output": "Distance",
+      "tips": [
+        "Best for short-range detection."
+      ]
+    },
+    {
+      "topic": "IMU and GPS",
+      "definition": "IMU measures motion while GPS provides global position.",
+      "syntax": "Motion + Position",
+      "example": "Delivery robot",
+      "output": "Location estimate",
+      "tips": [
+        "Combine both for better accuracy."
+      ]
+    },
+    {
+      "topic": "Motors and Servo Actuators",
+      "definition": "Motors and servos convert electrical energy into movement.",
+      "syntax": "Signal \u2192 Motion",
+      "example": "Robot arm",
+      "output": "Mechanical movement",
+      "tips": [
+        "Servo motors provide precise control."
+      ]
+    },
+    {
+      "topic": "Feedback Control",
+      "definition": "Feedback control adjusts robot actions using sensor data.",
+      "syntax": "Sensor \u2192 Controller \u2192 Actuator",
+      "example": "Balance robot",
+      "output": "Corrected motion",
+      "tips": [
+        "Continuously monitor sensor readings."
+      ]
+    },
+    {
+      "topic": "Sensors & Actuators Best Practices",
+      "definition": "Calibrate sensors, test actuators and monitor performance regularly.",
+      "syntax": "Sense \u2192 Control \u2192 Act",
+      "example": "Autonomous robot",
+      "output": "Reliable operation",
+      "tips": [
+        "Calibrate frequently.",
+        "Reduce sensor noise.",
+        "Perform preventive maintenance."
+      ]
+    }
+  ]
+}

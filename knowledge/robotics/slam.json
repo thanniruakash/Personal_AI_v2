@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "SLAM",
+  "topics": [
+    {
+      "topic": "What is SLAM?",
+      "definition": "SLAM (Simultaneous Localization and Mapping) enables a robot to build a map while estimating its own location.",
+      "syntax": "Sensors \u2192 Map + Position",
+      "example": "Autonomous robot exploring a building",
+      "output": "Map and robot pose",
+      "tips": [
+        "Accurate sensors improve SLAM performance."
+      ]
+    },
+    {
+      "topic": "Mapping",
+      "definition": "Mapping creates a representation of the robot's surroundings.",
+      "syntax": "Sensor Data \u2192 Map",
+      "example": "Indoor floor map",
+      "output": "Environment map",
+      "tips": [
+        "Update maps continuously."
+      ]
+    },
+    {
+      "topic": "Localization",
+      "definition": "Localization estimates the robot's position within the generated map.",
+      "syntax": "Map + Sensors \u2192 Position",
+      "example": "Warehouse robot",
+      "output": "Robot location",
+      "tips": [
+        "Combine multiple sensors for robustness."
+      ]
+    },
+    {
+      "topic": "Visual SLAM",
+      "definition": "Visual SLAM uses cameras to perform mapping and localization.",
+      "syntax": "Camera \u2192 Features \u2192 Map",
+      "example": "Drone navigation",
+      "output": "Visual map",
+      "tips": [
+        "Good lighting improves accuracy."
+      ]
+    },
+    {
+      "topic": "LiDAR SLAM",
+      "definition": "LiDAR SLAM uses laser scans to build accurate maps.",
+      "syntax": "LiDAR \u2192 Point Cloud \u2192 Map",
+      "example": "Self-driving vehicle",
+      "output": "3D map",
+      "tips": [
+        "Works well in low-light environments."
+      ]
+    },
+    {
+      "topic": "Loop Closure",
+      "definition": "Loop closure detects previously visited places to reduce accumulated mapping errors.",
+      "syntax": "Current Place \u2194 Previous Place",
+      "example": "Robot returns to start",
+      "output": "Corrected map",
+      "tips": [
+        "Improves long-term accuracy."
+      ]
+    },
+    {
+      "topic": "SLAM Applications",
+      "definition": "SLAM is used in robotics, autonomous vehicles, drones and augmented reality.",
+      "syntax": "Robot \u2192 SLAM",
+      "example": "Autonomous warehouse",
+      "output": "Navigation capability",
+      "tips": [
+        "Choose SLAM based on available sensors."
+      ]
+    },
+    {
+      "topic": "SLAM Best Practices",
+      "definition": "Use reliable sensors, calibrate devices and validate maps in real environments.",
+      "syntax": "Sense \u2192 Map \u2192 Navigate",
+      "example": "Mobile robot",
+      "output": "Reliable SLAM system",
+      "tips": [
+        "Calibrate sensors.",
+        "Monitor drift.",
+        "Test in different environments."
+      ]
+    }
+  ]
+}

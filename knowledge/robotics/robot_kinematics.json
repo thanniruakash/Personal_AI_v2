@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Robot Kinematics",
+  "topics": [
+    {
+      "topic": "What is Robot Kinematics?",
+      "definition": "Robot kinematics studies robot motion without considering the forces that cause it.",
+      "syntax": "Joint Motion \u2192 End Effector",
+      "example": "Robot arm movement",
+      "output": "Position and orientation",
+      "tips": [
+        "Model joints accurately."
+      ]
+    },
+    {
+      "topic": "Forward Kinematics",
+      "definition": "Forward kinematics computes the end-effector position from known joint values.",
+      "syntax": "Joint Angles \u2192 Position",
+      "example": "Industrial robot arm",
+      "output": "End-effector pose",
+      "tips": [
+        "Requires robot dimensions."
+      ]
+    },
+    {
+      "topic": "Inverse Kinematics",
+      "definition": "Inverse kinematics finds joint values needed to reach a desired position.",
+      "syntax": "Target Position \u2192 Joint Angles",
+      "example": "Pick-and-place robot",
+      "output": "Joint configuration",
+      "tips": [
+        "Multiple solutions may exist."
+      ]
+    },
+    {
+      "topic": "Degrees of Freedom (DOF)",
+      "definition": "DOF is the number of independent movements a robot can perform.",
+      "syntax": "Joints \u2192 DOF",
+      "example": "6-DOF robotic arm",
+      "output": "Motion capability",
+      "tips": [
+        "More DOF increases flexibility."
+      ]
+    },
+    {
+      "topic": "Robot Workspace",
+      "definition": "The workspace is the area the robot can physically reach.",
+      "syntax": "Robot \u2192 Reachable Area",
+      "example": "Assembly robot",
+      "output": "Workspace map",
+      "tips": [
+        "Design tasks within the workspace."
+      ]
+    },
+    {
+      "topic": "End Effector",
+      "definition": "The end effector is the tool attached to the robot for interacting with objects.",
+      "syntax": "Robot Arm \u2192 Tool",
+      "example": "Gripper",
+      "output": "Task execution",
+      "tips": [
+        "Choose the right end effector for the job."
+      ]
+    },
+    {
+      "topic": "Kinematics Applications",
+      "definition": "Kinematics is used in manufacturing, medical robots and autonomous systems.",
+      "syntax": "Robot \u2192 Motion Planning",
+      "example": "Surgical robot",
+      "output": "Accurate movement",
+      "tips": [
+        "Validate motion before deployment."
+      ]
+    },
+    {
+      "topic": "Robot Kinematics Best Practices",
+      "definition": "Calibrate robots, validate motion and avoid singularities during operation.",
+      "syntax": "Model \u2192 Test \u2192 Deploy",
+      "example": "Industrial automation",
+      "output": "Reliable robot motion",
+      "tips": [
+        "Calibrate regularly.",
+        "Simulate trajectories.",
+        "Monitor joint limits."
+      ]
+    }
+  ]
+}

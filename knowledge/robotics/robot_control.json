@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Robot Control",
+  "topics": [
+    {
+      "topic": "Robot Control Systems",
+      "definition": "Robot control systems manage robot behavior by processing sensor inputs and generating control actions.",
+      "syntax": "Sensors \u2192 Controller \u2192 Actuators",
+      "example": "Industrial robot arm",
+      "output": "Controlled movement",
+      "tips": [
+        "Design stable control loops."
+      ]
+    },
+    {
+      "topic": "PID Controller",
+      "definition": "A PID controller adjusts control signals using proportional, integral and derivative terms.",
+      "syntax": "Error \u2192 PID \u2192 Control",
+      "example": "Maintain robot speed",
+      "output": "Corrected motion",
+      "tips": [
+        "Tune PID parameters carefully."
+      ]
+    },
+    {
+      "topic": "Feedback Control",
+      "definition": "Feedback control continuously compares desired and actual performance.",
+      "syntax": "Reference \u2192 Compare \u2192 Correct",
+      "example": "Self-balancing robot",
+      "output": "Stable operation",
+      "tips": [
+        "Use accurate sensor feedback."
+      ]
+    },
+    {
+      "topic": "Motion Control",
+      "definition": "Motion control regulates robot speed, position and direction.",
+      "syntax": "Command \u2192 Motion",
+      "example": "Mobile robot navigation",
+      "output": "Desired movement",
+      "tips": [
+        "Respect actuator limits."
+      ]
+    },
+    {
+      "topic": "Trajectory Planning",
+      "definition": "Trajectory planning computes smooth paths over time for robot movement.",
+      "syntax": "Start \u2192 Trajectory \u2192 Goal",
+      "example": "Robot arm pick-and-place",
+      "output": "Planned trajectory",
+      "tips": [
+        "Avoid collisions and abrupt movements."
+      ]
+    },
+    {
+      "topic": "Autonomous Control",
+      "definition": "Autonomous control enables robots to make decisions and act without continuous human input.",
+      "syntax": "Perceive \u2192 Decide \u2192 Act",
+      "example": "Autonomous delivery robot",
+      "output": "Independent operation",
+      "tips": [
+        "Test extensively in real environments."
+      ]
+    },
+    {
+      "topic": "Control System Evaluation",
+      "definition": "Control systems are evaluated for stability, accuracy, response time and robustness.",
+      "syntax": "Controller \u2192 Metrics",
+      "example": "Robot performance testing",
+      "output": "Evaluation results",
+      "tips": [
+        "Measure performance under different conditions."
+      ]
+    },
+    {
+      "topic": "Robot Control Best Practices",
+      "definition": "Use reliable controllers, monitor performance and validate safety before deployment.",
+      "syntax": "Design \u2192 Test \u2192 Deploy",
+      "example": "Factory automation",
+      "output": "Reliable robot control",
+      "tips": [
+        "Tune controllers.",
+        "Monitor stability.",
+        "Perform safety checks."
+      ]
+    }
+  ]
+}

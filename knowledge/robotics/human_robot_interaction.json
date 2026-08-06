@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Human-Robot Interaction",
+  "topics": [
+    {
+      "topic": "Human-Robot Interaction (HRI)",
+      "definition": "HRI studies how humans and robots communicate and work together safely and effectively.",
+      "syntax": "Human \u2194 Robot",
+      "example": "Hospital assistant robot",
+      "output": "Cooperative interaction",
+      "tips": [
+        "Design intuitive interactions."
+      ]
+    },
+    {
+      "topic": "Voice Interaction",
+      "definition": "Robots understand spoken commands and respond using speech.",
+      "syntax": "Speech \u2192 Robot \u2192 Response",
+      "example": "Voice-controlled home robot",
+      "output": "Voice interaction",
+      "tips": [
+        "Support natural language commands."
+      ]
+    },
+    {
+      "topic": "Gesture Recognition",
+      "definition": "Robots recognize hand and body gestures to interpret user intentions.",
+      "syntax": "Camera \u2192 Gesture \u2192 Action",
+      "example": "Wave to start robot",
+      "output": "Gesture command",
+      "tips": [
+        "Use multiple sensors when possible."
+      ]
+    },
+    {
+      "topic": "Emotion-Aware Robots",
+      "definition": "Emotion-aware robots adapt their behavior based on detected human emotions.",
+      "syntax": "Emotion \u2192 Response",
+      "example": "Companion robot",
+      "output": "Adaptive interaction",
+      "tips": [
+        "Respect privacy when analyzing emotions."
+      ]
+    },
+    {
+      "topic": "Safety in HRI",
+      "definition": "Safety mechanisms protect humans during robot operation.",
+      "syntax": "Detect \u2192 Prevent",
+      "example": "Emergency stop",
+      "output": "Safe operation",
+      "tips": [
+        "Always prioritize human safety."
+      ]
+    },
+    {
+      "topic": "HRI Applications",
+      "definition": "HRI is used in healthcare, education, manufacturing and customer service.",
+      "syntax": "Robot \u2192 Human Task",
+      "example": "Teaching assistant robot",
+      "output": "Application result",
+      "tips": [
+        "Tailor interactions to users."
+      ]
+    },
+    {
+      "topic": "HRI Evaluation",
+      "definition": "HRI systems are evaluated for usability, safety, trust and efficiency.",
+      "syntax": "Interaction \u2192 Metrics",
+      "example": "User study",
+      "output": "Evaluation results",
+      "tips": [
+        "Collect user feedback regularly."
+      ]
+    },
+    {
+      "topic": "HRI Best Practices",
+      "definition": "Build robots that are safe, understandable and user-friendly.",
+      "syntax": "Design \u2192 Test \u2192 Improve",
+      "example": "Service robot",
+      "output": "Reliable HRI",
+      "tips": [
+        "Keep interfaces simple.",
+        "Test with real users.",
+        "Monitor safety continuously."
+      ]
+    }
+  ]
+}

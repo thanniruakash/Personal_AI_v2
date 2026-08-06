@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Robot Navigation",
+  "topics": [
+    {
+      "topic": "Robot Navigation",
+      "definition": "Robot navigation enables a robot to move safely and efficiently in its environment.",
+      "syntax": "Sense \u2192 Plan \u2192 Move",
+      "example": "Warehouse robot",
+      "output": "Safe navigation",
+      "tips": [
+        "Continuously update environmental information."
+      ]
+    },
+    {
+      "topic": "Path Planning",
+      "definition": "Path planning finds an efficient route from a start point to a destination.",
+      "syntax": "Start \u2192 Goal \u2192 Path",
+      "example": "Delivery robot",
+      "output": "Optimal path",
+      "tips": [
+        "Avoid unnecessary detours."
+      ]
+    },
+    {
+      "topic": "Obstacle Avoidance",
+      "definition": "Obstacle avoidance detects and avoids objects while moving.",
+      "syntax": "Detect \u2192 Avoid",
+      "example": "Autonomous vacuum",
+      "output": "Collision-free motion",
+      "tips": [
+        "Use multiple sensors for reliability."
+      ]
+    },
+    {
+      "topic": "Localization",
+      "definition": "Localization estimates the robot's current position within its environment.",
+      "syntax": "Sensors \u2192 Position",
+      "example": "Indoor mobile robot",
+      "output": "Robot location",
+      "tips": [
+        "Fuse data from multiple sensors."
+      ]
+    },
+    {
+      "topic": "GPS Navigation",
+      "definition": "GPS provides global positioning for outdoor robot navigation.",
+      "syntax": "GPS \u2192 Coordinates",
+      "example": "Agricultural robot",
+      "output": "Global position",
+      "tips": [
+        "GPS accuracy can vary by environment."
+      ]
+    },
+    {
+      "topic": "Indoor Navigation",
+      "definition": "Indoor navigation relies on maps and onboard sensors where GPS is unavailable.",
+      "syntax": "Map + Sensors \u2192 Position",
+      "example": "Hospital service robot",
+      "output": "Indoor route",
+      "tips": [
+        "Use LiDAR or cameras for mapping."
+      ]
+    },
+    {
+      "topic": "Autonomous Navigation",
+      "definition": "Autonomous navigation combines perception, planning and control to move without human intervention.",
+      "syntax": "Perceive \u2192 Plan \u2192 Control",
+      "example": "Self-driving robot",
+      "output": "Autonomous movement",
+      "tips": [
+        "Continuously monitor surroundings."
+      ]
+    },
+    {
+      "topic": "Robot Navigation Best Practices",
+      "definition": "Use accurate maps, reliable sensors and safe planning algorithms.",
+      "syntax": "Map \u2192 Plan \u2192 Navigate",
+      "example": "Autonomous logistics robot",
+      "output": "Reliable navigation",
+      "tips": [
+        "Test in real environments.",
+        "Handle dynamic obstacles.",
+        "Monitor localization accuracy."
+      ]
+    }
+  ]
+}

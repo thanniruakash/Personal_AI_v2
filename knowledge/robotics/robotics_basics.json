@@ -1,0 +1,88 @@
+{
+  "subject": "Robotics AI",
+  "section": "Robotics Basics",
+  "topics": [
+    {
+      "topic": "What is Robotics?",
+      "definition": "Robotics is the field of designing, building and programming robots to perform tasks automatically or with human assistance.",
+      "syntax": "Sense \u2192 Think \u2192 Act",
+      "example": "Warehouse delivery robot",
+      "output": "Completed task",
+      "tips": [
+        "Combine mechanical design with AI for smarter robots."
+      ]
+    },
+    {
+      "topic": "What is a Robot?",
+      "definition": "A robot is a programmable machine that can sense its environment and perform actions.",
+      "syntax": "Input \u2192 Controller \u2192 Output",
+      "example": "Vacuum cleaning robot",
+      "output": "Robot action",
+      "tips": [
+        "Robots may be autonomous or manually controlled."
+      ]
+    },
+    {
+      "topic": "Robot Components",
+      "definition": "Main components include sensors, actuators, controller, power source and communication system.",
+      "syntax": "Sensors + Controller + Actuators",
+      "example": "Industrial robotic arm",
+      "output": "Robot system",
+      "tips": [
+        "Each component has a specific role."
+      ]
+    },
+    {
+      "topic": "Types of Robots",
+      "definition": "Robots can be industrial, service, medical, humanoid, mobile or autonomous.",
+      "syntax": "Application \u2192 Robot Type",
+      "example": "Delivery robot",
+      "output": "Selected robot",
+      "tips": [
+        "Choose the type based on the task."
+      ]
+    },
+    {
+      "topic": "Robot Sensors",
+      "definition": "Sensors collect information about the robot's surroundings.",
+      "syntax": "Environment \u2192 Sensor Data",
+      "example": "Camera, LiDAR, GPS",
+      "output": "Sensor readings",
+      "tips": [
+        "Use multiple sensors for better accuracy."
+      ]
+    },
+    {
+      "topic": "Robot Actuators",
+      "definition": "Actuators convert control signals into physical movement.",
+      "syntax": "Control Signal \u2192 Motion",
+      "example": "Servo motor",
+      "output": "Movement",
+      "tips": [
+        "Select actuators suitable for the robot."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Robotics is used in manufacturing, healthcare, agriculture, logistics and space exploration.",
+      "syntax": "Robot \u2192 Task",
+      "example": "Surgical robot",
+      "output": "Application result",
+      "tips": [
+        "Match the robot to the environment."
+      ]
+    },
+    {
+      "topic": "Robotics Best Practices",
+      "definition": "Design safe, reliable and efficient robots with regular testing.",
+      "syntax": "Design \u2192 Test \u2192 Deploy",
+      "example": "Autonomous warehouse robot",
+      "output": "Reliable robot",
+      "tips": [
+        "Prioritize safety.",
+        "Test thoroughly.",
+        "Monitor performance."
+      ]
+    }
+  ]
+}

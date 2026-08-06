@@ -1,0 +1,89 @@
+{
+  "subject": "Robotics AI",
+  "section": "Advanced Robotics",
+  "topics": [
+    {
+      "topic": "Autonomous Robots",
+      "definition": "Autonomous robots perform tasks with minimal human intervention using AI and sensors.",
+      "syntax": "Sense \u2192 Plan \u2192 Act",
+      "example": "Autonomous warehouse robot",
+      "output": "Independent operation",
+      "tips": [
+        "Continuously monitor the environment."
+      ]
+    },
+    {
+      "topic": "Swarm Robotics",
+      "definition": "Swarm robotics coordinates many robots to solve tasks collaboratively.",
+      "syntax": "Multiple Robots \u2192 Cooperation",
+      "example": "Search and rescue drones",
+      "output": "Coordinated behavior",
+      "tips": [
+        "Use decentralized communication."
+      ]
+    },
+    {
+      "topic": "Humanoid Robots",
+      "definition": "Humanoid robots resemble the human body and interact naturally with people.",
+      "syntax": "Perceive \u2192 Move \u2192 Interact",
+      "example": "Reception robot",
+      "output": "Human-like assistance",
+      "tips": [
+        "Design for safe interaction."
+      ]
+    },
+    {
+      "topic": "Drone Robotics",
+      "definition": "Drones are flying robots used for monitoring, mapping and delivery.",
+      "syntax": "Flight Control \u2192 Mission",
+      "example": "Aerial inspection",
+      "output": "Mission completed",
+      "tips": [
+        "Monitor battery and weather."
+      ]
+    },
+    {
+      "topic": "Space Robotics",
+      "definition": "Space robots assist with exploration and maintenance in space.",
+      "syntax": "Robot \u2192 Space Task",
+      "example": "Mars rover",
+      "output": "Exploration data",
+      "tips": [
+        "Build for harsh environments."
+      ]
+    },
+    {
+      "topic": "Industrial Robotics",
+      "definition": "Industrial robots automate manufacturing tasks with high precision.",
+      "syntax": "Task \u2192 Robot",
+      "example": "Welding robot",
+      "output": "Automated production",
+      "tips": [
+        "Schedule preventive maintenance."
+      ]
+    },
+    {
+      "topic": "Future of Robotics",
+      "definition": "Future robotics focuses on AI, collaboration, autonomy and smarter machines.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "AI-powered service robots",
+      "output": "Advanced capabilities",
+      "tips": [
+        "Stay updated with new technologies."
+      ]
+    },
+    {
+      "topic": "Advanced Robotics Best Practices",
+      "definition": "Develop robots that are safe, reliable, efficient and ethical.",
+      "syntax": "Design \u2192 Test \u2192 Deploy",
+      "example": "Enterprise robotics platform",
+      "output": "Reliable robotic system",
+      "tips": [
+        "Prioritize safety.",
+        "Validate performance.",
+        "Protect data.",
+        "Improve continuously."
+      ]
+    }
+  ]
+}
