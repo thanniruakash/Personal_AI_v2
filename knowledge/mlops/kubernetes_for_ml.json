@@ -1,0 +1,88 @@
+{
+  "subject": "MLOps",
+  "section": "Kubernetes for ML",
+  "topics": [
+    {
+      "topic": "What is Kubernetes?",
+      "definition": "Kubernetes is a container orchestration platform that automates deployment, scaling and management.",
+      "syntax": "Containers \u2192 Kubernetes Cluster",
+      "example": "ML inference service",
+      "output": "Managed deployment",
+      "tips": [
+        "Use Kubernetes for scalable production workloads."
+      ]
+    },
+    {
+      "topic": "Pods",
+      "definition": "Pods are the smallest deployable units in Kubernetes and can contain one or more containers.",
+      "syntax": "Container \u2192 Pod",
+      "example": "Model API pod",
+      "output": "Running workload",
+      "tips": [
+        "Keep one main application per pod."
+      ]
+    },
+    {
+      "topic": "Deployments",
+      "definition": "Deployments manage replica sets and rolling updates.",
+      "syntax": "Deployment \u2192 Pods",
+      "example": "Deploy an ML API",
+      "output": "Scalable application",
+      "tips": [
+        "Use rolling updates to avoid downtime."
+      ]
+    },
+    {
+      "topic": "Load Balancing",
+      "definition": "Load balancing distributes traffic across multiple pods.",
+      "syntax": "Client \u2192 Service \u2192 Pods",
+      "example": "Prediction API",
+      "output": "Balanced requests",
+      "tips": [
+        "Monitor response times."
+      ]
+    },
+    {
+      "topic": "Auto Scaling",
+      "definition": "Auto scaling adjusts the number of pods based on workload.",
+      "syntax": "Metrics \u2192 Scale",
+      "example": "High traffic inference",
+      "output": "Scaled deployment",
+      "tips": [
+        "Configure sensible scaling limits."
+      ]
+    },
+    {
+      "topic": "Kubernetes for ML",
+      "definition": "Kubernetes simplifies deployment and management of ML models at scale.",
+      "syntax": "Model \u2192 Container \u2192 Kubernetes",
+      "example": "Image classification service",
+      "output": "Scalable ML service",
+      "tips": [
+        "Package models in containers."
+      ]
+    },
+    {
+      "topic": "Monitoring",
+      "definition": "Monitoring tracks cluster health, logs and application metrics.",
+      "syntax": "Cluster \u2192 Metrics",
+      "example": "CPU usage dashboard",
+      "output": "Health status",
+      "tips": [
+        "Monitor latency and resource usage."
+      ]
+    },
+    {
+      "topic": "Kubernetes Best Practices",
+      "definition": "Use health checks, resource limits and automated deployments.",
+      "syntax": "Deploy \u2192 Monitor \u2192 Scale",
+      "example": "Production ML platform",
+      "output": "Reliable Kubernetes deployment",
+      "tips": [
+        "Set resource requests.",
+        "Use namespaces.",
+        "Back up configurations."
+      ]
+    }
+  ]
+}

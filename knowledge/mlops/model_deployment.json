@@ -1,0 +1,88 @@
+{
+  "subject": "MLOps",
+  "section": "Model Deployment",
+  "topics": [
+    {
+      "topic": "Model Deployment",
+      "definition": "Model deployment makes trained ML models available for real-world use.",
+      "syntax": "Model \u2192 Deploy \u2192 Serve",
+      "example": "Fraud detection API",
+      "output": "Live prediction service",
+      "tips": [
+        "Test thoroughly before deployment."
+      ]
+    },
+    {
+      "topic": "REST APIs",
+      "definition": "REST APIs expose ML models through HTTP endpoints.",
+      "syntax": "Client \u2192 API \u2192 Model",
+      "example": "Prediction endpoint",
+      "output": "JSON prediction",
+      "tips": [
+        "Use authentication and validation."
+      ]
+    },
+    {
+      "topic": "Batch Inference",
+      "definition": "Batch inference processes large datasets at scheduled intervals.",
+      "syntax": "Dataset \u2192 Batch Job \u2192 Predictions",
+      "example": "Nightly scoring",
+      "output": "Prediction file",
+      "tips": [
+        "Ideal for non-real-time tasks."
+      ]
+    },
+    {
+      "topic": "Real-Time Inference",
+      "definition": "Real-time inference returns predictions immediately after receiving requests.",
+      "syntax": "Request \u2192 Model \u2192 Response",
+      "example": "Chatbot response",
+      "output": "Instant prediction",
+      "tips": [
+        "Optimize latency."
+      ]
+    },
+    {
+      "topic": "Blue-Green Deployment",
+      "definition": "Blue-green deployment switches traffic between old and new model versions safely.",
+      "syntax": "Blue \u2194 Green",
+      "example": "Zero-downtime release",
+      "output": "Safe deployment",
+      "tips": [
+        "Validate before switching traffic."
+      ]
+    },
+    {
+      "topic": "Deployment Strategies",
+      "definition": "Strategies include canary, rolling and blue-green deployments.",
+      "syntax": "Deploy \u2192 Monitor",
+      "example": "Canary release",
+      "output": "Controlled rollout",
+      "tips": [
+        "Monitor performance after release."
+      ]
+    },
+    {
+      "topic": "Deployment Metrics",
+      "definition": "Monitor latency, throughput, availability and error rates.",
+      "syntax": "Service \u2192 Metrics",
+      "example": "API dashboard",
+      "output": "Health report",
+      "tips": [
+        "Set alerts for failures."
+      ]
+    },
+    {
+      "topic": "Model Deployment Best Practices",
+      "definition": "Automate deployments, monitor continuously and enable rollbacks.",
+      "syntax": "Deploy \u2192 Monitor \u2192 Improve",
+      "example": "Production ML service",
+      "output": "Reliable deployment",
+      "tips": [
+        "Version models.",
+        "Enable rollback.",
+        "Track performance."
+      ]
+    }
+  ]
+}

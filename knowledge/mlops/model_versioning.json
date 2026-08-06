@@ -1,0 +1,88 @@
+{
+  "subject": "MLOps",
+  "section": "Model Versioning",
+  "topics": [
+    {
+      "topic": "Model Versioning",
+      "definition": "Model versioning tracks changes to machine learning models over time.",
+      "syntax": "Train \u2192 Version",
+      "example": "Model v1.0",
+      "output": "Versioned model",
+      "tips": [
+        "Assign clear version numbers."
+      ]
+    },
+    {
+      "topic": "Dataset Versioning",
+      "definition": "Dataset versioning records changes to training and evaluation data.",
+      "syntax": "Dataset \u2192 Version",
+      "example": "Dataset v2",
+      "output": "Versioned dataset",
+      "tips": [
+        "Keep datasets reproducible."
+      ]
+    },
+    {
+      "topic": "Experiment Versioning",
+      "definition": "Experiment versioning stores parameters, code and results for each training run.",
+      "syntax": "Experiment \u2192 Log",
+      "example": "Hyperparameter tuning",
+      "output": "Experiment history",
+      "tips": [
+        "Track every experiment."
+      ]
+    },
+    {
+      "topic": "Model Registry",
+      "definition": "A model registry stores approved models and their metadata.",
+      "syntax": "Model \u2192 Registry",
+      "example": "Production model catalog",
+      "output": "Registered model",
+      "tips": [
+        "Approve models before deployment."
+      ]
+    },
+    {
+      "topic": "Version Tags",
+      "definition": "Version tags identify releases and model stages.",
+      "syntax": "Model \u2192 Tag",
+      "example": "v1.2-production",
+      "output": "Tagged version",
+      "tips": [
+        "Use meaningful tag names."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Versioning supports reproducibility, auditing and collaboration.",
+      "syntax": "Version \u2192 Deploy",
+      "example": "Rollback to older model",
+      "output": "Reliable lifecycle",
+      "tips": [
+        "Keep change logs."
+      ]
+    },
+    {
+      "topic": "Evaluation",
+      "definition": "Compare versions using accuracy, latency and business metrics.",
+      "syntax": "Versions \u2192 Metrics",
+      "example": "A/B testing",
+      "output": "Comparison report",
+      "tips": [
+        "Evaluate before promotion."
+      ]
+    },
+    {
+      "topic": "Model Versioning Best Practices",
+      "definition": "Version models, datasets and code together for reproducible ML.",
+      "syntax": "Version \u2192 Test \u2192 Deploy",
+      "example": "Enterprise MLOps",
+      "output": "Reliable version control",
+      "tips": [
+        "Store metadata.",
+        "Enable rollback.",
+        "Automate registry updates."
+      ]
+    }
+  ]
+}

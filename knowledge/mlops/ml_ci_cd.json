@@ -1,0 +1,89 @@
+{
+  "subject": "MLOps",
+  "section": "ML CI/CD",
+  "topics": [
+    {
+      "topic": "CI/CD for ML",
+      "definition": "CI/CD automates building, testing and deploying ML systems.",
+      "syntax": "Code \u2192 Test \u2192 Deploy",
+      "example": "Automatic model deployment",
+      "output": "Automated pipeline",
+      "tips": [
+        "Automate repetitive tasks."
+      ]
+    },
+    {
+      "topic": "Automated Testing",
+      "definition": "Run tests for code, data and models before deployment.",
+      "syntax": "Commit \u2192 Tests",
+      "example": "Unit tests",
+      "output": "Test report",
+      "tips": [
+        "Fail fast on errors."
+      ]
+    },
+    {
+      "topic": "Continuous Deployment",
+      "definition": "Automatically deploy validated models to production.",
+      "syntax": "Validated Model \u2192 Production",
+      "example": "Model API update",
+      "output": "Live deployment",
+      "tips": [
+        "Use approval gates when needed."
+      ]
+    },
+    {
+      "topic": "Pipeline Automation",
+      "definition": "Automate training, validation and deployment workflows.",
+      "syntax": "Trigger \u2192 Pipeline",
+      "example": "Nightly retraining",
+      "output": "Automated workflow",
+      "tips": [
+        "Keep pipelines reproducible."
+      ]
+    },
+    {
+      "topic": "Retraining Pipelines",
+      "definition": "Retrain models automatically when new data or drift is detected.",
+      "syntax": "New Data \u2192 Retrain",
+      "example": "Weekly retraining",
+      "output": "Updated model",
+      "tips": [
+        "Validate before replacing models."
+      ]
+    },
+    {
+      "topic": "CI/CD Tools",
+      "definition": "Tools such as GitHub Actions, Jenkins and GitLab CI automate ML workflows.",
+      "syntax": "Repository \u2192 CI/CD",
+      "example": "GitHub Actions",
+      "output": "Pipeline execution",
+      "tips": [
+        "Store secrets securely."
+      ]
+    },
+    {
+      "topic": "Pipeline Metrics",
+      "definition": "Track build success, deployment frequency and pipeline duration.",
+      "syntax": "Pipeline \u2192 Metrics",
+      "example": "CI dashboard",
+      "output": "Performance report",
+      "tips": [
+        "Monitor failures closely."
+      ]
+    },
+    {
+      "topic": "ML CI/CD Best Practices",
+      "definition": "Automate testing, version artifacts and monitor deployments.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "Production MLOps",
+      "output": "Reliable CI/CD",
+      "tips": [
+        "Use version control.",
+        "Test automatically.",
+        "Enable rollbacks.",
+        "Monitor releases."
+      ]
+    }
+  ]
+}

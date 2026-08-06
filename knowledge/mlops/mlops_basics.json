@@ -1,0 +1,88 @@
+{
+  "subject": "MLOps",
+  "section": "MLOps Basics",
+  "topics": [
+    {
+      "topic": "What is MLOps?",
+      "definition": "MLOps combines machine learning, DevOps and data engineering to build, deploy and maintain ML systems.",
+      "syntax": "Develop \u2192 Deploy \u2192 Monitor",
+      "example": "Fraud detection pipeline",
+      "output": "Production ML system",
+      "tips": [
+        "Automate repetitive workflows."
+      ]
+    },
+    {
+      "topic": "ML Lifecycle",
+      "definition": "The ML lifecycle covers data collection, training, deployment and monitoring.",
+      "syntax": "Data \u2192 Train \u2192 Deploy \u2192 Monitor",
+      "example": "Image classifier",
+      "output": "Managed workflow",
+      "tips": [
+        "Document each stage."
+      ]
+    },
+    {
+      "topic": "Data Pipelines",
+      "definition": "Data pipelines prepare and transform data for training and inference.",
+      "syntax": "Raw Data \u2192 Processed Data",
+      "example": "ETL pipeline",
+      "output": "Clean dataset",
+      "tips": [
+        "Validate data quality."
+      ]
+    },
+    {
+      "topic": "Experiment Tracking",
+      "definition": "Experiment tracking records model parameters, metrics and results.",
+      "syntax": "Train \u2192 Log",
+      "example": "Track model accuracy",
+      "output": "Experiment history",
+      "tips": [
+        "Compare runs consistently."
+      ]
+    },
+    {
+      "topic": "Automation",
+      "definition": "Automation reduces manual work in training and deployment.",
+      "syntax": "Trigger \u2192 Pipeline",
+      "example": "Scheduled retraining",
+      "output": "Automated workflow",
+      "tips": [
+        "Use reproducible pipelines."
+      ]
+    },
+    {
+      "topic": "Collaboration",
+      "definition": "MLOps improves collaboration between data scientists, engineers and operations teams.",
+      "syntax": "Team \u2192 Shared Workflow",
+      "example": "Model release",
+      "output": "Coordinated development",
+      "tips": [
+        "Use version control."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "MLOps supports recommendation systems, NLP, vision and predictive analytics.",
+      "syntax": "ML Model \u2192 Production",
+      "example": "AI assistant",
+      "output": "Reliable service",
+      "tips": [
+        "Monitor production performance."
+      ]
+    },
+    {
+      "topic": "MLOps Best Practices",
+      "definition": "Automate pipelines, monitor models and maintain reproducibility.",
+      "syntax": "Build \u2192 Deploy \u2192 Monitor",
+      "example": "Enterprise ML",
+      "output": "Reliable MLOps",
+      "tips": [
+        "Version everything.",
+        "Monitor drift.",
+        "Automate testing."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "subject": "MLOps",
+  "section": "Model Monitoring",
+  "topics": [
+    {
+      "topic": "Model Monitoring",
+      "definition": "Model monitoring tracks ML models in production to ensure reliable performance.",
+      "syntax": "Model \u2192 Metrics",
+      "example": "Fraud detection service",
+      "output": "Health status",
+      "tips": [
+        "Monitor continuously."
+      ]
+    },
+    {
+      "topic": "Data Drift",
+      "definition": "Data drift occurs when production data differs from training data.",
+      "syntax": "Training Data \u2194 Production Data",
+      "example": "Customer behavior changes",
+      "output": "Drift report",
+      "tips": [
+        "Compare feature distributions regularly."
+      ]
+    },
+    {
+      "topic": "Concept Drift",
+      "definition": "Concept drift happens when relationships between inputs and outputs change.",
+      "syntax": "Input \u2192 Output",
+      "example": "Spam detection trends",
+      "output": "Performance change",
+      "tips": [
+        "Retrain when necessary."
+      ]
+    },
+    {
+      "topic": "Performance Monitoring",
+      "definition": "Track accuracy, latency and error rates of deployed models.",
+      "syntax": "Model \u2192 KPIs",
+      "example": "Prediction API",
+      "output": "Performance dashboard",
+      "tips": [
+        "Set clear thresholds."
+      ]
+    },
+    {
+      "topic": "Alerting",
+      "definition": "Alerts notify teams when metrics exceed acceptable limits.",
+      "syntax": "Metric \u2192 Alert",
+      "example": "Accuracy drop",
+      "output": "Notification",
+      "tips": [
+        "Avoid excessive alerts."
+      ]
+    },
+    {
+      "topic": "Monitoring Tools",
+      "definition": "Tools collect logs, metrics and traces from ML systems.",
+      "syntax": "Service \u2192 Monitoring",
+      "example": "Prometheus + Grafana",
+      "output": "Observability",
+      "tips": [
+        "Centralize monitoring."
+      ]
+    },
+    {
+      "topic": "Monitoring Metrics",
+      "definition": "Common metrics include latency, throughput, drift and uptime.",
+      "syntax": "System \u2192 Metrics",
+      "example": "Model dashboard",
+      "output": "Metric report",
+      "tips": [
+        "Track business metrics too."
+      ]
+    },
+    {
+      "topic": "Model Monitoring Best Practices",
+      "definition": "Continuously monitor, detect drift and retrain models when required.",
+      "syntax": "Monitor \u2192 Alert \u2192 Improve",
+      "example": "Production ML",
+      "output": "Reliable monitoring",
+      "tips": [
+        "Automate alerts.",
+        "Log predictions.",
+        "Review dashboards.",
+        "Schedule retraining."
+      ]
+    }
+  ]
+}

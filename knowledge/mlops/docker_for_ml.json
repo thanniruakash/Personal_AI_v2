@@ -1,0 +1,88 @@
+{
+  "subject": "MLOps",
+  "section": "Docker for ML",
+  "topics": [
+    {
+      "topic": "What is Docker?",
+      "definition": "Docker packages applications and dependencies into portable containers.",
+      "syntax": "Code \u2192 Docker Image \u2192 Container",
+      "example": "ML inference API",
+      "output": "Containerized app",
+      "tips": [
+        "Use containers for consistent environments."
+      ]
+    },
+    {
+      "topic": "Docker Images",
+      "definition": "A Docker image is a read-only template used to create containers.",
+      "syntax": "Dockerfile \u2192 Image",
+      "example": "Python ML image",
+      "output": "Reusable image",
+      "tips": [
+        "Keep images lightweight."
+      ]
+    },
+    {
+      "topic": "Docker Containers",
+      "definition": "Containers are running instances of Docker images.",
+      "syntax": "Image \u2192 Container",
+      "example": "Serving a model",
+      "output": "Running service",
+      "tips": [
+        "Stop unused containers to save resources."
+      ]
+    },
+    {
+      "topic": "Dockerfile",
+      "definition": "A Dockerfile contains instructions to build an image.",
+      "syntax": "Instructions \u2192 Image",
+      "example": "FROM python:3.11",
+      "output": "Built image",
+      "tips": [
+        "Minimize image layers."
+      ]
+    },
+    {
+      "topic": "Docker Compose",
+      "definition": "Docker Compose manages multiple containers together.",
+      "syntax": "compose.yml \u2192 Services",
+      "example": "API + Database",
+      "output": "Multi-container app",
+      "tips": [
+        "Separate services clearly."
+      ]
+    },
+    {
+      "topic": "Docker for ML Applications",
+      "definition": "Docker simplifies deployment of training and inference environments.",
+      "syntax": "Model \u2192 Docker",
+      "example": "Image classifier API",
+      "output": "Portable ML service",
+      "tips": [
+        "Pin dependency versions."
+      ]
+    },
+    {
+      "topic": "Performance Considerations",
+      "definition": "Optimize images, resources and startup time for efficient deployment.",
+      "syntax": "Container \u2192 Metrics",
+      "example": "Inference benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Monitor CPU and memory usage."
+      ]
+    },
+    {
+      "topic": "Docker Best Practices",
+      "definition": "Use small images, version builds and scan for security issues.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "Production ML API",
+      "output": "Reliable container",
+      "tips": [
+        "Use .dockerignore.",
+        "Avoid running as root.",
+        "Tag image versions."
+      ]
+    }
+  ]
+}
