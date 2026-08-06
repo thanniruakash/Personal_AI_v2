@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "RAG Basics",
+  "topics": [
+    {
+      "topic": "What is RAG?",
+      "definition": "Retrieval-Augmented Generation combines information retrieval with a language model to produce grounded answers.",
+      "syntax": "Query \u2192 Retrieve \u2192 Generate",
+      "example": "Answer questions from documents",
+      "output": "Grounded response",
+      "tips": [
+        "Keep the knowledge base updated."
+      ]
+    },
+    {
+      "topic": "Retriever",
+      "definition": "The retriever finds relevant documents for a user query.",
+      "syntax": "Query \u2192 Documents",
+      "example": "Semantic search",
+      "output": "Relevant passages",
+      "tips": [
+        "Use embeddings for better retrieval."
+      ]
+    },
+    {
+      "topic": "Generator",
+      "definition": "The generator uses retrieved context to create the final answer.",
+      "syntax": "Context + Query \u2192 Answer",
+      "example": "Document QA",
+      "output": "Generated response",
+      "tips": [
+        "Limit context to the most relevant content."
+      ]
+    },
+    {
+      "topic": "Knowledge Base",
+      "definition": "A knowledge base stores documents used during retrieval.",
+      "syntax": "Documents \u2192 Index",
+      "example": "Company manuals",
+      "output": "Searchable data",
+      "tips": [
+        "Keep documents clean and organized."
+      ]
+    },
+    {
+      "topic": "Retrieval Pipeline",
+      "definition": "The retrieval pipeline searches, ranks and returns useful context.",
+      "syntax": "Query \u2192 Search \u2192 Rank",
+      "example": "Internal search",
+      "output": "Top documents",
+      "tips": [
+        "Use efficient indexing."
+      ]
+    },
+    {
+      "topic": "Grounding",
+      "definition": "Grounding reduces hallucinations by basing answers on retrieved information.",
+      "syntax": "Retrieved Context \u2192 Response",
+      "example": "Customer support bot",
+      "output": "Evidence-based answer",
+      "tips": [
+        "Cite retrieved sources when possible."
+      ]
+    },
+    {
+      "topic": "RAG Applications",
+      "definition": "RAG is used in chatbots, enterprise search, education and research assistants.",
+      "syntax": "Question \u2192 RAG",
+      "example": "Policy assistant",
+      "output": "Accurate answer",
+      "tips": [
+        "Refresh indexes regularly."
+      ]
+    },
+    {
+      "topic": "RAG Best Practices",
+      "definition": "Use quality documents, evaluate retrieval and monitor answer quality.",
+      "syntax": "Retrieve \u2192 Generate \u2192 Evaluate",
+      "example": "Enterprise RAG",
+      "output": "Reliable RAG system",
+      "tips": [
+        "Optimize chunking.",
+        "Evaluate retrieval.",
+        "Reduce hallucinations."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "Embeddings",
+  "topics": [
+    {
+      "topic": "What are Embeddings?",
+      "definition": "Embeddings are dense numerical vectors that represent the meaning of text, images or other data.",
+      "syntax": "Data \u2192 Embedding Model \u2192 Vector",
+      "example": "Sentence embedding",
+      "output": "Vector representation",
+      "tips": [
+        "Similar meanings produce similar vectors."
+      ]
+    },
+    {
+      "topic": "Vector Representation",
+      "definition": "A vector represents features of data in a high-dimensional space.",
+      "syntax": "Input \u2192 Vector",
+      "example": "Text converted to a 768-dimensional vector",
+      "output": "Embedding vector",
+      "tips": [
+        "Vectors enable semantic comparison."
+      ]
+    },
+    {
+      "topic": "Cosine Similarity",
+      "definition": "Cosine similarity measures how similar two vectors are.",
+      "syntax": "Vector A \u2194 Vector B",
+      "example": "Compare two documents",
+      "output": "Similarity score",
+      "tips": [
+        "Higher scores indicate greater similarity."
+      ]
+    },
+    {
+      "topic": "Semantic Search",
+      "definition": "Semantic search finds results based on meaning rather than exact keywords.",
+      "syntax": "Query \u2192 Embeddings \u2192 Search",
+      "example": "Find related documents",
+      "output": "Relevant results",
+      "tips": [
+        "Use quality embedding models."
+      ]
+    },
+    {
+      "topic": "Embedding Models",
+      "definition": "Embedding models convert data into vectors for retrieval and comparison.",
+      "syntax": "Input \u2192 Model \u2192 Embedding",
+      "example": "Sentence Transformer",
+      "output": "Embedding",
+      "tips": [
+        "Choose a model for your domain."
+      ]
+    },
+    {
+      "topic": "Embedding Applications",
+      "definition": "Embeddings are used in RAG, recommendations, clustering and search.",
+      "syntax": "Data \u2192 Embeddings",
+      "example": "Document retrieval",
+      "output": "Application result",
+      "tips": [
+        "Normalize vectors when appropriate."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Embedding quality is evaluated using retrieval accuracy, recall and similarity benchmarks.",
+      "syntax": "Embeddings \u2192 Metrics",
+      "example": "Semantic search evaluation",
+      "output": "Performance score",
+      "tips": [
+        "Test with realistic queries."
+      ]
+    },
+    {
+      "topic": "Embedding Best Practices",
+      "definition": "Use clean data, suitable models and evaluate retrieval performance regularly.",
+      "syntax": "Embed \u2192 Retrieve \u2192 Evaluate",
+      "example": "Enterprise search",
+      "output": "Reliable embeddings",
+      "tips": [
+        "Update embeddings after major data changes.",
+        "Benchmark different models.",
+        "Monitor retrieval quality."
+      ]
+    }
+  ]
+}

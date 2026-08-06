@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "Retrieval Methods",
+  "topics": [
+    {
+      "topic": "Keyword Retrieval",
+      "definition": "Keyword retrieval matches documents using exact words or phrases.",
+      "syntax": "Query \u2192 Keyword Search",
+      "example": "Search by product name",
+      "output": "Matching documents",
+      "tips": [
+        "Fast but may miss semantic matches."
+      ]
+    },
+    {
+      "topic": "Semantic Retrieval",
+      "definition": "Semantic retrieval finds documents based on meaning using embeddings.",
+      "syntax": "Query \u2192 Embeddings \u2192 Results",
+      "example": "Find similar articles",
+      "output": "Relevant documents",
+      "tips": [
+        "Works well with natural language queries."
+      ]
+    },
+    {
+      "topic": "Hybrid Search",
+      "definition": "Hybrid search combines keyword and semantic retrieval.",
+      "syntax": "Keyword + Vector Search",
+      "example": "Enterprise search",
+      "output": "Ranked results",
+      "tips": [
+        "Often gives the best overall accuracy."
+      ]
+    },
+    {
+      "topic": "BM25",
+      "definition": "BM25 is a ranking algorithm for keyword-based information retrieval.",
+      "syntax": "Query \u2192 BM25 Score",
+      "example": "Search engine",
+      "output": "Ranked documents",
+      "tips": [
+        "Strong baseline for text retrieval."
+      ]
+    },
+    {
+      "topic": "Dense Retrieval",
+      "definition": "Dense retrieval uses vector embeddings instead of sparse keywords.",
+      "syntax": "Embeddings \u2192 Nearest Neighbors",
+      "example": "RAG document search",
+      "output": "Similar documents",
+      "tips": [
+        "Requires a vector index."
+      ]
+    },
+    {
+      "topic": "Query Expansion",
+      "definition": "Query expansion improves search by adding related terms.",
+      "syntax": "Query \u2192 Expanded Query",
+      "example": "AI \u2192 Artificial Intelligence",
+      "output": "Improved retrieval",
+      "tips": [
+        "Avoid adding irrelevant terms."
+      ]
+    },
+    {
+      "topic": "Retrieval Evaluation",
+      "definition": "Retrieval quality is measured using precision, recall, MRR and nDCG.",
+      "syntax": "Results \u2192 Metrics",
+      "example": "Search benchmark",
+      "output": "Performance score",
+      "tips": [
+        "Evaluate using real user queries."
+      ]
+    },
+    {
+      "topic": "Retrieval Best Practices",
+      "definition": "Combine strong retrieval methods, evaluate regularly and optimize indexes.",
+      "syntax": "Retrieve \u2192 Rank \u2192 Evaluate",
+      "example": "Production RAG",
+      "output": "Reliable retrieval",
+      "tips": [
+        "Use hybrid search.",
+        "Refresh indexes.",
+        "Monitor retrieval accuracy."
+      ]
+    }
+  ]
+}

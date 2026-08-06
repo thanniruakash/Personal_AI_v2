@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "Chunking Strategies",
+  "topics": [
+    {
+      "topic": "What is Chunking?",
+      "definition": "Chunking splits documents into smaller pieces for efficient retrieval.",
+      "syntax": "Document \u2192 Chunks",
+      "example": "Split a PDF into sections",
+      "output": "Document chunks",
+      "tips": [
+        "Keep related information together."
+      ]
+    },
+    {
+      "topic": "Fixed-Size Chunking",
+      "definition": "Documents are split into chunks of equal length.",
+      "syntax": "Text \u2192 Fixed Chunks",
+      "example": "500-token chunks",
+      "output": "Uniform chunks",
+      "tips": [
+        "Simple but may break context."
+      ]
+    },
+    {
+      "topic": "Semantic Chunking",
+      "definition": "Chunks are created based on meaning and topic boundaries.",
+      "syntax": "Text \u2192 Semantic Sections",
+      "example": "Split by headings",
+      "output": "Meaningful chunks",
+      "tips": [
+        "Usually improves retrieval quality."
+      ]
+    },
+    {
+      "topic": "Overlapping Chunks",
+      "definition": "Adjacent chunks share some content to preserve context.",
+      "syntax": "Chunk A \u2194 Chunk B",
+      "example": "50-token overlap",
+      "output": "Context-preserving chunks",
+      "tips": [
+        "Avoid excessive overlap."
+      ]
+    },
+    {
+      "topic": "Document Parsing",
+      "definition": "Parsing extracts clean text and structure from documents.",
+      "syntax": "Document \u2192 Parsed Text",
+      "example": "PDF parser",
+      "output": "Structured content",
+      "tips": [
+        "Remove headers and footers when appropriate."
+      ]
+    },
+    {
+      "topic": "Chunk Size Optimization",
+      "definition": "Choose chunk sizes that balance context and retrieval accuracy.",
+      "syntax": "Text \u2192 Optimized Chunks",
+      "example": "300-token chunks",
+      "output": "Optimized index",
+      "tips": [
+        "Experiment with different sizes."
+      ]
+    },
+    {
+      "topic": "Chunk Evaluation",
+      "definition": "Evaluate chunks for completeness, relevance and retrieval performance.",
+      "syntax": "Chunks \u2192 Metrics",
+      "example": "RAG benchmark",
+      "output": "Quality score",
+      "tips": [
+        "Test using real queries."
+      ]
+    },
+    {
+      "topic": "Chunking Best Practices",
+      "definition": "Use semantic boundaries, appropriate overlap and clean document parsing.",
+      "syntax": "Parse \u2192 Chunk \u2192 Evaluate",
+      "example": "Enterprise RAG",
+      "output": "High-quality chunks",
+      "tips": [
+        "Keep context intact.",
+        "Avoid tiny chunks.",
+        "Benchmark retrieval."
+      ]
+    }
+  ]
+}

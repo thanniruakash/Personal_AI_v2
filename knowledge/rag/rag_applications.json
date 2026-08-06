@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "RAG Applications",
+  "topics": [
+    {
+      "topic": "Enterprise RAG",
+      "definition": "Enterprise RAG provides accurate answers using an organization's internal knowledge.",
+      "syntax": "Query \u2192 Retrieve \u2192 Generate",
+      "example": "Company policy assistant",
+      "output": "Grounded answer",
+      "tips": [
+        "Keep enterprise documents updated."
+      ]
+    },
+    {
+      "topic": "Document Question Answering",
+      "definition": "RAG answers questions by retrieving relevant document passages.",
+      "syntax": "Question \u2192 Documents \u2192 Answer",
+      "example": "PDF chatbot",
+      "output": "Document-based response",
+      "tips": [
+        "Use well-chunked documents."
+      ]
+    },
+    {
+      "topic": "AI Chatbots",
+      "definition": "RAG chatbots combine retrieval with language models for reliable conversations.",
+      "syntax": "User Query \u2192 RAG",
+      "example": "Customer support bot",
+      "output": "Context-aware reply",
+      "tips": [
+        "Refresh indexes regularly."
+      ]
+    },
+    {
+      "topic": "Knowledge Search",
+      "definition": "Knowledge search finds relevant information across large document collections.",
+      "syntax": "Query \u2192 Search",
+      "example": "Internal wiki search",
+      "output": "Relevant knowledge",
+      "tips": [
+        "Combine semantic and keyword search."
+      ]
+    },
+    {
+      "topic": "RAG in Healthcare",
+      "definition": "RAG assists clinicians by retrieving medical references and guidelines.",
+      "syntax": "Medical Query \u2192 RAG",
+      "example": "Clinical decision support",
+      "output": "Evidence-based response",
+      "tips": [
+        "Verify outputs with trusted medical sources."
+      ]
+    },
+    {
+      "topic": "RAG in Business",
+      "definition": "Businesses use RAG for support, training and knowledge management.",
+      "syntax": "Business Query \u2192 RAG",
+      "example": "HR assistant",
+      "output": "Business answer",
+      "tips": [
+        "Protect confidential information."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Evaluate RAG systems using answer accuracy, faithfulness, retrieval precision and latency.",
+      "syntax": "System \u2192 Metrics",
+      "example": "RAG benchmark",
+      "output": "Performance report",
+      "tips": [
+        "Evaluate retrieval and generation separately."
+      ]
+    },
+    {
+      "topic": "RAG Applications Best Practices",
+      "definition": "Maintain quality data, monitor retrieval and validate generated answers.",
+      "syntax": "Retrieve \u2192 Generate \u2192 Review",
+      "example": "Enterprise assistant",
+      "output": "Reliable RAG application",
+      "tips": [
+        "Reduce hallucinations.",
+        "Monitor user feedback.",
+        "Update indexes regularly."
+      ]
+    }
+  ]
+}

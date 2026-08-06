@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "Vector Search Pipeline",
+  "topics": [
+    {
+      "topic": "Vector Indexing",
+      "definition": "Vector indexing organizes embeddings for fast similarity search.",
+      "syntax": "Embeddings \u2192 Vector Index",
+      "example": "FAISS index",
+      "output": "Indexed vectors",
+      "tips": [
+        "Choose an index based on data size and speed requirements."
+      ]
+    },
+    {
+      "topic": "Similarity Search",
+      "definition": "Similarity search finds vectors closest to a query embedding.",
+      "syntax": "Query Vector \u2192 Nearest Vectors",
+      "example": "Semantic document search",
+      "output": "Relevant documents",
+      "tips": [
+        "Cosine similarity is commonly used."
+      ]
+    },
+    {
+      "topic": "Approximate Nearest Neighbor (ANN)",
+      "definition": "ANN algorithms speed up vector search by finding near-optimal neighbors efficiently.",
+      "syntax": "Vector \u2192 ANN Index",
+      "example": "HNSW search",
+      "output": "Nearest candidates",
+      "tips": [
+        "Trade a small amount of accuracy for speed when needed."
+      ]
+    },
+    {
+      "topic": "Query Pipeline",
+      "definition": "A query pipeline embeds the query, retrieves candidates and prepares context.",
+      "syntax": "Query \u2192 Embed \u2192 Search \u2192 Results",
+      "example": "RAG chatbot",
+      "output": "Retrieved context",
+      "tips": [
+        "Cache frequent queries to improve performance."
+      ]
+    },
+    {
+      "topic": "Metadata Filtering",
+      "definition": "Metadata filtering narrows search results using attributes such as date or category.",
+      "syntax": "Query + Filters \u2192 Results",
+      "example": "Search only engineering docs",
+      "output": "Filtered documents",
+      "tips": [
+        "Store useful metadata with each document."
+      ]
+    },
+    {
+      "topic": "Vector Search Applications",
+      "definition": "Vector search powers semantic search, recommendations and RAG systems.",
+      "syntax": "Embedding \u2192 Search",
+      "example": "Knowledge assistant",
+      "output": "Relevant information",
+      "tips": [
+        "Refresh indexes when data changes."
+      ]
+    },
+    {
+      "topic": "Performance Metrics",
+      "definition": "Measure vector search using recall, latency, throughput and accuracy.",
+      "syntax": "Search \u2192 Metrics",
+      "example": "Benchmark ANN index",
+      "output": "Performance report",
+      "tips": [
+        "Balance speed and retrieval quality."
+      ]
+    },
+    {
+      "topic": "Vector Search Best Practices",
+      "definition": "Use quality embeddings, optimize indexes and monitor retrieval quality.",
+      "syntax": "Embed \u2192 Index \u2192 Search \u2192 Evaluate",
+      "example": "Enterprise vector search",
+      "output": "Reliable search pipeline",
+      "tips": [
+        "Rebuild indexes when needed.",
+        "Benchmark different ANN methods.",
+        "Monitor latency and recall."
+      ]
+    }
+  ]
+}

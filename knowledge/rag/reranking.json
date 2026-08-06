@@ -1,0 +1,88 @@
+{
+  "subject": "RAG",
+  "section": "Reranking",
+  "topics": [
+    {
+      "topic": "What is Reranking?",
+      "definition": "Reranking reorders retrieved documents to place the most relevant results first.",
+      "syntax": "Retrieved Results \u2192 Reranker \u2192 Ranked Results",
+      "example": "Document search",
+      "output": "Improved ranking",
+      "tips": [
+        "Apply reranking after initial retrieval."
+      ]
+    },
+    {
+      "topic": "Cross-Encoder Reranking",
+      "definition": "A cross-encoder scores a query and document together for high-quality relevance estimation.",
+      "syntax": "Query + Document \u2192 Score",
+      "example": "Answer ranking",
+      "output": "Relevance score",
+      "tips": [
+        "More accurate but slower than bi-encoders."
+      ]
+    },
+    {
+      "topic": "Bi-Encoder vs Cross-Encoder",
+      "definition": "Bi-encoders are faster for retrieval while cross-encoders provide better ranking accuracy.",
+      "syntax": "Compare Models",
+      "example": "Search pipeline",
+      "output": "Model comparison",
+      "tips": [
+        "Use bi-encoder then cross-encoder in production."
+      ]
+    },
+    {
+      "topic": "Relevance Scoring",
+      "definition": "Documents receive scores indicating how well they match the query.",
+      "syntax": "Document \u2192 Score",
+      "example": "Search results",
+      "output": "Rank score",
+      "tips": [
+        "Use consistent scoring methods."
+      ]
+    },
+    {
+      "topic": "Top-K Selection",
+      "definition": "Top-K selection keeps only the highest-ranked documents for generation.",
+      "syntax": "Ranked Results \u2192 Top K",
+      "example": "Top 5 passages",
+      "output": "Selected context",
+      "tips": [
+        "Choose K based on context limits."
+      ]
+    },
+    {
+      "topic": "Reranking Applications",
+      "definition": "Reranking improves RAG systems, search engines and recommendation systems.",
+      "syntax": "Results \u2192 Reranker",
+      "example": "Enterprise search",
+      "output": "Higher-quality results",
+      "tips": [
+        "Evaluate latency and accuracy together."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Reranking quality is measured with metrics such as MRR, nDCG and Precision@K.",
+      "syntax": "Rankings \u2192 Metrics",
+      "example": "Search benchmark",
+      "output": "Performance metrics",
+      "tips": [
+        "Use representative evaluation queries."
+      ]
+    },
+    {
+      "topic": "Reranking Best Practices",
+      "definition": "Combine strong retrieval with effective reranking and continuous evaluation.",
+      "syntax": "Retrieve \u2192 Rerank \u2192 Generate",
+      "example": "Production RAG",
+      "output": "Reliable search pipeline",
+      "tips": [
+        "Benchmark models.",
+        "Monitor latency.",
+        "Update indexes regularly."
+      ]
+    }
+  ]
+}

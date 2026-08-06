@@ -1,0 +1,89 @@
+{
+  "subject": "RAG",
+  "section": "Advanced RAG",
+  "topics": [
+    {
+      "topic": "Advanced RAG Architectures",
+      "definition": "Advanced RAG architectures improve retrieval quality, scalability and reasoning.",
+      "syntax": "Query \u2192 Retrieve \u2192 Reason \u2192 Generate",
+      "example": "Enterprise knowledge assistant",
+      "output": "Grounded response",
+      "tips": [
+        "Use modular pipelines."
+      ]
+    },
+    {
+      "topic": "Agentic RAG",
+      "definition": "Agentic RAG allows AI agents to plan, retrieve information and use tools iteratively.",
+      "syntax": "Goal \u2192 Retrieve \u2192 Tool Use \u2192 Answer",
+      "example": "Research assistant",
+      "output": "Task completion",
+      "tips": [
+        "Limit unnecessary retrieval."
+      ]
+    },
+    {
+      "topic": "Graph RAG",
+      "definition": "Graph RAG combines knowledge graphs with retrieval for richer context.",
+      "syntax": "Query \u2192 Graph + Retrieval",
+      "example": "Relationship search",
+      "output": "Connected knowledge",
+      "tips": [
+        "Keep graph data updated."
+      ]
+    },
+    {
+      "topic": "Multi-Hop Retrieval",
+      "definition": "Multi-hop retrieval gathers information from multiple related sources before answering.",
+      "syntax": "Query \u2192 Retrieve \u2192 Retrieve",
+      "example": "Complex QA",
+      "output": "Comprehensive answer",
+      "tips": [
+        "Track evidence across hops."
+      ]
+    },
+    {
+      "topic": "RAG Security",
+      "definition": "RAG security protects data, prevents prompt injection and controls document access.",
+      "syntax": "Query \u2192 Security Checks",
+      "example": "Internal company chatbot",
+      "output": "Secure response",
+      "tips": [
+        "Validate retrieved content."
+      ]
+    },
+    {
+      "topic": "RAG Optimization",
+      "definition": "Optimization improves latency, retrieval quality and generation accuracy.",
+      "syntax": "Retrieve \u2192 Optimize",
+      "example": "Production RAG",
+      "output": "Efficient pipeline",
+      "tips": [
+        "Benchmark regularly."
+      ]
+    },
+    {
+      "topic": "Future of RAG",
+      "definition": "Future RAG systems will use better reasoning, memory and multimodal retrieval.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "Next-generation assistants",
+      "output": "Advanced capabilities",
+      "tips": [
+        "Follow emerging techniques."
+      ]
+    },
+    {
+      "topic": "Advanced RAG Best Practices",
+      "definition": "Use high-quality data, strong retrieval, reranking and continuous evaluation.",
+      "syntax": "Retrieve \u2192 Rerank \u2192 Generate \u2192 Evaluate",
+      "example": "Enterprise RAG platform",
+      "output": "Reliable RAG system",
+      "tips": [
+        "Reduce hallucinations.",
+        "Monitor latency.",
+        "Refresh indexes.",
+        "Evaluate continuously."
+      ]
+    }
+  ]
+}
