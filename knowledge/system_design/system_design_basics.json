@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "System Design Basics",
+  "topics": [
+    {
+      "topic": "What is System Design?",
+      "definition": "System Design is the process of designing scalable, reliable and efficient software systems.",
+      "syntax": "Requirements \u2192 Design \u2192 Implementation",
+      "example": "Designing an e-commerce platform",
+      "output": "System architecture created",
+      "tips": [
+        "Start with functional and non-functional requirements."
+      ]
+    },
+    {
+      "topic": "Functional Requirements",
+      "definition": "Functional requirements describe what the system should do.",
+      "syntax": "Feature List",
+      "example": "User login, product search",
+      "output": "System features defined",
+      "tips": [
+        "Clarify all user requirements first."
+      ]
+    },
+    {
+      "topic": "Non-Functional Requirements",
+      "definition": "Non-functional requirements describe system qualities such as scalability, reliability and performance.",
+      "syntax": "Performance, Availability",
+      "example": "99.9% uptime",
+      "output": "Quality goals defined",
+      "tips": [
+        "Measure requirements with clear metrics."
+      ]
+    },
+    {
+      "topic": "High-Level Design",
+      "definition": "High-Level Design defines major components and their interactions.",
+      "syntax": "Client \u2192 API \u2192 Database",
+      "example": "Three-tier architecture",
+      "output": "Architecture planned",
+      "tips": [
+        "Keep the design simple and modular."
+      ]
+    },
+    {
+      "topic": "Low-Level Design",
+      "definition": "Low-Level Design focuses on classes, APIs and internal logic.",
+      "syntax": "Class \u2192 Method",
+      "example": "UserService class",
+      "output": "Implementation details defined",
+      "tips": [
+        "Follow SOLID principles."
+      ]
+    },
+    {
+      "topic": "Scalability",
+      "definition": "Scalability is the ability to handle increasing workload efficiently.",
+      "syntax": "Scale Up / Scale Out",
+      "example": "Adding more servers",
+      "output": "System handles more users",
+      "tips": [
+        "Prefer horizontal scaling when possible."
+      ]
+    },
+    {
+      "topic": "Reliability",
+      "definition": "Reliability ensures the system continues operating correctly over time.",
+      "syntax": "Redundancy \u2192 Recovery",
+      "example": "Database replication",
+      "output": "Reliable service",
+      "tips": [
+        "Avoid single points of failure."
+      ]
+    },
+    {
+      "topic": "System Design Best Practices",
+      "definition": "Design modular, scalable and fault-tolerant systems.",
+      "syntax": "Plan \u2192 Design \u2192 Review",
+      "example": "Microservices architecture",
+      "output": "Maintainable system",
+      "tips": [
+        "Document architecture.",
+        "Review trade-offs.",
+        "Design for growth."
+      ]
+    }
+  ]
+}

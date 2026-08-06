@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Database Design",
+  "topics": [
+    {
+      "topic": "Database Design",
+      "definition": "Database design organizes data for efficient storage, retrieval and maintenance.",
+      "syntax": "Requirements \u2192 Schema",
+      "example": "Design an e-commerce database",
+      "output": "Structured database",
+      "tips": [
+        "Normalize data where appropriate."
+      ]
+    },
+    {
+      "topic": "SQL vs NoSQL",
+      "definition": "SQL databases use structured tables, while NoSQL databases support flexible data models.",
+      "syntax": "SQL \u2194 NoSQL",
+      "example": "MySQL vs MongoDB",
+      "output": "Database type selected",
+      "tips": [
+        "Choose based on application requirements."
+      ]
+    },
+    {
+      "topic": "Primary and Foreign Keys",
+      "definition": "Primary keys uniquely identify records, while foreign keys create relationships between tables.",
+      "syntax": "PRIMARY KEY / FOREIGN KEY",
+      "example": "Customer and Orders tables",
+      "output": "Relationships established",
+      "tips": [
+        "Use keys to maintain data integrity."
+      ]
+    },
+    {
+      "topic": "Indexing",
+      "definition": "Indexes improve query performance by speeding up data retrieval.",
+      "syntax": "CREATE INDEX",
+      "example": "Index on email column",
+      "output": "Faster queries",
+      "tips": [
+        "Avoid excessive indexes on frequently updated tables."
+      ]
+    },
+    {
+      "topic": "Database Replication",
+      "definition": "Replication copies data across multiple database servers.",
+      "syntax": "Primary \u2192 Replica",
+      "example": "Read replicas",
+      "output": "High availability",
+      "tips": [
+        "Use replicas for read-heavy workloads."
+      ]
+    },
+    {
+      "topic": "Database Sharding",
+      "definition": "Sharding splits data across multiple databases to improve scalability.",
+      "syntax": "Shard A | Shard B",
+      "example": "User-based sharding",
+      "output": "Distributed database",
+      "tips": [
+        "Choose an effective shard key."
+      ]
+    },
+    {
+      "topic": "ACID and BASE",
+      "definition": "ACID ensures strong consistency; BASE emphasizes availability and eventual consistency.",
+      "syntax": "ACID \u2194 BASE",
+      "example": "Banking vs social media",
+      "output": "Consistency model selected",
+      "tips": [
+        "Understand trade-offs before choosing."
+      ]
+    },
+    {
+      "topic": "Database Design Best Practices",
+      "definition": "Design scalable schemas, optimize queries and protect data integrity.",
+      "syntax": "Design \u2192 Optimize \u2192 Maintain",
+      "example": "Production database",
+      "output": "Reliable database",
+      "tips": [
+        "Use indexing wisely.",
+        "Back up data regularly.",
+        "Monitor query performance."
+      ]
+    }
+  ]
+}

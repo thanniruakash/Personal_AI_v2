@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Load Balancing",
+  "topics": [
+    {
+      "topic": "What is Load Balancing?",
+      "definition": "Load balancing distributes incoming requests across multiple servers to improve performance and availability.",
+      "syntax": "Client \u2192 Load Balancer \u2192 Servers",
+      "example": "Web application with multiple servers",
+      "output": "Traffic distributed",
+      "tips": [
+        "Prevents a single server from becoming overloaded."
+      ]
+    },
+    {
+      "topic": "Round Robin",
+      "definition": "Requests are distributed sequentially to each server.",
+      "syntax": "S1 \u2192 S2 \u2192 S3",
+      "example": "Three web servers",
+      "output": "Even request distribution",
+      "tips": [
+        "Simple and widely used."
+      ]
+    },
+    {
+      "topic": "Least Connections",
+      "definition": "New requests go to the server with the fewest active connections.",
+      "syntax": "Min(active connections)",
+      "example": "Busy API servers",
+      "output": "Balanced workload",
+      "tips": [
+        "Useful when requests vary in duration."
+      ]
+    },
+    {
+      "topic": "IP Hash",
+      "definition": "Routes requests based on the client's IP address.",
+      "syntax": "Hash(IP)",
+      "example": "Session persistence",
+      "output": "Same client reaches same server",
+      "tips": [
+        "Useful for sticky sessions."
+      ]
+    },
+    {
+      "topic": "Health Checks",
+      "definition": "Regularly verifies server availability before routing traffic.",
+      "syntax": "Check \u2192 Route",
+      "example": "Remove failed server",
+      "output": "Healthy servers used",
+      "tips": [
+        "Configure frequent health checks."
+      ]
+    },
+    {
+      "topic": "Failover",
+      "definition": "Redirects traffic to healthy servers when one fails.",
+      "syntax": "Primary \u2192 Backup",
+      "example": "Server outage",
+      "output": "Service remains available",
+      "tips": [
+        "Test failover regularly."
+      ]
+    },
+    {
+      "topic": "Reverse Proxy",
+      "definition": "A reverse proxy receives client requests and forwards them to backend servers.",
+      "syntax": "Client \u2192 Proxy \u2192 Backend",
+      "example": "NGINX",
+      "output": "Requests forwarded",
+      "tips": [
+        "Can also provide caching and SSL termination."
+      ]
+    },
+    {
+      "topic": "Load Balancing Best Practices",
+      "definition": "Distribute traffic efficiently, monitor server health and eliminate single points of failure.",
+      "syntax": "Balance \u2192 Monitor \u2192 Recover",
+      "example": "Highly available web platform",
+      "output": "Reliable system",
+      "tips": [
+        "Use redundancy.",
+        "Monitor latency.",
+        "Review traffic patterns."
+      ]
+    }
+  ]
+}

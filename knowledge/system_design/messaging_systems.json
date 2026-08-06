@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Messaging Systems",
+  "topics": [
+    {
+      "topic": "What are Messaging Systems?",
+      "definition": "Messaging systems enable applications to communicate asynchronously by exchanging messages.",
+      "syntax": "Producer \u2192 Broker \u2192 Consumer",
+      "example": "Order processing system",
+      "output": "Message delivered",
+      "tips": [
+        "Decouple services using messaging."
+      ]
+    },
+    {
+      "topic": "Message Queues",
+      "definition": "A message queue stores messages until consumers process them.",
+      "syntax": "Queue",
+      "example": "Background email sending",
+      "output": "Task queued",
+      "tips": [
+        "Useful for asynchronous workloads."
+      ]
+    },
+    {
+      "topic": "Publish-Subscribe (Pub/Sub)",
+      "definition": "Publishers send messages to topics and subscribers receive them.",
+      "syntax": "Publisher \u2192 Topic \u2192 Subscribers",
+      "example": "Notification service",
+      "output": "Events distributed",
+      "tips": [
+        "Ideal for one-to-many communication."
+      ]
+    },
+    {
+      "topic": "RabbitMQ",
+      "definition": "RabbitMQ is a reliable message broker implementing AMQP.",
+      "syntax": "Exchange \u2192 Queue",
+      "example": "Task processing",
+      "output": "Messages routed",
+      "tips": [
+        "Use acknowledgements for reliability."
+      ]
+    },
+    {
+      "topic": "Apache Kafka",
+      "definition": "Kafka is a distributed event streaming platform for high-throughput messaging.",
+      "syntax": "Producer \u2192 Topic \u2192 Consumer",
+      "example": "Log streaming",
+      "output": "Events streamed",
+      "tips": [
+        "Great for large-scale data pipelines."
+      ]
+    },
+    {
+      "topic": "Event-Driven Architecture",
+      "definition": "Components react to events instead of direct requests.",
+      "syntax": "Event \u2192 Consumer",
+      "example": "User registration event",
+      "output": "Services triggered",
+      "tips": [
+        "Keep events independent."
+      ]
+    },
+    {
+      "topic": "Message Reliability",
+      "definition": "Reliability ensures messages are delivered without loss.",
+      "syntax": "Retry \u2192 Ack",
+      "example": "Retry failed payment event",
+      "output": "Reliable delivery",
+      "tips": [
+        "Use retries and dead-letter queues."
+      ]
+    },
+    {
+      "topic": "Messaging Systems Best Practices",
+      "definition": "Design reliable, scalable messaging with monitoring and retries.",
+      "syntax": "Send \u2192 Process \u2192 Monitor",
+      "example": "Microservices communication",
+      "output": "Reliable messaging",
+      "tips": [
+        "Monitor queue size.",
+        "Avoid duplicate processing.",
+        "Use idempotent consumers."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Distributed Patterns",
+  "topics": [
+    {
+      "topic": "Distributed Systems",
+      "definition": "A distributed system consists of multiple computers working together as one system.",
+      "syntax": "Node \u2194 Node",
+      "example": "Cloud application",
+      "output": "Distributed application",
+      "tips": [
+        "Design for failures."
+      ]
+    },
+    {
+      "topic": "CAP Theorem",
+      "definition": "A distributed system can guarantee at most two of Consistency, Availability and Partition Tolerance.",
+      "syntax": "C + A + P",
+      "example": "NoSQL database trade-offs",
+      "output": "Trade-off understood",
+      "tips": [
+        "Partition tolerance is usually required."
+      ]
+    },
+    {
+      "topic": "Microservices",
+      "definition": "Applications are split into small independent services.",
+      "syntax": "Service \u2192 API",
+      "example": "User, Order and Payment services",
+      "output": "Modular architecture",
+      "tips": [
+        "Keep services loosely coupled."
+      ]
+    },
+    {
+      "topic": "Service Discovery",
+      "definition": "Services locate each other dynamically in a distributed environment.",
+      "syntax": "Service Registry",
+      "example": "Consul or Eureka",
+      "output": "Services discovered",
+      "tips": [
+        "Avoid hard-coded addresses."
+      ]
+    },
+    {
+      "topic": "Distributed IDs",
+      "definition": "Unique identifiers are generated across multiple systems.",
+      "syntax": "UUID / Snowflake",
+      "example": "Order ID generation",
+      "output": "Unique ID created",
+      "tips": [
+        "Ensure IDs remain globally unique."
+      ]
+    },
+    {
+      "topic": "Circuit Breaker Pattern",
+      "definition": "Stops repeated requests to failing services to improve resilience.",
+      "syntax": "Closed \u2192 Open \u2192 Half-Open",
+      "example": "Payment service failure",
+      "output": "Failure isolated",
+      "tips": [
+        "Use retries with backoff."
+      ]
+    },
+    {
+      "topic": "Saga Pattern",
+      "definition": "Coordinates transactions across multiple services using compensating actions.",
+      "syntax": "Step \u2192 Compensate",
+      "example": "Order cancellation workflow",
+      "output": "Distributed transaction managed",
+      "tips": [
+        "Use for long-running transactions."
+      ]
+    },
+    {
+      "topic": "Distributed Systems Best Practices",
+      "definition": "Build resilient, scalable and observable distributed applications.",
+      "syntax": "Design \u2192 Monitor \u2192 Recover",
+      "example": "Enterprise microservices",
+      "output": "Reliable distributed system",
+      "tips": [
+        "Monitor latency.",
+        "Handle failures gracefully.",
+        "Avoid single points of failure."
+      ]
+    }
+  ]
+}

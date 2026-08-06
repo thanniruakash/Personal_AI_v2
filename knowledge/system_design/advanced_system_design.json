@@ -1,0 +1,89 @@
+{
+  "subject": "System Design",
+  "section": "Advanced System Design",
+  "topics": [
+    {
+      "topic": "Monolithic vs Microservices",
+      "definition": "Monolithic architecture keeps all components in one application, while microservices split functionality into independent services.",
+      "syntax": "Monolith \u2194 Microservices",
+      "example": "Single application vs multiple services",
+      "output": "Architecture compared",
+      "tips": [
+        "Choose based on project complexity and team size."
+      ]
+    },
+    {
+      "topic": "API Gateway",
+      "definition": "An API Gateway acts as a single entry point for client requests.",
+      "syntax": "Client \u2192 API Gateway \u2192 Services",
+      "example": "Route requests to multiple microservices",
+      "output": "Traffic routed",
+      "tips": [
+        "Handle authentication and rate limiting at the gateway."
+      ]
+    },
+    {
+      "topic": "WebSockets",
+      "definition": "WebSockets provide full-duplex, real-time communication between client and server.",
+      "syntax": "Client \u21c4 Server",
+      "example": "Chat application",
+      "output": "Real-time communication",
+      "tips": [
+        "Use for live updates and notifications."
+      ]
+    },
+    {
+      "topic": "Event Sourcing",
+      "definition": "Store application state as a sequence of events instead of only the latest state.",
+      "syntax": "Event \u2192 Store",
+      "example": "Bank transaction history",
+      "output": "Event log maintained",
+      "tips": [
+        "Keep events immutable."
+      ]
+    },
+    {
+      "topic": "CQRS",
+      "definition": "Command Query Responsibility Segregation separates read and write operations.",
+      "syntax": "Commands | Queries",
+      "example": "E-commerce order system",
+      "output": "Read/write responsibilities separated",
+      "tips": [
+        "Use when read and write workloads differ significantly."
+      ]
+    },
+    {
+      "topic": "Fault Tolerance",
+      "definition": "Fault tolerance enables systems to continue operating despite failures.",
+      "syntax": "Detect \u2192 Recover",
+      "example": "Automatic service failover",
+      "output": "Service remains available",
+      "tips": [
+        "Eliminate single points of failure."
+      ]
+    },
+    {
+      "topic": "Observability",
+      "definition": "Observability uses logs, metrics and traces to understand system behavior.",
+      "syntax": "Logs + Metrics + Traces",
+      "example": "Distributed tracing",
+      "output": "System health visible",
+      "tips": [
+        "Instrument applications consistently."
+      ]
+    },
+    {
+      "topic": "Advanced System Design Best Practices",
+      "definition": "Build scalable, resilient and observable systems using proven architectural patterns.",
+      "syntax": "Design \u2192 Test \u2192 Monitor \u2192 Improve",
+      "example": "Enterprise-scale platform",
+      "output": "Reliable architecture",
+      "tips": [
+        "Document trade-offs.",
+        "Monitor continuously.",
+        "Review architecture regularly.",
+        "Automate testing and deployments."
+      ]
+    }
+  ]
+}

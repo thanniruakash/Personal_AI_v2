@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Caching",
+  "topics": [
+    {
+      "topic": "What is Caching?",
+      "definition": "Caching stores frequently accessed data in a faster storage layer to reduce response time.",
+      "syntax": "Request \u2192 Cache \u2192 Database",
+      "example": "Cache user profile",
+      "output": "Faster response",
+      "tips": [
+        "Cache frequently accessed data."
+      ]
+    },
+    {
+      "topic": "Cache Hit and Cache Miss",
+      "definition": "A cache hit finds data in the cache; a cache miss fetches it from the original source.",
+      "syntax": "Hit / Miss",
+      "example": "Product page request",
+      "output": "Data retrieved",
+      "tips": [
+        "Aim for a high cache hit ratio."
+      ]
+    },
+    {
+      "topic": "In-Memory Cache",
+      "definition": "Stores data in RAM for very fast access.",
+      "syntax": "Redis / Memcached",
+      "example": "Session storage",
+      "output": "Fast retrieval",
+      "tips": [
+        "Use for temporary data."
+      ]
+    },
+    {
+      "topic": "Content Delivery Network (CDN)",
+      "definition": "A CDN caches content on geographically distributed servers.",
+      "syntax": "User \u2192 CDN \u2192 Origin",
+      "example": "Image delivery",
+      "output": "Reduced latency",
+      "tips": [
+        "Use a CDN for static assets."
+      ]
+    },
+    {
+      "topic": "Cache Eviction Policies",
+      "definition": "Eviction policies remove old cache entries when space is needed.",
+      "syntax": "LRU / LFU / FIFO",
+      "example": "LRU cache",
+      "output": "Cache managed",
+      "tips": [
+        "Choose a policy based on access patterns."
+      ]
+    },
+    {
+      "topic": "Cache Invalidation",
+      "definition": "Invalidation removes outdated cache entries to keep data consistent.",
+      "syntax": "Update \u2192 Invalidate",
+      "example": "Product price change",
+      "output": "Fresh data served",
+      "tips": [
+        "Invalidation is critical for consistency."
+      ]
+    },
+    {
+      "topic": "Cache Strategies",
+      "definition": "Common strategies include Cache-Aside, Read-Through and Write-Through.",
+      "syntax": "Strategy \u2192 Access",
+      "example": "Cache-Aside with Redis",
+      "output": "Efficient caching",
+      "tips": [
+        "Select the strategy that fits your application."
+      ]
+    },
+    {
+      "topic": "Caching Best Practices",
+      "definition": "Cache frequently used data, monitor hit rates and invalidate stale entries promptly.",
+      "syntax": "Store \u2192 Monitor \u2192 Refresh",
+      "example": "High-traffic application",
+      "output": "Improved performance",
+      "tips": [
+        "Avoid caching sensitive data unnecessarily.",
+        "Monitor cache performance.",
+        "Set appropriate TTL values."
+      ]
+    }
+  ]
+}

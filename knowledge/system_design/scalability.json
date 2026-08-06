@@ -1,0 +1,88 @@
+{
+  "subject": "System Design",
+  "section": "Scalability",
+  "topics": [
+    {
+      "topic": "Vertical Scaling",
+      "definition": "Increase resources such as CPU or RAM on a single server.",
+      "syntax": "Scale Up",
+      "example": "Upgrade server memory",
+      "output": "Higher single-server capacity",
+      "tips": [
+        "Limited by hardware capacity."
+      ]
+    },
+    {
+      "topic": "Horizontal Scaling",
+      "definition": "Add more servers to distribute workload.",
+      "syntax": "Scale Out",
+      "example": "Add two application servers",
+      "output": "Higher overall capacity",
+      "tips": [
+        "Preferred for cloud-native systems."
+      ]
+    },
+    {
+      "topic": "Load Distribution",
+      "definition": "Spread requests evenly across multiple servers.",
+      "syntax": "Client \u2192 Load Balancer \u2192 Servers",
+      "example": "Web server farm",
+      "output": "Balanced traffic",
+      "tips": [
+        "Prevent server overload."
+      ]
+    },
+    {
+      "topic": "Auto Scaling",
+      "definition": "Automatically adjust resources based on demand.",
+      "syntax": "Monitor \u2192 Scale",
+      "example": "Add instances during peak traffic",
+      "output": "Dynamic scaling",
+      "tips": [
+        "Set appropriate scaling thresholds."
+      ]
+    },
+    {
+      "topic": "Capacity Planning",
+      "definition": "Estimate future resource requirements.",
+      "syntax": "Analyze \u2192 Forecast",
+      "example": "Predict holiday traffic",
+      "output": "Capacity plan",
+      "tips": [
+        "Monitor historical usage trends."
+      ]
+    },
+    {
+      "topic": "Bottlenecks",
+      "definition": "Components that limit overall system performance.",
+      "syntax": "Detect \u2192 Optimize",
+      "example": "Slow database",
+      "output": "Performance issue identified",
+      "tips": [
+        "Profile the system regularly."
+      ]
+    },
+    {
+      "topic": "Performance Optimization",
+      "definition": "Improve response time and resource utilization.",
+      "syntax": "Measure \u2192 Improve",
+      "example": "Database indexing",
+      "output": "Faster system",
+      "tips": [
+        "Optimize the biggest bottlenecks first."
+      ]
+    },
+    {
+      "topic": "Scalability Best Practices",
+      "definition": "Design systems that grow efficiently with demand.",
+      "syntax": "Plan \u2192 Scale \u2192 Monitor",
+      "example": "Cloud-based application",
+      "output": "Scalable architecture",
+      "tips": [
+        "Use caching.",
+        "Monitor metrics.",
+        "Test under load."
+      ]
+    }
+  ]
+}
