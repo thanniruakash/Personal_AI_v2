@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Basics",
+  "topics": [
+    {
+      "topic": "What is Docker?",
+      "definition": "Docker is a platform for building, shipping and running applications in containers.",
+      "syntax": "Build \u2192 Ship \u2192 Run",
+      "example": "Run a web application in Docker",
+      "output": "Application running in a container",
+      "tips": [
+        "Docker provides consistent environments across systems."
+      ]
+    },
+    {
+      "topic": "History of Docker",
+      "definition": "Docker was introduced in 2013 to simplify application deployment using containers.",
+      "syntax": "2013 \u2192 Present",
+      "example": "Modern cloud-native applications",
+      "output": "History understood",
+      "tips": [
+        "Docker accelerated container adoption."
+      ]
+    },
+    {
+      "topic": "Docker Architecture",
+      "definition": "Docker consists of the Docker Client, Docker Engine and Docker Registry.",
+      "syntax": "Client \u2192 Engine \u2192 Registry",
+      "example": "Docker Hub",
+      "output": "Architecture understood",
+      "tips": [
+        "The Docker Engine manages containers."
+      ]
+    },
+    {
+      "topic": "Containers",
+      "definition": "A container is a lightweight, isolated environment for running applications.",
+      "syntax": "Image \u2192 Container",
+      "example": "docker run nginx",
+      "output": "Container started",
+      "tips": [
+        "Containers share the host OS kernel."
+      ]
+    },
+    {
+      "topic": "Images",
+      "definition": "A Docker image is a read-only template used to create containers.",
+      "syntax": "docker build",
+      "example": "ubuntu:latest",
+      "output": "Image created",
+      "tips": [
+        "Use trusted base images."
+      ]
+    },
+    {
+      "topic": "Docker Hub",
+      "definition": "Docker Hub is an online registry for sharing Docker images.",
+      "syntax": "docker pull image",
+      "example": "docker pull nginx",
+      "output": "Image downloaded",
+      "tips": [
+        "Verify image publishers before use."
+      ]
+    },
+    {
+      "topic": "Docker Workflow",
+      "definition": "Typical workflow: Build an image, create a container, test and deploy.",
+      "syntax": "Build \u2192 Run \u2192 Test \u2192 Deploy",
+      "example": "Deploy a Flask app",
+      "output": "Containerized application",
+      "tips": [
+        "Version your images with tags."
+      ]
+    },
+    {
+      "topic": "Docker Best Practices",
+      "definition": "Keep images small, avoid running as root and update images regularly.",
+      "syntax": "Build \u2192 Scan \u2192 Deploy",
+      "example": "Production-ready container",
+      "output": "Reliable deployment",
+      "tips": [
+        "Remove unused images.",
+        "Scan for vulnerabilities.",
+        "Use multi-stage builds."
+      ]
+    }
+  ]
+}

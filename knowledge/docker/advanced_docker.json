@@ -1,0 +1,89 @@
+{
+  "subject": "Docker",
+  "section": "Advanced Docker",
+  "topics": [
+    {
+      "topic": "Multi-Stage Builds",
+      "definition": "Multi-stage builds reduce final image size by separating build and runtime stages.",
+      "syntax": "FROM ... AS builder",
+      "example": "Build a Go app then copy the binary",
+      "output": "Smaller production image",
+      "tips": [
+        "Keep only runtime dependencies in the final image."
+      ]
+    },
+    {
+      "topic": "Docker Build Cache",
+      "definition": "Docker caches image layers to speed up rebuilds.",
+      "syntax": "docker build",
+      "example": "Rebuild after changing one file",
+      "output": "Faster build",
+      "tips": [
+        "Order Dockerfile instructions to maximize cache reuse."
+      ]
+    },
+    {
+      "topic": "Docker Security",
+      "definition": "Secure containers by minimizing privileges and scanning images.",
+      "syntax": "docker scan",
+      "example": "Run a non-root container",
+      "output": "Safer deployment",
+      "tips": [
+        "Use trusted images and update them regularly."
+      ]
+    },
+    {
+      "topic": "Resource Limits",
+      "definition": "Limit CPU and memory usage to prevent resource exhaustion.",
+      "syntax": "--cpus --memory",
+      "example": "docker run --memory=512m",
+      "output": "Resources controlled",
+      "tips": [
+        "Set limits for production containers."
+      ]
+    },
+    {
+      "topic": "Docker Swarm",
+      "definition": "Docker Swarm orchestrates containers across multiple hosts.",
+      "syntax": "docker swarm init",
+      "example": "Deploy a replicated service",
+      "output": "Swarm cluster ready",
+      "tips": [
+        "Use replicas for high availability."
+      ]
+    },
+    {
+      "topic": "Docker Registry",
+      "definition": "A Docker registry stores and distributes container images.",
+      "syntax": "docker push",
+      "example": "Push image to Docker Hub",
+      "output": "Image published",
+      "tips": [
+        "Use private registries for sensitive projects."
+      ]
+    },
+    {
+      "topic": "Performance Optimization",
+      "definition": "Optimize images and containers for speed and efficiency.",
+      "syntax": "Optimize \u2192 Measure",
+      "example": "Use Alpine base images",
+      "output": "Improved performance",
+      "tips": [
+        "Remove unused packages and layers."
+      ]
+    },
+    {
+      "topic": "Advanced Docker Best Practices",
+      "definition": "Build secure, efficient and maintainable container environments.",
+      "syntax": "Build \u2192 Secure \u2192 Monitor",
+      "example": "Production microservices",
+      "output": "Reliable Docker platform",
+      "tips": [
+        "Use multi-stage builds.",
+        "Scan images regularly.",
+        "Monitor container health.",
+        "Tag image versions consistently."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Containers",
+  "topics": [
+    {
+      "topic": "What are Docker Containers?",
+      "definition": "A Docker container is a running instance of a Docker image.",
+      "syntax": "Image \u2192 Container",
+      "example": "docker run nginx",
+      "output": "Container started",
+      "tips": [
+        "Containers are lightweight and isolated."
+      ]
+    },
+    {
+      "topic": "Container Lifecycle",
+      "definition": "Containers can be created, started, stopped, restarted and removed.",
+      "syntax": "Create \u2192 Start \u2192 Stop \u2192 Remove",
+      "example": "docker create && docker start",
+      "output": "Lifecycle managed",
+      "tips": [
+        "Remove unused containers regularly."
+      ]
+    },
+    {
+      "topic": "Running Containers",
+      "definition": "Run applications inside containers using Docker.",
+      "syntax": "docker run",
+      "example": "docker run -d -p 80:80 nginx",
+      "output": "Application running",
+      "tips": [
+        "Use detached mode for background services."
+      ]
+    },
+    {
+      "topic": "Stopping Containers",
+      "definition": "Gracefully stop running containers.",
+      "syntax": "docker stop <container>",
+      "example": "docker stop web",
+      "output": "Container stopped",
+      "tips": [
+        "Stop before removing a container."
+      ]
+    },
+    {
+      "topic": "Restart Policies",
+      "definition": "Restart policies automatically restart containers after failures or reboots.",
+      "syntax": "--restart always",
+      "example": "docker run --restart unless-stopped nginx",
+      "output": "Restart policy applied",
+      "tips": [
+        "Choose a policy that fits your deployment."
+      ]
+    },
+    {
+      "topic": "Container Resource Limits",
+      "definition": "Limit CPU and memory usage for containers.",
+      "syntax": "--memory --cpus",
+      "example": "docker run --memory=512m --cpus=1 nginx",
+      "output": "Resources limited",
+      "tips": [
+        "Prevent one container from consuming all resources."
+      ]
+    },
+    {
+      "topic": "Container Health Checks",
+      "definition": "Health checks verify whether a containerized application is functioning correctly.",
+      "syntax": "HEALTHCHECK",
+      "example": "HEALTHCHECK CMD curl -f http://localhost || exit 1",
+      "output": "Health status reported",
+      "tips": [
+        "Implement health checks for production services."
+      ]
+    },
+    {
+      "topic": "Docker Containers Best Practices",
+      "definition": "Run one main process per container, monitor health and clean up unused containers.",
+      "syntax": "Run \u2192 Monitor \u2192 Maintain",
+      "example": "Production web container",
+      "output": "Reliable container deployment",
+      "tips": [
+        "Use resource limits.",
+        "Monitor logs.",
+        "Remove stopped containers."
+      ]
+    }
+  ]
+}

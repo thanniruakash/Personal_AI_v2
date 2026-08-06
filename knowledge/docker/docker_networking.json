@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Networking",
+  "topics": [
+    {
+      "topic": "What is Docker Networking?",
+      "definition": "Docker networking enables communication between containers and external systems.",
+      "syntax": "Network \u2192 Container",
+      "example": "Containers communicating in the same network",
+      "output": "Network established",
+      "tips": [
+        "Choose the right network driver for your application."
+      ]
+    },
+    {
+      "topic": "Bridge Network",
+      "definition": "The default network for standalone containers on a single host.",
+      "syntax": "docker network create bridge",
+      "example": "Web and database containers",
+      "output": "Containers connected",
+      "tips": [
+        "Use custom bridge networks for isolation."
+      ]
+    },
+    {
+      "topic": "Host Network",
+      "definition": "Host mode shares the host's network stack with the container.",
+      "syntax": "--network host",
+      "example": "High-performance networking",
+      "output": "Host networking enabled",
+      "tips": [
+        "Use only when necessary."
+      ]
+    },
+    {
+      "topic": "Overlay Network",
+      "definition": "Overlay networks connect containers across multiple Docker hosts.",
+      "syntax": "docker network create -d overlay",
+      "example": "Docker Swarm services",
+      "output": "Multi-host network",
+      "tips": [
+        "Commonly used with Swarm."
+      ]
+    },
+    {
+      "topic": "None Network",
+      "definition": "Disables networking for a container.",
+      "syntax": "--network none",
+      "example": "Isolated container",
+      "output": "No network access",
+      "tips": [
+        "Useful for security-sensitive workloads."
+      ]
+    },
+    {
+      "topic": "Port Mapping",
+      "definition": "Maps container ports to host ports.",
+      "syntax": "-p host:container",
+      "example": "docker run -p 8080:80 nginx",
+      "output": "Service accessible",
+      "tips": [
+        "Avoid exposing unnecessary ports."
+      ]
+    },
+    {
+      "topic": "Container Communication",
+      "definition": "Containers communicate using network names, IP addresses or DNS.",
+      "syntax": "Container \u2194 Container",
+      "example": "Frontend connects to backend",
+      "output": "Containers communicate",
+      "tips": [
+        "Prefer DNS names over fixed IPs."
+      ]
+    },
+    {
+      "topic": "Docker Networking Best Practices",
+      "definition": "Use isolated networks, expose only required ports and secure communications.",
+      "syntax": "Create \u2192 Connect \u2192 Secure",
+      "example": "Production microservices",
+      "output": "Reliable networking",
+      "tips": [
+        "Use custom bridge networks.",
+        "Limit exposed ports.",
+        "Encrypt sensitive traffic."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Images",
+  "topics": [
+    {
+      "topic": "What are Docker Images?",
+      "definition": "A Docker image is a read-only template used to create containers.",
+      "syntax": "docker image",
+      "example": "nginx:latest",
+      "output": "Image available",
+      "tips": [
+        "Images are immutable."
+      ]
+    },
+    {
+      "topic": "Image Layers",
+      "definition": "Docker images are built from multiple reusable layers.",
+      "syntax": "Layer 1 \u2192 Layer 2 \u2192 Layer 3",
+      "example": "Base OS + Dependencies + Application",
+      "output": "Layered image",
+      "tips": [
+        "Reuse layers to speed up builds."
+      ]
+    },
+    {
+      "topic": "Dockerfile Instructions",
+      "definition": "A Dockerfile defines how an image is built.",
+      "syntax": "FROM, RUN, COPY, CMD",
+      "example": "FROM python:3.12",
+      "output": "Build instructions",
+      "tips": [
+        "Keep Dockerfiles simple and readable."
+      ]
+    },
+    {
+      "topic": "Building Images",
+      "definition": "Images are created from Dockerfiles using the build command.",
+      "syntax": "docker build -t app .",
+      "example": "docker build -t myapp:v1 .",
+      "output": "Image built",
+      "tips": [
+        "Use .dockerignore to exclude unnecessary files."
+      ]
+    },
+    {
+      "topic": "Image Tagging",
+      "definition": "Tags identify different versions of an image.",
+      "syntax": "image:tag",
+      "example": "myapp:v1.0",
+      "output": "Tagged image",
+      "tips": [
+        "Avoid relying only on latest."
+      ]
+    },
+    {
+      "topic": "Image Registries",
+      "definition": "Registries store and distribute Docker images.",
+      "syntax": "docker push",
+      "example": "Docker Hub",
+      "output": "Image published",
+      "tips": [
+        "Use trusted registries."
+      ]
+    },
+    {
+      "topic": "Image Versioning",
+      "definition": "Versioning helps track and manage image releases.",
+      "syntax": "v1.0 \u2192 v1.1",
+      "example": "backend:v2.0",
+      "output": "Version managed",
+      "tips": [
+        "Follow semantic versioning."
+      ]
+    },
+    {
+      "topic": "Docker Images Best Practices",
+      "definition": "Build secure, optimized and maintainable images.",
+      "syntax": "Build \u2192 Scan \u2192 Tag \u2192 Publish",
+      "example": "Production-ready image",
+      "output": "Optimized image",
+      "tips": [
+        "Use minimal base images.",
+        "Scan for vulnerabilities.",
+        "Remove unnecessary packages."
+      ]
+    }
+  ]
+}

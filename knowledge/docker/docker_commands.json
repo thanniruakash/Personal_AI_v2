@@ -1,0 +1,128 @@
+{
+  "subject": "Docker",
+  "section": "Docker Commands",
+  "topics": [
+    {
+      "topic": "docker version",
+      "definition": "Shows Docker client and server version.",
+      "syntax": "docker version",
+      "example": "docker version",
+      "output": "Version information",
+      "tips": [
+        "Verify Docker installation."
+      ]
+    },
+    {
+      "topic": "docker info",
+      "definition": "Displays Docker system information.",
+      "syntax": "docker info",
+      "example": "docker info",
+      "output": "System details",
+      "tips": [
+        "Useful for troubleshooting."
+      ]
+    },
+    {
+      "topic": "docker pull",
+      "definition": "Downloads an image from a registry.",
+      "syntax": "docker pull <image>",
+      "example": "docker pull nginx",
+      "output": "Image downloaded",
+      "tips": [
+        "Pull official images when possible."
+      ]
+    },
+    {
+      "topic": "docker build",
+      "definition": "Builds an image from a Dockerfile.",
+      "syntax": "docker build -t app .",
+      "example": "docker build -t myapp .",
+      "output": "Image built",
+      "tips": [
+        "Tag images meaningfully."
+      ]
+    },
+    {
+      "topic": "docker run",
+      "definition": "Creates and starts a container.",
+      "syntax": "docker run <image>",
+      "example": "docker run -d nginx",
+      "output": "Container running",
+      "tips": [
+        "Use -d for detached mode."
+      ]
+    },
+    {
+      "topic": "docker ps",
+      "definition": "Lists running containers.",
+      "syntax": "docker ps",
+      "example": "docker ps -a",
+      "output": "Container list",
+      "tips": [
+        "Use -a to show all containers."
+      ]
+    },
+    {
+      "topic": "docker stop",
+      "definition": "Stops a running container.",
+      "syntax": "docker stop <id>",
+      "example": "docker stop abc123",
+      "output": "Container stopped",
+      "tips": [
+        "Stop gracefully before removing."
+      ]
+    },
+    {
+      "topic": "docker rm",
+      "definition": "Removes a container.",
+      "syntax": "docker rm <id>",
+      "example": "docker rm abc123",
+      "output": "Container removed",
+      "tips": [
+        "Remove stopped containers only."
+      ]
+    },
+    {
+      "topic": "docker images",
+      "definition": "Lists local images.",
+      "syntax": "docker images",
+      "example": "docker images",
+      "output": "Image list",
+      "tips": [
+        "Clean unused images regularly."
+      ]
+    },
+    {
+      "topic": "docker exec",
+      "definition": "Runs a command inside a container.",
+      "syntax": "docker exec -it <id> bash",
+      "example": "docker exec -it web bash",
+      "output": "Shell opened",
+      "tips": [
+        "Useful for debugging."
+      ]
+    },
+    {
+      "topic": "docker logs",
+      "definition": "Displays container logs.",
+      "syntax": "docker logs <id>",
+      "example": "docker logs web",
+      "output": "Logs displayed",
+      "tips": [
+        "Check logs before restarting."
+      ]
+    },
+    {
+      "topic": "Docker Command Best Practices",
+      "definition": "Use clear image tags, remove unused resources and monitor containers regularly.",
+      "syntax": "Build \u2192 Run \u2192 Monitor \u2192 Clean",
+      "example": "Daily container maintenance",
+      "output": "Efficient Docker environment",
+      "tips": [
+        "Use official images.",
+        "Avoid running containers as root.",
+        "Remove unused containers and images."
+      ]
+    }
+  ]
+}

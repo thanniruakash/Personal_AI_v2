@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Compose",
+  "topics": [
+    {
+      "topic": "What is Docker Compose?",
+      "definition": "Docker Compose is a tool for defining and running multi-container Docker applications.",
+      "syntax": "docker compose",
+      "example": "Run a web app with a database",
+      "output": "Multi-container application managed",
+      "tips": [
+        "Use Compose for local development and testing."
+      ]
+    },
+    {
+      "topic": "docker-compose.yml",
+      "definition": "A YAML file that defines services, networks and volumes for an application.",
+      "syntax": "services: networks: volumes:",
+      "example": "docker-compose.yml",
+      "output": "Configuration loaded",
+      "tips": [
+        "Keep the file organized and well commented."
+      ]
+    },
+    {
+      "topic": "Services",
+      "definition": "Services define the containers that make up an application.",
+      "syntax": "services:",
+      "example": "web, db",
+      "output": "Services created",
+      "tips": [
+        "Assign meaningful service names."
+      ]
+    },
+    {
+      "topic": "Networks",
+      "definition": "Compose automatically creates networks for communication between services.",
+      "syntax": "networks:",
+      "example": "frontend-network",
+      "output": "Network configured",
+      "tips": [
+        "Separate frontend and backend networks when needed."
+      ]
+    },
+    {
+      "topic": "Volumes in Compose",
+      "definition": "Volumes persist application data across container restarts.",
+      "syntax": "volumes:",
+      "example": "db-data",
+      "output": "Persistent storage configured",
+      "tips": [
+        "Use named volumes for databases."
+      ]
+    },
+    {
+      "topic": "Common Compose Commands",
+      "definition": "Compose commands manage multi-container applications.",
+      "syntax": "docker compose up/down/ps/logs",
+      "example": "docker compose up -d",
+      "output": "Application started",
+      "tips": [
+        "Use 'down' to stop and remove resources."
+      ]
+    },
+    {
+      "topic": "Multi-Container Applications",
+      "definition": "Compose manages applications with multiple interconnected containers.",
+      "syntax": "Web + API + Database",
+      "example": "Nginx + Flask + MySQL",
+      "output": "Application deployed",
+      "tips": [
+        "Keep each service focused on one responsibility."
+      ]
+    },
+    {
+      "topic": "Docker Compose Best Practices",
+      "definition": "Use version control, environment variables and reusable configurations.",
+      "syntax": "Configure \u2192 Run \u2192 Maintain",
+      "example": "Production-ready Compose project",
+      "output": "Reliable deployment",
+      "tips": [
+        "Store secrets outside the compose file.",
+        "Use .env files.",
+        "Keep services modular."
+      ]
+    }
+  ]
+}

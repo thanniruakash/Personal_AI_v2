@@ -1,0 +1,88 @@
+{
+  "subject": "Docker",
+  "section": "Docker Volumes",
+  "topics": [
+    {
+      "topic": "What are Docker Volumes?",
+      "definition": "Docker volumes provide persistent storage for container data.",
+      "syntax": "docker volume create",
+      "example": "Store database files in a volume",
+      "output": "Persistent storage created",
+      "tips": [
+        "Use volumes for data that must survive container removal."
+      ]
+    },
+    {
+      "topic": "Bind Mounts",
+      "definition": "Bind mounts connect a host directory directly to a container.",
+      "syntax": "-v /host:/container",
+      "example": "Mount project folder into a container",
+      "output": "Host directory mounted",
+      "tips": [
+        "Use absolute host paths."
+      ]
+    },
+    {
+      "topic": "Named Volumes",
+      "definition": "Named volumes are managed by Docker and are easier to reuse.",
+      "syntax": "docker volume create myvolume",
+      "example": "Attach myvolume to a database container",
+      "output": "Named volume created",
+      "tips": [
+        "Prefer named volumes for production data."
+      ]
+    },
+    {
+      "topic": "Volume Lifecycle",
+      "definition": "Volumes can be created, attached, detached and removed independently of containers.",
+      "syntax": "create \u2192 use \u2192 remove",
+      "example": "Reuse the same volume across containers",
+      "output": "Volume managed",
+      "tips": [
+        "Remove unused volumes periodically."
+      ]
+    },
+    {
+      "topic": "Data Persistence",
+      "definition": "Volumes preserve data even after containers are deleted.",
+      "syntax": "Container \u2192 Volume",
+      "example": "Persistent MySQL database",
+      "output": "Data retained",
+      "tips": [
+        "Store important application data in volumes."
+      ]
+    },
+    {
+      "topic": "Volume Backup and Restore",
+      "definition": "Volumes can be backed up and restored to protect important data.",
+      "syntax": "Backup \u2192 Restore",
+      "example": "Archive a database volume",
+      "output": "Backup completed",
+      "tips": [
+        "Schedule regular backups."
+      ]
+    },
+    {
+      "topic": "Volume Management",
+      "definition": "Docker provides commands to list, inspect and remove volumes.",
+      "syntax": "docker volume ls / inspect / rm",
+      "example": "docker volume ls",
+      "output": "Volumes managed",
+      "tips": [
+        "Inspect volumes before deleting them."
+      ]
+    },
+    {
+      "topic": "Docker Volumes Best Practices",
+      "definition": "Use persistent volumes, back up data and clean up unused volumes regularly.",
+      "syntax": "Create \u2192 Backup \u2192 Maintain",
+      "example": "Production database storage",
+      "output": "Reliable persistent storage",
+      "tips": [
+        "Back up critical volumes.",
+        "Avoid storing important data inside containers.",
+        "Remove orphaned volumes."
+      ]
+    }
+  ]
+}
