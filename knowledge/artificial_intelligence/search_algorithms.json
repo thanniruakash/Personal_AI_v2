@@ -1,0 +1,88 @@
+{
+  "subject": "Artificial Intelligence",
+  "section": "Search Algorithms",
+  "topics": [
+    {
+      "topic": "Introduction to Search Algorithms",
+      "definition": "Search algorithms explore a problem space to find a solution.",
+      "syntax": "Start \u2192 Goal",
+      "example": "Maze solving",
+      "output": "Path found",
+      "tips": [
+        "Choose an algorithm based on the problem."
+      ]
+    },
+    {
+      "topic": "Breadth-First Search (BFS)",
+      "definition": "BFS explores nodes level by level.",
+      "syntax": "Queue",
+      "example": "Shortest path in an unweighted graph",
+      "output": "Nodes visited",
+      "tips": [
+        "Guarantees the shortest path in unweighted graphs."
+      ]
+    },
+    {
+      "topic": "Depth-First Search (DFS)",
+      "definition": "DFS explores as deep as possible before backtracking.",
+      "syntax": "Stack / Recursion",
+      "example": "Maze traversal",
+      "output": "Traversal completed",
+      "tips": [
+        "Uses less memory than BFS in many cases."
+      ]
+    },
+    {
+      "topic": "Best-First Search",
+      "definition": "Best-First Search expands the most promising node using a heuristic.",
+      "syntax": "Priority Queue",
+      "example": "Route finding",
+      "output": "Heuristic search",
+      "tips": [
+        "Depends on heuristic quality."
+      ]
+    },
+    {
+      "topic": "A* Search Algorithm",
+      "definition": "A* combines path cost and heuristic to find an efficient path.",
+      "syntax": "f(n)=g(n)+h(n)",
+      "example": "GPS navigation",
+      "output": "Optimal path",
+      "tips": [
+        "Use an admissible heuristic."
+      ]
+    },
+    {
+      "topic": "Heuristic Functions",
+      "definition": "A heuristic estimates the cost from the current state to the goal.",
+      "syntax": "h(n)",
+      "example": "Straight-line distance",
+      "output": "Estimated cost",
+      "tips": [
+        "Better heuristics improve performance."
+      ]
+    },
+    {
+      "topic": "Uninformed vs Informed Search",
+      "definition": "Uninformed search uses no domain knowledge, while informed search uses heuristics.",
+      "syntax": "Blind vs Heuristic",
+      "example": "BFS vs A*",
+      "output": "Comparison completed",
+      "tips": [
+        "Heuristic search is often faster."
+      ]
+    },
+    {
+      "topic": "Search Algorithm Best Practices",
+      "definition": "Select suitable algorithms, design effective heuristics and analyze time and space complexity.",
+      "syntax": "Choose \u2192 Search \u2192 Evaluate",
+      "example": "Robot path planning",
+      "output": "Efficient search",
+      "tips": [
+        "Measure performance.",
+        "Test different heuristics.",
+        "Avoid unnecessary exploration."
+      ]
+    }
+  ]
+}

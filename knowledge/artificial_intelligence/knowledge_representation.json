@@ -1,0 +1,88 @@
+{
+  "subject": "Artificial Intelligence",
+  "section": "Knowledge Representation",
+  "topics": [
+    {
+      "topic": "Introduction to Knowledge Representation",
+      "definition": "Knowledge representation stores information in a form that AI systems can understand and reason about.",
+      "syntax": "Knowledge \u2192 Representation",
+      "example": "Medical expert system",
+      "output": "Knowledge represented",
+      "tips": [
+        "Choose a suitable representation method."
+      ]
+    },
+    {
+      "topic": "Knowledge-Based Systems",
+      "definition": "Knowledge-based systems solve problems using stored knowledge and inference rules.",
+      "syntax": "Knowledge Base + Inference Engine",
+      "example": "Expert system",
+      "output": "Decision generated",
+      "tips": [
+        "Keep the knowledge base updated."
+      ]
+    },
+    {
+      "topic": "Semantic Networks",
+      "definition": "Semantic networks represent knowledge using nodes and relationships.",
+      "syntax": "Node \u2192 Relation \u2192 Node",
+      "example": "Animal \u2192 is-a \u2192 Mammal",
+      "output": "Relationships modeled",
+      "tips": [
+        "Useful for hierarchical knowledge."
+      ]
+    },
+    {
+      "topic": "Frames",
+      "definition": "Frames organize knowledge into structured records with attributes and values.",
+      "syntax": "Frame(Slots, Values)",
+      "example": "Student frame",
+      "output": "Structured knowledge",
+      "tips": [
+        "Good for representing objects."
+      ]
+    },
+    {
+      "topic": "Production Rules",
+      "definition": "Production rules use IF-THEN statements for decision making.",
+      "syntax": "IF condition THEN action",
+      "example": "IF fever THEN check infection",
+      "output": "Rule applied",
+      "tips": [
+        "Rules should be clear and consistent."
+      ]
+    },
+    {
+      "topic": "Ontologies",
+      "definition": "Ontologies define concepts, properties and relationships in a domain.",
+      "syntax": "Classes \u2192 Properties",
+      "example": "Healthcare ontology",
+      "output": "Domain modeled",
+      "tips": [
+        "Promote knowledge sharing."
+      ]
+    },
+    {
+      "topic": "Knowledge Graphs",
+      "definition": "Knowledge graphs connect entities and relationships to represent real-world information.",
+      "syntax": "Entity \u2192 Relationship",
+      "example": "Google Knowledge Graph",
+      "output": "Connected knowledge",
+      "tips": [
+        "Useful for search and recommendations."
+      ]
+    },
+    {
+      "topic": "Knowledge Representation Best Practices",
+      "definition": "Represent knowledge consistently, accurately and efficiently.",
+      "syntax": "Represent \u2192 Validate \u2192 Update",
+      "example": "Enterprise knowledge base",
+      "output": "Reliable AI knowledge",
+      "tips": [
+        "Avoid ambiguity.",
+        "Keep knowledge current.",
+        "Validate relationships regularly."
+      ]
+    }
+  ]
+}

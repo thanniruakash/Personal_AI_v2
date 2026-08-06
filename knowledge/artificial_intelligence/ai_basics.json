@@ -1,0 +1,86 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "AI Basics",
+  "topics": [
+    {
+      "topic": "What is Artificial Intelligence?",
+      "definition": "Artificial Intelligence (AI) is the ability of machines to perform tasks that normally require human intelligence.",
+      "syntax": "Concept",
+      "example": "Chatbots, self-driving cars, voice assistants",
+      "output": "Intelligent system",
+      "tips": [
+        "AI learns from data and rules."
+      ]
+    },
+    {
+      "topic": "History of AI",
+      "definition": "AI began as a research field in the 1950s and has advanced rapidly with better algorithms and computing power.",
+      "syntax": "Concept",
+      "example": "Dartmouth Conference (1956)",
+      "output": "AI evolution",
+      "tips": [
+        "Modern AI is driven by data and GPUs."
+      ]
+    },
+    {
+      "topic": "Types of AI",
+      "definition": "AI is commonly classified as Narrow AI, General AI and Super AI.",
+      "syntax": "Narrow / General / Super",
+      "example": "Virtual assistants are Narrow AI.",
+      "output": "AI type identified",
+      "tips": [
+        "Today's AI is mostly Narrow AI."
+      ]
+    },
+    {
+      "topic": "AI vs Machine Learning vs Deep Learning",
+      "definition": "AI is the broad field, Machine Learning is a subset of AI, and Deep Learning is a subset of Machine Learning.",
+      "syntax": "AI > ML > DL",
+      "example": "Image recognition using deep neural networks",
+      "output": "Relationship understood",
+      "tips": [
+        "Deep Learning uses neural networks."
+      ]
+    },
+    {
+      "topic": "Applications of AI",
+      "definition": "AI is used in healthcare, finance, education, robotics, transportation and entertainment.",
+      "syntax": "Concept",
+      "example": "Medical diagnosis systems",
+      "output": "Application identified",
+      "tips": [
+        "AI is used in many industries."
+      ]
+    },
+    {
+      "topic": "Advantages of AI",
+      "definition": "AI improves efficiency, accuracy, automation and decision-making.",
+      "syntax": "Concept",
+      "example": "24/7 customer support chatbot",
+      "output": "Improved productivity",
+      "tips": [
+        "AI reduces repetitive work."
+      ]
+    },
+    {
+      "topic": "Limitations of AI",
+      "definition": "AI depends on data quality, requires computing resources and lacks true human understanding.",
+      "syntax": "Concept",
+      "example": "Biased training data",
+      "output": "Limitations identified",
+      "tips": [
+        "AI can make incorrect predictions."
+      ]
+    },
+    {
+      "topic": "AI Best Practices",
+      "definition": "Develop AI systems responsibly with high-quality data, testing and ethical considerations.",
+      "syntax": "Concept",
+      "example": "Validate models before deployment",
+      "output": "Reliable AI system",
+      "tips": [
+        "Protect privacy and reduce bias."
+      ]
+    }
+  ]
+}

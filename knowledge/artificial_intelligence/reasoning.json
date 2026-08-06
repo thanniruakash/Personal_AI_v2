@@ -1,0 +1,88 @@
+{
+  "subject": "Artificial Intelligence",
+  "section": "Reasoning",
+  "topics": [
+    {
+      "topic": "Introduction to Reasoning",
+      "definition": "Reasoning enables AI systems to draw conclusions from available knowledge.",
+      "syntax": "Facts \u2192 Inference \u2192 Conclusion",
+      "example": "Medical diagnosis",
+      "output": "Conclusion generated",
+      "tips": [
+        "Reasoning improves decision making."
+      ]
+    },
+    {
+      "topic": "Forward Chaining",
+      "definition": "Forward chaining starts with known facts and applies rules until a goal is reached.",
+      "syntax": "Facts \u2192 Rules \u2192 Goal",
+      "example": "Expert system",
+      "output": "Goal achieved",
+      "tips": [
+        "Useful when many facts are available."
+      ]
+    },
+    {
+      "topic": "Backward Chaining",
+      "definition": "Backward chaining starts with a goal and works backward to verify supporting facts.",
+      "syntax": "Goal \u2192 Rules \u2192 Facts",
+      "example": "Fault diagnosis",
+      "output": "Goal verified",
+      "tips": [
+        "Efficient for specific queries."
+      ]
+    },
+    {
+      "topic": "Logical Reasoning",
+      "definition": "Logical reasoning uses formal logic to infer valid conclusions.",
+      "syntax": "Premise \u2192 Conclusion",
+      "example": "Propositional logic",
+      "output": "Logical inference",
+      "tips": [
+        "Ensure rules are consistent."
+      ]
+    },
+    {
+      "topic": "Probabilistic Reasoning",
+      "definition": "Probabilistic reasoning handles uncertainty using probabilities.",
+      "syntax": "Probability \u2192 Decision",
+      "example": "Spam filtering",
+      "output": "Likelihood estimated",
+      "tips": [
+        "Useful with uncertain information."
+      ]
+    },
+    {
+      "topic": "Fuzzy Logic",
+      "definition": "Fuzzy logic allows partial truth values instead of only true or false.",
+      "syntax": "0 to 1 Truth Value",
+      "example": "Air conditioner control",
+      "output": "Fuzzy decision",
+      "tips": [
+        "Suitable for imprecise data."
+      ]
+    },
+    {
+      "topic": "Expert Systems",
+      "definition": "Expert systems combine a knowledge base and inference engine to solve domain-specific problems.",
+      "syntax": "Knowledge Base + Inference Engine",
+      "example": "Medical expert system",
+      "output": "Recommendation generated",
+      "tips": [
+        "Maintain an updated knowledge base."
+      ]
+    },
+    {
+      "topic": "Reasoning Best Practices",
+      "definition": "Use appropriate reasoning methods, validate conclusions and update knowledge regularly.",
+      "syntax": "Reason \u2192 Validate \u2192 Improve",
+      "example": "Business decision support",
+      "output": "Reliable reasoning",
+      "tips": [
+        "Handle uncertainty carefully.",
+        "Test inference rules.",
+        "Review knowledge frequently."
+      ]
+    }
+  ]
+}
