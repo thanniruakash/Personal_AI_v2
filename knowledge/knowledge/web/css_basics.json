@@ -1,0 +1,126 @@
+{
+  "subject": "Web Development",
+  "section": "CSS Basics",
+  "topics": [
+    {
+      "topic": "What is CSS?",
+      "definition": "CSS (Cascading Style Sheets) is used to style and design HTML pages.",
+      "syntax": "selector { property: value; }",
+      "example": "h1 { color: blue; }",
+      "output": "Blue heading",
+      "tips": [
+        "CSS controls presentation, not content."
+      ]
+    },
+    {
+      "topic": "CSS Syntax",
+      "definition": "A CSS rule contains a selector and declaration block.",
+      "syntax": "p { color: red; }",
+      "example": "body { background: white; }",
+      "output": "Style applied",
+      "tips": [
+        "End each declaration with a semicolon."
+      ]
+    },
+    {
+      "topic": "Selectors",
+      "definition": "Selectors target HTML elements for styling.",
+      "syntax": "element, .class, #id",
+      "example": ".btn { color: white; }",
+      "output": "Selected elements styled",
+      "tips": [
+        "IDs should be unique."
+      ]
+    },
+    {
+      "topic": "Colors",
+      "definition": "CSS supports named colors, HEX, RGB and HSL values.",
+      "syntax": "color: #ff0000;",
+      "example": "background-color: rgb(0,0,255);",
+      "output": "Color displayed",
+      "tips": [
+        "Maintain good contrast for readability."
+      ]
+    },
+    {
+      "topic": "Fonts",
+      "definition": "CSS controls font family, size, weight and style.",
+      "syntax": "font-family: Arial;",
+      "example": "font-size: 18px;",
+      "output": "Styled text",
+      "tips": [
+        "Use web-safe or web fonts."
+      ]
+    },
+    {
+      "topic": "Box Model",
+      "definition": "Every HTML element is a box consisting of content, padding, border and margin.",
+      "syntax": "width: 200px;",
+      "example": "border: 1px solid black;",
+      "output": "Box styled",
+      "tips": [
+        "Understand the box model for layouts."
+      ]
+    },
+    {
+      "topic": "Margin and Padding",
+      "definition": "Margin adds space outside an element; padding adds space inside it.",
+      "syntax": "margin:10px; padding:10px;",
+      "example": "padding:20px;",
+      "output": "Spacing applied",
+      "tips": [
+        "Don't confuse margin with padding."
+      ]
+    },
+    {
+      "topic": "Display",
+      "definition": "The display property defines how an element is rendered.",
+      "syntax": "display: block;",
+      "example": "display: inline-block;",
+      "output": "Display changed",
+      "tips": [
+        "Common values: block, inline, flex, grid."
+      ]
+    },
+    {
+      "topic": "Position",
+      "definition": "Position controls where an element appears.",
+      "syntax": "position: relative;",
+      "example": "position: absolute; top:10px;",
+      "output": "Element positioned",
+      "tips": [
+        "Learn relative and absolute first."
+      ]
+    },
+    {
+      "topic": "Flexbox",
+      "definition": "Flexbox is a one-dimensional layout system.",
+      "syntax": "display:flex;",
+      "example": "justify-content:center;",
+      "output": "Flexible layout",
+      "tips": [
+        "Great for aligning items."
+      ]
+    },
+    {
+      "topic": "Grid",
+      "definition": "CSS Grid is a two-dimensional layout system.",
+      "syntax": "display:grid;",
+      "example": "grid-template-columns: 1fr 1fr;",
+      "output": "Grid layout",
+      "tips": [
+        "Ideal for complex page layouts."
+      ]
+    },
+    {
+      "topic": "CSS Best Practices",
+      "definition": "Write clean, reusable and organized CSS.",
+      "syntax": "Use classes",
+      "example": "Separate CSS from HTML",
+      "output": "Maintainable styles",
+      "tips": [
+        "Avoid unnecessary duplication."
+      ]
+    }
+  ]
+}

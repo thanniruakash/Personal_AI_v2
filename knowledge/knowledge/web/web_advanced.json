@@ -1,0 +1,87 @@
+{
+  "subject": "Web Development",
+  "section": "Advanced Web",
+  "topics": [
+    {
+      "topic": "HTTP and HTTPS",
+      "definition": "HTTP transfers web data, while HTTPS adds SSL/TLS encryption for secure communication.",
+      "syntax": "https://example.com",
+      "example": "Secure login page",
+      "output": "Encrypted connection",
+      "tips": [
+        "Always prefer HTTPS."
+      ]
+    },
+    {
+      "topic": "Cookies",
+      "definition": "Cookies are small pieces of data stored in the browser to remember user information.",
+      "syntax": "document.cookie",
+      "example": "Remember login session",
+      "output": "Cookie stored",
+      "tips": [
+        "Do not store sensitive data in plain cookies."
+      ]
+    },
+    {
+      "topic": "Local Storage and Session Storage",
+      "definition": "Web Storage stores data in the browser. Local Storage persists until cleared, while Session Storage lasts until the tab is closed.",
+      "syntax": "localStorage.setItem('key','value');",
+      "example": "Save theme preference",
+      "output": "Data stored",
+      "tips": [
+        "Store small amounts of client-side data."
+      ]
+    },
+    {
+      "topic": "REST APIs",
+      "definition": "REST APIs allow applications to communicate over HTTP using standard methods.",
+      "syntax": "GET, POST, PUT, DELETE",
+      "example": "GET /users",
+      "output": "API response",
+      "tips": [
+        "REST commonly uses JSON."
+      ]
+    },
+    {
+      "topic": "Fetch API",
+      "definition": "Fetch API sends HTTP requests and processes responses using JavaScript.",
+      "syntax": "fetch(url).then(...);",
+      "example": "fetch('/api/users')",
+      "output": "Data received",
+      "tips": [
+        "Use async/await for cleaner code."
+      ]
+    },
+    {
+      "topic": "Web Security Basics",
+      "definition": "Basic web security includes CORS, XSS prevention and CSRF protection.",
+      "syntax": "CORS, XSS, CSRF",
+      "example": "Escape user input",
+      "output": "Safer application",
+      "tips": [
+        "Validate and sanitize user input."
+      ]
+    },
+    {
+      "topic": "Web Performance Optimization",
+      "definition": "Performance is improved by reducing page size and loading resources efficiently.",
+      "syntax": "Minify CSS/JS",
+      "example": "Lazy loading images",
+      "output": "Faster website",
+      "tips": [
+        "Optimize images and enable caching."
+      ]
+    },
+    {
+      "topic": "Web Development Best Practices",
+      "definition": "Write clean, secure and maintainable web applications.",
+      "syntax": "Meaningful names and modular code",
+      "example": "Separate HTML, CSS and JavaScript",
+      "output": "Maintainable project",
+      "tips": [
+        "Keep code organized.",
+        "Test across browsers."
+      ]
+    }
+  ]
+}

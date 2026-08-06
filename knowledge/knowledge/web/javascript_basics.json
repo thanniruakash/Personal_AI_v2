@@ -1,0 +1,117 @@
+{
+  "subject": "Web Development",
+  "section": "JavaScript Basics",
+  "topics": [
+    {
+      "topic": "What is JavaScript?",
+      "definition": "JavaScript is a scripting language used to make web pages interactive.",
+      "syntax": "<script>...</script>",
+      "example": "console.log('Hello');",
+      "output": "Hello",
+      "tips": [
+        "Works with HTML and CSS."
+      ]
+    },
+    {
+      "topic": "Variables",
+      "definition": "Variables store data values.",
+      "syntax": "let age=18; const PI=3.14; var name='Akash';",
+      "example": "let score=100;",
+      "output": "100",
+      "tips": [
+        "Prefer let and const over var."
+      ]
+    },
+    {
+      "topic": "Data Types",
+      "definition": "Common data types are Number, String, Boolean, Object, Undefined, Null and BigInt.",
+      "syntax": "let x=10;",
+      "example": "let name='JavaScript';",
+      "output": "Value stored",
+      "tips": [
+        "Use typeof to check data types."
+      ]
+    },
+    {
+      "topic": "Operators",
+      "definition": "Operators perform arithmetic, comparison, logical and assignment operations.",
+      "syntax": "a+b, a==b, a&&b",
+      "example": "10+20",
+      "output": "30",
+      "tips": [
+        "Use === for strict equality."
+      ]
+    },
+    {
+      "topic": "Conditional Statements",
+      "definition": "Conditional statements execute code based on conditions.",
+      "syntax": "if(condition){...} else {...}",
+      "example": "if(age>=18){...}",
+      "output": "Condition checked",
+      "tips": [
+        "Use switch for multiple cases."
+      ]
+    },
+    {
+      "topic": "Loops",
+      "definition": "Loops execute a block of code repeatedly.",
+      "syntax": "for, while, do...while",
+      "example": "for(let i=0;i<5;i++)",
+      "output": "Repeated execution",
+      "tips": [
+        "Avoid infinite loops."
+      ]
+    },
+    {
+      "topic": "Functions",
+      "definition": "Functions are reusable blocks of code.",
+      "syntax": "function add(a,b){return a+b;}",
+      "example": "add(5,3)",
+      "output": "8",
+      "tips": [
+        "Arrow functions are also common."
+      ]
+    },
+    {
+      "topic": "Arrays",
+      "definition": "Arrays store multiple values in one variable.",
+      "syntax": "let arr=[1,2,3];",
+      "example": "arr.push(4);",
+      "output": "[1,2,3,4]",
+      "tips": [
+        "Arrays are zero-indexed."
+      ]
+    },
+    {
+      "topic": "Objects",
+      "definition": "Objects store data as key-value pairs.",
+      "syntax": "let person={name:'Akash',age:18};",
+      "example": "person.name",
+      "output": "Akash",
+      "tips": [
+        "Objects are fundamental in JavaScript."
+      ]
+    },
+    {
+      "topic": "Events",
+      "definition": "Events respond to user actions like clicks and key presses.",
+      "syntax": "button.onclick=function(){};",
+      "example": "onclick",
+      "output": "Event handled",
+      "tips": [
+        "Use addEventListener() for flexibility."
+      ]
+    },
+    {
+      "topic": "JavaScript Best Practices",
+      "definition": "Write clean, readable and maintainable JavaScript code.",
+      "syntax": "Use meaningful names",
+      "example": "const MAX_USERS=100;",
+      "output": "Better code quality",
+      "tips": [
+        "Keep functions small.",
+        "Comment only when necessary."
+      ]
+    }
+  ]
+}

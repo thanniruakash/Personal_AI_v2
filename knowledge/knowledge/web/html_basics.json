@@ -1,0 +1,136 @@
+{
+  "subject": "Web Development",
+  "section": "HTML Basics",
+  "topics": [
+    {
+      "topic": "What is HTML?",
+      "definition": "HTML (HyperText Markup Language) is the standard language used to create web pages.",
+      "syntax": "<!DOCTYPE html>",
+      "example": "<h1>Hello World</h1>",
+      "output": "Displays a heading",
+      "tips": [
+        "HTML defines page structure, not styling."
+      ]
+    },
+    {
+      "topic": "HTML Document Structure",
+      "definition": "Every HTML document has a standard structure.",
+      "syntax": "<!DOCTYPE html><html><head><title>Page</title></head><body></body></html>",
+      "example": "Basic HTML page",
+      "output": "Web page created",
+      "tips": [
+        "Always include <!DOCTYPE html>."
+      ]
+    },
+    {
+      "topic": "HTML Elements",
+      "definition": "HTML elements consist of opening tag, content and closing tag.",
+      "syntax": "<p>Hello</p>",
+      "example": "<h1>Welcome</h1>",
+      "output": "Element displayed",
+      "tips": [
+        "Some elements are self-closing."
+      ]
+    },
+    {
+      "topic": "HTML Tags",
+      "definition": "Tags define different parts of a webpage.",
+      "syntax": "<html>, <head>, <body>",
+      "example": "<title>My Page</title>",
+      "output": "Page structure created",
+      "tips": [
+        "Most tags have opening and closing forms."
+      ]
+    },
+    {
+      "topic": "Headings",
+      "definition": "Headings range from h1 to h6.",
+      "syntax": "<h1>Main Heading</h1>",
+      "example": "<h2>Chapter</h2>",
+      "output": "Heading displayed",
+      "tips": [
+        "Use only one h1 per page when possible."
+      ]
+    },
+    {
+      "topic": "Paragraphs",
+      "definition": "Paragraphs display blocks of text.",
+      "syntax": "<p>Text</p>",
+      "example": "<p>This is HTML.</p>",
+      "output": "Paragraph displayed",
+      "tips": [
+        "Use separate paragraphs for readability."
+      ]
+    },
+    {
+      "topic": "Links",
+      "definition": "Links connect one page to another.",
+      "syntax": "<a href='https://example.com'>Visit</a>",
+      "example": "<a href='about.html'>About</a>",
+      "output": "Clickable link",
+      "tips": [
+        "Use meaningful link text."
+      ]
+    },
+    {
+      "topic": "Images",
+      "definition": "Images are added using the img tag.",
+      "syntax": "<img src='image.jpg' alt='Image'>",
+      "example": "Logo image",
+      "output": "Image displayed",
+      "tips": [
+        "Always provide alt text."
+      ]
+    },
+    {
+      "topic": "Lists",
+      "definition": "HTML supports ordered, unordered and description lists.",
+      "syntax": "<ul><li>Item</li></ul>",
+      "example": "Shopping list",
+      "output": "List displayed",
+      "tips": [
+        "Use ol for numbered lists."
+      ]
+    },
+    {
+      "topic": "Tables",
+      "definition": "Tables organize data into rows and columns.",
+      "syntax": "<table><tr><td>Data</td></tr></table>",
+      "example": "Student marks table",
+      "output": "Table displayed",
+      "tips": [
+        "Use th for headers."
+      ]
+    },
+    {
+      "topic": "Forms",
+      "definition": "Forms collect user input.",
+      "syntax": "<form><input type='text'></form>",
+      "example": "Login form",
+      "output": "Input field shown",
+      "tips": [
+        "Use labels with inputs."
+      ]
+    },
+    {
+      "topic": "Semantic HTML",
+      "definition": "Semantic tags describe the meaning of content.",
+      "syntax": "<header><main><footer>",
+      "example": "<article>News</article>",
+      "output": "Structured page",
+      "tips": [
+        "Improves accessibility and SEO."
+      ]
+    },
+    {
+      "topic": "HTML Best Practices",
+      "definition": "Write clean, valid and well-structured HTML.",
+      "syntax": "Proper indentation",
+      "example": "Meaningful element names",
+      "output": "Maintainable code",
+      "tips": [
+        "Validate HTML and keep it readable."
+      ]
+    }
+  ]
+}
