@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Q-Learning",
+  "topics": [
+    {
+      "topic": "What is Q-Learning?",
+      "definition": "Q-Learning is a model-free reinforcement learning algorithm that learns the value of taking actions in different states.",
+      "syntax": "State + Action \u2192 Q-Value",
+      "example": "Maze-solving agent",
+      "output": "Learned policy",
+      "tips": [
+        "Does not require a model of the environment."
+      ]
+    },
+    {
+      "topic": "Q-Table",
+      "definition": "A Q-table stores Q-values for every state-action pair.",
+      "syntax": "State \u00d7 Action \u2192 Value",
+      "example": "Grid world",
+      "output": "Q-values",
+      "tips": [
+        "Suitable for small state spaces."
+      ]
+    },
+    {
+      "topic": "Exploration vs Exploitation",
+      "definition": "Exploration tries new actions while exploitation chooses the best-known action.",
+      "syntax": "Explore \u2194 Exploit",
+      "example": "\u03b5-greedy strategy",
+      "output": "Action selection",
+      "tips": [
+        "Balance both during training."
+      ]
+    },
+    {
+      "topic": "Bellman Equation",
+      "definition": "The Bellman equation updates Q-values using rewards and estimated future values.",
+      "syntax": "Q \u2190 Reward + Future Value",
+      "example": "Game learning",
+      "output": "Updated Q-value",
+      "tips": [
+        "Core concept in Q-learning."
+      ]
+    },
+    {
+      "topic": "Q-Value Update",
+      "definition": "Q-values are updated after every interaction with the environment.",
+      "syntax": "Old Q \u2192 New Q",
+      "example": "Robot navigation",
+      "output": "Improved policy",
+      "tips": [
+        "Learning rate affects convergence."
+      ]
+    },
+    {
+      "topic": "Training Process",
+      "definition": "The agent repeatedly interacts with the environment to improve its Q-table.",
+      "syntax": "Observe \u2192 Act \u2192 Learn",
+      "example": "Game episodes",
+      "output": "Trained agent",
+      "tips": [
+        "Train over many episodes."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Q-Learning is used in robotics, games and autonomous decision-making.",
+      "syntax": "Environment \u2192 RL Agent",
+      "example": "Warehouse robot",
+      "output": "Optimized decisions",
+      "tips": [
+        "Best for discrete problems."
+      ]
+    },
+    {
+      "topic": "Q-Learning Best Practices",
+      "definition": "Tune hyperparameters, balance exploration and test on unseen scenarios.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "RL project",
+      "output": "Reliable Q-learning model",
+      "tips": [
+        "Decay exploration gradually.",
+        "Monitor convergence.",
+        "Validate performance."
+      ]
+    }
+  ]
+}

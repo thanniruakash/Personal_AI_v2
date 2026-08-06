@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Actor-Critic",
+  "topics": [
+    {
+      "topic": "What is Actor-Critic?",
+      "definition": "Actor-Critic combines a policy-learning actor with a value-estimating critic.",
+      "syntax": "State \u2192 Actor \u2192 Action; Critic \u2192 Value",
+      "example": "Continuous robot control",
+      "output": "Improved policy",
+      "tips": [
+        "Balances policy and value learning."
+      ]
+    },
+    {
+      "topic": "Actor Network",
+      "definition": "The actor selects actions based on the current policy.",
+      "syntax": "State \u2192 Action",
+      "example": "Choose robot movement",
+      "output": "Action",
+      "tips": [
+        "Optimize policy parameters gradually."
+      ]
+    },
+    {
+      "topic": "Critic Network",
+      "definition": "The critic evaluates the actor's actions by estimating value functions.",
+      "syntax": "State, Action \u2192 Value",
+      "example": "Estimate expected reward",
+      "output": "Value estimate",
+      "tips": [
+        "Provide accurate feedback to the actor."
+      ]
+    },
+    {
+      "topic": "Advantage Actor-Critic (A2C)",
+      "definition": "A2C improves learning by using the advantage function to update the policy.",
+      "syntax": "Advantage \u2192 Policy Update",
+      "example": "Game-playing agent",
+      "output": "Better policy",
+      "tips": [
+        "Reduces training variance."
+      ]
+    },
+    {
+      "topic": "Proximal Policy Optimization (PPO)",
+      "definition": "PPO improves policy updates using clipped objectives for stable training.",
+      "syntax": "Policy \u2192 PPO Update",
+      "example": "Robotics training",
+      "output": "Stable learning",
+      "tips": [
+        "One of the most widely used RL algorithms."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Actor-Critic methods are used in robotics, games and autonomous systems.",
+      "syntax": "Environment \u2192 Agent",
+      "example": "Self-driving simulation",
+      "output": "Learned behavior",
+      "tips": [
+        "Suitable for complex tasks."
+      ]
+    },
+    {
+      "topic": "Performance Evaluation",
+      "definition": "Evaluate using cumulative reward, convergence speed and stability.",
+      "syntax": "Agent \u2192 Metrics",
+      "example": "RL benchmark",
+      "output": "Performance score",
+      "tips": [
+        "Test over multiple episodes."
+      ]
+    },
+    {
+      "topic": "Actor-Critic Best Practices",
+      "definition": "Tune learning rates, monitor stability and validate on unseen environments.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production RL system",
+      "output": "Reliable model",
+      "tips": [
+        "Prevent overfitting.",
+        "Monitor rewards.",
+        "Use sufficient exploration."
+      ]
+    }
+  ]
+}

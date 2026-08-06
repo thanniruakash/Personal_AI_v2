@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Reinforcement Learning Basics",
+  "topics": [
+    {
+      "topic": "What is Reinforcement Learning?",
+      "definition": "Reinforcement Learning (RL) trains an agent to make decisions by interacting with an environment and receiving rewards.",
+      "syntax": "Agent \u2192 Action \u2192 Reward",
+      "example": "Game-playing AI",
+      "output": "Learned policy",
+      "tips": [
+        "Balance exploration and exploitation."
+      ]
+    },
+    {
+      "topic": "Agent",
+      "definition": "The agent is the learner that takes actions.",
+      "syntax": "State \u2192 Action",
+      "example": "Game bot",
+      "output": "Selected action",
+      "tips": [
+        "The goal is to maximize reward."
+      ]
+    },
+    {
+      "topic": "Environment",
+      "definition": "The environment is everything the agent interacts with.",
+      "syntax": "Agent \u2194 Environment",
+      "example": "Chess board",
+      "output": "New state",
+      "tips": [
+        "Environment provides feedback."
+      ]
+    },
+    {
+      "topic": "State",
+      "definition": "A state represents the current situation of the environment.",
+      "syntax": "Environment \u2192 State",
+      "example": "Robot position",
+      "output": "Current state",
+      "tips": [
+        "States should capture relevant information."
+      ]
+    },
+    {
+      "topic": "Action",
+      "definition": "An action is a decision taken by the agent.",
+      "syntax": "State \u2192 Action",
+      "example": "Move left",
+      "output": "Environment response",
+      "tips": [
+        "Actions change the environment."
+      ]
+    },
+    {
+      "topic": "Reward",
+      "definition": "A reward is feedback indicating how good an action was.",
+      "syntax": "Action \u2192 Reward",
+      "example": "+10 for reaching goal",
+      "output": "Reward value",
+      "tips": [
+        "Design rewards carefully."
+      ]
+    },
+    {
+      "topic": "Episode",
+      "definition": "An episode is one complete interaction from start to finish.",
+      "syntax": "Start \u2192 Goal",
+      "example": "One game",
+      "output": "Episode result",
+      "tips": [
+        "Training uses many episodes."
+      ]
+    },
+    {
+      "topic": "RL Best Practices",
+      "definition": "Use suitable rewards, evaluate often and train with diverse scenarios.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Robot learning",
+      "output": "Reliable RL agent",
+      "tips": [
+        "Avoid sparse rewards.",
+        "Monitor convergence.",
+        "Test on unseen environments."
+      ]
+    }
+  ]
+}

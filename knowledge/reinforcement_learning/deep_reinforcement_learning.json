@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Deep Reinforcement Learning",
+  "topics": [
+    {
+      "topic": "What is Deep Reinforcement Learning?",
+      "definition": "Deep Reinforcement Learning combines reinforcement learning with deep neural networks to solve complex decision-making problems.",
+      "syntax": "State \u2192 Neural Network \u2192 Action",
+      "example": "Atari game agent",
+      "output": "Optimal action",
+      "tips": [
+        "Useful for large state spaces."
+      ]
+    },
+    {
+      "topic": "Deep Q-Networks (DQN)",
+      "definition": "DQN uses a neural network to approximate Q-values instead of a Q-table.",
+      "syntax": "State \u2192 DQN \u2192 Q-Values",
+      "example": "Game playing",
+      "output": "Predicted Q-values",
+      "tips": [
+        "Suitable for high-dimensional inputs."
+      ]
+    },
+    {
+      "topic": "Experience Replay",
+      "definition": "Experience replay stores past experiences and reuses them during training.",
+      "syntax": "Experience Buffer \u2192 Training",
+      "example": "Replay game episodes",
+      "output": "Stable learning",
+      "tips": [
+        "Random sampling reduces correlation."
+      ]
+    },
+    {
+      "topic": "Target Network",
+      "definition": "A target network stabilizes DQN training by updating parameters less frequently.",
+      "syntax": "Main Network \u2192 Target Network",
+      "example": "DQN training",
+      "output": "Stable updates",
+      "tips": [
+        "Update periodically."
+      ]
+    },
+    {
+      "topic": "Deep RL Applications",
+      "definition": "Deep RL is used in robotics, autonomous driving, games and resource optimization.",
+      "syntax": "Environment \u2192 Deep RL",
+      "example": "Robot control",
+      "output": "Learned strategy",
+      "tips": [
+        "Use simulation before real deployment."
+      ]
+    },
+    {
+      "topic": "Performance Evaluation",
+      "definition": "Deep RL agents are evaluated using cumulative reward, success rate and convergence.",
+      "syntax": "Agent \u2192 Metrics",
+      "example": "Game score",
+      "output": "Performance",
+      "tips": [
+        "Evaluate over many episodes."
+      ]
+    },
+    {
+      "topic": "Challenges",
+      "definition": "Training can be unstable, sample-inefficient and computationally expensive.",
+      "syntax": "Train \u2192 Evaluate",
+      "example": "Sparse rewards",
+      "output": "Learning challenges",
+      "tips": [
+        "Tune hyperparameters carefully."
+      ]
+    },
+    {
+      "topic": "Deep RL Best Practices",
+      "definition": "Use replay buffers, target networks and careful reward design for stable learning.",
+      "syntax": "Train \u2192 Validate \u2192 Improve",
+      "example": "Autonomous robot",
+      "output": "Reliable Deep RL",
+      "tips": [
+        "Monitor convergence.",
+        "Test on unseen tasks.",
+        "Avoid reward hacking."
+      ]
+    }
+  ]
+}

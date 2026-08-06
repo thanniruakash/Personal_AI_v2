@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Policy Gradient",
+  "topics": [
+    {
+      "topic": "What are Policy Gradient Methods?",
+      "definition": "Policy Gradient methods directly optimize the policy to maximize expected rewards.",
+      "syntax": "State \u2192 Policy \u2192 Action",
+      "example": "Continuous robot control",
+      "output": "Optimized policy",
+      "tips": [
+        "Suitable for continuous action spaces."
+      ]
+    },
+    {
+      "topic": "Policy Function",
+      "definition": "A policy function maps states to actions or action probabilities.",
+      "syntax": "State \u2192 Policy",
+      "example": "Robot chooses movement",
+      "output": "Action probabilities",
+      "tips": [
+        "Policies may be deterministic or stochastic."
+      ]
+    },
+    {
+      "topic": "REINFORCE Algorithm",
+      "definition": "REINFORCE updates the policy using rewards collected after each episode.",
+      "syntax": "Episode \u2192 Reward \u2192 Update",
+      "example": "Game-playing agent",
+      "output": "Improved policy",
+      "tips": [
+        "Can have high variance."
+      ]
+    },
+    {
+      "topic": "Advantage Function",
+      "definition": "The advantage function measures how much better an action is than the average.",
+      "syntax": "Q(s,a) \u2212 V(s)",
+      "example": "Compare actions",
+      "output": "Advantage value",
+      "tips": [
+        "Helps reduce variance."
+      ]
+    },
+    {
+      "topic": "Policy Optimization",
+      "definition": "Policy optimization adjusts policy parameters to improve long-term rewards.",
+      "syntax": "Policy \u2192 Optimize",
+      "example": "Train an autonomous drone",
+      "output": "Better policy",
+      "tips": [
+        "Use stable optimization methods."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Policy Gradient methods are used in robotics, games and autonomous control.",
+      "syntax": "Environment \u2192 Policy",
+      "example": "Robot arm learning",
+      "output": "Learned behavior",
+      "tips": [
+        "Useful for complex control tasks."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Evaluate policy performance using cumulative reward, stability and success rate.",
+      "syntax": "Policy \u2192 Metrics",
+      "example": "RL benchmark",
+      "output": "Performance results",
+      "tips": [
+        "Average results across many episodes."
+      ]
+    },
+    {
+      "topic": "Policy Gradient Best Practices",
+      "definition": "Use reward normalization, monitor convergence and validate on unseen tasks.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Deep RL project",
+      "output": "Reliable policy",
+      "tips": [
+        "Reduce variance.",
+        "Tune learning rate.",
+        "Avoid overfitting."
+      ]
+    }
+  ]
+}

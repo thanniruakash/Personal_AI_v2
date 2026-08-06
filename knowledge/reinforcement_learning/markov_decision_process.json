@@ -1,0 +1,88 @@
+{
+  "subject": "Reinforcement Learning",
+  "section": "Markov Decision Process",
+  "topics": [
+    {
+      "topic": "What is a Markov Decision Process (MDP)?",
+      "definition": "An MDP is a mathematical framework for sequential decision-making under uncertainty.",
+      "syntax": "State + Action \u2192 Next State + Reward",
+      "example": "Robot navigation",
+      "output": "Decision model",
+      "tips": [
+        "Future depends only on the current state."
+      ]
+    },
+    {
+      "topic": "States",
+      "definition": "States describe all relevant information about the environment at a given time.",
+      "syntax": "Environment \u2192 State",
+      "example": "Robot at position A",
+      "output": "Current state",
+      "tips": [
+        "Represent states clearly."
+      ]
+    },
+    {
+      "topic": "Actions",
+      "definition": "Actions are the choices available to the agent in each state.",
+      "syntax": "State \u2192 Action",
+      "example": "Move forward",
+      "output": "Selected action",
+      "tips": [
+        "List all valid actions."
+      ]
+    },
+    {
+      "topic": "Transition Probability",
+      "definition": "Transition probability defines the chance of moving to another state after an action.",
+      "syntax": "P(S'|S,A)",
+      "example": "80% chance of success",
+      "output": "Next-state probability",
+      "tips": [
+        "Model uncertainty realistically."
+      ]
+    },
+    {
+      "topic": "Reward Function",
+      "definition": "The reward function assigns a numerical reward after each action.",
+      "syntax": "R(S,A)",
+      "example": "+100 for reaching the goal",
+      "output": "Reward value",
+      "tips": [
+        "Reward design strongly affects learning."
+      ]
+    },
+    {
+      "topic": "Policy",
+      "definition": "A policy defines which action the agent should take in each state.",
+      "syntax": "State \u2192 Best Action",
+      "example": "Optimal navigation policy",
+      "output": "Chosen action",
+      "tips": [
+        "Policies can be deterministic or stochastic."
+      ]
+    },
+    {
+      "topic": "Value Function",
+      "definition": "The value function estimates expected future rewards from a state.",
+      "syntax": "State \u2192 Expected Reward",
+      "example": "Evaluate game positions",
+      "output": "State value",
+      "tips": [
+        "Used to compare decisions."
+      ]
+    },
+    {
+      "topic": "MDP Best Practices",
+      "definition": "Use accurate state definitions, realistic rewards and validate transition models.",
+      "syntax": "Model \u2192 Evaluate \u2192 Improve",
+      "example": "RL simulation",
+      "output": "Reliable MDP",
+      "tips": [
+        "Keep the model simple.",
+        "Verify assumptions.",
+        "Test thoroughly."
+      ]
+    }
+  ]
+}
