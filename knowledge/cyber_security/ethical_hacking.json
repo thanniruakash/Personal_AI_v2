@@ -1,0 +1,88 @@
+{
+  "subject": "Cyber Security",
+  "section": "Ethical Hacking",
+  "topics": [
+    {
+      "topic": "What is Ethical Hacking?",
+      "definition": "Ethical hacking is the authorized practice of testing systems to identify and report security weaknesses.",
+      "syntax": "Plan \u2192 Test \u2192 Report",
+      "example": "Security assessment of a company website",
+      "output": "Vulnerabilities identified",
+      "tips": [
+        "Always obtain written permission before testing."
+      ]
+    },
+    {
+      "topic": "White Hat, Black Hat and Gray Hat Hackers",
+      "definition": "White hats work legally to improve security, black hats attack maliciously and gray hats operate between the two.",
+      "syntax": "White / Black / Gray",
+      "example": "Security consultant",
+      "output": "Hacker type identified",
+      "tips": [
+        "Only white-hat activities are authorized."
+      ]
+    },
+    {
+      "topic": "Footprinting and Reconnaissance",
+      "definition": "Reconnaissance gathers information about a target before security testing.",
+      "syntax": "Passive + Active",
+      "example": "Collecting public domain information",
+      "output": "Target information collected",
+      "tips": [
+        "Use only authorized methods."
+      ]
+    },
+    {
+      "topic": "Scanning and Enumeration",
+      "definition": "Scanning identifies systems and services, while enumeration gathers detailed information about them.",
+      "syntax": "Scan \u2192 Enumerate",
+      "example": "Finding open ports",
+      "output": "Network information collected",
+      "tips": [
+        "Perform only on authorized systems."
+      ]
+    },
+    {
+      "topic": "Vulnerability Assessment",
+      "definition": "A vulnerability assessment identifies and prioritizes security weaknesses.",
+      "syntax": "Identify \u2192 Analyze \u2192 Prioritize",
+      "example": "Checking outdated software",
+      "output": "Vulnerabilities listed",
+      "tips": [
+        "Fix critical issues first."
+      ]
+    },
+    {
+      "topic": "Penetration Testing",
+      "definition": "Penetration testing safely simulates attacks to verify whether vulnerabilities can be exploited.",
+      "syntax": "Plan \u2192 Test \u2192 Report",
+      "example": "Testing login security",
+      "output": "Security report generated",
+      "tips": [
+        "Follow a defined scope and document findings."
+      ]
+    },
+    {
+      "topic": "Common Security Tools",
+      "definition": "Security professionals use tools for scanning, monitoring and analysis during authorized assessments.",
+      "syntax": "Scanner / Analyzer / Monitor",
+      "example": "Network vulnerability scanner",
+      "output": "Assessment completed",
+      "tips": [
+        "Use tools responsibly and only with permission."
+      ]
+    },
+    {
+      "topic": "Ethical Hacking Best Practices",
+      "definition": "Follow legal, ethical and professional standards during every security assessment.",
+      "syntax": "Authorize \u2192 Test \u2192 Report",
+      "example": "Deliver remediation recommendations",
+      "output": "Improved security posture",
+      "tips": [
+        "Respect privacy.",
+        "Keep detailed documentation.",
+        "Disclose findings responsibly."
+      ]
+    }
+  ]
+}

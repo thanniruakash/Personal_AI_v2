@@ -1,0 +1,87 @@
+{
+  "subject": "Cyber Security",
+  "section": "Web Security",
+  "topics": [
+    {
+      "topic": "Web Security Basics",
+      "definition": "Web security protects websites and web applications from attacks and unauthorized access.",
+      "syntax": "Protect \u2192 Detect \u2192 Respond",
+      "example": "Secure online shopping site",
+      "output": "Protected web application",
+      "tips": [
+        "Keep software updated and validate user input."
+      ]
+    },
+    {
+      "topic": "Cross-Site Scripting (XSS)",
+      "definition": "XSS injects malicious scripts into trusted web pages.",
+      "syntax": "Malicious Script",
+      "example": "Injected JavaScript",
+      "output": "Script executed",
+      "tips": [
+        "Escape output and sanitize input."
+      ]
+    },
+    {
+      "topic": "Cross-Site Request Forgery (CSRF)",
+      "definition": "CSRF tricks a user's browser into sending unwanted requests.",
+      "syntax": "Victim \u2192 Forged Request",
+      "example": "Unauthorized request",
+      "output": "Request executed",
+      "tips": [
+        "Use CSRF tokens."
+      ]
+    },
+    {
+      "topic": "Content Security Policy (CSP)",
+      "definition": "CSP limits which resources a browser can load.",
+      "syntax": "Content-Security-Policy",
+      "example": "Trusted script sources",
+      "output": "Policy enforced",
+      "tips": [
+        "Use a strict CSP."
+      ]
+    },
+    {
+      "topic": "Secure Cookies",
+      "definition": "Secure cookies use Secure, HttpOnly and SameSite attributes.",
+      "syntax": "Secure; HttpOnly; SameSite",
+      "example": "Session cookie",
+      "output": "Cookie protected",
+      "tips": [
+        "Do not store sensitive data in cookies."
+      ]
+    },
+    {
+      "topic": "HTTPS and TLS",
+      "definition": "HTTPS uses TLS to encrypt browser-server communication.",
+      "syntax": "HTTPS",
+      "example": "Secure login",
+      "output": "Encrypted connection",
+      "tips": [
+        "Always use HTTPS."
+      ]
+    },
+    {
+      "topic": "Secure Coding Practices",
+      "definition": "Validate input, sanitize data and avoid common vulnerabilities.",
+      "syntax": "Validate \u2192 Sanitize",
+      "example": "Parameterized queries",
+      "output": "Safer application",
+      "tips": [
+        "Follow secure coding standards."
+      ]
+    },
+    {
+      "topic": "Web Security Best Practices",
+      "definition": "Use layered security, regular testing and monitoring.",
+      "syntax": "Secure \u2192 Test \u2192 Monitor",
+      "example": "Security audits",
+      "output": "Improved security",
+      "tips": [
+        "Patch vulnerabilities promptly.",
+        "Monitor logs regularly."
+      ]
+    }
+  ]
+}

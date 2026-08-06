@@ -1,0 +1,87 @@
+{
+  "subject": "Cyber Security",
+  "section": "Security Basics",
+  "topics": [
+    {
+      "topic": "What is Cyber Security?",
+      "definition": "Cyber Security protects computers, networks, systems and data from cyber threats and unauthorized access.",
+      "syntax": "Protect \u2192 Detect \u2192 Respond",
+      "example": "Securing an online banking system",
+      "output": "System protected",
+      "tips": [
+        "Security is an ongoing process."
+      ]
+    },
+    {
+      "topic": "CIA Triad",
+      "definition": "The CIA Triad consists of Confidentiality, Integrity and Availability.",
+      "syntax": "C-I-A",
+      "example": "Encrypted confidential files",
+      "output": "Security goals achieved",
+      "tips": [
+        "The CIA Triad is the foundation of information security."
+      ]
+    },
+    {
+      "topic": "Types of Cyber Threats",
+      "definition": "Common threats include malware, phishing, ransomware, spyware and DoS attacks.",
+      "syntax": "Threat Categories",
+      "example": "Phishing email",
+      "output": "Threat identified",
+      "tips": [
+        "Recognize threats early."
+      ]
+    },
+    {
+      "topic": "Security Policies",
+      "definition": "Security policies define rules for protecting information and systems.",
+      "syntax": "Policy \u2192 Implementation",
+      "example": "Password policy",
+      "output": "Policy enforced",
+      "tips": [
+        "Review policies regularly."
+      ]
+    },
+    {
+      "topic": "Risk Management",
+      "definition": "Risk management identifies, evaluates and reduces security risks.",
+      "syntax": "Identify \u2192 Assess \u2192 Mitigate",
+      "example": "Patch vulnerable software",
+      "output": "Risk reduced",
+      "tips": [
+        "Prioritize high-risk issues."
+      ]
+    },
+    {
+      "topic": "Security Controls",
+      "definition": "Security controls are administrative, technical and physical measures used to protect systems.",
+      "syntax": "Preventive / Detective / Corrective",
+      "example": "Firewall and CCTV",
+      "output": "Controls applied",
+      "tips": [
+        "Use multiple layers of protection."
+      ]
+    },
+    {
+      "topic": "Incident Response",
+      "definition": "Incident response is the process of detecting, analyzing and recovering from security incidents.",
+      "syntax": "Prepare \u2192 Detect \u2192 Respond \u2192 Recover",
+      "example": "Handling a ransomware attack",
+      "output": "Incident managed",
+      "tips": [
+        "Maintain an incident response plan."
+      ]
+    },
+    {
+      "topic": "Cyber Security Best Practices",
+      "definition": "Use strong passwords, MFA, updates, backups and continuous monitoring.",
+      "syntax": "Secure \u2192 Update \u2192 Monitor",
+      "example": "Enable two-factor authentication",
+      "output": "Improved security",
+      "tips": [
+        "Train users regularly.",
+        "Back up important data."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Cyber Security",
+  "section": "Network Attacks",
+  "topics": [
+    {
+      "topic": "Denial of Service (DoS)",
+      "definition": "A DoS attack attempts to make a service unavailable by overwhelming it with requests from a single source.",
+      "syntax": "Attacker \u2192 Target",
+      "example": "Flooding a web server",
+      "output": "Service disrupted",
+      "tips": [
+        "Use firewalls and rate limiting."
+      ]
+    },
+    {
+      "topic": "Distributed Denial of Service (DDoS)",
+      "definition": "A DDoS attack uses many compromised devices to overwhelm a target.",
+      "syntax": "Botnet \u2192 Target",
+      "example": "Botnet attack on a website",
+      "output": "Network overloaded",
+      "tips": [
+        "Use DDoS protection services."
+      ]
+    },
+    {
+      "topic": "Man-in-the-Middle (MITM)",
+      "definition": "An attacker secretly intercepts communication between two parties.",
+      "syntax": "User \u2194 Attacker \u2194 Server",
+      "example": "Unsecured public Wi-Fi",
+      "output": "Data intercepted",
+      "tips": [
+        "Use HTTPS and VPNs."
+      ]
+    },
+    {
+      "topic": "Spoofing",
+      "definition": "Spoofing disguises an attacker as a trusted source.",
+      "syntax": "Fake Identity",
+      "example": "IP spoofing",
+      "output": "Identity forged",
+      "tips": [
+        "Verify sender identity."
+      ]
+    },
+    {
+      "topic": "Sniffing",
+      "definition": "Sniffing captures network packets to analyze transmitted data.",
+      "syntax": "Packet Capture",
+      "example": "Network analyzer",
+      "output": "Traffic monitored",
+      "tips": [
+        "Encrypt sensitive traffic."
+      ]
+    },
+    {
+      "topic": "SQL Injection",
+      "definition": "SQL Injection inserts malicious SQL commands through application input.",
+      "syntax": "Malicious SQL Input",
+      "example": "' OR '1'='1",
+      "output": "Database compromised",
+      "tips": [
+        "Use parameterized queries."
+      ]
+    },
+    {
+      "topic": "Buffer Overflow",
+      "definition": "A buffer overflow occurs when more data is written than a buffer can hold.",
+      "syntax": "Excess Input",
+      "example": "Overwriting memory",
+      "output": "Program crash or exploit",
+      "tips": [
+        "Validate input and use safe coding practices."
+      ]
+    },
+    {
+      "topic": "Network Attack Prevention Best Practices",
+      "definition": "Reduce attack risks using secure coding, updates, monitoring and layered defenses.",
+      "syntax": "Prevent \u2192 Detect \u2192 Respond",
+      "example": "IDS/IPS deployment",
+      "output": "Improved security",
+      "tips": [
+        "Patch systems regularly.",
+        "Monitor network logs.",
+        "Train users to recognize attacks."
+      ]
+    }
+  ]
+}

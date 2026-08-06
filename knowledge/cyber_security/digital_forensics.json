@@ -1,0 +1,88 @@
+{
+  "subject": "Cyber Security",
+  "section": "Digital Forensics",
+  "topics": [
+    {
+      "topic": "Introduction to Digital Forensics",
+      "definition": "Digital forensics is the process of identifying, collecting, preserving, analyzing and presenting digital evidence.",
+      "syntax": "Identify \u2192 Collect \u2192 Analyze \u2192 Report",
+      "example": "Investigating a cyber incident",
+      "output": "Evidence analyzed",
+      "tips": [
+        "Preserve evidence integrity."
+      ]
+    },
+    {
+      "topic": "Evidence Collection",
+      "definition": "Evidence collection gathers digital data without altering it.",
+      "syntax": "Collect \u2192 Preserve",
+      "example": "Disk image acquisition",
+      "output": "Evidence collected",
+      "tips": [
+        "Use write blockers when appropriate."
+      ]
+    },
+    {
+      "topic": "Chain of Custody",
+      "definition": "Chain of custody documents who handled evidence from collection to presentation.",
+      "syntax": "Collect \u2192 Record \u2192 Transfer",
+      "example": "Evidence log",
+      "output": "Evidence tracked",
+      "tips": [
+        "Maintain accurate records."
+      ]
+    },
+    {
+      "topic": "Disk Forensics",
+      "definition": "Disk forensics analyzes storage devices to recover files and investigate activity.",
+      "syntax": "Image \u2192 Analyze",
+      "example": "Recover deleted files",
+      "output": "Disk evidence recovered",
+      "tips": [
+        "Analyze forensic copies, not originals."
+      ]
+    },
+    {
+      "topic": "Network Forensics",
+      "definition": "Network forensics examines network traffic to investigate incidents.",
+      "syntax": "Capture \u2192 Analyze",
+      "example": "Packet analysis",
+      "output": "Network evidence found",
+      "tips": [
+        "Preserve packet captures securely."
+      ]
+    },
+    {
+      "topic": "Mobile Forensics",
+      "definition": "Mobile forensics extracts and analyzes data from smartphones and tablets.",
+      "syntax": "Acquire \u2192 Examine",
+      "example": "Phone investigation",
+      "output": "Mobile evidence recovered",
+      "tips": [
+        "Follow legal procedures."
+      ]
+    },
+    {
+      "topic": "Incident Analysis",
+      "definition": "Incident analysis determines what happened, how it happened and its impact.",
+      "syntax": "Detect \u2192 Analyze \u2192 Report",
+      "example": "Malware investigation",
+      "output": "Incident understood",
+      "tips": [
+        "Document findings clearly."
+      ]
+    },
+    {
+      "topic": "Digital Forensics Best Practices",
+      "definition": "Follow legal procedures, preserve evidence and document every investigation step.",
+      "syntax": "Preserve \u2192 Analyze \u2192 Report",
+      "example": "Forensic investigation report",
+      "output": "Reliable investigation",
+      "tips": [
+        "Maintain chain of custody.",
+        "Use validated forensic tools.",
+        "Protect evidence from modification."
+      ]
+    }
+  ]
+}

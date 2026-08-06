@@ -1,0 +1,87 @@
+{
+  "subject": "Cyber Security",
+  "section": "Cryptography",
+  "topics": [
+    {
+      "topic": "Introduction to Cryptography",
+      "definition": "Cryptography protects information by converting readable data into a secure form.",
+      "syntax": "Plaintext \u2192 Ciphertext",
+      "example": "Secure online banking",
+      "output": "Encrypted data",
+      "tips": [
+        "Protects confidentiality and integrity."
+      ]
+    },
+    {
+      "topic": "Symmetric Encryption",
+      "definition": "The same secret key is used for both encryption and decryption.",
+      "syntax": "Shared Secret Key",
+      "example": "AES",
+      "output": "Data encrypted",
+      "tips": [
+        "Fast and efficient for large data."
+      ]
+    },
+    {
+      "topic": "Asymmetric Encryption",
+      "definition": "Uses a public key for encryption and a private key for decryption.",
+      "syntax": "Public Key / Private Key",
+      "example": "RSA",
+      "output": "Secure communication",
+      "tips": [
+        "Used for secure key exchange and digital signatures."
+      ]
+    },
+    {
+      "topic": "Hashing",
+      "definition": "Hashing converts data into a fixed-length hash value and cannot be reversed.",
+      "syntax": "SHA-256",
+      "example": "Password hashing",
+      "output": "Hash generated",
+      "tips": [
+        "Small input changes produce different hashes."
+      ]
+    },
+    {
+      "topic": "Digital Signatures",
+      "definition": "Digital signatures verify authenticity and data integrity.",
+      "syntax": "Sign \u2192 Verify",
+      "example": "Signed PDF",
+      "output": "Signature verified",
+      "tips": [
+        "Uses asymmetric cryptography."
+      ]
+    },
+    {
+      "topic": "Digital Certificates",
+      "definition": "Digital certificates bind a public key to an identity.",
+      "syntax": "X.509 Certificate",
+      "example": "HTTPS website certificate",
+      "output": "Identity verified",
+      "tips": [
+        "Issued by Certificate Authorities (CAs)."
+      ]
+    },
+    {
+      "topic": "Public Key Infrastructure (PKI)",
+      "definition": "PKI manages digital certificates and public keys.",
+      "syntax": "CA \u2192 Certificate \u2192 User",
+      "example": "Enterprise certificate management",
+      "output": "Trust established",
+      "tips": [
+        "Essential for secure communications."
+      ]
+    },
+    {
+      "topic": "Cryptography Best Practices",
+      "definition": "Use strong algorithms, protect keys and keep cryptographic software updated.",
+      "syntax": "Encrypt \u2192 Verify \u2192 Rotate Keys",
+      "example": "Regular key rotation",
+      "output": "Improved security",
+      "tips": [
+        "Never hard-code secret keys.",
+        "Use modern algorithms like AES and SHA-256."
+      ]
+    }
+  ]
+}
