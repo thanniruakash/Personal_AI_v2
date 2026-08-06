@@ -1,0 +1,97 @@
+{
+  "subject": "Computer Networks",
+  "section": "TCP/IP",
+  "topics": [
+    {
+      "topic": "Introduction to TCP/IP",
+      "definition": "TCP/IP is the standard communication protocol suite used on the Internet.",
+      "syntax": "TCP/IP Protocol Suite",
+      "example": "Browsing a website",
+      "output": "Communication established",
+      "tips": [
+        "Foundation of modern networking."
+      ]
+    },
+    {
+      "topic": "TCP/IP Layers",
+      "definition": "The TCP/IP model has Application, Transport, Internet and Network Access layers.",
+      "syntax": "4 Layers",
+      "example": "HTTP \u2192 TCP \u2192 IP \u2192 Ethernet",
+      "output": "Data transmitted",
+      "tips": [
+        "Simpler than the OSI model."
+      ]
+    },
+    {
+      "topic": "IP Addressing",
+      "definition": "IP addresses uniquely identify devices on a network. IPv4 uses 32 bits and IPv6 uses 128 bits.",
+      "syntax": "IPv4 / IPv6",
+      "example": "192.168.1.10",
+      "output": "Device identified",
+      "tips": [
+        "IPv6 provides a much larger address space."
+      ]
+    },
+    {
+      "topic": "Port Numbers",
+      "definition": "Port numbers identify services running on a device.",
+      "syntax": "0-65535",
+      "example": "HTTP:80, HTTPS:443",
+      "output": "Service identified",
+      "tips": [
+        "Ports work with TCP and UDP."
+      ]
+    },
+    {
+      "topic": "TCP vs UDP",
+      "definition": "TCP provides reliable communication, while UDP provides faster communication without guaranteed delivery.",
+      "syntax": "TCP / UDP",
+      "example": "TCP for web, UDP for streaming",
+      "output": "Protocol selected",
+      "tips": [
+        "Choose based on application requirements."
+      ]
+    },
+    {
+      "topic": "DNS",
+      "definition": "Domain Name System (DNS) translates domain names into IP addresses.",
+      "syntax": "Domain \u2192 IP",
+      "example": "example.com",
+      "output": "IP resolved",
+      "tips": [
+        "DNS acts like the Internet's phonebook."
+      ]
+    },
+    {
+      "topic": "DHCP",
+      "definition": "Dynamic Host Configuration Protocol automatically assigns IP addresses to devices.",
+      "syntax": "Request \u2192 Assign",
+      "example": "Wi-Fi router assigns IP",
+      "output": "IP assigned",
+      "tips": [
+        "Reduces manual configuration."
+      ]
+    },
+    {
+      "topic": "NAT",
+      "definition": "Network Address Translation allows multiple devices to share one public IP address.",
+      "syntax": "Private IP \u2194 Public IP",
+      "example": "Home router",
+      "output": "Address translated",
+      "tips": [
+        "Improves IPv4 address usage and security."
+      ]
+    },
+    {
+      "topic": "TCP/IP Best Practices",
+      "definition": "Use secure protocols, proper IP planning and monitor network performance.",
+      "syntax": "Plan \u2192 Secure \u2192 Monitor",
+      "example": "Use HTTPS instead of HTTP",
+      "output": "Reliable network",
+      "tips": [
+        "Keep network devices updated.",
+        "Use strong security settings."
+      ]
+    }
+  ]
+}

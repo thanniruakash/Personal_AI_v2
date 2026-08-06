@@ -1,0 +1,87 @@
+{
+  "subject": "Computer Networks",
+  "section": "Network Security",
+  "topics": [
+    {
+      "topic": "Network Security",
+      "definition": "Network security protects networks, devices and data from unauthorized access and attacks.",
+      "syntax": "Protect \u2192 Detect \u2192 Respond",
+      "example": "Secure office network",
+      "output": "Protected network",
+      "tips": [
+        "Use multiple layers of security."
+      ]
+    },
+    {
+      "topic": "Firewall",
+      "definition": "A firewall monitors and filters incoming and outgoing network traffic.",
+      "syntax": "Allow / Deny Rules",
+      "example": "Block unauthorized connections",
+      "output": "Traffic filtered",
+      "tips": [
+        "Configure firewall rules carefully."
+      ]
+    },
+    {
+      "topic": "Encryption",
+      "definition": "Encryption converts readable data into an unreadable form using cryptographic algorithms.",
+      "syntax": "Plaintext \u2192 Ciphertext",
+      "example": "HTTPS",
+      "output": "Encrypted data",
+      "tips": [
+        "Use strong encryption algorithms."
+      ]
+    },
+    {
+      "topic": "Authentication and Authorization",
+      "definition": "Authentication verifies identity while authorization determines permissions.",
+      "syntax": "Login \u2192 Access",
+      "example": "Username and password",
+      "output": "Access controlled",
+      "tips": [
+        "Enable multi-factor authentication when possible."
+      ]
+    },
+    {
+      "topic": "Malware and Viruses",
+      "definition": "Malware includes harmful software such as viruses, worms, trojans and ransomware.",
+      "syntax": "Detect \u2192 Remove",
+      "example": "Antivirus scan",
+      "output": "Threat detected",
+      "tips": [
+        "Keep antivirus software updated."
+      ]
+    },
+    {
+      "topic": "Phishing",
+      "definition": "Phishing is a social engineering attack that tricks users into revealing sensitive information.",
+      "syntax": "Fake Email \u2192 Victim",
+      "example": "Fraudulent banking email",
+      "output": "Attack identified",
+      "tips": [
+        "Verify links before clicking."
+      ]
+    },
+    {
+      "topic": "VPN",
+      "definition": "A Virtual Private Network (VPN) encrypts Internet traffic and provides secure remote access.",
+      "syntax": "Device \u2194 VPN \u2194 Internet",
+      "example": "Remote employee access",
+      "output": "Secure connection",
+      "tips": [
+        "Use trusted VPN services."
+      ]
+    },
+    {
+      "topic": "Network Security Best Practices",
+      "definition": "Use strong passwords, regular updates, backups and continuous monitoring to secure networks.",
+      "syntax": "Secure \u2192 Monitor \u2192 Update",
+      "example": "Apply security patches",
+      "output": "Reliable security",
+      "tips": [
+        "Train users about cyber threats.",
+        "Review security logs regularly."
+      ]
+    }
+  ]
+}

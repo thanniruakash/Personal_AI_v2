@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Networks",
+  "section": "Advanced Networks",
+  "topics": [
+    {
+      "topic": "Cloud Networking",
+      "definition": "Cloud networking connects and manages network resources in cloud environments.",
+      "syntax": "Public / Private / Hybrid Cloud",
+      "example": "AWS VPC",
+      "output": "Cloud network configured",
+      "tips": [
+        "Design for scalability and security."
+      ]
+    },
+    {
+      "topic": "Software Defined Networking (SDN)",
+      "definition": "SDN separates the control plane from the data plane for centralized network management.",
+      "syntax": "Controller \u2192 Switches",
+      "example": "OpenFlow",
+      "output": "Network centrally managed",
+      "tips": [
+        "Simplifies network automation."
+      ]
+    },
+    {
+      "topic": "Virtual Private Network (VPN)",
+      "definition": "A VPN creates an encrypted tunnel for secure communication over public networks.",
+      "syntax": "Client \u2194 VPN \u2194 Server",
+      "example": "Remote employee access",
+      "output": "Secure tunnel established",
+      "tips": [
+        "Use strong encryption and authentication."
+      ]
+    },
+    {
+      "topic": "Load Balancing",
+      "definition": "Load balancing distributes traffic across multiple servers to improve performance and availability.",
+      "syntax": "Client \u2192 Load Balancer \u2192 Servers",
+      "example": "Web application cluster",
+      "output": "Traffic balanced",
+      "tips": [
+        "Prevents server overload."
+      ]
+    },
+    {
+      "topic": "Content Delivery Network (CDN)",
+      "definition": "A CDN delivers content from servers located closer to users.",
+      "syntax": "User \u2192 Edge Server",
+      "example": "Video streaming",
+      "output": "Content delivered faster",
+      "tips": [
+        "Reduces latency and bandwidth usage."
+      ]
+    },
+    {
+      "topic": "IoT Networking",
+      "definition": "IoT networking connects smart devices for communication and automation.",
+      "syntax": "Sensor \u2194 Gateway \u2194 Cloud",
+      "example": "Smart home devices",
+      "output": "Devices connected",
+      "tips": [
+        "Secure IoT devices and update firmware regularly."
+      ]
+    },
+    {
+      "topic": "Network Virtualization",
+      "definition": "Network virtualization creates logical networks independent of physical hardware.",
+      "syntax": "Virtual Networks",
+      "example": "VLANs",
+      "output": "Virtual network created",
+      "tips": [
+        "Improves flexibility and resource utilization."
+      ]
+    },
+    {
+      "topic": "Advanced Networking Best Practices",
+      "definition": "Build reliable, secure and scalable networks using monitoring, redundancy and automation.",
+      "syntax": "Plan \u2192 Secure \u2192 Monitor",
+      "example": "Redundant links and regular audits",
+      "output": "Optimized network",
+      "tips": [
+        "Monitor performance continuously.",
+        "Document network changes.",
+        "Back up configurations."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "subject": "Computer Networks",
+  "section": "Network Basics",
+  "topics": [
+    {
+      "topic": "What is a Computer Network?",
+      "definition": "A computer network is a collection of interconnected devices that communicate and share resources.",
+      "syntax": "Device \u2194 Network \u2194 Device",
+      "example": "School computer lab",
+      "output": "Devices connected",
+      "tips": [
+        "Networks enable communication and resource sharing."
+      ]
+    },
+    {
+      "topic": "History of Computer Networks",
+      "definition": "Computer networks evolved from small local systems to the global Internet.",
+      "syntax": "Concept",
+      "example": "ARPANET",
+      "output": "Network evolution",
+      "tips": [
+        "The Internet is the world's largest network."
+      ]
+    },
+    {
+      "topic": "Types of Networks",
+      "definition": "Common types are PAN, LAN, MAN and WAN.",
+      "syntax": "PAN / LAN / MAN / WAN",
+      "example": "Wi-Fi at home is a LAN",
+      "output": "Network type identified",
+      "tips": [
+        "Choose the type based on coverage area."
+      ]
+    },
+    {
+      "topic": "Network Topologies",
+      "definition": "Topology describes how devices are connected.",
+      "syntax": "Bus, Star, Ring, Mesh, Tree",
+      "example": "Star topology",
+      "output": "Topology identified",
+      "tips": [
+        "Star topology is widely used."
+      ]
+    },
+    {
+      "topic": "Network Devices",
+      "definition": "Devices such as routers, switches, hubs, bridges and modems enable communication.",
+      "syntax": "Router, Switch, Hub",
+      "example": "Wi-Fi router",
+      "output": "Network device recognized",
+      "tips": [
+        "Each device has a specific function."
+      ]
+    },
+    {
+      "topic": "Transmission Media",
+      "definition": "Data is transmitted using wired or wireless media.",
+      "syntax": "Twisted Pair, Fiber, Wi-Fi",
+      "example": "Optical fiber",
+      "output": "Transmission medium selected",
+      "tips": [
+        "Fiber provides high speed and long distance."
+      ]
+    },
+    {
+      "topic": "Network Performance",
+      "definition": "Performance is measured using bandwidth, latency, throughput and packet loss.",
+      "syntax": "Bandwidth / Latency",
+      "example": "100 Mbps connection",
+      "output": "Performance measured",
+      "tips": [
+        "Lower latency improves responsiveness."
+      ]
+    },
+    {
+      "topic": "Applications of Networks",
+      "definition": "Networks support communication, file sharing, cloud computing and online services.",
+      "syntax": "Concept",
+      "example": "Email and video conferencing",
+      "output": "Application identified",
+      "tips": [
+        "Networks are essential in modern computing."
+      ]
+    },
+    {
+      "topic": "Network Best Practices",
+      "definition": "Secure, monitor and maintain networks for reliable operation.",
+      "syntax": "Monitor \u2192 Secure \u2192 Update",
+      "example": "Use strong Wi-Fi passwords",
+      "output": "Reliable network",
+      "tips": [
+        "Keep network devices updated.",
+        "Use encryption whenever possible."
+      ]
+    }
+  ]
+}

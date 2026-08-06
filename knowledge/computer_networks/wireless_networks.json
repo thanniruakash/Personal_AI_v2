@@ -1,0 +1,88 @@
+{
+  "subject": "Computer Networks",
+  "section": "Wireless Networks",
+  "topics": [
+    {
+      "topic": "Wireless Networks",
+      "definition": "Wireless networks connect devices using radio waves instead of cables.",
+      "syntax": "Wi-Fi / Bluetooth / Cellular",
+      "example": "Home Wi-Fi",
+      "output": "Wireless connection established",
+      "tips": [
+        "Provides mobility and flexibility."
+      ]
+    },
+    {
+      "topic": "Wi-Fi Standards (IEEE 802.11)",
+      "definition": "Wi-Fi standards define wireless communication technologies.",
+      "syntax": "802.11n / ac / ax",
+      "example": "Wi-Fi 6 (802.11ax)",
+      "output": "Wireless communication",
+      "tips": [
+        "Newer standards offer higher speed and efficiency."
+      ]
+    },
+    {
+      "topic": "Bluetooth",
+      "definition": "Bluetooth enables short-range wireless communication between devices.",
+      "syntax": "Bluetooth Pairing",
+      "example": "Wireless earbuds",
+      "output": "Devices connected",
+      "tips": [
+        "Low power consumption for nearby devices."
+      ]
+    },
+    {
+      "topic": "NFC",
+      "definition": "Near Field Communication (NFC) enables very short-range wireless data exchange.",
+      "syntax": "Tap to Connect",
+      "example": "Contactless payments",
+      "output": "Data exchanged",
+      "tips": [
+        "Works only over a few centimeters."
+      ]
+    },
+    {
+      "topic": "Mobile Networks",
+      "definition": "Cellular networks provide wireless communication over large areas.",
+      "syntax": "3G / 4G / 5G",
+      "example": "Mobile Internet",
+      "output": "Cellular connection",
+      "tips": [
+        "5G offers higher speed and lower latency."
+      ]
+    },
+    {
+      "topic": "Access Points",
+      "definition": "An access point allows wireless devices to connect to a wired network.",
+      "syntax": "AP",
+      "example": "Office Wi-Fi access point",
+      "output": "Network access provided",
+      "tips": [
+        "Place access points to maximize coverage."
+      ]
+    },
+    {
+      "topic": "Wireless Security",
+      "definition": "Wireless security protects Wi-Fi networks using encryption and authentication.",
+      "syntax": "WPA2 / WPA3",
+      "example": "Secure home Wi-Fi",
+      "output": "Protected wireless network",
+      "tips": [
+        "Use WPA3 when available and strong passwords."
+      ]
+    },
+    {
+      "topic": "Wireless Networking Best Practices",
+      "definition": "Maintain secure, reliable and efficient wireless networks.",
+      "syntax": "Secure \u2192 Monitor \u2192 Optimize",
+      "example": "Change default router password",
+      "output": "Optimized wireless network",
+      "tips": [
+        "Update router firmware.",
+        "Use strong Wi-Fi passwords.",
+        "Choose less congested channels."
+      ]
+    }
+  ]
+}

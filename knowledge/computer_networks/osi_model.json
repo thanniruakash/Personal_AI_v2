@@ -1,0 +1,106 @@
+{
+  "subject": "Computer Networks",
+  "section": "OSI Model",
+  "topics": [
+    {
+      "topic": "Introduction to the OSI Model",
+      "definition": "The OSI model is a seven-layer framework that standardizes network communication.",
+      "syntax": "7 Layers",
+      "example": "Sending data over the Internet",
+      "output": "Layered communication",
+      "tips": [
+        "Each layer has a specific responsibility."
+      ]
+    },
+    {
+      "topic": "Physical Layer",
+      "definition": "Transfers raw bits through physical media.",
+      "syntax": "Bits",
+      "example": "Ethernet cable, Fiber optic",
+      "output": "Bits transmitted",
+      "tips": [
+        "Deals with cables and signals."
+      ]
+    },
+    {
+      "topic": "Data Link Layer",
+      "definition": "Provides node-to-node communication and error detection.",
+      "syntax": "Frames",
+      "example": "MAC Address",
+      "output": "Frame delivered",
+      "tips": [
+        "Switches operate at this layer."
+      ]
+    },
+    {
+      "topic": "Network Layer",
+      "definition": "Routes packets between different networks.",
+      "syntax": "Packets",
+      "example": "IP Address",
+      "output": "Packet routed",
+      "tips": [
+        "Routers operate at this layer."
+      ]
+    },
+    {
+      "topic": "Transport Layer",
+      "definition": "Ensures reliable or fast end-to-end data delivery.",
+      "syntax": "TCP / UDP",
+      "example": "TCP connection",
+      "output": "Segments delivered",
+      "tips": [
+        "TCP is reliable; UDP is faster."
+      ]
+    },
+    {
+      "topic": "Session Layer",
+      "definition": "Establishes, manages and terminates communication sessions.",
+      "syntax": "Session Control",
+      "example": "Video conference session",
+      "output": "Session managed",
+      "tips": [
+        "Keeps communication synchronized."
+      ]
+    },
+    {
+      "topic": "Presentation Layer",
+      "definition": "Translates, encrypts and compresses data.",
+      "syntax": "Encryption / Compression",
+      "example": "SSL/TLS encryption",
+      "output": "Formatted data",
+      "tips": [
+        "Handles data representation."
+      ]
+    },
+    {
+      "topic": "Application Layer",
+      "definition": "Provides network services directly to user applications.",
+      "syntax": "HTTP, FTP, SMTP, DNS",
+      "example": "Web browser",
+      "output": "Application service",
+      "tips": [
+        "Closest layer to the user."
+      ]
+    },
+    {
+      "topic": "Encapsulation and Decapsulation",
+      "definition": "Data is wrapped with headers while sending and unwrapped while receiving.",
+      "syntax": "Data \u2192 Segment \u2192 Packet \u2192 Frame \u2192 Bits",
+      "example": "Web request",
+      "output": "Data transferred",
+      "tips": [
+        "Each layer adds or removes headers."
+      ]
+    },
+    {
+      "topic": "OSI Model Best Practices",
+      "definition": "Understand each layer's role to troubleshoot and design networks effectively.",
+      "syntax": "Analyze layer by layer",
+      "example": "Network troubleshooting",
+      "output": "Efficient diagnosis",
+      "tips": [
+        "Remember the layers in order."
+      ]
+    }
+  ]
+}

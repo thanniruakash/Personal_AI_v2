@@ -1,0 +1,87 @@
+{
+  "subject": "Computer Networks",
+  "section": "Routing and Switching",
+  "topics": [
+    {
+      "topic": "Routing",
+      "definition": "Routing is the process of forwarding packets between different networks.",
+      "syntax": "Source \u2192 Router \u2192 Destination",
+      "example": "Internet packet routing",
+      "output": "Packet delivered",
+      "tips": [
+        "Routers choose the best path."
+      ]
+    },
+    {
+      "topic": "Switching",
+      "definition": "Switching transfers data between devices within the same local network.",
+      "syntax": "MAC Address Switching",
+      "example": "Office LAN",
+      "output": "Frame forwarded",
+      "tips": [
+        "Switches reduce unnecessary traffic."
+      ]
+    },
+    {
+      "topic": "Routing Tables",
+      "definition": "A routing table stores network paths used by routers.",
+      "syntax": "Destination | Gateway | Interface",
+      "example": "Default route",
+      "output": "Route selected",
+      "tips": [
+        "Routing tables are updated automatically or manually."
+      ]
+    },
+    {
+      "topic": "Static Routing",
+      "definition": "Static routing uses manually configured routes.",
+      "syntax": "Manual Route",
+      "example": "Small office network",
+      "output": "Static path used",
+      "tips": [
+        "Simple but difficult to maintain in large networks."
+      ]
+    },
+    {
+      "topic": "Dynamic Routing",
+      "definition": "Dynamic routing automatically updates routes using routing protocols.",
+      "syntax": "RIP, OSPF, EIGRP, BGP",
+      "example": "Enterprise network",
+      "output": "Best route selected",
+      "tips": [
+        "Suitable for large and changing networks."
+      ]
+    },
+    {
+      "topic": "Bridges",
+      "definition": "A bridge connects two LAN segments and filters traffic using MAC addresses.",
+      "syntax": "Bridge",
+      "example": "Connecting two Ethernet segments",
+      "output": "Traffic filtered",
+      "tips": [
+        "Bridges operate at the Data Link layer."
+      ]
+    },
+    {
+      "topic": "Routers vs Switches",
+      "definition": "Routers connect different networks using IP addresses, while switches connect devices within the same network using MAC addresses.",
+      "syntax": "Router \u2194 Switch",
+      "example": "Home router and office switch",
+      "output": "Devices compared",
+      "tips": [
+        "Routers work at Layer 3, switches mainly at Layer 2."
+      ]
+    },
+    {
+      "topic": "Routing and Switching Best Practices",
+      "definition": "Use efficient routing protocols, secure network devices and monitor network traffic.",
+      "syntax": "Plan \u2192 Configure \u2192 Monitor",
+      "example": "Enable secure router access",
+      "output": "Reliable network",
+      "tips": [
+        "Back up configurations.",
+        "Update firmware regularly."
+      ]
+    }
+  ]
+}

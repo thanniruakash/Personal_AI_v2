@@ -1,0 +1,87 @@
+{
+  "subject": "Computer Networks",
+  "section": "Network Protocols",
+  "topics": [
+    {
+      "topic": "HTTP and HTTPS",
+      "definition": "HTTP transfers web pages while HTTPS adds SSL/TLS encryption for secure communication.",
+      "syntax": "http:// , https://",
+      "example": "Secure website login",
+      "output": "Web page delivered",
+      "tips": [
+        "Always prefer HTTPS."
+      ]
+    },
+    {
+      "topic": "SMTP",
+      "definition": "Simple Mail Transfer Protocol (SMTP) sends email between mail servers.",
+      "syntax": "SMTP",
+      "example": "Sending an email",
+      "output": "Email sent",
+      "tips": [
+        "Used only for sending mail."
+      ]
+    },
+    {
+      "topic": "POP3 and IMAP",
+      "definition": "POP3 downloads emails to a device, while IMAP synchronizes emails across multiple devices.",
+      "syntax": "POP3 / IMAP",
+      "example": "Email client",
+      "output": "Email received",
+      "tips": [
+        "IMAP is better for multiple devices."
+      ]
+    },
+    {
+      "topic": "FTP and SFTP",
+      "definition": "FTP transfers files, while SFTP transfers files securely over SSH.",
+      "syntax": "FTP / SFTP",
+      "example": "Upload website files",
+      "output": "File transferred",
+      "tips": [
+        "Use SFTP for security."
+      ]
+    },
+    {
+      "topic": "SSH",
+      "definition": "Secure Shell (SSH) provides encrypted remote access to computers.",
+      "syntax": "ssh user@host",
+      "example": "Remote Linux login",
+      "output": "Secure connection",
+      "tips": [
+        "Use key-based authentication when possible."
+      ]
+    },
+    {
+      "topic": "NTP",
+      "definition": "Network Time Protocol synchronizes clocks across network devices.",
+      "syntax": "NTP",
+      "example": "Server time synchronization",
+      "output": "Time synchronized",
+      "tips": [
+        "Accurate time is important for logs and security."
+      ]
+    },
+    {
+      "topic": "SNMP",
+      "definition": "Simple Network Management Protocol monitors and manages network devices.",
+      "syntax": "SNMP",
+      "example": "Router monitoring",
+      "output": "Device status collected",
+      "tips": [
+        "Useful for network administration."
+      ]
+    },
+    {
+      "topic": "Network Protocol Best Practices",
+      "definition": "Use secure protocols, keep services updated and disable unused protocols.",
+      "syntax": "Secure \u2192 Monitor \u2192 Update",
+      "example": "Use HTTPS and SSH",
+      "output": "Reliable communication",
+      "tips": [
+        "Monitor traffic regularly.",
+        "Use encryption whenever possible."
+      ]
+    }
+  ]
+}
