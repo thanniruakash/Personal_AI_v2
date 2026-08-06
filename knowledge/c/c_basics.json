@@ -1,0 +1,108 @@
+{
+  "subject": "C Programming",
+  "section": "Basics",
+  "topics": [
+    {
+      "topic": "What is C?",
+      "definition": "C is a general-purpose, procedural programming language developed for system and application programming.",
+      "syntax": "#include <stdio.h>",
+      "example": "#include <stdio.h>\nint main(){\n    printf(\"Hello\");\n    return 0;\n}",
+      "output": "Hello",
+      "tips": [
+        "C is fast and efficient.",
+        "Widely used for operating systems and embedded systems."
+      ]
+    },
+    {
+      "topic": "Features of C",
+      "definition": "C is simple, portable, efficient, structured and supports low-level programming.",
+      "syntax": "N/A",
+      "example": "Portable C program",
+      "output": "Runs on multiple platforms",
+      "tips": [
+        "Supports pointers.",
+        "Provides direct memory access."
+      ]
+    },
+    {
+      "topic": "History of C",
+      "definition": "C was developed by Dennis Ritchie at Bell Labs in 1972.",
+      "syntax": "N/A",
+      "example": "Creator: Dennis Ritchie",
+      "output": "1972",
+      "tips": [
+        "C influenced many modern languages."
+      ]
+    },
+    {
+      "topic": "Structure of a C Program",
+      "definition": "A C program typically contains header files, the main function and statements.",
+      "syntax": "int main(){ return 0; }",
+      "example": "#include <stdio.h>\nint main(){\n printf(\"Hi\");\n return 0;\n}",
+      "output": "Hi",
+      "tips": [
+        "Execution starts from main()."
+      ]
+    },
+    {
+      "topic": "Variables",
+      "definition": "Variables are named memory locations used to store data.",
+      "syntax": "int age = 18;",
+      "example": "char grade = 'A';",
+      "output": "A",
+      "tips": [
+        "Declare variables before using them."
+      ]
+    },
+    {
+      "topic": "Data Types",
+      "definition": "Common data types are int, char, float, double and void.",
+      "syntax": "float price = 99.5;",
+      "example": "int marks = 90;",
+      "output": "90",
+      "tips": [
+        "Choose the appropriate data type."
+      ]
+    },
+    {
+      "topic": "Constants",
+      "definition": "Constants are fixed values that cannot be changed during execution.",
+      "syntax": "#define PI 3.14",
+      "example": "const int MAX = 100;",
+      "output": "100",
+      "tips": [
+        "Use const for fixed values."
+      ]
+    },
+    {
+      "topic": "Operators",
+      "definition": "Operators perform arithmetic, relational, logical and other operations.",
+      "syntax": "a + b",
+      "example": "10 > 5",
+      "output": "1",
+      "tips": [
+        "Learn operator precedence."
+      ]
+    },
+    {
+      "topic": "Input and Output",
+      "definition": "printf() displays output and scanf() reads input.",
+      "syntax": "printf(\"Hello\"); scanf(\"%d\",&x);",
+      "example": "printf(\"Age = %d\", age);",
+      "output": "Age = 18",
+      "tips": [
+        "Use '&' with scanf() for variables."
+      ]
+    },
+    {
+      "topic": "Comments",
+      "definition": "Comments explain code and are ignored by the compiler.",
+      "syntax": "// comment\n/* comment */",
+      "example": "// Print result",
+      "output": "No output",
+      "tips": [
+        "Keep comments meaningful."
+      ]
+    }
+  ]
+}

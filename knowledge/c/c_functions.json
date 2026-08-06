@@ -1,0 +1,86 @@
+{
+  "subject": "C Programming",
+  "section": "Functions",
+  "topics": [
+    {
+      "topic": "Functions",
+      "definition": "A function is a block of code that performs a specific task.",
+      "syntax": "return_type function_name(parameters);",
+      "example": "int add(int a,int b){ return a+b; }",
+      "output": "Returns result",
+      "tips": [
+        "Functions reduce code duplication."
+      ]
+    },
+    {
+      "topic": "Function Declaration",
+      "definition": "A function declaration tells the compiler about the function before it is used.",
+      "syntax": "int add(int, int);",
+      "example": "float area(float);",
+      "output": "Function prototype declared",
+      "tips": [
+        "Also called a function prototype."
+      ]
+    },
+    {
+      "topic": "Function Definition",
+      "definition": "A function definition contains the actual implementation.",
+      "syntax": "int add(int a,int b){ return a+b; }",
+      "example": "int square(int n){ return n*n; }",
+      "output": "Function created",
+      "tips": [
+        "Each function should perform one task."
+      ]
+    },
+    {
+      "topic": "Function Call",
+      "definition": "A function call executes a function.",
+      "syntax": "add(5,3);",
+      "example": "printf(\"%d\", add(5,3));",
+      "output": "8",
+      "tips": [
+        "Arguments must match parameters."
+      ]
+    },
+    {
+      "topic": "Parameters and Arguments",
+      "definition": "Parameters receive values while arguments are the actual values passed.",
+      "syntax": "int add(int a,int b)",
+      "example": "add(10,20);",
+      "output": "30",
+      "tips": [
+        "Parameter types should match argument types."
+      ]
+    },
+    {
+      "topic": "Return Statement",
+      "definition": "The return statement sends a value back to the calling function.",
+      "syntax": "return value;",
+      "example": "return sum;",
+      "output": "Returned value",
+      "tips": [
+        "void functions do not return a value."
+      ]
+    },
+    {
+      "topic": "Recursion",
+      "definition": "Recursion is when a function calls itself.",
+      "syntax": "factorial(n-1);",
+      "example": "Factorial using recursion",
+      "output": "Recursive result",
+      "tips": [
+        "Always include a base condition."
+      ]
+    },
+    {
+      "topic": "Storage Classes",
+      "definition": "Storage classes define scope, lifetime and visibility of variables.",
+      "syntax": "auto, static, extern, register",
+      "example": "static int count = 0;",
+      "output": "Variable behavior changes",
+      "tips": [
+        "Understand static and extern well for exams."
+      ]
+    }
+  ]
+}

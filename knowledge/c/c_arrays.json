@@ -1,0 +1,86 @@
+{
+  "subject": "C Programming",
+  "section": "Arrays",
+  "topics": [
+    {
+      "topic": "One-Dimensional Array",
+      "definition": "A one-dimensional array stores elements of the same type in a single row.",
+      "syntax": "int arr[5];",
+      "example": "int arr[5]={1,2,3,4,5};",
+      "output": "1 2 3 4 5",
+      "tips": [
+        "Index starts from 0."
+      ]
+    },
+    {
+      "topic": "Two-Dimensional Array",
+      "definition": "A two-dimensional array stores data in rows and columns.",
+      "syntax": "int arr[2][3];",
+      "example": "int arr[2][2]={{1,2},{3,4}};",
+      "output": "Matrix created",
+      "tips": [
+        "Useful for matrices."
+      ]
+    },
+    {
+      "topic": "Character Array (String)",
+      "definition": "A character array stores a sequence of characters ending with '\\0'.",
+      "syntax": "char name[20];",
+      "example": "char name[]=\"Akash\";",
+      "output": "Akash",
+      "tips": [
+        "Strings end with the null character."
+      ]
+    },
+    {
+      "topic": "Array Input",
+      "definition": "scanf() is used to read array elements.",
+      "syntax": "scanf(\"%d\", &arr[i]);",
+      "example": "for(i=0;i<n;i++) scanf(\"%d\",&arr[i]);",
+      "output": "Array elements stored",
+      "tips": [
+        "Use loops for input."
+      ]
+    },
+    {
+      "topic": "Array Output",
+      "definition": "printf() is used with loops to display array elements.",
+      "syntax": "printf(\"%d\", arr[i]);",
+      "example": "for(i=0;i<n;i++) printf(\"%d \",arr[i]);",
+      "output": "Displays all elements",
+      "tips": [
+        "Loop through all indices."
+      ]
+    },
+    {
+      "topic": "Searching in Arrays",
+      "definition": "Searching finds the position of an element in an array.",
+      "syntax": "Linear Search",
+      "example": "Check each element one by one.",
+      "output": "Element found or not found",
+      "tips": [
+        "Linear search works on unsorted arrays."
+      ]
+    },
+    {
+      "topic": "Sorting Arrays",
+      "definition": "Sorting arranges elements in ascending or descending order.",
+      "syntax": "Bubble Sort",
+      "example": "Swap adjacent elements if needed.",
+      "output": "Sorted array",
+      "tips": [
+        "Bubble sort is easy to understand."
+      ]
+    },
+    {
+      "topic": "Common Array Programs",
+      "definition": "Basic array programs include sum, average, maximum, minimum and reverse.",
+      "syntax": "Use loops",
+      "example": "Find largest element in an array.",
+      "output": "Largest value displayed",
+      "tips": [
+        "Practice frequently asked programs."
+      ]
+    }
+  ]
+}

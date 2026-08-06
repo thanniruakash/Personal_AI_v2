@@ -1,0 +1,107 @@
+{
+  "subject": "C Programming",
+  "section": "Advanced Topics",
+  "topics": [
+    {
+      "topic": "Preprocessor Directives",
+      "definition": "Preprocessor directives are processed before compilation.",
+      "syntax": "#include <stdio.h>\n#define PI 3.14",
+      "example": "#define MAX 100",
+      "output": "Macro created",
+      "tips": [
+        "Start every directive with #."
+      ]
+    },
+    {
+      "topic": "Header Files",
+      "definition": "Header files contain function declarations and macros.",
+      "syntax": "#include <math.h>",
+      "example": "#include <string.h>",
+      "output": "Library included",
+      "tips": [
+        "Use standard headers whenever possible."
+      ]
+    },
+    {
+      "topic": "Command Line Arguments",
+      "definition": "Arguments passed to a program from the command line.",
+      "syntax": "int main(int argc, char *argv[])",
+      "example": "./program input.txt",
+      "output": "Arguments received",
+      "tips": [
+        "argc stores the count, argv stores the values."
+      ]
+    },
+    {
+      "topic": "Structures",
+      "definition": "Structures group variables of different data types.",
+      "syntax": "struct Student { int id; char name[20]; };",
+      "example": "struct Student s;",
+      "output": "Structure created",
+      "tips": [
+        "Access members using the dot operator."
+      ]
+    },
+    {
+      "topic": "Unions",
+      "definition": "A union stores different data types in the same memory location.",
+      "syntax": "union Data { int i; float f; };",
+      "example": "union Data d;",
+      "output": "Union created",
+      "tips": [
+        "Only one member holds a valid value at a time."
+      ]
+    },
+    {
+      "topic": "Enumeration (enum)",
+      "definition": "An enum defines a set of named integer constants.",
+      "syntax": "enum Day {MON,TUE,WED};",
+      "example": "enum Day today = MON;",
+      "output": "Enumeration value stored",
+      "tips": [
+        "Improves readability."
+      ]
+    },
+    {
+      "topic": "typedef",
+      "definition": "typedef creates an alias for an existing data type.",
+      "syntax": "typedef unsigned int uint;",
+      "example": "uint age = 20;",
+      "output": "Alias used",
+      "tips": [
+        "Useful for complex declarations."
+      ]
+    },
+    {
+      "topic": "Bit Fields",
+      "definition": "Bit fields allow efficient memory usage by allocating specific bits.",
+      "syntax": "struct Flags { unsigned int a:1; };",
+      "example": "struct Flags f;",
+      "output": "Bit field created",
+      "tips": [
+        "Useful in embedded systems."
+      ]
+    },
+    {
+      "topic": "Macros",
+      "definition": "Macros replace code or constants before compilation.",
+      "syntax": "#define SQUARE(x) ((x)*(x))",
+      "example": "SQUARE(5)",
+      "output": "25",
+      "tips": [
+        "Wrap macro parameters in parentheses."
+      ]
+    },
+    {
+      "topic": "C Best Practices",
+      "definition": "Guidelines for writing clean, safe and maintainable C programs.",
+      "syntax": "Meaningful names and proper indentation",
+      "example": "Check return values from functions.",
+      "output": "Readable code",
+      "tips": [
+        "Initialize variables.",
+        "Free dynamically allocated memory."
+      ]
+    }
+  ]
+}

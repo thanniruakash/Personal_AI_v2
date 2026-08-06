@@ -1,0 +1,86 @@
+{
+  "subject": "C Programming",
+  "section": "File Handling",
+  "topics": [
+    {
+      "topic": "Introduction to File Handling",
+      "definition": "File handling allows programs to create, read, write and update files.",
+      "syntax": "FILE *fp;",
+      "example": "FILE *fp=fopen(\"data.txt\",\"r\");",
+      "output": "File opened",
+      "tips": [
+        "Always check if the file opened successfully."
+      ]
+    },
+    {
+      "topic": "Opening Files",
+      "definition": "fopen() opens a file in a specified mode.",
+      "syntax": "fp=fopen(\"file.txt\",\"r\");",
+      "example": "FILE *fp=fopen(\"marks.txt\",\"w\");",
+      "output": "File opened",
+      "tips": [
+        "Returns NULL if opening fails."
+      ]
+    },
+    {
+      "topic": "Reading Files",
+      "definition": "Use fscanf(), fgets() or fgetc() to read data.",
+      "syntax": "fgets(str,100,fp);",
+      "example": "fscanf(fp,\"%d\",&x);",
+      "output": "Data read",
+      "tips": [
+        "Check for end of file."
+      ]
+    },
+    {
+      "topic": "Writing Files",
+      "definition": "Use fprintf(), fputs() or fputc() to write data.",
+      "syntax": "fprintf(fp,\"Hello\");",
+      "example": "fprintf(fp,\"%d\",100);",
+      "output": "Data written",
+      "tips": [
+        "Open file in write or append mode."
+      ]
+    },
+    {
+      "topic": "Appending Files",
+      "definition": "Append mode adds data without removing existing content.",
+      "syntax": "fp=fopen(\"file.txt\",\"a\");",
+      "example": "fprintf(fp,\"New Line\");",
+      "output": "Content appended",
+      "tips": [
+        "Use append for logs."
+      ]
+    },
+    {
+      "topic": "Closing Files",
+      "definition": "fclose() closes an opened file.",
+      "syntax": "fclose(fp);",
+      "example": "fclose(fp);",
+      "output": "File closed",
+      "tips": [
+        "Always close files to free resources."
+      ]
+    },
+    {
+      "topic": "File Modes",
+      "definition": "Common modes are r, w, a, r+, w+ and a+.",
+      "syntax": "fopen(\"a.txt\",\"r+\");",
+      "example": "Mode 'w' creates or overwrites a file.",
+      "output": "File opened in selected mode",
+      "tips": [
+        "Choose the correct mode for the operation."
+      ]
+    },
+    {
+      "topic": "Common File Programs",
+      "definition": "Typical programs read, write, copy and count characters in files.",
+      "syntax": "Use stdio.h functions",
+      "example": "Copy one file to another.",
+      "output": "Required operation completed",
+      "tips": [
+        "Practice exam-oriented file programs."
+      ]
+    }
+  ]
+}
