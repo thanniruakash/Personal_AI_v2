@@ -1,0 +1,74 @@
+{
+  "intents": [
+    {
+      "tag": "html_intro",
+      "patterns": [
+        "html",
+        "what is html",
+        "explain html",
+        "html language",
+        "define html",
+        "about html",
+        "hypertext markup language"
+      ],
+      "responses": [
+        "HTML (HyperText Markup Language) is the standard language used to create the structure of web pages."
+      ]
+    },
+    {
+      "tag": "css_intro",
+      "patterns": [
+        "css",
+        "what is css",
+        "explain css",
+        "css language",
+        "define css",
+        "about css",
+        "cascading style sheets"
+      ],
+      "responses": [
+        "CSS (Cascading Style Sheets) is used to style and design HTML web pages."
+      ]
+    },
+    {
+      "tag": "javascript_intro",
+      "patterns": [
+        "javascript",
+        "what is javascript",
+        "explain javascript",
+        "js",
+        "define javascript",
+        "about javascript"
+      ],
+      "responses": [
+        "JavaScript is a scripting language used to add interactivity and dynamic behavior to websites."
+      ]
+    },
+    {
+      "tag": "html_tags",
+      "patterns": [
+        "html tags",
+        "important html tags",
+        "basic html tags",
+        "list html tags",
+        "html elements"
+      ],
+      "responses": [
+        "Common HTML tags include <html>, <head>, <title>, <body>, <h1>, <p>, <a>, <img>, <table> and <form>."
+      ]
+    },
+    {
+      "tag": "css_selectors",
+      "patterns": [
+        "css selectors",
+        "types of css selectors",
+        "class selector",
+        "id selector",
+        "element selector"
+      ],
+      "responses": [
+        "CSS selectors are used to target HTML elements. Common selectors are element, class, ID, universal and attribute selectors."
+      ]
+    }
+  ]
+}

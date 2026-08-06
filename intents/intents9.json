@@ -1,0 +1,88 @@
+{
+  "intents": [
+    {
+      "tag": "ai_intro",
+      "patterns": [
+        "artificial intelligence",
+        "what is ai",
+        "explain ai",
+        "define ai",
+        "about artificial intelligence"
+      ],
+      "responses": [
+        "Artificial Intelligence (AI) enables computers to perform tasks that normally require human intelligence."
+      ]
+    },
+    {
+      "tag": "ml_intro",
+      "patterns": [
+        "machine learning",
+        "what is machine learning",
+        "explain machine learning",
+        "ml"
+      ],
+      "responses": [
+        "Machine Learning is a branch of AI where computers learn patterns from data without being explicitly programmed for every task."
+      ]
+    },
+    {
+      "tag": "deep_learning",
+      "patterns": [
+        "deep learning",
+        "what is deep learning",
+        "explain deep learning",
+        "dl"
+      ],
+      "responses": [
+        "Deep Learning is a subset of Machine Learning that uses neural networks with multiple layers."
+      ]
+    },
+    {
+      "tag": "nlp",
+      "patterns": [
+        "nlp",
+        "natural language processing",
+        "what is nlp",
+        "explain nlp"
+      ],
+      "responses": [
+        "Natural Language Processing (NLP) helps computers understand, process and generate human language."
+      ]
+    },
+    {
+      "tag": "computer_vision",
+      "patterns": [
+        "computer vision",
+        "what is computer vision",
+        "vision ai",
+        "image recognition"
+      ],
+      "responses": [
+        "Computer Vision enables computers to interpret images and videos."
+      ]
+    },
+    {
+      "tag": "data_science",
+      "patterns": [
+        "data science",
+        "what is data science",
+        "explain data science"
+      ],
+      "responses": [
+        "Data Science combines statistics, programming and machine learning to extract insights from data."
+      ]
+    },
+    {
+      "tag": "generative_ai",
+      "patterns": [
+        "generative ai",
+        "gen ai",
+        "what is generative ai",
+        "explain generative ai"
+      ],
+      "responses": [
+        "Generative AI creates new content such as text, images, audio and code using trained AI models."
+      ]
+    }
+  ]
+}

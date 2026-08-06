@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "tag": "dbms_intro",
+      "patterns": [
+        "dbms",
+        "what is dbms",
+        "explain dbms",
+        "define dbms",
+        "database management system",
+        "about dbms"
+      ],
+      "responses": [
+        "DBMS (Database Management System) is software used to create, store, retrieve and manage data efficiently."
+      ]
+    },
+    {
+      "tag": "entity_attribute",
+      "patterns": [
+        "entity and attribute",
+        "what is entity",
+        "what is attribute",
+        "explain entity attribute",
+        "entity attribute dbms"
+      ],
+      "responses": [
+        "An Entity is a real-world object. An Attribute describes the properties of an entity."
+      ]
+    },
+    {
+      "tag": "relationship",
+      "patterns": [
+        "relationship in dbms",
+        "relationship set",
+        "types of relationship",
+        "explain relationship"
+      ],
+      "responses": [
+        "A relationship represents the association between two or more entities."
+      ]
+    },
+    {
+      "tag": "keys",
+      "patterns": [
+        "keys in dbms",
+        "primary key",
+        "foreign key",
+        "candidate key",
+        "super key"
+      ],
+      "responses": [
+        "Keys uniquely identify records and maintain relationships between tables."
+      ]
+    },
+    {
+      "tag": "normalization",
+      "patterns": [
+        "normalization",
+        "1nf",
+        "2nf",
+        "3nf",
+        "normal forms"
+      ],
+      "responses": [
+        "Normalization organizes data to reduce redundancy and improve database design."
+      ]
+    }
+  ]
+}

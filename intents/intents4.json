@@ -1,0 +1,72 @@
+{
+  "intents": [
+    {
+      "tag": "java_intro",
+      "patterns": [
+        "java",
+        "what is java",
+        "explain java",
+        "java language",
+        "define java",
+        "tell me about java",
+        "java programming",
+        "about java"
+      ],
+      "responses": [
+        "Java is a high-level, object-oriented programming language used to build desktop, web, Android and enterprise applications."
+      ]
+    },
+    {
+      "tag": "java_features",
+      "patterns": [
+        "features of java",
+        "java features",
+        "characteristics of java",
+        "advantages of java",
+        "why java"
+      ],
+      "responses": [
+        "Java is platform independent, object-oriented, secure, robust, multithreaded and portable."
+      ]
+    },
+    {
+      "tag": "java_variables",
+      "patterns": [
+        "java variables",
+        "what is variable in java",
+        "variable in java",
+        "java variable declaration",
+        "explain variables in java"
+      ],
+      "responses": [
+        "A variable stores data. Example: int age = 18;"
+      ]
+    },
+    {
+      "tag": "java_datatypes",
+      "patterns": [
+        "java data types",
+        "datatypes in java",
+        "primitive data types",
+        "non primitive data types",
+        "types in java"
+      ],
+      "responses": [
+        "Primitive data types include byte, short, int, long, float, double, char and boolean."
+      ]
+    },
+    {
+      "tag": "java_oop",
+      "patterns": [
+        "oops in java",
+        "object oriented programming in java",
+        "java oops",
+        "java oop concepts",
+        "oop concepts"
+      ],
+      "responses": [
+        "The four main OOP concepts are Encapsulation, Inheritance, Polymorphism and Abstraction."
+      ]
+    }
+  ]
+}

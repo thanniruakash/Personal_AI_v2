@@ -1,0 +1,82 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "hii",
+        "hello ai",
+        "hi personal ai",
+        "hey bot"
+      ],
+      "responses": [
+        "Hello! I'm Personal AI. How can I help you today?",
+        "Hi! Welcome to Personal AI.",
+        "Hello! Ask me anything about programming or your studies."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thanks a lot",
+        "thank you so much",
+        "great",
+        "awesome"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "see you later",
+        "exit",
+        "quit"
+      ],
+      "responses": [
+        "Goodbye! Have a great day.",
+        "See you again!",
+        "Take care!"
+      ]
+    },
+    {
+      "tag": "about",
+      "patterns": [
+        "who are you",
+        "about personal ai",
+        "what is personal ai",
+        "tell me about yourself",
+        "your name"
+      ],
+      "responses": [
+        "I am Personal AI, your offline study and programming assistant."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "help",
+        "what can you do",
+        "how can you help me",
+        "features",
+        "commands"
+      ],
+      "responses": [
+        "I can help with Python, C, Java, DBMS, DSA, HTML, CSS, JavaScript and Math."
+      ]
+    }
+  ]
+}

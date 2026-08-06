@@ -1,0 +1,85 @@
+{
+  "intents": [
+    {
+      "tag": "even_odd",
+      "patterns": [
+        "even odd",
+        "check even odd",
+        "even number",
+        "odd number",
+        "even or odd"
+      ],
+      "responses": [
+        "I can check whether a number is even or odd. Example: even 24"
+      ]
+    },
+    {
+      "tag": "prime",
+      "patterns": [
+        "prime number",
+        "check prime",
+        "is prime",
+        "prime"
+      ],
+      "responses": [
+        "A prime number has exactly two positive factors: 1 and itself."
+      ]
+    },
+    {
+      "tag": "factorial",
+      "patterns": [
+        "factorial",
+        "find factorial",
+        "factorial of number"
+      ],
+      "responses": [
+        "The factorial of n is the product of all positive integers from 1 to n."
+      ]
+    },
+    {
+      "tag": "palindrome",
+      "patterns": [
+        "palindrome",
+        "check palindrome",
+        "palindrome number",
+        "palindrome string"
+      ],
+      "responses": [
+        "A palindrome reads the same forward and backward. Example: madam."
+      ]
+    },
+    {
+      "tag": "armstrong",
+      "patterns": [
+        "armstrong number",
+        "check armstrong",
+        "armstrong"
+      ],
+      "responses": [
+        "An Armstrong number is equal to the sum of its digits raised to the power of the number of digits."
+      ]
+    },
+    {
+      "tag": "percentage",
+      "patterns": [
+        "percentage",
+        "calculate percentage",
+        "percentage formula"
+      ],
+      "responses": [
+        "Percentage = (Obtained Marks / Total Marks) \u00d7 100."
+      ]
+    },
+    {
+      "tag": "bmi",
+      "patterns": [
+        "bmi",
+        "body mass index",
+        "calculate bmi"
+      ],
+      "responses": [
+        "BMI = Weight (kg) / Height\u00b2 (m\u00b2)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "intents": [
+    {
+      "tag": "python_intro",
+      "patterns": [
+        "python",
+        "what is python",
+        "explain python",
+        "python explanation",
+        "python language",
+        "define python",
+        "tell me about python",
+        "python programming",
+        "python basics",
+        "about python"
+      ],
+      "responses": [
+        "Python is a high-level, interpreted programming language used for web development, AI, automation, data science and many other applications."
+      ]
+    },
+    {
+      "tag": "python_variables",
+      "patterns": [
+        "python variables",
+        "what is variable in python",
+        "explain variables",
+        "python variable",
+        "variable declaration in python",
+        "python assignment"
+      ],
+      "responses": [
+        "Variables are names used to store data. Example: x = 10"
+      ]
+    },
+    {
+      "tag": "python_datatypes",
+      "patterns": [
+        "python data types",
+        "python datatypes",
+        "types in python",
+        "what are python data types",
+        "list python data types"
+      ],
+      "responses": [
+        "Common Python data types are int, float, str, bool, list, tuple, set and dict."
+      ]
+    },
+    {
+      "tag": "python_loops",
+      "patterns": [
+        "python loops",
+        "for loop in python",
+        "while loop in python",
+        "explain loops",
+        "python for loop",
+        "python while loop"
+      ],
+      "responses": [
+        "Python supports 'for' and 'while' loops to repeat statements."
+      ]
+    },
+    {
+      "tag": "python_functions",
+      "patterns": [
+        "python function",
+        "python functions",
+        "define function in python",
+        "how to create function in python",
+        "def keyword"
+      ],
+      "responses": [
+        "Functions are reusable blocks of code created using the 'def' keyword."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "tag": "dsa_intro",
+      "patterns": [
+        "dsa",
+        "what is dsa",
+        "explain dsa",
+        "data structures and algorithms",
+        "about dsa"
+      ],
+      "responses": [
+        "DSA (Data Structures and Algorithms) is the study of organizing data and solving problems efficiently."
+      ]
+    },
+    {
+      "tag": "array",
+      "patterns": [
+        "array",
+        "what is array",
+        "array in dsa",
+        "explain array",
+        "arrays"
+      ],
+      "responses": [
+        "An array is a collection of elements of the same data type stored in contiguous memory locations."
+      ]
+    },
+    {
+      "tag": "stack",
+      "patterns": [
+        "stack",
+        "what is stack",
+        "stack in dsa",
+        "lifo",
+        "stack data structure"
+      ],
+      "responses": [
+        "A stack follows the LIFO (Last In, First Out) principle. Common operations are push and pop."
+      ]
+    },
+    {
+      "tag": "queue",
+      "patterns": [
+        "queue",
+        "what is queue",
+        "queue in dsa",
+        "fifo",
+        "queue data structure"
+      ],
+      "responses": [
+        "A queue follows the FIFO (First In, First Out) principle. Common operations are enqueue and dequeue."
+      ]
+    },
+    {
+      "tag": "linked_list",
+      "patterns": [
+        "linked list",
+        "what is linked list",
+        "singly linked list",
+        "doubly linked list",
+        "linked list in dsa"
+      ],
+      "responses": [
+        "A linked list is a linear data structure where each node stores data and a reference to the next node."
+      ]
+    }
+  ]
+}

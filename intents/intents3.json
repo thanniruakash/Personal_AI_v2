@@ -1,0 +1,72 @@
+{
+  "intents": [
+    {
+      "tag": "c_intro",
+      "patterns": [
+        "c",
+        "what is c",
+        "explain c",
+        "c language",
+        "define c",
+        "tell me about c",
+        "c programming",
+        "about c"
+      ],
+      "responses": [
+        "C is a general-purpose programming language widely used for system programming, embedded systems, and learning programming fundamentals."
+      ]
+    },
+    {
+      "tag": "c_variables",
+      "patterns": [
+        "c variables",
+        "what is variable in c",
+        "variable in c",
+        "explain variables in c",
+        "c variable declaration"
+      ],
+      "responses": [
+        "Variables are named memory locations used to store values. Example: int x = 10;"
+      ]
+    },
+    {
+      "tag": "c_datatypes",
+      "patterns": [
+        "c data types",
+        "c datatypes",
+        "types in c",
+        "basic data types in c",
+        "list data types in c"
+      ],
+      "responses": [
+        "Common C data types include int, char, float, double and void."
+      ]
+    },
+    {
+      "tag": "c_operators",
+      "patterns": [
+        "c operators",
+        "operators in c",
+        "arithmetic operators in c",
+        "logical operators in c",
+        "relational operators in c"
+      ],
+      "responses": [
+        "C provides arithmetic, relational, logical, assignment, bitwise and other operators."
+      ]
+    },
+    {
+      "tag": "c_loops",
+      "patterns": [
+        "c loops",
+        "for loop in c",
+        "while loop in c",
+        "do while in c",
+        "loop in c"
+      ],
+      "responses": [
+        "C supports for, while and do-while loops to execute statements repeatedly."
+      ]
+    }
+  ]
+}

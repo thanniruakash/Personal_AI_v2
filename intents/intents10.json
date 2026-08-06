@@ -1,0 +1,88 @@
+{
+  "intents": [
+    {
+      "tag": "how_are_you",
+      "patterns": [
+        "how are you",
+        "how are you doing",
+        "are you fine",
+        "how's it going"
+      ],
+      "responses": [
+        "I'm doing well! I'm ready to help you study and code."
+      ]
+    },
+    {
+      "tag": "creator",
+      "patterns": [
+        "who created you",
+        "who made you",
+        "your developer",
+        "who developed personal ai"
+      ],
+      "responses": [
+        "Personal AI is being developed by Akash with ChatGPT as the AI development partner."
+      ]
+    },
+    {
+      "tag": "greetings_time",
+      "patterns": [
+        "good night",
+        "good morning",
+        "good afternoon",
+        "good evening"
+      ],
+      "responses": [
+        "Hello! I hope you have a wonderful day and happy learning!"
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "tell me a joke",
+        "joke",
+        "make me laugh",
+        "funny"
+      ],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs! \ud83d\ude04"
+      ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "motivate me",
+        "motivation",
+        "encourage me",
+        "i am tired"
+      ],
+      "responses": [
+        "Keep going! Small progress every day builds big success. \ud83d\udcaa"
+      ]
+    },
+    {
+      "tag": "help_more",
+      "patterns": [
+        "help",
+        "what can you do",
+        "commands",
+        "features"
+      ],
+      "responses": [
+        "I can help with programming, engineering subjects, math, code examples and study notes."
+      ]
+    },
+    {
+      "tag": "exit_chat",
+      "patterns": [
+        "quit",
+        "exit",
+        "close chatbot",
+        "stop"
+      ],
+      "responses": [
+        "Goodbye! See you again and happy learning! \ud83d\udc4b"
+      ]
+    }
+  ]
+}
