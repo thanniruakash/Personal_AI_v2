@@ -1,36 +1,22 @@
-from engine import PersonalAI
-from memory import Memory
+import random
+import json
+import torch
 
+from model import NeuralNet
+from nltk_utils import bag_of_words, tokenize
 
-def main():
-    ai = PersonalAI()
-    memory = Memory()
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    print("=" * 50)
-    print("🤖 Personal AI v1")
-    print("=" * 50)
-    print("Type 'exit' to quit.\n")
+print("=" * 50)
+print("🤖 Personal AI v2")
+print("=" * 50)
 
-    while True:
-        question = input("You: ").strip()
+print("Type 'quit' to exit.\n")
 
-        if question.lower() in ("exit", "quit"):
-            print("\n👋 Goodbye!")
-            break
+while True:
+    sentence = input("You: ")
 
-        answer = ai.ask(question)
+    if sentence.lower() == "quit":
+        break
 
-        print("\nAI:")
-        print(answer)
-
-        history = memory.get("history", [])
-        history.append({
-            "user": question,
-            "ai": answer
-        })
-
-        memory.set("history", history)
-
-
-if __name__ == "__main__":
-    main()
+    print("AI: I'm still under development. 😊")
