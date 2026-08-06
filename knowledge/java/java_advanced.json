@@ -1,0 +1,107 @@
+{
+  "subject": "Java",
+  "section": "Advanced Topics",
+  "topics": [
+    {
+      "topic": "Multithreading",
+      "definition": "Multithreading allows multiple threads to run concurrently.",
+      "syntax": "class MyThread extends Thread { public void run(){} }",
+      "example": "new MyThread().start();",
+      "output": "Thread started",
+      "tips": [
+        "Use start() instead of run()."
+      ]
+    },
+    {
+      "topic": "Packages",
+      "definition": "Packages organize related classes and interfaces.",
+      "syntax": "package mypackage;",
+      "example": "import java.util.Scanner;",
+      "output": "Package imported",
+      "tips": [
+        "Avoids naming conflicts."
+      ]
+    },
+    {
+      "topic": "File Handling",
+      "definition": "Java supports file operations using java.io and java.nio packages.",
+      "syntax": "File f = new File(\"data.txt\");",
+      "example": "Scanner sc = new Scanner(f);",
+      "output": "File read",
+      "tips": [
+        "Close files after use."
+      ]
+    },
+    {
+      "topic": "Generics",
+      "definition": "Generics provide type safety by allowing classes and methods to work with different data types.",
+      "syntax": "ArrayList<String> list = new ArrayList<>();",
+      "example": "List<Integer> nums;",
+      "output": "Type-safe collection",
+      "tips": [
+        "Avoids ClassCastException."
+      ]
+    },
+    {
+      "topic": "Interfaces",
+      "definition": "An interface defines methods that implementing classes must provide.",
+      "syntax": "interface Animal { void sound(); }",
+      "example": "class Dog implements Animal { }",
+      "output": "Interface implemented",
+      "tips": [
+        "Supports multiple interface inheritance."
+      ]
+    },
+    {
+      "topic": "Abstract Classes",
+      "definition": "An abstract class cannot be instantiated and may contain abstract methods.",
+      "syntax": "abstract class Shape { }",
+      "example": "class Circle extends Shape { }",
+      "output": "Abstract class extended",
+      "tips": [
+        "Use when sharing common code."
+      ]
+    },
+    {
+      "topic": "Date and Time API",
+      "definition": "The java.time package provides modern date and time classes.",
+      "syntax": "LocalDate.now();",
+      "example": "LocalDate date = LocalDate.now();",
+      "output": "Current date",
+      "tips": [
+        "Prefer java.time over older Date classes."
+      ]
+    },
+    {
+      "topic": "Garbage Collection",
+      "definition": "Garbage collection automatically frees unused memory.",
+      "syntax": "System.gc();",
+      "example": "System.gc();",
+      "output": "Garbage collection requested",
+      "tips": [
+        "Memory cleanup is managed by the JVM."
+      ]
+    },
+    {
+      "topic": "Annotations",
+      "definition": "Annotations provide metadata for code.",
+      "syntax": "@Override",
+      "example": "@Deprecated",
+      "output": "Metadata added",
+      "tips": [
+        "Used by the compiler and frameworks."
+      ]
+    },
+    {
+      "topic": "Java Best Practices",
+      "definition": "Guidelines for writing clean, maintainable Java code.",
+      "syntax": "Follow Java naming conventions.",
+      "example": "Use meaningful variable names.",
+      "output": "Readable code",
+      "tips": [
+        "Keep methods short.",
+        "Handle exceptions properly."
+      ]
+    }
+  ]
+}

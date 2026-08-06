@@ -1,0 +1,107 @@
+{
+  "subject": "Java",
+  "section": "Basics",
+  "topics": [
+    {
+      "topic": "What is Java?",
+      "definition": "Java is a high-level, object-oriented programming language.",
+      "syntax": "class HelloWorld { public static void main(String[] args){ System.out.println(\"Hello\"); } }",
+      "example": "System.out.println(\"Hello\");",
+      "output": "Hello",
+      "tips": [
+        "Platform independent",
+        "Compiled to bytecode"
+      ]
+    },
+    {
+      "topic": "Features of Java",
+      "definition": "Java is simple, object-oriented, platform independent, secure and robust.",
+      "syntax": "N/A",
+      "example": "Write Once, Run Anywhere (WORA)",
+      "output": "Portable program",
+      "tips": [
+        "Automatic garbage collection"
+      ]
+    },
+    {
+      "topic": "History of Java",
+      "definition": "Java was developed by James Gosling at Sun Microsystems and released in 1995.",
+      "syntax": "N/A",
+      "example": "Creator: James Gosling",
+      "output": "1995",
+      "tips": [
+        "Now maintained by Oracle"
+      ]
+    },
+    {
+      "topic": "Applications of Java",
+      "definition": "Java is used for Android, web, desktop and enterprise applications.",
+      "syntax": "N/A",
+      "example": "Spring Boot, Android",
+      "output": "Multiple applications",
+      "tips": [
+        "Popular in enterprise software"
+      ]
+    },
+    {
+      "topic": "JDK",
+      "definition": "Java Development Kit contains tools required to develop Java programs.",
+      "syntax": "javac Hello.java",
+      "example": "Compile a program",
+      "output": "Hello.class",
+      "tips": [
+        "Includes JRE"
+      ]
+    },
+    {
+      "topic": "JRE",
+      "definition": "Java Runtime Environment provides libraries and JVM to run Java programs.",
+      "syntax": "java Hello",
+      "example": "Run a compiled class",
+      "output": "Program executed",
+      "tips": [
+        "Does not include compiler"
+      ]
+    },
+    {
+      "topic": "JVM",
+      "definition": "Java Virtual Machine executes Java bytecode.",
+      "syntax": "N/A",
+      "example": "Runs Hello.class",
+      "output": "Bytecode executed",
+      "tips": [
+        "Makes Java platform independent"
+      ]
+    },
+    {
+      "topic": "Variables",
+      "definition": "Variables store data values.",
+      "syntax": "int age = 18;",
+      "example": "String name = \"Akash\";",
+      "output": "Akash",
+      "tips": [
+        "Declare before use"
+      ]
+    },
+    {
+      "topic": "Data Types",
+      "definition": "Primitive data types are byte, short, int, long, float, double, char and boolean.",
+      "syntax": "int x = 10;",
+      "example": "boolean flag = true;",
+      "output": "true",
+      "tips": [
+        "Choose appropriate type"
+      ]
+    },
+    {
+      "topic": "Comments",
+      "definition": "Comments improve readability and are ignored by the compiler.",
+      "syntax": "// Single line\n/* Multi-line */",
+      "example": "// Print message",
+      "output": "No output",
+      "tips": [
+        "Use comments to explain logic"
+      ]
+    }
+  ]
+}

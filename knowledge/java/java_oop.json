@@ -1,0 +1,106 @@
+{
+  "subject": "Java",
+  "section": "Object Oriented Programming",
+  "topics": [
+    {
+      "topic": "Class",
+      "definition": "A class is a blueprint for creating objects.",
+      "syntax": "class Student { }",
+      "example": "class Car { }",
+      "output": "Class created",
+      "tips": [
+        "Use PascalCase for class names."
+      ]
+    },
+    {
+      "topic": "Object",
+      "definition": "An object is an instance of a class.",
+      "syntax": "Student s = new Student();",
+      "example": "Car car = new Car();",
+      "output": "Object created",
+      "tips": [
+        "Objects access class members."
+      ]
+    },
+    {
+      "topic": "Constructor",
+      "definition": "A constructor initializes an object when it is created.",
+      "syntax": "Student(){ }",
+      "example": "Student(String name){ this.name=name; }",
+      "output": "Object initialized",
+      "tips": [
+        "Constructor name must match the class name."
+      ]
+    },
+    {
+      "topic": "Encapsulation",
+      "definition": "Encapsulation combines data and methods into a single unit.",
+      "syntax": "private int age;",
+      "example": "Use getters and setters.",
+      "output": "Data protected",
+      "tips": [
+        "Use private fields."
+      ]
+    },
+    {
+      "topic": "Inheritance",
+      "definition": "Inheritance allows one class to inherit properties and methods of another.",
+      "syntax": "class Dog extends Animal { }",
+      "example": "Dog inherits Animal",
+      "output": "Code reuse",
+      "tips": [
+        "Java supports single class inheritance."
+      ]
+    },
+    {
+      "topic": "Polymorphism",
+      "definition": "Polymorphism allows one interface to have many implementations.",
+      "syntax": "Method Overloading / Method Overriding",
+      "example": "animal.sound();",
+      "output": "Different behavior",
+      "tips": [
+        "Supports runtime flexibility."
+      ]
+    },
+    {
+      "topic": "Abstraction",
+      "definition": "Abstraction hides implementation details and exposes only essential features.",
+      "syntax": "abstract class Shape { }",
+      "example": "interface Animal { }",
+      "output": "Hidden implementation",
+      "tips": [
+        "Implemented using abstract classes and interfaces."
+      ]
+    },
+    {
+      "topic": "this Keyword",
+      "definition": "The this keyword refers to the current object.",
+      "syntax": "this.name = name;",
+      "example": "this.age = age;",
+      "output": "Current object referenced",
+      "tips": [
+        "Used to avoid variable name conflicts."
+      ]
+    },
+    {
+      "topic": "super Keyword",
+      "definition": "The super keyword refers to the parent class.",
+      "syntax": "super();",
+      "example": "super.display();",
+      "output": "Parent constructor or method called",
+      "tips": [
+        "Use to access parent members."
+      ]
+    },
+    {
+      "topic": "Method Overloading and Overriding",
+      "definition": "Overloading uses the same method name with different parameters. Overriding redefines a parent method in the child class.",
+      "syntax": "void add(int a)\nvoid add(int a,int b)",
+      "example": "@Override",
+      "output": "Compile-time and runtime polymorphism",
+      "tips": [
+        "Overloading: same class. Overriding: parent-child classes."
+      ]
+    }
+  ]
+}

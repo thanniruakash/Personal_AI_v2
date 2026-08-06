@@ -1,0 +1,86 @@
+{
+  "subject": "Java",
+  "section": "Exception Handling",
+  "topics": [
+    {
+      "topic": "Exceptions",
+      "definition": "An exception is an event that disrupts the normal execution of a program.",
+      "syntax": "int x = 10/0;",
+      "example": "ArithmeticException",
+      "output": "Program throws an exception",
+      "tips": [
+        "Handle exceptions to avoid program crashes."
+      ]
+    },
+    {
+      "topic": "try Block",
+      "definition": "The try block contains code that may throw an exception.",
+      "syntax": "try { /* code */ }",
+      "example": "try { int x=10/0; }",
+      "output": "Exception monitored",
+      "tips": [
+        "Place risky code inside try."
+      ]
+    },
+    {
+      "topic": "catch Block",
+      "definition": "The catch block handles exceptions thrown by the try block.",
+      "syntax": "catch(Exception e){ }",
+      "example": "catch(ArithmeticException e){ System.out.println(e); }",
+      "output": "Exception handled",
+      "tips": [
+        "You can use multiple catch blocks."
+      ]
+    },
+    {
+      "topic": "finally Block",
+      "definition": "The finally block executes whether an exception occurs or not.",
+      "syntax": "finally { }",
+      "example": "finally { System.out.println(\"Done\"); }",
+      "output": "Done",
+      "tips": [
+        "Use it to release resources."
+      ]
+    },
+    {
+      "topic": "throw Keyword",
+      "definition": "The throw keyword explicitly throws an exception.",
+      "syntax": "throw new IllegalArgumentException();",
+      "example": "if(age<0) throw new IllegalArgumentException();",
+      "output": "Exception thrown",
+      "tips": [
+        "Throws one exception object."
+      ]
+    },
+    {
+      "topic": "throws Keyword",
+      "definition": "The throws keyword declares exceptions that a method may throw.",
+      "syntax": "void read() throws IOException",
+      "example": "public void test() throws Exception",
+      "output": "Exception declared",
+      "tips": [
+        "Used in method declarations."
+      ]
+    },
+    {
+      "topic": "Custom Exceptions",
+      "definition": "Custom exceptions are user-defined exception classes.",
+      "syntax": "class MyException extends Exception { }",
+      "example": "throw new MyException();",
+      "output": "Custom exception",
+      "tips": [
+        "Useful for application-specific errors."
+      ]
+    },
+    {
+      "topic": "Checked vs Unchecked Exceptions",
+      "definition": "Checked exceptions are checked at compile time, while unchecked exceptions occur at runtime.",
+      "syntax": "IOException / NullPointerException",
+      "example": "FileNotFoundException",
+      "output": "Different exception types",
+      "tips": [
+        "Checked exceptions must be handled or declared."
+      ]
+    }
+  ]
+}

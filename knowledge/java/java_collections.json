@@ -1,0 +1,88 @@
+{
+  "subject": "Java",
+  "section": "Collections Framework",
+  "topics": [
+    {
+      "topic": "Collections Framework",
+      "definition": "The Collections Framework provides classes and interfaces to store and manipulate groups of objects.",
+      "syntax": "import java.util.*;",
+      "example": "ArrayList<Integer> list = new ArrayList<>();",
+      "output": "Collection created",
+      "tips": [
+        "Located in java.util package"
+      ]
+    },
+    {
+      "topic": "ArrayList",
+      "definition": "A dynamic array that stores elements in insertion order.",
+      "syntax": "ArrayList<String> list = new ArrayList<>();",
+      "example": "list.add(\"Java\");",
+      "output": "[Java]",
+      "tips": [
+        "Fast random access",
+        "Allows duplicates"
+      ]
+    },
+    {
+      "topic": "LinkedList",
+      "definition": "A doubly linked list implementation.",
+      "syntax": "LinkedList<Integer> list = new LinkedList<>();",
+      "example": "list.add(10);",
+      "output": "[10]",
+      "tips": [
+        "Efficient insertions and deletions"
+      ]
+    },
+    {
+      "topic": "Stack",
+      "definition": "A Last-In, First-Out (LIFO) collection.",
+      "syntax": "Stack<Integer> s = new Stack<>();",
+      "example": "s.push(5); s.pop();",
+      "output": "5",
+      "tips": [
+        "Use push() and pop()"
+      ]
+    },
+    {
+      "topic": "Queue",
+      "definition": "A First-In, First-Out (FIFO) collection.",
+      "syntax": "Queue<Integer> q = new LinkedList<>();",
+      "example": "q.offer(1); q.poll();",
+      "output": "1",
+      "tips": [
+        "Use offer() and poll()"
+      ]
+    },
+    {
+      "topic": "HashSet",
+      "definition": "Stores unique elements with no guaranteed order.",
+      "syntax": "HashSet<String> set = new HashSet<>();",
+      "example": "set.add(\"A\");",
+      "output": "[A]",
+      "tips": [
+        "Duplicates are not allowed"
+      ]
+    },
+    {
+      "topic": "TreeSet",
+      "definition": "Stores unique elements in sorted order.",
+      "syntax": "TreeSet<Integer> set = new TreeSet<>();",
+      "example": "set.add(3); set.add(1);",
+      "output": "[1, 3]",
+      "tips": [
+        "Elements are automatically sorted"
+      ]
+    },
+    {
+      "topic": "HashMap",
+      "definition": "Stores data as key-value pairs.",
+      "syntax": "HashMap<Integer,String> map = new HashMap<>();",
+      "example": "map.put(1,\"Akash\");",
+      "output": "{1=Akash}",
+      "tips": [
+        "Keys are unique",
+        "Values may be duplicated"
+      ]
+    }
+  ]
+}
