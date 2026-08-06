@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Emotion Recognition",
+  "topics": [
+    {
+      "topic": "What is Speech Emotion Recognition?",
+      "definition": "Speech Emotion Recognition identifies a speaker's emotional state from speech.",
+      "syntax": "Speech \u2192 Emotion Model \u2192 Emotion",
+      "example": "Call center emotion analysis",
+      "output": "Detected emotion",
+      "tips": [
+        "Use diverse emotional speech datasets."
+      ]
+    },
+    {
+      "topic": "Happy Emotion",
+      "definition": "Happy speech often has higher pitch, energy and faster tempo.",
+      "syntax": "Speech \u2192 Happy",
+      "example": "Excited conversation",
+      "output": "Happy",
+      "tips": [
+        "Consider context as well as acoustics."
+      ]
+    },
+    {
+      "topic": "Sad Emotion",
+      "definition": "Sad speech is often slower with lower energy and flatter intonation.",
+      "syntax": "Speech \u2192 Sad",
+      "example": "Disappointed response",
+      "output": "Sad",
+      "tips": [
+        "Background noise can affect detection."
+      ]
+    },
+    {
+      "topic": "Angry Emotion",
+      "definition": "Angry speech commonly has higher intensity and sharper pitch variations.",
+      "syntax": "Speech \u2192 Angry",
+      "example": "Customer complaint",
+      "output": "Angry",
+      "tips": [
+        "Use balanced training data."
+      ]
+    },
+    {
+      "topic": "Fear and Surprise Detection",
+      "definition": "Models distinguish emotions such as fear and surprise using vocal patterns.",
+      "syntax": "Speech \u2192 Emotion",
+      "example": "Emergency call",
+      "output": "Fear/Surprise",
+      "tips": [
+        "Different emotions may share similar features."
+      ]
+    },
+    {
+      "topic": "Acoustic Features",
+      "definition": "Features such as pitch, energy, MFCCs and speaking rate help identify emotions.",
+      "syntax": "Audio \u2192 Features",
+      "example": "MFCC extraction",
+      "output": "Feature vector",
+      "tips": [
+        "Normalize recordings before extraction."
+      ]
+    },
+    {
+      "topic": "Emotion Recognition Evaluation",
+      "definition": "Emotion recognition models are evaluated using metrics such as accuracy, precision, recall and F1-score.",
+      "syntax": "Predictions \u2192 Metrics",
+      "example": "Emotion classifier evaluation",
+      "output": "Performance metrics",
+      "tips": [
+        "Test on unseen speakers."
+      ]
+    },
+    {
+      "topic": "Emotion Recognition Best Practices",
+      "definition": "Use balanced datasets, robust preprocessing and continuous evaluation.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production emotion analysis",
+      "output": "Reliable emotion recognition",
+      "tips": [
+        "Handle class imbalance.",
+        "Reduce background noise.",
+        "Protect user privacy."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Speech AI Basics",
+  "topics": [
+    {
+      "topic": "What is Speech AI?",
+      "definition": "Speech AI enables computers to understand, generate and analyze human speech.",
+      "syntax": "Speech \u2192 AI Model \u2192 Output",
+      "example": "Voice assistant",
+      "output": "Speech-based response",
+      "tips": [
+        "Combine speech processing with NLP for better performance."
+      ]
+    },
+    {
+      "topic": "Speech Signal",
+      "definition": "A speech signal is the audio waveform produced by human speech.",
+      "syntax": "Audio \u2192 Waveform",
+      "example": "Recorded voice",
+      "output": "Digital signal",
+      "tips": [
+        "Use high-quality recordings."
+      ]
+    },
+    {
+      "topic": "Sampling Rate",
+      "definition": "Sampling rate is the number of audio samples captured per second.",
+      "syntax": "Hz",
+      "example": "16000 Hz",
+      "output": "Sampled audio",
+      "tips": [
+        "16 kHz is common for speech tasks."
+      ]
+    },
+    {
+      "topic": "Feature Extraction",
+      "definition": "Feature extraction converts raw audio into informative numerical representations.",
+      "syntax": "Audio \u2192 Features",
+      "example": "MFCC features",
+      "output": "Feature vectors",
+      "tips": [
+        "Normalize audio before extraction."
+      ]
+    },
+    {
+      "topic": "Speech Pipeline",
+      "definition": "A speech pipeline captures, preprocesses, analyzes and produces results from speech.",
+      "syntax": "Capture \u2192 Process \u2192 Model \u2192 Output",
+      "example": "Voice command system",
+      "output": "Processed speech",
+      "tips": [
+        "Keep preprocessing consistent."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Speech AI is used in assistants, transcription, call centers and accessibility tools.",
+      "syntax": "Speech \u2192 Application",
+      "example": "Automatic meeting transcription",
+      "output": "Application result",
+      "tips": [
+        "Choose models based on latency and accuracy needs."
+      ]
+    },
+    {
+      "topic": "Challenges",
+      "definition": "Noise, accents, overlapping speakers and reverberation make speech processing difficult.",
+      "syntax": "Speech \u2192 Challenges",
+      "example": "Noisy environment",
+      "output": "Recognition difficulty",
+      "tips": [
+        "Train with diverse speech data."
+      ]
+    },
+    {
+      "topic": "Speech AI Best Practices",
+      "definition": "Use quality datasets, robust preprocessing and continuous evaluation.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production speech system",
+      "output": "Reliable Speech AI",
+      "tips": [
+        "Reduce noise.",
+        "Monitor accuracy.",
+        "Support diverse speakers."
+      ]
+    }
+  ]
+}

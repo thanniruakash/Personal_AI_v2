@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Speech Recognition",
+  "topics": [
+    {
+      "topic": "What is Automatic Speech Recognition (ASR)?",
+      "definition": "Automatic Speech Recognition converts spoken language into text.",
+      "syntax": "Speech \u2192 ASR Model \u2192 Text",
+      "example": "Voice typing",
+      "output": "Transcribed text",
+      "tips": [
+        "Use clear audio for better accuracy."
+      ]
+    },
+    {
+      "topic": "Speech-to-Text",
+      "definition": "Speech-to-text transforms audio recordings into written text.",
+      "syntax": "Audio \u2192 Text",
+      "example": "Meeting transcription",
+      "output": "Text transcript",
+      "tips": [
+        "Reduce background noise before processing."
+      ]
+    },
+    {
+      "topic": "Acoustic Models",
+      "definition": "Acoustic models learn relationships between audio signals and speech sounds.",
+      "syntax": "Audio Features \u2192 Phonemes",
+      "example": "Recognize spoken words",
+      "output": "Sound predictions",
+      "tips": [
+        "Train with diverse speakers."
+      ]
+    },
+    {
+      "topic": "Language Models in ASR",
+      "definition": "Language models improve transcription by predicting likely word sequences.",
+      "syntax": "Words \u2192 Language Model",
+      "example": "Correct sentence formation",
+      "output": "Improved transcript",
+      "tips": [
+        "Use domain-specific language models when needed."
+      ]
+    },
+    {
+      "topic": "Real-Time Recognition",
+      "definition": "Real-time ASR processes speech with minimal delay.",
+      "syntax": "Live Audio \u2192 Text",
+      "example": "Live captions",
+      "output": "Streaming transcript",
+      "tips": [
+        "Optimize for low latency."
+      ]
+    },
+    {
+      "topic": "Word Error Rate (WER)",
+      "definition": "WER measures transcription errors by comparing predictions with reference text.",
+      "syntax": "Reference vs Prediction \u2192 WER",
+      "example": "ASR evaluation",
+      "output": "WER score",
+      "tips": [
+        "Lower WER indicates better accuracy."
+      ]
+    },
+    {
+      "topic": "ASR Applications",
+      "definition": "ASR is used in assistants, captioning, call centers and accessibility tools.",
+      "syntax": "Speech \u2192 Application",
+      "example": "Voice assistant",
+      "output": "Application result",
+      "tips": [
+        "Match the model to the use case."
+      ]
+    },
+    {
+      "topic": "Speech Recognition Best Practices",
+      "definition": "Use quality audio, evaluate regularly and support different accents and environments.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production ASR system",
+      "output": "Reliable speech recognition",
+      "tips": [
+        "Handle noise.",
+        "Monitor WER.",
+        "Test with diverse speakers."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Multilingual Speech",
+  "topics": [
+    {
+      "topic": "Multilingual Speech Processing",
+      "definition": "Multilingual speech processing enables AI systems to understand and generate speech in multiple languages.",
+      "syntax": "Speech \u2192 Multilingual Model",
+      "example": "Global voice assistant",
+      "output": "Language-aware speech",
+      "tips": [
+        "Train with diverse languages."
+      ]
+    },
+    {
+      "topic": "Language Identification",
+      "definition": "Language identification detects the language being spoken.",
+      "syntax": "Audio \u2192 Language",
+      "example": "Detect English or Hindi",
+      "output": "Predicted language",
+      "tips": [
+        "Use short and long utterances during evaluation."
+      ]
+    },
+    {
+      "topic": "Code Switching",
+      "definition": "Code switching occurs when speakers alternate between languages in the same conversation.",
+      "syntax": "Language A \u2194 Language B",
+      "example": "English + Telugu sentence",
+      "output": "Mixed-language recognition",
+      "tips": [
+        "Train with real multilingual conversations."
+      ]
+    },
+    {
+      "topic": "Multilingual ASR",
+      "definition": "Multilingual ASR converts speech from multiple languages into text.",
+      "syntax": "Speech \u2192 ASR \u2192 Text",
+      "example": "Transcribe multilingual meetings",
+      "output": "Transcript",
+      "tips": [
+        "Support different accents."
+      ]
+    },
+    {
+      "topic": "Multilingual TTS",
+      "definition": "Multilingual TTS generates natural speech in multiple languages.",
+      "syntax": "Text \u2192 TTS \u2192 Speech",
+      "example": "Read text in different languages",
+      "output": "Synthesized speech",
+      "tips": [
+        "Preserve natural pronunciation."
+      ]
+    },
+    {
+      "topic": "Cross-Lingual Speech Models",
+      "definition": "Cross-lingual models transfer speech knowledge between languages.",
+      "syntax": "Source Language \u2192 Target Language",
+      "example": "Low-resource language support",
+      "output": "Improved multilingual model",
+      "tips": [
+        "Fine-tune on target languages."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Evaluate multilingual systems using WER, MOS and language identification accuracy.",
+      "syntax": "Predictions \u2192 Metrics",
+      "example": "Compare multilingual ASR",
+      "output": "Performance scores",
+      "tips": [
+        "Test each language separately."
+      ]
+    },
+    {
+      "topic": "Multilingual Speech Best Practices",
+      "definition": "Use balanced multilingual datasets, evaluate across languages and optimize for diverse accents.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Global speech platform",
+      "output": "Reliable multilingual speech system",
+      "tips": [
+        "Handle code switching.",
+        "Monitor language bias.",
+        "Continuously update language coverage."
+      ]
+    }
+  ]
+}

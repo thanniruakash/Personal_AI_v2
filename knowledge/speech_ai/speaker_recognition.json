@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Speaker Recognition",
+  "topics": [
+    {
+      "topic": "What is Speaker Recognition?",
+      "definition": "Speaker recognition identifies or verifies a person's identity using voice characteristics.",
+      "syntax": "Speech \u2192 Speaker Model \u2192 Identity",
+      "example": "Voice login",
+      "output": "Recognized speaker",
+      "tips": [
+        "Use clean voice recordings for better accuracy."
+      ]
+    },
+    {
+      "topic": "Speaker Identification",
+      "definition": "Speaker identification determines who is speaking from a known group of speakers.",
+      "syntax": "Voice \u2192 Database",
+      "example": "Call center agent recognition",
+      "output": "Speaker ID",
+      "tips": [
+        "Requires enrolled speaker profiles."
+      ]
+    },
+    {
+      "topic": "Speaker Verification",
+      "definition": "Speaker verification confirms whether a claimed identity matches the speaker's voice.",
+      "syntax": "Voice + Claimed ID \u2192 Verify",
+      "example": "Bank voice authentication",
+      "output": "Verified or Rejected",
+      "tips": [
+        "Set appropriate decision thresholds."
+      ]
+    },
+    {
+      "topic": "Voice Biometrics",
+      "definition": "Voice biometrics uses unique vocal characteristics for authentication.",
+      "syntax": "Voice \u2192 Biometric Features",
+      "example": "Secure account access",
+      "output": "Biometric signature",
+      "tips": [
+        "Protect biometric data securely."
+      ]
+    },
+    {
+      "topic": "Speaker Diarization",
+      "definition": "Speaker diarization determines 'who spoke when' in multi-speaker audio.",
+      "syntax": "Audio \u2192 Speaker Segments",
+      "example": "Meeting transcription",
+      "output": "Labeled speakers",
+      "tips": [
+        "Useful for conversations with multiple participants."
+      ]
+    },
+    {
+      "topic": "Equal Error Rate (EER)",
+      "definition": "EER is a common metric where false acceptance and false rejection rates are equal.",
+      "syntax": "Predictions \u2192 EER",
+      "example": "Evaluate speaker verification",
+      "output": "EER score",
+      "tips": [
+        "Lower EER indicates better performance."
+      ]
+    },
+    {
+      "topic": "Speaker Recognition Applications",
+      "definition": "Speaker recognition is used in security, customer service, smart devices and forensics.",
+      "syntax": "Voice \u2192 Application",
+      "example": "Smart speaker personalization",
+      "output": "Application result",
+      "tips": [
+        "Consider privacy requirements."
+      ]
+    },
+    {
+      "topic": "Speaker Recognition Best Practices",
+      "definition": "Use diverse voice samples, evaluate across environments and protect user privacy.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production voice authentication",
+      "output": "Reliable speaker recognition",
+      "tips": [
+        "Handle background noise.",
+        "Test different microphones.",
+        "Encrypt voice data."
+      ]
+    }
+  ]
+}

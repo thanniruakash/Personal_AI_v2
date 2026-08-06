@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Text-to-Speech",
+  "topics": [
+    {
+      "topic": "What is Text-to-Speech (TTS)?",
+      "definition": "Text-to-Speech converts written text into natural-sounding spoken audio.",
+      "syntax": "Text \u2192 TTS Model \u2192 Speech",
+      "example": "Reading an e-book aloud",
+      "output": "Spoken audio",
+      "tips": [
+        "Use clear punctuation for more natural speech."
+      ]
+    },
+    {
+      "topic": "Speech Synthesis",
+      "definition": "Speech synthesis generates artificial human speech from text.",
+      "syntax": "Text \u2192 Synthesized Voice",
+      "example": "GPS voice navigation",
+      "output": "Generated speech",
+      "tips": [
+        "Choose voices appropriate for the application."
+      ]
+    },
+    {
+      "topic": "Voice Models",
+      "definition": "Voice models learn the characteristics of human voices for realistic speech generation.",
+      "syntax": "Text \u2192 Voice Model",
+      "example": "Virtual assistant voice",
+      "output": "Natural voice",
+      "tips": [
+        "Train with high-quality recordings."
+      ]
+    },
+    {
+      "topic": "Prosody",
+      "definition": "Prosody controls rhythm, stress and intonation in synthesized speech.",
+      "syntax": "Text \u2192 Prosody \u2192 Speech",
+      "example": "Expressive storytelling",
+      "output": "Natural intonation",
+      "tips": [
+        "Good prosody improves listening experience."
+      ]
+    },
+    {
+      "topic": "Waveform Generation",
+      "definition": "Waveform generation converts speech representations into playable audio.",
+      "syntax": "Features \u2192 Audio Waveform",
+      "example": "Neural vocoder",
+      "output": "Speech waveform",
+      "tips": [
+        "Modern neural vocoders improve quality."
+      ]
+    },
+    {
+      "topic": "Real-Time TTS",
+      "definition": "Real-time TTS generates speech with very low latency.",
+      "syntax": "Text \u2192 Live Speech",
+      "example": "Voice assistant response",
+      "output": "Streaming audio",
+      "tips": [
+        "Optimize for responsiveness."
+      ]
+    },
+    {
+      "topic": "TTS Applications",
+      "definition": "Text-to-Speech is used in accessibility, navigation, education and virtual assistants.",
+      "syntax": "Text \u2192 Application",
+      "example": "Screen reader",
+      "output": "Speech output",
+      "tips": [
+        "Support multiple languages where possible."
+      ]
+    },
+    {
+      "topic": "Text-to-Speech Best Practices",
+      "definition": "Use quality voice data, evaluate naturalness and optimize latency for deployment.",
+      "syntax": "Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Production TTS service",
+      "output": "Reliable speech synthesis",
+      "tips": [
+        "Monitor pronunciation.",
+        "Test with different text styles.",
+        "Benchmark latency."
+      ]
+    }
+  ]
+}

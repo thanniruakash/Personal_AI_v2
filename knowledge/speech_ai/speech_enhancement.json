@@ -1,0 +1,88 @@
+{
+  "subject": "Speech AI",
+  "section": "Speech Enhancement",
+  "topics": [
+    {
+      "topic": "Noise Reduction",
+      "definition": "Noise reduction removes unwanted background sounds while preserving speech.",
+      "syntax": "Noisy Audio \u2192 Clean Audio",
+      "example": "Reduce traffic noise in a call",
+      "output": "Cleaner speech",
+      "tips": [
+        "Avoid removing important speech components."
+      ]
+    },
+    {
+      "topic": "Echo Cancellation",
+      "definition": "Echo cancellation removes reflected audio during conversations.",
+      "syntax": "Audio \u2192 Echo Removal",
+      "example": "Video conference",
+      "output": "Echo-free audio",
+      "tips": [
+        "Essential for hands-free communication."
+      ]
+    },
+    {
+      "topic": "Speech Enhancement",
+      "definition": "Speech enhancement improves speech quality and intelligibility.",
+      "syntax": "Speech \u2192 Enhancement Model",
+      "example": "Improve microphone recording",
+      "output": "Enhanced speech",
+      "tips": [
+        "Balance enhancement with naturalness."
+      ]
+    },
+    {
+      "topic": "Voice Activity Detection (VAD)",
+      "definition": "VAD detects whether speech is present in an audio signal.",
+      "syntax": "Audio \u2192 Speech/No Speech",
+      "example": "Wake-word systems",
+      "output": "Speech segments",
+      "tips": [
+        "Reduces unnecessary processing."
+      ]
+    },
+    {
+      "topic": "Beamforming",
+      "definition": "Beamforming combines multiple microphones to focus on a target speaker.",
+      "syntax": "Microphones \u2192 Beamforming",
+      "example": "Smart speaker",
+      "output": "Focused audio",
+      "tips": [
+        "Works best with microphone arrays."
+      ]
+    },
+    {
+      "topic": "Signal-to-Noise Ratio (SNR)",
+      "definition": "SNR measures the strength of speech relative to background noise.",
+      "syntax": "Speech Power / Noise Power",
+      "example": "Evaluate recording quality",
+      "output": "SNR value",
+      "tips": [
+        "Higher SNR usually means clearer speech."
+      ]
+    },
+    {
+      "topic": "Real-World Applications",
+      "definition": "Speech enhancement is used in calls, hearing aids, assistants and conferencing.",
+      "syntax": "Audio \u2192 Enhanced Output",
+      "example": "Online meetings",
+      "output": "Improved communication",
+      "tips": [
+        "Optimize for the deployment environment."
+      ]
+    },
+    {
+      "topic": "Speech Enhancement Best Practices",
+      "definition": "Use diverse noisy datasets, evaluate with objective and subjective metrics, and optimize latency.",
+      "syntax": "Collect \u2192 Train \u2192 Evaluate",
+      "example": "Production speech enhancement",
+      "output": "Reliable enhancement system",
+      "tips": [
+        "Test in real environments.",
+        "Measure SNR improvements.",
+        "Keep processing efficient."
+      ]
+    }
+  ]
+}
