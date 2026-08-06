@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Unsupervised Learning",
+  "topics": [
+    {
+      "topic": "What is Unsupervised Learning?",
+      "definition": "Unsupervised learning discovers patterns in unlabeled data.",
+      "syntax": "Data \u2192 Patterns",
+      "example": "Customer segmentation",
+      "output": "Hidden patterns found",
+      "tips": [
+        "No labels are required."
+      ]
+    },
+    {
+      "topic": "Clustering",
+      "definition": "Clustering groups similar data points together.",
+      "syntax": "Data \u2192 Groups",
+      "example": "Customer groups",
+      "output": "Clusters created",
+      "tips": [
+        "Measure cluster quality."
+      ]
+    },
+    {
+      "topic": "K-Means",
+      "definition": "K-Means partitions data into K clusters based on distance.",
+      "syntax": "Data \u2192 K Clusters",
+      "example": "Market segmentation",
+      "output": "Cluster assignments",
+      "tips": [
+        "Choose K carefully."
+      ]
+    },
+    {
+      "topic": "Hierarchical Clustering",
+      "definition": "Builds a tree of nested clusters.",
+      "syntax": "Merge \u2192 Dendrogram",
+      "example": "Gene analysis",
+      "output": "Cluster hierarchy",
+      "tips": [
+        "Useful when K is unknown."
+      ]
+    },
+    {
+      "topic": "Dimensionality Reduction",
+      "definition": "Reduces the number of features while preserving important information.",
+      "syntax": "High Dim \u2192 Low Dim",
+      "example": "Data visualization",
+      "output": "Reduced dataset",
+      "tips": [
+        "Removes redundant features."
+      ]
+    },
+    {
+      "topic": "PCA (Principal Component Analysis)",
+      "definition": "PCA transforms data into principal components capturing maximum variance.",
+      "syntax": "Features \u2192 Components",
+      "example": "Image compression",
+      "output": "Principal components",
+      "tips": [
+        "Standardize data before PCA."
+      ]
+    },
+    {
+      "topic": "Anomaly Detection",
+      "definition": "Identifies unusual data points that differ from normal patterns.",
+      "syntax": "Data \u2192 Outliers",
+      "example": "Fraud detection",
+      "output": "Anomalies detected",
+      "tips": [
+        "Useful for monitoring systems."
+      ]
+    },
+    {
+      "topic": "Unsupervised Learning Best Practices",
+      "definition": "Prepare clean data, scale features and validate discovered patterns.",
+      "syntax": "Prepare \u2192 Cluster \u2192 Evaluate",
+      "example": "Business analytics",
+      "output": "Reliable insights",
+      "tips": [
+        "Normalize features.",
+        "Visualize clusters.",
+        "Validate with domain knowledge."
+      ]
+    }
+  ]
+}

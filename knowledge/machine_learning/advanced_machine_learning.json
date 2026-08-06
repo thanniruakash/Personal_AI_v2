@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Advanced Machine Learning",
+  "topics": [
+    {
+      "topic": "Ensemble Learning",
+      "definition": "Ensemble learning combines multiple models to improve prediction accuracy and robustness.",
+      "syntax": "Models \u2192 Ensemble",
+      "example": "Random Forest",
+      "output": "Improved prediction",
+      "tips": [
+        "Combine diverse models for better results."
+      ]
+    },
+    {
+      "topic": "Transfer Learning",
+      "definition": "Transfer learning reuses knowledge from a pre-trained model for a new task.",
+      "syntax": "Pretrained Model \u2192 New Task",
+      "example": "Image classification",
+      "output": "Adapted model",
+      "tips": [
+        "Fine-tune only what is necessary."
+      ]
+    },
+    {
+      "topic": "AutoML",
+      "definition": "AutoML automates model selection, feature engineering and hyperparameter tuning.",
+      "syntax": "Data \u2192 AutoML \u2192 Model",
+      "example": "AutoML pipeline",
+      "output": "Optimized model",
+      "tips": [
+        "Review generated models before deployment."
+      ]
+    },
+    {
+      "topic": "Federated Learning",
+      "definition": "Federated learning trains models across multiple devices without sharing raw data.",
+      "syntax": "Devices \u2192 Local Training \u2192 Aggregate",
+      "example": "Mobile keyboard suggestions",
+      "output": "Privacy-preserving model",
+      "tips": [
+        "Protect user privacy during training."
+      ]
+    },
+    {
+      "topic": "Online Learning",
+      "definition": "Online learning updates a model continuously as new data arrives.",
+      "syntax": "New Data \u2192 Update Model",
+      "example": "Fraud detection",
+      "output": "Continuously improved model",
+      "tips": [
+        "Monitor for concept drift."
+      ]
+    },
+    {
+      "topic": "Explainable AI (XAI)",
+      "definition": "Explainable AI helps humans understand how machine learning models make decisions.",
+      "syntax": "Model \u2192 Explanation",
+      "example": "Feature importance",
+      "output": "Model explanation",
+      "tips": [
+        "Prefer interpretable explanations for critical applications."
+      ]
+    },
+    {
+      "topic": "Emerging ML Trends",
+      "definition": "Modern ML trends include foundation models, edge AI, tinyML and multimodal systems.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "Edge AI devices",
+      "output": "Current trends",
+      "tips": [
+        "Keep learning as the field evolves."
+      ]
+    },
+    {
+      "topic": "Advanced Machine Learning Best Practices",
+      "definition": "Build scalable, explainable and continuously monitored ML systems.",
+      "syntax": "Design \u2192 Train \u2192 Explain \u2192 Monitor",
+      "example": "Enterprise ML platform",
+      "output": "Reliable ML solution",
+      "tips": [
+        "Monitor production models.",
+        "Document experiments.",
+        "Update models responsibly."
+      ]
+    }
+  ]
+}

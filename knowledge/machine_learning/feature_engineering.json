@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Feature Engineering",
+  "topics": [
+    {
+      "topic": "What is Feature Engineering?",
+      "definition": "Feature engineering creates or improves input features to help machine learning models perform better.",
+      "syntax": "Raw Data \u2192 Features",
+      "example": "Create age groups from age",
+      "output": "Improved features",
+      "tips": [
+        "Understand the data before creating features."
+      ]
+    },
+    {
+      "topic": "Data Cleaning",
+      "definition": "Data cleaning removes errors, duplicates and missing values from datasets.",
+      "syntax": "Raw Data \u2192 Clean Data",
+      "example": "Remove duplicate records",
+      "output": "Clean dataset",
+      "tips": [
+        "Handle missing values consistently."
+      ]
+    },
+    {
+      "topic": "Feature Scaling",
+      "definition": "Feature scaling transforms numerical values to a similar range.",
+      "syntax": "Normalize / Standardize",
+      "example": "Scale income values",
+      "output": "Scaled features",
+      "tips": [
+        "Many algorithms benefit from scaling."
+      ]
+    },
+    {
+      "topic": "Feature Encoding",
+      "definition": "Encoding converts categorical values into numerical representations.",
+      "syntax": "Category \u2192 Number",
+      "example": "One-Hot Encoding",
+      "output": "Encoded features",
+      "tips": [
+        "Choose encoding based on the algorithm."
+      ]
+    },
+    {
+      "topic": "Feature Selection",
+      "definition": "Feature selection chooses the most relevant features for model training.",
+      "syntax": "Features \u2192 Best Features",
+      "example": "Select top 10 features",
+      "output": "Reduced feature set",
+      "tips": [
+        "Remove irrelevant features."
+      ]
+    },
+    {
+      "topic": "Feature Extraction",
+      "definition": "Feature extraction creates informative features from existing data.",
+      "syntax": "Data \u2192 New Features",
+      "example": "PCA",
+      "output": "Extracted features",
+      "tips": [
+        "Reduce dimensionality when appropriate."
+      ]
+    },
+    {
+      "topic": "Data Transformation",
+      "definition": "Data transformation changes data into a more useful format for learning.",
+      "syntax": "Transform \u2192 Train",
+      "example": "Log transformation",
+      "output": "Transformed data",
+      "tips": [
+        "Apply the same transformation to training and testing data."
+      ]
+    },
+    {
+      "topic": "Feature Engineering Best Practices",
+      "definition": "Create meaningful features, clean data and evaluate feature importance.",
+      "syntax": "Clean \u2192 Engineer \u2192 Evaluate",
+      "example": "Production ML pipeline",
+      "output": "Better model performance",
+      "tips": [
+        "Avoid data leakage.",
+        "Document transformations.",
+        "Validate feature usefulness."
+      ]
+    }
+  ]
+}

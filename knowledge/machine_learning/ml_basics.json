@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "ML Basics",
+  "topics": [
+    {
+      "topic": "What is Machine Learning?",
+      "definition": "Machine Learning enables computers to learn patterns from data and make predictions without explicit programming.",
+      "syntax": "Data \u2192 Model \u2192 Prediction",
+      "example": "Spam email detection",
+      "output": "Predicted result",
+      "tips": [
+        "Quality data is essential."
+      ]
+    },
+    {
+      "topic": "Artificial Intelligence vs Machine Learning",
+      "definition": "AI is the broader field of intelligent systems, while ML is a subset that learns from data.",
+      "syntax": "AI \u2283 ML",
+      "example": "Voice assistant",
+      "output": "Relationship understood",
+      "tips": [
+        "All ML is AI, but not all AI is ML."
+      ]
+    },
+    {
+      "topic": "Types of Machine Learning",
+      "definition": "The main types are supervised, unsupervised and reinforcement learning.",
+      "syntax": "Supervised | Unsupervised | Reinforcement",
+      "example": "Image classification",
+      "output": "Learning type identified",
+      "tips": [
+        "Choose based on available data."
+      ]
+    },
+    {
+      "topic": "Dataset",
+      "definition": "A dataset is a collection of examples used to train and evaluate models.",
+      "syntax": "Features + Labels",
+      "example": "House price dataset",
+      "output": "Training data",
+      "tips": [
+        "Clean datasets improve performance."
+      ]
+    },
+    {
+      "topic": "Features and Labels",
+      "definition": "Features are input variables and labels are the expected outputs.",
+      "syntax": "X \u2192 y",
+      "example": "Area \u2192 House Price",
+      "output": "Training pair",
+      "tips": [
+        "Select meaningful features."
+      ]
+    },
+    {
+      "topic": "Training vs Testing",
+      "definition": "Training data teaches the model, while testing data evaluates its performance.",
+      "syntax": "Train \u2192 Test",
+      "example": "80/20 data split",
+      "output": "Performance measured",
+      "tips": [
+        "Keep test data separate."
+      ]
+    },
+    {
+      "topic": "ML Workflow",
+      "definition": "A typical workflow includes collecting data, preprocessing, training, evaluating and deploying a model.",
+      "syntax": "Collect \u2192 Prepare \u2192 Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Customer churn prediction",
+      "output": "ML pipeline",
+      "tips": [
+        "Document each stage."
+      ]
+    },
+    {
+      "topic": "Machine Learning Best Practices",
+      "definition": "Use quality data, validate models and monitor performance after deployment.",
+      "syntax": "Prepare \u2192 Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production ML system",
+      "output": "Reliable ML model",
+      "tips": [
+        "Avoid data leakage.",
+        "Monitor drift.",
+        "Retrain when needed."
+      ]
+    }
+  ]
+}

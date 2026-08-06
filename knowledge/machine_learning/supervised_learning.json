@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Supervised Learning",
+  "topics": [
+    {
+      "topic": "What is Supervised Learning?",
+      "definition": "Supervised learning trains a model using labeled data to predict outputs for new inputs.",
+      "syntax": "Features + Labels \u2192 Model",
+      "example": "Email spam detection",
+      "output": "Predicted label",
+      "tips": [
+        "Use high-quality labeled data."
+      ]
+    },
+    {
+      "topic": "Regression",
+      "definition": "Regression predicts continuous numerical values.",
+      "syntax": "Input \u2192 Number",
+      "example": "House price prediction",
+      "output": "Numeric prediction",
+      "tips": [
+        "Evaluate with regression metrics."
+      ]
+    },
+    {
+      "topic": "Classification",
+      "definition": "Classification predicts discrete categories or classes.",
+      "syntax": "Input \u2192 Class",
+      "example": "Cat vs Dog",
+      "output": "Class label",
+      "tips": [
+        "Balance class distributions when possible."
+      ]
+    },
+    {
+      "topic": "Decision Trees",
+      "definition": "Decision trees split data into branches based on feature values.",
+      "syntax": "Root \u2192 Branch \u2192 Leaf",
+      "example": "Loan approval",
+      "output": "Decision path",
+      "tips": [
+        "Prune trees to reduce overfitting."
+      ]
+    },
+    {
+      "topic": "Random Forest",
+      "definition": "Random Forest combines many decision trees for better accuracy.",
+      "syntax": "Trees \u2192 Ensemble",
+      "example": "Fraud detection",
+      "output": "Ensemble prediction",
+      "tips": [
+        "Increase trees until performance stabilizes."
+      ]
+    },
+    {
+      "topic": "Linear Regression",
+      "definition": "Linear regression models the relationship between variables using a straight line.",
+      "syntax": "y = mx + c",
+      "example": "Predict sales",
+      "output": "Regression line",
+      "tips": [
+        "Works best for linear relationships."
+      ]
+    },
+    {
+      "topic": "Support Vector Machines (SVM)",
+      "definition": "SVM finds the optimal boundary that separates different classes.",
+      "syntax": "Hyperplane",
+      "example": "Image classification",
+      "output": "Separated classes",
+      "tips": [
+        "Kernel functions handle non-linear data."
+      ]
+    },
+    {
+      "topic": "Supervised Learning Best Practices",
+      "definition": "Prepare clean data, choose suitable algorithms and validate models carefully.",
+      "syntax": "Prepare \u2192 Train \u2192 Validate",
+      "example": "Production ML model",
+      "output": "Reliable predictions",
+      "tips": [
+        "Avoid overfitting.",
+        "Use cross-validation.",
+        "Monitor performance after deployment."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "MLOps",
+  "topics": [
+    {
+      "topic": "What is MLOps?",
+      "definition": "MLOps is the practice of managing the complete machine learning lifecycle from development to deployment and monitoring.",
+      "syntax": "Develop \u2192 Deploy \u2192 Monitor",
+      "example": "Production ML system",
+      "output": "Managed ML workflow",
+      "tips": [
+        "Automate repetitive tasks."
+      ]
+    },
+    {
+      "topic": "ML Pipeline",
+      "definition": "An ML pipeline automates data preparation, training, evaluation and deployment.",
+      "syntax": "Data \u2192 Train \u2192 Evaluate \u2192 Deploy",
+      "example": "Fraud detection pipeline",
+      "output": "Automated workflow",
+      "tips": [
+        "Keep pipeline stages modular."
+      ]
+    },
+    {
+      "topic": "Model Versioning",
+      "definition": "Model versioning tracks different versions of trained models and datasets.",
+      "syntax": "Model v1 \u2192 v2",
+      "example": "Update a classifier",
+      "output": "Version tracked",
+      "tips": [
+        "Version both models and data."
+      ]
+    },
+    {
+      "topic": "Model Deployment",
+      "definition": "Deployment makes trained models available for real-world use.",
+      "syntax": "Model \u2192 Production",
+      "example": "REST API prediction service",
+      "output": "Live model",
+      "tips": [
+        "Test before deployment."
+      ]
+    },
+    {
+      "topic": "Model Monitoring",
+      "definition": "Monitoring tracks accuracy, latency and failures after deployment.",
+      "syntax": "Deploy \u2192 Monitor",
+      "example": "Monitor prediction quality",
+      "output": "Performance metrics",
+      "tips": [
+        "Detect model drift early."
+      ]
+    },
+    {
+      "topic": "Continuous Training",
+      "definition": "Continuously retrain models as new data becomes available.",
+      "syntax": "New Data \u2192 Retrain",
+      "example": "Daily recommendation updates",
+      "output": "Updated model",
+      "tips": [
+        "Retrain only when beneficial."
+      ]
+    },
+    {
+      "topic": "CI/CD for ML",
+      "definition": "CI/CD automates testing and deployment of ML models.",
+      "syntax": "Build \u2192 Test \u2192 Deploy",
+      "example": "Automatic model release",
+      "output": "Reliable deployments",
+      "tips": [
+        "Automate validation checks."
+      ]
+    },
+    {
+      "topic": "MLOps Best Practices",
+      "definition": "Automate workflows, monitor models and maintain reproducible pipelines.",
+      "syntax": "Automate \u2192 Monitor \u2192 Improve",
+      "example": "Enterprise ML platform",
+      "output": "Reliable ML operations",
+      "tips": [
+        "Log experiments.",
+        "Monitor drift.",
+        "Keep reproducible environments."
+      ]
+    }
+  ]
+}

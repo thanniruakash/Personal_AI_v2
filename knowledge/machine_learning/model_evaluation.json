@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Model Evaluation",
+  "topics": [
+    {
+      "topic": "Model Evaluation",
+      "definition": "Model evaluation measures how well a machine learning model performs on unseen data.",
+      "syntax": "Model \u2192 Test Data \u2192 Metrics",
+      "example": "Evaluate a classifier",
+      "output": "Performance report",
+      "tips": [
+        "Always use separate test data."
+      ]
+    },
+    {
+      "topic": "Accuracy",
+      "definition": "Accuracy is the percentage of correct predictions.",
+      "syntax": "(Correct Predictions / Total Predictions) \u00d7 100",
+      "example": "95 correct out of 100",
+      "output": "95% Accuracy",
+      "tips": [
+        "Not ideal for imbalanced datasets."
+      ]
+    },
+    {
+      "topic": "Precision and Recall",
+      "definition": "Precision measures prediction quality while recall measures how many actual positives are found.",
+      "syntax": "Precision / Recall",
+      "example": "Spam detection",
+      "output": "Precision & Recall scores",
+      "tips": [
+        "Balance both metrics."
+      ]
+    },
+    {
+      "topic": "F1 Score",
+      "definition": "F1 Score is the harmonic mean of precision and recall.",
+      "syntax": "2 \u00d7 (Precision \u00d7 Recall)/(Precision + Recall)",
+      "example": "Binary classification",
+      "output": "F1 Score",
+      "tips": [
+        "Useful for imbalanced data."
+      ]
+    },
+    {
+      "topic": "ROC Curve and AUC",
+      "definition": "ROC compares true positive and false positive rates, while AUC summarizes overall performance.",
+      "syntax": "ROC \u2192 AUC",
+      "example": "Medical diagnosis",
+      "output": "ROC graph and AUC value",
+      "tips": [
+        "Higher AUC generally indicates better performance."
+      ]
+    },
+    {
+      "topic": "Cross Validation",
+      "definition": "Cross validation evaluates a model using multiple train-test splits.",
+      "syntax": "K-Fold Cross Validation",
+      "example": "5-fold validation",
+      "output": "Average score",
+      "tips": [
+        "Reduces evaluation bias."
+      ]
+    },
+    {
+      "topic": "Confusion Matrix",
+      "definition": "A confusion matrix shows correct and incorrect predictions for each class.",
+      "syntax": "TP | FP | FN | TN",
+      "example": "Disease prediction",
+      "output": "Confusion matrix",
+      "tips": [
+        "Analyze error types carefully."
+      ]
+    },
+    {
+      "topic": "Model Evaluation Best Practices",
+      "definition": "Use multiple metrics, validate with unseen data and monitor models after deployment.",
+      "syntax": "Evaluate \u2192 Compare \u2192 Improve",
+      "example": "Production ML pipeline",
+      "output": "Reliable model assessment",
+      "tips": [
+        "Don't rely on a single metric.",
+        "Track model drift.",
+        "Re-evaluate regularly."
+      ]
+    }
+  ]
+}

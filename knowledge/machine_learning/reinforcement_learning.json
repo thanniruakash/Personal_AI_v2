@@ -1,0 +1,88 @@
+{
+  "subject": "Machine Learning",
+  "section": "Reinforcement Learning",
+  "topics": [
+    {
+      "topic": "What is Reinforcement Learning?",
+      "definition": "Reinforcement learning trains an agent to make decisions by interacting with an environment and receiving rewards.",
+      "syntax": "State \u2192 Action \u2192 Reward",
+      "example": "Game playing AI",
+      "output": "Learned policy",
+      "tips": [
+        "Learn through trial and error."
+      ]
+    },
+    {
+      "topic": "Agent and Environment",
+      "definition": "The agent performs actions while the environment responds with new states and rewards.",
+      "syntax": "Agent \u2194 Environment",
+      "example": "Robot navigation",
+      "output": "Interaction cycle",
+      "tips": [
+        "Define the environment clearly."
+      ]
+    },
+    {
+      "topic": "Rewards",
+      "definition": "Rewards provide feedback on whether an action is good or bad.",
+      "syntax": "Action \u2192 Reward",
+      "example": "+10 for reaching goal",
+      "output": "Feedback received",
+      "tips": [
+        "Design rewards carefully."
+      ]
+    },
+    {
+      "topic": "Policy",
+      "definition": "A policy defines how an agent chooses actions in different states.",
+      "syntax": "State \u2192 Action",
+      "example": "Move left or right",
+      "output": "Action selected",
+      "tips": [
+        "Improve the policy over time."
+      ]
+    },
+    {
+      "topic": "Value Function",
+      "definition": "The value function estimates the long-term benefit of states or actions.",
+      "syntax": "State \u2192 Value",
+      "example": "Expected future reward",
+      "output": "Value estimated",
+      "tips": [
+        "Used to guide better decisions."
+      ]
+    },
+    {
+      "topic": "Q-Learning",
+      "definition": "Q-Learning learns the value of state-action pairs without needing a model of the environment.",
+      "syntax": "Q(State, Action)",
+      "example": "Maze solving",
+      "output": "Optimal Q-values",
+      "tips": [
+        "Balance exploration and exploitation."
+      ]
+    },
+    {
+      "topic": "Deep Reinforcement Learning",
+      "definition": "Deep reinforcement learning combines neural networks with reinforcement learning.",
+      "syntax": "State \u2192 Neural Network \u2192 Action",
+      "example": "AlphaGo",
+      "output": "Advanced decision making",
+      "tips": [
+        "Requires significant training data and compute."
+      ]
+    },
+    {
+      "topic": "Reinforcement Learning Best Practices",
+      "definition": "Design effective rewards, monitor training and evaluate learned policies.",
+      "syntax": "Explore \u2192 Learn \u2192 Evaluate",
+      "example": "Autonomous driving",
+      "output": "Reliable RL agent",
+      "tips": [
+        "Avoid reward hacking.",
+        "Test in simulation first.",
+        "Monitor convergence."
+      ]
+    }
+  ]
+}
