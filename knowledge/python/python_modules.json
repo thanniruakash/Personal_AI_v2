@@ -1,0 +1,86 @@
+{
+  "subject": "Python",
+  "section": "Modules and Packages",
+  "topics": [
+    {
+      "topic": "Modules",
+      "definition": "A module is a Python file containing functions, classes, and variables.",
+      "syntax": "import math",
+      "example": "import math\nprint(math.sqrt(25))",
+      "output": "5.0",
+      "tips": [
+        "Modules help organize code into reusable files."
+      ]
+    },
+    {
+      "topic": "Packages",
+      "definition": "A package is a collection of related Python modules.",
+      "syntax": "from package import module",
+      "example": "from datetime import date",
+      "output": "Module imported",
+      "tips": [
+        "Packages usually contain an __init__.py file."
+      ]
+    },
+    {
+      "topic": "import Statement",
+      "definition": "The import statement loads a module into your program.",
+      "syntax": "import random",
+      "example": "import random\nprint(random.randint(1,10))",
+      "output": "Random number",
+      "tips": [
+        "Import only the modules you need."
+      ]
+    },
+    {
+      "topic": "from ... import",
+      "definition": "Imports specific objects from a module.",
+      "syntax": "from math import sqrt",
+      "example": "print(sqrt(49))",
+      "output": "7.0",
+      "tips": [
+        "Useful when you need only a few functions."
+      ]
+    },
+    {
+      "topic": "math Module",
+      "definition": "Provides mathematical functions.",
+      "syntax": "import math",
+      "example": "math.factorial(5)",
+      "output": "120",
+      "tips": [
+        "Includes sqrt(), factorial(), pi and more."
+      ]
+    },
+    {
+      "topic": "random Module",
+      "definition": "Generates random numbers and selections.",
+      "syntax": "import random",
+      "example": "random.choice(['A','B','C'])",
+      "output": "Random item",
+      "tips": [
+        "Useful for games and simulations."
+      ]
+    },
+    {
+      "topic": "datetime Module",
+      "definition": "Works with dates and times.",
+      "syntax": "from datetime import datetime",
+      "example": "datetime.now()",
+      "output": "Current date and time",
+      "tips": [
+        "Useful for timestamps and scheduling."
+      ]
+    },
+    {
+      "topic": "os Module",
+      "definition": "Provides functions for interacting with the operating system.",
+      "syntax": "import os",
+      "example": "os.getcwd()",
+      "output": "Current working directory",
+      "tips": [
+        "Can create folders, list files and manage paths."
+      ]
+    }
+  ]
+}

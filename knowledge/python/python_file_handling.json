@@ -1,0 +1,76 @@
+{
+  "subject": "Python",
+  "section": "File Handling",
+  "topics": [
+    {
+      "topic": "Introduction to File Handling",
+      "definition": "File handling allows Python programs to create, read, write and update files.",
+      "syntax": "file = open('data.txt', 'r')",
+      "example": "file = open('notes.txt','r')",
+      "output": "File opened",
+      "tips": [
+        "Always close files after use."
+      ]
+    },
+    {
+      "topic": "File Modes",
+      "definition": "File modes specify how a file is opened.",
+      "syntax": "open('file.txt','r')",
+      "example": "r, w, a, x, rb, wb",
+      "output": "Different file operations",
+      "tips": [
+        "Use 'r' to read and 'w' to write."
+      ]
+    },
+    {
+      "topic": "Reading Files",
+      "definition": "Use read(), readline() or readlines() to read data.",
+      "syntax": "file.read()",
+      "example": "text = file.read()",
+      "output": "File contents",
+      "tips": [
+        "read() reads the whole file."
+      ]
+    },
+    {
+      "topic": "Writing Files",
+      "definition": "write() writes data to a file.",
+      "syntax": "file.write('Hello')",
+      "example": "file = open('a.txt','w')",
+      "output": "Hello written to file",
+      "tips": [
+        "'w' overwrites existing content."
+      ]
+    },
+    {
+      "topic": "Appending Files",
+      "definition": "Append mode adds new data without deleting old data.",
+      "syntax": "open('a.txt','a')",
+      "example": "file.write('New Line')",
+      "output": "Content appended",
+      "tips": [
+        "Useful for logs."
+      ]
+    },
+    {
+      "topic": "Closing Files",
+      "definition": "close() releases the file resource.",
+      "syntax": "file.close()",
+      "example": "file.close()",
+      "output": "File closed",
+      "tips": [
+        "Always close opened files."
+      ]
+    },
+    {
+      "topic": "with open()",
+      "definition": "Automatically closes the file after use.",
+      "syntax": "with open('a.txt','r') as file:",
+      "example": "with open('a.txt') as f:\n    print(f.read())",
+      "output": "File content displayed",
+      "tips": [
+        "Recommended method for file handling."
+      ]
+    }
+  ]
+}

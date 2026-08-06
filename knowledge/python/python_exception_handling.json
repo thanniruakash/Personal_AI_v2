@@ -1,0 +1,76 @@
+{
+  "subject": "Python",
+  "section": "Exception Handling",
+  "topics": [
+    {
+      "topic": "Exceptions",
+      "definition": "An exception is an error that occurs during program execution.",
+      "syntax": "print(10/0)",
+      "example": "ZeroDivisionError",
+      "output": "Program raises an exception",
+      "tips": [
+        "Exceptions prevent normal program flow."
+      ]
+    },
+    {
+      "topic": "try Block",
+      "definition": "The try block contains code that may raise an exception.",
+      "syntax": "try:\n    x = 10/0",
+      "example": "try:\n    print(10/0)",
+      "output": "Exception handled",
+      "tips": [
+        "Place risky code inside try."
+      ]
+    },
+    {
+      "topic": "except Block",
+      "definition": "The except block handles exceptions raised in the try block.",
+      "syntax": "except ZeroDivisionError:",
+      "example": "except ValueError:\n    print('Invalid value')",
+      "output": "Custom error message",
+      "tips": [
+        "You can catch specific exceptions."
+      ]
+    },
+    {
+      "topic": "else Block",
+      "definition": "The else block runs if no exception occurs.",
+      "syntax": "try: ...\nexcept: ...\nelse: ...",
+      "example": "else:\n    print('Success')",
+      "output": "Success",
+      "tips": [
+        "Use else for code that should run only after a successful try."
+      ]
+    },
+    {
+      "topic": "finally Block",
+      "definition": "The finally block always executes whether an exception occurs or not.",
+      "syntax": "finally:\n    print('Done')",
+      "example": "Close a file in finally",
+      "output": "Done",
+      "tips": [
+        "Useful for cleanup tasks."
+      ]
+    },
+    {
+      "topic": "raise Statement",
+      "definition": "The raise statement is used to create and throw an exception manually.",
+      "syntax": "raise ValueError('Invalid input')",
+      "example": "if age < 0:\n    raise ValueError('Age cannot be negative')",
+      "output": "ValueError raised",
+      "tips": [
+        "Use raise to enforce validation rules."
+      ]
+    },
+    {
+      "topic": "Custom Exceptions",
+      "definition": "You can create your own exception classes by inheriting from Exception.",
+      "syntax": "class MyError(Exception):\n    pass",
+      "example": "raise MyError('Custom error')",
+      "output": "Custom exception",
+      "tips": [
+        "Useful for large applications."
+      ]
+    }
+  ]
+}

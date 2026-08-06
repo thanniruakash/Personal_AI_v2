@@ -1,0 +1,106 @@
+{
+  "subject": "Python",
+  "section": "Functions",
+  "topics": [
+    {
+      "topic": "Introduction to Functions",
+      "definition": "A function is a reusable block of code that performs a specific task.",
+      "syntax": "def function_name():\n    pass",
+      "example": "def greet():\n    print('Hello')",
+      "output": "Hello",
+      "tips": [
+        "Functions reduce code repetition."
+      ]
+    },
+    {
+      "topic": "Defining Functions",
+      "definition": "Functions are defined using the def keyword.",
+      "syntax": "def add(a, b):\n    return a + b",
+      "example": "def square(x):\n    return x*x",
+      "output": "Returns the square of x",
+      "tips": [
+        "Choose meaningful function names."
+      ]
+    },
+    {
+      "topic": "Calling Functions",
+      "definition": "A function runs when it is called by its name.",
+      "syntax": "function_name()",
+      "example": "greet()",
+      "output": "Hello",
+      "tips": [
+        "Define the function before calling it."
+      ]
+    },
+    {
+      "topic": "Parameters and Arguments",
+      "definition": "Parameters receive values passed to a function. The passed values are called arguments.",
+      "syntax": "def add(a, b):",
+      "example": "add(5, 3)",
+      "output": "8",
+      "tips": [
+        "Arguments match parameters by position unless keywords are used."
+      ]
+    },
+    {
+      "topic": "Return Statement",
+      "definition": "The return statement sends a value back to the caller.",
+      "syntax": "return value",
+      "example": "def add(a,b):\n    return a+b",
+      "output": "Returned result",
+      "tips": [
+        "A function without return returns None."
+      ]
+    },
+    {
+      "topic": "Default Arguments",
+      "definition": "Default values are used if no argument is provided.",
+      "syntax": "def greet(name='Guest'):",
+      "example": "greet()",
+      "output": "Guest",
+      "tips": [
+        "Default parameters should come after required ones."
+      ]
+    },
+    {
+      "topic": "Keyword Arguments",
+      "definition": "Arguments can be passed using parameter names.",
+      "syntax": "func(name='Akash')",
+      "example": "student(age=18, name='Akash')",
+      "output": "Named arguments accepted",
+      "tips": [
+        "Order is not important with keyword arguments."
+      ]
+    },
+    {
+      "topic": "*args and **kwargs",
+      "definition": "*args accepts multiple positional arguments and **kwargs accepts multiple keyword arguments.",
+      "syntax": "def demo(*args, **kwargs):",
+      "example": "demo(1,2,name='Akash')",
+      "output": "Handles variable arguments",
+      "tips": [
+        "Useful for flexible functions."
+      ]
+    },
+    {
+      "topic": "Lambda Functions",
+      "definition": "A lambda function is a small anonymous function.",
+      "syntax": "lambda x: x*x",
+      "example": "square = lambda x: x*x",
+      "output": "Returns square",
+      "tips": [
+        "Best for short expressions."
+      ]
+    },
+    {
+      "topic": "Recursion",
+      "definition": "A recursive function calls itself.",
+      "syntax": "def fact(n): ...",
+      "example": "Factorial using recursion",
+      "output": "Recursive result",
+      "tips": [
+        "Always include a base case."
+      ]
+    }
+  ]
+}

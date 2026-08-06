@@ -1,0 +1,106 @@
+{
+  "subject": "Python",
+  "section": "Object Oriented Programming",
+  "topics": [
+    {
+      "topic": "Class",
+      "definition": "A class is a blueprint used to create objects.",
+      "syntax": "class Student:\n    pass",
+      "example": "class Car:\n    pass",
+      "output": "Class created",
+      "tips": [
+        "Class names usually start with a capital letter."
+      ]
+    },
+    {
+      "topic": "Object",
+      "definition": "An object is an instance of a class.",
+      "syntax": "obj = Student()",
+      "example": "car = Car()",
+      "output": "Object created",
+      "tips": [
+        "Multiple objects can be created from one class."
+      ]
+    },
+    {
+      "topic": "Constructor (__init__)",
+      "definition": "A constructor initializes object attributes automatically.",
+      "syntax": "def __init__(self, name):",
+      "example": "class Student:\n    def __init__(self,name):\n        self.name=name",
+      "output": "Object initialized",
+      "tips": [
+        "Runs automatically when an object is created."
+      ]
+    },
+    {
+      "topic": "Instance Variables",
+      "definition": "Instance variables belong to an object.",
+      "syntax": "self.name = name",
+      "example": "self.age = age",
+      "output": "Values stored in object",
+      "tips": [
+        "Access using object.variable"
+      ]
+    },
+    {
+      "topic": "Methods",
+      "definition": "Methods are functions defined inside a class.",
+      "syntax": "def display(self):",
+      "example": "obj.display()",
+      "output": "Method executed",
+      "tips": [
+        "The first parameter is usually self."
+      ]
+    },
+    {
+      "topic": "Inheritance",
+      "definition": "Inheritance allows one class to inherit properties of another class.",
+      "syntax": "class Child(Parent):",
+      "example": "class Dog(Animal):",
+      "output": "Child class inherits parent",
+      "tips": [
+        "Promotes code reuse."
+      ]
+    },
+    {
+      "topic": "Polymorphism",
+      "definition": "Polymorphism allows the same method name to behave differently.",
+      "syntax": "method overriding",
+      "example": "Different display() methods",
+      "output": "Different behavior",
+      "tips": [
+        "Achieved using overriding."
+      ]
+    },
+    {
+      "topic": "Encapsulation",
+      "definition": "Encapsulation bundles data and methods together.",
+      "syntax": "class Example:",
+      "example": "Use private variables like __value",
+      "output": "Protected data",
+      "tips": [
+        "Improves data security."
+      ]
+    },
+    {
+      "topic": "Abstraction",
+      "definition": "Abstraction hides implementation details and shows only essential features.",
+      "syntax": "from abc import ABC",
+      "example": "Abstract base class",
+      "output": "Implementation hidden",
+      "tips": [
+        "Useful for large applications."
+      ]
+    },
+    {
+      "topic": "Method Overriding",
+      "definition": "A child class provides its own implementation of a parent method.",
+      "syntax": "def display(self):",
+      "example": "Override display() in child class",
+      "output": "Child method executed",
+      "tips": [
+        "Supports runtime polymorphism."
+      ]
+    }
+  ]
+}

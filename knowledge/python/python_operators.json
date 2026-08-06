@@ -1,0 +1,116 @@
+{
+  "subject": "Python",
+  "section": "Operators",
+  "topics": [
+    {
+      "operator": "Arithmetic Operators",
+      "definition": "Used to perform mathematical operations.",
+      "operators": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "**",
+        "//"
+      ],
+      "example": "a = 10\nb = 3\nprint(a + b)",
+      "output": "13",
+      "tips": [
+        "** is exponent",
+        "// is floor division"
+      ]
+    },
+    {
+      "operator": "Assignment Operators",
+      "definition": "Used to assign values to variables.",
+      "operators": [
+        "=",
+        "+=",
+        "-=",
+        "*=",
+        "/=",
+        "%="
+      ],
+      "example": "x = 5\nx += 2\nprint(x)",
+      "output": "7",
+      "tips": [
+        "Shortens assignment expressions"
+      ]
+    },
+    {
+      "operator": "Comparison Operators",
+      "definition": "Compare two values and return True or False.",
+      "operators": [
+        "==",
+        "!=",
+        ">",
+        "<",
+        ">=",
+        "<="
+      ],
+      "example": "print(10 > 5)",
+      "output": "True",
+      "tips": [
+        "Commonly used with if statements"
+      ]
+    },
+    {
+      "operator": "Logical Operators",
+      "definition": "Combine conditional expressions.",
+      "operators": [
+        "and",
+        "or",
+        "not"
+      ],
+      "example": "print(True and False)",
+      "output": "False",
+      "tips": [
+        "Returns boolean values"
+      ]
+    },
+    {
+      "operator": "Bitwise Operators",
+      "definition": "Operate on binary values.",
+      "operators": [
+        "&",
+        "|",
+        "^",
+        "~",
+        "<<",
+        ">>"
+      ],
+      "example": "print(5 & 3)",
+      "output": "1",
+      "tips": [
+        "Used in low-level programming"
+      ]
+    },
+    {
+      "operator": "Membership Operators",
+      "definition": "Check if a value exists in a sequence.",
+      "operators": [
+        "in",
+        "not in"
+      ],
+      "example": "print('a' in 'Akash')",
+      "output": "True",
+      "tips": [
+        "Works with strings, lists, tuples, sets and dictionaries"
+      ]
+    },
+    {
+      "operator": "Identity Operators",
+      "definition": "Compare whether two variables refer to the same object.",
+      "operators": [
+        "is",
+        "is not"
+      ],
+      "example": "a=[1]\nb=a\nprint(a is b)",
+      "output": "True",
+      "tips": [
+        "Different from =="
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "subject": "Python",
+  "section": "Advanced Topics",
+  "topics": [
+    {
+      "topic": "List Comprehensions",
+      "definition": "A concise way to create lists.",
+      "syntax": "[x*x for x in range(5)]",
+      "example": "squares = [x*x for x in range(5)]",
+      "output": "[0, 1, 4, 9, 16]",
+      "tips": [
+        "Use for simple list creation."
+      ]
+    },
+    {
+      "topic": "Iterables",
+      "definition": "Objects that can be looped over, such as lists and tuples.",
+      "syntax": "for item in iterable:",
+      "example": "for x in [1,2,3]: print(x)",
+      "output": "1\n2\n3",
+      "tips": [
+        "Strings are also iterables."
+      ]
+    },
+    {
+      "topic": "Iterators",
+      "definition": "Objects that produce values one at a time using next().",
+      "syntax": "it = iter([1,2,3])",
+      "example": "next(it)",
+      "output": "1",
+      "tips": [
+        "Useful for large datasets."
+      ]
+    },
+    {
+      "topic": "Generators",
+      "definition": "Functions that use yield to generate values lazily.",
+      "syntax": "def gen():\n    yield 1",
+      "example": "for i in gen(): print(i)",
+      "output": "1",
+      "tips": [
+        "Memory efficient."
+      ]
+    },
+    {
+      "topic": "Decorators",
+      "definition": "Functions that modify the behavior of other functions.",
+      "syntax": "@decorator",
+      "example": "@login_required",
+      "output": "Wrapped function",
+      "tips": [
+        "Common in Flask and Django."
+      ]
+    },
+    {
+      "topic": "Virtual Environments",
+      "definition": "Create isolated Python environments for projects.",
+      "syntax": "python -m venv venv",
+      "example": "venv\\Scripts\\activate",
+      "output": "Environment activated",
+      "tips": [
+        "Keeps project dependencies separate."
+      ]
+    },
+    {
+      "topic": "pip",
+      "definition": "Python package manager.",
+      "syntax": "pip install numpy",
+      "example": "pip install requests",
+      "output": "Package installed",
+      "tips": [
+        "Use pip list to see installed packages."
+      ]
+    },
+    {
+      "topic": "Docstrings",
+      "definition": "Documentation strings that describe modules, classes and functions.",
+      "syntax": "\"\"\"Function description\"\"\"",
+      "example": "def add():\n    \"\"\"Adds two numbers.\"\"\"",
+      "output": "Documentation available",
+      "tips": [
+        "Improves code readability."
+      ]
+    },
+    {
+      "topic": "Type Hints",
+      "definition": "Optional annotations for parameter and return types.",
+      "syntax": "def add(a:int,b:int)->int:",
+      "example": "def greet(name:str)->str:",
+      "output": "Type annotations",
+      "tips": [
+        "Helps IDEs and static analysis."
+      ]
+    },
+    {
+      "topic": "Best Practices",
+      "definition": "Guidelines for writing clean Python code.",
+      "syntax": "Follow PEP 8",
+      "example": "Use meaningful variable names",
+      "output": "Readable code",
+      "tips": [
+        "Keep functions small.",
+        "Write comments only when needed."
+      ]
+    }
+  ]
+}

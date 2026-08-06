@@ -1,0 +1,109 @@
+{
+  "subject": "Python",
+  "section": "Basics",
+  "topics": [
+    {
+      "topic": "What is Python?",
+      "definition": "Python is a high-level, interpreted, general-purpose programming language.",
+      "syntax": "print('Hello, World!')",
+      "example": "print('Hello, World!')",
+      "output": "Hello, World!",
+      "tips": [
+        "Easy to learn",
+        "Case-sensitive"
+      ]
+    },
+    {
+      "topic": "Features of Python",
+      "definition": "Python is simple, readable, portable, object-oriented and open source.",
+      "syntax": "N/A",
+      "example": "Runs on Windows, Linux and macOS",
+      "output": "Platform independent",
+      "tips": [
+        "Readable syntax",
+        "Large standard library"
+      ]
+    },
+    {
+      "topic": "History of Python",
+      "definition": "Python was created by Guido van Rossum and released in 1991.",
+      "syntax": "N/A",
+      "example": "Creator: Guido van Rossum",
+      "output": "1991",
+      "tips": [
+        "Named after Monty Python"
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "Used for web development, AI, automation and data science.",
+      "syntax": "N/A",
+      "example": "Flask, Django",
+      "output": "Many applications",
+      "tips": [
+        "Popular in AI"
+      ]
+    },
+    {
+      "topic": "Variables",
+      "definition": "Variables store values.",
+      "syntax": "x = 10",
+      "example": "name = 'Akash'",
+      "output": "Akash",
+      "tips": [
+        "No type declaration",
+        "Cannot start with number"
+      ]
+    },
+    {
+      "topic": "Data Types",
+      "definition": "int, float, str, bool, list, tuple, set, dict.",
+      "syntax": "age = 18",
+      "example": "price = 99.5",
+      "output": "99.5",
+      "tips": [
+        "Use type()"
+      ]
+    },
+    {
+      "topic": "Input and Output",
+      "definition": "input() reads input and print() displays output.",
+      "syntax": "name = input()",
+      "example": "print(name)",
+      "output": "Akash",
+      "tips": [
+        "input() returns string"
+      ]
+    },
+    {
+      "topic": "Comments",
+      "definition": "Comments improve readability.",
+      "syntax": "# comment",
+      "example": "# Calculate sum",
+      "output": "No output",
+      "tips": [
+        "Use #"
+      ]
+    },
+    {
+      "topic": "Keywords",
+      "definition": "Keywords are reserved words.",
+      "syntax": "if else for while",
+      "example": "if x>0:",
+      "output": "Conditional",
+      "tips": [
+        "Cannot use as variable names"
+      ]
+    },
+    {
+      "topic": "Identifiers",
+      "definition": "Identifiers are names for variables and functions.",
+      "syntax": "student_name",
+      "example": "total_marks = 100",
+      "output": "100",
+      "tips": [
+        "Use meaningful names"
+      ]
+    }
+  ]
+}
