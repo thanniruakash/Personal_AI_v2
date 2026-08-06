@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Column-Family Databases",
+  "topics": [
+    {
+      "topic": "What are Column-Family Databases?",
+      "definition": "Column-family databases store related columns together for efficient large-scale data processing.",
+      "syntax": "Row \u2192 Column Family",
+      "example": "Apache Cassandra table",
+      "output": "Column-family data stored",
+      "tips": [
+        "Designed for large distributed workloads."
+      ]
+    },
+    {
+      "topic": "Apache Cassandra",
+      "definition": "Apache Cassandra is a distributed NoSQL database built for high availability and scalability.",
+      "syntax": "Cluster \u2192 Nodes",
+      "example": "Global messaging application",
+      "output": "Data distributed",
+      "tips": [
+        "Excellent for write-heavy workloads."
+      ]
+    },
+    {
+      "topic": "Apache HBase",
+      "definition": "Apache HBase is a column-family database built on Hadoop for big data storage.",
+      "syntax": "Table \u2192 Column Family",
+      "example": "Store sensor data",
+      "output": "Large datasets managed",
+      "tips": [
+        "Commonly used with the Hadoop ecosystem."
+      ]
+    },
+    {
+      "topic": "Column Families",
+      "definition": "A column family groups related columns that are stored together.",
+      "syntax": "Family \u2192 Columns",
+      "example": "UserProfile family",
+      "output": "Related columns organized",
+      "tips": [
+        "Group frequently accessed columns together."
+      ]
+    },
+    {
+      "topic": "Data Modeling",
+      "definition": "Design schemas based on query patterns rather than normalization.",
+      "syntax": "Query \u2192 Model",
+      "example": "Optimize customer lookup",
+      "output": "Efficient schema",
+      "tips": [
+        "Model data for application access."
+      ]
+    },
+    {
+      "topic": "Read and Write Operations",
+      "definition": "Column-family databases optimize high-throughput read and write operations.",
+      "syntax": "Read / Write",
+      "example": "Insert millions of records",
+      "output": "Fast operations",
+      "tips": [
+        "Batch writes when appropriate."
+      ]
+    },
+    {
+      "topic": "Replication",
+      "definition": "Replication copies data across nodes to improve availability and fault tolerance.",
+      "syntax": "Node \u2192 Replica",
+      "example": "Three-node cluster",
+      "output": "Replicated data",
+      "tips": [
+        "Monitor replica synchronization."
+      ]
+    },
+    {
+      "topic": "Column-Family Database Best Practices",
+      "definition": "Design around access patterns, replicate data and monitor cluster health.",
+      "syntax": "Design \u2192 Replicate \u2192 Monitor",
+      "example": "Production Cassandra cluster",
+      "output": "Reliable NoSQL deployment",
+      "tips": [
+        "Choose partition keys carefully.",
+        "Avoid hotspot partitions.",
+        "Monitor node health regularly."
+      ]
+    }
+  ]
+}

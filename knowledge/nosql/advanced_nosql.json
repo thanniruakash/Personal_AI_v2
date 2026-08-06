@@ -1,0 +1,89 @@
+{
+  "subject": "NoSQL",
+  "section": "Advanced NoSQL",
+  "topics": [
+    {
+      "topic": "Multi-Region Deployment",
+      "definition": "Deploy NoSQL databases across multiple geographic regions to improve availability and reduce latency.",
+      "syntax": "Region A \u2194 Region B",
+      "example": "Global application",
+      "output": "Worldwide deployment",
+      "tips": [
+        "Keep replicas in multiple regions."
+      ]
+    },
+    {
+      "topic": "Consistency Models",
+      "definition": "NoSQL databases provide different consistency models such as strong and eventual consistency.",
+      "syntax": "Strong \u2194 Eventual",
+      "example": "Cassandra consistency levels",
+      "output": "Consistency selected",
+      "tips": [
+        "Choose based on application needs."
+      ]
+    },
+    {
+      "topic": "Polyglot Persistence",
+      "definition": "Use multiple database types within one application, each for its strengths.",
+      "syntax": "SQL + NoSQL",
+      "example": "MySQL + Redis + MongoDB",
+      "output": "Mixed persistence",
+      "tips": [
+        "Select the right database for each workload."
+      ]
+    },
+    {
+      "topic": "Data Migration",
+      "definition": "Move data safely between databases or clusters.",
+      "syntax": "Source \u2192 Target",
+      "example": "MongoDB cluster migration",
+      "output": "Data migrated",
+      "tips": [
+        "Validate data after migration."
+      ]
+    },
+    {
+      "topic": "Backup and Recovery",
+      "definition": "Create backups and restore data after failures.",
+      "syntax": "Backup \u2192 Restore",
+      "example": "Nightly snapshots",
+      "output": "Database recovered",
+      "tips": [
+        "Test recovery procedures regularly."
+      ]
+    },
+    {
+      "topic": "Security",
+      "definition": "Protect NoSQL databases using authentication, authorization and encryption.",
+      "syntax": "Auth + Roles + Encryption",
+      "example": "MongoDB authentication",
+      "output": "Database secured",
+      "tips": [
+        "Use least-privilege access."
+      ]
+    },
+    {
+      "topic": "Performance Tuning",
+      "definition": "Optimize indexes, queries and resources to improve database performance.",
+      "syntax": "Monitor \u2192 Optimize",
+      "example": "Optimize slow queries",
+      "output": "Performance improved",
+      "tips": [
+        "Review metrics regularly."
+      ]
+    },
+    {
+      "topic": "Advanced NoSQL Best Practices",
+      "definition": "Design scalable, secure and highly available NoSQL systems.",
+      "syntax": "Design \u2192 Secure \u2192 Scale \u2192 Monitor",
+      "example": "Enterprise NoSQL platform",
+      "output": "Reliable deployment",
+      "tips": [
+        "Automate backups.",
+        "Monitor clusters.",
+        "Review indexes.",
+        "Plan capacity ahead."
+      ]
+    }
+  ]
+}

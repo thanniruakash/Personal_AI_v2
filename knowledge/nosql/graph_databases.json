@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Graph Databases",
+  "topics": [
+    {
+      "topic": "What are Graph Databases?",
+      "definition": "Graph databases store data as nodes and relationships to efficiently represent connected information.",
+      "syntax": "Node \u2194 Relationship",
+      "example": "Social network",
+      "output": "Graph data stored",
+      "tips": [
+        "Ideal for highly connected data."
+      ]
+    },
+    {
+      "topic": "Nodes",
+      "definition": "Nodes represent entities such as people, products or locations.",
+      "syntax": "(Node)",
+      "example": "Person node",
+      "output": "Entity created",
+      "tips": [
+        "Each node can have properties."
+      ]
+    },
+    {
+      "topic": "Relationships (Edges)",
+      "definition": "Relationships connect nodes and describe how they are related.",
+      "syntax": "(A)-[:RELATES_TO]->(B)",
+      "example": "FRIEND_OF",
+      "output": "Connection established",
+      "tips": [
+        "Relationships can also store properties."
+      ]
+    },
+    {
+      "topic": "Neo4j",
+      "definition": "Neo4j is a popular graph database optimized for relationship queries.",
+      "syntax": "Database \u2192 Graph",
+      "example": "Recommendation engine",
+      "output": "Graph database running",
+      "tips": [
+        "Use Neo4j Browser for visualization."
+      ]
+    },
+    {
+      "topic": "Cypher Query Language",
+      "definition": "Cypher is Neo4j's query language for creating and querying graphs.",
+      "syntax": "MATCH ... RETURN",
+      "example": "MATCH (n) RETURN n",
+      "output": "Query results",
+      "tips": [
+        "Learn MATCH, CREATE and MERGE commands."
+      ]
+    },
+    {
+      "topic": "Graph Traversal",
+      "definition": "Traversal follows relationships between nodes to find connected data.",
+      "syntax": "Node \u2192 Edge \u2192 Node",
+      "example": "Shortest path search",
+      "output": "Connected nodes found",
+      "tips": [
+        "Graph databases excel at deep relationship queries."
+      ]
+    },
+    {
+      "topic": "Real-World Use Cases",
+      "definition": "Graph databases are used for recommendations, fraud detection, social networks and knowledge graphs.",
+      "syntax": "Entity \u2192 Relationship",
+      "example": "Friend recommendations",
+      "output": "Use case implemented",
+      "tips": [
+        "Choose graph databases for relationship-heavy applications."
+      ]
+    },
+    {
+      "topic": "Graph Database Best Practices",
+      "definition": "Model relationships carefully, index key properties and optimize traversals.",
+      "syntax": "Model \u2192 Query \u2192 Optimize",
+      "example": "Enterprise knowledge graph",
+      "output": "Efficient graph database",
+      "tips": [
+        "Keep relationships meaningful.",
+        "Index frequently searched properties.",
+        "Monitor query performance."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Key-Value Databases",
+  "topics": [
+    {
+      "topic": "What are Key-Value Databases?",
+      "definition": "Key-value databases store data as unique keys associated with values for fast retrieval.",
+      "syntax": "Key \u2192 Value",
+      "example": "user123 \u2192 Akash",
+      "output": "Value retrieved",
+      "tips": [
+        "Ideal for simple, high-speed lookups."
+      ]
+    },
+    {
+      "topic": "Redis",
+      "definition": "Redis is an in-memory key-value database used for caching, sessions and real-time applications.",
+      "syntax": "SET key value / GET key",
+      "example": "SET name Akash",
+      "output": "Value stored",
+      "tips": [
+        "Redis is extremely fast because it stores data in memory."
+      ]
+    },
+    {
+      "topic": "Keys and Values",
+      "definition": "Each key uniquely identifies a value stored in the database.",
+      "syntax": "key : value",
+      "example": "session123 : active",
+      "output": "Key-value pair stored",
+      "tips": [
+        "Use meaningful and unique keys."
+      ]
+    },
+    {
+      "topic": "TTL (Time To Live)",
+      "definition": "TTL automatically removes data after a specified time.",
+      "syntax": "EXPIRE key seconds",
+      "example": "EXPIRE session123 3600",
+      "output": "Expiration configured",
+      "tips": [
+        "Use TTL for temporary data like sessions."
+      ]
+    },
+    {
+      "topic": "Data Structures",
+      "definition": "Redis supports strings, lists, sets, hashes and sorted sets.",
+      "syntax": "String | List | Set | Hash | ZSet",
+      "example": "Store leaderboard using Sorted Set",
+      "output": "Structured data stored",
+      "tips": [
+        "Choose the most suitable data structure."
+      ]
+    },
+    {
+      "topic": "Persistence",
+      "definition": "Persistence saves in-memory data to disk to prevent data loss.",
+      "syntax": "RDB / AOF",
+      "example": "Automatic snapshots",
+      "output": "Data persisted",
+      "tips": [
+        "Select a persistence strategy based on your requirements."
+      ]
+    },
+    {
+      "topic": "Publish/Subscribe (Pub/Sub)",
+      "definition": "Pub/Sub enables message broadcasting between publishers and subscribers.",
+      "syntax": "PUBLISH \u2192 SUBSCRIBE",
+      "example": "Chat notifications",
+      "output": "Messages delivered",
+      "tips": [
+        "Useful for real-time communication."
+      ]
+    },
+    {
+      "topic": "Key-Value Database Best Practices",
+      "definition": "Design efficient keys, use TTL wisely and monitor memory usage.",
+      "syntax": "Store \u2192 Retrieve \u2192 Monitor",
+      "example": "Redis production deployment",
+      "output": "Optimized key-value database",
+      "tips": [
+        "Use descriptive keys.",
+        "Avoid unnecessary large values.",
+        "Monitor memory utilization."
+      ]
+    }
+  ]
+}

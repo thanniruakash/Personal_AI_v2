@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "NoSQL Basics",
+  "topics": [
+    {
+      "topic": "What is NoSQL?",
+      "definition": "NoSQL databases store and manage data using flexible data models instead of only relational tables.",
+      "syntax": "Key-Value / Document / Column / Graph",
+      "example": "MongoDB",
+      "output": "NoSQL database selected",
+      "tips": [
+        "Choose the model that matches your data."
+      ]
+    },
+    {
+      "topic": "Characteristics",
+      "definition": "NoSQL databases provide flexibility, scalability and high availability.",
+      "syntax": "Flexible + Scalable",
+      "example": "Cloud applications",
+      "output": "Characteristics understood",
+      "tips": [
+        "Ideal for rapidly changing data."
+      ]
+    },
+    {
+      "topic": "SQL vs NoSQL",
+      "definition": "SQL uses fixed schemas, while NoSQL supports flexible schemas.",
+      "syntax": "SQL \u2194 NoSQL",
+      "example": "MySQL vs MongoDB",
+      "output": "Comparison completed",
+      "tips": [
+        "Consider consistency and scalability needs."
+      ]
+    },
+    {
+      "topic": "Schema Flexibility",
+      "definition": "Documents can have different structures without altering the database schema.",
+      "syntax": "Dynamic Schema",
+      "example": "User profiles with optional fields",
+      "output": "Flexible storage",
+      "tips": [
+        "Validate data at the application layer when needed."
+      ]
+    },
+    {
+      "topic": "Horizontal Scaling",
+      "definition": "NoSQL systems commonly scale by adding more servers.",
+      "syntax": "Scale Out",
+      "example": "Add database nodes",
+      "output": "Scalable database",
+      "tips": [
+        "Use sharding for very large datasets."
+      ]
+    },
+    {
+      "topic": "CAP Theorem",
+      "definition": "NoSQL databases make trade-offs between consistency, availability and partition tolerance.",
+      "syntax": "C / A / P",
+      "example": "Distributed database",
+      "output": "Trade-off understood",
+      "tips": [
+        "Know your application's priorities."
+      ]
+    },
+    {
+      "topic": "Common NoSQL Databases",
+      "definition": "Popular NoSQL databases include MongoDB, Cassandra, Redis and Neo4j.",
+      "syntax": "Database Types",
+      "example": "Redis cache",
+      "output": "Database identified",
+      "tips": [
+        "Each database targets different use cases."
+      ]
+    },
+    {
+      "topic": "NoSQL Best Practices",
+      "definition": "Design data models around application access patterns and monitor performance.",
+      "syntax": "Design \u2192 Scale \u2192 Monitor",
+      "example": "Production NoSQL deployment",
+      "output": "Reliable NoSQL solution",
+      "tips": [
+        "Index frequently queried fields.",
+        "Back up data.",
+        "Monitor cluster health."
+      ]
+    }
+  ]
+}

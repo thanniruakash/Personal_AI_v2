@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Replication and Scaling",
+  "topics": [
+    {
+      "topic": "Replication",
+      "definition": "Replication copies data across multiple database nodes to improve availability and reliability.",
+      "syntax": "Primary \u2192 Replica",
+      "example": "MongoDB replica set",
+      "output": "Data replicated",
+      "tips": [
+        "Monitor replication lag."
+      ]
+    },
+    {
+      "topic": "Sharding",
+      "definition": "Sharding distributes data across multiple servers to handle large datasets.",
+      "syntax": "Shard 1 | Shard 2",
+      "example": "User data split by ID",
+      "output": "Data distributed",
+      "tips": [
+        "Choose a good shard key."
+      ]
+    },
+    {
+      "topic": "Horizontal Scaling",
+      "definition": "Horizontal scaling increases capacity by adding more database nodes.",
+      "syntax": "Scale Out",
+      "example": "Add database servers",
+      "output": "Cluster expanded",
+      "tips": [
+        "Common in NoSQL systems."
+      ]
+    },
+    {
+      "topic": "Load Distribution",
+      "definition": "Queries and data are distributed evenly across nodes.",
+      "syntax": "Client \u2192 Cluster",
+      "example": "Balanced read traffic",
+      "output": "Load balanced",
+      "tips": [
+        "Avoid hotspot nodes."
+      ]
+    },
+    {
+      "topic": "High Availability",
+      "definition": "High availability keeps the database accessible despite failures.",
+      "syntax": "Redundancy \u2192 Availability",
+      "example": "Multiple replicas",
+      "output": "Service available",
+      "tips": [
+        "Deploy across multiple zones if possible."
+      ]
+    },
+    {
+      "topic": "Failover",
+      "definition": "Failover automatically switches to a healthy node after a failure.",
+      "syntax": "Primary \u2192 Secondary",
+      "example": "Replica becomes primary",
+      "output": "Service restored",
+      "tips": [
+        "Test failover regularly."
+      ]
+    },
+    {
+      "topic": "Performance Monitoring",
+      "definition": "Monitor latency, throughput and resource usage to maintain performance.",
+      "syntax": "Metrics \u2192 Dashboard",
+      "example": "Database monitoring",
+      "output": "Performance tracked",
+      "tips": [
+        "Watch slow queries and replication health."
+      ]
+    },
+    {
+      "topic": "Replication & Scaling Best Practices",
+      "definition": "Use replication, sharding and monitoring for scalable, reliable NoSQL deployments.",
+      "syntax": "Replicate \u2192 Scale \u2192 Monitor",
+      "example": "Production NoSQL cluster",
+      "output": "Reliable database",
+      "tips": [
+        "Back up data.",
+        "Monitor cluster health.",
+        "Review scaling strategy regularly."
+      ]
+    }
+  ]
+}

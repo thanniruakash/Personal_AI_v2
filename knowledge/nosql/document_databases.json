@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Document Databases",
+  "topics": [
+    {
+      "topic": "What are Document Databases?",
+      "definition": "Document databases store data as self-contained documents instead of rows and tables.",
+      "syntax": "Collection \u2192 Documents",
+      "example": "MongoDB collection",
+      "output": "Documents stored",
+      "tips": [
+        "Each document can have a different structure."
+      ]
+    },
+    {
+      "topic": "JSON & BSON Documents",
+      "definition": "Documents are commonly represented as JSON or BSON objects.",
+      "syntax": "{ key : value }",
+      "example": "{\"name\":\"Akash\"}",
+      "output": "Structured document",
+      "tips": [
+        "BSON extends JSON with additional data types."
+      ]
+    },
+    {
+      "topic": "MongoDB",
+      "definition": "MongoDB is a popular document-oriented NoSQL database.",
+      "syntax": "db.collection",
+      "example": "db.users.find()",
+      "output": "Documents retrieved",
+      "tips": [
+        "Use collections to organize related documents."
+      ]
+    },
+    {
+      "topic": "Collections",
+      "definition": "A collection is a group of related documents.",
+      "syntax": "Database \u2192 Collection",
+      "example": "users collection",
+      "output": "Documents grouped",
+      "tips": [
+        "Collections are similar to tables in SQL."
+      ]
+    },
+    {
+      "topic": "Queries and Filtering",
+      "definition": "Queries retrieve documents that match specified conditions.",
+      "syntax": "find({condition})",
+      "example": "db.users.find({age:20})",
+      "output": "Matching documents",
+      "tips": [
+        "Filter only the data you need."
+      ]
+    },
+    {
+      "topic": "Indexing",
+      "definition": "Indexes improve query performance.",
+      "syntax": "createIndex()",
+      "example": "db.users.createIndex({email:1})",
+      "output": "Faster queries",
+      "tips": [
+        "Index frequently searched fields."
+      ]
+    },
+    {
+      "topic": "Aggregation Pipeline",
+      "definition": "The aggregation pipeline processes documents through multiple stages.",
+      "syntax": "aggregate([])",
+      "example": "Group sales by category",
+      "output": "Aggregated results",
+      "tips": [
+        "Use aggregation for analytics and reporting."
+      ]
+    },
+    {
+      "topic": "Document Database Best Practices",
+      "definition": "Design documents around application access patterns and monitor performance.",
+      "syntax": "Design \u2192 Index \u2192 Monitor",
+      "example": "Production MongoDB deployment",
+      "output": "Optimized document database",
+      "tips": [
+        "Avoid unnecessary document growth.",
+        "Use indexes wisely.",
+        "Back up data regularly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "NoSQL",
+  "section": "Indexing and Querying",
+  "topics": [
+    {
+      "topic": "Indexing",
+      "definition": "Indexes improve query performance by creating efficient lookup structures.",
+      "syntax": "Create Index",
+      "example": "Index email field",
+      "output": "Faster lookups",
+      "tips": [
+        "Index frequently queried fields."
+      ]
+    },
+    {
+      "topic": "Query Optimization",
+      "definition": "Optimize queries to reduce execution time and resource usage.",
+      "syntax": "Query \u2192 Optimize",
+      "example": "Filter before sorting",
+      "output": "Improved performance",
+      "tips": [
+        "Avoid unnecessary full scans."
+      ]
+    },
+    {
+      "topic": "Secondary Indexes",
+      "definition": "Secondary indexes allow efficient searches on non-primary fields.",
+      "syntax": "Field \u2192 Secondary Index",
+      "example": "Search by username",
+      "output": "Indexed search",
+      "tips": [
+        "Use only when needed."
+      ]
+    },
+    {
+      "topic": "Full-Text Search",
+      "definition": "Full-text search finds words and phrases within text fields.",
+      "syntax": "Text \u2192 Search",
+      "example": "Search article content",
+      "output": "Relevant documents",
+      "tips": [
+        "Use text indexes for large text fields."
+      ]
+    },
+    {
+      "topic": "Aggregation",
+      "definition": "Aggregation groups and summarizes data for analytics.",
+      "syntax": "Group \u2192 Aggregate",
+      "example": "Total sales by region",
+      "output": "Summary results",
+      "tips": [
+        "Aggregate in the database when practical."
+      ]
+    },
+    {
+      "topic": "Query Performance",
+      "definition": "Measure latency and throughput to evaluate query efficiency.",
+      "syntax": "Execute \u2192 Measure",
+      "example": "Benchmark a query",
+      "output": "Performance metrics",
+      "tips": [
+        "Monitor slow queries."
+      ]
+    },
+    {
+      "topic": "Explain Plans",
+      "definition": "Explain plans show how the database executes a query.",
+      "syntax": "EXPLAIN",
+      "example": "Explain query execution",
+      "output": "Execution plan",
+      "tips": [
+        "Use plans to identify bottlenecks."
+      ]
+    },
+    {
+      "topic": "Indexing & Querying Best Practices",
+      "definition": "Create useful indexes, optimize queries and monitor performance regularly.",
+      "syntax": "Index \u2192 Query \u2192 Monitor",
+      "example": "Production NoSQL database",
+      "output": "Efficient data access",
+      "tips": [
+        "Remove unused indexes.",
+        "Review slow queries.",
+        "Balance read and write performance."
+      ]
+    }
+  ]
+}
