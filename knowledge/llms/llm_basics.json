@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "LLM Basics",
+  "topics": [
+    {
+      "topic": "What is a Large Language Model (LLM)?",
+      "definition": "A Large Language Model is an AI model trained on large amounts of text to understand and generate human language.",
+      "syntax": "Text \u2192 Model \u2192 Response",
+      "example": "Chat assistant answering questions",
+      "output": "Generated response",
+      "tips": [
+        "LLMs learn language patterns from training data."
+      ]
+    },
+    {
+      "topic": "Natural Language Processing (NLP)",
+      "definition": "NLP enables computers to understand, interpret and generate human language.",
+      "syntax": "Text \u2192 NLP \u2192 Output",
+      "example": "Language translation",
+      "output": "Processed language",
+      "tips": [
+        "LLMs are an important part of modern NLP."
+      ]
+    },
+    {
+      "topic": "Training Data",
+      "definition": "Training data is the collection of text used to train an LLM.",
+      "syntax": "Dataset \u2192 Model",
+      "example": "Books and articles",
+      "output": "Model learns patterns",
+      "tips": [
+        "High-quality data improves results."
+      ]
+    },
+    {
+      "topic": "Parameters",
+      "definition": "Parameters are learned values that determine how the model makes predictions.",
+      "syntax": "Input \u2192 Parameters \u2192 Output",
+      "example": "7B parameter model",
+      "output": "Prediction generated",
+      "tips": [
+        "Larger models usually have more parameters."
+      ]
+    },
+    {
+      "topic": "Context Window",
+      "definition": "The context window is the amount of information an LLM can process at one time.",
+      "syntax": "Input Tokens \u2192 Context",
+      "example": "Summarizing a document",
+      "output": "Context processed",
+      "tips": [
+        "Longer context windows handle larger inputs."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "LLMs are used for chatbots, coding, summarization, translation and many other tasks.",
+      "syntax": "Prompt \u2192 Response",
+      "example": "Code generation",
+      "output": "Task completed",
+      "tips": [
+        "Choose prompts suited to the task."
+      ]
+    },
+    {
+      "topic": "Limitations",
+      "definition": "LLMs can produce incorrect or incomplete answers and depend on the quality of prompts.",
+      "syntax": "Input \u2192 Response",
+      "example": "Incorrect factual answer",
+      "output": "Possible error",
+      "tips": [
+        "Verify important information."
+      ]
+    },
+    {
+      "topic": "LLM Best Practices",
+      "definition": "Use clear prompts, verify outputs and evaluate model performance regularly.",
+      "syntax": "Prompt \u2192 Evaluate \u2192 Improve",
+      "example": "Offline AI assistant",
+      "output": "Reliable LLM usage",
+      "tips": [
+        "Test different prompts.",
+        "Validate important outputs.",
+        "Monitor quality."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "Tokenization and Embeddings",
+  "topics": [
+    {
+      "topic": "Tokenization",
+      "definition": "Tokenization splits text into smaller units called tokens before processing.",
+      "syntax": "Text \u2192 Tokens",
+      "example": "Hello world \u2192 ['Hello','world']",
+      "output": "Tokens created",
+      "tips": [
+        "Different models may use different tokenizers."
+      ]
+    },
+    {
+      "topic": "Tokens",
+      "definition": "Tokens are the basic units processed by a language model.",
+      "syntax": "Word / Subword / Character",
+      "example": "Programming \u2192 Program + ming",
+      "output": "Input units",
+      "tips": [
+        "One word may become multiple tokens."
+      ]
+    },
+    {
+      "topic": "Embeddings",
+      "definition": "Embeddings convert tokens into numerical vectors representing meaning.",
+      "syntax": "Token \u2192 Vector",
+      "example": "cat \u2192 [0.12, ...]",
+      "output": "Vector representation",
+      "tips": [
+        "Similar meanings produce similar vectors."
+      ]
+    },
+    {
+      "topic": "Vector Representations",
+      "definition": "Vectors encode semantic information in multidimensional space.",
+      "syntax": "Text \u2192 Vector Space",
+      "example": "Document embedding",
+      "output": "Numeric representation",
+      "tips": [
+        "Vectors enable similarity calculations."
+      ]
+    },
+    {
+      "topic": "Similarity Search",
+      "definition": "Similarity search finds vectors that are closest to a query vector.",
+      "syntax": "Query Vector \u2192 Nearest Neighbors",
+      "example": "Semantic document search",
+      "output": "Relevant results",
+      "tips": [
+        "Often uses cosine similarity."
+      ]
+    },
+    {
+      "topic": "Semantic Embeddings",
+      "definition": "Semantic embeddings capture the meaning of words, sentences or documents.",
+      "syntax": "Text \u2192 Semantic Vector",
+      "example": "Question answering",
+      "output": "Meaning preserved",
+      "tips": [
+        "Useful for retrieval systems."
+      ]
+    },
+    {
+      "topic": "Embedding Models",
+      "definition": "Embedding models generate vector representations for downstream tasks.",
+      "syntax": "Input \u2192 Embedding Model",
+      "example": "Sentence embedding model",
+      "output": "Embeddings generated",
+      "tips": [
+        "Choose a model suited to your domain."
+      ]
+    },
+    {
+      "topic": "Tokenization & Embedding Best Practices",
+      "definition": "Use appropriate tokenizers, generate quality embeddings and monitor retrieval quality.",
+      "syntax": "Tokenize \u2192 Embed \u2192 Retrieve",
+      "example": "Offline knowledge search",
+      "output": "Efficient text processing",
+      "tips": [
+        "Use consistent preprocessing.",
+        "Evaluate embedding quality.",
+        "Store vectors efficiently."
+      ]
+    }
+  ]
+}

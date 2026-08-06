@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "Evaluation and Alignment",
+  "topics": [
+    {
+      "topic": "LLM Evaluation",
+      "definition": "LLM evaluation measures the quality, accuracy and usefulness of model outputs.",
+      "syntax": "Prompt \u2192 Evaluate",
+      "example": "Evaluate summarization quality",
+      "output": "Evaluation score",
+      "tips": [
+        "Use representative evaluation datasets."
+      ]
+    },
+    {
+      "topic": "Benchmarks",
+      "definition": "Benchmarks are standardized tests used to compare model performance.",
+      "syntax": "Model \u2192 Benchmark",
+      "example": "MMLU or HumanEval",
+      "output": "Benchmark results",
+      "tips": [
+        "Compare models using the same benchmark."
+      ]
+    },
+    {
+      "topic": "Alignment",
+      "definition": "Alignment ensures model behavior matches intended human goals and instructions.",
+      "syntax": "Goal \u2192 Aligned Response",
+      "example": "Helpful AI assistant",
+      "output": "Aligned behavior",
+      "tips": [
+        "Continuously evaluate alignment."
+      ]
+    },
+    {
+      "topic": "Safety Guardrails",
+      "definition": "Guardrails reduce harmful or unsafe outputs through rules and filtering.",
+      "syntax": "Input \u2192 Guardrails \u2192 Output",
+      "example": "Block unsafe requests",
+      "output": "Safer responses",
+      "tips": [
+        "Review guardrails regularly."
+      ]
+    },
+    {
+      "topic": "Human Feedback (RLHF)",
+      "definition": "Human feedback helps improve model behavior by guiding learning from preferred responses.",
+      "syntax": "Response \u2192 Feedback \u2192 Improve",
+      "example": "Rank assistant answers",
+      "output": "Better model behavior",
+      "tips": [
+        "Collect diverse, high-quality feedback."
+      ]
+    },
+    {
+      "topic": "Bias and Fairness",
+      "definition": "Bias evaluation checks whether model outputs treat groups fairly.",
+      "syntax": "Test \u2192 Analyze",
+      "example": "Fairness testing",
+      "output": "Bias assessment",
+      "tips": [
+        "Use diverse evaluation data."
+      ]
+    },
+    {
+      "topic": "Hallucination Detection",
+      "definition": "Hallucination detection identifies responses that contain unsupported or incorrect information.",
+      "syntax": "Response \u2192 Verify",
+      "example": "Fact checking",
+      "output": "Verified response",
+      "tips": [
+        "Ground answers in reliable sources when possible."
+      ]
+    },
+    {
+      "topic": "Evaluation & Alignment Best Practices",
+      "definition": "Evaluate models continuously, improve alignment and monitor safety.",
+      "syntax": "Test \u2192 Monitor \u2192 Improve",
+      "example": "Production AI assistant",
+      "output": "Reliable LLM",
+      "tips": [
+        "Track quality metrics.",
+        "Review failures.",
+        "Update evaluation datasets regularly."
+      ]
+    }
+  ]
+}

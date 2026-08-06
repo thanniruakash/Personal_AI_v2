@@ -1,0 +1,89 @@
+{
+  "subject": "LLMs",
+  "section": "Advanced LLMs",
+  "topics": [
+    {
+      "topic": "Mixture of Experts (MoE)",
+      "definition": "MoE activates only a subset of expert networks for each input, improving efficiency.",
+      "syntax": "Input \u2192 Router \u2192 Experts",
+      "example": "Sparse MoE model",
+      "output": "Efficient inference",
+      "tips": [
+        "Balances quality and computational cost."
+      ]
+    },
+    {
+      "topic": "Multimodal LLMs",
+      "definition": "Multimodal models process and generate information across text, images, audio and other modalities.",
+      "syntax": "Text + Image \u2192 Model",
+      "example": "Image question answering",
+      "output": "Multimodal response",
+      "tips": [
+        "Align different data modalities carefully."
+      ]
+    },
+    {
+      "topic": "Agentic LLMs",
+      "definition": "Agentic LLMs plan, use tools and perform multi-step tasks toward goals.",
+      "syntax": "Goal \u2192 Plan \u2192 Tool \u2192 Result",
+      "example": "Research assistant",
+      "output": "Completed workflow",
+      "tips": [
+        "Combine planning with reliable tool use."
+      ]
+    },
+    {
+      "topic": "LLM Architectures",
+      "definition": "Modern LLM architectures combine transformers, attention mechanisms and optimization techniques.",
+      "syntax": "Embedding \u2192 Transformer \u2192 Output",
+      "example": "Decoder-only LLM",
+      "output": "Model architecture",
+      "tips": [
+        "Select architecture based on the application."
+      ]
+    },
+    {
+      "topic": "Efficient LLM Serving",
+      "definition": "Serving techniques optimize deployment for speed, memory and scalability.",
+      "syntax": "Load \u2192 Serve \u2192 Scale",
+      "example": "vLLM deployment",
+      "output": "Fast responses",
+      "tips": [
+        "Use batching and caching where appropriate."
+      ]
+    },
+    {
+      "topic": "Scaling Laws",
+      "definition": "Scaling laws describe how model performance changes with more data, parameters and compute.",
+      "syntax": "Data + Compute + Parameters",
+      "example": "Train larger models",
+      "output": "Performance trend",
+      "tips": [
+        "Balance resources for efficient scaling."
+      ]
+    },
+    {
+      "topic": "Future of LLMs",
+      "definition": "Future LLMs are expected to become more efficient, multimodal, agentic and personalized.",
+      "syntax": "Learn \u2192 Adapt \u2192 Improve",
+      "example": "Offline personal AI",
+      "output": "Future capabilities",
+      "tips": [
+        "Design systems that can evolve over time."
+      ]
+    },
+    {
+      "topic": "Advanced LLM Best Practices",
+      "definition": "Build efficient, safe and scalable LLM systems with continuous evaluation and optimization.",
+      "syntax": "Design \u2192 Optimize \u2192 Evaluate",
+      "example": "Enterprise AI platform",
+      "output": "Reliable LLM deployment",
+      "tips": [
+        "Monitor performance.",
+        "Optimize costs.",
+        "Evaluate continuously.",
+        "Keep knowledge updated."
+      ]
+    }
+  ]
+}

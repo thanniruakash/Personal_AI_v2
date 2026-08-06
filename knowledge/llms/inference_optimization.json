@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "Inference Optimization",
+  "topics": [
+    {
+      "topic": "Model Inference",
+      "definition": "Inference is the process of using a trained model to generate predictions or responses.",
+      "syntax": "Input \u2192 Model \u2192 Output",
+      "example": "Answer a user's question",
+      "output": "Generated response",
+      "tips": [
+        "Optimize inference for low latency."
+      ]
+    },
+    {
+      "topic": "Quantization",
+      "definition": "Quantization reduces model precision to decrease memory usage and increase speed.",
+      "syntax": "FP16 \u2192 INT8 / INT4",
+      "example": "4-bit LLM",
+      "output": "Smaller, faster model",
+      "tips": [
+        "Balance speed with accuracy."
+      ]
+    },
+    {
+      "topic": "KV Cache",
+      "definition": "KV cache stores attention keys and values to avoid recomputing previous tokens.",
+      "syntax": "Store \u2192 Reuse",
+      "example": "Long chat conversation",
+      "output": "Faster token generation",
+      "tips": [
+        "Essential for efficient autoregressive models."
+      ]
+    },
+    {
+      "topic": "Batch Inference",
+      "definition": "Batch inference processes multiple requests together for better hardware utilization.",
+      "syntax": "Batch \u2192 Model",
+      "example": "Process 32 prompts at once",
+      "output": "Higher throughput",
+      "tips": [
+        "Choose batch size carefully."
+      ]
+    },
+    {
+      "topic": "Model Compression",
+      "definition": "Compression reduces model size while preserving useful performance.",
+      "syntax": "Compress \u2192 Deploy",
+      "example": "Pruned neural network",
+      "output": "Compact model",
+      "tips": [
+        "Evaluate quality after compression."
+      ]
+    },
+    {
+      "topic": "GPU & CPU Optimization",
+      "definition": "Optimize hardware usage to maximize inference performance.",
+      "syntax": "Hardware \u2192 Optimize",
+      "example": "GPU acceleration",
+      "output": "Improved speed",
+      "tips": [
+        "Use hardware-specific optimizations."
+      ]
+    },
+    {
+      "topic": "Latency vs Throughput",
+      "definition": "Latency measures response time while throughput measures total work completed over time.",
+      "syntax": "Latency \u2194 Throughput",
+      "example": "Real-time chatbot",
+      "output": "Performance trade-off",
+      "tips": [
+        "Optimize based on application needs."
+      ]
+    },
+    {
+      "topic": "Inference Optimization Best Practices",
+      "definition": "Use quantization, caching and efficient hardware utilization to improve inference.",
+      "syntax": "Optimize \u2192 Measure \u2192 Improve",
+      "example": "Offline AI assistant",
+      "output": "Efficient inference",
+      "tips": [
+        "Profile bottlenecks.",
+        "Monitor memory.",
+        "Benchmark regularly."
+      ]
+    }
+  ]
+}

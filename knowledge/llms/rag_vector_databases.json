@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "RAG and Vector Databases",
+  "topics": [
+    {
+      "topic": "Retrieval-Augmented Generation (RAG)",
+      "definition": "RAG combines information retrieval with a language model to generate answers using external knowledge.",
+      "syntax": "Query \u2192 Retrieve \u2192 Generate",
+      "example": "Answer from a document collection",
+      "output": "Grounded response",
+      "tips": [
+        "Keep the knowledge base updated."
+      ]
+    },
+    {
+      "topic": "Vector Databases",
+      "definition": "Vector databases store embeddings for fast semantic search.",
+      "syntax": "Embedding \u2192 Vector DB",
+      "example": "ChromaDB, FAISS, Milvus",
+      "output": "Vectors stored",
+      "tips": [
+        "Choose an index suited to dataset size."
+      ]
+    },
+    {
+      "topic": "Embedding Retrieval",
+      "definition": "Relevant embeddings are retrieved based on similarity to the query.",
+      "syntax": "Query \u2192 Embedding \u2192 Retrieve",
+      "example": "Find similar documents",
+      "output": "Relevant chunks",
+      "tips": [
+        "Use high-quality embedding models."
+      ]
+    },
+    {
+      "topic": "Similarity Search",
+      "definition": "Similarity search finds vectors closest to a query vector.",
+      "syntax": "Cosine Similarity",
+      "example": "Semantic search",
+      "output": "Nearest matches",
+      "tips": [
+        "Tune similarity thresholds."
+      ]
+    },
+    {
+      "topic": "Document Chunking",
+      "definition": "Large documents are split into smaller chunks before embedding.",
+      "syntax": "Document \u2192 Chunks",
+      "example": "Split a PDF into sections",
+      "output": "Searchable chunks",
+      "tips": [
+        "Choose chunk sizes carefully."
+      ]
+    },
+    {
+      "topic": "Indexing",
+      "definition": "Indexing organizes embeddings for efficient retrieval.",
+      "syntax": "Embed \u2192 Index",
+      "example": "FAISS index",
+      "output": "Fast lookup",
+      "tips": [
+        "Rebuild indexes after major updates if needed."
+      ]
+    },
+    {
+      "topic": "RAG Pipeline",
+      "definition": "A RAG pipeline retrieves relevant context and passes it to the LLM for answer generation.",
+      "syntax": "Query \u2192 Retrieve \u2192 Context \u2192 LLM",
+      "example": "Knowledge assistant",
+      "output": "Context-aware answer",
+      "tips": [
+        "Filter irrelevant results before generation."
+      ]
+    },
+    {
+      "topic": "RAG Best Practices",
+      "definition": "Use clean data, quality embeddings and optimized retrieval for accurate responses.",
+      "syntax": "Ingest \u2192 Embed \u2192 Retrieve \u2192 Generate",
+      "example": "Offline AI knowledge system",
+      "output": "Reliable RAG system",
+      "tips": [
+        "Deduplicate documents.",
+        "Monitor retrieval quality.",
+        "Update embeddings when content changes."
+      ]
+    }
+  ]
+}

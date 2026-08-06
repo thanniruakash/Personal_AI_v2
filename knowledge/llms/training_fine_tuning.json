@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "Training and Fine-Tuning",
+  "topics": [
+    {
+      "topic": "Model Training",
+      "definition": "Model training teaches an LLM by adjusting its parameters using large datasets.",
+      "syntax": "Data \u2192 Train \u2192 Model",
+      "example": "Train on books and articles",
+      "output": "Trained model",
+      "tips": [
+        "Use diverse, high-quality data."
+      ]
+    },
+    {
+      "topic": "Pre-training",
+      "definition": "Pre-training exposes a model to massive amounts of text to learn language patterns.",
+      "syntax": "Raw Text \u2192 Pre-train",
+      "example": "General language model",
+      "output": "Base model",
+      "tips": [
+        "Requires significant compute resources."
+      ]
+    },
+    {
+      "topic": "Fine-Tuning",
+      "definition": "Fine-tuning adapts a pre-trained model to a specific task or domain.",
+      "syntax": "Base Model \u2192 Task Data",
+      "example": "Medical chatbot",
+      "output": "Specialized model",
+      "tips": [
+        "Use domain-specific datasets."
+      ]
+    },
+    {
+      "topic": "Supervised Fine-Tuning (SFT)",
+      "definition": "SFT trains a model using labeled input-output examples.",
+      "syntax": "Prompt + Answer \u2192 Train",
+      "example": "Question-answer dataset",
+      "output": "Improved task performance",
+      "tips": [
+        "Use accurate labels."
+      ]
+    },
+    {
+      "topic": "Reinforcement Learning",
+      "definition": "Reinforcement learning improves model behavior using feedback and rewards.",
+      "syntax": "Action \u2192 Reward \u2192 Update",
+      "example": "Improve assistant responses",
+      "output": "Better decision making",
+      "tips": [
+        "Define reward signals carefully."
+      ]
+    },
+    {
+      "topic": "LoRA & PEFT",
+      "definition": "LoRA and PEFT efficiently adapt large models by training a small number of parameters.",
+      "syntax": "Base Model + Adapters",
+      "example": "Fine-tune a 7B model",
+      "output": "Efficient adaptation",
+      "tips": [
+        "Reduces memory and compute requirements."
+      ]
+    },
+    {
+      "topic": "Training Evaluation",
+      "definition": "Evaluate models using validation datasets and quality metrics.",
+      "syntax": "Train \u2192 Validate",
+      "example": "Measure accuracy and loss",
+      "output": "Performance report",
+      "tips": [
+        "Watch for overfitting."
+      ]
+    },
+    {
+      "topic": "Training & Fine-Tuning Best Practices",
+      "definition": "Use quality data, evaluate regularly and optimize training efficiently.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production LLM",
+      "output": "Reliable model",
+      "tips": [
+        "Keep validation data separate.",
+        "Monitor training curves.",
+        "Save checkpoints."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "LLMs",
+  "section": "Transformers",
+  "topics": [
+    {
+      "topic": "What is a Transformer?",
+      "definition": "A Transformer is a neural network architecture designed to process sequences efficiently using attention mechanisms.",
+      "syntax": "Input \u2192 Transformer \u2192 Output",
+      "example": "Machine translation",
+      "output": "Processed sequence",
+      "tips": [
+        "Transformers are the foundation of modern LLMs."
+      ]
+    },
+    {
+      "topic": "Self-Attention",
+      "definition": "Self-attention allows each token to focus on other relevant tokens in the input sequence.",
+      "syntax": "Token \u2194 Token",
+      "example": "Understanding sentence context",
+      "output": "Context-aware representation",
+      "tips": [
+        "Captures long-range relationships."
+      ]
+    },
+    {
+      "topic": "Multi-Head Attention",
+      "definition": "Multiple attention heads learn different relationships in parallel.",
+      "syntax": "Attention \u00d7 N Heads",
+      "example": "Analyzing grammar and meaning simultaneously",
+      "output": "Richer representations",
+      "tips": [
+        "Each head learns different patterns."
+      ]
+    },
+    {
+      "topic": "Encoder",
+      "definition": "The encoder converts input tokens into contextual representations.",
+      "syntax": "Input \u2192 Encoder",
+      "example": "Text understanding",
+      "output": "Encoded features",
+      "tips": [
+        "Common in BERT-style models."
+      ]
+    },
+    {
+      "topic": "Decoder",
+      "definition": "The decoder generates output tokens one step at a time.",
+      "syntax": "Context \u2192 Decoder \u2192 Output",
+      "example": "Text generation",
+      "output": "Generated sequence",
+      "tips": [
+        "Common in GPT-style models."
+      ]
+    },
+    {
+      "topic": "Positional Encoding",
+      "definition": "Positional encoding provides information about token order in a sequence.",
+      "syntax": "Token + Position",
+      "example": "Sentence processing",
+      "output": "Position-aware input",
+      "tips": [
+        "Transformers do not inherently know token order."
+      ]
+    },
+    {
+      "topic": "Transformer Architecture",
+      "definition": "A transformer combines embeddings, attention layers and feed-forward networks.",
+      "syntax": "Embedding \u2192 Attention \u2192 Feed Forward",
+      "example": "Large language model",
+      "output": "Model architecture",
+      "tips": [
+        "Stacking layers improves learning capacity."
+      ]
+    },
+    {
+      "topic": "Transformer Best Practices",
+      "definition": "Use quality training data, monitor performance and optimize model architecture.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production LLM",
+      "output": "Efficient transformer model",
+      "tips": [
+        "Monitor memory usage.",
+        "Optimize inference.",
+        "Evaluate regularly."
+      ]
+    }
+  ]
+}
