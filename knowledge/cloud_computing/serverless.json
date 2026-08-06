@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Serverless Computing",
+  "topics": [
+    {
+      "topic": "What is Serverless Computing?",
+      "definition": "Serverless computing allows developers to run code without managing servers.",
+      "syntax": "Event \u2192 Function \u2192 Response",
+      "example": "Image processing after upload",
+      "output": "Function executed",
+      "tips": [
+        "The cloud provider manages the infrastructure."
+      ]
+    },
+    {
+      "topic": "Function as a Service (FaaS)",
+      "definition": "FaaS executes individual functions in response to events.",
+      "syntax": "Trigger \u2192 Function",
+      "example": "AWS Lambda function",
+      "output": "Task completed",
+      "tips": [
+        "You pay only for execution time."
+      ]
+    },
+    {
+      "topic": "Event-Driven Computing",
+      "definition": "Applications respond automatically to events such as uploads, messages or database changes.",
+      "syntax": "Event \u2192 Action",
+      "example": "Send email after registration",
+      "output": "Event processed",
+      "tips": [
+        "Ideal for asynchronous workloads."
+      ]
+    },
+    {
+      "topic": "AWS Lambda",
+      "definition": "AWS Lambda is Amazon's serverless compute service.",
+      "syntax": "Lambda Function",
+      "example": "Process uploaded files",
+      "output": "Cloud function executed",
+      "tips": [
+        "Integrates with many AWS services."
+      ]
+    },
+    {
+      "topic": "Azure Functions",
+      "definition": "Azure Functions provides serverless execution on Microsoft Azure.",
+      "syntax": "Function App",
+      "example": "HTTP-triggered function",
+      "output": "Function executed",
+      "tips": [
+        "Supports multiple programming languages."
+      ]
+    },
+    {
+      "topic": "Google Cloud Functions",
+      "definition": "Google Cloud Functions executes code in response to cloud events.",
+      "syntax": "Cloud Function",
+      "example": "Respond to Cloud Storage events",
+      "output": "Function executed",
+      "tips": [
+        "Scales automatically."
+      ]
+    },
+    {
+      "topic": "Benefits and Limitations",
+      "definition": "Serverless offers automatic scaling and reduced management but may have cold starts and execution limits.",
+      "syntax": "Pros / Cons",
+      "example": "Burst workloads",
+      "output": "Trade-offs understood",
+      "tips": [
+        "Evaluate workload suitability."
+      ]
+    },
+    {
+      "topic": "Serverless Best Practices",
+      "definition": "Design stateless functions, monitor performance and secure cloud resources.",
+      "syntax": "Develop \u2192 Deploy \u2192 Monitor",
+      "example": "Use least-privilege IAM roles",
+      "output": "Reliable serverless application",
+      "tips": [
+        "Keep functions small.",
+        "Monitor costs.",
+        "Handle errors gracefully."
+      ]
+    }
+  ]
+}

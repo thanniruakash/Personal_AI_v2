@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Cloud Security",
+  "topics": [
+    {
+      "topic": "Cloud Security Fundamentals",
+      "definition": "Cloud security protects cloud infrastructure, applications and data using policies, controls and technologies.",
+      "syntax": "Protect \u2192 Monitor \u2192 Respond",
+      "example": "Securing cloud storage",
+      "output": "Cloud environment protected",
+      "tips": [
+        "Apply the shared responsibility model."
+      ]
+    },
+    {
+      "topic": "Identity and Access Management (IAM)",
+      "definition": "IAM manages user identities, roles and permissions in cloud environments.",
+      "syntax": "User \u2192 Role \u2192 Permission",
+      "example": "AWS IAM",
+      "output": "Access controlled",
+      "tips": [
+        "Use least-privilege access."
+      ]
+    },
+    {
+      "topic": "Encryption in the Cloud",
+      "definition": "Encryption protects data at rest and in transit.",
+      "syntax": "Encrypt \u2192 Store \u2192 Decrypt",
+      "example": "Encrypted cloud database",
+      "output": "Protected data",
+      "tips": [
+        "Manage encryption keys securely."
+      ]
+    },
+    {
+      "topic": "Network Security Groups",
+      "definition": "Network security groups control inbound and outbound network traffic.",
+      "syntax": "Allow / Deny Rules",
+      "example": "Restrict SSH access",
+      "output": "Traffic filtered",
+      "tips": [
+        "Allow only necessary ports."
+      ]
+    },
+    {
+      "topic": "Backup and Disaster Recovery",
+      "definition": "Backups and disaster recovery ensure business continuity after failures.",
+      "syntax": "Backup \u2192 Restore",
+      "example": "Daily cloud backups",
+      "output": "Data recovered",
+      "tips": [
+        "Test recovery procedures regularly."
+      ]
+    },
+    {
+      "topic": "Compliance and Governance",
+      "definition": "Compliance ensures cloud resources meet legal and organizational requirements.",
+      "syntax": "Policies \u2192 Audits",
+      "example": "ISO 27001 compliance",
+      "output": "Requirements satisfied",
+      "tips": [
+        "Review compliance regularly."
+      ]
+    },
+    {
+      "topic": "Cloud Threats",
+      "definition": "Common cloud threats include data breaches, misconfigurations, insecure APIs and account compromise.",
+      "syntax": "Identify \u2192 Mitigate",
+      "example": "Misconfigured storage bucket",
+      "output": "Threat identified",
+      "tips": [
+        "Continuously monitor cloud resources."
+      ]
+    },
+    {
+      "topic": "Cloud Security Best Practices",
+      "definition": "Use MFA, encryption, monitoring, logging and regular security reviews.",
+      "syntax": "Secure \u2192 Monitor \u2192 Improve",
+      "example": "Enable audit logs",
+      "output": "Secure cloud deployment",
+      "tips": [
+        "Rotate credentials.",
+        "Patch systems promptly.",
+        "Review IAM permissions regularly."
+      ]
+    }
+  ]
+}

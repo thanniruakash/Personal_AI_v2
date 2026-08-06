@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Containers",
+  "topics": [
+    {
+      "topic": "What are Containers?",
+      "definition": "Containers package applications with their dependencies into lightweight, isolated environments.",
+      "syntax": "Application + Dependencies",
+      "example": "Running a web app in Docker",
+      "output": "Container created",
+      "tips": [
+        "Containers share the host OS kernel."
+      ]
+    },
+    {
+      "topic": "Docker",
+      "definition": "Docker is a platform for building, running and managing containers.",
+      "syntax": "docker",
+      "example": "docker run nginx",
+      "output": "Container running",
+      "tips": [
+        "Docker is the most widely used container platform."
+      ]
+    },
+    {
+      "topic": "Docker Images",
+      "definition": "A Docker image is a read-only template used to create containers.",
+      "syntax": "docker pull image",
+      "example": "nginx:latest",
+      "output": "Image downloaded",
+      "tips": [
+        "Keep images small and updated."
+      ]
+    },
+    {
+      "topic": "Docker Containers",
+      "definition": "A container is a running instance of a Docker image.",
+      "syntax": "docker run",
+      "example": "Run a Python application",
+      "output": "Application executing",
+      "tips": [
+        "Containers are isolated from each other."
+      ]
+    },
+    {
+      "topic": "Dockerfile",
+      "definition": "A Dockerfile contains instructions for building a Docker image.",
+      "syntax": "FROM, COPY, RUN, CMD",
+      "example": "Dockerfile for a Flask app",
+      "output": "Image built",
+      "tips": [
+        "Use official base images when possible."
+      ]
+    },
+    {
+      "topic": "Docker Compose",
+      "definition": "Docker Compose defines and runs multi-container applications using a YAML file.",
+      "syntax": "docker-compose.yml",
+      "example": "Web app with database",
+      "output": "Multiple containers started",
+      "tips": [
+        "Useful for local development."
+      ]
+    },
+    {
+      "topic": "Containers vs Virtual Machines",
+      "definition": "Containers share the host OS while virtual machines include a complete guest OS.",
+      "syntax": "Container vs VM",
+      "example": "Docker vs VirtualBox",
+      "output": "Comparison completed",
+      "tips": [
+        "Containers start faster and use fewer resources."
+      ]
+    },
+    {
+      "topic": "Container Best Practices",
+      "definition": "Use minimal images, scan for vulnerabilities and keep containers updated.",
+      "syntax": "Build \u2192 Scan \u2192 Deploy",
+      "example": "Regular image updates",
+      "output": "Secure container deployment",
+      "tips": [
+        "Do not run containers as root.",
+        "Store secrets securely.",
+        "Monitor container health."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Advanced Cloud",
+  "topics": [
+    {
+      "topic": "Multi-Cloud",
+      "definition": "Multi-cloud uses services from multiple cloud providers.",
+      "syntax": "AWS + Azure + GCP",
+      "example": "Applications across different clouds",
+      "output": "Multi-cloud environment",
+      "tips": [
+        "Avoid vendor lock-in."
+      ]
+    },
+    {
+      "topic": "Hybrid Cloud Architecture",
+      "definition": "Hybrid cloud combines private and public cloud environments.",
+      "syntax": "Private + Public Cloud",
+      "example": "Sensitive data on private cloud",
+      "output": "Hybrid deployment",
+      "tips": [
+        "Secure communication between environments."
+      ]
+    },
+    {
+      "topic": "Cloud Monitoring",
+      "definition": "Cloud monitoring tracks performance, availability and resource usage.",
+      "syntax": "Monitor \u2192 Alert",
+      "example": "CPU utilization alerts",
+      "output": "Health monitored",
+      "tips": [
+        "Enable automated alerts."
+      ]
+    },
+    {
+      "topic": "Cloud Cost Optimization",
+      "definition": "Optimize cloud costs by rightsizing resources and eliminating waste.",
+      "syntax": "Analyze \u2192 Optimize",
+      "example": "Stop unused virtual machines",
+      "output": "Reduced cost",
+      "tips": [
+        "Review billing regularly."
+      ]
+    },
+    {
+      "topic": "High Availability and Load Balancing",
+      "definition": "High availability minimizes downtime while load balancing distributes traffic.",
+      "syntax": "Load Balancer \u2192 Servers",
+      "example": "Highly available web app",
+      "output": "Reliable service",
+      "tips": [
+        "Deploy across multiple zones."
+      ]
+    },
+    {
+      "topic": "Auto Scaling",
+      "definition": "Auto scaling automatically adjusts resources based on workload.",
+      "syntax": "Scale Out / Scale In",
+      "example": "Increase servers during peak traffic",
+      "output": "Resources scaled",
+      "tips": [
+        "Define proper scaling policies."
+      ]
+    },
+    {
+      "topic": "Cloud Architecture Patterns",
+      "definition": "Architecture patterns provide proven cloud application designs.",
+      "syntax": "Microservices / Event-Driven",
+      "example": "Microservices application",
+      "output": "Architecture selected",
+      "tips": [
+        "Choose patterns based on requirements."
+      ]
+    },
+    {
+      "topic": "Advanced Cloud Best Practices",
+      "definition": "Build secure, scalable and resilient cloud systems using automation and continuous monitoring.",
+      "syntax": "Plan \u2192 Automate \u2192 Monitor",
+      "example": "Infrastructure as Code",
+      "output": "Optimized cloud environment",
+      "tips": [
+        "Automate deployments.",
+        "Test disaster recovery.",
+        "Review security continuously."
+      ]
+    }
+  ]
+}

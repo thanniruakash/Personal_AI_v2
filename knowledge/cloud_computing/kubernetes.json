@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Kubernetes",
+  "topics": [
+    {
+      "topic": "What is Kubernetes?",
+      "definition": "Kubernetes is an open-source platform that automates deployment, scaling and management of containerized applications.",
+      "syntax": "kubectl",
+      "example": "Deploying a web application",
+      "output": "Application orchestrated",
+      "tips": [
+        "Commonly abbreviated as K8s."
+      ]
+    },
+    {
+      "topic": "Kubernetes Architecture",
+      "definition": "Kubernetes consists of a control plane and worker nodes.",
+      "syntax": "Control Plane + Worker Nodes",
+      "example": "Cluster architecture",
+      "output": "Cluster managed",
+      "tips": [
+        "The control plane manages the cluster state."
+      ]
+    },
+    {
+      "topic": "Pods",
+      "definition": "A Pod is the smallest deployable unit in Kubernetes and can contain one or more containers.",
+      "syntax": "Pod",
+      "example": "Nginx Pod",
+      "output": "Container running",
+      "tips": [
+        "Pods are usually short-lived."
+      ]
+    },
+    {
+      "topic": "Deployments",
+      "definition": "Deployments manage Pods and ensure the desired number of replicas are running.",
+      "syntax": "kubectl apply",
+      "example": "Deploy a web service",
+      "output": "Deployment created",
+      "tips": [
+        "Supports automatic updates and rollback."
+      ]
+    },
+    {
+      "topic": "Services",
+      "definition": "Services expose Pods for internal or external communication.",
+      "syntax": "ClusterIP / NodePort / LoadBalancer",
+      "example": "Expose a web app",
+      "output": "Service available",
+      "tips": [
+        "Choose the service type based on access needs."
+      ]
+    },
+    {
+      "topic": "Scaling and Auto Scaling",
+      "definition": "Kubernetes scales applications manually or automatically based on demand.",
+      "syntax": "Scale Replicas",
+      "example": "Increase replicas from 2 to 5",
+      "output": "Application scaled",
+      "tips": [
+        "Use the Horizontal Pod Autoscaler."
+      ]
+    },
+    {
+      "topic": "Rolling Updates",
+      "definition": "Rolling updates deploy new versions gradually without downtime.",
+      "syntax": "Rolling Update",
+      "example": "Update application image",
+      "output": "Application updated",
+      "tips": [
+        "Rollback is available if problems occur."
+      ]
+    },
+    {
+      "topic": "Kubernetes Best Practices",
+      "definition": "Monitor clusters, secure workloads and use resource limits for stable deployments.",
+      "syntax": "Deploy \u2192 Monitor \u2192 Secure",
+      "example": "Set CPU and memory limits",
+      "output": "Reliable Kubernetes cluster",
+      "tips": [
+        "Use namespaces.",
+        "Keep clusters updated.",
+        "Back up cluster configuration."
+      ]
+    }
+  ]
+}

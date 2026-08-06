@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Cloud Services",
+  "topics": [
+    {
+      "topic": "Infrastructure as a Service (IaaS)",
+      "definition": "IaaS provides virtualized computing resources such as servers, storage and networking over the Internet.",
+      "syntax": "Virtual Machines + Storage",
+      "example": "Amazon EC2",
+      "output": "Infrastructure provisioned",
+      "tips": [
+        "You manage the OS and applications."
+      ]
+    },
+    {
+      "topic": "Platform as a Service (PaaS)",
+      "definition": "PaaS provides a platform for building, testing and deploying applications without managing infrastructure.",
+      "syntax": "Code \u2192 Deploy",
+      "example": "Google App Engine",
+      "output": "Application deployed",
+      "tips": [
+        "Focus on development, not servers."
+      ]
+    },
+    {
+      "topic": "Software as a Service (SaaS)",
+      "definition": "SaaS delivers ready-to-use software through a web browser.",
+      "syntax": "Browser \u2192 Application",
+      "example": "Gmail",
+      "output": "Software accessed",
+      "tips": [
+        "No local installation required."
+      ]
+    },
+    {
+      "topic": "Storage as a Service (STaaS)",
+      "definition": "STaaS provides scalable cloud storage for files and backups.",
+      "syntax": "Upload \u2192 Store",
+      "example": "Google Drive",
+      "output": "Data stored",
+      "tips": [
+        "Encrypt sensitive data before storing."
+      ]
+    },
+    {
+      "topic": "Function as a Service (FaaS)",
+      "definition": "FaaS runs individual functions in response to events without managing servers.",
+      "syntax": "Event \u2192 Function",
+      "example": "AWS Lambda",
+      "output": "Function executed",
+      "tips": [
+        "Pay only for execution time."
+      ]
+    },
+    {
+      "topic": "Service Model Comparison",
+      "definition": "IaaS offers infrastructure, PaaS offers a development platform and SaaS offers complete software.",
+      "syntax": "IaaS / PaaS / SaaS",
+      "example": "Compare cloud models",
+      "output": "Model selected",
+      "tips": [
+        "Choose based on responsibility and flexibility."
+      ]
+    },
+    {
+      "topic": "Real-World Examples",
+      "definition": "Cloud services are widely used for hosting, storage, collaboration and AI.",
+      "syntax": "Concept",
+      "example": "Microsoft 365",
+      "output": "Cloud solution identified",
+      "tips": [
+        "Most businesses use multiple cloud services."
+      ]
+    },
+    {
+      "topic": "Cloud Services Best Practices",
+      "definition": "Select the right service model, monitor costs and secure cloud resources.",
+      "syntax": "Plan \u2192 Deploy \u2192 Monitor",
+      "example": "Enable backups and logging",
+      "output": "Reliable cloud service",
+      "tips": [
+        "Use least-privilege access.",
+        "Monitor usage regularly.",
+        "Review billing frequently."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Virtualization",
+  "topics": [
+    {
+      "topic": "What is Virtualization?",
+      "definition": "Virtualization creates virtual versions of computing resources such as servers, storage and networks.",
+      "syntax": "Physical Resource \u2192 Virtual Resource",
+      "example": "Running multiple VMs on one server",
+      "output": "Virtual environment created",
+      "tips": [
+        "Improves resource utilization."
+      ]
+    },
+    {
+      "topic": "Hypervisors",
+      "definition": "A hypervisor manages virtual machines. Type 1 runs on hardware; Type 2 runs on a host operating system.",
+      "syntax": "Type 1 / Type 2",
+      "example": "VMware ESXi, VirtualBox",
+      "output": "VMs managed",
+      "tips": [
+        "Type 1 is commonly used in data centers."
+      ]
+    },
+    {
+      "topic": "Virtual Machines (VMs)",
+      "definition": "A VM is an isolated software-based computer with its own operating system.",
+      "syntax": "Host \u2192 VM",
+      "example": "Ubuntu VM on Windows",
+      "output": "Virtual machine running",
+      "tips": [
+        "Each VM has dedicated virtual resources."
+      ]
+    },
+    {
+      "topic": "Virtual Storage",
+      "definition": "Virtual storage pools physical storage into logical storage resources.",
+      "syntax": "Storage Pool",
+      "example": "Cloud storage volumes",
+      "output": "Storage allocated",
+      "tips": [
+        "Supports scalability and flexibility."
+      ]
+    },
+    {
+      "topic": "Virtual Networking",
+      "definition": "Virtual networking connects virtual machines using software-defined networks.",
+      "syntax": "Virtual Switch",
+      "example": "Virtual LAN",
+      "output": "Network connected",
+      "tips": [
+        "Supports isolated network environments."
+      ]
+    },
+    {
+      "topic": "Virtualization vs Containers",
+      "definition": "VMs virtualize hardware with separate operating systems, while containers share the host operating system.",
+      "syntax": "VM vs Container",
+      "example": "VirtualBox vs Docker",
+      "output": "Technology compared",
+      "tips": [
+        "Containers are generally lighter than VMs."
+      ]
+    },
+    {
+      "topic": "Applications of Virtualization",
+      "definition": "Virtualization is used in cloud computing, testing, disaster recovery and server consolidation.",
+      "syntax": "Concept",
+      "example": "Development environments",
+      "output": "Application identified",
+      "tips": [
+        "Widely used in enterprise IT."
+      ]
+    },
+    {
+      "topic": "Virtualization Best Practices",
+      "definition": "Monitor resource usage, secure virtual machines and keep hypervisors updated.",
+      "syntax": "Deploy \u2192 Monitor \u2192 Secure",
+      "example": "Regular VM snapshots",
+      "output": "Reliable virtual environment",
+      "tips": [
+        "Patch hypervisors.",
+        "Back up virtual machines.",
+        "Allocate resources carefully."
+      ]
+    }
+  ]
+}

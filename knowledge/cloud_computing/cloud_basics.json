@@ -1,0 +1,88 @@
+{
+  "subject": "Cloud Computing",
+  "section": "Cloud Basics",
+  "topics": [
+    {
+      "topic": "What is Cloud Computing?",
+      "definition": "Cloud computing delivers computing resources such as servers, storage and software over the Internet.",
+      "syntax": "Internet \u2192 Cloud Services",
+      "example": "Google Drive",
+      "output": "Cloud service accessed",
+      "tips": [
+        "Pay only for the resources you use."
+      ]
+    },
+    {
+      "topic": "Characteristics of Cloud Computing",
+      "definition": "Cloud computing provides on-demand access, scalability, elasticity, resource pooling and measured service.",
+      "syntax": "On-Demand / Scalable",
+      "example": "Auto-scaling web application",
+      "output": "Resources adjusted",
+      "tips": [
+        "Scale resources based on demand."
+      ]
+    },
+    {
+      "topic": "Deployment Models",
+      "definition": "Cloud deployment models include Public, Private, Hybrid and Community Cloud.",
+      "syntax": "Public / Private / Hybrid",
+      "example": "AWS Public Cloud",
+      "output": "Deployment model selected",
+      "tips": [
+        "Choose based on security and business needs."
+      ]
+    },
+    {
+      "topic": "Advantages of Cloud Computing",
+      "definition": "Cloud computing offers flexibility, cost savings, scalability and high availability.",
+      "syntax": "Concept",
+      "example": "Hosting an application in the cloud",
+      "output": "Improved efficiency",
+      "tips": [
+        "Reduces hardware maintenance costs."
+      ]
+    },
+    {
+      "topic": "Disadvantages of Cloud Computing",
+      "definition": "Cloud computing may introduce security, privacy, latency and vendor lock-in concerns.",
+      "syntax": "Concept",
+      "example": "Internet outage affecting cloud access",
+      "output": "Limitations identified",
+      "tips": [
+        "Plan for backups and redundancy."
+      ]
+    },
+    {
+      "topic": "Cloud Providers",
+      "definition": "Major cloud providers offer infrastructure and services for businesses and developers.",
+      "syntax": "AWS / Azure / Google Cloud",
+      "example": "Deploying a virtual machine",
+      "output": "Cloud platform used",
+      "tips": [
+        "Compare services before choosing a provider."
+      ]
+    },
+    {
+      "topic": "Cloud Use Cases",
+      "definition": "Cloud computing supports storage, web hosting, AI, analytics, backups and disaster recovery.",
+      "syntax": "Concept",
+      "example": "Cloud database",
+      "output": "Use case identified",
+      "tips": [
+        "Cloud is used across many industries."
+      ]
+    },
+    {
+      "topic": "Cloud Computing Best Practices",
+      "definition": "Design secure, scalable and cost-effective cloud solutions.",
+      "syntax": "Plan \u2192 Secure \u2192 Monitor",
+      "example": "Enable monitoring and backups",
+      "output": "Reliable cloud environment",
+      "tips": [
+        "Use least-privilege access.",
+        "Monitor costs regularly.",
+        "Back up critical data."
+      ]
+    }
+  ]
+}
