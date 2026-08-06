@@ -1,0 +1,87 @@
+{
+  "subject": "DBMS",
+  "section": "Advanced DBMS",
+  "topics": [
+    {
+      "topic": "Database Recovery",
+      "definition": "Database recovery restores the database to a consistent state after a failure.",
+      "syntax": "Log files, checkpoints, backup",
+      "example": "Recover after a system crash.",
+      "output": "Database restored",
+      "tips": [
+        "Maintain regular backups."
+      ]
+    },
+    {
+      "topic": "Database Security",
+      "definition": "Database security protects data from unauthorized access and attacks.",
+      "syntax": "Authentication, Authorization",
+      "example": "Grant users only required permissions.",
+      "output": "Secure database",
+      "tips": [
+        "Use strong passwords and access control."
+      ]
+    },
+    {
+      "topic": "Database Administrator (DBA)",
+      "definition": "A DBA manages, maintains and secures the database system.",
+      "syntax": "N/A",
+      "example": "Creating backups and managing users.",
+      "output": "Database managed",
+      "tips": [
+        "DBAs monitor performance and security."
+      ]
+    },
+    {
+      "topic": "Distributed Database",
+      "definition": "A distributed database stores data across multiple locations connected by a network.",
+      "syntax": "N/A",
+      "example": "Company branches sharing one database.",
+      "output": "Distributed data",
+      "tips": [
+        "Improves availability and scalability."
+      ]
+    },
+    {
+      "topic": "Client-Server Architecture",
+      "definition": "Clients send requests and the database server processes them.",
+      "syntax": "Client \u2192 Server \u2192 Database",
+      "example": "Banking application",
+      "output": "Request processed",
+      "tips": [
+        "Common in web applications."
+      ]
+    },
+    {
+      "topic": "Data Warehousing",
+      "definition": "A data warehouse stores historical data for reporting and analysis.",
+      "syntax": "ETL \u2192 Data Warehouse",
+      "example": "Sales reports",
+      "output": "Analytical data",
+      "tips": [
+        "Optimized for analysis, not transactions."
+      ]
+    },
+    {
+      "topic": "Data Mining",
+      "definition": "Data mining discovers useful patterns and knowledge from large datasets.",
+      "syntax": "Classification, Clustering",
+      "example": "Customer buying pattern analysis",
+      "output": "Hidden patterns found",
+      "tips": [
+        "Used in business intelligence."
+      ]
+    },
+    {
+      "topic": "DBMS Best Practices",
+      "definition": "Guidelines for designing secure, efficient and reliable databases.",
+      "syntax": "Normalization, Indexing, Backup",
+      "example": "Use primary and foreign keys correctly.",
+      "output": "Well-designed database",
+      "tips": [
+        "Back up data regularly.",
+        "Use indexes wisely."
+      ]
+    }
+  ]
+}

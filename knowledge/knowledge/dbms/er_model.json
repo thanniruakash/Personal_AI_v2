@@ -1,0 +1,96 @@
+{
+  "subject": "DBMS",
+  "section": "ER Model",
+  "topics": [
+    {
+      "topic": "Entity",
+      "definition": "An entity is a real-world object or thing about which data is stored.",
+      "syntax": "Student, Employee, Book",
+      "example": "Student",
+      "output": "Entity identified",
+      "tips": [
+        "Represented by a rectangle in an ER diagram."
+      ]
+    },
+    {
+      "topic": "Attributes",
+      "definition": "Attributes describe the properties of an entity.",
+      "syntax": "Student(ID, Name, Age)",
+      "example": "Name, Roll Number",
+      "output": "Attributes defined",
+      "tips": [
+        "Represented by ovals."
+      ]
+    },
+    {
+      "topic": "Types of Attributes",
+      "definition": "Attributes can be simple, composite, single-valued, multi-valued or derived.",
+      "syntax": "N/A",
+      "example": "Age (derived), Address (composite)",
+      "output": "Attribute type identified",
+      "tips": [
+        "Multi-valued attributes use a double oval."
+      ]
+    },
+    {
+      "topic": "Relationship",
+      "definition": "A relationship represents an association between two or more entities.",
+      "syntax": "Student \u2014 Enrolls \u2014 Course",
+      "example": "Employee works in Department",
+      "output": "Relationship created",
+      "tips": [
+        "Represented by a diamond."
+      ]
+    },
+    {
+      "topic": "Entity Set",
+      "definition": "An entity set is a collection of similar entities.",
+      "syntax": "All Students",
+      "example": "All Employees",
+      "output": "Entity set formed",
+      "tips": [
+        "Contains entities of the same type."
+      ]
+    },
+    {
+      "topic": "Keys",
+      "definition": "Keys uniquely identify records in a database.",
+      "syntax": "Primary Key, Candidate Key, Foreign Key",
+      "example": "Student_ID",
+      "output": "Unique record identified",
+      "tips": [
+        "Primary keys must be unique."
+      ]
+    },
+    {
+      "topic": "Cardinality",
+      "definition": "Cardinality defines the number of entities participating in a relationship.",
+      "syntax": "1:1, 1:M, M:N",
+      "example": "One Teacher teaches many Students",
+      "output": "Relationship type identified",
+      "tips": [
+        "Very important for database design."
+      ]
+    },
+    {
+      "topic": "Participation Constraints",
+      "definition": "Participation specifies whether participation is total or partial.",
+      "syntax": "Total / Partial",
+      "example": "Every Employee belongs to a Department",
+      "output": "Participation defined",
+      "tips": [
+        "Shown using single or double lines."
+      ]
+    },
+    {
+      "topic": "ER Diagram",
+      "definition": "An ER diagram graphically represents entities, attributes and relationships.",
+      "syntax": "Rectangle + Oval + Diamond",
+      "example": "Student \u2194 Enrolls \u2194 Course",
+      "output": "ER diagram created",
+      "tips": [
+        "Used during database design."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "subject": "DBMS",
+  "section": "Basics",
+  "topics": [
+    {
+      "topic": "What is DBMS?",
+      "definition": "A Database Management System (DBMS) is software used to create, store, retrieve and manage data efficiently.",
+      "syntax": "N/A",
+      "example": "MySQL, Oracle Database, PostgreSQL",
+      "output": "Database managed successfully",
+      "tips": [
+        "DBMS reduces data redundancy.",
+        "Provides security and backup."
+      ]
+    },
+    {
+      "topic": "Advantages of DBMS",
+      "definition": "DBMS provides efficient data storage, security, consistency and sharing.",
+      "syntax": "N/A",
+      "example": "Multiple users can access the same database.",
+      "output": "Improved data management",
+      "tips": [
+        "Supports backup and recovery."
+      ]
+    },
+    {
+      "topic": "Characteristics of DBMS",
+      "definition": "A DBMS supports data independence, integrity, concurrency and security.",
+      "syntax": "N/A",
+      "example": "Data remains consistent after updates.",
+      "output": "Reliable database",
+      "tips": [
+        "Maintains data accuracy."
+      ]
+    },
+    {
+      "topic": "Database Architecture",
+      "definition": "DBMS architecture can be one-tier, two-tier or three-tier.",
+      "syntax": "N/A",
+      "example": "Client \u2192 Server \u2192 Database",
+      "output": "Architecture selected",
+      "tips": [
+        "Three-tier architecture is common in web applications."
+      ]
+    },
+    {
+      "topic": "Database Users",
+      "definition": "Users include DBA, application programmers, developers and end users.",
+      "syntax": "N/A",
+      "example": "DBA manages the database.",
+      "output": "User roles identified",
+      "tips": [
+        "Each user has different responsibilities."
+      ]
+    },
+    {
+      "topic": "Data Models",
+      "definition": "Data models describe how data is stored and organized.",
+      "syntax": "Hierarchical, Network, Relational, Object-Oriented",
+      "example": "Relational Model",
+      "output": "Model selected",
+      "tips": [
+        "The relational model is the most widely used."
+      ]
+    },
+    {
+      "topic": "Schema",
+      "definition": "Schema is the logical structure or blueprint of a database.",
+      "syntax": "CREATE TABLE Student (...);",
+      "example": "Student(id, name, marks)",
+      "output": "Schema defined",
+      "tips": [
+        "Schema changes rarely."
+      ]
+    },
+    {
+      "topic": "Instance",
+      "definition": "An instance is the data stored in the database at a particular moment.",
+      "syntax": "N/A",
+      "example": "Current student records",
+      "output": "Database contents",
+      "tips": [
+        "Instances change frequently."
+      ]
+    },
+    {
+      "topic": "DBMS vs File System",
+      "definition": "DBMS provides centralized management, while a file system stores data in separate files.",
+      "syntax": "N/A",
+      "example": "DBMS supports SQL; file systems do not.",
+      "output": "Comparison completed",
+      "tips": [
+        "DBMS offers better security and consistency."
+      ]
+    },
+    {
+      "topic": "Applications of DBMS",
+      "definition": "DBMS is used in banking, hospitals, colleges, e-commerce and social media.",
+      "syntax": "N/A",
+      "example": "College Student Management System",
+      "output": "Application identified",
+      "tips": [
+        "Almost every modern application uses a database."
+      ]
+    }
+  ]
+}

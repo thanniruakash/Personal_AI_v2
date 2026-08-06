@@ -1,0 +1,106 @@
+{
+  "subject": "DBMS",
+  "section": "SQL",
+  "topics": [
+    {
+      "topic": "SQL Introduction",
+      "definition": "SQL (Structured Query Language) is used to create, retrieve, update and manage data in relational databases.",
+      "syntax": "SELECT * FROM Student;",
+      "example": "SELECT Name FROM Student;",
+      "output": "Student names displayed",
+      "tips": [
+        "SQL is the standard language for relational databases."
+      ]
+    },
+    {
+      "topic": "DDL Commands",
+      "definition": "DDL (Data Definition Language) defines and modifies database objects.",
+      "syntax": "CREATE, ALTER, DROP, TRUNCATE",
+      "example": "CREATE TABLE Student(ID INT, Name VARCHAR(50));",
+      "output": "Table created",
+      "tips": [
+        "DDL changes the database structure."
+      ]
+    },
+    {
+      "topic": "DML Commands",
+      "definition": "DML (Data Manipulation Language) inserts, updates and deletes records.",
+      "syntax": "INSERT, UPDATE, DELETE",
+      "example": "INSERT INTO Student VALUES(1,'Akash');",
+      "output": "Row inserted",
+      "tips": [
+        "DML modifies table data."
+      ]
+    },
+    {
+      "topic": "DQL (SELECT)",
+      "definition": "DQL retrieves data from tables.",
+      "syntax": "SELECT column_name FROM table_name;",
+      "example": "SELECT * FROM Student;",
+      "output": "Records displayed",
+      "tips": [
+        "Use WHERE to filter results."
+      ]
+    },
+    {
+      "topic": "DCL Commands",
+      "definition": "DCL (Data Control Language) controls user permissions.",
+      "syntax": "GRANT, REVOKE",
+      "example": "GRANT SELECT ON Student TO user1;",
+      "output": "Permission granted",
+      "tips": [
+        "Used for database security."
+      ]
+    },
+    {
+      "topic": "TCL Commands",
+      "definition": "TCL (Transaction Control Language) manages transactions.",
+      "syntax": "COMMIT, ROLLBACK, SAVEPOINT",
+      "example": "COMMIT;",
+      "output": "Transaction completed",
+      "tips": [
+        "ROLLBACK undoes uncommitted changes."
+      ]
+    },
+    {
+      "topic": "Joins",
+      "definition": "Joins combine rows from two or more tables.",
+      "syntax": "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN",
+      "example": "SELECT * FROM Student INNER JOIN Course ON Student.ID=Course.ID;",
+      "output": "Combined records",
+      "tips": [
+        "INNER JOIN is the most commonly used join."
+      ]
+    },
+    {
+      "topic": "Aggregate Functions",
+      "definition": "Aggregate functions perform calculations on groups of rows.",
+      "syntax": "COUNT(), SUM(), AVG(), MIN(), MAX()",
+      "example": "SELECT AVG(Marks) FROM Student;",
+      "output": "Average value",
+      "tips": [
+        "Often used with GROUP BY."
+      ]
+    },
+    {
+      "topic": "GROUP BY",
+      "definition": "GROUP BY groups rows sharing the same values.",
+      "syntax": "SELECT Dept, COUNT(*) FROM Employee GROUP BY Dept;",
+      "example": "GROUP BY Department",
+      "output": "Grouped results",
+      "tips": [
+        "Frequently used with aggregate functions."
+      ]
+    },
+    {
+      "topic": "ORDER BY",
+      "definition": "ORDER BY sorts query results in ascending or descending order.",
+      "syntax": "SELECT * FROM Student ORDER BY Name ASC;",
+      "example": "ORDER BY Marks DESC",
+      "output": "Sorted records",
+      "tips": [
+        "ASC is default; DESC sorts in descending order."
+      ]
+    }
+  ]
+}

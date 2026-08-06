@@ -1,0 +1,86 @@
+{
+  "subject": "DBMS",
+  "section": "Indexing",
+  "topics": [
+    {
+      "topic": "What is Indexing?",
+      "definition": "Indexing is a technique used to speed up data retrieval from a database table.",
+      "syntax": "CREATE INDEX idx_name ON Student(Name);",
+      "example": "Index on Student_ID",
+      "output": "Faster search",
+      "tips": [
+        "Indexes improve read performance but use extra storage."
+      ]
+    },
+    {
+      "topic": "Primary Index",
+      "definition": "A primary index is built on an ordered file using the primary key.",
+      "syntax": "Primary Key Index",
+      "example": "Index on Student_ID",
+      "output": "Fast primary key lookup",
+      "tips": [
+        "Usually unique."
+      ]
+    },
+    {
+      "topic": "Secondary Index",
+      "definition": "A secondary index is created on a non-primary key attribute.",
+      "syntax": "CREATE INDEX idx_dept ON Employee(Dept);",
+      "example": "Index on Department",
+      "output": "Faster search by non-key column",
+      "tips": [
+        "Can have duplicate values."
+      ]
+    },
+    {
+      "topic": "Clustered Index",
+      "definition": "A clustered index stores table data in the same order as the index.",
+      "syntax": "CLUSTERED INDEX",
+      "example": "Primary key clustered index",
+      "output": "Ordered data",
+      "tips": [
+        "A table typically has one clustered index."
+      ]
+    },
+    {
+      "topic": "Non-Clustered Index",
+      "definition": "A non-clustered index stores index entries separately from table data.",
+      "syntax": "NONCLUSTERED INDEX",
+      "example": "Index on Name",
+      "output": "Separate index structure",
+      "tips": [
+        "A table can have multiple non-clustered indexes."
+      ]
+    },
+    {
+      "topic": "B-Tree Index",
+      "definition": "A B-Tree index organizes data in a balanced tree for efficient searching.",
+      "syntax": "B-Tree",
+      "example": "Range search",
+      "output": "Fast search and insertion",
+      "tips": [
+        "Common default index type."
+      ]
+    },
+    {
+      "topic": "Hash Index",
+      "definition": "A hash index uses hash values for quick equality searches.",
+      "syntax": "HASH INDEX",
+      "example": "Search by exact ID",
+      "output": "Fast equality lookup",
+      "tips": [
+        "Not suitable for range queries."
+      ]
+    },
+    {
+      "topic": "Advantages and Disadvantages",
+      "definition": "Indexes improve query speed but increase storage and update cost.",
+      "syntax": "N/A",
+      "example": "Large database optimization",
+      "output": "Performance trade-off",
+      "tips": [
+        "Create indexes only where needed."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "subject": "DBMS",
+  "section": "Relational Model",
+  "topics": [
+    {
+      "topic": "Relation",
+      "definition": "A relation is a table consisting of rows and columns.",
+      "syntax": "STUDENT(ID, Name, Age)",
+      "example": "Student table",
+      "output": "Relation created",
+      "tips": [
+        "A relation is also called a table."
+      ]
+    },
+    {
+      "topic": "Tuple",
+      "definition": "A tuple is a single row in a relation.",
+      "syntax": "(101, 'Akash', 18)",
+      "example": "One student record",
+      "output": "Tuple stored",
+      "tips": [
+        "Each tuple represents one record."
+      ]
+    },
+    {
+      "topic": "Attribute",
+      "definition": "An attribute is a column in a relation.",
+      "syntax": "ID, Name, Age",
+      "example": "Student Name",
+      "output": "Attribute defined",
+      "tips": [
+        "Attributes describe the properties of tuples."
+      ]
+    },
+    {
+      "topic": "Domain",
+      "definition": "A domain is the set of valid values for an attribute.",
+      "syntax": "Age: 1\u2013120",
+      "example": "Gender: Male/Female",
+      "output": "Valid values specified",
+      "tips": [
+        "Domains improve data integrity."
+      ]
+    },
+    {
+      "topic": "Primary Key",
+      "definition": "A primary key uniquely identifies each tuple in a relation.",
+      "syntax": "PRIMARY KEY(ID)",
+      "example": "Student_ID",
+      "output": "Unique record identified",
+      "tips": [
+        "Primary keys cannot contain NULL values."
+      ]
+    },
+    {
+      "topic": "Candidate Key",
+      "definition": "A candidate key is a minimal key that can uniquely identify a tuple.",
+      "syntax": "Roll_No, Email",
+      "example": "Email ID",
+      "output": "Candidate key selected",
+      "tips": [
+        "One candidate key becomes the primary key."
+      ]
+    },
+    {
+      "topic": "Foreign Key",
+      "definition": "A foreign key links two relations by referring to the primary key of another table.",
+      "syntax": "FOREIGN KEY(DeptID)",
+      "example": "Employee.DeptID \u2192 Department.ID",
+      "output": "Relationship established",
+      "tips": [
+        "Maintains referential integrity."
+      ]
+    },
+    {
+      "topic": "Super Key",
+      "definition": "A super key is a set of one or more attributes that uniquely identifies a tuple.",
+      "syntax": "{ID}, {ID, Name}",
+      "example": "Student_ID + Name",
+      "output": "Super key identified",
+      "tips": [
+        "Every candidate key is a super key."
+      ]
+    },
+    {
+      "topic": "Integrity Constraints",
+      "definition": "Integrity constraints ensure the accuracy and consistency of data.",
+      "syntax": "Entity, Referential, Domain Constraints",
+      "example": "Primary key must be unique.",
+      "output": "Data integrity maintained",
+      "tips": [
+        "Very important in relational databases."
+      ]
+    },
+    {
+      "topic": "Relational Schema",
+      "definition": "A relational schema defines the structure of a relation.",
+      "syntax": "STUDENT(ID, Name, Age)",
+      "example": "EMPLOYEE(EmpID, Name, Salary)",
+      "output": "Schema defined",
+      "tips": [
+        "Schemas describe table structure, not the data."
+      ]
+    }
+  ]
+}
