@@ -1,0 +1,97 @@
+{
+  "subject": "Operating Systems",
+  "section": "Advanced OS",
+  "topics": [
+    {
+      "topic": "Inter-Process Communication (IPC)",
+      "definition": "IPC enables processes to exchange data and coordinate execution.",
+      "syntax": "Pipes, Message Queues, Shared Memory, Sockets",
+      "example": "Two applications sharing data",
+      "output": "Processes communicate",
+      "tips": [
+        "Choose the IPC mechanism based on performance and requirements."
+      ]
+    },
+    {
+      "topic": "Pipes",
+      "definition": "A pipe is a communication channel that transfers data between related processes.",
+      "syntax": "Process A | Process B",
+      "example": "Linux shell pipe",
+      "output": "Data transferred",
+      "tips": [
+        "Anonymous pipes are commonly used between parent and child processes."
+      ]
+    },
+    {
+      "topic": "Message Queues",
+      "definition": "Message queues allow processes to exchange messages asynchronously.",
+      "syntax": "Send \u2192 Queue \u2192 Receive",
+      "example": "Task queue",
+      "output": "Message delivered",
+      "tips": [
+        "Processes do not need to execute simultaneously."
+      ]
+    },
+    {
+      "topic": "Shared Memory",
+      "definition": "Shared memory allows multiple processes to access the same memory region.",
+      "syntax": "Shared Memory Segment",
+      "example": "Fast data sharing",
+      "output": "Shared data accessed",
+      "tips": [
+        "Requires synchronization mechanisms such as semaphores."
+      ]
+    },
+    {
+      "topic": "Sockets",
+      "definition": "Sockets enable communication between processes over a network.",
+      "syntax": "Client \u2194 Server",
+      "example": "Web browser communicating with a web server",
+      "output": "Network communication established",
+      "tips": [
+        "Widely used in distributed applications."
+      ]
+    },
+    {
+      "topic": "System Security",
+      "definition": "Operating system security protects resources from unauthorized access.",
+      "syntax": "Authentication + Authorization",
+      "example": "User login",
+      "output": "Secure access",
+      "tips": [
+        "Keep the OS updated and use strong passwords."
+      ]
+    },
+    {
+      "topic": "Virtualization",
+      "definition": "Virtualization allows multiple virtual machines to run on one physical computer.",
+      "syntax": "Hypervisor",
+      "example": "VirtualBox, VMware",
+      "output": "Virtual machine created",
+      "tips": [
+        "Improves hardware utilization."
+      ]
+    },
+    {
+      "topic": "Containers",
+      "definition": "Containers package applications with their dependencies in isolated environments.",
+      "syntax": "Container Runtime",
+      "example": "Docker container",
+      "output": "Application isolated",
+      "tips": [
+        "Containers are lightweight compared to virtual machines."
+      ]
+    },
+    {
+      "topic": "Operating System Best Practices",
+      "definition": "Maintain a secure, stable and efficient operating system through updates, backups and monitoring.",
+      "syntax": "Update \u2192 Monitor \u2192 Backup",
+      "example": "Schedule regular system updates",
+      "output": "Reliable operating system",
+      "tips": [
+        "Monitor system resources regularly.",
+        "Back up important data."
+      ]
+    }
+  ]
+}

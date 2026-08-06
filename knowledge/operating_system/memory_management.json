@@ -1,0 +1,86 @@
+{
+  "subject": "Operating Systems",
+  "section": "Memory Management",
+  "topics": [
+    {
+      "topic": "Memory Management",
+      "definition": "Memory management is the OS function that allocates and deallocates memory efficiently.",
+      "syntax": "Allocate \u2192 Use \u2192 Free",
+      "example": "Assign RAM to a process",
+      "output": "Memory allocated",
+      "tips": [
+        "Improves performance and prevents memory waste."
+      ]
+    },
+    {
+      "topic": "Main Memory",
+      "definition": "Main memory (RAM) stores programs and data currently being used by the CPU.",
+      "syntax": "RAM",
+      "example": "Running applications",
+      "output": "Data stored in memory",
+      "tips": [
+        "RAM is volatile memory."
+      ]
+    },
+    {
+      "topic": "Paging",
+      "definition": "Paging divides memory into fixed-size pages and frames.",
+      "syntax": "Page \u2194 Frame",
+      "example": "4 KB pages",
+      "output": "Pages mapped",
+      "tips": [
+        "Eliminates external fragmentation."
+      ]
+    },
+    {
+      "topic": "Segmentation",
+      "definition": "Segmentation divides memory into logical segments such as code, data and stack.",
+      "syntax": "Code | Data | Stack",
+      "example": "Separate code and data segments",
+      "output": "Segments allocated",
+      "tips": [
+        "Supports logical program organization."
+      ]
+    },
+    {
+      "topic": "Virtual Memory",
+      "definition": "Virtual memory allows programs to use more memory than the available physical RAM.",
+      "syntax": "Virtual Address \u2192 Physical Address",
+      "example": "Run large applications",
+      "output": "Virtual memory used",
+      "tips": [
+        "Implemented using paging or segmentation."
+      ]
+    },
+    {
+      "topic": "Swapping",
+      "definition": "Swapping moves processes between RAM and secondary storage.",
+      "syntax": "RAM \u2194 Disk",
+      "example": "Move inactive process to disk",
+      "output": "Memory freed",
+      "tips": [
+        "Too much swapping reduces performance."
+      ]
+    },
+    {
+      "topic": "Page Replacement Algorithms",
+      "definition": "These algorithms decide which page to replace when memory is full.",
+      "syntax": "FIFO, LRU, Optimal",
+      "example": "Replace least recently used page",
+      "output": "Page replaced",
+      "tips": [
+        "LRU usually performs better than FIFO."
+      ]
+    },
+    {
+      "topic": "Memory Management Best Practices",
+      "definition": "Efficient allocation, proper paging and optimized virtual memory improve system performance.",
+      "syntax": "Allocate \u2192 Monitor \u2192 Optimize",
+      "example": "Reduce page faults",
+      "output": "Optimized memory usage",
+      "tips": [
+        "Minimize fragmentation and excessive swapping."
+      ]
+    }
+  ]
+}

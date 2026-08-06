@@ -1,0 +1,87 @@
+{
+  "subject": "Operating Systems",
+  "section": "Deadlocks",
+  "topics": [
+    {
+      "topic": "What is a Deadlock?",
+      "definition": "A deadlock is a situation where two or more processes wait indefinitely for resources held by each other.",
+      "syntax": "P1 waits for P2, P2 waits for P1",
+      "example": "Two processes waiting for each other's lock",
+      "output": "Deadlock occurred",
+      "tips": [
+        "No process can continue until the deadlock is resolved."
+      ]
+    },
+    {
+      "topic": "Necessary Conditions",
+      "definition": "Deadlock occurs when Mutual Exclusion, Hold and Wait, No Preemption and Circular Wait exist together.",
+      "syntax": "4 Coffman Conditions",
+      "example": "Processes competing for printers",
+      "output": "Conditions identified",
+      "tips": [
+        "Breaking any one condition can prevent deadlock."
+      ]
+    },
+    {
+      "topic": "Resource Allocation Graph (RAG)",
+      "definition": "A graph used to represent processes, resources and their allocations.",
+      "syntax": "Process \u2194 Resource",
+      "example": "P1 \u2192 R1",
+      "output": "Resource relationship shown",
+      "tips": [
+        "Cycles may indicate deadlock."
+      ]
+    },
+    {
+      "topic": "Deadlock Prevention",
+      "definition": "Prevention ensures at least one necessary condition never occurs.",
+      "syntax": "Break Coffman conditions",
+      "example": "Request all resources at once",
+      "output": "Deadlock prevented",
+      "tips": [
+        "May reduce resource utilization."
+      ]
+    },
+    {
+      "topic": "Deadlock Avoidance",
+      "definition": "Avoidance allocates resources only if the system remains in a safe state.",
+      "syntax": "Banker's Algorithm",
+      "example": "Safe sequence check",
+      "output": "Safe allocation",
+      "tips": [
+        "Requires advance knowledge of resource needs."
+      ]
+    },
+    {
+      "topic": "Deadlock Detection",
+      "definition": "Detection identifies whether a deadlock has already occurred.",
+      "syntax": "Detection Algorithm",
+      "example": "Search for cycles",
+      "output": "Deadlock detected",
+      "tips": [
+        "Used when prevention is not implemented."
+      ]
+    },
+    {
+      "topic": "Deadlock Recovery",
+      "definition": "Recovery removes deadlocks by terminating processes or preempting resources.",
+      "syntax": "Terminate / Preempt",
+      "example": "Kill one blocked process",
+      "output": "System recovered",
+      "tips": [
+        "Choose the victim process carefully."
+      ]
+    },
+    {
+      "topic": "Deadlock Best Practices",
+      "definition": "Design systems to minimize deadlocks and monitor resource allocation.",
+      "syntax": "Prevent \u2192 Detect \u2192 Recover",
+      "example": "Use timeouts on locks",
+      "output": "Reliable system",
+      "tips": [
+        "Acquire resources in a fixed order.",
+        "Release unused resources quickly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "subject": "Operating Systems",
+  "section": "OS Basics",
+  "topics": [
+    {
+      "topic": "What is an Operating System?",
+      "definition": "An Operating System (OS) is system software that manages computer hardware and software resources and provides services to programs.",
+      "syntax": "Concept",
+      "example": "Windows, Linux, Android",
+      "output": "System managed",
+      "tips": [
+        "Acts as an interface between users and hardware."
+      ]
+    },
+    {
+      "topic": "History of Operating Systems",
+      "definition": "Operating systems evolved from simple batch systems to modern multitasking and distributed systems.",
+      "syntax": "Concept",
+      "example": "MS-DOS to Windows",
+      "output": "OS evolution",
+      "tips": [
+        "Modern OS supports multitasking and networking."
+      ]
+    },
+    {
+      "topic": "Types of Operating Systems",
+      "definition": "Common types include Batch, Time-Sharing, Distributed, Real-Time, Network and Mobile operating systems.",
+      "syntax": "Batch / RTOS / Mobile",
+      "example": "Android is a mobile OS",
+      "output": "OS type identified",
+      "tips": [
+        "Different OS types suit different applications."
+      ]
+    },
+    {
+      "topic": "Functions of an Operating System",
+      "definition": "The OS manages processes, memory, files, devices, security and users.",
+      "syntax": "Concept",
+      "example": "Scheduling CPU processes",
+      "output": "Resources managed",
+      "tips": [
+        "Resource management is the primary role of an OS."
+      ]
+    },
+    {
+      "topic": "User Mode vs Kernel Mode",
+      "definition": "User mode runs applications with limited privileges, while kernel mode has full access to system resources.",
+      "syntax": "User Mode \u2194 Kernel Mode",
+      "example": "Browser vs OS kernel",
+      "output": "Execution mode identified",
+      "tips": [
+        "Kernel mode is more privileged."
+      ]
+    },
+    {
+      "topic": "OS Architecture",
+      "definition": "OS architecture defines how system components are organized.",
+      "syntax": "Monolithic, Layered, Microkernel",
+      "example": "Linux uses a monolithic kernel",
+      "output": "Architecture identified",
+      "tips": [
+        "Each architecture has advantages and trade-offs."
+      ]
+    },
+    {
+      "topic": "Examples of Operating Systems",
+      "definition": "Popular operating systems include Windows, Linux, macOS, Android and iOS.",
+      "syntax": "Concept",
+      "example": "Ubuntu Linux",
+      "output": "OS recognized",
+      "tips": [
+        "Choose an OS based on your needs."
+      ]
+    },
+    {
+      "topic": "OS Best Practices",
+      "definition": "Keep the OS updated, secure and backed up for reliable performance.",
+      "syntax": "Update \u2192 Secure \u2192 Backup",
+      "example": "Install security patches",
+      "output": "Reliable system",
+      "tips": [
+        "Use strong passwords and regular updates."
+      ]
+    }
+  ]
+}

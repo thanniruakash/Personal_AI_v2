@@ -1,0 +1,96 @@
+{
+  "subject": "Operating Systems",
+  "section": "CPU Scheduling",
+  "topics": [
+    {
+      "topic": "CPU Scheduling",
+      "definition": "CPU scheduling selects the next process for CPU execution.",
+      "syntax": "Ready Queue \u2192 CPU",
+      "example": "Selecting the next process",
+      "output": "Process scheduled",
+      "tips": [
+        "Improves CPU utilization."
+      ]
+    },
+    {
+      "topic": "Scheduling Criteria",
+      "definition": "Scheduling algorithms are evaluated using CPU utilization, throughput, waiting time, turnaround time and response time.",
+      "syntax": "CPU Utilization, Throughput, WT, TAT",
+      "example": "Compare FCFS and SJF",
+      "output": "Performance measured",
+      "tips": [
+        "Lower waiting time is generally better."
+      ]
+    },
+    {
+      "topic": "First Come First Serve (FCFS)",
+      "definition": "FCFS executes processes in the order they arrive.",
+      "syntax": "FIFO",
+      "example": "P1 \u2192 P2 \u2192 P3",
+      "output": "Processes completed",
+      "tips": [
+        "Simple but may cause the convoy effect."
+      ]
+    },
+    {
+      "topic": "Shortest Job First (SJF)",
+      "definition": "SJF executes the process with the shortest burst time first.",
+      "syntax": "Shortest Burst Time",
+      "example": "Burst times: 2,4,8",
+      "output": "Optimized schedule",
+      "tips": [
+        "Minimizes average waiting time."
+      ]
+    },
+    {
+      "topic": "Priority Scheduling",
+      "definition": "Processes are executed based on assigned priority.",
+      "syntax": "Highest Priority First",
+      "example": "Priority 1 before Priority 3",
+      "output": "Priority process executed",
+      "tips": [
+        "Starvation may occur."
+      ]
+    },
+    {
+      "topic": "Round Robin (RR)",
+      "definition": "RR gives each process a fixed time quantum in cyclic order.",
+      "syntax": "Time Quantum",
+      "example": "Quantum = 4 ms",
+      "output": "Fair CPU sharing",
+      "tips": [
+        "Common in time-sharing systems."
+      ]
+    },
+    {
+      "topic": "Waiting Time",
+      "definition": "Waiting time is the total time a process waits in the ready queue.",
+      "syntax": "WT = TAT - Burst Time",
+      "example": "WT = 8 ms",
+      "output": "Waiting time calculated",
+      "tips": [
+        "Lower waiting time improves performance."
+      ]
+    },
+    {
+      "topic": "Turnaround Time",
+      "definition": "Turnaround time is the total time from process submission to completion.",
+      "syntax": "TAT = Completion Time - Arrival Time",
+      "example": "TAT = 15 ms",
+      "output": "Turnaround time calculated",
+      "tips": [
+        "Includes waiting and execution time."
+      ]
+    },
+    {
+      "topic": "CPU Scheduling Best Practices",
+      "definition": "Choose scheduling algorithms based on workload and system requirements.",
+      "syntax": "Analyze \u2192 Schedule \u2192 Monitor",
+      "example": "Use RR for interactive systems",
+      "output": "Efficient scheduling",
+      "tips": [
+        "Balance fairness, throughput and response time."
+      ]
+    }
+  ]
+}

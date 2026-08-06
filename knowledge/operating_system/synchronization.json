@@ -1,0 +1,87 @@
+{
+  "subject": "Operating Systems",
+  "section": "Synchronization",
+  "topics": [
+    {
+      "topic": "Process Synchronization",
+      "definition": "Process synchronization coordinates multiple processes so shared data remains consistent.",
+      "syntax": "Synchronize shared resources",
+      "example": "Two processes updating the same file",
+      "output": "Safe execution",
+      "tips": [
+        "Prevents race conditions."
+      ]
+    },
+    {
+      "topic": "Critical Section",
+      "definition": "A critical section is the part of a program where shared resources are accessed.",
+      "syntax": "Entry \u2192 Critical Section \u2192 Exit",
+      "example": "Updating a shared variable",
+      "output": "Protected access",
+      "tips": [
+        "Only one process should execute at a time."
+      ]
+    },
+    {
+      "topic": "Mutex",
+      "definition": "A mutex is a locking mechanism that allows only one thread or process to access a resource.",
+      "syntax": "lock() / unlock()",
+      "example": "Protecting a shared counter",
+      "output": "Resource locked",
+      "tips": [
+        "Always release the lock after use."
+      ]
+    },
+    {
+      "topic": "Semaphore",
+      "definition": "A semaphore is a synchronization primitive used to control access to shared resources.",
+      "syntax": "wait(P), signal(V)",
+      "example": "Managing printer access",
+      "output": "Access synchronized",
+      "tips": [
+        "Can be binary or counting."
+      ]
+    },
+    {
+      "topic": "Monitor",
+      "definition": "A monitor is a high-level synchronization construct that provides mutual exclusion.",
+      "syntax": "Monitor with condition variables",
+      "example": "Thread-safe buffer",
+      "output": "Synchronized operations",
+      "tips": [
+        "Simplifies concurrent programming."
+      ]
+    },
+    {
+      "topic": "Producer-Consumer Problem",
+      "definition": "A classic synchronization problem where producers generate data and consumers use it.",
+      "syntax": "Buffer + Semaphore",
+      "example": "Message queue",
+      "output": "Data transferred",
+      "tips": [
+        "Avoid buffer overflow and underflow."
+      ]
+    },
+    {
+      "topic": "Dining Philosophers Problem",
+      "definition": "A synchronization problem demonstrating resource sharing and deadlock.",
+      "syntax": "Five philosophers, five forks",
+      "example": "Concurrent resource allocation",
+      "output": "Synchronization demonstrated",
+      "tips": [
+        "Use strategies to avoid deadlock."
+      ]
+    },
+    {
+      "topic": "Synchronization Best Practices",
+      "definition": "Use appropriate synchronization mechanisms and minimize time spent in critical sections.",
+      "syntax": "Lock \u2192 Execute \u2192 Unlock",
+      "example": "Fine-grained locking",
+      "output": "Efficient synchronization",
+      "tips": [
+        "Avoid deadlocks.",
+        "Keep critical sections short."
+      ]
+    }
+  ]
+}
