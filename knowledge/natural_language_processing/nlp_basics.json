@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "NLP Basics",
+  "topics": [
+    {
+      "topic": "What is NLP?",
+      "definition": "Natural Language Processing (NLP) enables computers to understand, interpret and generate human language.",
+      "syntax": "Text \u2192 NLP Model \u2192 Output",
+      "example": "Chatbot answering questions",
+      "output": "Language prediction",
+      "tips": [
+        "NLP combines AI, ML and linguistics."
+      ]
+    },
+    {
+      "topic": "Text Data",
+      "definition": "Text data consists of words, sentences and documents used for NLP tasks.",
+      "syntax": "Text \u2192 Tokens",
+      "example": "News articles",
+      "output": "Processed text",
+      "tips": [
+        "Clean text before training models."
+      ]
+    },
+    {
+      "topic": "NLP Pipeline",
+      "definition": "An NLP pipeline preprocesses, analyzes and models text data.",
+      "syntax": "Collect \u2192 Preprocess \u2192 Model \u2192 Evaluate",
+      "example": "Spam detection",
+      "output": "NLP workflow",
+      "tips": [
+        "Keep preprocessing consistent."
+      ]
+    },
+    {
+      "topic": "Common NLP Tasks",
+      "definition": "Typical tasks include classification, translation, summarization and question answering.",
+      "syntax": "Text \u2192 Task",
+      "example": "Sentiment analysis",
+      "output": "Task result",
+      "tips": [
+        "Choose the right model for the task."
+      ]
+    },
+    {
+      "topic": "Corpus",
+      "definition": "A corpus is a collection of text documents used for NLP research and training.",
+      "syntax": "Documents \u2192 Corpus",
+      "example": "Wikipedia articles",
+      "output": "Training corpus",
+      "tips": [
+        "Larger corpora often improve model quality."
+      ]
+    },
+    {
+      "topic": "Vocabulary",
+      "definition": "A vocabulary is the set of unique tokens known by a model.",
+      "syntax": "Tokens \u2192 Vocabulary",
+      "example": "50,000-word vocabulary",
+      "output": "Token list",
+      "tips": [
+        "Unknown words may be split into subwords."
+      ]
+    },
+    {
+      "topic": "Applications",
+      "definition": "NLP powers assistants, search engines, translation, summarization and information extraction.",
+      "syntax": "Input Text \u2192 Application",
+      "example": "Email classification",
+      "output": "Application result",
+      "tips": [
+        "Evaluate models on real-world data."
+      ]
+    },
+    {
+      "topic": "NLP Best Practices",
+      "definition": "Use quality datasets, preprocess carefully and evaluate with appropriate metrics.",
+      "syntax": "Prepare \u2192 Train \u2192 Evaluate",
+      "example": "Production NLP system",
+      "output": "Reliable NLP model",
+      "tips": [
+        "Remove noisy data.",
+        "Monitor model drift.",
+        "Update datasets regularly."
+      ]
+    }
+  ]
+}

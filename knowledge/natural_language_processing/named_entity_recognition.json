@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Named Entity Recognition",
+  "topics": [
+    {
+      "topic": "What is Named Entity Recognition (NER)?",
+      "definition": "NER identifies and classifies important entities in text into predefined categories.",
+      "syntax": "Text \u2192 NER \u2192 Entities",
+      "example": "John works at Google in London",
+      "output": "Recognized entities",
+      "tips": [
+        "Use annotated datasets for training."
+      ]
+    },
+    {
+      "topic": "Person Entities",
+      "definition": "Person entities represent names of people mentioned in text.",
+      "syntax": "Text \u2192 Person",
+      "example": "Alice",
+      "output": "PERSON",
+      "tips": [
+        "Handle name variations carefully."
+      ]
+    },
+    {
+      "topic": "Location Entities",
+      "definition": "Location entities identify places such as cities, countries and landmarks.",
+      "syntax": "Text \u2192 Location",
+      "example": "Tokyo",
+      "output": "LOCATION",
+      "tips": [
+        "Differentiate places from organizations."
+      ]
+    },
+    {
+      "topic": "Organization Entities",
+      "definition": "Organization entities represent companies, institutions and groups.",
+      "syntax": "Text \u2192 Organization",
+      "example": "OpenAI",
+      "output": "ORGANIZATION",
+      "tips": [
+        "Use consistent labeling guidelines."
+      ]
+    },
+    {
+      "topic": "Date and Time Entities",
+      "definition": "Date and time entities capture temporal information.",
+      "syntax": "Text \u2192 Date/Time",
+      "example": "5 August 2026",
+      "output": "DATE",
+      "tips": [
+        "Normalize different date formats when needed."
+      ]
+    },
+    {
+      "topic": "Numerical Entities",
+      "definition": "Numerical entities include money, percentages, quantities and measurements.",
+      "syntax": "Text \u2192 Number",
+      "example": "\u20b9500, 75%",
+      "output": "NUMERIC",
+      "tips": [
+        "Preserve units during extraction."
+      ]
+    },
+    {
+      "topic": "NER Evaluation",
+      "definition": "NER systems are commonly evaluated using precision, recall and F1-score.",
+      "syntax": "Predictions \u2192 Metrics",
+      "example": "Evaluate entity extraction",
+      "output": "Performance scores",
+      "tips": [
+        "Evaluate on unseen data."
+      ]
+    },
+    {
+      "topic": "NER Best Practices",
+      "definition": "Use high-quality annotations, balanced datasets and regular evaluation to improve entity extraction.",
+      "syntax": "Annotate \u2192 Train \u2192 Evaluate",
+      "example": "Information extraction pipeline",
+      "output": "Reliable NER model",
+      "tips": [
+        "Maintain annotation consistency.",
+        "Handle ambiguous entities.",
+        "Review errors regularly."
+      ]
+    }
+  ]
+}

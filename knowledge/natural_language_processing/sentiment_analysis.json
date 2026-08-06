@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Sentiment Analysis",
+  "topics": [
+    {
+      "topic": "What is Sentiment Analysis?",
+      "definition": "Sentiment analysis determines the emotional tone or opinion expressed in text.",
+      "syntax": "Text \u2192 Sentiment Model \u2192 Label",
+      "example": "Product review analysis",
+      "output": "Sentiment label",
+      "tips": [
+        "Use domain-specific training data when possible."
+      ]
+    },
+    {
+      "topic": "Positive Sentiment",
+      "definition": "Positive sentiment expresses favorable opinions or emotions.",
+      "syntax": "Text \u2192 Positive",
+      "example": "This phone is excellent!",
+      "output": "Positive",
+      "tips": [
+        "Look for positive opinion words in context."
+      ]
+    },
+    {
+      "topic": "Neutral Sentiment",
+      "definition": "Neutral sentiment expresses facts or balanced statements without strong emotion.",
+      "syntax": "Text \u2192 Neutral",
+      "example": "The meeting starts at 10 AM.",
+      "output": "Neutral",
+      "tips": [
+        "Not every sentence contains sentiment."
+      ]
+    },
+    {
+      "topic": "Negative Sentiment",
+      "definition": "Negative sentiment expresses unfavorable opinions or emotions.",
+      "syntax": "Text \u2192 Negative",
+      "example": "The service was terrible.",
+      "output": "Negative",
+      "tips": [
+        "Consider negation and context."
+      ]
+    },
+    {
+      "topic": "Emotion Detection",
+      "definition": "Emotion detection identifies emotions such as joy, anger, sadness or fear.",
+      "syntax": "Text \u2192 Emotion",
+      "example": "I am so excited!",
+      "output": "Joy",
+      "tips": [
+        "Emotion classification is more detailed than sentiment analysis."
+      ]
+    },
+    {
+      "topic": "Aspect-Based Sentiment Analysis",
+      "definition": "Aspect-based sentiment identifies opinions about specific features or aspects.",
+      "syntax": "Aspect \u2192 Sentiment",
+      "example": "Camera is great but battery is poor.",
+      "output": "Aspect sentiments",
+      "tips": [
+        "Extract aspects before assigning sentiment."
+      ]
+    },
+    {
+      "topic": "Sentiment Evaluation",
+      "definition": "Sentiment models are evaluated using metrics such as accuracy, precision, recall and F1-score.",
+      "syntax": "Predictions \u2192 Metrics",
+      "example": "Review classifier evaluation",
+      "output": "Performance metrics",
+      "tips": [
+        "Evaluate on unseen test data."
+      ]
+    },
+    {
+      "topic": "Sentiment Analysis Best Practices",
+      "definition": "Use balanced datasets, handle sarcasm and validate model performance regularly.",
+      "syntax": "Prepare \u2192 Train \u2192 Evaluate",
+      "example": "Customer feedback analysis",
+      "output": "Reliable sentiment model",
+      "tips": [
+        "Handle class imbalance.",
+        "Monitor drift.",
+        "Review misclassifications."
+      ]
+    }
+  ]
+}

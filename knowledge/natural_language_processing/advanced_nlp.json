@@ -1,0 +1,89 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Advanced NLP",
+  "topics": [
+    {
+      "topic": "Dialogue Systems",
+      "definition": "Dialogue systems enable natural conversations between humans and AI.",
+      "syntax": "User \u2192 Dialogue Model \u2192 Response",
+      "example": "Virtual assistant",
+      "output": "Conversational reply",
+      "tips": [
+        "Maintain context across turns."
+      ]
+    },
+    {
+      "topic": "Text Summarization",
+      "definition": "Summarization condenses long text into a shorter version while preserving key information.",
+      "syntax": "Document \u2192 Summary",
+      "example": "Summarize an article",
+      "output": "Short summary",
+      "tips": [
+        "Preserve important facts."
+      ]
+    },
+    {
+      "topic": "Information Extraction",
+      "definition": "Information extraction identifies structured facts from unstructured text.",
+      "syntax": "Text \u2192 Facts",
+      "example": "Extract names and dates",
+      "output": "Structured information",
+      "tips": [
+        "Combine with NER when appropriate."
+      ]
+    },
+    {
+      "topic": "Semantic Search",
+      "definition": "Semantic search retrieves information based on meaning instead of exact keywords.",
+      "syntax": "Query \u2192 Embeddings \u2192 Results",
+      "example": "Knowledge search",
+      "output": "Relevant documents",
+      "tips": [
+        "Use high-quality embeddings."
+      ]
+    },
+    {
+      "topic": "Multilingual NLP",
+      "definition": "Multilingual NLP processes and understands multiple languages using shared models.",
+      "syntax": "Text \u2192 Multilingual Model",
+      "example": "Cross-language translation",
+      "output": "Language-aware result",
+      "tips": [
+        "Evaluate each language separately."
+      ]
+    },
+    {
+      "topic": "Conversational AI",
+      "definition": "Conversational AI combines NLP, dialogue management and language models to interact naturally.",
+      "syntax": "Input \u2192 Conversation \u2192 Response",
+      "example": "Customer support bot",
+      "output": "AI response",
+      "tips": [
+        "Handle follow-up questions consistently."
+      ]
+    },
+    {
+      "topic": "Future of NLP",
+      "definition": "Future NLP focuses on multimodal understanding, efficient models and safer AI systems.",
+      "syntax": "Research \u2192 Innovation",
+      "example": "AI copilots",
+      "output": "Emerging capabilities",
+      "tips": [
+        "Keep models and datasets updated."
+      ]
+    },
+    {
+      "topic": "Advanced NLP Best Practices",
+      "definition": "Build accurate, safe and scalable NLP systems with continuous evaluation.",
+      "syntax": "Design \u2192 Train \u2192 Evaluate \u2192 Improve",
+      "example": "Enterprise NLP platform",
+      "output": "Reliable NLP solution",
+      "tips": [
+        "Monitor hallucinations.",
+        "Benchmark regularly.",
+        "Protect user privacy.",
+        "Update knowledge sources."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Machine Translation",
+  "topics": [
+    {
+      "topic": "What is Machine Translation?",
+      "definition": "Machine translation automatically converts text from one language to another.",
+      "syntax": "Source Text \u2192 Translation Model \u2192 Target Text",
+      "example": "English to Spanish translation",
+      "output": "Translated text",
+      "tips": [
+        "High-quality parallel data improves translation quality."
+      ]
+    },
+    {
+      "topic": "Rule-Based Machine Translation (RBMT)",
+      "definition": "RBMT uses handcrafted grammar rules and dictionaries to translate text.",
+      "syntax": "Rules + Dictionary \u2192 Translation",
+      "example": "Grammar-based translator",
+      "output": "Rule-based translation",
+      "tips": [
+        "Requires extensive linguistic expertise."
+      ]
+    },
+    {
+      "topic": "Statistical Machine Translation (SMT)",
+      "definition": "SMT learns translation patterns from bilingual text using statistical methods.",
+      "syntax": "Parallel Corpus \u2192 Probability Model",
+      "example": "Phrase-based translation",
+      "output": "Statistical translation",
+      "tips": [
+        "Needs large parallel datasets."
+      ]
+    },
+    {
+      "topic": "Neural Machine Translation (NMT)",
+      "definition": "NMT uses neural networks to generate fluent translations.",
+      "syntax": "Source \u2192 Neural Network \u2192 Target",
+      "example": "Modern online translators",
+      "output": "Natural translation",
+      "tips": [
+        "Generally outperforms SMT."
+      ]
+    },
+    {
+      "topic": "Transformer-Based Translation",
+      "definition": "Transformer models use self-attention for accurate and efficient translation.",
+      "syntax": "Tokens \u2192 Transformer",
+      "example": "Multilingual translation",
+      "output": "Translated sentence",
+      "tips": [
+        "Widely used in state-of-the-art systems."
+      ]
+    },
+    {
+      "topic": "BLEU Score",
+      "definition": "BLEU measures translation quality by comparing machine output with reference translations.",
+      "syntax": "Translation \u2192 BLEU",
+      "example": "Evaluate translation system",
+      "output": "BLEU score",
+      "tips": [
+        "Use alongside human evaluation."
+      ]
+    },
+    {
+      "topic": "Real-World Applications",
+      "definition": "Machine translation is used for websites, documents, customer support and multilingual communication.",
+      "syntax": "Text \u2192 Translation",
+      "example": "Translate product descriptions",
+      "output": "Localized content",
+      "tips": [
+        "Review critical translations manually."
+      ]
+    },
+    {
+      "topic": "Machine Translation Best Practices",
+      "definition": "Use quality training data, evaluate regularly and combine automatic and human review when appropriate.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Enterprise translation platform",
+      "output": "Reliable translation system",
+      "tips": [
+        "Benchmark on standard datasets.",
+        "Handle domain-specific terminology.",
+        "Monitor translation quality."
+      ]
+    }
+  ]
+}

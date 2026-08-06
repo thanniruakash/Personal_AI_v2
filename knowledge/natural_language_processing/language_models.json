@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Language Models",
+  "topics": [
+    {
+      "topic": "What are Language Models?",
+      "definition": "Language models estimate the probability of word sequences and generate human-like text.",
+      "syntax": "Text \u2192 Model \u2192 Prediction",
+      "example": "Autocomplete",
+      "output": "Predicted text",
+      "tips": [
+        "Train on diverse, high-quality data."
+      ]
+    },
+    {
+      "topic": "Statistical Language Models",
+      "definition": "Statistical models predict words using probability from observed text.",
+      "syntax": "N-gram \u2192 Probability",
+      "example": "Bigram model",
+      "output": "Word prediction",
+      "tips": [
+        "Limited long-range context."
+      ]
+    },
+    {
+      "topic": "Neural Language Models",
+      "definition": "Neural language models use neural networks to learn language representations.",
+      "syntax": "Tokens \u2192 Neural Network",
+      "example": "LSTM language model",
+      "output": "Predicted token",
+      "tips": [
+        "Capture richer language patterns."
+      ]
+    },
+    {
+      "topic": "Transformer Language Models",
+      "definition": "Transformer models use self-attention to understand long-range relationships in text.",
+      "syntax": "Tokens \u2192 Transformer",
+      "example": "GPT or BERT",
+      "output": "Context-aware prediction",
+      "tips": [
+        "Foundation of modern LLMs."
+      ]
+    },
+    {
+      "topic": "Next Token Prediction",
+      "definition": "The model predicts the most likely next token based on previous tokens.",
+      "syntax": "Context \u2192 Next Token",
+      "example": "Complete a sentence",
+      "output": "Generated token",
+      "tips": [
+        "Core objective for many LLMs."
+      ]
+    },
+    {
+      "topic": "Perplexity",
+      "definition": "Perplexity measures how well a language model predicts text; lower values generally indicate better prediction.",
+      "syntax": "Model \u2192 Perplexity",
+      "example": "Evaluate a language model",
+      "output": "Perplexity score",
+      "tips": [
+        "Compare models on the same dataset."
+      ]
+    },
+    {
+      "topic": "LLM Applications",
+      "definition": "Language models support chatbots, summarization, translation, coding and search.",
+      "syntax": "Prompt \u2192 Response",
+      "example": "Code assistant",
+      "output": "Task result",
+      "tips": [
+        "Choose prompts carefully."
+      ]
+    },
+    {
+      "topic": "Language Model Best Practices",
+      "definition": "Evaluate with multiple metrics, monitor quality and update models responsibly.",
+      "syntax": "Train \u2192 Evaluate \u2192 Improve",
+      "example": "Production language model",
+      "output": "Reliable NLP system",
+      "tips": [
+        "Benchmark regularly.",
+        "Monitor hallucinations.",
+        "Use appropriate evaluation data."
+      ]
+    }
+  ]
+}

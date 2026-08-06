@@ -1,0 +1,88 @@
+{
+  "subject": "Natural Language Processing",
+  "section": "Text Preprocessing",
+  "topics": [
+    {
+      "topic": "Tokenization",
+      "definition": "Tokenization splits text into words, subwords or sentences for processing.",
+      "syntax": "Text \u2192 Tokens",
+      "example": "Hello world \u2192 ['Hello','world']",
+      "output": "Token list",
+      "tips": [
+        "Use a tokenizer compatible with your model."
+      ]
+    },
+    {
+      "topic": "Text Cleaning",
+      "definition": "Text cleaning removes unwanted characters, HTML, punctuation and noise.",
+      "syntax": "Raw Text \u2192 Clean Text",
+      "example": "Remove HTML tags",
+      "output": "Clean text",
+      "tips": [
+        "Keep task-relevant information."
+      ]
+    },
+    {
+      "topic": "Lowercasing",
+      "definition": "Lowercasing converts text to lowercase to reduce vocabulary size.",
+      "syntax": "Text \u2192 lowercase",
+      "example": "Hello \u2192 hello",
+      "output": "Normalized text",
+      "tips": [
+        "Not always suitable for case-sensitive tasks."
+      ]
+    },
+    {
+      "topic": "Stop Word Removal",
+      "definition": "Stop words are common words that may be removed to reduce noise.",
+      "syntax": "Text \u2192 Remove Stop Words",
+      "example": "the, is, and",
+      "output": "Filtered text",
+      "tips": [
+        "Retain stop words when they carry meaning."
+      ]
+    },
+    {
+      "topic": "Stemming",
+      "definition": "Stemming reduces words to their root form by removing suffixes.",
+      "syntax": "running \u2192 run",
+      "example": "connected \u2192 connect",
+      "output": "Stemmed words",
+      "tips": [
+        "May produce non-dictionary words."
+      ]
+    },
+    {
+      "topic": "Lemmatization",
+      "definition": "Lemmatization converts words to their dictionary base form using linguistic rules.",
+      "syntax": "better \u2192 good",
+      "example": "cars \u2192 car",
+      "output": "Lemmatized words",
+      "tips": [
+        "Usually more accurate than stemming."
+      ]
+    },
+    {
+      "topic": "N-grams",
+      "definition": "N-grams are sequences of N consecutive words or tokens.",
+      "syntax": "Tokens \u2192 Bigrams/Trigrams",
+      "example": "machine learning",
+      "output": "N-gram features",
+      "tips": [
+        "Capture local context."
+      ]
+    },
+    {
+      "topic": "Text Preprocessing Best Practices",
+      "definition": "Apply consistent preprocessing, validate outputs and tailor preprocessing to the NLP task.",
+      "syntax": "Clean \u2192 Tokenize \u2192 Normalize",
+      "example": "Text classification pipeline",
+      "output": "Prepared text",
+      "tips": [
+        "Keep preprocessing reproducible.",
+        "Evaluate preprocessing impact.",
+        "Avoid unnecessary transformations."
+      ]
+    }
+  ]
+}
