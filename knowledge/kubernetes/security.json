@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Security",
+  "topics": [
+    {
+      "topic": "Kubernetes Security",
+      "definition": "Kubernetes security protects clusters, workloads and data from unauthorized access.",
+      "syntax": "Secure \u2192 Monitor",
+      "example": "Secure production cluster",
+      "output": "Protected environment",
+      "tips": [
+        "Apply the principle of least privilege."
+      ]
+    },
+    {
+      "topic": "Service Accounts",
+      "definition": "Service Accounts provide identities for Pods to interact with the Kubernetes API.",
+      "syntax": "kind: ServiceAccount",
+      "example": "backend-service-account",
+      "output": "Pod authenticated",
+      "tips": [
+        "Create separate accounts for different workloads."
+      ]
+    },
+    {
+      "topic": "RBAC (Role-Based Access Control)",
+      "definition": "RBAC controls user and service account permissions.",
+      "syntax": "Role + RoleBinding",
+      "example": "Read-only access",
+      "output": "Permissions enforced",
+      "tips": [
+        "Grant only required permissions."
+      ]
+    },
+    {
+      "topic": "Secrets",
+      "definition": "Secrets securely store sensitive information such as passwords and API keys.",
+      "syntax": "kind: Secret",
+      "example": "Database credentials",
+      "output": "Sensitive data stored",
+      "tips": [
+        "Avoid storing secrets in plain text."
+      ]
+    },
+    {
+      "topic": "Pod Security",
+      "definition": "Pod Security defines restrictions to improve workload security.",
+      "syntax": "Pod Security Standards",
+      "example": "Restricted policy",
+      "output": "Secure Pods",
+      "tips": [
+        "Run containers with minimal privileges."
+      ]
+    },
+    {
+      "topic": "Security Context",
+      "definition": "A Security Context defines security settings for Pods and containers.",
+      "syntax": "securityContext",
+      "example": "runAsNonRoot: true",
+      "output": "Security policy applied",
+      "tips": [
+        "Run containers as non-root whenever possible."
+      ]
+    },
+    {
+      "topic": "Admission Controllers",
+      "definition": "Admission Controllers validate or modify requests before they are stored in the cluster.",
+      "syntax": "Admission Controller",
+      "example": "ValidatingAdmissionPolicy",
+      "output": "Requests validated",
+      "tips": [
+        "Use admission policies to enforce standards."
+      ]
+    },
+    {
+      "topic": "Kubernetes Security Best Practices",
+      "definition": "Protect clusters using RBAC, Secrets, secure Pods and continuous monitoring.",
+      "syntax": "Protect \u2192 Audit \u2192 Improve",
+      "example": "Enterprise Kubernetes cluster",
+      "output": "Secure deployment",
+      "tips": [
+        "Enable audit logs.",
+        "Rotate secrets regularly.",
+        "Keep Kubernetes updated."
+      ]
+    }
+  ]
+}

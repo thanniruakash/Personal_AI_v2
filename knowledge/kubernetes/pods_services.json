@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Pods and Services",
+  "topics": [
+    {
+      "topic": "What are Pods?",
+      "definition": "A Pod is the smallest deployable unit in Kubernetes and contains one or more containers.",
+      "syntax": "Pod \u2192 Container(s)",
+      "example": "Nginx Pod",
+      "output": "Pod created",
+      "tips": [
+        "Usually run one main application per Pod."
+      ]
+    },
+    {
+      "topic": "Pod Lifecycle",
+      "definition": "Pods move through phases such as Pending, Running, Succeeded, Failed and Unknown.",
+      "syntax": "Pending \u2192 Running \u2192 Succeeded/Failed",
+      "example": "Application startup",
+      "output": "Pod state updated",
+      "tips": [
+        "Use kubectl get pods to check status."
+      ]
+    },
+    {
+      "topic": "Labels and Selectors",
+      "definition": "Labels organize resources and selectors identify matching resources.",
+      "syntax": "key=value",
+      "example": "app=frontend",
+      "output": "Resources grouped",
+      "tips": [
+        "Use consistent label names."
+      ]
+    },
+    {
+      "topic": "Services",
+      "definition": "A Service provides stable network access to one or more Pods.",
+      "syntax": "Service \u2192 Pods",
+      "example": "Web service",
+      "output": "Pods reachable",
+      "tips": [
+        "Services use labels to find Pods."
+      ]
+    },
+    {
+      "topic": "ClusterIP",
+      "definition": "Default Service type that exposes an application inside the cluster.",
+      "syntax": "type: ClusterIP",
+      "example": "Internal database service",
+      "output": "Internal access",
+      "tips": [
+        "Not accessible from outside the cluster."
+      ]
+    },
+    {
+      "topic": "NodePort",
+      "definition": "Exposes a Service on a static port of every worker node.",
+      "syntax": "type: NodePort",
+      "example": "Access web app via node IP",
+      "output": "External access enabled",
+      "tips": [
+        "Useful for testing and development."
+      ]
+    },
+    {
+      "topic": "LoadBalancer",
+      "definition": "Creates an external load balancer to expose a Service.",
+      "syntax": "type: LoadBalancer",
+      "example": "Public web application",
+      "output": "External load balancer created",
+      "tips": [
+        "Commonly used with cloud providers."
+      ]
+    },
+    {
+      "topic": "Pods and Services Best Practices",
+      "definition": "Use labels consistently, keep Pods lightweight and expose only required services.",
+      "syntax": "Deploy \u2192 Expose \u2192 Monitor",
+      "example": "Production microservices",
+      "output": "Reliable application deployment",
+      "tips": [
+        "Use readiness probes.",
+        "Avoid unnecessary exposed ports.",
+        "Monitor Pod health."
+      ]
+    }
+  ]
+}

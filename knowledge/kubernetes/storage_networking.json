@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Storage and Networking",
+  "topics": [
+    {
+      "topic": "Persistent Volumes (PV)",
+      "definition": "A Persistent Volume is storage provisioned for use by Pods.",
+      "syntax": "kind: PersistentVolume",
+      "example": "NFS-backed volume",
+      "output": "Persistent storage available",
+      "tips": [
+        "PV lifecycle is independent of Pods."
+      ]
+    },
+    {
+      "topic": "Persistent Volume Claims (PVC)",
+      "definition": "A PVC requests storage from a Persistent Volume.",
+      "syntax": "kind: PersistentVolumeClaim",
+      "example": "Request 10Gi storage",
+      "output": "Storage claimed",
+      "tips": [
+        "Pods mount PVCs instead of PVs directly."
+      ]
+    },
+    {
+      "topic": "Storage Classes",
+      "definition": "StorageClasses enable dynamic storage provisioning.",
+      "syntax": "kind: StorageClass",
+      "example": "fast-ssd",
+      "output": "Storage provisioned",
+      "tips": [
+        "Choose a class based on workload needs."
+      ]
+    },
+    {
+      "topic": "Kubernetes Networking",
+      "definition": "Every Pod gets its own IP and can communicate across the cluster.",
+      "syntax": "Pod \u2194 Pod",
+      "example": "Frontend connects to backend",
+      "output": "Network communication established",
+      "tips": [
+        "Understand the cluster networking model."
+      ]
+    },
+    {
+      "topic": "Ingress",
+      "definition": "Ingress manages external HTTP/HTTPS access to Services.",
+      "syntax": "kind: Ingress",
+      "example": "Expose a web application",
+      "output": "Traffic routed",
+      "tips": [
+        "Use an Ingress Controller."
+      ]
+    },
+    {
+      "topic": "Network Policies",
+      "definition": "Network Policies control traffic between Pods.",
+      "syntax": "kind: NetworkPolicy",
+      "example": "Allow frontend to access backend",
+      "output": "Traffic restricted",
+      "tips": [
+        "Apply least-privilege rules."
+      ]
+    },
+    {
+      "topic": "DNS in Kubernetes",
+      "definition": "Built-in DNS lets Pods locate Services by name.",
+      "syntax": "service.namespace.svc.cluster.local",
+      "example": "db.default.svc.cluster.local",
+      "output": "Service resolved",
+      "tips": [
+        "Use service names instead of IP addresses."
+      ]
+    },
+    {
+      "topic": "Storage & Networking Best Practices",
+      "definition": "Use persistent storage, secure network access and monitor connectivity.",
+      "syntax": "Store \u2192 Connect \u2192 Secure",
+      "example": "Production cluster",
+      "output": "Reliable infrastructure",
+      "tips": [
+        "Back up persistent data.",
+        "Limit network access.",
+        "Monitor storage usage."
+      ]
+    }
+  ]
+}

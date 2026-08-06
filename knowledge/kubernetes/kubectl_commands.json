@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "kubectl Commands",
+  "topics": [
+    {
+      "topic": "kubectl version",
+      "definition": "Displays the Kubernetes client and server versions.",
+      "syntax": "kubectl version",
+      "example": "kubectl version",
+      "output": "Version information",
+      "tips": [
+        "Verify client-server compatibility."
+      ]
+    },
+    {
+      "topic": "kubectl get",
+      "definition": "Lists Kubernetes resources.",
+      "syntax": "kubectl get <resource>",
+      "example": "kubectl get pods",
+      "output": "Resources listed",
+      "tips": [
+        "Use -A to list all namespaces."
+      ]
+    },
+    {
+      "topic": "kubectl describe",
+      "definition": "Shows detailed information about a resource.",
+      "syntax": "kubectl describe <resource> <name>",
+      "example": "kubectl describe pod nginx",
+      "output": "Resource details",
+      "tips": [
+        "Useful for troubleshooting."
+      ]
+    },
+    {
+      "topic": "kubectl apply",
+      "definition": "Creates or updates resources from a YAML file.",
+      "syntax": "kubectl apply -f file.yaml",
+      "example": "kubectl apply -f deployment.yaml",
+      "output": "Configuration applied",
+      "tips": [
+        "Prefer apply for declarative management."
+      ]
+    },
+    {
+      "topic": "kubectl delete",
+      "definition": "Deletes Kubernetes resources.",
+      "syntax": "kubectl delete <resource> <name>",
+      "example": "kubectl delete pod nginx",
+      "output": "Resource deleted",
+      "tips": [
+        "Double-check before deleting production resources."
+      ]
+    },
+    {
+      "topic": "kubectl logs",
+      "definition": "Displays logs from a container.",
+      "syntax": "kubectl logs <pod>",
+      "example": "kubectl logs web-pod",
+      "output": "Logs displayed",
+      "tips": [
+        "Use -f to follow logs in real time."
+      ]
+    },
+    {
+      "topic": "kubectl exec",
+      "definition": "Runs a command inside a running container.",
+      "syntax": "kubectl exec -it <pod> -- <command>",
+      "example": "kubectl exec -it web-pod -- bash",
+      "output": "Interactive shell opened",
+      "tips": [
+        "Helpful for debugging containers."
+      ]
+    },
+    {
+      "topic": "kubectl Best Practices",
+      "definition": "Use namespaces, YAML manifests and monitor cluster resources regularly.",
+      "syntax": "Get \u2192 Apply \u2192 Monitor",
+      "example": "Production cluster management",
+      "output": "Efficient administration",
+      "tips": [
+        "Prefer declarative configs.",
+        "Avoid manual changes.",
+        "Review resource status often."
+      ]
+    }
+  ]
+}

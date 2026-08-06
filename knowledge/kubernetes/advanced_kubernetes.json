@@ -1,0 +1,89 @@
+{
+  "subject": "Kubernetes",
+  "section": "Advanced Kubernetes",
+  "topics": [
+    {
+      "topic": "StatefulSets",
+      "definition": "StatefulSets manage stateful applications with stable identities and persistent storage.",
+      "syntax": "kind: StatefulSet",
+      "example": "Deploying a database",
+      "output": "Stateful application managed",
+      "tips": [
+        "Use for databases and clustered apps."
+      ]
+    },
+    {
+      "topic": "DaemonSets",
+      "definition": "DaemonSets ensure one Pod runs on every selected node.",
+      "syntax": "kind: DaemonSet",
+      "example": "Node log collector",
+      "output": "Pod on each node",
+      "tips": [
+        "Common for monitoring and logging agents."
+      ]
+    },
+    {
+      "topic": "Jobs and CronJobs",
+      "definition": "Jobs run tasks once, while CronJobs run tasks on a schedule.",
+      "syntax": "kind: Job / CronJob",
+      "example": "Nightly backup",
+      "output": "Task executed",
+      "tips": [
+        "Use CronJobs for recurring tasks."
+      ]
+    },
+    {
+      "topic": "Horizontal Pod Autoscaler (HPA)",
+      "definition": "HPA automatically scales Pods based on CPU, memory or custom metrics.",
+      "syntax": "kubectl autoscale",
+      "example": "Scale web app",
+      "output": "Pods scaled automatically",
+      "tips": [
+        "Requires Metrics Server."
+      ]
+    },
+    {
+      "topic": "Helm",
+      "definition": "Helm is a package manager for Kubernetes applications.",
+      "syntax": "helm install",
+      "example": "helm install nginx",
+      "output": "Application deployed",
+      "tips": [
+        "Use charts for reusable deployments."
+      ]
+    },
+    {
+      "topic": "Kubernetes Operators",
+      "definition": "Operators automate application management using custom controllers.",
+      "syntax": "Operator Pattern",
+      "example": "Database Operator",
+      "output": "Operations automated",
+      "tips": [
+        "Ideal for complex stateful apps."
+      ]
+    },
+    {
+      "topic": "Multi-Cluster Management",
+      "definition": "Manage multiple Kubernetes clusters from a unified workflow.",
+      "syntax": "Cluster A + Cluster B",
+      "example": "Production and staging",
+      "output": "Clusters managed",
+      "tips": [
+        "Standardize policies across clusters."
+      ]
+    },
+    {
+      "topic": "Advanced Kubernetes Best Practices",
+      "definition": "Automate operations, secure clusters and monitor continuously.",
+      "syntax": "Deploy \u2192 Secure \u2192 Scale \u2192 Monitor",
+      "example": "Enterprise Kubernetes platform",
+      "output": "Reliable Kubernetes environment",
+      "tips": [
+        "Use GitOps.",
+        "Back up cluster state.",
+        "Update Kubernetes regularly.",
+        "Monitor workloads continuously."
+      ]
+    }
+  ]
+}

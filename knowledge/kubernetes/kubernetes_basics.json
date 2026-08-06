@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Kubernetes Basics",
+  "topics": [
+    {
+      "topic": "What is Kubernetes?",
+      "definition": "Kubernetes is an open-source container orchestration platform.",
+      "syntax": "Cluster \u2192 Nodes \u2192 Pods",
+      "example": "Managing containerized applications",
+      "output": "Application orchestrated",
+      "tips": [
+        "Also called K8s."
+      ]
+    },
+    {
+      "topic": "History of Kubernetes",
+      "definition": "Originally developed by Google and maintained by CNCF.",
+      "syntax": "Google \u2192 CNCF",
+      "example": "Cloud-native platform",
+      "output": "History understood",
+      "tips": [
+        "Inspired by Google's Borg."
+      ]
+    },
+    {
+      "topic": "Kubernetes Cluster",
+      "definition": "A cluster contains a control plane and worker nodes.",
+      "syntax": "Control Plane + Nodes",
+      "example": "Three-node cluster",
+      "output": "Cluster running",
+      "tips": [
+        "Use multiple nodes for availability."
+      ]
+    },
+    {
+      "topic": "Control Plane",
+      "definition": "Manages the cluster and schedules workloads.",
+      "syntax": "API Server + Scheduler",
+      "example": "Pod scheduling",
+      "output": "Cluster managed",
+      "tips": [
+        "Secure control plane access."
+      ]
+    },
+    {
+      "topic": "Worker Node",
+      "definition": "Runs Pods and containers.",
+      "syntax": "Node \u2192 Pod",
+      "example": "Web server node",
+      "output": "Workload running",
+      "tips": [
+        "Monitor resource usage."
+      ]
+    },
+    {
+      "topic": "Pods",
+      "definition": "The smallest deployable unit in Kubernetes.",
+      "syntax": "Pod \u2192 Container",
+      "example": "Nginx Pod",
+      "output": "Pod running",
+      "tips": [
+        "One main application per Pod is common."
+      ]
+    },
+    {
+      "topic": "Kubernetes Architecture",
+      "definition": "Control plane and worker nodes communicate to manage applications.",
+      "syntax": "Control Plane \u2194 Nodes",
+      "example": "Production cluster",
+      "output": "Architecture understood",
+      "tips": [
+        "Understand component roles."
+      ]
+    },
+    {
+      "topic": "Kubernetes Best Practices",
+      "definition": "Use declarative configs, monitoring and regular updates.",
+      "syntax": "Deploy \u2192 Monitor",
+      "example": "Production deployment",
+      "output": "Reliable cluster",
+      "tips": [
+        "Use namespaces.",
+        "Back up configs.",
+        "Keep clusters updated."
+      ]
+    }
+  ]
+}

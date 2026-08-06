@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Deployments",
+  "topics": [
+    {
+      "topic": "What is a Deployment?",
+      "definition": "A Deployment manages Pods and ensures the desired number of replicas are running.",
+      "syntax": "Deployment \u2192 ReplicaSet \u2192 Pods",
+      "example": "Deploy a web application",
+      "output": "Application deployed",
+      "tips": [
+        "Use Deployments for stateless applications."
+      ]
+    },
+    {
+      "topic": "ReplicaSets",
+      "definition": "A ReplicaSet maintains a specified number of identical Pods.",
+      "syntax": "replicas: 3",
+      "example": "Run three Nginx Pods",
+      "output": "Desired replicas maintained",
+      "tips": [
+        "Deployments usually manage ReplicaSets automatically."
+      ]
+    },
+    {
+      "topic": "Scaling Applications",
+      "definition": "Scaling increases or decreases the number of Pod replicas.",
+      "syntax": "kubectl scale deployment",
+      "example": "kubectl scale deployment web --replicas=5",
+      "output": "Application scaled",
+      "tips": [
+        "Scale based on workload."
+      ]
+    },
+    {
+      "topic": "Rolling Updates",
+      "definition": "Rolling updates replace old Pods with new ones gradually.",
+      "syntax": "kubectl rollout restart",
+      "example": "Update image version",
+      "output": "Application updated",
+      "tips": [
+        "Minimize downtime during updates."
+      ]
+    },
+    {
+      "topic": "Rollbacks",
+      "definition": "Rollbacks restore a previous Deployment version if an update fails.",
+      "syntax": "kubectl rollout undo deployment",
+      "example": "Undo a failed release",
+      "output": "Previous version restored",
+      "tips": [
+        "Verify the new version before rollout."
+      ]
+    },
+    {
+      "topic": "Deployment Strategies",
+      "definition": "Common strategies include RollingUpdate and Recreate.",
+      "syntax": "strategy: RollingUpdate",
+      "example": "Zero-downtime update",
+      "output": "Deployment strategy applied",
+      "tips": [
+        "Choose the strategy based on application needs."
+      ]
+    },
+    {
+      "topic": "Deployment YAML",
+      "definition": "YAML files define Deployment configuration.",
+      "syntax": "apiVersion, kind, metadata, spec",
+      "example": "deployment.yaml",
+      "output": "Deployment configuration",
+      "tips": [
+        "Store manifests in version control."
+      ]
+    },
+    {
+      "topic": "Deployment Best Practices",
+      "definition": "Use declarative manifests, monitor rollouts and maintain replica redundancy.",
+      "syntax": "Deploy \u2192 Scale \u2192 Monitor",
+      "example": "Production deployment",
+      "output": "Reliable application",
+      "tips": [
+        "Use readiness probes.",
+        "Review rollout status.",
+        "Keep manifests in Git."
+      ]
+    }
+  ]
+}

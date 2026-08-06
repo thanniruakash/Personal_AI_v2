@@ -1,0 +1,88 @@
+{
+  "subject": "Kubernetes",
+  "section": "Monitoring",
+  "topics": [
+    {
+      "topic": "Kubernetes Monitoring",
+      "definition": "Monitoring tracks cluster health, performance and resource usage.",
+      "syntax": "Collect \u2192 Analyze",
+      "example": "Monitor CPU usage",
+      "output": "Cluster metrics available",
+      "tips": [
+        "Monitor critical workloads continuously."
+      ]
+    },
+    {
+      "topic": "Metrics Server",
+      "definition": "Metrics Server collects CPU and memory metrics for Pods and Nodes.",
+      "syntax": "kubectl top",
+      "example": "kubectl top pods",
+      "output": "Resource usage displayed",
+      "tips": [
+        "Required for Horizontal Pod Autoscaler."
+      ]
+    },
+    {
+      "topic": "Prometheus",
+      "definition": "Prometheus collects and stores Kubernetes metrics.",
+      "syntax": "Scrape \u2192 Store",
+      "example": "Monitor node metrics",
+      "output": "Metrics collected",
+      "tips": [
+        "Configure alert rules for important metrics."
+      ]
+    },
+    {
+      "topic": "Grafana",
+      "definition": "Grafana visualizes metrics using dashboards.",
+      "syntax": "Dashboard",
+      "example": "Cluster performance dashboard",
+      "output": "Charts displayed",
+      "tips": [
+        "Create dashboards for key services."
+      ]
+    },
+    {
+      "topic": "Logging",
+      "definition": "Logging captures application and cluster events for troubleshooting.",
+      "syntax": "Logs \u2192 Analysis",
+      "example": "Container logs",
+      "output": "Logs available",
+      "tips": [
+        "Centralize logs for easier analysis."
+      ]
+    },
+    {
+      "topic": "Alerting",
+      "definition": "Alerting sends notifications when predefined conditions occur.",
+      "syntax": "Condition \u2192 Alert",
+      "example": "High memory usage",
+      "output": "Alert triggered",
+      "tips": [
+        "Reduce unnecessary alert noise."
+      ]
+    },
+    {
+      "topic": "Health Checks",
+      "definition": "Liveness and readiness probes verify application health.",
+      "syntax": "livenessProbe / readinessProbe",
+      "example": "HTTP health endpoint",
+      "output": "Health status reported",
+      "tips": [
+        "Configure probes for production apps."
+      ]
+    },
+    {
+      "topic": "Monitoring Best Practices",
+      "definition": "Monitor metrics, logs and health continuously to maintain reliable clusters.",
+      "syntax": "Monitor \u2192 Alert \u2192 Improve",
+      "example": "Production Kubernetes cluster",
+      "output": "Stable operations",
+      "tips": [
+        "Review dashboards regularly.",
+        "Keep monitoring tools updated.",
+        "Investigate alerts promptly."
+      ]
+    }
+  ]
+}
