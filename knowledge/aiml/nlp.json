@@ -1,0 +1,97 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Natural Language Processing",
+  "topics": [
+    {
+      "topic": "What is NLP?",
+      "definition": "Natural Language Processing (NLP) enables computers to understand, interpret and generate human language.",
+      "syntax": "Concept",
+      "example": "Chatbots and translators",
+      "output": "Language processed",
+      "tips": [
+        "NLP combines AI, linguistics and machine learning."
+      ]
+    },
+    {
+      "topic": "Text Preprocessing",
+      "definition": "Text preprocessing cleans and prepares text for analysis.",
+      "syntax": "Clean \u2192 Normalize \u2192 Tokenize",
+      "example": "Remove punctuation",
+      "output": "Clean text",
+      "tips": [
+        "Good preprocessing improves model accuracy."
+      ]
+    },
+    {
+      "topic": "Tokenization",
+      "definition": "Tokenization splits text into words, sentences or subwords.",
+      "syntax": "['I','love','AI']",
+      "example": "Sentence tokenization",
+      "output": "Tokens generated",
+      "tips": [
+        "A basic NLP step."
+      ]
+    },
+    {
+      "topic": "Stop Words",
+      "definition": "Stop words are common words often removed before analysis.",
+      "syntax": "the, is, and",
+      "example": "Remove 'the'",
+      "output": "Filtered text",
+      "tips": [
+        "Not always removed in every NLP task."
+      ]
+    },
+    {
+      "topic": "Sentiment Analysis",
+      "definition": "Sentiment analysis identifies positive, negative or neutral opinions in text.",
+      "syntax": "Positive / Negative / Neutral",
+      "example": "Product review analysis",
+      "output": "Sentiment detected",
+      "tips": [
+        "Widely used for customer feedback."
+      ]
+    },
+    {
+      "topic": "Named Entity Recognition (NER)",
+      "definition": "NER identifies entities such as people, places and organizations in text.",
+      "syntax": "Entity extraction",
+      "example": "'Akash lives in India'",
+      "output": "Entities recognized",
+      "tips": [
+        "Useful for information extraction."
+      ]
+    },
+    {
+      "topic": "Language Models",
+      "definition": "Language models predict and generate text based on learned patterns.",
+      "syntax": "Next-word prediction",
+      "example": "Large Language Models (LLMs)",
+      "output": "Generated text",
+      "tips": [
+        "Transformers power modern language models."
+      ]
+    },
+    {
+      "topic": "Chatbots",
+      "definition": "Chatbots use NLP to communicate with users through natural language.",
+      "syntax": "User \u2192 Bot \u2192 Response",
+      "example": "Customer support assistant",
+      "output": "Reply generated",
+      "tips": [
+        "Can be rule-based or AI-powered."
+      ]
+    },
+    {
+      "topic": "NLP Best Practices",
+      "definition": "Use clean datasets, evaluate models carefully and reduce language bias.",
+      "syntax": "Validation and testing",
+      "example": "Balanced training data",
+      "output": "Reliable NLP system",
+      "tips": [
+        "Protect user privacy.",
+        "Continuously improve models."
+      ]
+    }
+  ]
+}

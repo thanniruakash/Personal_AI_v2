@@ -1,0 +1,96 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Computer Vision",
+  "topics": [
+    {
+      "topic": "What is Computer Vision?",
+      "definition": "Computer Vision enables computers to interpret and understand images and videos.",
+      "syntax": "Concept",
+      "example": "Self-driving car detecting traffic signs",
+      "output": "Visual information processed",
+      "tips": [
+        "Uses AI and Deep Learning."
+      ]
+    },
+    {
+      "topic": "Image Processing",
+      "definition": "Image processing enhances or transforms images before analysis.",
+      "syntax": "Resize \u2192 Filter \u2192 Normalize",
+      "example": "Noise removal",
+      "output": "Enhanced image",
+      "tips": [
+        "Preprocessing improves accuracy."
+      ]
+    },
+    {
+      "topic": "Image Classification",
+      "definition": "Image classification assigns a label to an image.",
+      "syntax": "Image \u2192 Label",
+      "example": "Cat or Dog classifier",
+      "output": "Class predicted",
+      "tips": [
+        "CNNs are commonly used."
+      ]
+    },
+    {
+      "topic": "Object Detection",
+      "definition": "Object detection identifies and locates multiple objects in an image.",
+      "syntax": "Bounding Boxes",
+      "example": "Detect people and cars",
+      "output": "Objects detected",
+      "tips": [
+        "YOLO is a popular detection model."
+      ]
+    },
+    {
+      "topic": "Image Segmentation",
+      "definition": "Image segmentation divides an image into meaningful regions.",
+      "syntax": "Pixel-wise classification",
+      "example": "Medical image analysis",
+      "output": "Segmented image",
+      "tips": [
+        "Useful in healthcare and robotics."
+      ]
+    },
+    {
+      "topic": "Face Recognition",
+      "definition": "Face recognition identifies or verifies people using facial features.",
+      "syntax": "Face \u2192 Identity",
+      "example": "Phone face unlock",
+      "output": "Identity recognized",
+      "tips": [
+        "Requires privacy protection."
+      ]
+    },
+    {
+      "topic": "Video Analysis",
+      "definition": "Video analysis extracts useful information from video frames.",
+      "syntax": "Frame-by-frame processing",
+      "example": "CCTV monitoring",
+      "output": "Events detected",
+      "tips": [
+        "Used in surveillance and sports analytics."
+      ]
+    },
+    {
+      "topic": "Applications of Computer Vision",
+      "definition": "Computer Vision is used in healthcare, autonomous vehicles, agriculture and manufacturing.",
+      "syntax": "Concept",
+      "example": "Defect detection in factories",
+      "output": "Application identified",
+      "tips": [
+        "One of the fastest-growing AI fields."
+      ]
+    },
+    {
+      "topic": "Computer Vision Best Practices",
+      "definition": "Use diverse datasets, evaluate models carefully and respect privacy.",
+      "syntax": "Validation and testing",
+      "example": "Augment training images",
+      "output": "Reliable vision model",
+      "tips": [
+        "Reduce bias and monitor performance."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Deep Learning",
+  "topics": [
+    {
+      "topic": "What is Deep Learning?",
+      "definition": "Deep Learning is a subset of Machine Learning that uses neural networks with multiple layers to learn complex patterns from data.",
+      "syntax": "Concept",
+      "example": "Image recognition",
+      "output": "Deep learning model",
+      "tips": [
+        "Requires large datasets and computing power."
+      ]
+    },
+    {
+      "topic": "Artificial Neural Networks (ANN)",
+      "definition": "ANNs are computing models inspired by the human brain, made up of interconnected neurons.",
+      "syntax": "Input \u2192 Hidden \u2192 Output",
+      "example": "Handwritten digit recognition",
+      "output": "Prediction generated",
+      "tips": [
+        "ANN is the foundation of deep learning."
+      ]
+    },
+    {
+      "topic": "Input Layer",
+      "definition": "The input layer receives data and passes it to the network.",
+      "syntax": "Input Features",
+      "example": "Image pixels",
+      "output": "Input accepted",
+      "tips": [
+        "One input node per feature."
+      ]
+    },
+    {
+      "topic": "Hidden Layers",
+      "definition": "Hidden layers extract important features from input data.",
+      "syntax": "Multiple hidden layers",
+      "example": "Face feature extraction",
+      "output": "Features learned",
+      "tips": [
+        "More layers can learn more complex patterns."
+      ]
+    },
+    {
+      "topic": "Output Layer",
+      "definition": "The output layer produces the final prediction.",
+      "syntax": "Prediction",
+      "example": "Cat or Dog",
+      "output": "Classification result",
+      "tips": [
+        "Output depends on the task."
+      ]
+    },
+    {
+      "topic": "Activation Functions",
+      "definition": "Activation functions help neural networks learn non-linear relationships.",
+      "syntax": "ReLU, Sigmoid, Tanh, Softmax",
+      "example": "ReLU(x)=max(0,x)",
+      "output": "Activated neuron",
+      "tips": [
+        "ReLU is widely used in hidden layers."
+      ]
+    },
+    {
+      "topic": "Training Deep Learning Models",
+      "definition": "Models learn by adjusting weights using backpropagation and optimization algorithms.",
+      "syntax": "Forward Pass \u2192 Backpropagation",
+      "example": "Train a CNN on images",
+      "output": "Trained model",
+      "tips": [
+        "Use enough training data."
+      ]
+    },
+    {
+      "topic": "Applications of Deep Learning",
+      "definition": "Deep Learning is used in computer vision, speech recognition, NLP and autonomous vehicles.",
+      "syntax": "Concept",
+      "example": "Voice assistants",
+      "output": "AI application",
+      "tips": [
+        "Used in many modern AI systems."
+      ]
+    },
+    {
+      "topic": "Deep Learning Best Practices",
+      "definition": "Use quality data, monitor overfitting and validate models before deployment.",
+      "syntax": "Validation and testing",
+      "example": "Early stopping",
+      "output": "Reliable model",
+      "tips": [
+        "Normalize data and tune hyperparameters."
+      ]
+    }
+  ]
+}

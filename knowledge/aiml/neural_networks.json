@@ -1,0 +1,87 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Neural Networks",
+  "topics": [
+    {
+      "topic": "Biological Neuron vs Artificial Neuron",
+      "definition": "A biological neuron processes signals in the brain, while an artificial neuron processes numerical inputs in a neural network.",
+      "syntax": "Inputs \u2192 Weights \u2192 Activation \u2192 Output",
+      "example": "Artificial neuron in an ANN",
+      "output": "Prediction generated",
+      "tips": [
+        "Artificial neurons are inspired by biological neurons."
+      ]
+    },
+    {
+      "topic": "Perceptron",
+      "definition": "A perceptron is the simplest artificial neural network used for binary classification.",
+      "syntax": "y = f(wx + b)",
+      "example": "Spam or Not Spam",
+      "output": "Binary prediction",
+      "tips": [
+        "Can solve linearly separable problems."
+      ]
+    },
+    {
+      "topic": "Weights and Bias",
+      "definition": "Weights control input importance and bias shifts the activation value.",
+      "syntax": "Output = f(wx + b)",
+      "example": "Higher weight gives more influence",
+      "output": "Neuron output",
+      "tips": [
+        "Weights are learned during training."
+      ]
+    },
+    {
+      "topic": "Loss Functions",
+      "definition": "Loss functions measure the difference between predicted and actual values.",
+      "syntax": "MSE, Cross-Entropy",
+      "example": "Mean Squared Error",
+      "output": "Loss calculated",
+      "tips": [
+        "Lower loss indicates better performance."
+      ]
+    },
+    {
+      "topic": "Gradient Descent",
+      "definition": "Gradient Descent updates weights to minimize the loss function.",
+      "syntax": "w = w - learning_rate \u00d7 gradient",
+      "example": "Optimize model parameters",
+      "output": "Reduced loss",
+      "tips": [
+        "Learning rate affects convergence."
+      ]
+    },
+    {
+      "topic": "Backpropagation",
+      "definition": "Backpropagation computes gradients and updates weights through the network.",
+      "syntax": "Forward Pass \u2192 Backward Pass",
+      "example": "Train a neural network",
+      "output": "Updated weights",
+      "tips": [
+        "Uses the chain rule of calculus."
+      ]
+    },
+    {
+      "topic": "Feedforward Neural Network",
+      "definition": "A feedforward network passes information from input to output without loops.",
+      "syntax": "Input \u2192 Hidden \u2192 Output",
+      "example": "Image classification",
+      "output": "Network prediction",
+      "tips": [
+        "Basic type of neural network."
+      ]
+    },
+    {
+      "topic": "Neural Network Best Practices",
+      "definition": "Use normalized data, sufficient training data and regular validation for better performance.",
+      "syntax": "Validation + Tuning",
+      "example": "Early stopping",
+      "output": "Reliable model",
+      "tips": [
+        "Avoid overfitting.",
+        "Tune hyperparameters carefully."
+      ]
+    }
+  ]
+}

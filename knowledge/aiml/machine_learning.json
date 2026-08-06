@@ -1,0 +1,96 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Machine Learning",
+  "topics": [
+    {
+      "topic": "What is Machine Learning?",
+      "definition": "Machine Learning (ML) is a branch of AI that enables computers to learn patterns from data without being explicitly programmed.",
+      "syntax": "Concept",
+      "example": "Spam email detection",
+      "output": "Model learns from data",
+      "tips": [
+        "ML improves with quality data."
+      ]
+    },
+    {
+      "topic": "Types of Machine Learning",
+      "definition": "The main types are Supervised, Unsupervised and Reinforcement Learning.",
+      "syntax": "Supervised / Unsupervised / Reinforcement",
+      "example": "Image classification",
+      "output": "Learning type identified",
+      "tips": [
+        "Choose the right type for the problem."
+      ]
+    },
+    {
+      "topic": "Supervised Learning",
+      "definition": "The model learns using labeled training data.",
+      "syntax": "Input \u2192 Output",
+      "example": "House price prediction",
+      "output": "Predicted value",
+      "tips": [
+        "Common algorithms: Linear Regression, Decision Trees."
+      ]
+    },
+    {
+      "topic": "Unsupervised Learning",
+      "definition": "The model discovers patterns from unlabeled data.",
+      "syntax": "Input only",
+      "example": "Customer segmentation",
+      "output": "Groups formed",
+      "tips": [
+        "Clustering is a common task."
+      ]
+    },
+    {
+      "topic": "Reinforcement Learning",
+      "definition": "An agent learns by interacting with an environment and receiving rewards or penalties.",
+      "syntax": "Agent \u2192 Action \u2192 Reward",
+      "example": "Game-playing AI",
+      "output": "Optimal policy learned",
+      "tips": [
+        "Used in robotics and games."
+      ]
+    },
+    {
+      "topic": "Data Preprocessing",
+      "definition": "Data is cleaned, transformed and prepared before training.",
+      "syntax": "Clean \u2192 Encode \u2192 Scale",
+      "example": "Remove missing values",
+      "output": "Prepared dataset",
+      "tips": [
+        "Good preprocessing improves accuracy."
+      ]
+    },
+    {
+      "topic": "Model Training and Testing",
+      "definition": "Training builds the model and testing evaluates its performance.",
+      "syntax": "Train/Test Split",
+      "example": "80% train, 20% test",
+      "output": "Model evaluated",
+      "tips": [
+        "Avoid overfitting."
+      ]
+    },
+    {
+      "topic": "Evaluation Metrics",
+      "definition": "Metrics measure model performance.",
+      "syntax": "Accuracy, Precision, Recall, F1-Score",
+      "example": "95% Accuracy",
+      "output": "Performance measured",
+      "tips": [
+        "Choose metrics based on the task."
+      ]
+    },
+    {
+      "topic": "Machine Learning Best Practices",
+      "definition": "Use quality data, validate models and monitor performance after deployment.",
+      "syntax": "Cross-validation",
+      "example": "Tune hyperparameters",
+      "output": "Reliable model",
+      "tips": [
+        "Prevent data leakage and overfitting."
+      ]
+    }
+  ]
+}

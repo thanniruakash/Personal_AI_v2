@@ -1,0 +1,96 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Generative AI",
+  "topics": [
+    {
+      "topic": "What is Generative AI?",
+      "definition": "Generative AI creates new content such as text, images, audio and code by learning patterns from data.",
+      "syntax": "Prompt \u2192 AI Model \u2192 Generated Content",
+      "example": "Generate an article from a prompt",
+      "output": "New content created",
+      "tips": [
+        "Generative AI creates original outputs based on learned patterns."
+      ]
+    },
+    {
+      "topic": "Large Language Models (LLMs)",
+      "definition": "LLMs are AI models trained on large text datasets to understand and generate human language.",
+      "syntax": "Prompt \u2192 LLM \u2192 Response",
+      "example": "ChatGPT answering questions",
+      "output": "Generated text",
+      "tips": [
+        "Transformers are the foundation of modern LLMs."
+      ]
+    },
+    {
+      "topic": "Image Generation Models",
+      "definition": "These models generate images from text or other inputs.",
+      "syntax": "Text Prompt \u2192 Image",
+      "example": "AI-generated artwork",
+      "output": "Generated image",
+      "tips": [
+        "Diffusion models are commonly used."
+      ]
+    },
+    {
+      "topic": "Audio and Music Generation",
+      "definition": "AI models can generate speech, sound effects and music.",
+      "syntax": "Prompt \u2192 Audio",
+      "example": "Text-to-speech",
+      "output": "Generated audio",
+      "tips": [
+        "Useful for accessibility and media."
+      ]
+    },
+    {
+      "topic": "Video Generation",
+      "definition": "AI models can create or edit videos using prompts or images.",
+      "syntax": "Prompt \u2192 Video",
+      "example": "Short AI-generated animation",
+      "output": "Generated video",
+      "tips": [
+        "Requires significant computing resources."
+      ]
+    },
+    {
+      "topic": "Prompt Engineering",
+      "definition": "Prompt engineering is the practice of writing effective prompts to obtain better AI outputs.",
+      "syntax": "Clear Prompt \u2192 Better Result",
+      "example": "Ask for step-by-step explanations",
+      "output": "Improved response",
+      "tips": [
+        "Be specific and provide context."
+      ]
+    },
+    {
+      "topic": "AI Hallucinations",
+      "definition": "AI hallucinations occur when a model generates incorrect or fabricated information.",
+      "syntax": "Model Output",
+      "example": "Inventing facts or references",
+      "output": "Incorrect information",
+      "tips": [
+        "Verify important information with reliable sources."
+      ]
+    },
+    {
+      "topic": "Applications of Generative AI",
+      "definition": "Generative AI is used for content creation, coding, education, design and customer support.",
+      "syntax": "Concept",
+      "example": "Writing code assistants",
+      "output": "Application identified",
+      "tips": [
+        "Used across many industries."
+      ]
+    },
+    {
+      "topic": "Generative AI Best Practices",
+      "definition": "Use clear prompts, review outputs and respect privacy and copyright.",
+      "syntax": "Review and Validate",
+      "example": "Fact-check generated content",
+      "output": "Reliable AI usage",
+      "tips": [
+        "Always verify critical information."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "subject": "AI & Machine Learning",
+  "section": "Advanced AI",
+  "topics": [
+    {
+      "topic": "Transformers",
+      "definition": "Transformers are deep learning models designed to process sequences efficiently using self-attention.",
+      "syntax": "Input \u2192 Transformer \u2192 Output",
+      "example": "Large Language Models",
+      "output": "Sequence processed",
+      "tips": [
+        "Transformers are the foundation of modern generative AI."
+      ]
+    },
+    {
+      "topic": "Attention Mechanism",
+      "definition": "Attention helps a model focus on the most relevant parts of the input.",
+      "syntax": "Query, Key, Value",
+      "example": "Machine translation",
+      "output": "Important information highlighted",
+      "tips": [
+        "Self-attention enables parallel processing."
+      ]
+    },
+    {
+      "topic": "AI Agents",
+      "definition": "AI agents perceive their environment, make decisions and perform actions to achieve goals.",
+      "syntax": "Observe \u2192 Plan \u2192 Act",
+      "example": "Autonomous customer support agent",
+      "output": "Task completed",
+      "tips": [
+        "Agents may use tools and memory."
+      ]
+    },
+    {
+      "topic": "Retrieval-Augmented Generation (RAG)",
+      "definition": "RAG combines information retrieval with language models to generate more accurate responses.",
+      "syntax": "Retrieve \u2192 Generate",
+      "example": "Answering questions from company documents",
+      "output": "Grounded response",
+      "tips": [
+        "Reduces hallucinations by using external knowledge."
+      ]
+    },
+    {
+      "topic": "Fine-Tuning",
+      "definition": "Fine-tuning adapts a pre-trained model to a specific task or dataset.",
+      "syntax": "Pre-trained Model \u2192 Fine-tuned Model",
+      "example": "Medical text classification",
+      "output": "Specialized model",
+      "tips": [
+        "Requires task-specific training data."
+      ]
+    },
+    {
+      "topic": "Model Quantization",
+      "definition": "Quantization reduces model size and improves inference speed by using lower-precision numbers.",
+      "syntax": "FP32 \u2192 INT8",
+      "example": "Running AI on mobile devices",
+      "output": "Optimized model",
+      "tips": [
+        "May slightly reduce accuracy."
+      ]
+    },
+    {
+      "topic": "AI Ethics and Responsible AI",
+      "definition": "Responsible AI focuses on fairness, privacy, transparency, safety and accountability.",
+      "syntax": "Concept",
+      "example": "Reducing bias in AI systems",
+      "output": "Ethical AI",
+      "tips": [
+        "Protect user data and evaluate bias."
+      ]
+    },
+    {
+      "topic": "Future of AI",
+      "definition": "AI is expected to advance in automation, healthcare, education, robotics and scientific research.",
+      "syntax": "Concept",
+      "example": "AI-assisted drug discovery",
+      "output": "Future applications",
+      "tips": [
+        "Continue learning as the field evolves rapidly."
+      ]
+    },
+    {
+      "topic": "Advanced AI Best Practices",
+      "definition": "Build AI systems that are accurate, secure, explainable and continuously monitored.",
+      "syntax": "Test \u2192 Deploy \u2192 Monitor",
+      "example": "Regular model evaluation",
+      "output": "Reliable AI system",
+      "tips": [
+        "Validate outputs and monitor real-world performance."
+      ]
+    }
+  ]
+}
