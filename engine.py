@@ -28,7 +28,7 @@ class PersonalAI:
 
                     for pattern in intent["patterns"]:
 
-                        if pattern.lower() == message.lower():
+                        if pattern.lower() in message.lower() or message.lower() in pattern.lower():
 
                             return random.choice(intent["responses"])
 
