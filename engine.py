@@ -4,13 +4,14 @@ import random
 from datetime import datetime
 
 from knowledge_loader import KnowledgeLoader
-
+from search import KnowledgeSearch
 
 class PersonalAI:
 
     def __init__(self):
         self.loader = KnowledgeLoader()
-
+        self.search = KnowledgeSearch()
+        
     def search_intents(self, message):
 
         message_words = set(message.lower().split())
@@ -71,16 +72,23 @@ class PersonalAI:
         if "year" in msg:
             return datetime.now().strftime("Current year is %Y.")
 
-        response = self.search_intents(message)
+        
+        # Search knowledge files first
+response = self.search.search(message)
 
-        if response:
-            return response
+if response:
+    return response
 
-        return (
-            "I don't know the answer yet. "
-            "Please add it to my knowledge base."
-        )
+# Search intents if not found
+response = self.search_intents(message)
 
+if response:
+    return response
+
+return (
+    "I don't know the answer yet. "
+    "Please add it to my knowledge base."
+)
 
 if __name__ == "__main__":
 
