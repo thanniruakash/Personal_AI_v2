@@ -13,12 +13,12 @@ class PersonalAI:
 
     def search_intents(self, message):
 
-    message_words = set(message.lower().split())
+        message_words = set(message.lower().split())
 
-    intents_folder = "intents"
+        intents_folder = "intents"
 
-    best_response = None
-    best_score = 0
+        best_response = None
+        best_score = 0
 
     for filename in os.listdir(intents_folder):
 
