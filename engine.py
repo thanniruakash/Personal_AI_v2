@@ -45,3 +45,17 @@ class PersonalAI:
             "I don't know the answer yet. "
             "Please add it to my knowledge base."
         )
+if __name__ == "__main__":
+    ai = PersonalAI()
+
+    print("=== Personal AI v2 ===")
+    print("Type 'quit' to exit.\n")
+
+    while True:
+        message = input("You: ")
+
+        if message.lower() == "quit":
+            print("Goodbye!")
+            break
+
+        print("AI:", ai.ask(message))
