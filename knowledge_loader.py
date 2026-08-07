@@ -1,27 +1,49 @@
 import os
+import json
+
 
 class KnowledgeLoader:
-    def __init__(self, knowledge_path="knowledge"):
-        self.knowledge_path = knowledge_path
 
-    def get_topics(self):
-        topics = []
+    def __init__(self):
+        self.knowledge = {}
+        self.load_knowledge()
 
-        if not os.path.exists(self.knowledge_path):
-            return topics
+    def load_knowledge(self):
 
-        for folder in os.listdir(self.knowledge_path):
-            folder_path = os.path.join(self.knowledge_path, folder)
+        base_folder = "knowledge"
 
-            if os.path.isdir(folder_path):
-                topics.append(folder)
+        if not os.path.exists(base_folder):
+            return
 
-        return topics
+        for subject in os.listdir(base_folder):
 
-    def list_files(self, topic):
-        folder = os.path.join(self.knowledge_path, topic)
+            subject_path = os.path.join(base_folder, subject)
 
-        if not os.path.exists(folder):
-            return []
+            if not os.path.isdir(subject_path):
+                continue
 
-        return os.listdir(folder)
+            self.knowledge[subject] = []
+
+            for file in os.listdir(subject_path):
+
+                if file.endswith(".json"):
+
+                    filepath = os.path.join(subject_path, file)
+
+                    try:
+
+                        with open(filepath, "r", encoding="utf-8") as f:
+
+                            data = json.load(f)
+
+                            self.knowledge[subject].append(data)
+
+                    except Exception as e:
+
+                        print(f"Error loading {filepath}: {e}")
+
+    def get_subjects(self):
+        return list(self.knowledge.keys())
+
+    def get_subject(self, subject):
+        return self.knowledge.get(subject.lower(), [])
