@@ -45,7 +45,13 @@ class PersonalAI:
 
     def ask(self, message):
 
-        msg = message.lower()
+        msg = message.lower().strip()
+
+if msg in ["hi", "hello", "hey"]:
+    return "Hello! I'm Personal AI. How can I help you today?"
+
+if msg in ["bye", "goodbye"]:
+    return "Goodbye! Have a great day."
 
         # Offline Date & Time
         if "date" in msg:
