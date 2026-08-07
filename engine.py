@@ -20,37 +20,39 @@ class PersonalAI:
         best_response = None
         best_score = 0
 
-    for filename in os.listdir(intents_folder):
+        for filename in os.listdir(intents_folder):
 
-        if filename.endswith(".json"):
+            if filename.endswith(".json"):
 
-            filepath = os.path.join(intents_folder, filename)
+                filepath = os.path.join(intents_folder, filename)
 
-            with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                with open(filepath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-            for intent in data["intents"]:
+                for intent in data["intents"]:
 
-                for pattern in intent["patterns"]:
+                    for pattern in intent["patterns"]:
 
-                    pattern_words = set(pattern.lower().split())
+                        pattern_words = set(pattern.lower().split())
 
-                    score = len(message_words & pattern_words)
+                        score = len(message_words & pattern_words)
 
-                    if score > best_score:
-                        best_score = score
-                        best_response = random.choice(intent["responses"])
+                        if score > best_score:
+                            best_score = score
+                            best_response = random.choice(intent["responses"])
 
-    return best_response
+        return best_response
 
     def ask(self, message):
 
         msg = message.lower().strip()
 
+        # Greetings
         if msg in ["hi", "hello", "hey"]:
             return "Hello! I'm Personal AI. How can I help you today?"
 
-        if msg in ["bye", "goodbye"]:
+        # Goodbye
+        if msg in ["bye", "goodbye", "exit", "quit"]:
             return "Goodbye! Have a great day."
 
         # Offline Date & Time
