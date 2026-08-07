@@ -12,26 +12,36 @@ class PersonalAI:
         self.loader = KnowledgeLoader()
 
     def search_intents(self, message):
-        intents_folder = "intents"
 
-        for filename in os.listdir(intents_folder):
-            if filename.endswith(".json"):
+    message_words = set(message.lower().split())
 
-                filepath = os.path.join(intents_folder, filename)
+    intents_folder = "intents"
 
-                with open(filepath, "r", encoding="utf-8") as f:
-                    data = json.load(f)
+    best_response = None
+    best_score = 0
 
-                for intent in data["intents"]:
-                    for pattern in intent["patterns"]:
+    for filename in os.listdir(intents_folder):
 
-                        if (
-                            pattern.lower() in message.lower()
-                            or message.lower() in pattern.lower()
-                        ):
-                            return random.choice(intent["responses"])
+        if filename.endswith(".json"):
 
-        return None
+            filepath = os.path.join(intents_folder, filename)
+
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            for intent in data["intents"]:
+
+                for pattern in intent["patterns"]:
+
+                    pattern_words = set(pattern.lower().split())
+
+                    score = len(message_words & pattern_words)
+
+                    if score > best_score:
+                        best_score = score
+                        best_response = random.choice(intent["responses"])
+
+    return best_response
 
     def ask(self, message):
 
