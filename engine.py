@@ -1,6 +1,7 @@
 import os
 import json
 import random
+import re
 
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -8,157 +9,134 @@ from zoneinfo import ZoneInfo
 from knowledge_loader import KnowledgeLoader
 from search import KnowledgeSearch
 from online_search import OnlineSearch
+from live_data import LiveData
+from ai_api import AIAPI
 
 
 class PersonalAI:
 
     def __init__(self):
 
-        # Existing knowledge loader.
         self.loader = KnowledgeLoader()
 
-        # NEW strict knowledge search.
         self.search = KnowledgeSearch()
 
-        # NEW online search.
         self.online = OnlineSearch()
 
-        # IMPORTANT:
-        # Colab normally uses UTC.
-        # We want Indian Standard Time.
+        self.live = LiveData()
+
+        self.ai = AIAPI()
+
         self.timezone = ZoneInfo(
             "Asia/Kolkata"
         )
 
     # =========================================================
-    # LEGACY INTENT SEARCH
+    # NORMALIZE COMMON ABBREVIATIONS
     # =========================================================
 
-    def search_intents(self, message):
+    def normalize_question(self, question):
 
-        message_words = set(
-            message.lower().split()
-        )
+        q = question.strip()
 
-        intents_folder = "intents"
+        lower = q.lower()
 
-        if not os.path.isdir(
-            intents_folder
+        # ---------------------------------------------
+        # Chief Minister
+        # ---------------------------------------------
+
+        if (
+            re.search(
+                r"\bcm\b",
+                lower
+            )
+            and any(
+                word in lower
+                for word in [
+                    "minister",
+                    "chief",
+                    "state",
+                    "andhra",
+                    "ap",
+                    "telangana",
+                    "india"
+                ]
+            )
         ):
-            return None
 
-        best_response = None
-        best_score = 0
-
-        for filename in os.listdir(
-            intents_folder
-        ):
-
-            if not filename.endswith(
-                ".json"
-            ):
-                continue
-
-            filepath = os.path.join(
-                intents_folder,
-                filename
+            q = re.sub(
+                r"\bcm\b",
+                "chief minister",
+                q,
+                flags=re.IGNORECASE
             )
 
-            try:
+        # ---------------------------------------------
+        # Prime Minister
+        # ---------------------------------------------
 
-                with open(
-                    filepath,
-                    "r",
-                    encoding="utf-8"
-                ) as f:
+        if (
+            re.search(
+                r"\bpm\b",
+                lower
+            )
+            and any(
+                word in lower
+                for word in [
+                    "minister",
+                    "prime",
+                    "india",
+                    "country"
+                ]
+            )
+        ):
 
-                    data = json.load(f)
+            q = re.sub(
+                r"\bpm\b",
+                "prime minister",
+                q,
+                flags=re.IGNORECASE
+            )
 
-            except Exception:
-                continue
+        # ---------------------------------------------
+        # DBMS
+        # ---------------------------------------------
 
-            for intent in data.get(
-                "intents",
-                []
-            ):
+        q = re.sub(
+            r"\bdatabase management system\b",
+            "DBMS",
+            q,
+            flags=re.IGNORECASE
+        )
 
-                for pattern in intent.get(
-                    "patterns",
-                    []
-                ):
+        # ---------------------------------------------
+        # OOP
+        # ---------------------------------------------
 
-                    pattern_words = set(
-                        pattern.lower().split()
-                    )
+        q = re.sub(
+            r"\bobject oriented programming\b",
+            "OOP",
+            q,
+            flags=re.IGNORECASE
+        )
 
-                    useful_message = {
-                        word
-                        for word in message_words
-                        if (
-                            len(word) > 1
-                            or word == "c"
-                        )
-                    }
-
-                    useful_pattern = {
-                        word
-                        for word in pattern_words
-                        if (
-                            len(word) > 1
-                            or word == "c"
-                        )
-                    }
-
-                    if not useful_message:
-                        continue
-
-                    overlap = len(
-                        useful_message &
-                        useful_pattern
-                    )
-
-                    coverage = (
-                        overlap /
-                        len(useful_message)
-                    )
-
-                    if (
-                        coverage >= 0.60
-                        and overlap > best_score
-                    ):
-
-                        best_score = overlap
-
-                        responses = intent.get(
-                            "responses",
-                            []
-                        )
-
-                        if responses:
-
-                            best_response = (
-                                random.choice(
-                                    responses
-                                )
-                            )
-
-        return best_response
+        return q
 
     # =========================================================
-    # CURRENT IST TIME
+    # IST
     # =========================================================
 
-    def _now(self):
+    def now(self):
 
         return datetime.now(
             self.timezone
         )
 
     # =========================================================
-    # WEB COMMAND DETECTION
+    # WEB REQUEST
     # =========================================================
 
-    def _is_web_request(self, msg):
+    def is_web_request(self, msg):
 
         prefixes = (
             "web ",
@@ -177,7 +155,7 @@ class PersonalAI:
     # REMOVE WEB PREFIX
     # =========================================================
 
-    def _remove_web_prefix(self, msg):
+    def remove_web_prefix(self, msg):
 
         prefixes = (
             "search web ",
@@ -201,31 +179,113 @@ class PersonalAI:
         return msg
 
     # =========================================================
-    # MAIN AI
+    # CODING QUESTION DETECTION
+    # =========================================================
+
+    def is_coding_question(self, msg):
+
+        coding_words = [
+            "code",
+            "program",
+            "programming",
+            "debug",
+            "debugging",
+            "error",
+            "exception",
+            "algorithm",
+            "function",
+            "class",
+            "method",
+            "syntax",
+            "compile",
+            "compiler",
+            "api",
+            "script",
+            "write a program",
+            "write code",
+            "fix this code"
+        ]
+
+        languages = [
+            "python",
+            "java",
+            "javascript",
+            "typescript",
+            "c",
+            "c++",
+            "c#",
+            "html",
+            "css",
+            "sql",
+            "php"
+        ]
+
+        has_coding_word = any(
+            word in msg
+            for word in coding_words
+        )
+
+        has_language = any(
+            re.search(
+                rf"\b{re.escape(language)}\b",
+                msg
+            )
+            for language in languages
+        )
+
+        return (
+            has_coding_word
+            or (
+                has_language
+                and any(
+                    word in msg
+                    for word in [
+                        "example",
+                        "how",
+                        "write",
+                        "create",
+                        "fix"
+                    ]
+                )
+            )
+        )
+
+    # =========================================================
+    # GREETINGS
+    # =========================================================
+
+    def is_greeting(self, msg):
+
+        return msg in {
+            "hi",
+            "hello",
+            "hey",
+            "hai"
+        }
+
+    # =========================================================
+    # MAIN ASK
     # =========================================================
 
     def ask(self, message):
 
-        msg = str(
+        original = str(
             message
-        ).lower().strip()
+        ).strip()
 
-        if not msg:
+        if not original:
 
             return (
                 "Please enter a question."
             )
 
+        msg = original.lower().strip()
+
         # =====================================================
-        # GREETINGS
+        # GREETING
         # =====================================================
 
-        if msg in {
-            "hi",
-            "hello",
-            "hey",
-            "hai"
-        }:
+        if self.is_greeting(msg):
 
             return (
                 "Hello! I'm Personal AI. "
@@ -248,12 +308,11 @@ class PersonalAI:
             )
 
         # =====================================================
-        # IST DATE / TIME
+        # DATE / TIME
         # =====================================================
 
-        now = self._now()
+        now = self.now()
 
-        # DATE
         if (
             "date" in msg
             and "update" not in msg
@@ -263,32 +322,28 @@ class PersonalAI:
                 "Today's date is %d %B %Y."
             )
 
-        # TIME
         if "time" in msg:
 
             return now.strftime(
                 "Current time is %I:%M %p (IST)."
             )
 
-        # DAY
         if (
             msg == "day"
-            or "today's day" in msg
             or "what day" in msg
+            or "today's day" in msg
         ):
 
             return now.strftime(
                 "Today is %A."
             )
 
-        # MONTH
         if "month" in msg:
 
             return now.strftime(
                 "Current month is %B."
             )
 
-        # YEAR
         if "year" in msg:
 
             return now.strftime(
@@ -296,19 +351,39 @@ class PersonalAI:
             )
 
         # =====================================================
-        # EXPLICIT ONLINE MODE
+        # NORMALIZE
         # =====================================================
 
-        if self._is_web_request(
-            msg
-        ):
+        normalized = (
+            self.normalize_question(
+                original
+            )
+        )
+
+        # =====================================================
+        # EXPLICIT WEB MODE
+        # =====================================================
+
+        if self.is_web_request(msg):
 
             web_query = (
-                self._remove_web_prefix(
+                self.remove_web_prefix(
                     msg
                 )
             )
 
+            # Live data first.
+            live_answer = (
+                self.live.get_price(
+                    web_query
+                )
+            )
+
+            if live_answer:
+
+                return live_answer
+
+            # Online search.
             online_answer = (
                 self.online.search(
                     web_query
@@ -319,32 +394,92 @@ class PersonalAI:
 
                 return online_answer
 
+            # AI fallback.
+            ai_answer = (
+                self.ai.ask(
+                    web_query
+                )
+            )
+
+            if ai_answer:
+
+                return ai_answer
+
             return (
                 "I couldn't find a reliable "
-                "online answer right now."
+                "online answer."
             )
 
         # =====================================================
-        # 1. SEARCH ALL LOCAL KNOWLEDGE
+        # LIVE DATA
+        # =====================================================
+
+        live_answer = (
+            self.live.get_price(
+                normalized
+            )
+        )
+
+        if live_answer:
+
+            return live_answer
+
+        # =====================================================
+        # LOCAL KNOWLEDGE
         # =====================================================
 
         local_answer = (
             self.search.search(
-                message
+                normalized
             )
         )
 
         if local_answer:
 
+            # Coding questions that need modern
+            # generation can be improved by AI.
+            if self.is_coding_question(
+                msg
+            ):
+
+                ai_answer = (
+                    self.ai.ask(
+                        normalized,
+                        local_answer
+                    )
+                )
+
+                if ai_answer:
+
+                    return ai_answer
+
             return local_answer
 
         # =====================================================
-        # 2. ONLINE FALLBACK
+        # CODING / MODERN AI
+        # =====================================================
+
+        if self.is_coding_question(
+            msg
+        ):
+
+            ai_answer = (
+                self.ai.ask(
+                    normalized
+                )
+            )
+
+            if ai_answer:
+
+                return ai_answer
+
+        # =====================================================
+        # ONLINE SEARCH
         # =====================================================
 
         online_answer = (
             self.online.search(
-                message
+                normalized
             )
         )
 
@@ -353,18 +488,31 @@ class PersonalAI:
             return online_answer
 
         # =====================================================
-        # 3. NEVER GUESS
+        # AI FALLBACK
+        # =====================================================
+
+        ai_answer = (
+            self.ai.ask(
+                normalized
+            )
+        )
+
+        if ai_answer:
+
+            return ai_answer
+
+        # =====================================================
+        # NEVER GUESS
         # =====================================================
 
         return (
             "I don't have a reliable answer "
-            "for that yet. I checked the local "
-            "knowledge base and online search."
+            "for that yet."
         )
 
 
 # =============================================================
-# PROGRAM START
+# MAIN PROGRAM
 # =============================================================
 
 if __name__ == "__main__":
@@ -376,11 +524,11 @@ if __name__ == "__main__":
     )
 
     print(
-        "Offline knowledge is checked first."
+        "Local knowledge + Live APIs + Online Search + AI"
     )
 
     print(
-        "Use 'web <question>' for online-only search."
+        "Use 'web <question>' for online-only mode."
     )
 
     print(
@@ -408,4 +556,4 @@ if __name__ == "__main__":
         print(
             "AI:",
             ai.ask(message)
-    )
+            )
