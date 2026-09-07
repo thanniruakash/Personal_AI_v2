@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.log
+.env
+.DS_Store
+
+core/search_before_*.py
+*_before_*.html
+*_test_report.txt
+search_30000_*.txt
+development_checkpoint.json
+data/
+tunnel.log
+
+api/main_before_*.py

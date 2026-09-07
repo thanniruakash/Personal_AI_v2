@@ -1,8 +1,8 @@
 import random
 
-from loader import KnowledgeLoader
-from search import KnowledgeSearch
-from memory import Memory
+from .loader import KnowledgeLoader
+from .search import KnowledgeSearch
+from .memory import Memory
 
 
 class PersonalAI:
