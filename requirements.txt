@@ -1,3 +1,6 @@
 torch
 numpy
 nltk
+fastapi
+uvicorn
+google-genai
