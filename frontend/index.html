@@ -168,6 +168,7 @@ input,textarea{font-family:inherit; color:inherit;}
   transition:all .2s var(--ease);
 }
 .google-btn:hover{ background:color-mix(in srgb, var(--blue) 10%, var(--bg-sunken)); border-color:color-mix(in srgb, var(--blue) 40%, var(--border)); transform:translateY(-1px); }
+.google-btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
 .login-foot{ margin-top:18px; font-size:11.5px; color:var(--text-faint); }
 
 /* ================= APP SHELL ================= */
@@ -662,8 +663,8 @@ input,textarea{font-family:inherit; color:inherit;}
         <div class="set-group-title">Google Account</div>
         <div class="set-row">
           <div style="display:flex;align-items:center;gap:10px;">
-            <div class="avatar">A</div>
-            <div><div class="set-row-label">Akash</div><div class="set-row-sub">akash@gmail.com</div></div>
+            <div class="avatar" id="settingsAvatar">A</div>
+            <div><div class="set-row-label" id="settingsUserName">Akash</div><div class="set-row-sub" id="settingsUserEmail">akash@gmail.com</div></div>
           </div>
         </div>
       </div>
@@ -797,20 +798,30 @@ function seedMessages(){
 window.addEventListener('load', ()=>{
   setTimeout(()=>{
     document.getElementById('splash').classList.add('hide');
-    document.getElementById('login').classList.add('show');
+    // Which screen (#login or #app) is visible underneath is now decided by real
+    // Firebase auth state — see the Firebase Authentication block near the end of this file.
   }, 2200);
 });
 
 function signIn(){
-  document.getElementById('login').classList.remove('show');
-  document.getElementById('app').classList.add('show');
-  renderConvList();
-  switchConversation('c1');
+  const bridge = window.firebaseAuthBridge;
+  if(!bridge){ return; } // Firebase not ready yet — button click before scripts finished loading
+  bridge.clearLoginError();
+  const btn = document.querySelector('#login .google-btn');
+  if(btn) btn.disabled = true;
+  bridge.signIn()
+    .catch(err=>{
+      const msg = bridge.friendlyAuthError(err);
+      if(msg) bridge.showLoginError(msg);
+    })
+    .finally(()=>{ if(btn) btn.disabled = false; });
+  // On success, the onAuthStateChanged listener (Firebase block below) shows #app.
 }
 function signOut(){
-  document.getElementById('app').classList.remove('show');
-  document.getElementById('login').classList.add('show');
-  toggleSettings(false);
+  const bridge = window.firebaseAuthBridge;
+  if(!bridge){ return; }
+  bridge.signOut();
+  // The onAuthStateChanged listener (Firebase block below) returns the user to #login.
 }
 
 /* ============================================================
@@ -1425,6 +1436,119 @@ renderCtxPanel();
 updateSendAvailability();
 renderModePill();
 syncAiModeSettingsSeg();
+</script>
+
+<!-- ============================================================
+     FIREBASE AUTHENTICATION — Google Sign-In for "Personal AI"
+     (project: personal-ai-7bf4f / app: Personal AI Web)
+     This block only handles auth. It does not touch chat, AI modes,
+     file upload, memory, theme, or any offline AI/backend logic above.
+============================================================ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+  import {
+    getAuth, GoogleAuthProvider, signInWithPopup, signOut,
+    onAuthStateChanged, setPersistence, browserLocalPersistence
+  } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+  // Public client config for the "Personal AI Web" app.
+  // This is safe to expose in frontend code — it is NOT a secret key.
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbIt4zz6gnEgPpMcfEVDbkLNMsOxhaZ50",
+    authDomain: "personal-ai-7bf4f.firebaseapp.com",
+    projectId: "personal-ai-7bf4f",
+    storageBucket: "personal-ai-7bf4f.firebasestorage.app",
+    messagingSenderId: "125823454933",
+    appId: "1:125823454933:web:a7ae66c8a775f1e7be5c5c",
+    measurementId: "G-P6EQ5WPTZ6"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // Keep the user signed in across reloads/tabs (Firebase's own managed storage — not manual localStorage).
+  setPersistence(auth, browserLocalPersistence).catch(()=>{ /* falls back to default persistence */ });
+
+  function initialOf(user){
+    const src = (user.displayName || user.email || 'A').trim();
+    return src.charAt(0).toUpperCase();
+  }
+  function setAvatarEl(el, photoURL, initial){
+    if(!el) return;
+    if(photoURL){
+      el.style.backgroundImage = `url("${photoURL}")`;
+      el.style.backgroundSize = 'cover';
+      el.style.backgroundPosition = 'center';
+      el.textContent = '';
+    } else {
+      el.style.backgroundImage = '';
+      el.textContent = initial;
+    }
+  }
+  function renderUserProfile(user){
+    const name = user.displayName || 'Personal AI User';
+    const email = user.email || '';
+    const initial = initialOf(user);
+
+    setAvatarEl(document.getElementById('userAvatar'), user.photoURL, initial);
+    const un = document.getElementById('userName'); if(un) un.textContent = name;
+    const ue = document.getElementById('userEmail'); if(ue) ue.textContent = email;
+
+    setAvatarEl(document.getElementById('settingsAvatar'), user.photoURL, initial);
+    const sn = document.getElementById('settingsUserName'); if(sn) sn.textContent = name;
+    const se = document.getElementById('settingsUserEmail'); if(se) se.textContent = email;
+  }
+
+  // Never surface raw Firebase error codes/messages to the user.
+  function friendlyAuthError(err){
+    const code = (err && err.code) || '';
+    if(code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') return null; // user just closed it
+    if(code === 'auth/popup-blocked') return 'Your browser blocked the sign-in popup. Please allow popups for this site and try again.';
+    if(code === 'auth/network-request-failed') return "Network issue — please check your connection and try again.";
+    if(code === 'auth/unauthorized-domain') return "This domain isn't authorized for sign-in yet.";
+    return "Couldn't sign you in. Please try again.";
+  }
+  function showLoginError(message){
+    if(!message) return;
+    let el = document.getElementById('loginError');
+    if(!el){
+      el = document.createElement('div');
+      el.id = 'loginError';
+      el.style.cssText = 'margin-top:14px;font-size:12.5px;color:#EF4444;';
+      document.querySelector('#login .login-card')?.appendChild(el);
+    }
+    el.textContent = message;
+  }
+  function clearLoginError(){
+    const el = document.getElementById('loginError');
+    if(el) el.textContent = '';
+  }
+
+  // Consumed by the existing signIn()/signOut() functions defined earlier in this file.
+  window.firebaseAuthBridge = {
+    signIn: () => signInWithPopup(auth, provider),
+    signOut: () => signOut(auth),
+    friendlyAuthError,
+    showLoginError,
+    clearLoginError
+  };
+
+  // Single source of truth for which screen is visible — fires on load (restoring a
+  // persisted session) and on every future sign-in/sign-out.
+  onAuthStateChanged(auth, (user)=>{
+    if(user){
+      renderUserProfile(user);
+      document.getElementById('login')?.classList.remove('show');
+      document.getElementById('app')?.classList.add('show');
+      if(typeof renderConvList === 'function') renderConvList();
+      if(typeof switchConversation === 'function') switchConversation('c1');
+    } else {
+      document.getElementById('app')?.classList.remove('show');
+      document.getElementById('login')?.classList.add('show');
+      if(typeof toggleSettings === 'function') toggleSettings(false);
+    }
+  });
 </script>
 </body>
 </html>
