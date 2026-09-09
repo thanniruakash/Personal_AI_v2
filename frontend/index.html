@@ -752,6 +752,7 @@ input,textarea{font-family:inherit; color:inherit;}
 ============================================================ */
 const state = {
   theme: 'dark',
+  currentUid: null, // set by the Firebase auth block below; gates all Firestore conversation persistence
   conversations: [
     {id:'c1', title:'Personal AI Project', group:'Today', messages: seedMessages()},
     {id:'c2', title:'DSA Questions', group:'Today', messages: []},
@@ -956,6 +957,18 @@ document.querySelectorAll('.seg').forEach(seg=>{
 /* ============================================================
    CONVERSATIONS
 ============================================================ */
+/* Thin bridge into Firestore (see the Firebase block near the end of this file).
+   No-ops until a user is signed in and Firestore has initialized, so nothing
+   here changes behavior for a signed-out or pre-auth state. */
+function persistConversation(conv){
+  if(!conv || !state.currentUid || !window.conversationStore) return;
+  window.conversationStore.saveConversation(state.currentUid, conv);
+}
+function persistLastActive(id){
+  if(!state.currentUid || !window.conversationStore) return;
+  window.conversationStore.setLastActive(state.currentUid, id);
+}
+
 function renderConvList(){
   const q = document.getElementById('convSearch').value.toLowerCase();
   const groups = {};
@@ -977,7 +990,12 @@ function renderConvList(){
 function renameConv(id){
   const c = state.conversations.find(c=>c.id===id);
   const name = prompt('Rename conversation', c.title);
-  if(name){ c.title = name; renderConvList(); if(id===state.activeId) document.getElementById('topbarTitle').textContent = name; }
+  if(name){
+    c.title = name;
+    renderConvList();
+    if(id===state.activeId) document.getElementById('topbarTitle').textContent = name;
+    persistConversation(c);
+  }
 }
 function switchConversation(id){
   state.activeId = id;
@@ -986,11 +1004,14 @@ function switchConversation(id){
   renderConvList();
   renderMessages();
   toggleSidebar(false);
+  persistLastActive(id);
 }
 function newChat(){
   const id = 'c'+Date.now();
-  state.conversations.unshift({id, title:'New Chat', group:'Today', messages:[]});
+  const conv = {id, title:'New Chat', group:'Today', messages:[]};
+  state.conversations.unshift(conv);
   switchConversation(id);
+  persistConversation(conv);
 }
 
 /* ============================================================
@@ -1178,6 +1199,7 @@ function handleFileUpload(e){
     state.uploadedAll.push(fileObj);
     renderAttachedChips();
     renderCtxPanel();
+    persistConversation(conv);
   }, 1600);
   e.target.value = '';
 }
@@ -1194,6 +1216,7 @@ function sendMessage(){
   renderMessages();
   renderConvList();
   document.getElementById('topbarTitle').textContent = conv.title;
+  persistConversation(conv);
   generateReply(text);
 }
 
@@ -1292,6 +1315,7 @@ async function generateReply(userText){
 
     setSendState(false);
     renderMessages();
+    persistConversation(conv);
 
   }catch(err){
 
@@ -1314,6 +1338,7 @@ Please make sure the API server is running.`,
 
     setSendState(false);
     renderMessages();
+    persistConversation(conv);
 
     console.error('Personal AI API error:', err);
   }
@@ -1329,6 +1354,7 @@ function regenerate(i){
   if(!userMsg) return;
   conv.messages.splice(i,1);
   renderMessages();
+  persistConversation(conv);
   generateReply(userMsg.text);
 }
 
@@ -1450,6 +1476,10 @@ syncAiModeSettingsSeg();
     getAuth, GoogleAuthProvider, signInWithPopup, signOut,
     onAuthStateChanged, setPersistence, browserLocalPersistence
   } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+  import {
+    getFirestore, collection, doc, getDoc, getDocs, setDoc,
+    serverTimestamp, query, orderBy, writeBatch
+  } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
   // Public client config for the "Personal AI Web" app.
   // This is safe to expose in frontend code — it is NOT a secret key.
@@ -1466,6 +1496,12 @@ syncAiModeSettingsSeg();
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
+
+  // Snapshot of the original hardcoded starter conversations (still defined as-is in the
+  // classic script above). Used only to seed a brand-new user's very first Firestore
+  // history — existing demo content and behavior are otherwise unchanged.
+  const DEFAULT_CONVERSATIONS = JSON.parse(JSON.stringify(state.conversations));
 
   // Keep the user signed in across reloads/tabs (Firebase's own managed storage — not manual localStorage).
   setPersistence(auth, browserLocalPersistence).catch(()=>{ /* falls back to default persistence */ });
@@ -1534,16 +1570,126 @@ syncAiModeSettingsSeg();
     clearLoginError
   };
 
+  /* ============================================================
+     FIRESTORE — per-user conversation history
+     Structure: users/{uid}/conversations/{conversationId}
+     Each document holds the whole conversation (title, group, messages) so it
+     maps 1:1 onto the existing in-memory `state.conversations` entries with no
+     restructuring of the chat/render logic above.
+  ============================================================ */
+  function convsCol(uid){ return collection(db, 'users', uid, 'conversations'); }
+  function userDocRef(uid){ return doc(db, 'users', uid); }
+
+  // "typing" is a transient UI-only placeholder (mid-response spinner) — never persisted.
+  function stripTransient(messages){
+    return (Array.isArray(messages) ? messages : []).filter(m => m.role !== 'typing');
+  }
+
+  async function saveConversation(uid, conv){
+    if(!uid || !conv) return;
+    try{
+      await setDoc(doc(convsCol(uid), conv.id), {
+        title: conv.title,
+        group: conv.group,
+        messages: stripTransient(conv.messages),
+        updatedAt: serverTimestamp()
+      }, { merge: true });
+    }catch(err){
+      console.error('Personal AI: failed to save conversation', err);
+    }
+  }
+
+  async function setLastActive(uid, conversationId){
+    if(!uid) return;
+    try{
+      await setDoc(userDocRef(uid), { lastActiveConversationId: conversationId }, { merge: true });
+    }catch(err){
+      console.error('Personal AI: failed to save last-active conversation', err);
+    }
+  }
+
+  async function loadConversations(uid){
+    const snap = await getDocs(query(convsCol(uid), orderBy('updatedAt', 'desc')));
+    const list = [];
+    snap.forEach(d=>{
+      const data = d.data();
+      list.push({
+        id: d.id,
+        title: data.title || 'Untitled',
+        group: data.group || 'Today',
+        messages: Array.isArray(data.messages) ? data.messages : []
+      });
+    });
+    return list;
+  }
+
+  async function loadLastActive(uid){
+    try{
+      const snap = await getDoc(userDocRef(uid));
+      return snap.exists() ? (snap.data().lastActiveConversationId || null) : null;
+    }catch(err){
+      return null;
+    }
+  }
+
+  // First-ever login for this account: seed Firestore with the existing starter
+  // conversations so the app behaves exactly as before, but from now on persists.
+  // Any later login just returns what is already saved.
+  async function seedIfEmpty(uid, defaults){
+    const existing = await loadConversations(uid);
+    if(existing.length) return existing;
+    const batch = writeBatch(db);
+    defaults.forEach(c=>{
+      batch.set(doc(convsCol(uid), c.id), {
+        title: c.title,
+        group: c.group,
+        messages: stripTransient(c.messages),
+        updatedAt: serverTimestamp()
+      });
+    });
+    await batch.commit();
+    return defaults;
+  }
+
+  // Consumed by persistConversation()/persistLastActive() in the classic script above.
+  window.conversationStore = { saveConversation, setLastActive, loadConversations, loadLastActive, seedIfEmpty };
+
   // Single source of truth for which screen is visible — fires on load (restoring a
   // persisted session) and on every future sign-in/sign-out.
   onAuthStateChanged(auth, (user)=>{
     if(user){
+      state.currentUid = user.uid;
       renderUserProfile(user);
       document.getElementById('login')?.classList.remove('show');
       document.getElementById('app')?.classList.add('show');
-      if(typeof renderConvList === 'function') renderConvList();
-      if(typeof switchConversation === 'function') switchConversation('c1');
+
+      seedIfEmpty(user.uid, DEFAULT_CONVERSATIONS)
+        .then(convs=>{
+          state.conversations = convs.length ? convs : DEFAULT_CONVERSATIONS;
+          return loadLastActive(user.uid);
+        })
+        .then(lastId=>{
+          const validLast = lastId && state.conversations.some(c=>c.id===lastId);
+          const targetId = validLast ? lastId : (state.conversations[0] && state.conversations[0].id);
+          if(targetId && typeof switchConversation === 'function'){
+            switchConversation(targetId);
+          } else if(typeof renderConvList === 'function'){
+            renderConvList();
+          }
+        })
+        .catch(err=>{
+          console.error('Personal AI: failed to load conversation history', err);
+          if(typeof renderConvList === 'function') renderConvList();
+        });
+
     } else {
+      // Reset in-memory conversation state immediately so a different account signing
+      // in afterwards on this browser never sees the previous account's history.
+      state.currentUid = null;
+      state.conversations = [];
+      state.activeId = null;
+      if(typeof renderConvList === 'function') renderConvList();
+
       document.getElementById('app')?.classList.remove('show');
       document.getElementById('login')?.classList.add('show');
       if(typeof toggleSettings === 'function') toggleSettings(false);
