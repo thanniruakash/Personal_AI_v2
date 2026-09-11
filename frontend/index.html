@@ -203,6 +203,11 @@ input,textarea{font-family:inherit; color:inherit;}
   background:var(--bg-sunken); border:1px solid var(--border); font-size:13px; color:var(--text);
 }
 .sb-search svg{ position:absolute; left:10px; top:50%; transform:translateY(-50%); opacity:.5; }
+.sb-tool-btn{
+  display:flex; align-items:center; gap:9px; width:100%; margin-top:6px; padding:9px 10px;
+  border-radius:var(--radius-sm); font-size:13px; color:var(--text-dim); transition:background .15s var(--ease), color .15s var(--ease);
+}
+.sb-tool-btn:hover{ background:var(--bg-elev); color:var(--text); }
 .sb-conversations{ flex:1; overflow-y:auto; padding:6px 10px 10px; }
 .sb-group-label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); padding:14px 8px 6px; }
 .conv-item{
@@ -304,16 +309,18 @@ input,textarea{font-family:inherit; color:inherit;}
 #chatScroll{ flex:1; overflow-y:auto; padding:18px 0 8px; }
 #chatInner{ max-width:760px; margin:0 auto; padding:0 20px; display:flex; flex-direction:column; gap:20px; }
 
-.empty-state{ text-align:center; padding:60px 20px; margin:auto; }
-.empty-state .core{ margin:0 auto 18px; --core-size:56px; width:56px; height:56px; }
-.empty-state h2{ font-family:var(--font-display); font-size:20px; margin-bottom:6px; }
-.empty-state p{ color:var(--text-dim); font-size:13.5px; max-width:340px; margin:0 auto; line-height:1.5;}
-.suggest-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:20px; }
+.empty-state{ text-align:center; padding:40px 20px; margin:auto; width:100%; max-width:640px; }
+.empty-state .core{ margin:0 auto 16px; --core-size:52px; width:52px; height:52px; }
+.empty-state .brand-wordmark{ font-family:var(--font-display); font-weight:700; font-size:26px; margin-bottom:6px; }
+.empty-state p{ color:var(--text-dim); font-size:13.5px; max-width:380px; margin:0 auto 26px; line-height:1.5;}
+.empty-state .centered-composer-slot{ width:100%; margin:0 auto; }
+.suggest-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:22px; }
 .suggest-chip{
   padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:var(--bg-elev);
   font-size:12.5px; color:var(--text-dim); transition:all .2s var(--ease);
 }
 .suggest-chip:hover{ border-color:var(--cyan); color:var(--text); transform:translateY(-1px); }
+#composerWrap.hidden{ display:none; }
 
 .msg{ display:flex; gap:12px; animation:msgIn .4s var(--ease); max-width:100%; }
 @keyframes msgIn{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
@@ -427,6 +434,7 @@ input,textarea{font-family:inherit; color:inherit;}
 .seg button.active{ background:var(--bg-elev); color:var(--text); box-shadow:0 1px 4px rgba(0,0,0,.15); }
 .mem-item{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 12px; background:var(--bg-sunken); border-radius:10px; margin-bottom:8px; font-size:12.5px; }
 .mem-item span{ color:var(--text-dim); line-height:1.4; }
+.mem-item .mem-time{ display:block; font-size:10.5px; color:var(--text-faint); margin-top:3px; }
 .mem-item button{ color:var(--text-faint); flex-shrink:0; }
 .mem-item button:hover{ color:#EF4444; }
 .danger-btn{ font-size:12.5px; font-weight:600; color:#EF4444; padding:8px 0; }
@@ -482,13 +490,22 @@ input,textarea{font-family:inherit; color:inherit;}
   #sidebar.show{ transform:translateX(0); box-shadow:0 0 40px rgba(0,0,0,.4); }
   #menuBtn{ display:flex; }
   .msg-body{ max-width:88%; }
-  #chatInner{ padding:0 14px; }
-  #composerWrap{ padding:10px 12px calc(12px + env(safe-area-inset-bottom)); }
+  #chatInner{ padding:0 12px; gap:16px; }
+  #composerWrap{ padding:10px 10px calc(10px + env(safe-area-inset-bottom)); }
   .topbar-title{ display:none; }
   #contextPanel{ display:none; }
   .desktop-only{ display:none !important; }
-  #composer{ border-radius:24px; }
+  #composer{ border-radius:22px; }
   .msg-actions{ opacity:1; }
+  .empty-state{ padding:16px 8px; max-width:100%; }
+  .empty-state .brand-wordmark{ font-size:21px; }
+  .empty-state p{ font-size:12.5px; margin-bottom:18px; }
+  .suggest-row{ gap:6px; margin-top:16px; }
+  .suggest-chip{ padding:8px 12px; font-size:11.5px; }
+  .bubble{ font-size:13.8px; padding:10px 13px; }
+  #settingsPanel{ width:100vw; max-width:100vw; }
+  .mem-item{ padding:9px 10px; }
+  .stat-grid{ gap:8px; }
 }
 /* Desktop (>860px) */
 @media (min-width: 861px){
@@ -500,6 +517,7 @@ input,textarea{font-family:inherit; color:inherit;}
   #topbar{ padding:14px 24px; }
   .sb-top{ padding:18px 16px 12px; }
   .msg-body{ max-width:72%; }
+  .empty-state .centered-composer-slot #composer{ max-width:640px; }
 }
 @media (min-width: 1400px){
   #chatInner, #composer{ max-width:900px; }
@@ -557,14 +575,18 @@ input,textarea{font-family:inherit; color:inherit;}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="convSearch" placeholder="Search conversations" oninput="renderConvList()">
       </div>
+      <button class="sb-tool-btn" onclick="openFilesShortcut()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M13 2v7h7"/></svg>
+        Files
+      </button>
     </div>
     <div class="sb-conversations" id="convList"></div>
     <div class="sb-bottom">
       <div class="profile-row">
-        <div class="avatar" id="userAvatar">A</div>
+        <div class="avatar" id="userAvatar"></div>
         <div class="profile-meta">
-          <div class="pname" id="userName">Akash</div>
-          <div class="pmail" id="userEmail">akash@gmail.com</div>
+          <div class="pname" id="userName"></div>
+          <div class="pmail" id="userEmail"></div>
         </div>
         <button class="icon-btn" title="Settings" onclick="toggleSettings(true)">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -594,23 +616,25 @@ input,textarea{font-family:inherit; color:inherit;}
     <div id="chatScroll"><div id="chatInner"></div></div>
 
     <div id="composerWrap">
-      <div id="composer">
-        <div id="attachedFiles"></div>
-        <div class="composer-row">
-          <button class="composer-btn" title="Attach file" onclick="document.getElementById('fileInput').click()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M21.44 11.05 12.25 20.24a5 5 0 0 1-7.07-7.07l9.19-9.19a3.33 3.33 0 0 1 4.71 4.71L9.88 17.9a1.67 1.67 0 0 1-2.36-2.36l8.49-8.49"/></svg>
-          </button>
-          <input type="file" id="fileInput" style="display:none" onchange="handleFileUpload(event)" accept=".pdf,.docx,.txt,.csv,.xlsx,.pptx,.json,.png,.jpg,.jpeg">
-          <textarea id="msgInput" rows="1" placeholder="Ask Personal AI anything..." onkeydown="onComposerKey(event)" oninput="onComposerInput(this)"></textarea>
-          <button class="composer-btn mobile-only" id="micBtn" title="Voice input" onclick="toggleMic()">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
-          </button>
-          <button class="composer-btn" id="sendBtn" title="Send" onclick="sendMessage()" disabled>
-            <svg id="sendIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 14-8-5 8 5 8Z"/></svg>
-          </button>
+      <div id="composerCore">
+        <div id="composer">
+          <div id="attachedFiles"></div>
+          <div class="composer-row">
+            <button class="composer-btn" title="Attach file" onclick="document.getElementById('fileInput').click()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M21.44 11.05 12.25 20.24a5 5 0 0 1-7.07-7.07l9.19-9.19a3.33 3.33 0 0 1 4.71 4.71L9.88 17.9a1.67 1.67 0 0 1-2.36-2.36l8.49-8.49"/></svg>
+            </button>
+            <input type="file" id="fileInput" style="display:none" onchange="handleFileUpload(event)" accept=".pdf,.docx,.txt,.csv,.xlsx,.pptx,.json,.png,.jpg,.jpeg">
+            <textarea id="msgInput" rows="1" placeholder="Ask Personal AI anything..." onkeydown="onComposerKey(event)" oninput="onComposerInput(this)"></textarea>
+            <button class="composer-btn mobile-only" id="micBtn" title="Voice input" onclick="toggleMic()">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
+            </button>
+            <button class="composer-btn" id="sendBtn" title="Send" onclick="sendMessage()" disabled>
+              <svg id="sendIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 14-8-5 8 5 8Z"/></svg>
+            </button>
+          </div>
         </div>
+        <div class="composer-hint">Personal AI checks local knowledge first, then falls back to Gemini · Verify important answers <span class="shortcut-hint desktop-only">Enter to send</span><span class="shortcut-hint desktop-only">⌘K new chat</span></div>
       </div>
-      <div class="composer-hint">Personal AI checks local knowledge first, then falls back to Gemini · Verify important answers <span class="shortcut-hint desktop-only">Enter to send</span><span class="shortcut-hint desktop-only">⌘K new chat</span></div>
     </div>
   </main>
 
@@ -663,8 +687,8 @@ input,textarea{font-family:inherit; color:inherit;}
         <div class="set-group-title">Google Account</div>
         <div class="set-row">
           <div style="display:flex;align-items:center;gap:10px;">
-            <div class="avatar" id="settingsAvatar">A</div>
-            <div><div class="set-row-label" id="settingsUserName">Akash</div><div class="set-row-sub" id="settingsUserEmail">akash@gmail.com</div></div>
+            <div class="avatar" id="settingsAvatar"></div>
+            <div><div class="set-row-label" id="settingsUserName"></div><div class="set-row-sub" id="settingsUserEmail"></div></div>
           </div>
         </div>
       </div>
@@ -718,22 +742,29 @@ input,textarea{font-family:inherit; color:inherit;}
 
     <div class="set-section" data-sec="memory">
       <div class="stat-grid">
-        <div class="stat-box"><b>12</b><span>Saved memories</span></div>
-        <div class="stat-box"><b>On</b><span>Memory status</span></div>
+        <div class="stat-box"><b id="memCount">0</b><span>Saved memories</span></div>
+        <div class="stat-box"><b id="memStatus">On</b><span>Memory status</span></div>
       </div>
       <div class="set-group">
         <div class="set-row">
           <div><div class="set-row-label">Enable memory</div><div class="set-row-sub">Remember useful info across chats</div></div>
-          <div class="toggle on" onclick="toggleSwitch(this)"></div>
+          <div class="toggle on" id="memoryEnabledToggle" onclick="toggleMemoryEnabled(this)"></div>
+        </div>
+      </div>
+      <div class="set-group">
+        <div class="set-group-title">Add a memory</div>
+        <div class="composer-row" style="gap:8px;">
+          <input id="newMemoryInput" placeholder="e.g. Prefers concise answers" style="flex:1;padding:9px 12px;border-radius:10px;background:var(--bg-sunken);border:1px solid var(--border);font-size:13px;color:var(--text);" onkeydown="if(event.key==='Enter'){event.preventDefault(); submitNewMemory();}">
+          <button class="composer-btn" style="background:linear-gradient(135deg, var(--blue), var(--cyan));color:#fff;" onclick="submitNewMemory()" title="Save memory">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
         </div>
       </div>
       <div class="set-group">
         <div class="set-group-title">Recent memories</div>
-        <div class="mem-item"><span>Studying B.Tech CSE (AI & Data Science)</span><button onclick="this.parentElement.remove()">✕</button></div>
-        <div class="mem-item"><span>Prefers concise, direct answers</span><button onclick="this.parentElement.remove()">✕</button></div>
-        <div class="mem-item"><span>Building offline AI knowledge base project</span><button onclick="this.parentElement.remove()">✕</button></div>
+        <div id="memoryList"><div style="font-size:12.5px;color:var(--text-faint);">No saved memories yet.</div></div>
       </div>
-      <button class="danger-btn" onclick="alert('All memory cleared (demo)')">Clear all memory</button>
+      <button class="danger-btn" onclick="clearAllMemoriesUI()">Clear all memory</button>
     </div>
 
     <div class="set-section" data-sec="files">
@@ -753,21 +784,19 @@ input,textarea{font-family:inherit; color:inherit;}
 const state = {
   theme: 'dark',
   currentUid: null, // set by the Firebase auth block below; gates all Firestore conversation persistence
-  conversations: [
-    {id:'c1', title:'Personal AI Project', group:'Today', messages: seedMessages()},
-    {id:'c2', title:'DSA Questions', group:'Today', messages: []},
-    {id:'c3', title:'Python Learning', group:'Today', messages: []},
-    {id:'c4', title:'Java Questions', group:'Yesterday', messages: []},
-    {id:'c5', title:'Operating Systems PDF', group:'Yesterday', messages: []},
-    {id:'c6', title:'AI Project', group:'Yesterday', messages: []},
-  ],
-  activeId: 'c1',
+  // Intentionally empty until a real Firebase user is authenticated — see the Firebase
+  // block near the end of this file. Nothing here is ever shown pre-auth (#app stays
+  // hidden), and no demo/placeholder identity or conversation content is hardcoded.
+  conversations: [],
+  activeId: null,
   generating: false,
   genToken: 0,
   genTimers: [],
   aiMode: 'auto', // 'auto' | 'local' | 'gemini' — persists for the session only, resets on reload
   attachedFiles: [],
   uploadedAll: [],
+  memories: [],
+  memoryEnabled: true,
 };
 
 /* AI Source modes — controls routing only. Real backend routing must mirror this:
@@ -786,12 +815,6 @@ const LOCAL_KB = [
   {kw:['data structure','dsa'], a:"A **data structure** is a way of organizing and storing data for efficient access and modification — arrays, linked lists, stacks, queues, trees, and graphs are the core building blocks used across DSA."},
   {kw:['operating system','os '], a:"An **Operating System** manages hardware and software resources, providing services like process scheduling, memory management, file systems, and I/O handling."},
 ];
-
-function seedMessages(){
-  return [
-    {role:'ai', text:"Hey Akash! I'm your Personal AI — checking local knowledge first, then Gemini if needed. What are we building today?", source:'local', time:'0.01s'}
-  ];
-}
 
 /* ============================================================
    BOOT SEQUENCE
@@ -867,6 +890,91 @@ function switchSetTab(id){
   document.querySelectorAll('.set-section').forEach(s=>s.classList.toggle('active', s.dataset.sec===id));
 }
 function toggleSwitch(el){ el.classList.toggle('on'); }
+
+/* ============================================================
+   MEMORY — real Firestore-backed data, no demo values
+============================================================ */
+function relativeTime(ts){
+  if(!ts) return '';
+  const diffMs = Date.now() - ts;
+  const mins = Math.floor(diffMs / 60000);
+  if(mins < 1) return 'Just now';
+  if(mins < 60) return `${mins} minute${mins===1?'':'s'} ago`;
+  const hours = Math.floor(mins / 60);
+  if(hours < 24) return `${hours} hour${hours===1?'':'s'} ago`;
+  const d = new Date(ts);
+  const now = new Date();
+  const startOfDay = dt => new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()).getTime();
+  const diffDays = Math.round((startOfDay(now) - startOfDay(d)) / 86400000);
+  if(diffDays === 1) return 'Yesterday';
+  if(diffDays < 7) return d.toLocaleDateString(undefined, { weekday:'long' });
+  return d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+}
+
+function renderMemories(){
+  const list = document.getElementById('memoryList');
+  const countEl = document.getElementById('memCount');
+  const statusEl = document.getElementById('memStatus');
+  if(countEl) countEl.textContent = String(state.memories.length);
+  if(statusEl) statusEl.textContent = state.memoryEnabled ? 'On' : 'Off';
+  const toggle = document.getElementById('memoryEnabledToggle');
+  if(toggle) toggle.classList.toggle('on', state.memoryEnabled);
+  if(!list) return;
+  if(!state.memories.length){
+    list.innerHTML = `<div style="font-size:12.5px;color:var(--text-faint);">No saved memories yet.</div>`;
+    return;
+  }
+  list.innerHTML = state.memories.map(m => `
+    <div class="mem-item">
+      <span>${escapeHtml(m.text)}<span class="mem-time">Saved ${relativeTime(m.createdAt)}</span></span>
+      <button onclick="deleteMemoryUI('${m.id}')" title="Delete">✕</button>
+    </div>`).join('');
+}
+
+async function refreshMemoriesFromStore(){
+  if(!state.currentUid || !window.memoryStore) return;
+  const [memories, enabled] = await Promise.all([
+    window.memoryStore.loadMemories(state.currentUid),
+    window.memoryStore.loadMemoryEnabled(state.currentUid)
+  ]);
+  state.memories = memories;
+  state.memoryEnabled = enabled;
+  renderMemories();
+}
+
+async function submitNewMemory(){
+  const input = document.getElementById('newMemoryInput');
+  const text = (input.value || '').trim();
+  if(!text || !state.currentUid || !window.memoryStore) return;
+  input.value = '';
+  const id = await window.memoryStore.addMemory(state.currentUid, text);
+  if(id){
+    state.memories.unshift({ id, text, createdAt: Date.now() });
+    renderMemories();
+  }
+}
+async function deleteMemoryUI(id){
+  if(!state.currentUid || !window.memoryStore) return;
+  state.memories = state.memories.filter(m => m.id !== id);
+  renderMemories();
+  await window.memoryStore.deleteMemory(state.currentUid, id);
+}
+async function clearAllMemoriesUI(){
+  if(!state.currentUid || !window.memoryStore) return;
+  state.memories = [];
+  renderMemories();
+  await window.memoryStore.clearAllMemories(state.currentUid);
+}
+async function toggleMemoryEnabled(el){
+  const enabled = !state.memoryEnabled;
+  state.memoryEnabled = enabled;
+  el.classList.toggle('on', enabled);
+  const statusEl = document.getElementById('memStatus');
+  if(statusEl) statusEl.textContent = enabled ? 'On' : 'Off';
+  if(state.currentUid && window.memoryStore){
+    await window.memoryStore.setMemoryEnabled(state.currentUid, enabled);
+  }
+}
 
 /* ============================================================
    AI SOURCE MODE SWITCH
@@ -968,24 +1076,58 @@ function persistLastActive(id){
   if(!state.currentUid || !window.conversationStore) return;
   window.conversationStore.setLastActive(state.currentUid, id);
 }
+/* Records what was actually used to answer — only fields the /api/chat response
+   provides. Nothing here is fabricated; missing fields are stored as null. */
+function persistSearchHistory(entry){
+  if(!state.currentUid || !window.searchHistoryStore) return;
+  window.searchHistoryStore.saveSearchHistoryEntry(state.currentUid, entry);
+}
+
+/* Groups conversations by real elapsed time from creation — recomputed on every
+   render, so "Today" -> "Yesterday" -> weekday -> date transitions correctly as
+   time passes, instead of a static label baked in once at creation. */
+function dateGroupLabel(ts){
+  if(!ts) return 'Earlier';
+  const d = new Date(ts);
+  const now = new Date();
+  const startOfDay = dt => new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()).getTime();
+  const diffDays = Math.round((startOfDay(now) - startOfDay(d)) / 86400000);
+  if(diffDays <= 0) return 'Today';
+  if(diffDays === 1) return 'Yesterday';
+  if(diffDays < 7) return d.toLocaleDateString(undefined, { weekday:'long' });
+  return d.toLocaleDateString(undefined, { month:'short', day:'numeric' });
+}
 
 function renderConvList(){
-  const q = document.getElementById('convSearch').value.toLowerCase();
+  const q = document.getElementById('convSearch').value.toLowerCase().trim();
+  const matches = c=>{
+    if(!q) return true;
+    if(c.title.toLowerCase().includes(q)) return true;
+    return (c.messages||[]).some(m => typeof m.text === 'string' && m.text.toLowerCase().includes(q));
+  };
   const groups = {};
-  state.conversations.filter(c=>c.title.toLowerCase().includes(q)).forEach(c=>{
-    (groups[c.group] = groups[c.group]||[]).push(c);
+  const groupOrder = [];
+  state.conversations.filter(matches).forEach(c=>{
+    const label = dateGroupLabel(c.createdAt);
+    if(!groups[label]){ groups[label] = []; groupOrder.push(label); }
+    groups[label].push(c);
   });
+  const priority = { 'Today':0, 'Yesterday':1 };
+  groupOrder.sort((a,b) => (priority[a] ?? 2) - (priority[b] ?? 2));
+
   let html = '';
-  Object.keys(groups).forEach(g=>{
+  groupOrder.forEach(g=>{
     html += `<div class="sb-group-label">${g}</div>`;
     groups[g].forEach(c=>{
       html += `<div class="conv-item ${c.id===state.activeId?'active':''}" onclick="switchConversation('${c.id}')">
-        <span class="dot"></span><span>${c.title}</span>
+        <span class="dot"></span><span>${escapeHtml(c.title)}</span>
         <span class="conv-menu" onclick="event.stopPropagation(); renameConv('${c.id}')">✎</span>
       </div>`;
     });
   });
-  document.getElementById('convList').innerHTML = html || `<div style="padding:20px 10px;color:var(--text-faint);font-size:12.5px;">No conversations found</div>`;
+  document.getElementById('convList').innerHTML = html || (q
+    ? `<div style="padding:20px 10px;color:var(--text-faint);font-size:12.5px;">No conversations found</div>`
+    : `<div style="padding:20px 10px;color:var(--text-faint);font-size:12.5px;">No conversations yet.<br>Ask your first question to get started.</div>`);
 }
 function renameConv(id){
   const c = state.conversations.find(c=>c.id===id);
@@ -1008,7 +1150,7 @@ function switchConversation(id){
 }
 function newChat(){
   const id = 'c'+Date.now();
-  const conv = {id, title:'New Chat', group:'Today', messages:[]};
+  const conv = {id, title:'New Chat', group:'Today', createdAt: Date.now(), messages:[]};
   state.conversations.unshift(conv);
   switchConversation(id);
   persistConversation(conv);
@@ -1019,24 +1161,40 @@ function newChat(){
 ============================================================ */
 function activeConv(){ return state.conversations.find(c=>c.id===state.activeId); }
 
+function placeComposer(mode){
+  const core = document.getElementById('composerCore');
+  const bottomWrap = document.getElementById('composerWrap');
+  const centeredSlot = document.getElementById('centeredComposerSlot');
+  if(mode === 'centered' && centeredSlot){
+    centeredSlot.appendChild(core);
+    bottomWrap.classList.add('hidden');
+  } else {
+    bottomWrap.appendChild(core);
+    bottomWrap.classList.remove('hidden');
+  }
+}
+
 function renderMessages(){
   const conv = activeConv();
   const inner = document.getElementById('chatInner');
-  if(!conv.messages.length){
+  if(!conv || !conv.messages.length){
     inner.innerHTML = `
       <div class="empty-state">
         <div class="core"><div class="glow"></div><div class="ring"></div><div class="nucleus"></div></div>
-        <h2>What are we solving today?</h2>
-        <p>Ask a question, upload a document, or continue where you left off. I'll check local knowledge first.</p>
+        <div class="brand-wordmark">Personal AI</div>
+        <p>Ask anything — I'll check local knowledge first, then Gemini if needed.</p>
+        <div class="centered-composer-slot" id="centeredComposerSlot"></div>
         <div class="suggest-row">
           <button class="suggest-chip" onclick="quickAsk('Explain Round Robin scheduling')">Explain Round Robin scheduling</button>
           <button class="suggest-chip" onclick="quickAsk('What is inheritance in Java?')">What is inheritance in Java?</button>
           <button class="suggest-chip" onclick="quickAsk('Summarize the latest AI trends')">Summarize the latest AI trends</button>
         </div>
       </div>`;
+    placeComposer('centered');
     return;
   }
   inner.innerHTML = conv.messages.map((m,i)=>renderMsg(m,i)).join('');
+  placeComposer('bottom');
   document.getElementById('chatScroll').scrollTop = 999999;
 }
 
@@ -1187,13 +1345,13 @@ function handleFileUpload(e){
   const sizeKb = (f.size/1024).toFixed(1)+' KB';
   const fileObj = {name:f.name, ext, size:sizeKb};
   const conv = activeConv();
-  conv.messages.push({role:'file', file: fileObj});
+  conv.messages.push({role:'file', file: fileObj, timestamp: Date.now()});
   renderMessages();
   // animate scanning in-place, then mark done
   setTimeout(()=>{
     conv.messages[conv.messages.length-1].file.scanned = true;
     renderMessages();
-    conv.messages.push({role:'ai', text:`File loaded successfully — **${f.name}** is ready. Ask me anything about it.`, source:'doc', time:'0.9s'});
+    conv.messages.push({role:'ai', text:`File loaded successfully — **${f.name}** is ready. Ask me anything about it.`, source:'doc', time:'0.9s', timestamp: Date.now()});
     renderMessages();
     state.attachedFiles.push(fileObj);
     state.uploadedAll.push(fileObj);
@@ -1204,14 +1362,55 @@ function handleFileUpload(e){
   e.target.value = '';
 }
 
+/* Client-side heuristic title generator — no extra AI call, no backend change.
+   Strips common question phrasing so titles read like short subjects, e.g.
+   "What is the current Prime Minister of India?" -> "Prime Minister Of India". */
+const TITLE_STOPWORDS = new Set(['of','and','the','in','on','for','to','a','an','is','are','vs']);
+function toTitleCase(s){
+  return s.split(' ').map((w,i)=>{
+    if(!w) return w;
+    const lower = w.toLowerCase();
+    if(i>0 && TITLE_STOPWORDS.has(lower)) return lower;
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  }).join(' ');
+}
+function generateTitleFromText(raw){
+  let t = (raw||'').trim().replace(/[?!.]+$/,'').trim();
+  if(!t) return 'New Chat';
+  const prefixPatterns = [
+    /^what is the current\s+/i,
+    /^what was the current\s+/i,
+    /^who is the current\s+/i,
+    /^what('|’)?s the current\s+/i,
+    /^what is\s+/i,
+    /^what are\s+/i,
+    /^who is\s+/i,
+    /^who was\s+/i,
+    /^tell me about\s+/i,
+    /^can you explain\s+/i,
+    /^could you explain\s+/i,
+    /^please explain\s+/i,
+    /^explain\s+/i,
+    /^describe\s+/i,
+    /^define\s+/i,
+  ];
+  for(const p of prefixPatterns){ if(p.test(t)){ t = t.replace(p, ''); break; } }
+  const howMatch = t.match(/^how (?:does|do|did|can|could)\s+(.+?)\s+work\??$/i);
+  if(howMatch){ t = howMatch[1]; }
+  t = t.trim();
+  if(!t) t = (raw||'').trim().replace(/[?!.]+$/,'').trim();
+  if(t.length > 42) t = t.slice(0, 42).trim() + '…';
+  return toTitleCase(t) || 'New Chat';
+}
+
 function sendMessage(){
   if(state.generating) return stopGeneration(); // Send button doubles as Stop while a response is in progress
   const input = document.getElementById('msgInput');
   const text = input.value.trim();
   if(!text) return; // guard: never send an empty message
   const conv = activeConv();
-  conv.messages.push({role:'user', text});
-  if(conv.title==='New Chat') conv.title = text.slice(0,32) + (text.length>32?'…':'');
+  conv.messages.push({role:'user', text, timestamp: Date.now()});
+  if(conv.title==='New Chat') conv.title = generateTitleFromText(text);
   input.value=''; autoGrow(input); updateSendAvailability();
   renderMessages();
   renderConvList();
@@ -1310,12 +1509,31 @@ async function generateReply(userText){
       text:data.answer || 'No answer received.',
       source:data.source || 'local',
       fallback:Boolean(data.fallback),
-      time:data.source === 'gemini' ? 'Gemini' : 'Local'
+      time:data.source === 'gemini' ? 'Gemini' : 'Local',
+      timestamp: Date.now(),
+      // Preserves whatever evidence/search metadata the backend actually returned —
+      // nothing here is invented. See generateReply's comment below for what
+      // additional fields the backend could add for richer evidence tracking.
+      searchInfo: {
+        topic: data.topic ?? null,
+        score: data.score ?? null,
+        source: data.source || null,
+        fallback: Boolean(data.fallback)
+      }
     };
 
     setSendState(false);
     renderMessages();
     persistConversation(conv);
+    persistSearchHistory({
+      query: userText,
+      conversationId: conv.id,
+      source: data.source || null,
+      fallback: Boolean(data.fallback),
+      topic: data.topic ?? null,
+      score: data.score ?? null,
+      answerPreview: (data.answer || '').slice(0, 200)
+    });
 
   }catch(err){
 
@@ -1332,13 +1550,23 @@ async function generateReply(userText){
 
 Please make sure the API server is running.`,
         source:'local',
-        time:'Error'
+        time:'Error',
+        timestamp: Date.now()
       };
     }
 
     setSendState(false);
     renderMessages();
     persistConversation(conv);
+    persistSearchHistory({
+      query: userText,
+      conversationId: conv.id,
+      source: 'error',
+      fallback: false,
+      topic: null,
+      score: null,
+      answerPreview: null
+    });
 
     console.error('Personal AI API error:', err);
   }
@@ -1370,6 +1598,17 @@ renderMsg = function(m,i){
 /* ============================================================
    CONTEXT PANEL (desktop)
 ============================================================ */
+// Sidebar "Files" shortcut — reuses the existing Documents & Context panel on desktop,
+// or opens the existing file picker directly on mobile (no context panel there).
+function openFilesShortcut(){
+  toggleSidebar(false);
+  if(window.innerWidth > 860){
+    const panel = document.getElementById('contextPanel');
+    if(!panel.classList.contains('open')) toggleContextPanel();
+  } else {
+    document.getElementById('fileInput')?.click();
+  }
+}
 function toggleContextPanel(){
   const panel = document.getElementById('contextPanel');
   const btn = document.getElementById('panelToggleBtn');
@@ -1477,7 +1716,7 @@ syncAiModeSettingsSeg();
     onAuthStateChanged, setPersistence, browserLocalPersistence
   } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
   import {
-    getFirestore, collection, doc, getDoc, getDocs, setDoc,
+    getFirestore, collection, doc, getDoc, getDocs, setDoc, addDoc, deleteDoc,
     serverTimestamp, query, orderBy, writeBatch
   } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
@@ -1497,11 +1736,6 @@ syncAiModeSettingsSeg();
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const db = getFirestore(app);
-
-  // Snapshot of the original hardcoded starter conversations (still defined as-is in the
-  // classic script above). Used only to seed a brand-new user's very first Firestore
-  // history — existing demo content and behavior are otherwise unchanged.
-  const DEFAULT_CONVERSATIONS = JSON.parse(JSON.stringify(state.conversations));
 
   // Keep the user signed in across reloads/tabs (Firebase's own managed storage — not manual localStorage).
   setPersistence(auth, browserLocalPersistence).catch(()=>{ /* falls back to default persistence */ });
@@ -1578,6 +1812,8 @@ syncAiModeSettingsSeg();
      restructuring of the chat/render logic above.
   ============================================================ */
   function convsCol(uid){ return collection(db, 'users', uid, 'conversations'); }
+  function searchHistoryCol(uid){ return collection(db, 'users', uid, 'searchHistory'); }
+  function memoriesCol(uid){ return collection(db, 'users', uid, 'memories'); }
   function userDocRef(uid){ return doc(db, 'users', uid); }
 
   // "typing" is a transient UI-only placeholder (mid-response spinner) — never persisted.
@@ -1590,7 +1826,7 @@ syncAiModeSettingsSeg();
     try{
       await setDoc(doc(convsCol(uid), conv.id), {
         title: conv.title,
-        group: conv.group,
+        createdAt: conv.createdAt || Date.now(),
         messages: stripTransient(conv.messages),
         updatedAt: serverTimestamp()
       }, { merge: true });
@@ -1613,10 +1849,13 @@ syncAiModeSettingsSeg();
     const list = [];
     snap.forEach(d=>{
       const data = d.data();
+      // Older documents saved before createdAt existed fall back to updatedAt so
+      // grouping still works instead of throwing them all into "Earlier".
+      const createdAt = data.createdAt || (data.updatedAt && typeof data.updatedAt.toMillis === 'function' ? data.updatedAt.toMillis() : Date.now());
       list.push({
         id: d.id,
         title: data.title || 'Untitled',
-        group: data.group || 'Today',
+        createdAt,
         messages: Array.isArray(data.messages) ? data.messages : []
       });
     });
@@ -1632,40 +1871,139 @@ syncAiModeSettingsSeg();
     }
   }
 
-  // First-ever login for this account: seed Firestore with the existing starter
-  // conversations so the app behaves exactly as before, but from now on persists.
-  // Any later login just returns what is already saved.
-  async function seedIfEmpty(uid, defaults){
+  // First-ever login for this account: no demo content, no seeded identity — just one
+  // empty conversation so the user lands somewhere usable. Any later login returns
+  // exactly what that user has actually saved, and nothing else.
+  async function ensureAtLeastOneConversation(uid){
     const existing = await loadConversations(uid);
     if(existing.length) return existing;
-    const batch = writeBatch(db);
-    defaults.forEach(c=>{
-      batch.set(doc(convsCol(uid), c.id), {
-        title: c.title,
-        group: c.group,
-        messages: stripTransient(c.messages),
-        updatedAt: serverTimestamp()
-      });
+    const ref = doc(convsCol(uid)); // Firestore auto-generated ID
+    const createdAt = Date.now();
+    const fresh = { id: ref.id, title: 'New Chat', createdAt, messages: [] };
+    await setDoc(ref, {
+      title: fresh.title,
+      createdAt,
+      messages: [],
+      updatedAt: serverTimestamp()
     });
-    await batch.commit();
-    return defaults;
+    return [fresh];
   }
 
-  // Consumed by persistConversation()/persistLastActive() in the classic script above.
-  window.conversationStore = { saveConversation, setLastActive, loadConversations, loadLastActive, seedIfEmpty };
+  /* ============================================================
+     SEARCH HISTORY — users/{uid}/searchHistory/{searchId}
+     Recorded once per question, using only whatever fields the existing
+     /api/chat response actually returns (see saveSearchHistoryEntry callers
+     in the classic script). Nothing here is invented — fields the backend
+     doesn't provide are stored as null rather than fabricated.
+  ============================================================ */
+  async function saveSearchHistoryEntry(uid, entry){
+    if(!uid || !entry) return;
+    try{
+      await addDoc(searchHistoryCol(uid), {
+        query: entry.query || '',
+        conversationId: entry.conversationId || null,
+        source: entry.source || null,
+        fallback: Boolean(entry.fallback),
+        topic: entry.topic ?? null,
+        score: entry.score ?? null,
+        answerPreview: entry.answerPreview || null,
+        timestamp: serverTimestamp()
+      });
+    }catch(err){
+      console.error('Personal AI: failed to save search history entry', err);
+    }
+  }
+
+  /* ============================================================
+     MEMORIES — users/{uid}/memories/{memoryId}
+  ============================================================ */
+  async function loadMemories(uid){
+    try{
+      const snap = await getDocs(query(memoriesCol(uid), orderBy('createdAt', 'desc')));
+      const list = [];
+      snap.forEach(d=>{
+        const data = d.data();
+        list.push({
+          id: d.id,
+          text: data.text || '',
+          createdAt: data.createdAt && typeof data.createdAt.toMillis === 'function' ? data.createdAt.toMillis() : (data.createdAt || Date.now())
+        });
+      });
+      return list;
+    }catch(err){
+      console.error('Personal AI: failed to load memories', err);
+      return [];
+    }
+  }
+  async function addMemory(uid, text){
+    if(!uid || !text) return null;
+    try{
+      const ref = await addDoc(memoriesCol(uid), { text, createdAt: serverTimestamp() });
+      return ref.id;
+    }catch(err){
+      console.error('Personal AI: failed to save memory', err);
+      return null;
+    }
+  }
+  async function deleteMemory(uid, memoryId){
+    if(!uid || !memoryId) return;
+    try{ await deleteDoc(doc(memoriesCol(uid), memoryId)); }
+    catch(err){ console.error('Personal AI: failed to delete memory', err); }
+  }
+  async function clearAllMemories(uid){
+    if(!uid) return;
+    try{
+      const snap = await getDocs(memoriesCol(uid));
+      const batch = writeBatch(db);
+      snap.forEach(d=> batch.delete(d.ref));
+      await batch.commit();
+    }catch(err){
+      console.error('Personal AI: failed to clear memories', err);
+    }
+  }
+  async function loadMemoryEnabled(uid){
+    try{
+      const snap = await getDoc(userDocRef(uid));
+      return snap.exists() && typeof snap.data().memoryEnabled === 'boolean' ? snap.data().memoryEnabled : true;
+    }catch(err){
+      return true;
+    }
+  }
+  async function setMemoryEnabled(uid, enabled){
+    if(!uid) return;
+    try{ await setDoc(userDocRef(uid), { memoryEnabled: Boolean(enabled) }, { merge: true }); }
+    catch(err){ console.error('Personal AI: failed to save memory setting', err); }
+  }
+
+  // Consumed by the classic script above.
+  window.conversationStore = { saveConversation, setLastActive, loadConversations, loadLastActive, ensureAtLeastOneConversation };
+  window.searchHistoryStore = { saveSearchHistoryEntry };
+  window.memoryStore = { loadMemories, addMemory, deleteMemory, clearAllMemories, loadMemoryEnabled, setMemoryEnabled };
+
+  function clearUserProfileUI(){
+    const avatarSidebar = document.getElementById('userAvatar');
+    const avatarSettings = document.getElementById('settingsAvatar');
+    [avatarSidebar, avatarSettings].forEach(el=>{ if(el){ el.style.backgroundImage=''; el.textContent=''; } });
+    const nameSidebar = document.getElementById('userName'); if(nameSidebar) nameSidebar.textContent = '';
+    const emailSidebar = document.getElementById('userEmail'); if(emailSidebar) emailSidebar.textContent = '';
+    const nameSettings = document.getElementById('settingsUserName'); if(nameSettings) nameSettings.textContent = '';
+    const emailSettings = document.getElementById('settingsUserEmail'); if(emailSettings) emailSettings.textContent = '';
+  }
 
   // Single source of truth for which screen is visible — fires on load (restoring a
-  // persisted session) and on every future sign-in/sign-out.
+  // persisted session) and on every future sign-in/sign-out. Nothing in this file shows
+  // #app, a name, an avatar, or any conversation until THIS callback has fired with a
+  // real Firebase user — there is no hardcoded identity left anywhere to fall back to.
   onAuthStateChanged(auth, (user)=>{
     if(user){
       state.currentUid = user.uid;
-      renderUserProfile(user);
+      renderUserProfile(user); // always the live, currently-authenticated user — never a cached/previous one
       document.getElementById('login')?.classList.remove('show');
       document.getElementById('app')?.classList.add('show');
 
-      seedIfEmpty(user.uid, DEFAULT_CONVERSATIONS)
+      ensureAtLeastOneConversation(user.uid)
         .then(convs=>{
-          state.conversations = convs.length ? convs : DEFAULT_CONVERSATIONS;
+          state.conversations = convs;
           return loadLastActive(user.uid);
         })
         .then(lastId=>{
@@ -1682,13 +2020,20 @@ syncAiModeSettingsSeg();
           if(typeof renderConvList === 'function') renderConvList();
         });
 
+      if(typeof refreshMemoriesFromStore === 'function') refreshMemoriesFromStore();
+
     } else {
-      // Reset in-memory conversation state immediately so a different account signing
-      // in afterwards on this browser never sees the previous account's history.
+      // Fully clear this browser's in-memory profile, conversation, and memory state
+      // immediately — before the login screen is even shown — so a different account
+      // signing in afterwards on this device never sees any trace of the previous one.
       state.currentUid = null;
       state.conversations = [];
       state.activeId = null;
+      state.memories = [];
+      state.memoryEnabled = true;
+      clearUserProfileUI();
       if(typeof renderConvList === 'function') renderConvList();
+      if(typeof renderMemories === 'function') renderMemories();
 
       document.getElementById('app')?.classList.remove('show');
       document.getElementById('login')?.classList.add('show');
