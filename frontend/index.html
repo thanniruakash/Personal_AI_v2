@@ -522,6 +522,21 @@ input,textarea{font-family:inherit; color:inherit;}
 @media (min-width: 1400px){
   #chatInner, #composer{ max-width:900px; }
 }
+
+/* ===== Functional UI polish ===== */
+#loginError{line-height:1.45;}
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;}
+#chatScroll{scroll-behavior:smooth;}
+.msg.ai .avatar-sm::after{content:'✦';font-size:12px;color:#fff;}
+@media (max-width:860px){
+  #topbar{min-height:56px;padding:10px 12px;}
+  #modePill{margin-left:auto;}
+  #chatScroll{padding-top:12px;}
+  .empty-state{padding-top:8px;padding-bottom:8px;}
+  .empty-state .centered-composer-slot{max-width:100%;}
+  #composer{padding:8px 8px 8px 10px;}
+  #msgInput{font-size:15px;}
+}
 </style>
 </head>
 <body>
@@ -792,6 +807,7 @@ const state = {
   generating: false,
   genToken: 0,
   genTimers: [],
+  abortController: null,
   aiMode: 'auto', // 'auto' | 'local' | 'gemini' — persists for the session only, resets on reload
   attachedFiles: [],
   uploadedAll: [],
@@ -1410,7 +1426,13 @@ function sendMessage(){
   const input = document.getElementById('msgInput');
   const text = input.value.trim();
   if(!text) return; // guard: never send an empty message
-  const conv = activeConv();
+  let conv = activeConv();
+  if(!conv){
+    const id = 'c'+Date.now();
+    conv = {id, title:'New Chat', createdAt: Date.now(), messages:[]};
+    state.conversations.unshift(conv);
+    state.activeId = id;
+  }
   conv.messages.push({role:'user', text, timestamp: Date.now()});
   if(conv.title==='New Chat') conv.title = generateTitleFromText(text);
   input.value=''; autoGrow(input); updateSendAvailability();
@@ -1421,14 +1443,23 @@ function sendMessage(){
   generateReply(text);
 }
 
+window.sendMessage = sendMessage;
+window.stopGeneration = stopGeneration;
+
 function stopGeneration(){
   state.generating = false;
-  state.genToken++; // invalidates any in-flight timeouts so they no-op even after this returns
+  state.genToken++; // invalidate any in-flight response
   (state.genTimers||[]).forEach(t=>clearTimeout(t));
   state.genTimers = [];
+  if(state.abortController){
+    try{ state.abortController.abort(); }catch(_){ }
+    state.abortController = null;
+  }
   const conv = activeConv();
-  const idx = conv.messages.findIndex(m=>m.role==='typing');
-  if(idx>-1) conv.messages.splice(idx,1);
+  if(conv){
+    const idx = conv.messages.findIndex(m=>m.role==='typing');
+    if(idx>-1) conv.messages.splice(idx,1);
+  }
   setSendState(false);
   renderMessages();
 }
@@ -1478,10 +1509,12 @@ async function generateReply(userText){
       window.PERSONAL_AI_API_URL ||
       'https://personal-ai-v2-lddx.onrender.com';
 
+    state.abortController = new AbortController();
     const response = await fetch(
       `${API_URL}/api/chat`,
       {
         method:'POST',
+        signal: state.abortController.signal,
         headers:{
           'Content-Type':'application/json'
         },
@@ -1497,6 +1530,7 @@ async function generateReply(userText){
     }
 
     const data = await response.json();
+    if(state.abortController) state.abortController = null;
 
     if(token !== state.genToken) return;
 
@@ -1538,38 +1572,39 @@ async function generateReply(userText){
     });
 
   }catch(err){
-
+    if(state.abortController) state.abortController = null;
     if(token !== state.genToken) return;
 
-    const idx = conv.messages.findIndex(
-      m => m.role === 'typing'
-    );
+    const idx = conv.messages.findIndex(m => m.role === 'typing');
+    if(idx === -1) return;
 
-    if(idx !== -1){
+    // Keep the app useful even when the hosted API is temporarily unreachable.
+    // Only use the tiny client-side KB for an exact local match; otherwise show a clear error.
+    const localAnswer = state.aiMode !== 'gemini' ? matchLocal(userText) : null;
+    if(localAnswer){
       conv.messages[idx] = {
-        role:'ai',
-        text:`⚠️ I couldn't connect to the Personal AI backend.
-
-Please make sure the API server is running.`,
-        source:'local',
-        time:'Error',
-        timestamp: Date.now()
+        role:'ai', text:localAnswer, source:'local', fallback:false,
+        time:'Offline fallback', timestamp:Date.now(),
+        searchInfo:{topic:null,score:null,source:'local',fallback:false}
       };
+      setSendState(false);
+      renderMessages();
+      persistConversation(conv);
+      persistSearchHistory({query:userText,conversationId:conv.id,source:'local',fallback:false,topic:null,score:null,answerPreview:localAnswer.slice(0,200)});
+      return;
     }
 
+    conv.messages[idx] = {
+      role:'error',
+      text:"I couldn't connect to the Personal AI backend. Please check that the API server is running and try again."
+    };
     setSendState(false);
     renderMessages();
     persistConversation(conv);
     persistSearchHistory({
-      query: userText,
-      conversationId: conv.id,
-      source: 'error',
-      fallback: false,
-      topic: null,
-      score: null,
-      answerPreview: null
+      query:userText, conversationId:conv.id, source:'error', fallback:false,
+      topic:null, score:null, answerPreview:null
     });
-
     console.error('Personal AI API error:', err);
   }
 }
@@ -1669,18 +1704,45 @@ window.addEventListener('drop', e=>{
 ============================================================ */
 function toggleMic(){
   const btn = document.getElementById('micBtn');
-  const recording = btn.classList.toggle('recording');
   const input = document.getElementById('msgInput');
-  if(recording){
-    input.placeholder = 'Listening…';
-    state.micTimer = setTimeout(()=>{
-      btn.classList.remove('recording');
-      input.placeholder = 'Ask Personal AI anything...';
-    }, 2200);
-  } else {
-    clearTimeout(state.micTimer);
-    input.placeholder = 'Ask Personal AI anything...';
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if(!SpeechRecognition){
+    input.placeholder = 'Voice input is not supported here';
+    setTimeout(()=>{ input.placeholder='Ask Personal AI anything...'; }, 1800);
+    return;
   }
+
+  if(state.recognition){
+    state.recognition.stop();
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+  state.recognition = recognition;
+  recognition.lang = navigator.language || 'en-IN';
+  recognition.interimResults = true;
+  recognition.continuous = false;
+  let base = input.value.trim();
+
+  recognition.onstart = ()=>{
+    btn.classList.add('recording');
+    input.placeholder = 'Listening…';
+  };
+  recognition.onresult = e=>{
+    let transcript = '';
+    for(let i=e.resultIndex;i<e.results.length;i++) transcript += e.results[i][0].transcript;
+    input.value = (base ? base + ' ' : '') + transcript.trim();
+    autoGrow(input);
+    updateSendAvailability();
+  };
+  recognition.onerror = ()=>{};
+  recognition.onend = ()=>{
+    btn.classList.remove('recording');
+    input.placeholder = 'Ask Personal AI anything...';
+    state.recognition = null;
+  };
+  recognition.start();
 }
 
 /* ============================================================
@@ -1703,6 +1765,34 @@ renderCtxPanel();
 updateSendAvailability();
 renderModePill();
 syncAiModeSettingsSeg();
+</script>
+
+<script>
+/* Reliable mobile composer wiring */
+(function(){
+  function wireComposer(){
+    const input=document.getElementById('msgInput');
+    const btn=document.getElementById('sendBtn');
+    if(!input || !btn || btn.dataset.composerWired==='1') return;
+    btn.dataset.composerWired='1';
+    input.addEventListener('input', function(){
+      try { updateSendAvailability(); } catch(_) {}
+    });
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      const text=(input.value||'').trim();
+      if(!text && !state.generating) return;
+      try { window.sendMessage(); } catch(err) {
+        console.error('Personal AI send error:', err);
+        try { setSendState(false); } catch(_) {}
+      }
+    }, true);
+    try { updateSendAvailability(); } catch(_) {}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', wireComposer);
+  else wireComposer();
+})();
 </script>
 
 <!-- ============================================================
@@ -2003,23 +2093,40 @@ syncAiModeSettingsSeg();
       document.getElementById('login')?.classList.remove('show');
       document.getElementById('app')?.classList.add('show');
 
+      // Give the UI a usable chat immediately. Firestore loading is asynchronous and may fail
+      // because of rules/network/index issues; that must never leave the main chat area blank.
+      const bootId = 'c'+Date.now()+'-'+Math.random().toString(36).slice(2,7);
+      const bootConv = {id:bootId, title:'New Chat', group:'Today', createdAt:Date.now(), messages:[]};
+      state.conversations = [bootConv];
+      state.activeId = bootId;
+      document.getElementById('topbarTitle').textContent = 'New Chat';
+      renderConvList();
+      renderMessages();
+      persistConversation(bootConv);
+      persistLastActive(bootId);
+
       ensureAtLeastOneConversation(user.uid)
         .then(convs=>{
-          state.conversations = convs;
+          if(Array.isArray(convs) && convs.length) state.conversations = convs;
           return loadLastActive(user.uid);
         })
         .then(lastId=>{
           const validLast = lastId && state.conversations.some(c=>c.id===lastId);
           const targetId = validLast ? lastId : (state.conversations[0] && state.conversations[0].id);
-          if(targetId && typeof switchConversation === 'function'){
-            switchConversation(targetId);
-          } else if(typeof renderConvList === 'function'){
+          if(targetId){
+            state.activeId = targetId;
+            const c = activeConv();
+            document.getElementById('topbarTitle').textContent = c?.title || 'New Chat';
             renderConvList();
+            renderMessages();
           }
         })
         .catch(err=>{
-          console.error('Personal AI: failed to load conversation history', err);
-          if(typeof renderConvList === 'function') renderConvList();
+          console.error('Personal AI: Firestore conversation load failed; keeping local chat', err);
+          state.conversations = state.conversations.length ? state.conversations : [bootConv];
+          state.activeId = state.activeId || bootConv.id;
+          renderConvList();
+          renderMessages();
         });
 
       if(typeof refreshMemoriesFromStore === 'function') refreshMemoriesFromStore();
