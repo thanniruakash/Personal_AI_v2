@@ -792,6 +792,7 @@ const state = {
   generating: false,
   genToken: 0,
   genTimers: [],
+  abortController: null,
   aiMode: 'auto', // 'auto' | 'local' | 'gemini' — persists for the session only, resets on reload
   attachedFiles: [],
   uploadedAll: [],
@@ -1455,14 +1456,19 @@ function sendMessage(){
 
 function stopGeneration(){
   state.generating = false;
-  state.genToken++; // invalidates any in-flight timeouts so they no-op even after this returns
+  state.genToken++;
   (state.genTimers||[]).forEach(t=>clearTimeout(t));
   state.genTimers = [];
+  if(state.abortController){
+    try{ state.abortController.abort(); }catch(e){}
+    state.abortController = null;
+  }
   const conv = activeConv();
   const idx = conv.messages.findIndex(m=>m.role==='typing');
   if(idx>-1) conv.messages.splice(idx,1);
   setSendState(false);
   renderMessages();
+  persistConversation(conv);
 }
 function setSendState(generating){
   state.generating = generating;
@@ -1495,6 +1501,7 @@ async function generateReply(userText){
   const token = ++state.genToken;
 
   state.genTimers = [];
+  state.abortController = new AbortController();
   setSendState(true);
 
   conv.messages.push({
@@ -1502,113 +1509,221 @@ async function generateReply(userText){
     label:'Thinking...',
     source: state.aiMode === 'gemini' ? 'gemini' : 'local'
   });
-
   renderMessages();
 
-  try{
-    const API_URL =
-      window.PERSONAL_AI_API_URL ||
-      'https://personal-ai-v2-lddx.onrender.com';
-
-    const response = await fetch(
-      `${API_URL}/api/chat`,
-      {
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-          message:userText,
-          mode:state.aiMode
-        })
-      }
-    );
-
-    if(!response.ok){
-      throw new Error(`API error: ${response.status}`);
+  // Send the previous turns for real conversational context. The current user
+  // question is sent separately, so it is never duplicated in the prompt.
+  const messageIndex = (() => {
+    for(let i=conv.messages.length-1;i>=0;i--){
+      const m=conv.messages[i];
+      if(m.role==='user' && m.text===userText) return i;
     }
+    return -1;
+  })();
+  const history = conv.messages
+    .slice(0, messageIndex >= 0 ? messageIndex : conv.messages.length)
+    .filter(m => m.role==='user' || m.role==='ai')
+    .slice(-12)
+    .map(m => ({ role:m.role, text:m.text || '' }));
 
-    const data = await response.json();
+  try{
+    const API_URL = window.PERSONAL_AI_API_URL || 'https://personal-ai-v2-lddx.onrender.com';
+    const response = await fetch(`${API_URL}/api/chat`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'text/event-stream, application/json'},
+      signal: state.abortController.signal,
+      body:JSON.stringify({
+        message:userText,
+        mode:state.aiMode,
+        conversation_id:conv.id,
+        history
+      })
+    });
 
+    if(!response.ok) throw new Error(`API error: ${response.status}`);
     if(token !== state.genToken) return;
 
-    const idx = conv.messages.findIndex(
-      m => m.role === 'typing'
-    );
-
+    const idx = conv.messages.findIndex(m => m.role==='typing');
     if(idx === -1) return;
 
-    conv.messages[idx] = {
-      role:'ai',
-      text:data.answer || 'No answer received.',
-      source:data.source || 'local',
-      fallback:Boolean(data.fallback),
-      time:data.source === 'gemini' ? 'Gemini' : 'Local',
-      timestamp: Date.now(),
-      // Preserves whatever evidence/search metadata the backend actually returned —
-      // nothing here is invented. See generateReply's comment below for what
-      // additional fields the backend could add for richer evidence tracking.
-      searchInfo: {
-        topic: data.topic ?? null,
-        score: data.score ?? null,
-        source: data.source || null,
-        fallback: Boolean(data.fallback)
+    const contentType = (response.headers.get('content-type') || '').toLowerCase();
+
+    // Local answers and emergency fallbacks remain normal JSON.
+    if(!contentType.includes('text/event-stream')){
+      const data = await response.json();
+      if(token !== state.genToken) return;
+      conv.messages[idx] = {
+        role:'ai',
+        text:data.answer || 'No answer received.',
+        source:data.source || 'local',
+        fallback:Boolean(data.fallback),
+        time:data.source === 'gemini' ? 'Gemini' : 'Local',
+        timestamp:Date.now(),
+        searchInfo:{
+          topic:data.topic ?? null,
+          score:data.score ?? data.local_score ?? null,
+          source:data.source || null,
+          fallback:Boolean(data.fallback),
+          evidence:Array.isArray(data.evidence) ? data.evidence : []
+        }
+      };
+      setSendState(false);
+      state.abortController = null;
+      renderMessages();
+      persistConversation(conv);
+      persistSearchHistory({
+        query:userText,
+        conversationId:conv.id,
+        source:data.source || null,
+        fallback:Boolean(data.fallback),
+        topic:data.topic ?? data.local_topic ?? null,
+        score:data.score ?? data.local_score ?? null,
+        answerPreview:(data.answer || '').slice(0,200)
+      });
+      return;
+    }
+
+    // Real SSE streaming from Gemini. The first chunk turns the typing row into
+    // a normal AI bubble; later chunks are appended to the same message.
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let fullText = '';
+    let meta = {};
+    let finished = false;
+
+    const applyEvent = (rawEvent) => {
+      const lines = rawEvent.split(/\r?\n/);
+      let eventName = 'message';
+      let dataText = '';
+      for(const line of lines){
+        if(line.startsWith('event:')) eventName = line.slice(6).trim();
+        else if(line.startsWith('data:')) dataText += line.slice(5).trim();
+      }
+      if(!dataText) return;
+
+      let data;
+      try{ data = JSON.parse(dataText); }catch(e){ return; }
+
+      if(eventName==='meta'){
+        meta = {...meta, ...data};
+        return;
+      }
+      if(eventName==='chunk'){
+        if(!data.text) return;
+        fullText += data.text;
+        if(conv.messages[idx].role==='typing'){
+          conv.messages[idx] = {
+            role:'ai',
+            text:fullText,
+            source:meta.source || 'gemini',
+            fallback:Boolean(meta.fallback),
+            time:'Gemini',
+            timestamp:Date.now(),
+            searchInfo:{
+              topic:meta.local_topic ?? null,
+              score:meta.local_score ?? null,
+              source:meta.source || 'gemini',
+              fallback:Boolean(meta.fallback),
+              evidence:[]
+            }
+          };
+        }else{
+          conv.messages[idx].text = fullText;
+        }
+        renderMessages();
+        return;
+      }
+      if(eventName==='done'){
+        finished = true;
+        if(data.answer) fullText = data.answer;
+        conv.messages[idx] = {
+          role:'ai',
+          text:fullText || 'No answer received.',
+          source:data.source || meta.source || 'gemini',
+          fallback:Boolean(data.fallback ?? meta.fallback),
+          time:(data.source || meta.source)==='local' ? 'Local' : 'Gemini',
+          timestamp:Date.now(),
+          searchInfo:{
+            topic:data.topic ?? data.local_topic ?? meta.local_topic ?? null,
+            score:data.score ?? data.local_score ?? meta.local_score ?? null,
+            source:data.source || meta.source || null,
+            fallback:Boolean(data.fallback ?? meta.fallback),
+            evidence:Array.isArray(data.evidence) ? data.evidence : []
+          }
+        };
+        return;
+      }
+      if(eventName==='error'){
+        finished = true;
+        throw new Error(data.message || 'Streaming failed');
       }
     };
 
-    setSendState(false);
-    renderMessages();
-    persistConversation(conv);
-    persistSearchHistory({
-      query: userText,
-      conversationId: conv.id,
-      source: data.source || null,
-      fallback: Boolean(data.fallback),
-      topic: data.topic ?? null,
-      score: data.score ?? null,
-      answerPreview: (data.answer || '').slice(0, 200)
-    });
-
-  }catch(err){
+    while(true){
+      const {value, done} = await reader.read();
+      if(done) break;
+      buffer += decoder.decode(value,{stream:true});
+      const parts = buffer.split(/\r?\n\r?\n/);
+      buffer = parts.pop() || '';
+      for(const part of parts){
+        applyEvent(part);
+        if(token !== state.genToken) return;
+      }
+    }
+    buffer += decoder.decode();
+    if(buffer.trim()) applyEvent(buffer);
 
     if(token !== state.genToken) return;
-
-    const idx = conv.messages.findIndex(
-      m => m.role === 'typing'
-    );
-
-    if(idx !== -1){
+    if(!finished && fullText){
       conv.messages[idx] = {
-        role:'ai',
-        text:`⚠️ I couldn't connect to the Personal AI backend.
-
-Please make sure the API server is running.`,
-        source:'local',
-        time:'Error',
-        timestamp: Date.now()
+        role:'ai', text:fullText, source:meta.source || 'gemini',
+        fallback:Boolean(meta.fallback), time:'Gemini', timestamp:Date.now(),
+        searchInfo:{topic:meta.local_topic ?? null, score:meta.local_score ?? null,
+          source:meta.source || 'gemini', fallback:Boolean(meta.fallback), evidence:[]}
       };
     }
 
+    if(!fullText) throw new Error('No answer received.');
+
     setSendState(false);
+    state.abortController = null;
     renderMessages();
     persistConversation(conv);
     persistSearchHistory({
-      query: userText,
-      conversationId: conv.id,
-      source: 'error',
-      fallback: false,
-      topic: null,
-      score: null,
-      answerPreview: null
+      query:userText,
+      conversationId:conv.id,
+      source:conv.messages[idx].source || null,
+      fallback:Boolean(conv.messages[idx].fallback),
+      topic:conv.messages[idx].searchInfo?.topic ?? null,
+      score:conv.messages[idx].searchInfo?.score ?? null,
+      answerPreview:fullText.slice(0,200)
     });
 
+  }catch(err){
+    if(err?.name==='AbortError' || token !== state.genToken) return;
+
+    const idx = conv.messages.findIndex(m => m.role==='typing');
+    if(idx !== -1){
+      conv.messages[idx] = {
+        role:'error',
+        text:"I couldn't generate an answer right now. Please try again.",
+        timestamp:Date.now()
+      };
+    }
+    setSendState(false);
+    state.abortController = null;
+    renderMessages();
+    persistConversation(conv);
+    persistSearchHistory({
+      query:userText, conversationId:conv.id, source:'error', fallback:false,
+      topic:null, score:null, answerPreview:null
+    });
     console.error('Personal AI API error:', err);
   }
 }
 
-function geminiMock(q){
-  return `Here's a clear answer to "**${q}**":\n\nThis wasn't a strong match in your local knowledge base, so I routed it through Gemini. In a real deployment, this response would come from the rotating Gemini API keys on your Personal_AI_v2 backend, formatted and returned here.\n\n- Local-first, cloud-fallback keeps answers fast and private\n- Weak matches are rejected rather than guessed`;
-}
+function geminiMock(q){ return ''; }
 
 function regenerate(i){
   const conv = activeConv();
