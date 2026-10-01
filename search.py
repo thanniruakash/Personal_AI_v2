@@ -1,595 +1,863 @@
-import json
+
 import re
-from pathlib import Path
+import math
+from collections import defaultdict, Counter
+from difflib import SequenceMatcher
 
 
 class KnowledgeSearch:
-    """
-    Strict local knowledge search.
 
-    Searches every supported file recursively inside:
-        knowledge/
-        intents/
-
-    New knowledge files are automatically detected.
-    """
-
-    SUPPORTED = {
-        ".json",
-        ".txt",
-        ".md",
-        ".csv",
-        ".yaml",
-        ".yml",
-    }
-
+    # Common words which should not dominate retrieval.
     STOP_WORDS = {
-        "a", "an", "the",
-        "is", "are", "am", "was", "were", "be", "been",
-        "to", "of", "in", "on", "at", "for", "from", "with",
-        "and", "or", "but",
-        "can", "could", "would", "should", "will",
-        "do", "does", "did",
-        "i", "me", "my", "you", "your",
-        "we", "our", "they", "their", "it",
-        "this", "that", "these", "those",
-        "what", "why", "when", "where", "who", "which", "how",
-        "tell", "give", "show", "explain", "about", "please",
-        "define", "meaning",
+        "what", "is", "a", "an", "the",
+        "are", "was", "were", "who",
+        "how", "why", "when", "where",
+        "does", "do", "can", "could",
+        "would", "should",
+        "for", "to", "in", "on", "of",
+        "from", "with", "by",
+        "explain", "tell", "about",
+        "please", "me",
+        "difference", "between",
+        "and", "or",
+        "vs", "versus",
+        "give", "define",
+        "definition", "describe"
     }
 
-    def __init__(self, folder="knowledge"):
-        self.folder = Path(folder)
+    NORMALIZATION = {
+        "variables": "variable",
+        "functions": "function",
+        "structures": "structure",
+        "arrays": "array",
+        "pointers": "pointer",
+        "operators": "operator",
+        "constants": "constant",
+        "strings": "string",
+        "loops": "loop",
+        "classes": "class",
+        "objects": "object",
+        "methods": "method",
+        "arguments": "argument",
+        "parameters": "parameter",
+        "programs": "program",
+        "databases": "database",
+        "networks": "network",
+        "computers": "computer",
+        "systems": "system",
+        "applications": "application",
+        "advantages": "advantage",
+        "disadvantages": "disadvantage",
+        "features": "feature",
+        "types": "type",
+        "processes": "process",
+        "cycles": "cycle",
+        "ecosystems": "ecosystem",
+        "species": "species",
+        "threats": "threat",
+    }
 
-        # Search both knowledge and intents.
-        self.roots = [
-            self.folder,
-            Path("intents")
-        ]
+    LANGUAGE_ALIASES = {
+        "c": {"c", "c programming", "c language", "c programming language"},
+        "python": {"python", "python programming"},
+        "java": {"java", "java programming", "java language"},
+        "javascript": {"javascript", "js"},
+        "typescript": {"typescript", "ts"},
+        "html": {"html"},
+        "css": {"css"},
+        "sql": {"sql"},
+        "php": {"php"},
+        "c++": {"c++", "cpp"},
+        "c#": {"c#", "csharp"},
+    }
 
-    # ---------------------------------------------------------
-    # TOKENIZER
-    # ---------------------------------------------------------
+    LANGUAGE_PATTERNS = [
+        ("javascript", r"\bjavascript\b|\bjs\b"),
+        ("typescript", r"\btypescript\b|\bts\b"),
+        ("python", r"\bpython\b"),
+        ("java", r"\bjava\b"),
+        ("html", r"\bhtml\b"),
+        ("css", r"\bcss\b"),
+        ("sql", r"\bsql\b"),
+        ("php", r"\bphp\b"),
+        ("c++", r"\bc\+\+\b|\bcpp\b"),
+        ("c#", r"\bc#\b|\bcsharp\b"),
+    ]
 
-    def _tokens(self, text):
-        text = str(text).lower()
+    def __init__(self, knowledge):
+        self.knowledge = knowledge
 
-        # Keeps programming terms such as:
-        # c
-        # c++
-        # c#
-        # dbms
-        # oop
-        raw = re.findall(
-            r"[a-z0-9]+(?:\+\+|#)?",
-            text
+        self.topic_index = []
+        self.word_index = defaultdict(set)
+        self.topic_exact_index = defaultdict(set)
+
+        # Document-frequency statistics for BM25-like scoring.
+        self.document_frequency = Counter()
+        self.total_documents = 0
+
+        # Learn extra safe singular/plural pairs directly from this knowledge
+        # base's own vocabulary (e.g. "exception" <-> "exceptions") before
+        # building the index, so topic-overlap/coverage scoring treats them as
+        # the same concept. Must run before _build_index(), since indexing and
+        # querying both normalize words through _normalize_word().
+        self._auto_normalization = self._discover_auto_plurals()
+
+        self._build_index()
+
+    # ========================================================
+    # TEXT PROCESSING
+    # ========================================================
+
+    def _words(self, text):
+        return re.findall(
+            r"[a-zA-Z0-9]+(?:\+\+|#)?",
+            str(text).lower()
         )
 
-        return {
-            token
-            for token in raw
-            if token not in self.STOP_WORDS
-        }
-
-    # ---------------------------------------------------------
-    # CLEAN DATA
-    # ---------------------------------------------------------
-
-    def _clean(self, value):
-
-        if value is None:
-            return ""
-
-        if isinstance(value, (dict, list)):
-            return json.dumps(
-                value,
-                ensure_ascii=False
-            )
-
-        return str(value)
-
-    # ---------------------------------------------------------
-    # CREATE SEARCH CANDIDATE
-    # ---------------------------------------------------------
-
-    def _make_candidate(
-        self,
-        context,
-        answer,
-        source
-    ):
-
-        context = self._clean(context).strip()
-        answer = self._clean(answer).strip()
-
-        if not context or not answer:
-            return None
-
-        return {
-            "text": context,
-            "answer": answer,
-            "source": source
-        }
-
-    # ---------------------------------------------------------
-    # READ JSON
-    # ---------------------------------------------------------
-
-    def _extract_json_candidates(
-        self,
-        data,
-        source,
-        context=""
-    ):
-
-        candidates = []
-
-        # -----------------------------
-        # DICTIONARY
-        # -----------------------------
-
-        if isinstance(data, dict):
-
-            # Handle intent JSON files.
-            if isinstance(
-                data.get("intents"),
-                list
-            ):
-
-                for intent in data["intents"]:
-
-                    if not isinstance(
-                        intent,
-                        dict
-                    ):
-                        continue
-
-                    patterns = intent.get(
-                        "patterns",
-                        []
-                    )
-
-                    responses = intent.get(
-                        "responses",
-                        []
-                    )
-
-                    if not isinstance(
-                        patterns,
-                        list
-                    ):
-                        patterns = [patterns]
-
-                    if not isinstance(
-                        responses,
-                        list
-                    ):
-                        responses = [responses]
-
-                    for pattern in patterns:
-
-                        for response in responses:
-
-                            candidate = self._make_candidate(
-                                f"{context} {pattern}",
-                                response,
-                                source
-                            )
-
-                            if candidate:
-                                candidates.append(
-                                    candidate
-                                )
-
-                return candidates
-
-            # -----------------------------
-            # NORMAL QUESTION / ANSWER JSON
-            # -----------------------------
-
-            question_keys = [
-                "question",
-                "query",
-                "pattern",
-                "title",
-                "name",
-                "topic"
-            ]
-
-            answer_keys = [
-                "answer",
-                "response",
-                "content",
-                "text",
-                "description",
-                "definition",
-                "explanation",
-                "solution",
-                "result"
-            ]
-
-            question_parts = []
-            answer_parts = []
-
-            for key in question_keys:
-
-                if key in data:
-
-                    value = data[key]
-
-                    if isinstance(
-                        value,
-                        (str, int, float)
-                    ):
-                        question_parts.append(
-                            str(value)
-                        )
-
-            for key in answer_keys:
-
-                if key in data:
-
-                    value = data[key]
-
-                    if isinstance(
-                        value,
-                        (str, int, float)
-                    ):
-                        answer_parts.append(
-                            str(value)
-                        )
-
-            if question_parts and answer_parts:
-
-                candidate = self._make_candidate(
-                    f"{context} {' '.join(question_parts)}",
-                    "\n".join(answer_parts),
-                    source
-                )
-
-                if candidate:
-                    candidates.append(
-                        candidate
-                    )
-
-            # -----------------------------
-            # SEARCH EVERY OTHER FIELD
-            # -----------------------------
-
-            for key, value in data.items():
-
-                if key in question_keys:
-                    continue
-
-                if key in answer_keys:
-                    continue
-
-                new_context = (
-                    f"{context} {key}"
-                ).strip()
-
-                if isinstance(
-                    value,
-                    (
-                        str,
-                        int,
-                        float,
-                        bool
-                    )
-                ):
-
-                    candidate = self._make_candidate(
-                        new_context,
-                        value,
-                        source
-                    )
-
-                    if candidate:
-                        candidates.append(
-                            candidate
-                        )
-
-                else:
-
-                    candidates.extend(
-                        self._extract_json_candidates(
-                            value,
-                            source,
-                            new_context
-                        )
-                    )
-
-        # -----------------------------
-        # LIST
-        # -----------------------------
-
-        elif isinstance(data, list):
-
-            for index, item in enumerate(data):
-
-                candidates.extend(
-                    self._extract_json_candidates(
-                        item,
-                        source,
-                        f"{context} item{index}"
-                    )
-                )
-
-        return candidates
-
-    # ---------------------------------------------------------
-    # LOAD ONE FILE
-    # ---------------------------------------------------------
-
-    def _load_file(self, path):
-
-        try:
-
-            # JSON
-            if path.suffix.lower() == ".json":
-
-                with path.open(
-                    "r",
-                    encoding="utf-8"
-                ) as f:
-
-                    data = json.load(f)
-
-                return self._extract_json_candidates(
-                    data,
-                    str(path),
-                    path.stem
-                )
-
-            # TEXT / MARKDOWN / CSV / YAML
-            with path.open(
-                "r",
-                encoding="utf-8",
-                errors="ignore"
-            ) as f:
-
-                text = f.read()
-
-            candidate = self._make_candidate(
-                f"{path.stem} {text}",
-                text,
-                str(path)
-            )
-
-            if candidate:
-                return [candidate]
-
-            return []
-
-        except Exception as error:
-
-            print(
-                f"[KnowledgeSearch] Skipped {path}: {error}"
-            )
-
-            return []
-
-    # ---------------------------------------------------------
-    # COLLECT EVERYTHING
-    # ---------------------------------------------------------
-
-    def _collect_candidates(self):
-
-        candidates = []
-        seen = set()
-
-        for root in self.roots:
-
-            if not root.exists():
+    def _discover_auto_plurals(self):
+        """
+        Safely extends NORMALIZATION with singular/plural pairs that actually
+        occur in this knowledge base, instead of guessing with a blind
+        stemming rule. A plural candidate (e.g. "exceptions") is only folded
+        into its singular form ("exception") if that singular form is ALSO a
+        real word that independently appears somewhere in the knowledge base.
+        This is what keeps it safe: an acronym or naturally s-ending word
+        (e.g. "dbms", "ddos", "class", "bias", "status") never has a matching
+        "singular" counterpart in the corpus, so it is left untouched.
+        """
+        raw_words = set()
+
+        for item in self.knowledge:
+            if not isinstance(item, dict):
                 continue
 
-            # RECURSIVE SEARCH
-            for path in root.rglob("*"):
+            topics = item.get("topics", [])
+            if not isinstance(topics, list):
+                continue
 
-                if not path.is_file():
+            for topic in topics:
+                if not isinstance(topic, dict):
                     continue
 
-                if path.suffix.lower() not in self.SUPPORTED:
-                    continue
+                text = self._text({
+                    "subject": item.get("subject", ""),
+                    "section": item.get("section", ""),
+                    "topic": topic.get("topic", ""),
+                    "definition": topic.get("definition", ""),
+                    "syntax": topic.get("syntax", ""),
+                    "example": topic.get("example", ""),
+                    "output": topic.get("output", ""),
+                    "tips": topic.get("tips", []),
+                })
 
-                # Ignore Python cache / Git files.
-                if any(
-                    part in {
-                        ".git",
-                        "__pycache__",
-                        "venv",
-                        ".venv"
-                    }
-                    for part in path.parts
-                ):
-                    continue
+                raw_words.update(self._words(text))
 
-                path_string = str(path)
+        auto_map = {}
 
-                if path_string in seen:
-                    continue
+        for word in raw_words:
+            if word in self.NORMALIZATION:
+                continue
 
-                seen.add(path_string)
+            singular = None
 
-                candidates.extend(
-                    self._load_file(path)
-                )
+            if word.endswith("ies") and len(word) > 4:
+                singular = word[:-3] + "y"
+            elif word.endswith(("ses", "xes", "zes", "ches", "shes")) and len(word) > 4:
+                singular = word[:-2]
+            elif word.endswith("s") and not word.endswith("ss") and len(word) > 3:
+                singular = word[:-1]
 
-        return candidates
+            if singular and singular != word and singular in raw_words:
+                auto_map[word] = singular
 
-    # ---------------------------------------------------------
-    # SCORE
-    # ---------------------------------------------------------
+        return auto_map
 
-    def _score(
-        self,
-        query,
-        candidate
-    ):
+    def _normalize_word(self, word):
+        word = word.lower().strip()
+        if word in self.NORMALIZATION:
+            return self.NORMALIZATION[word]
+        return getattr(self, "_auto_normalization", {}).get(word, word)
 
-        query_tokens = self._tokens(
-            query
-        )
+    def _normalized_words(self, text):
+        return [
+            self._normalize_word(word)
+            for word in self._words(text)
+        ]
 
-        if not query_tokens:
-            return 0.0
+    def _clean_phrase(self, text):
+        words = self._normalized_words(text)
+        words = [
+            w for w in words
+            if w not in self.STOP_WORDS
+        ]
+        return " ".join(words)
 
-        text = candidate["text"].lower()
+    # ========================================================
+    # QUERY UNDERSTANDING
+    # ========================================================
 
-        document_tokens = self._tokens(
-            text
-        )
+    def _detect_language(self, query):
+        q = str(query).lower()
 
-        overlap = (
-            query_tokens &
-            document_tokens
-        )
+        # Explicit language mentions.
+        for language, pattern in self.LANGUAGE_PATTERNS:
+            if re.search(pattern, q):
+                return language
 
-        if not overlap:
-            return 0.0
+        # Standalone C requires special handling.
+        if re.search(r"\bwhat\s+is\s+c\b", q):
+            return "c"
 
-        coverage = (
-            len(overlap) /
-            len(query_tokens)
-        )
-
-        score = coverage
-
-        # Exact phrase bonus.
-        normalized_query = (
-            " ".join(
-                str(query).lower().split()
-            )
-        )
-
-        normalized_text = (
-            " ".join(text.split())
-        )
-
-        if normalized_query in normalized_text:
-            score += 1.0
-
-        # All meaningful words bonus.
-        if all(
-            token in document_tokens
-            for token in query_tokens
+        if re.search(
+            r"\bin\s+c\b|"
+            r"\bof\s+c\b|"
+            r"\bc\s+programming\b|"
+            r"\bc\s+language\b|"
+            r"\bc\s+code\b",
+            q
         ):
-            score += 0.25
+            return "c"
 
-        # Small filename bonus.
-        source_tokens = self._tokens(
-            candidate["source"]
+        return None
+
+    def _query_type(self, query):
+        q = str(query).lower().strip()
+
+        if re.search(
+            r"\bwhat\s+is\b|\bdefine\b|\bdefinition\b",
+            q
+        ):
+            return "definition"
+
+        if re.search(
+            r"\bdifference\b|\bvs\b|\bversus\b|\bcompare\b",
+            q
+        ):
+            return "comparison"
+
+        if re.search(
+            r"\bhow\s+does\b|\bhow\s+do\b|\bhow\s+to\b|\bsteps\b",
+            q
+        ):
+            return "how"
+
+        if re.search(
+            r"\bexplain\b|\bdescribe\b|\bdetail\b",
+            q
+        ):
+            return "explanation"
+
+        return "normal"
+
+    # ========================================================
+    # INDEX BUILDING
+    # ========================================================
+
+    def _build_index(self):
+
+        for item in self.knowledge:
+
+            if not isinstance(item, dict):
+                continue
+
+            subject = str(item.get("subject", ""))
+            section = str(item.get("section", ""))
+            topics = item.get("topics", [])
+
+            if not isinstance(topics, list):
+                continue
+
+            for topic in topics:
+
+                if not isinstance(topic, dict):
+                    continue
+
+                record = {
+                    "subject": subject,
+                    "section": section,
+                    "topic": str(topic.get("topic", "")),
+                    "definition": str(topic.get("definition", "")),
+                    "syntax": str(topic.get("syntax", "")),
+                    "example": str(topic.get("example", "")),
+                    "output": str(topic.get("output", "")),
+                    "tips": topic.get("tips", [])
+                }
+
+                topic_id = len(self.topic_index)
+
+                self.topic_index.append(record)
+
+                # Full searchable text.
+                text = self._text(record)
+
+                words = set(self._normalized_words(text))
+
+                # Document frequency.
+                for word in words:
+                    if word not in self.STOP_WORDS:
+                        self.document_frequency[word] += 1
+
+                # Word → documents.
+                for word in words:
+                    if word not in self.STOP_WORDS:
+                        self.word_index[word].add(topic_id)
+
+                # Exact topic phrase.
+                topic_phrase = self._clean_phrase(record["topic"])
+
+                if topic_phrase:
+                    self.topic_exact_index[topic_phrase].add(topic_id)
+
+        self.total_documents = len(self.topic_index)
+
+    # ========================================================
+    # DOCUMENT TEXT
+    # ========================================================
+
+    def _text(self, item):
+
+        parts = [
+            item.get("subject", ""),
+            item.get("section", ""),
+            item.get("topic", ""),
+            item.get("definition", ""),
+            item.get("syntax", ""),
+            item.get("example", ""),
+            item.get("output", "")
+        ]
+
+        tips = item.get("tips", [])
+
+        if isinstance(tips, list):
+            parts.extend(str(x) for x in tips)
+
+        return " ".join(str(x) for x in parts)
+
+    # ========================================================
+    # FUZZY MATCHING
+    # ========================================================
+
+    def _similarity(self, a, b):
+
+        a = str(a).lower().strip()
+        b = str(b).lower().strip()
+
+        if not a or not b:
+            return 0.0
+
+        if a == b:
+            return 1.0
+
+        return SequenceMatcher(None, a, b).ratio()
+
+    # ========================================================
+    # BM25-LIKE SCORE
+    # ========================================================
+
+    def _idf(self, word):
+
+        df = self.document_frequency.get(word, 0)
+
+        if df <= 0:
+            return 0.0
+
+        return math.log(
+            1.0 +
+            (self.total_documents - df + 0.5) /
+            (df + 0.5)
         )
 
-        source_overlap = (
-            query_tokens &
-            source_tokens
-        )
+    def _lexical_score(self, query_words, item):
 
-        score += min(
-            len(source_overlap) * 0.05,
-            0.15
-        )
+        if not query_words:
+            return 0.0
+
+        fields = {
+            "topic": self._normalized_words(item["topic"]),
+            "section": self._normalized_words(item["section"]),
+            "subject": self._normalized_words(item["subject"]),
+            "definition": self._normalized_words(item["definition"]),
+            "syntax": self._normalized_words(item["syntax"]),
+            "example": self._normalized_words(item["example"]),
+        }
+
+        weights = {
+            "topic": 6.0,
+            "section": 2.5,
+            "subject": 3.0,
+            "definition": 1.8,
+            "syntax": 1.0,
+            "example": 0.7,
+        }
+
+        total = 0.0
+
+        for field, words in fields.items():
+
+            counts = Counter(words)
+
+            for word in query_words:
+
+                if word in self.STOP_WORDS:
+                    continue
+
+                tf = counts.get(word, 0)
+
+                if tf:
+                    total += (
+                        self._idf(word)
+                        * min(tf, 3)
+                        * weights[field]
+                    )
+
+        return total
+
+    # ========================================================
+    # FIELD MATCHING
+    # ========================================================
+
+    def _field_score(self, query_phrase, item):
+
+        topic = self._clean_phrase(item["topic"])
+        section = self._clean_phrase(item["section"])
+        subject = self._clean_phrase(item["subject"])
+
+        score = 0.0
+
+        # Exact topic.
+        if query_phrase and query_phrase == topic:
+            score += 7000
+
+        # Query is contained in topic.
+        elif query_phrase and query_phrase in topic:
+            score += 5000
+
+        # Topic contained in query.
+        elif topic and topic in query_phrase:
+            score += 4200
+
+        # Fuzzy topic similarity.
+        topic_sim = self._similarity(query_phrase, topic)
+
+        if topic_sim >= 0.95:
+            score += 4000
+        elif topic_sim >= 0.88:
+            score += 3000
+        elif topic_sim >= 0.78:
+            score += 1800
+        elif topic_sim >= 0.68:
+            score += 800
+
+        # Section match.
+        if query_phrase and query_phrase in section:
+            score += 900
+
+        # Subject match.
+        if query_phrase and query_phrase == subject:
+            score += 1600
+        elif query_phrase and query_phrase in subject:
+            score += 900
 
         return score
 
-    # ---------------------------------------------------------
-    # PUBLIC SEARCH
-    # ---------------------------------------------------------
+    # ========================================================
+    # LANGUAGE RELEVANCE
+    # ========================================================
+
+    def _language_relevance(self, language, item):
+
+        if not language:
+            return 0
+
+        text = self._text(item).lower()
+
+        aliases = self.LANGUAGE_ALIASES.get(language, set())
+
+        # Strong evidence anywhere in subject/section/topic.
+        for alias in aliases:
+            if re.search(
+                r"(?<![a-z0-9])" +
+                re.escape(alias) +
+                r"(?![a-z0-9])",
+                text
+            ):
+                return 1300
+
+        return 0
+
+    # ========================================================
+    # DIRECT DEFINITION MATCH
+    # ========================================================
+
+    def _definition_score(self, query, query_phrase, item):
+
+        if not re.search(
+            r"\bwhat\s+is\b|\bdefine\b|\bdefinition\b",
+            query.lower()
+        ):
+            return 0
+
+        definition = item["definition"].lower().strip()
+        topic = self._clean_phrase(item["topic"])
+
+        score = 0
+
+        # Definition directly starts by defining the topic.
+        if topic:
+            topic_pattern = re.escape(topic).replace(r"\ ", r"\s+")
+
+            if re.search(
+                rf"^(?:a|an|the)?\s*{topic_pattern}\s+(?:is|are)\b",
+                definition
+            ):
+                score += 2500
+
+        # Query concept occurs strongly in definition.
+        qwords = set(query_phrase.split())
+
+        if qwords:
+            dwords = set(self._normalized_words(definition))
+            overlap = len(qwords & dwords)
+
+            score += overlap * 80
+
+        return score
+
+    # ========================================================
+    # CANDIDATE RETRIEVAL
+    # ========================================================
+
+    def _retrieve_candidates(self, query_words):
+
+        candidates = set()
+
+        # Normal word retrieval.
+        for word in query_words:
+            candidates.update(
+                self.word_index.get(word, set())
+            )
+
+        # Fuzzy topic retrieval for wording differences.
+        # Only run against topic names, which is small and safe.
+        if query_words:
+            q = " ".join(query_words)
+
+            for topic_id, item in enumerate(self.topic_index):
+
+                topic = self._clean_phrase(item["topic"])
+
+                if not topic:
+                    continue
+
+                sim = self._similarity(q, topic)
+
+                if sim >= 0.62:
+                    candidates.add(topic_id)
+
+        return candidates
+
+    # ========================================================
+    # MAIN SEARCH
+    # ========================================================
 
     def search(self, query):
 
         query = str(query).strip()
 
         if not query:
-            return None
+            return []
 
-        candidates = (
-            self._collect_candidates()
-        )
+        language = self._detect_language(query)
+        query_type = self._query_type(query)
+
+        query_phrase = self._clean_phrase(query)
+
+        query_words = [
+            word
+            for word in self._normalized_words(query)
+            if word not in self.STOP_WORDS
+        ]
+
+        # Remove language words from concept scoring.
+        if language:
+            language_words = set()
+
+            for alias in self.LANGUAGE_ALIASES.get(
+                language, set()
+            ):
+                language_words.update(
+                    self._normalized_words(alias)
+                )
+
+            query_words = [
+                w for w in query_words
+                if w not in language_words
+            ]
+
+        query_words = list(dict.fromkeys(query_words))
+
+        # ----------------------------------------------------
+        # SUBJECT-ONLY QUERY
+        # Example: "What is Java?"
+        # ----------------------------------------------------
+        if language and not query_words:
+
+            candidates = []
+
+            for topic_id, item in enumerate(self.topic_index):
+
+                subject = str(item["subject"]).lower()
+                topic = str(item["topic"]).lower()
+                section = str(item["section"]).lower()
+
+                aliases = self.LANGUAGE_ALIASES.get(
+                    language, set()
+                )
+
+                matched = False
+
+                for alias in aliases:
+
+                    if (
+                        alias == subject.strip()
+                        or alias in subject
+                        or alias in topic
+                        or alias in section
+                    ):
+                        matched = True
+                        break
+
+                if matched:
+                    candidates.append(topic_id)
+
+            # Prefer a topic explicitly defining the language.
+            scored = []
+
+            for topic_id in candidates:
+
+                item = self.topic_index[topic_id]
+
+                score = 1000
+
+                text = self._text(item).lower()
+
+                if re.search(
+                    r"\bwhat\s+is\b",
+                    item["topic"].lower()
+                ):
+                    score += 3500
+
+                if language in text:
+                    score += 500
+
+                scored.append((score, topic_id))
+
+            scored.sort(
+                key=lambda x: (-x[0], self.topic_index[x[1]]["topic"].lower())
+            )
+
+            results = []
+
+            for score, topic_id in scored[:20]:
+
+                item = dict(self.topic_index[topic_id])
+                item["content"] = self._text(item)
+                item["_score"] = score
+
+                results.append(item)
+
+            return results
+
+        # ----------------------------------------------------
+        # GENERAL RETRIEVAL
+        # ----------------------------------------------------
+        candidates = self._retrieve_candidates(query_words)
 
         if not candidates:
-            return None
+            return []
 
-        query_tokens = self._tokens(
-            query
-        )
+        results = []
 
-        if not query_tokens:
-            return None
+        for topic_id in candidates:
 
-        scored = []
+            item = self.topic_index[topic_id]
 
-        for candidate in candidates:
+            lexical = self._lexical_score(
+                query_words,
+                item
+            )
 
-            score = self._score(
+            field = self._field_score(
+                query_phrase,
+                item
+            )
+
+            definition = self._definition_score(
                 query,
-                candidate
+                query_phrase,
+                item
             )
 
-            if score <= 0:
-                continue
-
-            candidate_tokens = self._tokens(
-                candidate["text"]
+            language_score = self._language_relevance(
+                language,
+                item
             )
 
-            overlap = (
-                query_tokens &
-                candidate_tokens
+            # ------------------------------------------------
+            # Phrase similarity against complete topic.
+            # ------------------------------------------------
+            topic_phrase = self._clean_phrase(
+                item["topic"]
             )
 
-            coverage = (
-                len(overlap) /
-                len(query_tokens)
+            fuzzy = self._similarity(
+                query_phrase,
+                topic_phrase
             )
 
-            # STRICT MATCHING
-            #
-            # Example:
-            #
-            # "What is Docker?"
-            #
-            # Meaningful word = Docker
-            #
-            # Java answer does NOT contain Docker.
-            #
-            # Therefore Java cannot be returned.
+            fuzzy_score = fuzzy * 1800
 
-            if (
-                len(query_tokens) >= 2
-                and coverage < 0.60
-            ):
-                continue
+            # ------------------------------------------------
+            # Query word coverage.
+            # ------------------------------------------------
+            topic_words = set(
+                self._normalized_words(item["topic"])
+            )
 
-            scored.append(
-                (
-                    score,
-                    coverage,
-                    candidate
+            section_words = set(
+                self._normalized_words(item["section"])
+            )
+
+            definition_words = set(
+                self._normalized_words(item["definition"])
+            )
+
+            coverage = 0
+
+            for word in query_words:
+
+                if word in topic_words:
+                    coverage += 450
+
+                elif word in section_words:
+                    coverage += 120
+
+                elif word in definition_words:
+                    coverage += 50
+
+            # ------------------------------------------------
+            # Strong topic overlap bonus.
+            # ------------------------------------------------
+            if query_words:
+
+                topic_overlap = (
+                    len(set(query_words) & topic_words)
+                    / len(set(query_words))
                 )
+
+            else:
+                topic_overlap = 0
+
+            overlap_score = topic_overlap * 1800
+
+            # ------------------------------------------------
+            # Final score.
+            # ------------------------------------------------
+            score = (
+                lexical * 35
+                + field
+                + definition
+                + language_score
+                + fuzzy_score
+                + coverage
+                + overlap_score
             )
 
-        if not scored:
-            return None
+            # Query-type adjustments.
+            if query_type == "definition":
 
-        scored.sort(
-            key=lambda item: (
-                item[0],
-                item[1]
-            ),
-            reverse=True
+                if topic_overlap >= 0.8:
+                    score += 900
+
+            elif query_type == "comparison":
+
+                if "difference" in query.lower():
+                    score += 200
+
+            elif query_type == "explanation":
+
+                if topic_overlap >= 0.5:
+                    score += 250
+
+            result = dict(item)
+            result["content"] = self._text(item)
+            result["_score"] = round(score, 2)
+            result["_fuzzy"] = round(fuzzy, 4)
+            result["_topic_overlap"] = round(
+                topic_overlap, 4
+            )
+
+            results.append(result)
+
+        # ----------------------------------------------------
+        # Sort.
+        # ----------------------------------------------------
+        results.sort(
+            key=lambda x: (
+                -x["_score"],
+                -x["_topic_overlap"],
+                -x["_fuzzy"],
+                x["topic"].lower()
+            )
         )
 
-        best_score, best_coverage, best = (
-            scored[0]
+        if not results:
+            return []
+
+        # ----------------------------------------------------
+        # CONFIDENCE GATE
+        #
+        # Prevent weak/unrelated local answers from being
+        # treated as reliable answers.
+        # ----------------------------------------------------
+        top = results[0]
+
+        top_score = top["_score"]
+
+        second_score = (
+            results[1]["_score"]
+            if len(results) > 1
+            else 0
         )
 
-        # Final safety check.
-        if (
-            len(query_tokens) > 1
-            and best_coverage < 0.60
+        margin = top_score - second_score
+
+        # Strong direct topic match.
+        strong_topic = (
+            top["_topic_overlap"] >= 0.75
+            and top["_fuzzy"] >= 0.72
+        )
+
+        # Very strong exact/near-exact match.
+        very_strong = top_score >= 5000
+
+        # Good result with meaningful separation.
+        confident = (
+            top_score >= 3000
+            and (
+                margin >= 250
+                or top_score >= 4500
+            )
+        )
+
+        # If the result is weak, return no result instead of
+        # returning a random knowledge item.
+        if not (
+            strong_topic
+            or very_strong
+            or confident
         ):
-            return None
+            return []
 
-        return best["answer"]
+        # Keep enough candidates for future reranking.
+        return results[:20]
