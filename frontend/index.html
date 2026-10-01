@@ -793,6 +793,7 @@ const state = {
   genToken: 0,
   genTimers: [],
   aiMode: 'auto', // 'auto' | 'local' | 'gemini' — persists for the session only, resets on reload
+  activeAbortController: null, // lets Stop actually cancel an in-progress SSE stream, not just ignore it
   attachedFiles: [],
   uploadedAll: [],
   memories: [],
@@ -1474,12 +1475,26 @@ function sendMessage(){
 
 function stopGeneration(){
   state.generating = false;
-  state.genToken++; // invalidates any in-flight timeouts so they no-op even after this returns
+  state.genToken++; // invalidates any in-flight timeouts/stream reads so they no-op even after this returns
   (state.genTimers||[]).forEach(t=>clearTimeout(t));
   state.genTimers = [];
+  if(state.activeAbortController){
+    try{ state.activeAbortController.abort(); }catch(e){}
+    state.activeAbortController = null;
+  }
   const conv = activeConv();
-  const idx = conv.messages.findIndex(m=>m.role==='typing');
-  if(idx>-1) conv.messages.splice(idx,1);
+  if(conv){
+    const idx = conv.messages.findIndex(m=>m.role==='typing');
+    if(idx>-1){
+      // Still just the placeholder — nothing has streamed in yet, safe to remove.
+      conv.messages.splice(idx,1);
+    } else {
+      // A real AI message may already be streaming in with partial text — keep
+      // whatever arrived so far (matches stopping a response mid-stream in
+      // other chat apps) and make sure it survives a refresh.
+      persistConversation(conv);
+    }
+  }
   setSendState(false);
   renderMessages();
 }
@@ -1524,73 +1539,221 @@ async function generateReply(userText){
 
   renderMessages();
 
+  const controller = new AbortController();
+  state.activeAbortController = controller;
+
+  function recordSearchHistory(result){
+    persistSearchHistory({
+      query: userText,
+      conversationId: conv.id,
+      source: result.source || null,
+      fallback: Boolean(result.fallback),
+      topic: result.topic ?? null,
+      score: result.score ?? null,
+      answerPreview: (result.answer || '').slice(0, 200)
+    });
+  }
+
   try{
     const API_URL =
       window.PERSONAL_AI_API_URL ||
       'https://personal-ai-v2-lddx.onrender.com';
 
-    const response = await fetch(
-      `${API_URL}/api/chat`,
-      {
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-          message:userText,
-          mode:state.aiMode
-        })
-      }
-    );
+    // Recent same-conversation context, so Gemini can follow up correctly —
+    // the backend trims this further itself (last 12 turns); this just avoids
+    // sending the entire lifetime conversation on every request.
+    const history = conv.messages
+      .filter(m => (m.role === 'user' || m.role === 'ai') && typeof m.text === 'string' && m.text)
+      .slice(-13, -1)
+      .map(m => ({ role: m.role, text: m.text }));
+
+    const response = await fetch(`${API_URL}/api/chat`, {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        message: userText,
+        mode: state.aiMode,
+        conversation_id: conv.id,
+        history
+      }),
+      signal: controller.signal
+    });
 
     if(!response.ok){
       throw new Error(`API error: ${response.status}`);
     }
 
-    const data = await response.json();
+    const contentType = response.headers.get('content-type') || '';
 
-    if(token !== state.genToken) return;
+    // ---- Plain JSON response: explicit Local mode, and Auto mode's fast
+    // confident-local-answer path both respond this way (api/main.py returns
+    // a plain dict, not a StreamingResponse, for these two cases). ----
+    if(!contentType.includes('text/event-stream')){
+      const data = await response.json();
+      if(token !== state.genToken) return;
 
-    const idx = conv.messages.findIndex(
-      m => m.role === 'typing'
-    );
+      const idx = conv.messages.findIndex(m => m.role === 'typing');
+      if(idx === -1) return;
 
-    if(idx === -1) return;
+      conv.messages[idx] = {
+        role:'ai',
+        text: data.answer || 'No answer received.',
+        source: data.source || 'local',
+        fallback: Boolean(data.fallback),
+        time: data.source === 'gemini' ? 'Gemini' : 'Local',
+        timestamp: Date.now(),
+        searchInfo: {
+          topic: data.topic ?? null,
+          score: data.score ?? null,
+          source: data.source || null,
+          fallback: Boolean(data.fallback),
+          evidence: Array.isArray(data.evidence) ? data.evidence : []
+        }
+      };
 
-    conv.messages[idx] = {
-      role:'ai',
-      text:data.answer || 'No answer received.',
-      source:data.source || 'local',
-      fallback:Boolean(data.fallback),
-      time:data.source === 'gemini' ? 'Gemini' : 'Local',
-      timestamp: Date.now(),
-      // Preserves whatever evidence/search metadata the backend actually returned —
-      // nothing here is invented. See generateReply's comment below for what
-      // additional fields the backend could add for richer evidence tracking.
-      searchInfo: {
-        topic: data.topic ?? null,
-        score: data.score ?? null,
-        source: data.source || null,
-        fallback: Boolean(data.fallback)
+      setSendState(false);
+      renderMessages();
+      persistConversation(conv);
+      recordSearchHistory(data);
+      return;
+    }
+
+    // ---- Server-Sent Events response: Gemini-only mode, and Auto mode
+    // falling back to Gemini, both stream real-time via StreamingResponse.
+    // One AI bubble is created on "meta" and grows in place as "chunk"
+    // events arrive — never a new bubble per chunk. ----
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let streamedText = '';
+    let meta = { source: state.aiMode === 'gemini' ? 'gemini' : 'local', fallback: false };
+    let bubbleIdx = conv.messages.findIndex(m => m.role === 'typing');
+
+    function parseSseBlock(block){
+      let event = 'message';
+      let dataLine = '';
+      for(const line of block.split('\n')){
+        if(line.startsWith('event:')) event = line.slice(6).trim();
+        else if(line.startsWith('data:')) dataLine += line.slice(5).trim();
       }
-    };
+      if(!dataLine) return null;
+      try{ return { event, payload: JSON.parse(dataLine) }; }
+      catch(e){ return null; }
+    }
 
-    setSendState(false);
-    renderMessages();
-    persistConversation(conv);
-    persistSearchHistory({
-      query: userText,
-      conversationId: conv.id,
-      source: data.source || null,
-      fallback: Boolean(data.fallback),
-      topic: data.topic ?? null,
-      score: data.score ?? null,
-      answerPreview: (data.answer || '').slice(0, 200)
-    });
+    while(true){
+      const { done, value } = await reader.read();
+
+      if(token !== state.genToken){
+        try{ await reader.cancel(); }catch(e){}
+        return;
+      }
+      if(done) break;
+
+      buffer += decoder.decode(value, { stream:true });
+      let sepIndex;
+      while((sepIndex = buffer.indexOf('\n\n')) !== -1){
+        const rawBlock = buffer.slice(0, sepIndex);
+        buffer = buffer.slice(sepIndex + 2);
+        const parsed = parseSseBlock(rawBlock);
+        if(!parsed) continue;
+
+        if(parsed.event === 'meta'){
+          meta = parsed.payload || meta;
+          if(bubbleIdx === -1) bubbleIdx = conv.messages.length - 1;
+          conv.messages[bubbleIdx] = {
+            role:'ai',
+            text:'',
+            source: meta.source || 'gemini',
+            fallback: Boolean(meta.fallback),
+            time: (meta.source || 'gemini') === 'gemini' ? 'Gemini' : 'Local',
+            timestamp: Date.now()
+          };
+          renderMessages();
+
+        } else if(parsed.event === 'chunk'){
+          streamedText += (parsed.payload && parsed.payload.text) || '';
+          if(bubbleIdx !== -1 && conv.messages[bubbleIdx]){
+            conv.messages[bubbleIdx].text = streamedText;
+            renderMessages();
+          }
+
+        } else if(parsed.event === 'done'){
+          const data = parsed.payload || {};
+          const finalSource = data.source || meta.source || 'gemini';
+          const finalTopic = data.topic ?? data.local_topic ?? null;
+          const finalScore = data.score ?? data.local_score ?? null;
+          const finalFallback = Boolean(data.fallback ?? meta.fallback);
+          const finalAnswer = data.answer || streamedText || 'No answer received.';
+
+          if(bubbleIdx !== -1){
+            conv.messages[bubbleIdx] = {
+              role:'ai',
+              text: finalAnswer,
+              source: finalSource,
+              fallback: finalFallback,
+              time: finalSource === 'gemini' ? 'Gemini' : 'Local',
+              timestamp: Date.now(),
+              searchInfo: {
+                topic: finalTopic,
+                score: finalScore,
+                source: finalSource,
+                fallback: finalFallback,
+                evidence: Array.isArray(data.evidence) ? data.evidence : []
+              }
+            };
+          }
+
+          setSendState(false);
+          renderMessages();
+          persistConversation(conv);
+          recordSearchHistory({ source: finalSource, fallback: finalFallback, topic: finalTopic, score: finalScore, answer: finalAnswer });
+          return;
+
+        } else if(parsed.event === 'error'){
+          const data = parsed.payload || {};
+          if(bubbleIdx !== -1){
+            conv.messages[bubbleIdx] = {
+              role:'ai',
+              text: `⚠️ ${data.message || 'Online information is currently unavailable.'}`,
+              source: data.source || 'gemini',
+              time:'Error',
+              timestamp: Date.now()
+            };
+          }
+          setSendState(false);
+          renderMessages();
+          persistConversation(conv);
+          recordSearchHistory({ source:'error', fallback:false, topic:null, score:null, answer:'' });
+          return;
+        }
+      }
+    }
+
+    // Stream ended without an explicit "done"/"error" event (e.g. connection
+    // dropped mid-stream). Keep whatever text actually arrived rather than
+    // showing nothing, or fall back to the standard connection-error message.
+    if(token === state.genToken && bubbleIdx !== -1){
+      if(streamedText){
+        conv.messages[bubbleIdx].text = streamedText;
+      } else {
+        conv.messages[bubbleIdx] = {
+          role:'ai',
+          text:`⚠️ I couldn't connect to the Personal AI backend.\n\nPlease make sure the API server is running.`,
+          source:'local',
+          time:'Error',
+          timestamp: Date.now()
+        };
+      }
+      setSendState(false);
+      renderMessages();
+      persistConversation(conv);
+    }
 
   }catch(err){
 
     if(token !== state.genToken) return;
+    if(err && err.name === 'AbortError') return; // user-initiated Stop — stopGeneration() already handled the UI
 
     const idx = conv.messages.findIndex(
       m => m.role === 'typing'
@@ -1622,6 +1785,10 @@ Please make sure the API server is running.`,
     });
 
     console.error('Personal AI API error:', err);
+  } finally {
+    if(state.activeAbortController === controller){
+      state.activeAbortController = null;
+    }
   }
 }
 
