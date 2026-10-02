@@ -95,6 +95,13 @@ class KnowledgeSearch:
         self.document_frequency = Counter()
         self.total_documents = 0
 
+        # Learn extra safe singular/plural pairs directly from this knowledge
+        # base's own vocabulary (e.g. "exception" <-> "exceptions") before
+        # building the index, so topic-overlap/coverage scoring treats them as
+        # the same concept. Must run before _build_index(), since indexing and
+        # querying both normalize words through _normalize_word().
+        self._auto_normalization = self._discover_auto_plurals()
+
         self._build_index()
 
     # ========================================================
@@ -107,9 +114,69 @@ class KnowledgeSearch:
             str(text).lower()
         )
 
+    def _discover_auto_plurals(self):
+        """
+        Safely extends NORMALIZATION with singular/plural pairs that actually
+        occur in this knowledge base, instead of guessing with a blind
+        stemming rule. A plural candidate (e.g. "exceptions") is only folded
+        into its singular form ("exception") if that singular form is ALSO a
+        real word that independently appears somewhere in the knowledge base.
+        This is what keeps it safe: an acronym or naturally s-ending word
+        (e.g. "dbms", "ddos", "class", "bias", "status") never has a matching
+        "singular" counterpart in the corpus, so it is left untouched.
+        """
+        raw_words = set()
+
+        for item in self.knowledge:
+            if not isinstance(item, dict):
+                continue
+
+            topics = item.get("topics", [])
+            if not isinstance(topics, list):
+                continue
+
+            for topic in topics:
+                if not isinstance(topic, dict):
+                    continue
+
+                text = self._text({
+                    "subject": item.get("subject", ""),
+                    "section": item.get("section", ""),
+                    "topic": topic.get("topic", ""),
+                    "definition": topic.get("definition", ""),
+                    "syntax": topic.get("syntax", ""),
+                    "example": topic.get("example", ""),
+                    "output": topic.get("output", ""),
+                    "tips": topic.get("tips", []),
+                })
+
+                raw_words.update(self._words(text))
+
+        auto_map = {}
+
+        for word in raw_words:
+            if word in self.NORMALIZATION:
+                continue
+
+            singular = None
+
+            if word.endswith("ies") and len(word) > 4:
+                singular = word[:-3] + "y"
+            elif word.endswith(("ses", "xes", "zes", "ches", "shes")) and len(word) > 4:
+                singular = word[:-2]
+            elif word.endswith("s") and not word.endswith("ss") and len(word) > 3:
+                singular = word[:-1]
+
+            if singular and singular != word and singular in raw_words:
+                auto_map[word] = singular
+
+        return auto_map
+
     def _normalize_word(self, word):
         word = word.lower().strip()
-        return self.NORMALIZATION.get(word, word)
+        if word in self.NORMALIZATION:
+            return self.NORMALIZATION[word]
+        return getattr(self, "_auto_normalization", {}).get(word, word)
 
     def _normalized_words(self, text):
         return [
