@@ -1785,10 +1785,6 @@ Please make sure the API server is running.`,
     });
 
     console.error('Personal AI API error:', err);
-  } finally {
-    if(state.activeAbortController === controller){
-      state.activeAbortController = null;
-    }
   }
 }
 
