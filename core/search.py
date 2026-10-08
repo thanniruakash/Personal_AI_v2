@@ -39,6 +39,12 @@ class KnowledgeSearch:
     }
     QUERY_BOILERPLATE = {'please','tell','me','give','show','explain','explanation','definition','define','overview','what','is','are','the','a','an','can','could','would','should','you','how','why','when','where','does','do','did','will','may','might','for','to','in','on','at','of','from','with','by','about','according','as','into','than','then','this','that','these','those','it','its','i','your','my','we','our','they','their'}
     OPTIONAL_MODIFIERS = {'attack','attacks','question','questions','topic','topics','concept','concepts','programming','language','languages','code','syntax','example','examples','basics','basic','overview','application','applications','details','detail'}
+    FIELD_PATTERNS = {
+        'syntax': re.compile(r'\bsyntax(?:es)?\b', re.I),
+        'example': re.compile(r'\bexamples?\b', re.I),
+        'output': re.compile(r'\boutputs?\b', re.I),
+        'definition': re.compile(r'\bdefinitions?\b', re.I),
+    }
 
     QUESTION_PREFIX = re.compile(r'^(?:please\s+)?(?:can\s+you\s+|could\s+you\s+|would\s+you\s+|tell\s+me\s+|explain\s+|describe\s+|define\s+|what\s+is\s+|what\s+are\s+|give\s+me\s+(?:an?\s+)?(?:explanation|definition|overview)\s+(?:of\s+)?|meaning\s+of\s+|details?\s+(?:of|about)\s+)?', re.I)
 
@@ -149,6 +155,49 @@ class KnowledgeSearch:
         if re.search(r'\b(how to|how does|how do|steps|procedure|process)\b',q): return 'how'
         if re.search(r'\b(explain|describe|elaborate|detail|details|overview)\b',q): return 'explanation'
         return 'normal'
+    def _detect_field_request(self,q):
+        for field, pattern in self.FIELD_PATTERNS.items():
+            if pattern.search(str(q)): return field
+        return None
+
+    @staticmethod
+    def _usable_field(value):
+        value=str(value or '').strip()
+        return bool(value) and value.lower() not in {'n/a','na','none','-'}
+
+    def _field_concept_words(self, query, field, lang=None, domain=None):
+        words=[self._norm(w) for w in self._words(query)]
+        blocked=set(self.STOP_WORDS) | {field, 'syntax','example','examples','output','outputs','definition','definitions','code','sample','program','programs','programming','language','languages'}
+        if lang:
+            for alias in self.LANGUAGE_ALIASES.get(lang,set()):
+                blocked.update(self._tokens(alias))
+        if domain:
+            for alias in self.DOMAIN_ALIASES.get(domain,set()):
+                blocked.update(self._tokens(alias))
+        return list(dict.fromkeys(w for w in words if w not in blocked))
+
+    def _select_field_record(self, field, candidates, concept_words, language=None):
+        if not candidates: return None
+        qset=set(concept_words); qphrase=' '.join(concept_words)
+        scored=[]
+        for i in candidates:
+            r=self.topic_index[i]
+            tp=self._phrase(r['topic']); tset=set(self._tokens(r['topic']))
+            overlap=(len(qset & tset)/len(qset)) if qset else 0.0
+            score=0.0
+            if qphrase and tp==qphrase: score+=30000
+            if qphrase and qphrase in tp: score+=10000
+            score+=5000*overlap
+            low=r['topic'].strip().lower()
+            if low.startswith(('what is ','what are ','introduction to ')): score+=3500
+            score+=max(0,2200-r.get('_section_rank',0)*220)
+            # C has a dedicated program-structure record whose syntax is the
+            # most useful language-level syntax answer in this knowledge base.
+            if language=='c' and tp=='structure c program': score+=9000
+            scored.append((score,i))
+        scored.sort(key=lambda x:(-x[0],self.topic_index[x[1]]['topic'].lower()))
+        return scored[0][1]
+
     def _concept_tokens(self,q,lang,domain):
         # Remove question boilerplate BEFORE corpus-derived plural normalization;
         # otherwise words such as 'tell'/'explain' can be distorted by auto-plurals.
@@ -182,6 +231,18 @@ class KnowledgeSearch:
             if domain=='natural language processing' and not ('nlp' in subject or ('natural' in section and 'language' in section)): return False
             if domain=='retrieval augmented generation' and not ('rag' in section or 'retrieval' in section or 'rag' in subject): return False
         return True
+    def _subject_matches_language(self,language,r):
+        subject=self._phrase(r.get('subject',''))
+        if not language or not subject: return False
+        if language=='c': return subject == 'c programming'
+        # Language subjects are explicit labels in this KB. Token matching avoids
+        # substring collisions such as 'java' inside unrelated words.
+        lang_phrase=self._phrase(language)
+        if not lang_phrase: return False
+        st=subject.split(); lt=lang_phrase.split()
+        for i in range(len(st)-len(lt)+1):
+            if st[i:i+len(lt)]==lt: return True
+        return False
     def search(self,query):
         q=str(query).strip()
         if not q:return []
@@ -193,6 +254,7 @@ class KnowledgeSearch:
         lang=self._detect_language(q) or self._detect_language(corrected_phrase)
         domain=self._detect_domain(q) or self._detect_domain(corrected_phrase)
         qtype=self._query_type(q)
+        field_request=self._detect_field_request(q)
         concept=self._concept_tokens(q,lang,domain); qset=set(concept); cphrase=' '.join(concept)
         candidates=set()
         # Exact phrase/section/subject first. Corrected spelling is used for retrieval,
@@ -253,13 +315,59 @@ class KnowledgeSearch:
             candidates={i for i in candidates if lang_evidence(self.topic_index[i]) or i in exact_ids}
             if not candidates and not exact_ids:
                 return []
-        # Query terms such as 'syntax' are field requests, not literal content words.
-        field_terms={'syntax','example','output','definition'}
-        field_request=bool(qset) and qset <= field_terms
-        # For a field request, inspect the compatible corpus instead of looking for
-        # the word 'syntax' inside code snippets.
+        # Structured field request: return the requested stored field (syntax,
+        # example, output, or definition) rather than treating that word as a
+        # normal topic token.
         if field_request:
-            candidates={i for i,r in enumerate(self.topic_index) if self._compatible(r,lang,domain)}
+            if not lang and not domain and not cphrase:
+                return []
+            field_candidates={i for i,r in enumerate(self.topic_index)
+                              if self._usable_field(r.get(field_request))
+                              and self._compatible(r,lang,domain)
+                              and (not lang or self._subject_matches_language(lang,r))}
+            if not field_candidates:
+                return []
+            field_words=self._field_concept_words(q,field_request,lang,domain)
+            if not field_words:
+                # Language-only requests: choose the best genuine overview record.
+                preferred=[]
+                if lang=='c':
+                    if field_request == 'definition':
+                        preferred=[self._phrase('What is C?')]
+                    else:
+                        preferred=['structure c program', self._phrase('What is C?')]
+                elif lang:
+                    preferred=[self._phrase(f'What is {lang}?')]
+                selected=None
+                for phrase in preferred:
+                    ids=[i for i in field_candidates if self._phrase(self.topic_index[i]['topic'])==phrase]
+                    if ids:
+                        selected=ids[0]; break
+                if selected is None:
+                    selected=self._select_field_record(field_request,field_candidates,[],lang)
+                if selected is None: return []
+            else:
+                selected=self._select_field_record(field_request,field_candidates,field_words,lang)
+                if selected is None: return []
+                selected_topic=set(self._tokens(self.topic_index[selected]['topic']))
+                selected_section=set(self._tokens(self.topic_index[selected]['section']))
+                if not (set(field_words) & (selected_topic|selected_section)):
+                    return []
+            ordered=[selected]+sorted((i for i in field_candidates if i!=selected), key=lambda i:self.topic_index[i]['topic'].lower())
+            out=[]
+            for rank,i in enumerate(ordered[:20]):
+                r=dict(self.topic_index[i])
+                r['content']=self._text_raw({'subject':r['subject'],'section':r['section']},
+                    {'topic':r['topic'],'definition':r['definition'],'syntax':r['syntax'],
+                     'example':r['example'],'output':r['output'],'tips':r['tips']})
+                r['_answer_field']=field_request
+                r['_score']=10000-rank*100
+                r['_topic_overlap']=1.0 if rank==0 else 0.5
+                r['_section_overlap']=1.0 if rank==0 else 0.5
+                r['_fuzzy']=1.0 if rank==0 else 0.0
+                out.append(r)
+            self._domain_soft=False
+            return out
         # Anchored subject/domain-only queries inspect their compatible corpus.
         if (lang or domain) and not candidates and not qset:
             candidates={i for i,r in enumerate(self.topic_index) if self._compatible(r,lang,domain)}
@@ -276,6 +384,10 @@ class KnowledgeSearch:
             r=self.topic_index[i]; topic=set(r['_topic_tokens']); section=set(r['_section_tokens']); subject=set(r['_subject_tokens']); definition=set(r['_definition_tokens']); syntax=set(r['_syntax_tokens'])
             tp=self._phrase(r['topic']); sp=self._phrase(r['section']); su=self._phrase(r['subject'])
             score=0.0
+            if field_request:
+                # Prefer records that actually contain the requested field, then
+                # let the normal topic/language scoring decide which record matches.
+                score += 12000 if str(r.get(field_request,'')).strip() else -50000
             # Exact phrase hierarchy
             if full_phrase and full_phrase==tp: score+=150000
             if full_phrase and full_phrase==sp: score+=10000
@@ -412,6 +524,8 @@ class KnowledgeSearch:
         for score,i,ov,sov,sim in results[:20]:
             r=dict(self.topic_index[i]); r.pop('_section_key',None); r.pop('_section_rank',None); r.pop('_subject_tokens',None); r.pop('_section_tokens',None); r.pop('_topic_tokens',None); r.pop('_definition_tokens',None); r.pop('_syntax_tokens',None); r.pop('_example_tokens',None); r.pop('_output_tokens',None); r.pop('_all_tokens',None)
             r['content']=self._text_raw({'subject':r['subject'],'section':r['section']},{'topic':r['topic'],'definition':r['definition'],'syntax':r['syntax'],'example':r['example'],'output':r['output'],'tips':r['tips']})
+            if field_request:
+                r['_answer_field']=field_request
             r['_score']=round(score,2); r['_topic_overlap']=round(ov,4); r['_section_overlap']=round(sov,4); r['_fuzzy']=round(sim,4)
             out.append(r)
         self._domain_soft = False
