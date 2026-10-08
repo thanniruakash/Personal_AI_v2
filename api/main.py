@@ -15,6 +15,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from core.loader import KnowledgeLoader
 from core.search import KnowledgeSearch
+from calculator import Calculator
 
 try:
     from google import genai
@@ -36,6 +37,7 @@ app.add_middleware(
 # ------------------------------------------------------------
 knowledge = KnowledgeLoader().load()
 search_engine = KnowledgeSearch(knowledge)
+calculator = Calculator()
 LOCAL_THRESHOLD = 3000
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 GEMINI_KEY_NAMES = ["GEMINI_API_KEY", "KEY2", "KEY3", "KEY4"]
@@ -85,7 +87,11 @@ def local_answer(message):
         return None, 0, None, []
 
     best = results[0]
-    answer = best.get("definition", "").strip()
+    answer_field = best.get("_answer_field")
+    if answer_field:
+        answer = str(best.get(answer_field, "")).strip()
+    else:
+        answer = best.get("definition", "").strip()
     if not answer:
         answer = best.get("content", "").strip()
 
@@ -129,7 +135,7 @@ Rules:
 """
 
 
-def build_gemini_prompt(message, history):
+def build_gemini_prompt(message, history, local_context=None):
     recent = []
     for item in history[-12:]:
         role = "User" if item.role == "user" else "Personal AI"
@@ -138,14 +144,25 @@ def build_gemini_prompt(message, history):
             recent.append(f"{role}: {text}")
 
     context = "\n".join(recent)
+    parts = [SYSTEM_INSTRUCTION]
+
+    if local_context:
+        parts.append(
+            "Relevant local knowledge found for this question. "
+            "Use it when it is relevant to the user's question; never force "
+            "it into the answer if it does not match the question:\n"
+            + local_context
+        )
+
     if context:
-        return f"{SYSTEM_INSTRUCTION}\n\nConversation context:\n{context}\n\nUser's latest question:\n{message}"
+        parts.append(f"Conversation context:\n{context}")
 
-    return f"{SYSTEM_INSTRUCTION}\n\nUser's latest question:\n{message}"
+    parts.append(f"User's latest question:\n{message}")
+    return "\n\n".join(parts)
 
 
-def gemini_text(message, history):
-    prompt = build_gemini_prompt(message, history)
+def gemini_text(message, history, local_context=None):
+    prompt = build_gemini_prompt(message, history, local_context)
 
     for key_name, client in gemini_clients:
         try:
@@ -162,9 +179,9 @@ def gemini_text(message, history):
     return None, None
 
 
-def gemini_stream(message, history):
+def gemini_stream(message, history, local_context=None):
     """Yield text chunks from Gemini using the official streaming API."""
-    prompt = build_gemini_prompt(message, history)
+    prompt = build_gemini_prompt(message, history, local_context)
 
     for key_name, client in gemini_clients:
         try:
@@ -193,6 +210,22 @@ def sse(event, payload):
 
 
 # ------------------------------------------------------------
+# Deterministic math path
+# ------------------------------------------------------------
+def calculation_answer(message):
+    """
+    Return a calculator result when the message is clearly arithmetic.
+
+    This intentionally runs before Local/Gemini routing so an LLM or fuzzy
+    knowledge match can never be asked to perform basic arithmetic.
+    """
+    result = calculator.ask(message)
+    if result is None:
+        return None
+    return result
+
+
+# ------------------------------------------------------------
 # Routes
 # ------------------------------------------------------------
 @app.get("/api/health")
@@ -218,6 +251,18 @@ def chat(request: ChatRequest):
             "answer": "Please type a question.",
             "source": "local",
             "fallback": False,
+        }
+
+    # Math is a deterministic first pass across ALL modes. This prevents
+    # calculator questions from entering fuzzy knowledge retrieval or Gemini.
+    calculation = calculation_answer(message)
+    if calculation is not None:
+        return {
+            "answer": calculation,
+            "source": "calculator",
+            "fallback": False,
+            "calculation": True,
+            "conversation_id": request.conversation_id,
         }
 
     history = request.history[-12:]
@@ -320,7 +365,7 @@ def chat(request: ChatRequest):
 
         answer_parts = []
         used_key = None
-        for chunk, key_name in gemini_stream(message, history):
+        for chunk, key_name in gemini_stream(message, history, answer):
             used_key = key_name
             answer_parts.append(chunk)
             yield sse("chunk", {"text": chunk})
