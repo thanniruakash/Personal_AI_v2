@@ -538,6 +538,7 @@ input,textarea{font-family:inherit; color:inherit;}
 .bubble h1{font-size:1.35em}.bubble h2{font-size:1.2em}.bubble h3{font-size:1.08em}
 .bubble blockquote{border-left:3px solid var(--border);margin:8px 0;padding:4px 12px;color:var(--text-muted)}
 .bubble .katex-display{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+.markdown-table-wrap{max-width:100%;overflow-x:auto;margin:10px 0}.markdown-table{border-collapse:collapse;width:100%;font-size:13px}.markdown-table th,.markdown-table td{border:1px solid var(--border-color,rgba(255,255,255,.16));padding:7px 9px;text-align:left;vertical-align:top}.markdown-table th{font-weight:700}.bubble h1,.bubble h2,.bubble h3,.bubble h4{margin:12px 0 7px;line-height:1.35}.bubble p{margin:6px 0}.bubble ul,.bubble ol{padding-left:22px;margin:6px 0}.bubble blockquote{border-left:3px solid var(--accent,#6b8cff);margin:8px 0;padding-left:12px;opacity:.92}
 </style>
 </head>
 <body>
@@ -1251,10 +1252,54 @@ function renderMessages(){
   document.getElementById('chatScroll').scrollTop = 999999;
 }
 
+function markdownFallback(block){
+  // Safe, dependency-free Markdown subset. It is used when the Markdown CDN is
+  // blocked/offline, so users still see headings, lists, emphasis, links and tables.
+  const inline = value => {
+    let x = escapeHtml(String(value ?? ''));
+    x = x.replace(/`([^`]+)`/g, '<code>$1</code>');
+    x = x.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    x = x.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    x = x.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
+    x = x.replace(/~~(.+?)~~/g, '<del>$1</del>');
+    x = x.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    return x;
+  };
+  const lines = String(block ?? '').replace(/\r/g, '').split('\n');
+  const out = [];
+  let paragraph = [], listType = null, listItems = [], tableRows = [];
+  const flushParagraph = () => { if(paragraph.length){ out.push('<p>' + paragraph.map(inline).join('<br>') + '</p>'); paragraph=[]; } };
+  const flushList = () => { if(listItems.length){ out.push(`<${listType}>` + listItems.map(v=>`<li>${inline(v)}</li>`).join('') + `</${listType}>`); listItems=[]; listType=null; } };
+  const flushTable = () => {
+    if(!tableRows.length) return;
+    const rows=tableRows.map(row=>row.split('|').slice(1,-1).map(c=>c.trim()));
+    const isSep = row => row.every(c=>/^:?-{3,}:?$/.test(c));
+    const header = rows.length>1 && isSep(rows[1]) ? rows[0] : null;
+    const body = header ? rows.slice(2) : rows;
+    let html='<div class="markdown-table-wrap"><table class="markdown-table">';
+    if(header) html+='<thead><tr>'+header.map(c=>`<th>${inline(c)}</th>`).join('')+'</tr></thead>';
+    html+='<tbody>'+body.filter(r=>!isSep(r)).map(r=>'<tr>'+r.map(c=>`<td>${inline(c)}</td>`).join('')+'</tr>').join('')+'</tbody></table></div>';
+    out.push(html); tableRows=[];
+  };
+  for(const raw of lines){
+    const line=raw.trim();
+    if(line.includes('|') && /^\|.*\|$/.test(line)){
+      flushParagraph(); flushList(); tableRows.push(line); continue;
+    }
+    flushTable();
+    if(!line){ flushParagraph(); flushList(); continue; }
+    const h=line.match(/^(#{1,6})\s+(.+)$/);
+    if(h){ flushParagraph(); flushList(); const level=h[1].length; out.push(`<h${level}>${inline(h[2])}</h${level}>`); continue; }
+    const ul=line.match(/^[-*+]\s+(.+)$/), ol=line.match(/^\d+[.)]\s+(.+)$/);
+    if(ul || ol){ flushParagraph(); const type=ul?'ul':'ol'; if(listType && listType!==type) flushList(); listType=type; listItems.push((ul||ol)[1]); continue; }
+    if(/^>\s?/.test(line)){ flushParagraph(); flushList(); out.push(`<blockquote>${inline(line.replace(/^>\s?/,''))}</blockquote>`); continue; }
+    flushList(); paragraph.push(line);
+  }
+  flushParagraph(); flushList(); flushTable();
+  return out.join('');
+}
 function mdLite(text){
   const source = String(text ?? '');
-  // Preserve the existing copyable code-block UI, while using a real Markdown
-  // parser for headings, ordered/unordered lists, blockquotes, links and tables.
   const blocks = source.split(/```/);
   let out = '';
   blocks.forEach((block, i)=>{
@@ -1267,33 +1312,69 @@ function mdLite(text){
       out += `<div class="codeblock"><div class="cb-head"><span>${escapeHtml(lang||'code')}</span><button onclick="copyText(this)" data-code="${encodeURIComponent(code)}">copy</button></div><pre><code>${escapeHtml(code)}</code></pre></div>`;
     } else {
       let rendered = '';
-      if(window.marked && typeof window.marked.parse === 'function'){
-        rendered = window.marked.parse(block, {gfm:true, breaks:true});
-        if(window.DOMPurify) rendered = window.DOMPurify.sanitize(rendered, {USE_PROFILES:{html:true}});
-        else rendered = escapeHtml(block).replace(/\n/g,'<br>');
-      } else {
-        // Safe fallback if a CDN is unavailable: retain text without injecting HTML.
-        rendered = escapeHtml(block).replace(/\n/g,'<br>');
+      try {
+        if(window.marked && typeof window.marked.parse === 'function'){
+          rendered = window.marked.parse(block, {gfm:true, breaks:true});
+          if(window.DOMPurify) rendered = window.DOMPurify.sanitize(rendered, {USE_PROFILES:{html:true}});
+          else rendered = markdownFallback(block);
+        } else rendered = markdownFallback(block);
+      } catch(err) {
+        console.warn('Personal AI: using built-in Markdown renderer.', err);
+        rendered = markdownFallback(block);
       }
       out += rendered;
     }
   });
   return out;
 }
+function fallbackMathText(value){
+  return String(value)
+    .replace(/\\(?:longrightarrow|rightarrow|to)\b/g,'→')
+    .replace(/\\(?:Longrightarrow|Rightarrow)\b/g,'⇒')
+    .replace(/\\(?:leftarrow|gets)\b/g,'←')
+    .replace(/\\leftrightarrow\b/g,'↔')
+    .replace(/\\(?:times|cdot)\b/g,'×')
+    .replace(/\\div\b/g,'÷')
+    .replace(/\\pm\b/g,'±')
+    .replace(/\\neq\b/g,'≠').replace(/\\leq\b/g,'≤').replace(/\\geq\b/g,'≥')
+    .replace(/\\infty\b/g,'∞').replace(/\\sum\b/g,'∑').replace(/\\pi\b/g,'π')
+    .replace(/\\alpha\b/g,'α').replace(/\\beta\b/g,'β').replace(/\\theta\b/g,'θ')
+    .replace(/\\frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}/g,'($1)/($2)')
+    .replace(/\\sqrt\s*\{([^{}]+)\}/g,'√($1)')
+    .replace(/\\text\s*\{([^{}]+)\}/g,'$1')
+    .replace(/\\left|\\right/g,'')
+    .replace(/\\([{}])/g,'$1');
+}
 function renderMath(container){
-  if(!container || typeof window.renderMathInElement !== 'function') return;
-  try {
-    window.renderMathInElement(container, {
-      delimiters:[
-        {left:'$$',right:'$$',display:true},
-        {left:'\\[',right:'\\]',display:true},
-        {left:'\\(',right:'\\)',display:false},
-        {left:'$',right:'$',display:false}
-      ],
-      throwOnError:false,
-      ignoredTags:['script','noscript','style','textarea','pre','code']
-    });
-  } catch(err) { console.warn('Personal AI: math rendering skipped.', err); }
+  if(!container) return;
+  if(typeof window.renderMathInElement === 'function'){
+    try {
+      window.renderMathInElement(container, {
+        delimiters:[
+          {left:'$$',right:'$$',display:true},
+          {left:'\\[',right:'\\]',display:true},
+          {left:'\\(',right:'\\)',display:false},
+          {left:'$',right:'$',display:false}
+        ],
+        throwOnError:false,
+        ignoredTags:['script','noscript','style','textarea','pre','code']
+      });
+      return;
+    } catch(err) { console.warn('Personal AI: math rendering skipped.', err); }
+  }
+  // CDN-independent fallback: convert common LaTeX commands into readable symbols.
+  const walker=document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+    acceptNode(node){
+      const parent=node.parentElement;
+      if(!parent || parent.closest('pre,code,script,style,textarea,.katex')) return NodeFilter.FILTER_REJECT;
+      return /\\(?:rightarrow|leftarrow|Rightarrow|times|frac|sqrt|alpha|beta|theta|pi|infty|neq|leq|geq|text)\b|\$/.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+  });
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const v=fallbackMathText(node.nodeValue).replace(/\$\$([\s\S]*?)\$\$/g,'$1').replace(/\$([^$\n]+)\$/g,'$1').replace(/\\\[([\s\S]*?)\\\]/g,'$1').replace(/\\\((.*?)\\\)/g,'$1');
+    node.nodeValue=v;
+  });
 }
 
 function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -1874,7 +1955,7 @@ async function generateReply(userText){
       } else {
         conv.messages[bubbleIdx] = {
           role:'ai',
-          text:`⚠️ I couldn't connect to the Personal AI backend.\n\nPlease make sure the API server is running.`,
+          text:`⚠️ I couldn't reach the Personal AI backend at ${API_URL}.\n\nCheck the Render deployment status and logs, then retry. If the service is starting, wait a minute and try again.`,
           source:'local',
           time:'Error',
           timestamp: Date.now()
