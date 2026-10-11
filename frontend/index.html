@@ -522,6 +522,12 @@ input,textarea{font-family:inherit; color:inherit;}
 @media (min-width: 1400px){
   #chatInner, #composer{ max-width:900px; }
 }
+/* Live Report sources */
+.live-sources{margin-top:7px;padding:9px 11px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);font-size:11.5px;display:flex;flex-direction:column;gap:5px}
+.live-sources-title{font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;font-size:10px}
+.live-sources a{color:var(--cyan);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.live-sources a:hover{text-decoration:underline}
+
 </style>
 </head>
 <body>
@@ -1289,6 +1295,7 @@ function readAloud(btn, id){
 function sourceBadge(source, time, fallback){
   if(source==='local') return `<span class="msg-meta">🧠 Local Knowledge · ${time}</span>`;
   if(source==='gemini') return fallback ? `<span class="msg-meta">🌐 Gemini · Fallback</span>` : `<span class="msg-meta">🌐 Gemini</span>`;
+  if(source==='live') return `<span class="msg-meta">🌐 Live Report</span>`;
   if(source==='doc') return `<span class="msg-meta">📄 Uploaded Document · ${time}</span>`;
   return '';
 }
@@ -1314,10 +1321,14 @@ function renderMsg(m, i){
       </div>
     </div>`;
   }
+  const safeText = (typeof m.text === 'string' && m.text.trim()) ? m.text : '⚠️ I received an empty response. Please try again.';
+  const liveSources = m.source === 'live' && Array.isArray(m.searchInfo?.sources) ? m.searchInfo.sources : [];
+  const sourcesHtml = liveSources.length ? `<div class="live-sources"><div class="live-sources-title">Sources</div>${liveSources.slice(0,5).map(src=>{ const title=escapeHtml(src.title || src.name || src.url || 'Source'); const url=typeof src.url==='string' ? src.url : ''; return url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a>` : `<span>${title}</span>`; }).join('')}</div>` : '';
   return `<div class="msg ai">
     <div class="avatar-sm"></div>
     <div class="msg-body">
-      <div class="bubble">${mdLite(m.text)}</div>
+      <div class="bubble">${mdLite(safeText)}</div>
+      ${sourcesHtml}
       <div style="display:flex;align-items:center;gap:10px;">
         ${sourceBadge(m.source, m.time, m.fallback)}
         <div class="msg-actions">
@@ -1524,6 +1535,56 @@ function showGenerationError(conv, idx){
   renderMessages();
 }
 
+function isLiveQuery(query){
+  const q = String(query || '').toLowerCase().trim();
+  if(!q) return false;
+  const patterns = [
+    /\b(latest|recent|current|present|today|tonight|now|live|breaking|this week|this month|upcoming)\b/,
+    /\b(news|weather|forecast|showtime|showtimes|cinema|movie|movies|theatre|theater|f1|formula 1|grand prix)\b/,
+    /\b(gta\s*(vi|6)|release date|release news|updates?)\b/
+  ];
+  return patterns.some(re => re.test(q));
+}
+
+function liveReportPayload(data){
+  const answer = typeof data?.answer === 'string' ? data.answer.trim() : '';
+  return {
+    role:'ai',
+    text: answer || '🌐 Live Report is temporarily unavailable. Please try again.',
+    source:'live',
+    fallback:Boolean(data?.fallback),
+    time:'Live',
+    timestamp:Date.now(),
+    searchInfo:{
+      topic:data?.topic ?? null,
+      score:data?.score ?? null,
+      source:'live',
+      fallback:Boolean(data?.fallback),
+      evidence:Array.isArray(data?.evidence) ? data.evidence : [],
+      sources:Array.isArray(data?.sources) ? data.sources : []
+    }
+  };
+}
+
+async function requestLiveReport(userText, conv, token, controller){
+  const API_URL = window.PERSONAL_AI_API_URL || 'https://personal-ai-v2-lddx.onrender.com';
+  const response = await fetch(`${API_URL}/api/live-report`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({message:userText, conversation_id:conv.id}),
+    signal:controller.signal
+  });
+  if(!response.ok) throw new Error(`Live Report API error: ${response.status}`);
+  const contentType = response.headers.get('content-type') || '';
+  if(contentType.includes('text/event-stream')){
+    const reader=response.body.getReader(); const decoder=new TextDecoder(); let buffer=''; let streamed=''; let finalData=null;
+    const parseBlock=(block)=>{ let event='message', dataLine=''; for(const raw of block.replace(/\r/g,'').split('\n')){ if(raw.startsWith('event:')) event=raw.slice(6).trim(); else if(raw.startsWith('data:')) dataLine += raw.slice(5).trim(); } if(!dataLine)return null; try{return {event,payload:JSON.parse(dataLine)}}catch{return null} };
+    while(true){ const {done,value}=await reader.read(); if(done)break; if(token!==state.genToken){try{await reader.cancel()}catch{};return null;} buffer += decoder.decode(value,{stream:true}); let pos; while((pos=buffer.indexOf('\n\n'))!==-1){ const parsed=parseBlock(buffer.slice(0,pos)); buffer=buffer.slice(pos+2); if(!parsed)continue; if(parsed.event==='chunk') streamed += String(parsed.payload?.text||''); else if(parsed.event==='done') finalData=parsed.payload||{}; else if(parsed.event==='error') throw new Error(parsed.payload?.message||'Live Report unavailable'); }}
+    const data=finalData||{}; data.answer=data.answer||streamed; return data;
+  }
+  return await response.json();
+}
+
 async function generateReply(userText){
   const conv = activeConv();
   const token = ++state.genToken;
@@ -1541,6 +1602,31 @@ async function generateReply(userText){
 
   const controller = new AbortController();
   state.activeAbortController = controller;
+
+  // Current/live questions bypass the local-first Gemini fallback path and use the
+  // dedicated Live Report endpoint. This keeps ordinary study queries offline-first.
+  if(state.aiMode === 'auto' && isLiveQuery(userText)){
+    try{
+      const data = await requestLiveReport(userText, conv, token, controller);
+      if(token !== state.genToken || !data) return;
+      const idx = conv.messages.findIndex(m=>m.role==='typing');
+      if(idx === -1) return;
+      conv.messages[idx] = liveReportPayload(data);
+      setSendState(false);
+      renderMessages();
+      persistConversation(conv);
+      persistSearchHistory({query:userText, conversationId:conv.id, source:'live', fallback:Boolean(data.fallback), topic:data.topic??null, score:data.score??null, answerPreview:(data.answer||'').slice(0,200)});
+      return;
+    }catch(err){
+      if(err?.name==='AbortError') return;
+      const idx=conv.messages.findIndex(m=>m.role==='typing');
+      if(idx!==-1){ conv.messages[idx]={role:'error',text:'Live Report is currently unavailable. Please try again.'}; }
+      setSendState(false); renderMessages(); persistConversation(conv);
+      persistSearchHistory({query:userText,conversationId:conv.id,source:'live-error',fallback:false,topic:null,score:null,answerPreview:null});
+      console.error('Personal AI Live Report error:',err);
+      return;
+    }
+  }
 
   function recordSearchHistory(result){
     persistSearchHistory({
@@ -1659,22 +1745,23 @@ async function generateReply(userText){
         if(!parsed) continue;
 
         if(parsed.event === 'meta'){
+          // Keep the typing placeholder until actual answer text arrives.
+          // Never render an AI bubble with an empty string.
           meta = parsed.payload || meta;
-          if(bubbleIdx === -1) bubbleIdx = conv.messages.length - 1;
-          conv.messages[bubbleIdx] = {
-            role:'ai',
-            text:'',
-            source: meta.source || 'gemini',
-            fallback: Boolean(meta.fallback),
-            time: (meta.source || 'gemini') === 'gemini' ? 'Gemini' : 'Local',
-            timestamp: Date.now()
-          };
-          renderMessages();
+          if(bubbleIdx === -1) bubbleIdx = conv.messages.findIndex(m=>m.role==='typing');
 
         } else if(parsed.event === 'chunk'){
-          streamedText += (parsed.payload && parsed.payload.text) || '';
-          if(bubbleIdx !== -1 && conv.messages[bubbleIdx]){
-            conv.messages[bubbleIdx].text = streamedText;
+          const chunk = String(parsed.payload?.text || '');
+          if(chunk) streamedText += chunk;
+          if(bubbleIdx !== -1 && streamedText.trim()){
+            conv.messages[bubbleIdx] = {
+              role:'ai',
+              text:streamedText,
+              source:meta.source || 'gemini',
+              fallback:Boolean(meta.fallback),
+              time:(meta.source || 'gemini') === 'gemini' ? 'Gemini' : 'Local',
+              timestamp:Date.now()
+            };
             renderMessages();
           }
 
@@ -1684,7 +1771,7 @@ async function generateReply(userText){
           const finalTopic = data.topic ?? data.local_topic ?? null;
           const finalScore = data.score ?? data.local_score ?? null;
           const finalFallback = Boolean(data.fallback ?? meta.fallback);
-          const finalAnswer = data.answer || streamedText || 'No answer received.';
+          const finalAnswer = String(data.answer || streamedText || '').trim() || '⚠️ The AI returned an empty response. Please try again.';
 
           if(bubbleIdx !== -1){
             conv.messages[bubbleIdx] = {
@@ -1727,6 +1814,19 @@ async function generateReply(userText){
           recordSearchHistory({ source:'error', fallback:false, topic:null, score:null, answer:'' });
           return;
         }
+      }
+    }
+
+    // Some proxies terminate an SSE stream without a final blank line. Parse the
+    // remaining buffered block once before deciding that the stream was empty.
+    if(buffer.trim()){
+      const parsed = parseSseBlock(buffer.replace(/\r/g,''));
+      if(parsed?.event === 'chunk') streamedText += String(parsed.payload?.text || '');
+      else if(parsed?.event === 'done'){
+        const data=parsed.payload||{};
+        const finalAnswer=String(data.answer||streamedText||'').trim() || '⚠️ The AI returned an empty response. Please try again.';
+        if(bubbleIdx!==-1) conv.messages[bubbleIdx]={role:'ai',text:finalAnswer,source:data.source||meta.source||'gemini',fallback:Boolean(data.fallback??meta.fallback),time:(data.source||meta.source||'gemini')==='gemini'?'Gemini':'Local',timestamp:Date.now(),searchInfo:{topic:data.topic??data.local_topic??null,score:data.score??data.local_score??null,source:data.source||meta.source||'gemini',fallback:Boolean(data.fallback??meta.fallback),evidence:Array.isArray(data.evidence)?data.evidence:[]}};
+        setSendState(false); renderMessages(); persistConversation(conv); recordSearchHistory({source:data.source||meta.source||'gemini',fallback:Boolean(data.fallback??meta.fallback),topic:data.topic??data.local_topic??null,score:data.score??data.local_score??null,answer:finalAnswer}); return;
       }
     }
 
