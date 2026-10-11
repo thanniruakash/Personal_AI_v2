@@ -528,6 +528,16 @@ input,textarea{font-family:inherit; color:inherit;}
 .live-sources a{color:var(--cyan);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .live-sources a:hover{text-decoration:underline}
 
+
+.live-source-item{padding:5px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.live-source-evidence{color:var(--text-muted);font-size:12px;line-height:1.5;white-space:normal}
+.bubble table{border-collapse:collapse;display:block;max-width:100%;overflow-x:auto;margin:10px 0;font-size:.94em}
+.bubble th,.bubble td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}
+.bubble th{background:var(--surface-2);font-weight:700}
+.bubble h1,.bubble h2,.bubble h3,.bubble h4{line-height:1.35;margin:14px 0 7px}
+.bubble h1{font-size:1.35em}.bubble h2{font-size:1.2em}.bubble h3{font-size:1.08em}
+.bubble blockquote{border-left:3px solid var(--border);margin:8px 0;padding:4px 12px;color:var(--text-muted)}
+.bubble .katex-display{overflow-x:auto;overflow-y:hidden;padding:4px 0}
 </style>
 </head>
 <body>
@@ -783,6 +793,11 @@ input,textarea{font-family:inherit; color:inherit;}
   </div>
 </div>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <script>
 /* ============================================================
    STATE
@@ -1231,36 +1246,56 @@ function renderMessages(){
     return;
   }
   inner.innerHTML = conv.messages.map((m,i)=>renderMsg(m,i)).join('');
+  inner.querySelectorAll('.bubble').forEach(renderMath);
   placeComposer('bottom');
   document.getElementById('chatScroll').scrollTop = 999999;
 }
 
 function mdLite(text){
-  // very small markdown: **bold**, `code`, ```code blocks```, line breaks, lists
-  let blocks = text.split(/```/);
+  const source = String(text ?? '');
+  // Preserve the existing copyable code-block UI, while using a real Markdown
+  // parser for headings, ordered/unordered lists, blockquotes, links and tables.
+  const blocks = source.split(/```/);
   let out = '';
-  blocks.forEach((b, i)=>{
+  blocks.forEach((block, i)=>{
     if(i % 2 === 1){
-      const lines = b.split('\n'); 
-      const lang = lines[0].trim();
-      const code = lines.slice(1).join('\n').trim();
-      out += `<div class="codeblock"><div class="cb-head"><span>${lang||'code'}</span><button onclick="copyText(this)" data-code="${encodeURIComponent(code)}">copy</button></div><pre><code>${escapeHtml(code)}</code></pre></div>`;
+      const lines = block.split('\n');
+      const first = (lines[0] || '').trim();
+      const hasLanguage = /^[a-zA-Z0-9_+.-]{1,24}$/.test(first);
+      const lang = hasLanguage ? first : '';
+      const code = (hasLanguage ? lines.slice(1) : lines).join('\n').trim();
+      out += `<div class="codeblock"><div class="cb-head"><span>${escapeHtml(lang||'code')}</span><button onclick="copyText(this)" data-code="${encodeURIComponent(code)}">copy</button></div><pre><code>${escapeHtml(code)}</code></pre></div>`;
     } else {
-      let t = escapeHtml(b);
-      t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-      t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
-      t = t.split('\n\n').map(p=>{
-        if(/^\s*-\s/m.test(p)){
-          const items = p.split('\n').filter(x=>x.trim()).map(x=>`<li>${x.replace(/^\s*-\s*/,'')}</li>`).join('');
-          return `<ul>${items}</ul>`;
-        }
-        return `<p>${p.replace(/\n/g,'<br>')}</p>`;
-      }).join('');
-      out += t;
+      let rendered = '';
+      if(window.marked && typeof window.marked.parse === 'function'){
+        rendered = window.marked.parse(block, {gfm:true, breaks:true});
+        if(window.DOMPurify) rendered = window.DOMPurify.sanitize(rendered, {USE_PROFILES:{html:true}});
+        else rendered = escapeHtml(block).replace(/\n/g,'<br>');
+      } else {
+        // Safe fallback if a CDN is unavailable: retain text without injecting HTML.
+        rendered = escapeHtml(block).replace(/\n/g,'<br>');
+      }
+      out += rendered;
     }
   });
   return out;
 }
+function renderMath(container){
+  if(!container || typeof window.renderMathInElement !== 'function') return;
+  try {
+    window.renderMathInElement(container, {
+      delimiters:[
+        {left:'$$',right:'$$',display:true},
+        {left:'\\[',right:'\\]',display:true},
+        {left:'\\(',right:'\\)',display:false},
+        {left:'$',right:'$',display:false}
+      ],
+      throwOnError:false,
+      ignoredTags:['script','noscript','style','textarea','pre','code']
+    });
+  } catch(err) { console.warn('Personal AI: math rendering skipped.', err); }
+}
+
 function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function copyText(btn){
   const code = decodeURIComponent(btn.dataset.code);
@@ -1322,8 +1357,8 @@ function renderMsg(m, i){
     </div>`;
   }
   const safeText = (typeof m.text === 'string' && m.text.trim()) ? m.text : '⚠️ I received an empty response. Please try again.';
-  const liveSources = m.source === 'live' && Array.isArray(m.searchInfo?.sources) ? m.searchInfo.sources : [];
-  const sourcesHtml = liveSources.length ? `<div class="live-sources"><div class="live-sources-title">Sources</div>${liveSources.slice(0,5).map(src=>{ const title=escapeHtml(src.title || src.name || src.url || 'Source'); const url=typeof src.url==='string' ? src.url : ''; return url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a>` : `<span>${title}</span>`; }).join('')}</div>` : '';
+  const liveSources = m.source === 'live' && Array.isArray(m.searchInfo?.evidence) && m.searchInfo.evidence.length ? m.searchInfo.evidence : (m.source === 'live' && Array.isArray(m.searchInfo?.sources) ? m.searchInfo.sources : []);
+  const sourcesHtml = liveSources.length ? `<div class="live-sources"><div class="live-sources-title">Sources &amp; evidence</div>${liveSources.slice(0,6).map(src=>{ const rawUrl=typeof src.url==='string' ? src.url : ''; let safeUrl=''; try{const parsed=new URL(rawUrl); if(['http:','https:'].includes(parsed.protocol)) safeUrl=parsed.href;}catch{} const title=escapeHtml(src.title || src.name || rawUrl || 'Source'); const snippet=escapeHtml(src.snippet || src.evidence || 'Open the source for supporting details.'); return `<div class="live-source-item">${safeUrl ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">${title}</a>` : `<span>${title}</span>`}<div class="live-source-evidence">${snippet}</div></div>`; }).join('')}</div>` : '';
   return `<div class="msg ai">
     <div class="avatar-sm"></div>
     <div class="msg-body">
