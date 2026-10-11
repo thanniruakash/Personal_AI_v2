@@ -339,13 +339,18 @@ def live_report(message: str, history=None):
 @app.get("/api/health")
 def health():
     return {
-        "status": "ok",
+        "status": "ok" if gemini_clients else "degraded",
         "service": "Personal AI v2",
         "version": "2.0.0",
         "knowledge_topics": len(search_engine.topic_index),
         "gemini_clients": len(gemini_clients),
         "gemini_model": GEMINI_MODEL,
         "streaming": bool(gemini_clients),
+        "checks": {
+            "knowledge_loaded": bool(search_engine.topic_index),
+            "gemini_configured": bool(gemini_clients),
+            "gemini_key_count": len(gemini_clients),
+        },
     }
 
 
@@ -360,7 +365,11 @@ def live_report_route(request: LiveReportRequest):
         return result
     except Exception as exc:
         # Return a clear non-empty error, never a blank response or fake sources.
-        return JSONResponse(status_code=503, content={"answer":"Live Report is temporarily unavailable because web search could not be completed. Please try again.","source":"live","sources":[],"evidence":[],"error":True,"error_type":type(exc).__name__})
+        return {
+            "answer": "I can reach the Personal AI backend, but live web search failed. Please check the Render service logs and confirm outbound internet access is available.",
+            "source": "live", "sources": [], "evidence": [], "error": True,
+            "error_type": type(exc).__name__, "conversation_id": request.conversation_id,
+        }
 
 
 @app.post("/api/chat")
@@ -383,11 +392,11 @@ def chat(request: ChatRequest):
             result["conversation_id"] = request.conversation_id
             return result
         except Exception:
-            return JSONResponse(status_code=503, content={
-                "answer": "Live information is temporarily unavailable because web search could not be completed. Please try again.",
+            return {
+                "answer": "I can reach the Personal AI backend, but live web search failed. Please check the Render service logs and confirm outbound internet access is available.",
                 "source": "live", "sources": [], "evidence": [], "error": True,
                 "conversation_id": request.conversation_id,
-            })
+            }
 
     # Math is a deterministic first pass across ALL modes. This prevents
     # calculator questions from entering fuzzy knowledge retrieval or Gemini.
@@ -439,9 +448,11 @@ def chat(request: ChatRequest):
 
             answer = "".join(answer_parts).strip()
             if not answer:
-                yield sse("error", {
-                    "message": "Gemini is currently unavailable.",
-                    "source": "gemini",
+                yield sse("done", {
+                    "answer": "Gemini is currently unavailable. Check that at least one valid Gemini API key is configured in the Render service environment variables.",
+                    "source": "error",
+                    "fallback": False,
+                    "conversation_id": request.conversation_id,
                 })
                 return
 
@@ -533,9 +544,13 @@ def chat(request: ChatRequest):
             })
             return
 
-        yield sse("error", {
-            "message": "Online information is currently unavailable.",
-            "source": "gemini",
+        yield sse("done", {
+            "answer": "I couldn't generate an answer because Gemini is unavailable and no suitable local answer was found. Check the Gemini API keys in the Render environment variables, then try again.",
+            "source": "error",
+            "fallback": False,
+            "local_score": score,
+            "local_topic": topic,
+            "conversation_id": request.conversation_id,
         })
 
     return StreamingResponse(
