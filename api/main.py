@@ -250,68 +250,162 @@ def is_live_query(message: str) -> bool:
     return bool(text) and any(pattern.search(text) for pattern in LIVE_PATTERNS)
 
 class _DDGParser(HTMLParser):
-    """Extract DuckDuckGo HTML result links/snippets without extra dependencies."""
+    """Extract search result anchors from DuckDuckGo HTML without third-party dependencies."""
     def __init__(self):
         super().__init__()
-        self.results=[]
-        self._active=None
-        self._capture=None
-        self._text=[]
+        self.results = []
+        self._anchor = None
+        self._capture_snippet = False
+        self._snippet_owner = None
+
     def handle_starttag(self, tag, attrs):
-        attrs=dict(attrs)
-        classes=set((attrs.get('class') or '').split())
-        if tag == 'a' and 'result__a' in classes:
-            self._active={'title':'','url':attrs.get('href',''),'snippet':''}
-            self._capture='title'; self._text=[]
-        elif self._active and ('result__snippet' in classes):
-            self._capture='snippet'; self._text=[]
+        attrs = dict(attrs)
+        classes = set((attrs.get("class") or "").split())
+        if tag == "a":
+            href = attrs.get("href", "")
+            # DDG HTML and lite layouts use different class names.
+            if classes.intersection({"result__a", "result-link", "result-link-a"}):
+                self._anchor = {"title": "", "url": href, "snippet": ""}
+                self._capture_snippet = False
+        if self._anchor and tag in ("a", "div", "td") and classes.intersection(
+            {"result__snippet", "result-snippet", "result-snippet-text"}
+        ):
+            self._capture_snippet = True
+            self._snippet_owner = tag
+            self._snippet_text = []
+
     def handle_data(self, data):
-        if self._active and self._capture:
-            self._text.append(data)
+        if self._capture_snippet:
+            self._snippet_text.append(data)
+        elif self._anchor is not None:
+            self._anchor["title"] += data
+
     def handle_endtag(self, tag):
-        if not self._active or not self._capture: return
-        if self._capture=='title' and tag=='a':
-            self._active['title']=' '.join(''.join(self._text).split())
-            self._capture=None; self._text=[]
-            # title link may be followed by a snippet; keep active until snippet or next result
-        elif self._capture=='snippet' and tag in ('a','div','td'):
-            self._active['snippet']=' '.join(''.join(self._text).split())
-            self._capture=None; self._text=[]
-            self._finish()
-    def _finish(self):
-        if self._active and self._active.get('title') and self._active.get('url'):
-            self.results.append(self._active)
-        self._active=None; self._capture=None; self._text=[]
+        if self._capture_snippet and tag == self._snippet_owner:
+            self._anchor["snippet"] = " ".join("".join(self._snippet_text).split())
+            self._capture_snippet = False
+            self._snippet_owner = None
+        if tag == "a" and self._anchor:
+            title = " ".join(self._anchor["title"].split())
+            if title and self._anchor.get("url"):
+                self._anchor["title"] = title
+                self.results.append(self._anchor)
+            self._anchor = None
+            self._capture_snippet = False
+
+def _normalise_search_url(target: str) -> str:
+    target = html.unescape((target or "").strip())
+    if target.startswith("//"):
+        target = "https:" + target
+    parsed = urllib.parse.urlparse(target)
+    if "duckduckgo.com" in (parsed.hostname or "") and parsed.path.startswith("/l/"):
+        target = urllib.parse.parse_qs(parsed.query).get("uddg", [target])[0]
+        parsed = urllib.parse.urlparse(target)
+    if parsed.scheme not in ("http", "https") or not parsed.hostname:
+        return ""
+    if parsed.hostname.lower() in {"duckduckgo.com", "www.duckduckgo.com", "html.duckduckgo.com", "lite.duckduckgo.com"}:
+        return ""
+    return target
+
+def _parse_ddg_page(page: str, limit: int):
+    parser = _DDGParser()
+    parser.feed(page)
+    results = []
+    seen = set()
+    for item in parser.results:
+        target = _normalise_search_url(item.get("url", ""))
+        title = " ".join(html.unescape(item.get("title", "")).split())
+        if not target or not title or target in seen:
+            continue
+        seen.add(target)
+        results.append({"title": title[:240], "url": target, "snippet": item.get("snippet", "")[:700]})
+        if len(results) >= limit:
+            break
+    # Markup-independent fallback: inspect all anchors and retain external links
+    # whose labels resemble search result titles.
+    if not results:
+        class _AnchorParser(HTMLParser):
+            def __init__(self):
+                super().__init__(); self.items=[]; self.cur=None
+            def handle_starttag(self, tag, attrs):
+                attrs=dict(attrs)
+                if tag=="a" and attrs.get("href"):
+                    self.cur={"url":attrs["href"],"title":""}
+            def handle_data(self, data):
+                if self.cur is not None: self.cur["title"] += data
+            def handle_endtag(self, tag):
+                if tag=="a" and self.cur is not None:
+                    self.items.append(self.cur); self.cur=None
+        generic = _AnchorParser(); generic.feed(page)
+        for item in generic.items:
+            target = _normalise_search_url(item["url"])
+            title = " ".join(html.unescape(item["title"]).split())
+            if not target or len(title) < 5 or target in seen:
+                continue
+            seen.add(target)
+            results.append({"title": title[:240], "url": target, "snippet": ""})
+            if len(results) >= limit: break
+    return results
+
+def _search_google_news_rss(query: str, limit: int):
+    """News-only fallback, parsed using the standard library."""
+    import xml.etree.ElementTree as ET
+    url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(
+        {"q": query, "hl": "en-IN", "gl": "IN", "ceid": "IN:en"}
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 PersonalAI/2.0"})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        body = response.read(1_000_000).decode("utf-8", "replace")
+    root = ET.fromstring(body)
+    results, seen = [], set()
+    for item in root.findall(".//item"):
+        title = (item.findtext("title") or "").strip()
+        target = _normalise_search_url(item.findtext("link") or "")
+        snippet = re.sub(r"<[^>]+>", " ", item.findtext("description") or "")
+        snippet = " ".join(html.unescape(snippet).split())
+        if target and title and target not in seen:
+            seen.add(target)
+            results.append({"title": title[:240], "url": target, "snippet": snippet[:700]})
+            if len(results) >= limit: break
+    return results
 
 def search_web(query: str, limit: int = 6):
-    """Perform actual web search and return only links found in the search response."""
-    url='https://html.duckduckgo.com/html/?' + urllib.parse.urlencode({'q': query})
-    req=urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 (compatible; PersonalAI/2.0; +https://example.com)'})
-    with urllib.request.urlopen(req, timeout=8) as response:
-        page=response.read(1_500_000).decode('utf-8','replace')
-    parser=_DDGParser(); parser.feed(page)
-    out=[]; seen=set()
-    # HTML parser class structure can vary, so extract result anchors as a robust fallback.
-    for item in parser.results:
-        target=item.get('url','')
-        if 'uddg=' in target:
-            try: target=urllib.parse.parse_qs(urllib.parse.urlparse(target).query).get('uddg',[target])[0]
-            except Exception: pass
-        target=html.unescape(target)
-        parsed=urllib.parse.urlparse(target)
-        if parsed.scheme not in ('http','https') or not item.get('title') or target in seen: continue
-        seen.add(target)
-        out.append({'title':item['title'][:240], 'url':target, 'snippet':item.get('snippet','')[:700]})
-        if len(out)>=limit: break
-    if not out:
-        # Regex fallback handles DuckDuckGo's common anchor markup if parser nesting differs.
-        for match in re.finditer(r'<a[^>]+class="[^"]*result__a[^"]*"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', page, re.I|re.S):
-            target=html.unescape(match.group(1)); title=re.sub(r'<[^>]+>',' ',match.group(2)); title=' '.join(html.unescape(title).split())
-            if target.startswith('//'): target='https:'+target
-            if target.startswith('http') and title and target not in seen:
-                seen.add(target); out.append({'title':title[:240],'url':target,'snippet':''})
-                if len(out)>=limit: break
-    return out
+    """Retrieve real external sources with resilient provider fallbacks.
+
+    Try DDG's full HTML and lite endpoints; if both fail, use Google News RSS.
+    Never return fabricated results. Provider exceptions are logged for Render logs.
+    """
+    errors = []
+    for endpoint in ("https://html.duckduckgo.com/html/", "https://lite.duckduckgo.com/lite/"):
+        try:
+            url = endpoint + "?" + urllib.parse.urlencode({"q": query})
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+                    "Accept": "text/html,application/xhtml+xml",
+                    "Accept-Language": "en-US,en;q=0.9",
+                },
+            )
+            with urllib.request.urlopen(req, timeout=10) as response:
+                page = response.read(1_500_000).decode("utf-8", "replace")
+            results = _parse_ddg_page(page, limit)
+            if results:
+                print(f"[LiveSearch] provider={endpoint} results={len(results)}")
+                return results
+            errors.append(f"{endpoint}: no result links parsed")
+        except Exception as exc:
+            errors.append(f"{endpoint}: {type(exc).__name__}: {exc}")
+    try:
+        results = _search_google_news_rss(query, limit)
+        if results:
+            print(f"[LiveSearch] provider=GoogleNewsRSS results={len(results)}")
+            return results
+        errors.append("Google News RSS: no results")
+    except Exception as exc:
+        errors.append(f"Google News RSS: {type(exc).__name__}: {exc}")
+    print("[LiveSearch] all providers failed: " + " | ".join(errors))
+    return []
 
 def live_report(message: str, history=None):
     sources=search_web(message, limit=6)
@@ -339,18 +433,13 @@ def live_report(message: str, history=None):
 @app.get("/api/health")
 def health():
     return {
-        "status": "ok" if gemini_clients else "degraded",
+        "status": "ok",
         "service": "Personal AI v2",
         "version": "2.0.0",
         "knowledge_topics": len(search_engine.topic_index),
         "gemini_clients": len(gemini_clients),
         "gemini_model": GEMINI_MODEL,
         "streaming": bool(gemini_clients),
-        "checks": {
-            "knowledge_loaded": bool(search_engine.topic_index),
-            "gemini_configured": bool(gemini_clients),
-            "gemini_key_count": len(gemini_clients),
-        },
     }
 
 
@@ -365,11 +454,7 @@ def live_report_route(request: LiveReportRequest):
         return result
     except Exception as exc:
         # Return a clear non-empty error, never a blank response or fake sources.
-        return {
-            "answer": "I can reach the Personal AI backend, but live web search failed. Please check the Render service logs and confirm outbound internet access is available.",
-            "source": "live", "sources": [], "evidence": [], "error": True,
-            "error_type": type(exc).__name__, "conversation_id": request.conversation_id,
-        }
+        return JSONResponse(status_code=503, content={"answer":"Live Report is temporarily unavailable because web search could not be completed. Please try again.","source":"live","sources":[],"evidence":[],"error":True,"error_type":type(exc).__name__})
 
 
 @app.post("/api/chat")
@@ -392,11 +477,11 @@ def chat(request: ChatRequest):
             result["conversation_id"] = request.conversation_id
             return result
         except Exception:
-            return {
-                "answer": "I can reach the Personal AI backend, but live web search failed. Please check the Render service logs and confirm outbound internet access is available.",
+            return JSONResponse(status_code=503, content={
+                "answer": "Live information is temporarily unavailable because web search could not be completed. Please try again.",
                 "source": "live", "sources": [], "evidence": [], "error": True,
                 "conversation_id": request.conversation_id,
-            }
+            })
 
     # Math is a deterministic first pass across ALL modes. This prevents
     # calculator questions from entering fuzzy knowledge retrieval or Gemini.
@@ -448,11 +533,9 @@ def chat(request: ChatRequest):
 
             answer = "".join(answer_parts).strip()
             if not answer:
-                yield sse("done", {
-                    "answer": "Gemini is currently unavailable. Check that at least one valid Gemini API key is configured in the Render service environment variables.",
-                    "source": "error",
-                    "fallback": False,
-                    "conversation_id": request.conversation_id,
+                yield sse("error", {
+                    "message": "Gemini is currently unavailable.",
+                    "source": "gemini",
                 })
                 return
 
@@ -544,13 +627,9 @@ def chat(request: ChatRequest):
             })
             return
 
-        yield sse("done", {
-            "answer": "I couldn't generate an answer because Gemini is unavailable and no suitable local answer was found. Check the Gemini API keys in the Render environment variables, then try again.",
-            "source": "error",
-            "fallback": False,
-            "local_score": score,
-            "local_topic": topic,
-            "conversation_id": request.conversation_id,
+        yield sse("error", {
+            "message": "Online information is currently unavailable.",
+            "source": "gemini",
         })
 
     return StreamingResponse(
