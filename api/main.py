@@ -7,6 +7,8 @@ import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -100,11 +102,11 @@ def local_answer(message):
     best = results[0]
     answer_field = best.get("_answer_field")
     if answer_field:
-        answer = str(best.get(answer_field, "")).strip()
+        answer = normalize_special_symbols(str(best.get(answer_field, "")).strip())
     else:
-        answer = best.get("definition", "").strip()
+        answer = normalize_special_symbols(best.get("definition", "").strip())
     if not answer:
-        answer = best.get("content", "").strip()
+        answer = normalize_special_symbols(best.get("content", "").strip())
 
     # Keep the metadata small and useful for the frontend search/history UI.
     evidence = []
@@ -121,6 +123,79 @@ def local_answer(message):
         best.get("topic") or None,
         evidence,
     )
+
+
+# ------------------------------------------------------------
+# Deterministic current time + special-symbol normalization
+# ------------------------------------------------------------
+INDIA_TZ = ZoneInfo("Asia/Kolkata")
+
+
+def current_datetime_answer(message: str):
+    """Answer direct date/time questions from the server clock, not an LLM guess."""
+    text = (message or "").lower().strip()
+    asks_date = bool(re.search(r"\b(what(?:'s| is)?|tell me|show me|current|present|today'?s?)\b.{0,35}\b(date|day|today)\b|\b(date|day)\s+(today|now)\b", text))
+    asks_time = bool(re.search(r"\b(what(?:'s| is)?|tell me|show me|current|present)\b.{0,35}\b(time|clock)\b|\b(time|clock)\s+(now|today)\b", text))
+    # Avoid intercepting questions about dates/times in programming or general knowledge.
+    if not asks_date and not asks_time:
+        return None
+    if re.search(r"\b(explain|meaning|format|type|types|convert|calculate|code|program|programming|database|sql|history of)\b", text):
+        return None
+    now = datetime.now(INDIA_TZ)
+    if asks_date and asks_time:
+        return f"Today is {now.strftime('%A, %d %B %Y')}. The current time in India (IST) is {now.strftime('%I:%M:%S %p')} (UTC+05:30)."
+    if asks_time:
+        return f"The current time in India (IST) is {now.strftime('%I:%M:%S %p')} (UTC+05:30)."
+    return f"Today is {now.strftime('%A, %d %B %Y')} (India Standard Time)."
+
+
+_LATEX_REPLACEMENTS = [
+    (r"\\(?:longrightarrow|rightarrow|to)\b", "→"),
+    (r"\\(?:Longrightarrow|Rightarrow)\b", "⇒"),
+    (r"\\(?:leftarrow|gets)\b", "←"),
+    (r"\\leftrightarrow\b", "↔"),
+    (r"\\cup\b", "∪"), (r"\\cap\b", "∩"),
+    (r"\\subseteq\b", "⊆"), (r"\\supseteq\b", "⊇"),
+    (r"\\subset\b", "⊂"), (r"\\supset\b", "⊃"),
+    (r"\\in\b", "∈"), (r"\\notin\b", "∉"),
+    (r"\\forall\b", "∀"), (r"\\exists\b", "∃"),
+    (r"\\land\b", "∧"), (r"\\lor\b", "∨"),
+    (r"\\times\b", "×"), (r"\\cdot\b", "·"), (r"\\div\b", "÷"),
+    (r"\\pm\b", "±"), (r"\\neq\b", "≠"),
+    (r"\\leq\b", "≤"), (r"\\geq\b", "≥"),
+    (r"\\infty\b", "∞"), (r"\\sum\b", "∑"), (r"\\prod\b", "∏"),
+    (r"\\pi\b", "π"), (r"\\alpha\b", "α"), (r"\\beta\b", "β"),
+    (r"\\gamma\b", "γ"), (r"\\theta\b", "θ"), (r"\\lambda\b", "λ"),
+    (r"\\mu\b", "μ"), (r"\\sigma\b", "σ"), (r"\\omega\b", "ω"),
+    (r"\\mathbb\s*\{R\}", "ℝ"), (r"\\mathbb\s*\{N\}", "ℕ"),
+    (r"\\mathbb\s*\{Z\}", "ℤ"), (r"\\mathbb\s*\{Q\}", "ℚ"),
+    (r"\\mathbb\s*\{C\}", "ℂ"),
+    (r"\\text\s*\{([^{}]*)\}", r"\1"),
+    (r"\\mathrm\s*\{([^{}]*)\}", r"\1"),
+    (r"\\left\b|\\right\b", ""),
+]
+
+
+def normalize_special_symbols(value: str) -> str:
+    """Make common LaTeX notation readable even if frontend math CDNs fail."""
+    text = str(value or "")
+    # Normalize only math-bearing text; preserve ordinary currency such as $500.
+    for pattern, replacement in _LATEX_REPLACEMENTS:
+        text = re.sub(pattern, replacement, text)
+    text = re.sub(r"\\frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}", r"(\1)/(\2)", text)
+    text = re.sub(r"\\sqrt\s*\{([^{}]+)\}", r"√(\1)", text)
+    text = re.sub(r"\\([{}])", r"\1", text)
+    subscript = str.maketrans("0123456789+-=", "₀₁₂₃₄₅₆₇₈₉₊₋₌")
+    superscript = str.maketrans("0123456789+-=", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼")
+    text = re.sub(r"_([0-9+\-=]+)", lambda m: m.group(1).translate(subscript), text)
+    text = re.sub(r"\^([0-9+\-=]+)", lambda m: m.group(1).translate(superscript), text)
+    # Remove math delimiters only if the delimited expression contained LaTeX commands.
+    text = re.sub(r"\$([^$\n]*[∪∩∈∉⊆⊇⇒→←↔∀∃∧∨ℝℕℤℚℂαβγθλμσω∑∏√][^$\n]*)\$", r"\1", text)
+    text = re.sub(r"\\\((.*?)\\\)", r"\1", text)
+    text = re.sub(r"\\\[([\s\S]*?)\\\]", r"\1", text)
+    # Clean escaped Markdown punctuation often emitted by models.
+    text = re.sub(r"\\([*_#])", r"\1", text)
+    return text
 
 
 # ------------------------------------------------------------
@@ -183,7 +258,7 @@ def gemini_text(message, history, local_context=None):
             )
             text = getattr(response, "text", None)
             if text and text.strip():
-                return text.strip(), key_name
+                return normalize_special_symbols(text.strip()), key_name
         except Exception:
             continue
 
@@ -201,14 +276,17 @@ def gemini_stream(message, history, local_context=None):
                 contents=prompt,
             )
 
-            emitted = False
+            chunks = []
             for chunk in stream:
-                text = getattr(chunk, "text", None)
-                if text:
-                    emitted = True
-                    yield text, key_name
+                chunk_text = getattr(chunk, "text", None)
+                if chunk_text:
+                    chunks.append(chunk_text)
 
-            if emitted:
+            # Normalize the complete answer so LaTeX commands split across API
+            # chunks (for example "\" + "cup") are handled correctly.
+            complete = normalize_special_symbols("".join(chunks).strip())
+            if complete:
+                yield complete, key_name
                 return
         except Exception:
             continue
@@ -250,161 +328,121 @@ def is_live_query(message: str) -> bool:
     return bool(text) and any(pattern.search(text) for pattern in LIVE_PATTERNS)
 
 class _DDGParser(HTMLParser):
-    """Extract search result anchors from DuckDuckGo HTML without third-party dependencies."""
+    """Extract DuckDuckGo HTML result links/snippets without extra dependencies."""
     def __init__(self):
         super().__init__()
-        self.results = []
-        self._anchor = None
-        self._capture_snippet = False
-        self._snippet_owner = None
-
+        self.results=[]
+        self._active=None
+        self._capture=None
+        self._text=[]
     def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        classes = set((attrs.get("class") or "").split())
-        if tag == "a":
-            href = attrs.get("href", "")
-            # DDG HTML and lite layouts use different class names.
-            if classes.intersection({"result__a", "result-link", "result-link-a"}):
-                self._anchor = {"title": "", "url": href, "snippet": ""}
-                self._capture_snippet = False
-        if self._anchor and tag in ("a", "div", "td") and classes.intersection(
-            {"result__snippet", "result-snippet", "result-snippet-text"}
-        ):
-            self._capture_snippet = True
-            self._snippet_owner = tag
-            self._snippet_text = []
-
+        attrs=dict(attrs)
+        classes=set((attrs.get('class') or '').split())
+        if tag == 'a' and 'result__a' in classes:
+            self._active={'title':'','url':attrs.get('href',''),'snippet':''}
+            self._capture='title'; self._text=[]
+        elif self._active and ('result__snippet' in classes):
+            self._capture='snippet'; self._text=[]
     def handle_data(self, data):
-        if self._capture_snippet:
-            self._snippet_text.append(data)
-        elif self._anchor is not None:
-            self._anchor["title"] += data
-
+        if self._active and self._capture:
+            self._text.append(data)
     def handle_endtag(self, tag):
-        if self._capture_snippet and tag == self._snippet_owner:
-            self._anchor["snippet"] = " ".join("".join(self._snippet_text).split())
-            self._capture_snippet = False
-            self._snippet_owner = None
-        if tag == "a" and self._anchor:
-            title = " ".join(self._anchor["title"].split())
-            if title and self._anchor.get("url"):
-                self._anchor["title"] = title
-                self.results.append(self._anchor)
-            self._anchor = None
-            self._capture_snippet = False
+        if not self._active or not self._capture: return
+        if self._capture=='title' and tag=='a':
+            self._active['title']=' '.join(''.join(self._text).split())
+            self._capture=None; self._text=[]
+            # title link may be followed by a snippet; keep active until snippet or next result
+        elif self._capture=='snippet' and tag in ('a','div','td'):
+            self._active['snippet']=' '.join(''.join(self._text).split())
+            self._capture=None; self._text=[]
+            self._finish()
+    def _finish(self):
+        if self._active and self._active.get('title') and self._active.get('url'):
+            self.results.append(self._active)
+        self._active=None; self._capture=None; self._text=[]
 
-def _normalise_search_url(target: str) -> str:
-    target = html.unescape((target or "").strip())
-    if target.startswith("//"):
-        target = "https:" + target
-    parsed = urllib.parse.urlparse(target)
-    if "duckduckgo.com" in (parsed.hostname or "") and parsed.path.startswith("/l/"):
-        target = urllib.parse.parse_qs(parsed.query).get("uddg", [target])[0]
-        parsed = urllib.parse.urlparse(target)
-    if parsed.scheme not in ("http", "https") or not parsed.hostname:
-        return ""
-    if parsed.hostname.lower() in {"duckduckgo.com", "www.duckduckgo.com", "html.duckduckgo.com", "lite.duckduckgo.com"}:
-        return ""
-    return target
+def _fetch_text(url: str, timeout: int = 8) -> str:
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+        "Accept": "text/html,application/rss+xml,application/xml;q=0.9,*/*;q=0.8",
+    })
+    with urllib.request.urlopen(req, timeout=timeout) as response:
+        return response.read(1_500_000).decode("utf-8", "replace")
 
-def _parse_ddg_page(page: str, limit: int):
+
+def _parse_result_html(page: str, limit: int):
     parser = _DDGParser()
     parser.feed(page)
-    results = []
-    seen = set()
-    for item in parser.results:
-        target = _normalise_search_url(item.get("url", ""))
-        title = " ".join(html.unescape(item.get("title", "")).split())
-        if not target or not title or target in seen:
+    candidates = list(parser.results)
+    # Regex fallback tolerates markup changes and nested title tags.
+    if not candidates:
+        for match in re.finditer(r'<a[^>]+class="[^"]*result__a[^"]*"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', page, re.I | re.S):
+            url = html.unescape(match.group(1))
+            title = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", match.group(2))).split())
+            if title and url:
+                candidates.append({"title": title, "url": url, "snippet": ""})
+    out, seen = [], set()
+    for item in candidates:
+        target = html.unescape(item.get("url", ""))
+        parsed_target = urllib.parse.urlparse(target)
+        if "uddg" in urllib.parse.parse_qs(parsed_target.query):
+            target = urllib.parse.parse_qs(parsed_target.query)["uddg"][0]
+        if target.startswith("//"):
+            target = "https:" + target
+        parsed = urllib.parse.urlparse(target)
+        if parsed.scheme not in ("http", "https") or not item.get("title") or target in seen:
+            continue
+        if "duckduckgo.com" in (parsed.hostname or "") and parsed.path.startswith("/y.js"):
             continue
         seen.add(target)
-        results.append({"title": title[:240], "url": target, "snippet": item.get("snippet", "")[:700]})
-        if len(results) >= limit:
+        out.append({"title": " ".join(item["title"].split())[:240], "url": target, "snippet": " ".join(item.get("snippet", "").split())[:700]})
+        if len(out) >= limit:
             break
-    # Markup-independent fallback: inspect all anchors and retain external links
-    # whose labels resemble search result titles.
-    if not results:
-        class _AnchorParser(HTMLParser):
-            def __init__(self):
-                super().__init__(); self.items=[]; self.cur=None
-            def handle_starttag(self, tag, attrs):
-                attrs=dict(attrs)
-                if tag=="a" and attrs.get("href"):
-                    self.cur={"url":attrs["href"],"title":""}
-            def handle_data(self, data):
-                if self.cur is not None: self.cur["title"] += data
-            def handle_endtag(self, tag):
-                if tag=="a" and self.cur is not None:
-                    self.items.append(self.cur); self.cur=None
-        generic = _AnchorParser(); generic.feed(page)
-        for item in generic.items:
-            target = _normalise_search_url(item["url"])
-            title = " ".join(html.unescape(item["title"]).split())
-            if not target or len(title) < 5 or target in seen:
-                continue
-            seen.add(target)
-            results.append({"title": title[:240], "url": target, "snippet": ""})
-            if len(results) >= limit: break
-    return results
+    return out
 
-def _search_google_news_rss(query: str, limit: int):
-    """News-only fallback, parsed using the standard library."""
-    import xml.etree.ElementTree as ET
-    url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(
-        {"q": query, "hl": "en-IN", "gl": "IN", "ceid": "IN:en"}
-    )
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 PersonalAI/2.0"})
-    with urllib.request.urlopen(req, timeout=10) as response:
-        body = response.read(1_000_000).decode("utf-8", "replace")
-    root = ET.fromstring(body)
-    results, seen = [], set()
-    for item in root.findall(".//item"):
+
+def _parse_news_rss(query: str, limit: int):
+    url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": query, "hl": "en-IN", "gl": "IN", "ceid": "IN:en"})
+    root = ET.fromstring(_fetch_text(url, timeout=8))
+    out = []
+    for item in root.findall(".//item")[:limit]:
         title = (item.findtext("title") or "").strip()
-        target = _normalise_search_url(item.findtext("link") or "")
-        snippet = re.sub(r"<[^>]+>", " ", item.findtext("description") or "")
-        snippet = " ".join(html.unescape(snippet).split())
-        if target and title and target not in seen:
-            seen.add(target)
-            results.append({"title": title[:240], "url": target, "snippet": snippet[:700]})
-            if len(results) >= limit: break
-    return results
+        link = (item.findtext("link") or "").strip()
+        description = html.unescape(re.sub(r"<[^>]+>", " ", item.findtext("description") or ""))
+        description = " ".join(description.split())
+        published = (item.findtext("pubDate") or "").strip()
+        if title and link and link.startswith("http"):
+            snippet = (description + (f" Published: {published}." if published else "")).strip()
+            out.append({"title": title[:240], "url": link, "snippet": snippet[:700]})
+    return out
+
 
 def search_web(query: str, limit: int = 6):
-    """Retrieve real external sources with resilient provider fallbacks.
-
-    Try DDG's full HTML and lite endpoints; if both fail, use Google News RSS.
-    Never return fabricated results. Provider exceptions are logged for Render logs.
-    """
+    """Try independent live-search sources; return only links actually retrieved."""
     errors = []
-    for endpoint in ("https://html.duckduckgo.com/html/", "https://lite.duckduckgo.com/lite/"):
+    attempts = [
+        "https://html.duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query}),
+        "https://lite.duckduckgo.com/lite/?" + urllib.parse.urlencode({"q": query}),
+    ]
+    for url in attempts:
         try:
-            url = endpoint + "?" + urllib.parse.urlencode({"q": query})
-            req = urllib.request.Request(
-                url,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-                    "Accept": "text/html,application/xhtml+xml",
-                    "Accept-Language": "en-US,en;q=0.9",
-                },
-            )
-            with urllib.request.urlopen(req, timeout=10) as response:
-                page = response.read(1_500_000).decode("utf-8", "replace")
-            results = _parse_ddg_page(page, limit)
+            results = _parse_result_html(_fetch_text(url), limit)
             if results:
-                print(f"[LiveSearch] provider={endpoint} results={len(results)}")
                 return results
-            errors.append(f"{endpoint}: no result links parsed")
+            errors.append("no results parsed from " + urllib.parse.urlparse(url).hostname)
         except Exception as exc:
-            errors.append(f"{endpoint}: {type(exc).__name__}: {exc}")
-    try:
-        results = _search_google_news_rss(query, limit)
-        if results:
-            print(f"[LiveSearch] provider=GoogleNewsRSS results={len(results)}")
-            return results
-        errors.append("Google News RSS: no results")
-    except Exception as exc:
-        errors.append(f"Google News RSS: {type(exc).__name__}: {exc}")
-    print("[LiveSearch] all providers failed: " + " | ".join(errors))
+            errors.append(f"{urllib.parse.urlparse(url).hostname}: {type(exc).__name__}: {exc}")
+    # News RSS is a useful independent fallback specifically for news/live headlines.
+    if re.search(r"\b(news|headlines|latest|today|breaking|formula\s*1|f1|grand prix)\b", query, re.I):
+        try:
+            results = _parse_news_rss(query, limit)
+            if results:
+                return results
+            errors.append("Google News RSS returned no items")
+        except Exception as exc:
+            errors.append(f"news RSS: {type(exc).__name__}: {exc}")
+    # Logging only: never send raw provider errors or fabricated results to users.
+    print("[LiveSearch] all providers failed: " + " | ".join(errors), flush=True)
     return []
 
 def live_report(message: str, history=None):
@@ -422,7 +460,7 @@ def live_report(message: str, history=None):
     if not answer:
         # Even when Gemini is unavailable, show the retrieved evidence instead of a blank answer.
         answer='Live Report\n\nI retrieved these web results, but the AI summary service is currently unavailable:\n\n' + '\n'.join(f"- **{x['title']}** — {x['snippet'] or 'Open the source for details.'}" for x in sources)
-    return {'answer':answer.strip() or 'The live report could not be generated. Please try again.', 'source':'live', 'topic':message,
+    return {'answer':normalize_special_symbols(answer.strip()) or 'The live report could not be generated. Please try again.', 'source':'live', 'topic':message,
             'sources':[{'title':x['title'],'url':x['url']} for x in sources],
             'evidence':[{'title':x['title'],'url':x['url'],'snippet':x['snippet']} for x in sources],
             'gemini_key':used_key, 'generated_at':datetime.now(timezone.utc).isoformat(), 'fallback':not bool(used_key)}
@@ -468,6 +506,17 @@ def chat(request: ChatRequest):
             "source": "local",
             "fallback": False,
         }
+
+    # Date/time questions must use the real server clock, not an LLM guess.
+    if mode != "local":
+        clock_answer = current_datetime_answer(message)
+        if clock_answer:
+            return {
+                "answer": clock_answer,
+                "source": "system_clock",
+                "fallback": False,
+                "conversation_id": request.conversation_id,
+            }
 
     # Live/current-information questions use real web retrieval in Auto mode.
     # Ordinary study/programming questions continue through the local-first path.
